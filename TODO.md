@@ -47,9 +47,11 @@ Status of `rust_iso20022`. ✅ = done, ⬜ = outstanding.
   detected `MxId` + metadata in one call
 - ⬜ **Typed BAH envelope** — `read_business_message` covers reading; a fully
   *typed* `Envelope<head.001 BAH, Document>` (with the model) is still open
-- ⬜ **Coverage (检查xsds)** — 12 business areas have no model (`semt`, `sese`,
-  `seti`, `setr`, `tsin`, `tsmt`, `tsrv`, `trea`, `cbrf`, `supl`, `trck`,
-  `xsys`); the current mirror lacks their XSDs (~502 of the official ~793)
+- ✅ **Coverage (检查xsds)** — expanded to **722 messages / 32 areas** by
+  fetching `semt`, `sese`, `setr`, `tsin`, `tsmt`, `tsrv`, `trck` from
+  iso20022.org's static schema path (`Fetcher::download_schema`)
+- ⬜ Remaining empty areas: `seti`, `trea`, `cbrf`, `supl`, `xsys` have no current
+  message definitions on iso20022.org
 - ⬜ **Typed scalars** — values are `String` (lossless but untyped `Decimal`/`Date`)
 - ✅ **WASM support** — `src/wasm.rs` exposes identification/catalogue/metadata to
   JS/npm (`--cfg direct_wasm`, `scripts/build-wasm.sh`); verified on wasm32

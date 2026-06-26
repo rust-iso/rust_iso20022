@@ -126,6 +126,22 @@ impl Fetcher {
         self.client.get(&message.xsd_url).send().await?.text().await
     }
 
+    /// Download a schema by message name directly from the static schemas path,
+    /// e.g. `sese.023.001.13` →
+    /// `…/sites/default/files/documents/messages/sese/schemas/sese.023.001.13.xsd`.
+    ///
+    /// This static path is served without the Akamai bot-protection that guards
+    /// the `/message/{id}/download` endpoint, so it is the reliable way to fetch
+    /// schemas programmatically.
+    pub async fn download_schema(&self, message_name: &str) -> Result<String, reqwest::Error> {
+        let family = message_name.split('.').next().unwrap_or("");
+        let url = format!(
+            "{}/sites/default/files/documents/messages/{family}/schemas/{message_name}.xsd",
+            self.origin.trim_end_matches('/')
+        );
+        self.client.get(url).send().await?.text().await
+    }
+
     /// Download every discovered schema into `dir`, naming files by message name
     /// when known. Returns the number successfully written.
     pub async fn download_all(

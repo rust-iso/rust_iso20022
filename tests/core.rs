@@ -49,8 +49,12 @@ fn business_area_codes_and_lookup() {
 
 #[test]
 fn catalogue_is_populated_and_consistent() {
-    assert_eq!(catalogue::all().len(), 502);
+    assert!(catalogue::all().len() >= 700, "catalogue too small");
     assert!(catalogue::contains("pacs.008.001.08"));
+    // securities/trade families recovered from iso20022.org are present
+    assert!(catalogue::contains("sese.001.001.10"));
+    assert!(catalogue::contains("semt.002.001.02"));
+    assert!(catalogue::contains("tsmt.001.001.03"));
 
     let e = catalogue::from_message_name("pacs.008.001.08").unwrap();
     assert_eq!(e.business_area, "pacs");

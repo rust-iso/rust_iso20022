@@ -30,6 +30,10 @@ Initial release.
 - **Full model coverage (502/502):** the generator now disambiguates
   complexTypes with multiple anonymous `<xsd:choice>` groups, so the previously
   skipped `reda`/`seev` messages are generated.
+- **Coverage expanded to 722 messages / 32 business areas:** added the securities
+  settlement/management and trade-services families (`semt`, `sese`, `setr`,
+  `tsin`, `tsmt`, `tsrv`, `trck`), with schemas sourced directly from
+  iso20022.org's static schema path. `Fetcher::download_schema` uses that path.
 - `cli` feature: an `iso20022` command-line tool for querying the message
   catalogue by message name, business area or namespace (uses `prettytable-rs`).
 - `serde` feature now covers `MxId` (serializes to its canonical
