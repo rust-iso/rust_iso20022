@@ -40,8 +40,10 @@ Status of `rust_iso20022`. ✅ = done, ⬜ = outstanding.
   message-id/amount/currency/value-date/etc. (prowide `MxSwiftMessage`)
 - ✅ **AppHdr build** — `BusinessHeader::to_app_hdr_xml` writes a `head.001`
   `<AppHdr>` (round-trips through the reader)
-- ⬜ **Unset choices serialize as `<__Unknown__>`** — needs minOccurs-aware
-  `Option` generation in codegen (Option-wrapping alone breaks round-trip)
+- ✅ **`<__Unknown__>` no longer leaked** — `to_xml` strips the synthetic
+  `<__Unknown__>` placeholder elements that unset choices produce (round-trip
+  preserved). A minOccurs-aware fix that also omits the now-empty parent element
+  is still a future refinement.
 - ⬜ **`Ccy` on choice-nested amounts not written** — yaserde flatten+enum limit
 - ✅ **Business-message reader** — `read_business_message` returns header +
   detected `MxId` + metadata in one call

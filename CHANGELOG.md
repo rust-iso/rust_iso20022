@@ -49,6 +49,8 @@ Initial release.
 - Monetary amounts no longer lose their value: `simpleContent` complexTypes
   (e.g. `…Amount`) had their text value dropped by `xsd-parser`; codegen now
   injects the value field.
+- `to_xml` no longer leaks `<__Unknown__>` placeholder elements for unset
+  choices (round-trip preserved).
 - **Publishable to crates.io:** removed all git dependencies. `xsd-types` was
   dropped (scalars are `String`), `xsd-macro-utils` was replaced by the local
   `simple_type!` macro, and the codegen tool (which uses the git `xsd-parser`)
