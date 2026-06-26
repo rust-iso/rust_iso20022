@@ -4,6 +4,7 @@
 //! XSD schemas.
 
 pub mod app_hdr;
+mod envelope;
 pub mod metadata;
 mod business_area;
 mod error;
@@ -13,6 +14,7 @@ mod mx_message;
 pub(crate) mod xml_scan;
 
 pub use business_area::BusinessArea;
+pub use envelope::{read_business_message, BusinessMessage};
 pub use error::{Error, Result};
 pub use message::{from_xml, to_xml, to_xml_fragment};
 #[cfg(feature = "serde")]

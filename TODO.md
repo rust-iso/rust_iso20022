@@ -31,7 +31,7 @@ Status of `rust_iso20022`. ✅ = done, ⬜ = outstanding.
 ## Repo hygiene
 - ✅ `.gitignore`
 - ✅ `thrdpty/` excluded from the published package and git-ignored
-- ⬜ Initialise a git repo (publish.sh expects a clean working tree)
+- ✅ Git repo initialised (`main`, initial commit, clean tree)
 
 ## Outstanding
 - ✅ **JSON uses ISO tag names** — yaserde renames/flatten mirrored onto serde, so
@@ -43,8 +43,10 @@ Status of `rust_iso20022`. ✅ = done, ⬜ = outstanding.
 - ⬜ **Unset choices serialize as `<__Unknown__>`** — needs minOccurs-aware
   `Option` generation in codegen (Option-wrapping alone breaks round-trip)
 - ⬜ **`Ccy` on choice-nested amounts not written** — yaserde flatten+enum limit
-- ⬜ **AppHdr: typed BAH + `Envelope<AppHdr, Document>`** — the reader/builder
-  cover the common fields; a full typed envelope is still open
+- ✅ **Business-message reader** — `read_business_message` returns header +
+  detected `MxId` + metadata in one call
+- ⬜ **Typed BAH envelope** — `read_business_message` covers reading; a fully
+  *typed* `Envelope<head.001 BAH, Document>` (with the model) is still open
 - ⬜ **Coverage (检查xsds)** — 12 business areas have no model (`semt`, `sese`,
   `seti`, `setr`, `tsin`, `tsmt`, `tsrv`, `trea`, `cbrf`, `supl`, `trck`,
   `xsys`); the current mirror lacks their XSDs (~502 of the official ~793)

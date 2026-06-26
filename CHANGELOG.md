@@ -20,6 +20,8 @@ Initial release.
   uses the ISO 20022 element names (`MsgId`, `IBAN`, …), not Rust field names.
 - **Metadata:** `metadata::extract` reads business metadata (message id, amount,
   currency, value date, transaction count) from a message, version-independently.
+- **Business-message reader:** `read_business_message` returns the header, the
+  detected `MxId` and the metadata of a full AppHdr+Document message in one call.
 - **AppHdr building:** `BusinessHeader::to_app_hdr_xml` writes a `head.001`
   `<AppHdr>` element (complements the reader).
 - **WASM/JS bindings** (`src/wasm.rs`, built with `--cfg direct_wasm` via
