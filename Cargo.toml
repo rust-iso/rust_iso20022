@@ -1,0 +1,77 @@
+[package]
+name = "rust_iso20022"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.85"
+description = "ISO 20022 message definitions and external code sets for Rust, generated from the official XSD schemas."
+repository = "https://github.com/rust-iso/rust_iso20022"
+license = "Apache-2.0"
+keywords = ["ISO20022", "SWIFT", "payments", "finance", "iso"]
+categories = ["data-structures", "encoding", "finance"]
+documentation = "https://docs.rs/rust_iso20022/"
+# The XSD sources and code-generation tooling are not needed by downstream
+# crates; keep them out of the published package.
+exclude = ["xsds/", "tools/", "thrdpty/", "a.rs"]
+
+# The codegen tooling (which has a git dependency) lives in a separate,
+# unpublished crate so the published `rust_iso20022` has no git dependencies.
+[workspace]
+members = ["tools/codegen"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[features]
+default = []
+# The generated, strongly-typed ISO 20022 message model (`generated` module).
+# Off by default because compiling ~495 yaserde-derived message modules is slow;
+# enable it when you need the typed parse/serialize API.
+model = []
+# Serde + JSON support. Adds serde to the core/catalogue types (which serialize
+# to canonical strings) and to every generated message type, enabling
+# `to_json` / `from_json`.
+serde = ["dep:serde", "dep:serde_json"]
+# The runtime ISO 20022 catalogue scraper (pulls tokio/reqwest/regex).
+catalogue = ["dep:tokio", "dep:reqwest", "dep:regex"]
+# Command-line tool (`iso20022` binary) for querying the message catalogue.
+cli = ["dep:prettytable-rs"]
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+log = "0.4"
+phf = { version = "0.11", features = ["macros"] }
+yaserde = "0.7"
+yaserde_derive = "0.7"
+# Referenced as `xml::...` by the generated `simple_type!` yaserde impls.
+xml-rs = "0.8"
+
+# Optional: serde + JSON support.
+serde = { version = "1", features = ["derive"], optional = true }
+serde_json = { version = "1", optional = true }
+
+# Optional: CLI (feature = "cli").
+prettytable-rs = { version = "0.10", optional = true }
+
+# Optional: runtime catalogue scraper (feature = "catalogue").
+tokio = { version = "1", features = ["rt", "rt-multi-thread", "macros", "fs"], optional = true }
+reqwest = { version = "0.12", features = ["json"], optional = true }
+regex = { version = "1", optional = true }
+
+[[bin]]
+name = "iso20022"
+path = "src/bin/iso20022.rs"
+required-features = ["cli"]
+
+[dev-dependencies]
+serde_json = "1"
+
+# WASM/JS bindings (compiled only for wasm32 with `--cfg direct_wasm`; see
+# scripts/build-wasm.sh). Both crates are on crates.io, so they don't affect
+# publishing.
+[target.'cfg(target_arch = "wasm32")'.dependencies]
+wasm-bindgen = "0.2"
+js-sys = "0.3"
+
+[lints.rust]
+unexpected_cfgs = { level = "warn", check-cfg = ['cfg(direct_wasm)'] }

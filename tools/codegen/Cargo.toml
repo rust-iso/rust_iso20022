@@ -1,0 +1,16 @@
+[package]
+name = "rust_iso20022_codegen"
+version = "0.1.0"
+edition = "2021"
+publish = false
+description = "XSD -> Rust code generator for rust_iso20022 (development tooling)."
+
+[[bin]]
+name = "codegen"
+path = "src/main.rs"
+
+[dependencies]
+# The XSD parser/generator. A git dependency, which is why this tooling lives in
+# a separate, unpublished crate — keeping the published `rust_iso20022` crate
+# free of git dependencies.
+xsd-parser = { git = "https://github.com/lumeohq/xsd-parser-rs" }
