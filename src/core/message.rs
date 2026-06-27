@@ -24,9 +24,7 @@ pub fn from_xml<T: yaserde::YaDeserialize>(xml: &str) -> Result<T, Error> {
 
 /// Serialize an MX message to XML.
 pub fn to_xml<T: yaserde::YaSerialize>(value: &T) -> Result<String, Error> {
-    yaserde::ser::to_string(value)
-        .map(|s| strip_unknown(&s))
-        .map_err(Error::Serialize)
+    yaserde::ser::to_string(value).map_err(Error::Serialize)
 }
 
 /// Serialize an MX message to XML without the `<?xml ...?>` declaration.
@@ -35,62 +33,7 @@ pub fn to_xml_fragment<T: yaserde::YaSerialize>(value: &T) -> Result<String, Err
         write_document_declaration: false,
         ..Default::default()
     };
-    yaserde::ser::to_string_with_config(value, &cfg)
-        .map(|s| strip_unknown(&s))
-        .map_err(Error::Serialize)
-}
-
-/// Generated choice enums carry a synthetic `__Unknown__` fallback variant for
-/// the "no valid choice selected" state. yaserde renders it as an invalid
-/// `<__Unknown__>…</__Unknown__>` element; remove those so an unset/absent choice
-/// does not leak a placeholder into the output. Re-parsing the cleaned XML
-/// yields the same value (an absent choice deserializes back to `__Unknown__`),
-/// so this does not affect round-tripping.
-fn strip_unknown(xml: &str) -> String {
-    if !xml.contains("__Unknown__") {
-        return xml.to_string();
-    }
-    let mut out = String::with_capacity(xml.len());
-    let mut rest = xml;
-    loop {
-        let Some(open) = rest.find("<__Unknown__") else {
-            out.push_str(rest);
-            break;
-        };
-        out.push_str(&rest[..open]);
-        let after = &rest[open..];
-        // Self-closing `<__Unknown__/>` or `<__Unknown__ ... />`.
-        if let Some(end) = after.find("/>") {
-            if !after[..end].contains('>') {
-                rest = &after[end + 2..];
-                continue;
-            }
-        }
-        // Paired `<__Unknown__ ...>...</__Unknown__>`.
-        if let Some(close) = after.find("</__Unknown__>") {
-            rest = &after[close + "</__Unknown__>".len()..];
-            continue;
-        }
-        // Malformed; keep the rest verbatim.
-        out.push_str(after);
-        break;
-    }
-    out
-}
-
-#[cfg(test)]
-mod tests {
-    use super::strip_unknown;
-
-    #[test]
-    fn strips_unknown_elements() {
-        assert_eq!(
-            strip_unknown("<AdrTp><__Unknown__>No valid variants</__Unknown__></AdrTp>"),
-            "<AdrTp></AdrTp>"
-        );
-        assert_eq!(strip_unknown("<a><__Unknown__/></a>"), "<a></a>");
-        assert_eq!(strip_unknown("<a><IBAN>x</IBAN></a>"), "<a><IBAN>x</IBAN></a>");
-    }
+    yaserde::ser::to_string_with_config(value, &cfg).map_err(Error::Serialize)
 }
 
 /// Serialize an MX message to JSON (requires the `serde` feature, and the

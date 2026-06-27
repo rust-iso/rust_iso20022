@@ -7,6 +7,12 @@ All notable changes to this project are documented here.
 Initial release.
 
 ### Added
+- **`MxNode`** — a generic message tree: parse any MX XML and navigate it by
+  local element name (`parse`/`at`/`find`/`find_all`/`attr`), without the typed
+  model or a `model-<area>` feature.
+- **Comprehensive WASM bindings** (`src/wasm.rs`): identification (`detect`,
+  `mx_id`), catalogue (incl. `catalogue_entry`, `has_model`, `business_areas`),
+  header read/build, metadata, and `read_business_message`.
 - **`convert` feature:** typed scalar access (`to_decimal`/`to_date`/`to_datetime`
   via `rust_decimal`/`chrono`) over the lossless `String` values, matching
   prowide's typed getters.

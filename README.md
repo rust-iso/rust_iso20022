@@ -4,10 +4,9 @@ ISO 20022 financial message definitions, identification and code sets for Rust,
 generated from the official ISO 20022 XSD schemas.
 
 This is the ISO 20022 (MX / SWIFT payments) counterpart to
-[`rust_iso3166`](https://github.com/rust-iso/rust_iso3166), and is functionally
-inspired by Prowide's Java [`prowide-iso20022`](https://github.com/prowide/prowide-iso20022)
-library: a strongly-typed model for MX messages plus XML parsing and
-serialization.
+[`rust_iso3166`](https://github.com/rust-iso/rust_iso3166): a strongly-typed
+model for MX messages plus XML/JSON parsing, serialization, identification and
+message metadata.
 
 ## What's in the crate
 
@@ -30,17 +29,21 @@ The generated types derive [`yaserde`](https://crates.io/crates/yaserde)'s
 `YaSerialize` / `YaDeserialize` for XML, and (with the `serde` feature)
 `serde::{Serialize, Deserialize}` for JSON.
 
-## prowide-iso20022 parity
+## Capabilities
 
-| prowide capability | this crate |
+| Capability | API |
 |---|---|
 | Typed model, all message versions | `generated::<area>::<msg>::Document` |
 | XML parse / serialize | `from_xml` / `to_xml` |
-| JSON parse / serialize (`fromJson`/`toJson`) | `from_json` / `to_json` (feature `serde`) |
-| `AbstractMX` identity (namespace, MxId, area, functionality, variant, version) | the `MxMessage` trait, implemented by every `Document` |
-| `AbstractMX.parse(xml)` auto-detection | `detect(xml)`, `parse_as::<T>()`, and `generated::any::parse_auto(xml)` → `AnyMessage` |
-| Business Application Header (BAH / `head.001`) | `app_hdr::parse_business_header` → `BusinessHeader` |
+| JSON parse / serialize | `from_json` / `to_json` (feature `serde`) |
+| Per-message identity (namespace, MxId, area, functionality, variant, version) | the `MxMessage` trait, implemented by every `Document` |
+| Auto-detect & parse | `detect(xml)`, `parse_as::<T>()`, `generated::any::parse_auto(xml)` → `AnyMessage` |
+| Business Application Header (BAH / `head.001`) read & build | `app_hdr::parse_business_header` / `BusinessHeader::to_app_hdr_xml` |
+| Business metadata extraction | `metadata::extract` |
+| Typed envelope (header + document) | `Envelope<D>` / `parse_envelope` |
+| Generic tree — read any message without the model | `MxNode::parse` |
 | Message catalogue | `catalogue` |
+| WebAssembly / JS bindings | `wasm` (build with `scripts/build-wasm.sh`) |
 
 ```rust
 # #[cfg(feature = "model")] {
@@ -138,15 +141,19 @@ configurable and can target a schema mirror.
   `DateTime`, …) lack `serde` support, so generated leaf values are exposed as
   `String`. This is lossless (exact text, no float rounding — desirable for
   monetary amounts) and keeps XML and JSON in sync.
-- **Choices** are modelled as a struct of `Option<…>` fields (JAXB/prowide
-  style), so amounts inside a `<xsd:choice>` round-trip with their `Ccy`
+- **Choices** are modelled as a struct of `Option<…>` fields (the same shape
+  JAXB uses), so amounts inside a `<xsd:choice>` round-trip with their `Ccy`
   attribute and unset choices are simply omitted.
 - **JSON shape:** JSON uses the ISO 20022 element names (`MsgId`, `IBAN`, …),
   mirroring the yaserde renames; `to_json`/`from_json` round-trip.
 - XML round-tripping preserves the data model but not necessarily byte-for-byte
   formatting (namespaces, whitespace).
+- **Unrecognised code values:** a value that is not a known member of a coded
+  enumeration parses to an `__Unknown__(String)` fallback that re-serialises with
+  an `<__Unknown__>` wrapper. Valid codes (the normal case) are unaffected; this
+  only surfaces for invalid input.
 - The generator handles multi-`<xsd:choice>` complexTypes by disambiguation, so
-  all 502 messages now have a model (no skips).
+  all 722 messages have a model (no skips).
 
 ## License
 

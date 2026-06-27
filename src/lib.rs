@@ -34,7 +34,10 @@
 #[macro_use]
 mod simple_type;
 mod core;
+mod node;
 pub mod validate;
+
+pub use node::MxNode;
 
 /// Typed conversions for scalar values (`convert` feature).
 #[cfg(feature = "convert")]

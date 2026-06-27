@@ -85,8 +85,7 @@ pub trait MxMessage: yaserde::YaSerialize + yaserde::YaDeserialize + Sized {
 /// ```
 pub fn detect(xml: &str) -> Option<MxId> {
     let mut first: Option<MxId> = None;
-    for token in xml.split(|c: char| matches!(c, '"' | '\'' | '<' | '>' | ' ' | '\t' | '\n' | '\r'))
-    {
+    for token in xml.split(['"', '\'', '<', '>', ' ', '\t', '\n', '\r']) {
         if !token.starts_with("urn:") {
             continue;
         }
