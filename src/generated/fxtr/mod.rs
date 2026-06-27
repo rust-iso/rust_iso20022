@@ -13,3 +13,119 @@ pub mod fxtr_034_001_01;
 pub mod fxtr_035_001_01;
 pub mod fxtr_036_001_01;
 pub mod fxtr_037_001_01;
+
+#[cfg(test)]
+mod smoke {
+    #[test]
+    fn fxtr_008_001_06() {
+        ::std::thread::Builder::new().stack_size(64 << 20).spawn(|| {
+            let d = super::fxtr_008_001_06::Document::default();
+            let xml = crate::to_xml(&d).expect("serialize");
+            assert!(xml.contains("Document"));
+        }).unwrap().join().unwrap();
+    }
+    #[test]
+    fn fxtr_013_001_03() {
+        ::std::thread::Builder::new().stack_size(64 << 20).spawn(|| {
+            let d = super::fxtr_013_001_03::Document::default();
+            let xml = crate::to_xml(&d).expect("serialize");
+            assert!(xml.contains("Document"));
+        }).unwrap().join().unwrap();
+    }
+    #[test]
+    fn fxtr_014_001_04() {
+        ::std::thread::Builder::new().stack_size(64 << 20).spawn(|| {
+            let d = super::fxtr_014_001_04::Document::default();
+            let xml = crate::to_xml(&d).expect("serialize");
+            assert!(xml.contains("Document"));
+        }).unwrap().join().unwrap();
+    }
+    #[test]
+    fn fxtr_015_001_04() {
+        ::std::thread::Builder::new().stack_size(64 << 20).spawn(|| {
+            let d = super::fxtr_015_001_04::Document::default();
+            let xml = crate::to_xml(&d).expect("serialize");
+            assert!(xml.contains("Document"));
+        }).unwrap().join().unwrap();
+    }
+    #[test]
+    fn fxtr_016_001_04() {
+        ::std::thread::Builder::new().stack_size(64 << 20).spawn(|| {
+            let d = super::fxtr_016_001_04::Document::default();
+            let xml = crate::to_xml(&d).expect("serialize");
+            assert!(xml.contains("Document"));
+        }).unwrap().join().unwrap();
+    }
+    #[test]
+    fn fxtr_017_001_04() {
+        ::std::thread::Builder::new().stack_size(64 << 20).spawn(|| {
+            let d = super::fxtr_017_001_04::Document::default();
+            let xml = crate::to_xml(&d).expect("serialize");
+            assert!(xml.contains("Document"));
+        }).unwrap().join().unwrap();
+    }
+    #[test]
+    fn fxtr_030_001_04() {
+        ::std::thread::Builder::new().stack_size(64 << 20).spawn(|| {
+            let d = super::fxtr_030_001_04::Document::default();
+            let xml = crate::to_xml(&d).expect("serialize");
+            assert!(xml.contains("Document"));
+        }).unwrap().join().unwrap();
+    }
+    #[test]
+    fn fxtr_031_001_01() {
+        ::std::thread::Builder::new().stack_size(64 << 20).spawn(|| {
+            let d = super::fxtr_031_001_01::Document::default();
+            let xml = crate::to_xml(&d).expect("serialize");
+            assert!(xml.contains("Document"));
+        }).unwrap().join().unwrap();
+    }
+    #[test]
+    fn fxtr_032_001_01() {
+        ::std::thread::Builder::new().stack_size(64 << 20).spawn(|| {
+            let d = super::fxtr_032_001_01::Document::default();
+            let xml = crate::to_xml(&d).expect("serialize");
+            assert!(xml.contains("Document"));
+        }).unwrap().join().unwrap();
+    }
+    #[test]
+    fn fxtr_033_001_01() {
+        ::std::thread::Builder::new().stack_size(64 << 20).spawn(|| {
+            let d = super::fxtr_033_001_01::Document::default();
+            let xml = crate::to_xml(&d).expect("serialize");
+            assert!(xml.contains("Document"));
+        }).unwrap().join().unwrap();
+    }
+    #[test]
+    fn fxtr_034_001_01() {
+        ::std::thread::Builder::new().stack_size(64 << 20).spawn(|| {
+            let d = super::fxtr_034_001_01::Document::default();
+            let xml = crate::to_xml(&d).expect("serialize");
+            assert!(xml.contains("Document"));
+        }).unwrap().join().unwrap();
+    }
+    #[test]
+    fn fxtr_035_001_01() {
+        ::std::thread::Builder::new().stack_size(64 << 20).spawn(|| {
+            let d = super::fxtr_035_001_01::Document::default();
+            let xml = crate::to_xml(&d).expect("serialize");
+            assert!(xml.contains("Document"));
+        }).unwrap().join().unwrap();
+    }
+    #[test]
+    fn fxtr_036_001_01() {
+        ::std::thread::Builder::new().stack_size(64 << 20).spawn(|| {
+            let d = super::fxtr_036_001_01::Document::default();
+            let xml = crate::to_xml(&d).expect("serialize");
+            assert!(xml.contains("Document"));
+        }).unwrap().join().unwrap();
+    }
+    #[test]
+    fn fxtr_037_001_01() {
+        ::std::thread::Builder::new().stack_size(64 << 20).spawn(|| {
+            let d = super::fxtr_037_001_01::Document::default();
+            let xml = crate::to_xml(&d).expect("serialize");
+            assert!(xml.contains("Document"));
+        }).unwrap().join().unwrap();
+    }
+}

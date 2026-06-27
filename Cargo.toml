@@ -77,6 +77,8 @@ serde = ["dep:serde", "dep:serde_json"]
 catalogue = ["dep:tokio", "dep:reqwest", "dep:regex"]
 # Command-line tool (`iso20022` binary) for querying the message catalogue.
 cli = ["dep:prettytable-rs"]
+# Typed conversions for scalar values (amounts -> Decimal, dates -> chrono).
+convert = ["dep:rust_decimal", "dep:chrono"]
 
 [lib]
 crate-type = ["cdylib", "rlib"]
@@ -95,6 +97,10 @@ serde_json = { version = "1", optional = true }
 
 # Optional: CLI (feature = "cli").
 prettytable-rs = { version = "0.10", optional = true }
+
+# Optional: typed scalar conversions (feature = "convert").
+rust_decimal = { version = "1", optional = true }
+chrono = { version = "0.4", default-features = false, features = ["std"], optional = true }
 
 # Optional: runtime catalogue scraper (feature = "catalogue").
 tokio = { version = "1", features = ["rt", "rt-multi-thread", "macros", "fs"], optional = true }

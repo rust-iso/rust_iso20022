@@ -3,3 +3,39 @@ pub mod cafr_001_001_01;
 pub mod cafr_002_001_01;
 pub mod cafr_003_001_01;
 pub mod cafr_004_001_01;
+
+#[cfg(test)]
+mod smoke {
+    #[test]
+    fn cafr_001_001_01() {
+        ::std::thread::Builder::new().stack_size(64 << 20).spawn(|| {
+            let d = super::cafr_001_001_01::Document::default();
+            let xml = crate::to_xml(&d).expect("serialize");
+            assert!(xml.contains("Document"));
+        }).unwrap().join().unwrap();
+    }
+    #[test]
+    fn cafr_002_001_01() {
+        ::std::thread::Builder::new().stack_size(64 << 20).spawn(|| {
+            let d = super::cafr_002_001_01::Document::default();
+            let xml = crate::to_xml(&d).expect("serialize");
+            assert!(xml.contains("Document"));
+        }).unwrap().join().unwrap();
+    }
+    #[test]
+    fn cafr_003_001_01() {
+        ::std::thread::Builder::new().stack_size(64 << 20).spawn(|| {
+            let d = super::cafr_003_001_01::Document::default();
+            let xml = crate::to_xml(&d).expect("serialize");
+            assert!(xml.contains("Document"));
+        }).unwrap().join().unwrap();
+    }
+    #[test]
+    fn cafr_004_001_01() {
+        ::std::thread::Builder::new().stack_size(64 << 20).spawn(|| {
+            let d = super::cafr_004_001_01::Document::default();
+            let xml = crate::to_xml(&d).expect("serialize");
+            assert!(xml.contains("Document"));
+        }).unwrap().join().unwrap();
+    }
+}

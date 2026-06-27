@@ -14,3 +14,127 @@ pub mod pain_013_001_09;
 pub mod pain_014_001_09;
 pub mod pain_017_001_03;
 pub mod pain_018_001_03;
+
+#[cfg(test)]
+mod smoke {
+    #[test]
+    fn pain_001_001_09() {
+        ::std::thread::Builder::new().stack_size(64 << 20).spawn(|| {
+            let d = super::pain_001_001_09::Document::default();
+            let xml = crate::to_xml(&d).expect("serialize");
+            assert!(xml.contains("Document"));
+        }).unwrap().join().unwrap();
+    }
+    #[test]
+    fn pain_001_001_11() {
+        ::std::thread::Builder::new().stack_size(64 << 20).spawn(|| {
+            let d = super::pain_001_001_11::Document::default();
+            let xml = crate::to_xml(&d).expect("serialize");
+            assert!(xml.contains("Document"));
+        }).unwrap().join().unwrap();
+    }
+    #[test]
+    fn pain_002_001_10() {
+        ::std::thread::Builder::new().stack_size(64 << 20).spawn(|| {
+            let d = super::pain_002_001_10::Document::default();
+            let xml = crate::to_xml(&d).expect("serialize");
+            assert!(xml.contains("Document"));
+        }).unwrap().join().unwrap();
+    }
+    #[test]
+    fn pain_002_001_12() {
+        ::std::thread::Builder::new().stack_size(64 << 20).spawn(|| {
+            let d = super::pain_002_001_12::Document::default();
+            let xml = crate::to_xml(&d).expect("serialize");
+            assert!(xml.contains("Document"));
+        }).unwrap().join().unwrap();
+    }
+    #[test]
+    fn pain_007_001_11() {
+        ::std::thread::Builder::new().stack_size(64 << 20).spawn(|| {
+            let d = super::pain_007_001_11::Document::default();
+            let xml = crate::to_xml(&d).expect("serialize");
+            assert!(xml.contains("Document"));
+        }).unwrap().join().unwrap();
+    }
+    #[test]
+    fn pain_008_001_10() {
+        ::std::thread::Builder::new().stack_size(64 << 20).spawn(|| {
+            let d = super::pain_008_001_10::Document::default();
+            let xml = crate::to_xml(&d).expect("serialize");
+            assert!(xml.contains("Document"));
+        }).unwrap().join().unwrap();
+    }
+    #[test]
+    fn pain_009_001_07() {
+        ::std::thread::Builder::new().stack_size(64 << 20).spawn(|| {
+            let d = super::pain_009_001_07::Document::default();
+            let xml = crate::to_xml(&d).expect("serialize");
+            assert!(xml.contains("Document"));
+        }).unwrap().join().unwrap();
+    }
+    #[test]
+    fn pain_010_001_07() {
+        ::std::thread::Builder::new().stack_size(64 << 20).spawn(|| {
+            let d = super::pain_010_001_07::Document::default();
+            let xml = crate::to_xml(&d).expect("serialize");
+            assert!(xml.contains("Document"));
+        }).unwrap().join().unwrap();
+    }
+    #[test]
+    fn pain_011_001_07() {
+        ::std::thread::Builder::new().stack_size(64 << 20).spawn(|| {
+            let d = super::pain_011_001_07::Document::default();
+            let xml = crate::to_xml(&d).expect("serialize");
+            assert!(xml.contains("Document"));
+        }).unwrap().join().unwrap();
+    }
+    #[test]
+    fn pain_012_001_07() {
+        ::std::thread::Builder::new().stack_size(64 << 20).spawn(|| {
+            let d = super::pain_012_001_07::Document::default();
+            let xml = crate::to_xml(&d).expect("serialize");
+            assert!(xml.contains("Document"));
+        }).unwrap().join().unwrap();
+    }
+    #[test]
+    fn pain_013_001_01() {
+        ::std::thread::Builder::new().stack_size(64 << 20).spawn(|| {
+            let d = super::pain_013_001_01::Document::default();
+            let xml = crate::to_xml(&d).expect("serialize");
+            assert!(xml.contains("Document"));
+        }).unwrap().join().unwrap();
+    }
+    #[test]
+    fn pain_013_001_09() {
+        ::std::thread::Builder::new().stack_size(64 << 20).spawn(|| {
+            let d = super::pain_013_001_09::Document::default();
+            let xml = crate::to_xml(&d).expect("serialize");
+            assert!(xml.contains("Document"));
+        }).unwrap().join().unwrap();
+    }
+    #[test]
+    fn pain_014_001_09() {
+        ::std::thread::Builder::new().stack_size(64 << 20).spawn(|| {
+            let d = super::pain_014_001_09::Document::default();
+            let xml = crate::to_xml(&d).expect("serialize");
+            assert!(xml.contains("Document"));
+        }).unwrap().join().unwrap();
+    }
+    #[test]
+    fn pain_017_001_03() {
+        ::std::thread::Builder::new().stack_size(64 << 20).spawn(|| {
+            let d = super::pain_017_001_03::Document::default();
+            let xml = crate::to_xml(&d).expect("serialize");
+            assert!(xml.contains("Document"));
+        }).unwrap().join().unwrap();
+    }
+    #[test]
+    fn pain_018_001_03() {
+        ::std::thread::Builder::new().stack_size(64 << 20).spawn(|| {
+            let d = super::pain_018_001_03::Document::default();
+            let xml = crate::to_xml(&d).expect("serialize");
+            assert!(xml.contains("Document"));
+        }).unwrap().join().unwrap();
+    }
+}

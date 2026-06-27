@@ -24,6 +24,20 @@ pub(crate) fn element_attr(xml: &str, local: &str, attr: &str) -> Option<String>
     Some(open[s..e].to_string())
 }
 
+/// The full first element (opening tag through closing tag) whose local name
+/// matches `local`, e.g. `<Document …>…</Document>`. Used to lift the `Document`
+/// out of a business-message envelope so it can be parsed on its own.
+pub(crate) fn outer_element(xml: &str, local: &str) -> Option<String> {
+    let (start, _) = find_open_tag(xml, local)?;
+    let inner = element_inner(xml, local)?;
+    // Reconstruct: opening tag + inner + closing tag. Find the opening tag end.
+    let gt = xml[start..].find('>')? + start;
+    if xml.as_bytes()[gt - 1] == b'/' {
+        return Some(xml[start..=gt].to_string());
+    }
+    Some(format!("{}{inner}</{local}>", &xml[start..=gt]))
+}
+
 /// Inner XML (raw) of the first element whose local name matches `local`.
 pub(crate) fn element_inner(xml: &str, local: &str) -> Option<String> {
     let bytes = xml.as_bytes();

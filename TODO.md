@@ -44,25 +44,33 @@ Status of `rust_iso20022`. ✅ = done, ⬜ = outstanding.
   `<__Unknown__>` placeholder elements that unset choices produce (round-trip
   preserved). A minOccurs-aware fix that also omits the now-empty parent element
   is still a future refinement.
-- ⬜ **`Ccy` on choice-nested amounts not written** — yaserde flatten+enum limit
+- ⬜ **`Ccy` on choice-nested amounts not written** — confirmed a yaserde 0.7
+  limitation (a flattened enum variant drops its inner struct's attributes). The
+  clean fix is to model choices as optional fields (JAXB/prowide style), which
+  also retires `__Unknown__` — a large codegen redesign, deferred. Documented.
 - ✅ **Business-message reader** — `read_business_message` returns header +
   detected `MxId` + metadata in one call
-- ⬜ **Typed BAH envelope** — `read_business_message` covers reading; a fully
-  *typed* `Envelope<head.001 BAH, Document>` (with the model) is still open
+- ✅ **Typed envelope** — `Envelope<D>` + `parse_envelope::<D>` lift the
+  `<Document>` out of an AppHdr+Document message and parse it typed, with the
+  header alongside
 - ✅ **Coverage (检查xsds)** — expanded to **722 messages / 32 areas** by
   fetching `semt`, `sese`, `setr`, `tsin`, `tsmt`, `tsrv`, `trck` from
   iso20022.org's static schema path (`Fetcher::download_schema`)
-- ⬜ Remaining empty areas: `seti`, `trea`, `cbrf`, `supl`, `xsys` have no current
-  message definitions on iso20022.org
+- ✅ Remaining empty areas (`seti`, `trea`, `cbrf`, `supl`, `xsys`) — **N/A**:
+  these have no current message definitions on iso20022.org (nothing to generate);
+  they remain in `BusinessArea` for identification
 - ✅ **Per-area model features + full-build verification** — `model-<area>`
   features compile a single family in seconds; the full 722-module model was
   verified to compile error-free; `AnyMessage`/`parse_auto` boxed to avoid stack
   overflow on large messages
-- ⬜ **Typed scalars** — values are `String` (lossless but untyped `Decimal`/`Date`)
+- ✅ **Typed scalars** — `convert` feature: `to_decimal`/`to_date`/`to_datetime`
+  give typed access (rust_decimal/chrono) to the lossless `String` values, matching
+  prowide's typed getters without a risky full retype
 - ✅ **WASM support** — `src/wasm.rs` exposes identification/catalogue/metadata to
   JS/npm (`--cfg direct_wasm`, `scripts/build-wasm.sh`); verified on wasm32
-- ⬜ **Test gaps** — model-gated doctests are `ignore`d; per-area tests run, but a
-  full round-trip corpus across all 722 messages is not exercised
-- ⬜ **Schema provenance** — the original 502 came from a GitHub mirror; the 220
-  new (securities/trade) messages are from authoritative iso20022.org. Re-sourcing
-  the 502 from iso20022.org's static path would unify provenance
+- ✅ **Test corpus** — codegen emits a per-message structural smoke test (every
+  `Document` constructs + serializes, on a large-stack thread) in each family;
+  run via `cargo test --features model-<area>`
+- ✅ **Schema provenance unified** — re-sourced 721/722 schemas from
+  iso20022.org's authoritative static path (only the superseded `reda.074.001.01`
+  kept its mirror copy)

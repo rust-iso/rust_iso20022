@@ -94,6 +94,7 @@ let back: String = rust_iso20022::to_xml(&doc)?;
 | `model-<area>` | no | the typed model for one business area, e.g. `model-pacs`, `model-camt`. Enable only what you need — compiling a single family takes seconds vs many minutes for all |
 | `model` | no | all `model-<area>` at once (~722 modules; slow to compile) |
 | `serde` | no | `serde` support for `MxId`, `BusinessArea`, `CatalogueEntry` (serialize to canonical strings) |
+| `convert` | no | typed scalar conversions (`to_decimal`/`to_date`/`to_datetime`) via `rust_decimal`/`chrono` |
 | `cli` | no | the `iso20022` command-line catalogue lookup tool |
 | `catalogue` | no | runtime XSD fetcher (`fetch` module): pulls in `tokio`, `reqwest`, `regex` |
 

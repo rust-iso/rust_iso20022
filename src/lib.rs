@@ -36,12 +36,16 @@ mod simple_type;
 mod core;
 pub mod validate;
 
+/// Typed conversions for scalar values (`convert` feature).
+#[cfg(feature = "convert")]
+pub mod convert;
+
 #[cfg(all(direct_wasm, target_arch = "wasm32"))]
 mod wasm;
 
 pub use crate::core::{
-    detect, from_xml, read_business_message, to_xml, to_xml_fragment, BusinessArea,
-    BusinessMessage, Error, MxId, MxMessage, Result,
+    detect, from_xml, parse_envelope, read_business_message, to_xml, to_xml_fragment, BusinessArea,
+    BusinessMessage, Envelope, Error, MxId, MxMessage, Result,
 };
 #[cfg(feature = "serde")]
 pub use crate::core::{from_json, to_json};

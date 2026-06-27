@@ -7,6 +7,15 @@ All notable changes to this project are documented here.
 Initial release.
 
 ### Added
+- **`convert` feature:** typed scalar access (`to_decimal`/`to_date`/`to_datetime`
+  via `rust_decimal`/`chrono`) over the lossless `String` values, matching
+  prowide's typed getters.
+- **Typed envelope:** `Envelope<D>` + `parse_envelope::<D>` lift the `<Document>`
+  out of an AppHdr+Document message and parse it typed, with the header alongside.
+- **Generated smoke-test corpus:** every message type's `Default` constructs and
+  serializes (one test per message, gated per area, run on a large-stack thread).
+- **Schema provenance unified:** 721/722 schemas re-sourced from iso20022.org's
+  authoritative static path (only superseded `reda.074.001.01` kept its mirror copy).
 - **prowide `AbstractMX` parity:** the `MxMessage` trait gives every generated
   `Document` its identity (`MESSAGE_NAME`, `NAMESPACE`, `BUSINESS_AREA`,
   `FUNCTIONALITY`, `VARIANT`, `VERSION`, `mx_id()`), plus `detect(xml)`,

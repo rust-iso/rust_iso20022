@@ -12,7 +12,7 @@ use yaserde_derive::{YaDeserialize, YaSerialize};
 // pub type Document = Document;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
-#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:swift:xsd:camt.045.001.03")]
+#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:camt.045.001.03")]
 pub struct AccountIdentification1 {
     #[yaserde(rename = "Prtry")]
     #[cfg_attr(feature = "serde", serde(rename = "Prtry"))]
@@ -38,7 +38,7 @@ impl Validate for ActiveCurrencyAnd13DecimalAmountSimpleType {
 
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
-#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:swift:xsd:camt.045.001.03")]
+#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:camt.045.001.03")]
 pub struct ActiveCurrencyAnd13DecimalAmount {
     #[yaserde(text)]
     pub value: String,
@@ -72,7 +72,7 @@ impl Validate for ActiveOrHistoricCurrencyAndAmountSimpleType {
 
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
-#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:swift:xsd:camt.045.001.03")]
+#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:camt.045.001.03")]
 pub struct ActiveOrHistoricCurrencyAndAmount {
     #[yaserde(text)]
     pub value: String,
@@ -92,7 +92,7 @@ crate::simple_type!(ActiveOrHistoricCurrencyCode);
 impl Validate for ActiveOrHistoricCurrencyCode {}
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
-#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:swift:xsd:camt.045.001.03")]
+#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:camt.045.001.03")]
 pub struct AdditionalParameters1 {
     #[yaserde(rename = "Ctry")]
     #[cfg_attr(feature = "serde", serde(rename = "Ctry"))]
@@ -112,7 +112,7 @@ impl Validate for AdditionalParameters1 {}
 
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
-#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:swift:xsd:camt.045.001.03")]
+#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:camt.045.001.03")]
 pub struct AdditionalReference3 {
     #[yaserde(rename = "Ref")]
     #[cfg_attr(feature = "serde", serde(rename = "Ref"))]
@@ -131,7 +131,7 @@ impl Validate for AdditionalReference3 {}
 
 
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:swift:xsd:camt.045.001.03")]
+#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:camt.045.001.03")]
 
 pub enum AddressType2Code {
     #[yaserde(rename = "ADDR")]
@@ -167,7 +167,7 @@ impl Validate for AddressType2Code {}
 
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
-#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:swift:xsd:camt.045.001.03")]
+#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:camt.045.001.03")]
 pub struct AlternateSecurityIdentification1 {
     #[yaserde(rename = "Id")]
     #[cfg_attr(feature = "serde", serde(rename = "Id"))]
@@ -184,7 +184,7 @@ pub mod alternate_security_identification_1 {
     use super::*;
     
     #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-    #[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:swift:xsd:camt.045.001.03")]
+    #[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:camt.045.001.03")]
 
     pub enum AlternateSecurityIdentification1Choice {
         DmstIdSrc(CountryCode),
@@ -205,7 +205,7 @@ pub mod alternate_security_identification_1 {
 
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
-#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:swift:xsd:camt.045.001.03")]
+#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:camt.045.001.03")]
 pub struct AmountOrRate3Choice {
     #[yaserde(rename = "AmountOrRate3ChoiceChoice")]
     #[cfg_attr(feature = "serde", serde(rename = "AmountOrRate3ChoiceChoice"))]
@@ -218,7 +218,7 @@ pub mod amount_or_rate_3_choice {
     use super::*;
     
     #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-    #[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:swift:xsd:camt.045.001.03")]
+    #[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:camt.045.001.03")]
 
     pub enum AmountOrRate3ChoiceChoice {
         Amt(ActiveCurrencyAnd13DecimalAmount),
@@ -275,7 +275,7 @@ impl Validate for BloombergIdentifier {
 
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
-#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:swift:xsd:camt.045.001.03")]
+#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:camt.045.001.03")]
 pub struct BreakdownByCountry2 {
     #[yaserde(rename = "Ctry")]
     #[cfg_attr(feature = "serde", serde(rename = "Ctry"))]
@@ -299,7 +299,7 @@ impl Validate for BreakdownByCountry2 {}
 
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
-#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:swift:xsd:camt.045.001.03")]
+#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:camt.045.001.03")]
 pub struct BreakdownByCurrency2 {
     #[yaserde(rename = "Ccy")]
     #[cfg_attr(feature = "serde", serde(rename = "Ccy"))]
@@ -323,7 +323,7 @@ impl Validate for BreakdownByCurrency2 {}
 
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
-#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:swift:xsd:camt.045.001.03")]
+#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:camt.045.001.03")]
 pub struct BreakdownByParty3 {
     #[yaserde(rename = "Pty")]
     #[cfg_attr(feature = "serde", serde(rename = "Pty"))]
@@ -351,7 +351,7 @@ impl Validate for BreakdownByParty3 {}
 
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
-#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:swift:xsd:camt.045.001.03")]
+#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:camt.045.001.03")]
 pub struct BreakdownByUserDefinedParameter3 {
     #[yaserde(rename = "Pty")]
     #[cfg_attr(feature = "serde", serde(rename = "Pty"))]
@@ -393,7 +393,7 @@ crate::simple_type!(Cusipidentifier);
 impl Validate for Cusipidentifier {}
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
-#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:swift:xsd:camt.045.001.03")]
+#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:camt.045.001.03")]
 pub struct CashInForecast5 {
     #[yaserde(rename = "CshSttlmDt")]
     #[cfg_attr(feature = "serde", serde(rename = "CshSttlmDt"))]
@@ -425,7 +425,7 @@ impl Validate for CashInForecast5 {}
 
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
-#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:swift:xsd:camt.045.001.03")]
+#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:camt.045.001.03")]
 pub struct CashOutForecast5 {
     #[yaserde(rename = "CshSttlmDt")]
     #[cfg_attr(feature = "serde", serde(rename = "CshSttlmDt"))]
@@ -457,7 +457,7 @@ impl Validate for CashOutForecast5 {}
 
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
-#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:swift:xsd:camt.045.001.03")]
+#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:camt.045.001.03")]
 pub struct Charge26 {
     #[yaserde(rename = "Tp")]
     #[cfg_attr(feature = "serde", serde(rename = "Tp"))]
@@ -472,7 +472,7 @@ impl Validate for Charge26 {}
 
 
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:swift:xsd:camt.045.001.03")]
+#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:camt.045.001.03")]
 
 pub enum ChargeType12Code {
     #[yaserde(rename = "BEND")]
@@ -514,7 +514,7 @@ impl Validate for ChargeType12Code {}
 
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
-#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:swift:xsd:camt.045.001.03")]
+#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:camt.045.001.03")]
 pub struct ChargeType4Choice {
     #[yaserde(rename = "ChargeType4ChoiceChoice")]
     #[cfg_attr(feature = "serde", serde(rename = "ChargeType4ChoiceChoice"))]
@@ -527,7 +527,7 @@ pub mod charge_type_4_choice {
     use super::*;
     
     #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-    #[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:swift:xsd:camt.045.001.03")]
+    #[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:camt.045.001.03")]
 
     pub enum ChargeType4ChoiceChoice {
         Cd(ChargeType12Code),
@@ -548,7 +548,7 @@ pub mod charge_type_4_choice {
 
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
-#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:swift:xsd:camt.045.001.03")]
+#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:camt.045.001.03")]
 pub struct Commission21 {
     #[yaserde(rename = "ComssnTp")]
     #[cfg_attr(feature = "serde", serde(rename = "ComssnTp"))]
@@ -564,7 +564,7 @@ impl Validate for Commission21 {}
 
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
-#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:swift:xsd:camt.045.001.03")]
+#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:camt.045.001.03")]
 pub struct CommissionType5Choice {
     #[yaserde(rename = "CommissionType5ChoiceChoice")]
     #[cfg_attr(feature = "serde", serde(rename = "CommissionType5ChoiceChoice"))]
@@ -577,7 +577,7 @@ pub mod commission_type_5_choice {
     use super::*;
     
     #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-    #[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:swift:xsd:camt.045.001.03")]
+    #[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:camt.045.001.03")]
 
     pub enum CommissionType5ChoiceChoice {
         Cd(CommissionType6Code),
@@ -597,7 +597,7 @@ pub mod commission_type_5_choice {
 }
 
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:swift:xsd:camt.045.001.03")]
+#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:camt.045.001.03")]
 
 pub enum CommissionType6Code {
     #[yaserde(rename = "FEND")]
@@ -648,7 +648,7 @@ crate::simple_type!(CountryCode);
 impl Validate for CountryCode {}
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
-#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:swift:xsd:camt.045.001.03")]
+#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:camt.045.001.03")]
 pub struct CurrencyDesignation1 {
     #[yaserde(rename = "CcyDsgnt")]
     #[cfg_attr(feature = "serde", serde(rename = "CcyDsgnt"))]
@@ -667,7 +667,7 @@ impl Validate for CurrencyDesignation1 {}
 
 
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:swift:xsd:camt.045.001.03")]
+#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:camt.045.001.03")]
 
 pub enum CurrencyDesignation1Code {
     #[yaserde(rename = "ONSH")]
@@ -691,7 +691,7 @@ impl Validate for CurrencyDesignation1Code {}
 
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
-#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:swift:xsd:camt.045.001.03")]
+#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:camt.045.001.03")]
 pub struct DataFormat2Choice {
     #[yaserde(rename = "DataFormat2ChoiceChoice")]
     #[cfg_attr(feature = "serde", serde(rename = "DataFormat2ChoiceChoice"))]
@@ -704,7 +704,7 @@ pub mod data_format_2_choice {
     use super::*;
     
     #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-    #[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:swift:xsd:camt.045.001.03")]
+    #[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:camt.045.001.03")]
 
     pub enum DataFormat2ChoiceChoice {
         Strd(GenericIdentification1),
@@ -725,7 +725,7 @@ pub mod data_format_2_choice {
 
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
-#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:swift:xsd:camt.045.001.03")]
+#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:camt.045.001.03")]
 pub struct DateAndDateTimeChoice {
     #[yaserde(rename = "DateAndDateTimeChoiceChoice")]
     #[cfg_attr(feature = "serde", serde(rename = "DateAndDateTimeChoiceChoice"))]
@@ -738,7 +738,7 @@ pub mod date_and_date_time_choice {
     use super::*;
     
     #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-    #[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:swift:xsd:camt.045.001.03")]
+    #[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:camt.045.001.03")]
 
     pub enum DateAndDateTimeChoiceChoice {
         Dt(Isodate),
@@ -764,7 +764,7 @@ crate::simple_type!(DecimalNumber);
 
 impl Validate for DecimalNumber {}
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:swift:xsd:camt.045.001.03")]
+#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:camt.045.001.03")]
 
 pub enum DistributionPolicy1Code {
     #[yaserde(rename = "DIST")]
@@ -788,7 +788,7 @@ impl Validate for DistributionPolicy1Code {}
 
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
-#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:swift:xsd:camt.045.001.03")]
+#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:camt.045.001.03")]
 pub struct Document {
     #[yaserde(rename = "FndDtldConfdCshFcstRptCxl")]
     #[cfg_attr(feature = "serde", serde(rename = "FndDtldConfdCshFcstRptCxl"))]
@@ -830,7 +830,7 @@ crate::simple_type!(Exact4AlphaNumericText);
 impl Validate for Exact4AlphaNumericText {}
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
-#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:swift:xsd:camt.045.001.03")]
+#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:camt.045.001.03")]
 pub struct Extension1 {
     #[yaserde(rename = "PlcAndNm")]
     #[cfg_attr(feature = "serde", serde(rename = "PlcAndNm"))]
@@ -846,7 +846,7 @@ impl Validate for Extension1 {}
 
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
-#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:swift:xsd:camt.045.001.03")]
+#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:camt.045.001.03")]
 pub struct FinancialInstrument9 {
     #[yaserde(rename = "Id")]
     #[cfg_attr(feature = "serde", serde(rename = "Id"))]
@@ -886,7 +886,7 @@ impl Validate for FinancialInstrument9 {}
 
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
-#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:swift:xsd:camt.045.001.03")]
+#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:camt.045.001.03")]
 pub struct FinancialInstrumentQuantity1 {
     #[yaserde(rename = "Unit")]
     #[cfg_attr(feature = "serde", serde(rename = "Unit"))]
@@ -897,7 +897,7 @@ impl Validate for FinancialInstrumentQuantity1 {}
 
 
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:swift:xsd:camt.045.001.03")]
+#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:camt.045.001.03")]
 
 pub enum FlowDirectionType1Code {
     #[yaserde(rename = "INCG")]
@@ -921,7 +921,7 @@ impl Validate for FlowDirectionType1Code {}
 
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
-#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:swift:xsd:camt.045.001.03")]
+#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:camt.045.001.03")]
 pub struct ForeignExchangeTerms19 {
     #[yaserde(rename = "UnitCcy")]
     #[cfg_attr(feature = "serde", serde(rename = "UnitCcy"))]
@@ -940,7 +940,7 @@ impl Validate for ForeignExchangeTerms19 {}
 
 
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:swift:xsd:camt.045.001.03")]
+#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:camt.045.001.03")]
 
 pub enum FormOfSecurity1Code {
     #[yaserde(rename = "BEAR")]
@@ -964,7 +964,7 @@ impl Validate for FormOfSecurity1Code {}
 
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
-#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:swift:xsd:camt.045.001.03")]
+#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:camt.045.001.03")]
 pub struct Fund4 {
     #[yaserde(rename = "Nm")]
     #[cfg_attr(feature = "serde", serde(rename = "Nm"))]
@@ -1008,7 +1008,7 @@ impl Validate for Fund4 {}
 
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
-#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:swift:xsd:camt.045.001.03")]
+#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:camt.045.001.03")]
 pub struct FundBalance1 {
     #[yaserde(rename = "TtlUnitsFrUnitOrdrs")]
     #[cfg_attr(feature = "serde", serde(rename = "TtlUnitsFrUnitOrdrs"))]
@@ -1032,7 +1032,7 @@ impl Validate for FundBalance1 {}
 
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
-#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:swift:xsd:camt.045.001.03")]
+#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:camt.045.001.03")]
 pub struct FundCashForecast6 {
     #[yaserde(rename = "Id")]
     #[cfg_attr(feature = "serde", serde(rename = "Id"))]
@@ -1120,7 +1120,7 @@ impl Validate for FundCashForecast6 {}
 
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
-#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:swift:xsd:camt.045.001.03")]
+#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:camt.045.001.03")]
 pub struct FundCashInBreakdown3 {
     #[yaserde(rename = "Amt")]
     #[cfg_attr(feature = "serde", serde(rename = "Amt"))]
@@ -1160,7 +1160,7 @@ impl Validate for FundCashInBreakdown3 {}
 
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
-#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:swift:xsd:camt.045.001.03")]
+#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:camt.045.001.03")]
 pub struct FundCashOutBreakdown3 {
     #[yaserde(rename = "Amt")]
     #[cfg_attr(feature = "serde", serde(rename = "Amt"))]
@@ -1200,7 +1200,7 @@ impl Validate for FundCashOutBreakdown3 {}
 
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
-#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:swift:xsd:camt.045.001.03")]
+#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:camt.045.001.03")]
 pub struct FundDetailedConfirmedCashForecastReport3 {
     #[yaserde(rename = "FndOrSubFndDtls")]
     #[cfg_attr(feature = "serde", serde(rename = "FndOrSubFndDtls"))]
@@ -1224,7 +1224,7 @@ impl Validate for FundDetailedConfirmedCashForecastReport3 {}
 
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
-#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:swift:xsd:camt.045.001.03")]
+#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:camt.045.001.03")]
 pub struct FundDetailedConfirmedCashForecastReportCancellationV03 {
     #[yaserde(rename = "MsgId")]
     #[cfg_attr(feature = "serde", serde(rename = "MsgId"))]
@@ -1256,7 +1256,7 @@ impl Validate for FundDetailedConfirmedCashForecastReportCancellationV03 {}
 
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
-#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:swift:xsd:camt.045.001.03")]
+#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:camt.045.001.03")]
 pub struct GenericIdentification1 {
     #[yaserde(rename = "Id")]
     #[cfg_attr(feature = "serde", serde(rename = "Id"))]
@@ -1276,7 +1276,7 @@ impl Validate for GenericIdentification1 {}
 
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
-#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:swift:xsd:camt.045.001.03")]
+#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:camt.045.001.03")]
 pub struct GenericIdentification47 {
     #[yaserde(rename = "Id")]
     #[cfg_attr(feature = "serde", serde(rename = "Id"))]
@@ -1314,7 +1314,7 @@ crate::simple_type!(IsodateTime);
 impl Validate for IsodateTime {}
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
-#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:swift:xsd:camt.045.001.03")]
+#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:camt.045.001.03")]
 pub struct IdentificationSource5Choice {
     #[yaserde(rename = "IdentificationSource5ChoiceChoice")]
     #[cfg_attr(feature = "serde", serde(rename = "IdentificationSource5ChoiceChoice"))]
@@ -1327,7 +1327,7 @@ pub mod identification_source_5_choice {
     use super::*;
     
     #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-    #[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:swift:xsd:camt.045.001.03")]
+    #[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:camt.045.001.03")]
 
     pub enum IdentificationSource5ChoiceChoice {
         DmstIdSrc(CountryCode),
@@ -1348,7 +1348,7 @@ pub mod identification_source_5_choice {
 
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
-#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:swift:xsd:camt.045.001.03")]
+#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:camt.045.001.03")]
 pub struct InvestmentAccount42 {
     #[yaserde(rename = "AcctId")]
     #[cfg_attr(feature = "serde", serde(rename = "AcctId"))]
@@ -1368,7 +1368,7 @@ impl Validate for InvestmentAccount42 {}
 
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
-#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:swift:xsd:camt.045.001.03")]
+#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:camt.045.001.03")]
 pub struct InvestmentFundTransactionInType1Choice {
     #[yaserde(rename = "InvestmentFundTransactionInType1ChoiceChoice")]
     #[cfg_attr(feature = "serde", serde(rename = "InvestmentFundTransactionInType1ChoiceChoice"))]
@@ -1381,7 +1381,7 @@ pub mod investment_fund_transaction_in_type_1_choice {
     use super::*;
     
     #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-    #[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:swift:xsd:camt.045.001.03")]
+    #[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:camt.045.001.03")]
 
     pub enum InvestmentFundTransactionInType1ChoiceChoice {
         Cd(InvestmentFundTransactionInType1Code),
@@ -1401,7 +1401,7 @@ pub mod investment_fund_transaction_in_type_1_choice {
 }
 
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:swift:xsd:camt.045.001.03")]
+#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:camt.045.001.03")]
 
 pub enum InvestmentFundTransactionInType1Code {
     #[yaserde(rename = "SUBS")]
@@ -1434,7 +1434,7 @@ impl Validate for InvestmentFundTransactionInType1Code {}
 
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
-#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:swift:xsd:camt.045.001.03")]
+#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:camt.045.001.03")]
 pub struct InvestmentFundTransactionOutType1Choice {
     #[yaserde(rename = "InvestmentFundTransactionOutType1ChoiceChoice")]
     #[cfg_attr(feature = "serde", serde(rename = "InvestmentFundTransactionOutType1ChoiceChoice"))]
@@ -1447,7 +1447,7 @@ pub mod investment_fund_transaction_out_type_1_choice {
     use super::*;
     
     #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-    #[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:swift:xsd:camt.045.001.03")]
+    #[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:camt.045.001.03")]
 
     pub enum InvestmentFundTransactionOutType1ChoiceChoice {
         Cd(InvestmentFundTransactionOutType1Code),
@@ -1467,7 +1467,7 @@ pub mod investment_fund_transaction_out_type_1_choice {
 }
 
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:swift:xsd:camt.045.001.03")]
+#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:camt.045.001.03")]
 
 pub enum InvestmentFundTransactionOutType1Code {
     #[yaserde(rename = "REDM")]
@@ -1617,7 +1617,7 @@ impl Validate for Max70Text {
 
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
-#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:swift:xsd:camt.045.001.03")]
+#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:camt.045.001.03")]
 pub struct MessageIdentification1 {
     #[yaserde(rename = "Id")]
     #[cfg_attr(feature = "serde", serde(rename = "Id"))]
@@ -1633,7 +1633,7 @@ impl Validate for MessageIdentification1 {}
 
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
-#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:swift:xsd:camt.045.001.03")]
+#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:camt.045.001.03")]
 pub struct NameAndAddress5 {
     #[yaserde(rename = "Nm")]
     #[cfg_attr(feature = "serde", serde(rename = "Nm"))]
@@ -1649,7 +1649,7 @@ impl Validate for NameAndAddress5 {}
 
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
-#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:swift:xsd:camt.045.001.03")]
+#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:camt.045.001.03")]
 pub struct NetCashForecast3 {
     #[yaserde(rename = "NetAmt")]
     #[cfg_attr(feature = "serde", serde(rename = "NetAmt"))]
@@ -1669,7 +1669,7 @@ impl Validate for NetCashForecast3 {}
 
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
-#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:swift:xsd:camt.045.001.03")]
+#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:camt.045.001.03")]
 pub struct NetCashForecast4 {
     #[yaserde(rename = "CshSttlmDt")]
     #[cfg_attr(feature = "serde", serde(rename = "CshSttlmDt"))]
@@ -1696,7 +1696,7 @@ impl Validate for NetCashForecast4 {}
 
 
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:swift:xsd:camt.045.001.03")]
+#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:camt.045.001.03")]
 
 pub enum OrderQuantityType2Code {
     #[yaserde(rename = "UNIT")]
@@ -1720,7 +1720,7 @@ impl Validate for OrderQuantityType2Code {}
 
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
-#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:swift:xsd:camt.045.001.03")]
+#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:camt.045.001.03")]
 pub struct OtherIdentification4 {
     #[yaserde(rename = "Id")]
     #[cfg_attr(feature = "serde", serde(rename = "Id"))]
@@ -1736,7 +1736,7 @@ impl Validate for OtherIdentification4 {}
 
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
-#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:swift:xsd:camt.045.001.03")]
+#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:camt.045.001.03")]
 pub struct Pagination {
     #[yaserde(rename = "PgNb")]
     #[cfg_attr(feature = "serde", serde(rename = "PgNb"))]
@@ -1752,7 +1752,7 @@ impl Validate for Pagination {}
 
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
-#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:swift:xsd:camt.045.001.03")]
+#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:camt.045.001.03")]
 pub struct PartyIdentification2Choice {
     #[yaserde(rename = "PartyIdentification2ChoiceChoice")]
     #[cfg_attr(feature = "serde", serde(rename = "PartyIdentification2ChoiceChoice"))]
@@ -1765,7 +1765,7 @@ pub mod party_identification_2_choice {
     use super::*;
     
     #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-    #[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:swift:xsd:camt.045.001.03")]
+    #[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:camt.045.001.03")]
 
     pub enum PartyIdentification2ChoiceChoice {
         #[yaserde(rename = "BICOrBEI")]
@@ -1795,7 +1795,7 @@ crate::simple_type!(PercentageRate);
 impl Validate for PercentageRate {}
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
-#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:swift:xsd:camt.045.001.03")]
+#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:camt.045.001.03")]
 pub struct PostalAddress1 {
     #[yaserde(rename = "AdrTp")]
     #[cfg_attr(feature = "serde", serde(rename = "AdrTp"))]
@@ -1835,7 +1835,7 @@ impl Validate for PostalAddress1 {}
 
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
-#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:swift:xsd:camt.045.001.03")]
+#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:camt.045.001.03")]
 pub struct PriceValue1 {
     #[yaserde(rename = "Amt")]
     #[cfg_attr(feature = "serde", serde(rename = "Amt"))]
@@ -1853,7 +1853,7 @@ crate::simple_type!(Quickidentifier);
 impl Validate for Quickidentifier {}
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
-#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:swift:xsd:camt.045.001.03")]
+#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:camt.045.001.03")]
 pub struct QuantityType1Choice {
     #[yaserde(rename = "QuantityType1ChoiceChoice")]
     #[cfg_attr(feature = "serde", serde(rename = "QuantityType1ChoiceChoice"))]
@@ -1866,7 +1866,7 @@ pub mod quantity_type_1_choice {
     use super::*;
     
     #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-    #[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:swift:xsd:camt.045.001.03")]
+    #[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:camt.045.001.03")]
 
     pub enum QuantityType1ChoiceChoice {
         Cd(OrderQuantityType2Code),
@@ -1911,7 +1911,7 @@ crate::simple_type!(Sedolidentifier);
 impl Validate for Sedolidentifier {}
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
-#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:swift:xsd:camt.045.001.03")]
+#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:camt.045.001.03")]
 pub struct SecurityIdentification3Choice {
     #[yaserde(rename = "SecurityIdentification3ChoiceChoice")]
     #[cfg_attr(feature = "serde", serde(rename = "SecurityIdentification3ChoiceChoice"))]
@@ -1924,7 +1924,7 @@ pub mod security_identification_3_choice {
     use super::*;
     
     #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-    #[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:swift:xsd:camt.045.001.03")]
+    #[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:camt.045.001.03")]
 
     pub enum SecurityIdentification3ChoiceChoice {
         #[yaserde(rename = "ISIN")]
@@ -1978,7 +1978,7 @@ crate::simple_type!(SicovamIdentifier);
 impl Validate for SicovamIdentifier {}
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
-#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:swift:xsd:camt.045.001.03")]
+#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:camt.045.001.03")]
 pub struct SimpleIdentificationInformation {
     #[yaserde(rename = "Id")]
     #[cfg_attr(feature = "serde", serde(rename = "Id"))]
@@ -2007,7 +2007,7 @@ impl Validate for TickerIdentifier {
 }
 
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:swift:xsd:camt.045.001.03")]
+#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:camt.045.001.03")]
 
 pub enum TypeOfPrice10Code {
     #[yaserde(rename = "BIDE")]
@@ -2061,7 +2061,7 @@ impl Validate for TypeOfPrice10Code {}
 
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
-#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:swift:xsd:camt.045.001.03")]
+#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:camt.045.001.03")]
 pub struct UnitPrice19 {
     #[yaserde(rename = "PricTp")]
     #[cfg_attr(feature = "serde", serde(rename = "PricTp"))]
@@ -2077,7 +2077,7 @@ impl Validate for UnitPrice19 {}
 
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
-#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:swift:xsd:camt.045.001.03")]
+#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:camt.045.001.03")]
 pub struct UnitPriceType2Choice {
     #[yaserde(rename = "UnitPriceType2ChoiceChoice")]
     #[cfg_attr(feature = "serde", serde(rename = "UnitPriceType2ChoiceChoice"))]
@@ -2090,7 +2090,7 @@ pub mod unit_price_type_2_choice {
     use super::*;
     
     #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-    #[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:swift:xsd:camt.045.001.03")]
+    #[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:camt.045.001.03")]
 
     pub enum UnitPriceType2ChoiceChoice {
         Cd(TypeOfPrice10Code),
@@ -2134,5 +2134,5 @@ impl crate::MxMessage for Document {
     const VARIANT: &'static str = "001";
     const VERSION: &'static str = "03";
     const MESSAGE_NAME: &'static str = "camt.045.001.03";
-    const NAMESPACE: &'static str = "urn:swift:xsd:camt.045.001.03";
+    const NAMESPACE: &'static str = "urn:iso:std:iso:20022:tech:xsd:camt.045.001.03";
 }

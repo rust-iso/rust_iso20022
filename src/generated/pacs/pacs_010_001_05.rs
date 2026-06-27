@@ -14,11 +14,9 @@ use yaserde_derive::{YaDeserialize, YaSerialize};
 #[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:pacs.010.001.05")]
 
 pub enum AccountIdentification4ChoiceChoice {
-    // IBAN
     #[yaserde(rename = "IBAN")]
     #[cfg_attr(feature = "serde", serde(rename = "IBAN"))]
     Iban(Iban2007Identifier),
-    // Other
     Othr(GenericAccountIdentification1),
     __Unknown__(String),
 }
@@ -31,7 +29,6 @@ impl Default for AccountIdentification4ChoiceChoice {
 
 impl Validate for AccountIdentification4ChoiceChoice {}
 
-// AccountIdentification4Choice
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:pacs.010.001.05")]
@@ -50,9 +47,7 @@ impl Validate for AccountIdentification4Choice {}
 #[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:pacs.010.001.05")]
 
 pub enum AccountSchemeName1ChoiceChoice {
-    // Code
     Cd(ExternalAccountIdentification1Code),
-    // Proprietary
     Prtry(Max35Text),
     __Unknown__(String),
 }
@@ -65,7 +60,6 @@ impl Default for AccountSchemeName1ChoiceChoice {
 
 impl Validate for AccountSchemeName1ChoiceChoice {}
 
-// AccountSchemeName1Choice
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:pacs.010.001.05")]
@@ -100,7 +94,6 @@ impl Validate for ActiveCurrencyAndAmountSimpleType {
 pub struct ActiveCurrencyAndAmount {
     #[yaserde(text)]
     pub value: String,
-    // Currency
     #[yaserde(attribute, rename = "Ccy")]
     #[cfg_attr(feature = "serde", serde(rename = "Ccy"))]
     pub ccy: ActiveCurrencyCode,
@@ -109,46 +102,37 @@ pub struct ActiveCurrencyAndAmount {
 impl Validate for ActiveCurrencyAndAmount {}
 
 
-// ActiveCurrencyCode
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug)]
 pub struct ActiveCurrencyCode (pub String);
 crate::simple_type!(ActiveCurrencyCode);
 
 impl Validate for ActiveCurrencyCode {}
-// ActiveOrHistoricCurrencyCode
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug)]
 pub struct ActiveOrHistoricCurrencyCode (pub String);
 crate::simple_type!(ActiveOrHistoricCurrencyCode);
 
 impl Validate for ActiveOrHistoricCurrencyCode {}
-// AddressType2Code
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:pacs.010.001.05")]
 
 pub enum AddressType2Code {
-    // Postal
     #[yaserde(rename = "ADDR")]
     #[cfg_attr(feature = "serde", serde(rename = "ADDR"))]
     Addr,
-    // POBox
     #[yaserde(rename = "PBOX")]
     #[cfg_attr(feature = "serde", serde(rename = "PBOX"))]
     Pbox,
-    // Residential
     #[yaserde(rename = "HOME")]
     #[cfg_attr(feature = "serde", serde(rename = "HOME"))]
     Home,
-    // Business
     #[yaserde(rename = "BIZZ")]
     #[cfg_attr(feature = "serde", serde(rename = "BIZZ"))]
     Bizz,
-    // MailTo
     #[yaserde(rename = "MLTO")]
     #[cfg_attr(feature = "serde", serde(rename = "MLTO"))]
     Mlto,
-    // DeliveryTo
     #[yaserde(rename = "DLVY")]
     #[cfg_attr(feature = "serde", serde(rename = "DLVY"))]
     Dlvy,
@@ -169,9 +153,7 @@ impl Validate for AddressType2Code {}
 #[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:pacs.010.001.05")]
 
 pub enum AddressType3ChoiceChoice {
-    // Code
     Cd(AddressType2Code),
-    // Proprietary
     Prtry(GenericIdentification30),
     __Unknown__(String),
 }
@@ -184,7 +166,6 @@ impl Default for AddressType3ChoiceChoice {
 
 impl Validate for AddressType3ChoiceChoice {}
 
-// AddressType3Choice
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:pacs.010.001.05")]
@@ -199,31 +180,26 @@ impl Validate for AddressType3Choice {}
 
 
 
-// BICFIDec2014Identifier
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug)]
 pub struct Bicfidec2014Identifier (pub String);
 crate::simple_type!(Bicfidec2014Identifier);
 
 impl Validate for Bicfidec2014Identifier {}
-// BatchBookingIndicator
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug)]
 pub struct BatchBookingIndicator (pub bool);
 crate::simple_type!(BatchBookingIndicator);
 
 impl Validate for BatchBookingIndicator {}
-// BranchAndFinancialInstitutionIdentification6
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:pacs.010.001.05")]
 pub struct BranchAndFinancialInstitutionIdentification6 {
-    // FinancialInstitutionIdentification
     #[yaserde(rename = "FinInstnId")]
     #[cfg_attr(feature = "serde", serde(rename = "FinInstnId"))]
     pub fin_instn_id: FinancialInstitutionIdentification18,
 
-    // BranchIdentification
     #[yaserde(rename = "BrnchId")]
     #[cfg_attr(feature = "serde", serde(rename = "BrnchId"))]
     pub brnch_id: BranchData3,
@@ -232,27 +208,22 @@ pub struct BranchAndFinancialInstitutionIdentification6 {
 impl Validate for BranchAndFinancialInstitutionIdentification6 {}
 
 
-// BranchData3
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:pacs.010.001.05")]
 pub struct BranchData3 {
-    // Identification
     #[yaserde(rename = "Id")]
     #[cfg_attr(feature = "serde", serde(rename = "Id"))]
     pub id: Max35Text,
 
-    // LEI
     #[yaserde(rename = "LEI")]
     #[cfg_attr(feature = "serde", serde(rename = "LEI"))]
     pub lei: Leiidentifier,
 
-    // Name
     #[yaserde(rename = "Nm")]
     #[cfg_attr(feature = "serde", serde(rename = "Nm"))]
     pub nm: Max140Text,
 
-    // PostalAddress
     #[yaserde(rename = "PstlAdr")]
     #[cfg_attr(feature = "serde", serde(rename = "PstlAdr"))]
     pub pstl_adr: PostalAddress24,
@@ -261,32 +232,26 @@ pub struct BranchData3 {
 impl Validate for BranchData3 {}
 
 
-// CashAccount40
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:pacs.010.001.05")]
 pub struct CashAccount40 {
-    // Identification
     #[yaserde(rename = "Id")]
     #[cfg_attr(feature = "serde", serde(rename = "Id"))]
     pub id: AccountIdentification4Choice,
 
-    // Type
     #[yaserde(rename = "Tp")]
     #[cfg_attr(feature = "serde", serde(rename = "Tp"))]
     pub tp: CashAccountType2Choice,
 
-    // Currency
     #[yaserde(rename = "Ccy")]
     #[cfg_attr(feature = "serde", serde(rename = "Ccy"))]
     pub ccy: ActiveOrHistoricCurrencyCode,
 
-    // Name
     #[yaserde(rename = "Nm")]
     #[cfg_attr(feature = "serde", serde(rename = "Nm"))]
     pub nm: Max70Text,
 
-    // Proxy
     #[yaserde(rename = "Prxy")]
     #[cfg_attr(feature = "serde", serde(rename = "Prxy"))]
     pub prxy: ProxyAccountIdentification1,
@@ -299,9 +264,7 @@ impl Validate for CashAccount40 {}
 #[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:pacs.010.001.05")]
 
 pub enum CashAccountType2ChoiceChoice {
-    // Code
     Cd(ExternalCashAccountType1Code),
-    // Proprietary
     Prtry(Max35Text),
     __Unknown__(String),
 }
@@ -314,7 +277,6 @@ impl Default for CashAccountType2ChoiceChoice {
 
 impl Validate for CashAccountType2ChoiceChoice {}
 
-// CashAccountType2Choice
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:pacs.010.001.05")]
@@ -333,9 +295,7 @@ impl Validate for CashAccountType2Choice {}
 #[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:pacs.010.001.05")]
 
 pub enum CategoryPurpose1ChoiceChoice {
-    // Code
     Cd(ExternalCategoryPurpose1Code),
-    // Proprietary
     Prtry(Max35Text),
     __Unknown__(String),
 }
@@ -348,7 +308,6 @@ impl Default for CategoryPurpose1ChoiceChoice {
 
 impl Validate for CategoryPurpose1ChoiceChoice {}
 
-// CategoryPurpose1Choice
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:pacs.010.001.05")]
@@ -363,24 +322,19 @@ impl Validate for CategoryPurpose1Choice {}
 
 
 
-// ClearingChannel2Code
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:pacs.010.001.05")]
 
 pub enum ClearingChannel2Code {
-    // RealTimeGrossSettlementSystem
     #[yaserde(rename = "RTGS")]
     #[cfg_attr(feature = "serde", serde(rename = "RTGS"))]
     Rtgs,
-    // RealTimeNetSettlementSystem
     #[yaserde(rename = "RTNS")]
     #[cfg_attr(feature = "serde", serde(rename = "RTNS"))]
     Rtns,
-    // MassPaymentNetSystem
     #[yaserde(rename = "MPNS")]
     #[cfg_attr(feature = "serde", serde(rename = "MPNS"))]
     Mpns,
-    // BookTransfer
     #[yaserde(rename = "BOOK")]
     #[cfg_attr(feature = "serde", serde(rename = "BOOK"))]
     Book,
@@ -401,9 +355,7 @@ impl Validate for ClearingChannel2Code {}
 #[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:pacs.010.001.05")]
 
 pub enum ClearingSystemIdentification2ChoiceChoice {
-    // Code
     Cd(ExternalClearingSystemIdentification1Code),
-    // Proprietary
     Prtry(Max35Text),
     __Unknown__(String),
 }
@@ -416,7 +368,6 @@ impl Default for ClearingSystemIdentification2ChoiceChoice {
 
 impl Validate for ClearingSystemIdentification2ChoiceChoice {}
 
-// ClearingSystemIdentification2Choice
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:pacs.010.001.05")]
@@ -431,17 +382,14 @@ impl Validate for ClearingSystemIdentification2Choice {}
 
 
 
-// ClearingSystemMemberIdentification2
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:pacs.010.001.05")]
 pub struct ClearingSystemMemberIdentification2 {
-    // ClearingSystemIdentification
     #[yaserde(rename = "ClrSysId")]
     #[cfg_attr(feature = "serde", serde(rename = "ClrSysId"))]
     pub clr_sys_id: ClearingSystemIdentification2Choice,
 
-    // MemberIdentification
     #[yaserde(rename = "MmbId")]
     #[cfg_attr(feature = "serde", serde(rename = "MmbId"))]
     pub mmb_id: Max35Text,
@@ -450,124 +398,100 @@ pub struct ClearingSystemMemberIdentification2 {
 impl Validate for ClearingSystemMemberIdentification2 {}
 
 
-// CountryCode
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug)]
 pub struct CountryCode (pub String);
 crate::simple_type!(CountryCode);
 
 impl Validate for CountryCode {}
-// CreditTransferTransaction53
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:pacs.010.001.05")]
 pub struct CreditTransferTransaction53 {
-    // CreditIdentification
     #[yaserde(rename = "CdtId")]
     #[cfg_attr(feature = "serde", serde(rename = "CdtId"))]
     pub cdt_id: Max35Text,
 
-    // BatchBooking
     #[yaserde(rename = "BtchBookg")]
     #[cfg_attr(feature = "serde", serde(rename = "BtchBookg"))]
     pub btch_bookg: BatchBookingIndicator,
 
-    // PaymentTypeInformation
     #[yaserde(rename = "PmtTpInf")]
     #[cfg_attr(feature = "serde", serde(rename = "PmtTpInf"))]
     pub pmt_tp_inf: PaymentTypeInformation28,
 
-    // TotalInterbankSettlementAmount
     #[yaserde(rename = "TtlIntrBkSttlmAmt")]
     #[cfg_attr(feature = "serde", serde(rename = "TtlIntrBkSttlmAmt"))]
     pub ttl_intr_bk_sttlm_amt: ActiveCurrencyAndAmount,
 
-    // InterbankSettlementDate
     #[yaserde(rename = "IntrBkSttlmDt")]
     #[cfg_attr(feature = "serde", serde(rename = "IntrBkSttlmDt"))]
     pub intr_bk_sttlm_dt: Isodate,
 
-    // SettlementTimeIndication
     #[yaserde(rename = "SttlmTmIndctn")]
     #[cfg_attr(feature = "serde", serde(rename = "SttlmTmIndctn"))]
     pub sttlm_tm_indctn: SettlementDateTimeIndication1,
 
-    // InstructingAgent
     #[yaserde(rename = "InstgAgt")]
     #[cfg_attr(feature = "serde", serde(rename = "InstgAgt"))]
     pub instg_agt: BranchAndFinancialInstitutionIdentification6,
 
-    // InstructedAgent
     #[yaserde(rename = "InstdAgt")]
     #[cfg_attr(feature = "serde", serde(rename = "InstdAgt"))]
     pub instd_agt: BranchAndFinancialInstitutionIdentification6,
 
-    // IntermediaryAgent1
     #[yaserde(rename = "IntrmyAgt1")]
     #[cfg_attr(feature = "serde", serde(rename = "IntrmyAgt1"))]
     pub intrmy_agt_1: BranchAndFinancialInstitutionIdentification6,
 
-    // IntermediaryAgent1Account
     #[yaserde(rename = "IntrmyAgt1Acct")]
     #[cfg_attr(feature = "serde", serde(rename = "IntrmyAgt1Acct"))]
     pub intrmy_agt_1_acct: CashAccount40,
 
-    // IntermediaryAgent2
     #[yaserde(rename = "IntrmyAgt2")]
     #[cfg_attr(feature = "serde", serde(rename = "IntrmyAgt2"))]
     pub intrmy_agt_2: BranchAndFinancialInstitutionIdentification6,
 
-    // IntermediaryAgent2Account
     #[yaserde(rename = "IntrmyAgt2Acct")]
     #[cfg_attr(feature = "serde", serde(rename = "IntrmyAgt2Acct"))]
     pub intrmy_agt_2_acct: CashAccount40,
 
-    // IntermediaryAgent3
     #[yaserde(rename = "IntrmyAgt3")]
     #[cfg_attr(feature = "serde", serde(rename = "IntrmyAgt3"))]
     pub intrmy_agt_3: BranchAndFinancialInstitutionIdentification6,
 
-    // IntermediaryAgent3Account
     #[yaserde(rename = "IntrmyAgt3Acct")]
     #[cfg_attr(feature = "serde", serde(rename = "IntrmyAgt3Acct"))]
     pub intrmy_agt_3_acct: CashAccount40,
 
-    // CreditorAgent
     #[yaserde(rename = "CdtrAgt")]
     #[cfg_attr(feature = "serde", serde(rename = "CdtrAgt"))]
     pub cdtr_agt: BranchAndFinancialInstitutionIdentification6,
 
-    // CreditorAgentAccount
     #[yaserde(rename = "CdtrAgtAcct")]
     #[cfg_attr(feature = "serde", serde(rename = "CdtrAgtAcct"))]
     pub cdtr_agt_acct: CashAccount40,
 
-    // Creditor
     #[yaserde(rename = "Cdtr")]
     #[cfg_attr(feature = "serde", serde(rename = "Cdtr"))]
     pub cdtr: BranchAndFinancialInstitutionIdentification6,
 
-    // CreditorAccount
     #[yaserde(rename = "CdtrAcct")]
     #[cfg_attr(feature = "serde", serde(rename = "CdtrAcct"))]
     pub cdtr_acct: CashAccount40,
 
-    // UltimateCreditor
     #[yaserde(rename = "UltmtCdtr")]
     #[cfg_attr(feature = "serde", serde(rename = "UltmtCdtr"))]
     pub ultmt_cdtr: BranchAndFinancialInstitutionIdentification6,
 
-    // InstructionForCreditorAgent
     #[yaserde(rename = "InstrForCdtrAgt")]
     #[cfg_attr(feature = "serde", serde(rename = "InstrForCdtrAgt"))]
     pub instr_for_cdtr_agt: Vec<InstructionForCreditorAgent3>,
 
-    // DirectDebitTransactionInformation
     #[yaserde(rename = "DrctDbtTxInf")]
     #[cfg_attr(feature = "serde", serde(rename = "DrctDbtTxInf"))]
     pub drct_dbt_tx_inf: Vec<DirectDebitTransactionInformation27>,
 
-    // SupplementaryData
     #[yaserde(rename = "SplmtryData")]
     #[cfg_attr(feature = "serde", serde(rename = "SplmtryData"))]
     pub splmtry_data: Vec<SupplementaryData1>,
@@ -576,89 +500,72 @@ pub struct CreditTransferTransaction53 {
 impl Validate for CreditTransferTransaction53 {}
 
 
-// DecimalNumber
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug)]
 pub struct DecimalNumber (pub String);
 crate::simple_type!(DecimalNumber);
 
 impl Validate for DecimalNumber {}
-// DirectDebitTransactionInformation27
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:pacs.010.001.05")]
 pub struct DirectDebitTransactionInformation27 {
-    // PaymentIdentification
     #[yaserde(rename = "PmtId")]
     #[cfg_attr(feature = "serde", serde(rename = "PmtId"))]
     pub pmt_id: PaymentIdentification13,
 
-    // PaymentTypeInformation
     #[yaserde(rename = "PmtTpInf")]
     #[cfg_attr(feature = "serde", serde(rename = "PmtTpInf"))]
     pub pmt_tp_inf: PaymentTypeInformation28,
 
-    // InterbankSettlementAmount
     #[yaserde(rename = "IntrBkSttlmAmt")]
     #[cfg_attr(feature = "serde", serde(rename = "IntrBkSttlmAmt"))]
     pub intr_bk_sttlm_amt: ActiveCurrencyAndAmount,
 
-    // InterbankSettlementDate
     #[yaserde(rename = "IntrBkSttlmDt")]
     #[cfg_attr(feature = "serde", serde(rename = "IntrBkSttlmDt"))]
     pub intr_bk_sttlm_dt: Isodate,
 
-    // SettlementPriority
     #[yaserde(rename = "SttlmPrty")]
     #[cfg_attr(feature = "serde", serde(rename = "SttlmPrty"))]
     pub sttlm_prty: Priority3Code,
 
-    // SettlementTimeIndication
     #[yaserde(rename = "SttlmTmIndctn")]
     #[cfg_attr(feature = "serde", serde(rename = "SttlmTmIndctn"))]
     pub sttlm_tm_indctn: SettlementDateTimeIndication1,
 
-    // SettlementTimeRequest
     #[yaserde(rename = "SttlmTmReq")]
     #[cfg_attr(feature = "serde", serde(rename = "SttlmTmReq"))]
     pub sttlm_tm_req: SettlementTimeRequest2,
 
-    // UltimateDebtor
     #[yaserde(rename = "UltmtDbtr")]
     #[cfg_attr(feature = "serde", serde(rename = "UltmtDbtr"))]
     pub ultmt_dbtr: BranchAndFinancialInstitutionIdentification6,
 
-    // Debtor
     #[yaserde(rename = "Dbtr")]
     #[cfg_attr(feature = "serde", serde(rename = "Dbtr"))]
     pub dbtr: BranchAndFinancialInstitutionIdentification6,
 
-    // DebtorAccount
     #[yaserde(rename = "DbtrAcct")]
     #[cfg_attr(feature = "serde", serde(rename = "DbtrAcct"))]
     pub dbtr_acct: CashAccount40,
 
-    // DebtorAgent
     #[yaserde(rename = "DbtrAgt")]
     #[cfg_attr(feature = "serde", serde(rename = "DbtrAgt"))]
     pub dbtr_agt: BranchAndFinancialInstitutionIdentification6,
 
-    // DebtorAgentAccount
     #[yaserde(rename = "DbtrAgtAcct")]
     #[cfg_attr(feature = "serde", serde(rename = "DbtrAgtAcct"))]
     pub dbtr_agt_acct: CashAccount40,
 
-    // InstructionForDebtorAgent
     #[yaserde(rename = "InstrForDbtrAgt")]
     #[cfg_attr(feature = "serde", serde(rename = "InstrForDbtrAgt"))]
     pub instr_for_dbtr_agt: Max210Text,
 
-    // Purpose
     #[yaserde(rename = "Purp")]
     #[cfg_attr(feature = "serde", serde(rename = "Purp"))]
     pub purp: Purpose2Choice,
 
-    // RemittanceInformation
     #[yaserde(rename = "RmtInf")]
     #[cfg_attr(feature = "serde", serde(rename = "RmtInf"))]
     pub rmt_inf: RemittanceInformation2,
@@ -679,14 +586,12 @@ pub struct Document {
 impl Validate for Document {}
 
 
-// Exact4AlphaNumericText
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug)]
 pub struct Exact4AlphaNumericText (pub String);
 crate::simple_type!(Exact4AlphaNumericText);
 
 impl Validate for Exact4AlphaNumericText {}
-// ExternalAccountIdentification1Code
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug)]
 pub struct ExternalAccountIdentification1Code (pub String);
@@ -705,7 +610,6 @@ impl Validate for ExternalAccountIdentification1Code {
     }
 }
 
-// ExternalCashAccountType1Code
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug)]
 pub struct ExternalCashAccountType1Code (pub String);
@@ -724,7 +628,6 @@ impl Validate for ExternalCashAccountType1Code {
     }
 }
 
-// ExternalCategoryPurpose1Code
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug)]
 pub struct ExternalCategoryPurpose1Code (pub String);
@@ -743,7 +646,6 @@ impl Validate for ExternalCategoryPurpose1Code {
     }
 }
 
-// ExternalClearingSystemIdentification1Code
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug)]
 pub struct ExternalClearingSystemIdentification1Code (pub String);
@@ -762,7 +664,6 @@ impl Validate for ExternalClearingSystemIdentification1Code {
     }
 }
 
-// ExternalCreditorAgentInstruction1Code
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug)]
 pub struct ExternalCreditorAgentInstruction1Code (pub String);
@@ -781,7 +682,6 @@ impl Validate for ExternalCreditorAgentInstruction1Code {
     }
 }
 
-// ExternalFinancialInstitutionIdentification1Code
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug)]
 pub struct ExternalFinancialInstitutionIdentification1Code (pub String);
@@ -800,7 +700,6 @@ impl Validate for ExternalFinancialInstitutionIdentification1Code {
     }
 }
 
-// ExternalLocalInstrument1Code
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug)]
 pub struct ExternalLocalInstrument1Code (pub String);
@@ -819,7 +718,6 @@ impl Validate for ExternalLocalInstrument1Code {
     }
 }
 
-// ExternalProxyAccountType1Code
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug)]
 pub struct ExternalProxyAccountType1Code (pub String);
@@ -838,7 +736,6 @@ impl Validate for ExternalProxyAccountType1Code {
     }
 }
 
-// ExternalPurpose1Code
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug)]
 pub struct ExternalPurpose1Code (pub String);
@@ -857,7 +754,6 @@ impl Validate for ExternalPurpose1Code {
     }
 }
 
-// ExternalServiceLevel1Code
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug)]
 pub struct ExternalServiceLevel1Code (pub String);
@@ -880,9 +776,7 @@ impl Validate for ExternalServiceLevel1Code {
 #[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:pacs.010.001.05")]
 
 pub enum FinancialIdentificationSchemeName1ChoiceChoice {
-    // Code
     Cd(ExternalFinancialInstitutionIdentification1Code),
-    // Proprietary
     Prtry(Max35Text),
     __Unknown__(String),
 }
@@ -895,7 +789,6 @@ impl Default for FinancialIdentificationSchemeName1ChoiceChoice {
 
 impl Validate for FinancialIdentificationSchemeName1ChoiceChoice {}
 
-// FinancialIdentificationSchemeName1Choice
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:pacs.010.001.05")]
@@ -910,22 +803,18 @@ impl Validate for FinancialIdentificationSchemeName1Choice {}
 
 
 
-// FinancialInstitutionDirectDebitV05
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:pacs.010.001.05")]
 pub struct FinancialInstitutionDirectDebitV05 {
-    // GroupHeader
     #[yaserde(rename = "GrpHdr")]
     #[cfg_attr(feature = "serde", serde(rename = "GrpHdr"))]
     pub grp_hdr: GroupHeader92,
 
-    // CreditInstruction
     #[yaserde(rename = "CdtInstr")]
     #[cfg_attr(feature = "serde", serde(rename = "CdtInstr"))]
     pub cdt_instr: Vec<CreditTransferTransaction53>,
 
-    // SupplementaryData
     #[yaserde(rename = "SplmtryData")]
     #[cfg_attr(feature = "serde", serde(rename = "SplmtryData"))]
     pub splmtry_data: Vec<SupplementaryData1>,
@@ -934,37 +823,30 @@ pub struct FinancialInstitutionDirectDebitV05 {
 impl Validate for FinancialInstitutionDirectDebitV05 {}
 
 
-// FinancialInstitutionIdentification18
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:pacs.010.001.05")]
 pub struct FinancialInstitutionIdentification18 {
-    // BICFI
     #[yaserde(rename = "BICFI")]
     #[cfg_attr(feature = "serde", serde(rename = "BICFI"))]
     pub bicfi: Bicfidec2014Identifier,
 
-    // ClearingSystemMemberIdentification
     #[yaserde(rename = "ClrSysMmbId")]
     #[cfg_attr(feature = "serde", serde(rename = "ClrSysMmbId"))]
     pub clr_sys_mmb_id: ClearingSystemMemberIdentification2,
 
-    // LEI
     #[yaserde(rename = "LEI")]
     #[cfg_attr(feature = "serde", serde(rename = "LEI"))]
     pub lei: Leiidentifier,
 
-    // Name
     #[yaserde(rename = "Nm")]
     #[cfg_attr(feature = "serde", serde(rename = "Nm"))]
     pub nm: Max140Text,
 
-    // PostalAddress
     #[yaserde(rename = "PstlAdr")]
     #[cfg_attr(feature = "serde", serde(rename = "PstlAdr"))]
     pub pstl_adr: PostalAddress24,
 
-    // Other
     #[yaserde(rename = "Othr")]
     #[cfg_attr(feature = "serde", serde(rename = "Othr"))]
     pub othr: GenericFinancialIdentification1,
@@ -973,22 +855,18 @@ pub struct FinancialInstitutionIdentification18 {
 impl Validate for FinancialInstitutionIdentification18 {}
 
 
-// GenericAccountIdentification1
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:pacs.010.001.05")]
 pub struct GenericAccountIdentification1 {
-    // Identification
     #[yaserde(rename = "Id")]
     #[cfg_attr(feature = "serde", serde(rename = "Id"))]
     pub id: Max34Text,
 
-    // SchemeName
     #[yaserde(rename = "SchmeNm")]
     #[cfg_attr(feature = "serde", serde(rename = "SchmeNm"))]
     pub schme_nm: AccountSchemeName1Choice,
 
-    // Issuer
     #[yaserde(rename = "Issr")]
     #[cfg_attr(feature = "serde", serde(rename = "Issr"))]
     pub issr: Max35Text,
@@ -997,22 +875,18 @@ pub struct GenericAccountIdentification1 {
 impl Validate for GenericAccountIdentification1 {}
 
 
-// GenericFinancialIdentification1
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:pacs.010.001.05")]
 pub struct GenericFinancialIdentification1 {
-    // Identification
     #[yaserde(rename = "Id")]
     #[cfg_attr(feature = "serde", serde(rename = "Id"))]
     pub id: Max35Text,
 
-    // SchemeName
     #[yaserde(rename = "SchmeNm")]
     #[cfg_attr(feature = "serde", serde(rename = "SchmeNm"))]
     pub schme_nm: FinancialIdentificationSchemeName1Choice,
 
-    // Issuer
     #[yaserde(rename = "Issr")]
     #[cfg_attr(feature = "serde", serde(rename = "Issr"))]
     pub issr: Max35Text,
@@ -1021,22 +895,18 @@ pub struct GenericFinancialIdentification1 {
 impl Validate for GenericFinancialIdentification1 {}
 
 
-// GenericIdentification30
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:pacs.010.001.05")]
 pub struct GenericIdentification30 {
-    // Identification
     #[yaserde(rename = "Id")]
     #[cfg_attr(feature = "serde", serde(rename = "Id"))]
     pub id: Exact4AlphaNumericText,
 
-    // Issuer
     #[yaserde(rename = "Issr")]
     #[cfg_attr(feature = "serde", serde(rename = "Issr"))]
     pub issr: Max35Text,
 
-    // SchemeName
     #[yaserde(rename = "SchmeNm")]
     #[cfg_attr(feature = "serde", serde(rename = "SchmeNm"))]
     pub schme_nm: Max35Text,
@@ -1045,37 +915,30 @@ pub struct GenericIdentification30 {
 impl Validate for GenericIdentification30 {}
 
 
-// GroupHeader92
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:pacs.010.001.05")]
 pub struct GroupHeader92 {
-    // MessageIdentification
     #[yaserde(rename = "MsgId")]
     #[cfg_attr(feature = "serde", serde(rename = "MsgId"))]
     pub msg_id: Max35Text,
 
-    // CreationDateTime
     #[yaserde(rename = "CreDtTm")]
     #[cfg_attr(feature = "serde", serde(rename = "CreDtTm"))]
     pub cre_dt_tm: IsodateTime,
 
-    // NumberOfTransactions
     #[yaserde(rename = "NbOfTxs")]
     #[cfg_attr(feature = "serde", serde(rename = "NbOfTxs"))]
     pub nb_of_txs: Max15NumericText,
 
-    // ControlSum
     #[yaserde(rename = "CtrlSum")]
     #[cfg_attr(feature = "serde", serde(rename = "CtrlSum"))]
     pub ctrl_sum: DecimalNumber,
 
-    // InstructingAgent
     #[yaserde(rename = "InstgAgt")]
     #[cfg_attr(feature = "serde", serde(rename = "InstgAgt"))]
     pub instg_agt: BranchAndFinancialInstitutionIdentification6,
 
-    // InstructedAgent
     #[yaserde(rename = "InstdAgt")]
     #[cfg_attr(feature = "serde", serde(rename = "InstdAgt"))]
     pub instd_agt: BranchAndFinancialInstitutionIdentification6,
@@ -1084,45 +947,38 @@ pub struct GroupHeader92 {
 impl Validate for GroupHeader92 {}
 
 
-// IBAN2007Identifier
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug)]
 pub struct Iban2007Identifier (pub String);
 crate::simple_type!(Iban2007Identifier);
 
 impl Validate for Iban2007Identifier {}
-// ISODate
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug)]
 pub struct Isodate (pub String);
 crate::simple_type!(Isodate);
 
 impl Validate for Isodate {}
-// ISODateTime
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug)]
 pub struct IsodateTime (pub String);
 crate::simple_type!(IsodateTime);
 
 impl Validate for IsodateTime {}
-// ISOTime
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug)]
 pub struct Isotime (pub String);
 crate::simple_type!(Isotime);
 
 impl Validate for Isotime {}
-// InstructionForCreditorAgent3
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:pacs.010.001.05")]
 pub struct InstructionForCreditorAgent3 {
-    // Code
     #[yaserde(rename = "Cd")]
     #[cfg_attr(feature = "serde", serde(rename = "Cd"))]
     pub cd: ExternalCreditorAgentInstruction1Code,
 
-    // InstructionInformation
     #[yaserde(rename = "InstrInf")]
     #[cfg_attr(feature = "serde", serde(rename = "InstrInf"))]
     pub instr_inf: Max140Text,
@@ -1131,7 +987,6 @@ pub struct InstructionForCreditorAgent3 {
 impl Validate for InstructionForCreditorAgent3 {}
 
 
-// LEIIdentifier
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug)]
 pub struct Leiidentifier (pub String);
@@ -1142,9 +997,7 @@ impl Validate for Leiidentifier {}
 #[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:pacs.010.001.05")]
 
 pub enum LocalInstrument2ChoiceChoice {
-    // Code
     Cd(ExternalLocalInstrument1Code),
-    // Proprietary
     Prtry(Max35Text),
     __Unknown__(String),
 }
@@ -1157,7 +1010,6 @@ impl Default for LocalInstrument2ChoiceChoice {
 
 impl Validate for LocalInstrument2ChoiceChoice {}
 
-// LocalInstrument2Choice
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:pacs.010.001.05")]
@@ -1172,7 +1024,6 @@ impl Validate for LocalInstrument2Choice {}
 
 
 
-// Max140Text
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug)]
 pub struct Max140Text (pub String);
@@ -1191,14 +1042,12 @@ impl Validate for Max140Text {
     }
 }
 
-// Max15NumericText
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug)]
 pub struct Max15NumericText (pub String);
 crate::simple_type!(Max15NumericText);
 
 impl Validate for Max15NumericText {}
-// Max16Text
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug)]
 pub struct Max16Text (pub String);
@@ -1217,7 +1066,6 @@ impl Validate for Max16Text {
     }
 }
 
-// Max2048Text
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug)]
 pub struct Max2048Text (pub String);
@@ -1236,7 +1084,6 @@ impl Validate for Max2048Text {
     }
 }
 
-// Max210Text
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug)]
 pub struct Max210Text (pub String);
@@ -1255,7 +1102,6 @@ impl Validate for Max210Text {
     }
 }
 
-// Max34Text
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug)]
 pub struct Max34Text (pub String);
@@ -1274,7 +1120,6 @@ impl Validate for Max34Text {
     }
 }
 
-// Max350Text
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug)]
 pub struct Max350Text (pub String);
@@ -1293,7 +1138,6 @@ impl Validate for Max350Text {
     }
 }
 
-// Max35Text
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug)]
 pub struct Max35Text (pub String);
@@ -1312,7 +1156,6 @@ impl Validate for Max35Text {
     }
 }
 
-// Max70Text
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug)]
 pub struct Max70Text (pub String);
@@ -1331,32 +1174,26 @@ impl Validate for Max70Text {
     }
 }
 
-// PaymentIdentification13
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:pacs.010.001.05")]
 pub struct PaymentIdentification13 {
-    // InstructionIdentification
     #[yaserde(rename = "InstrId")]
     #[cfg_attr(feature = "serde", serde(rename = "InstrId"))]
     pub instr_id: Max35Text,
 
-    // EndToEndIdentification
     #[yaserde(rename = "EndToEndId")]
     #[cfg_attr(feature = "serde", serde(rename = "EndToEndId"))]
     pub end_to_end_id: Max35Text,
 
-    // TransactionIdentification
     #[yaserde(rename = "TxId")]
     #[cfg_attr(feature = "serde", serde(rename = "TxId"))]
     pub tx_id: Max35Text,
 
-    // UETR
     #[yaserde(rename = "UETR")]
     #[cfg_attr(feature = "serde", serde(rename = "UETR"))]
     pub uetr: Uuidv4Identifier,
 
-    // ClearingSystemReference
     #[yaserde(rename = "ClrSysRef")]
     #[cfg_attr(feature = "serde", serde(rename = "ClrSysRef"))]
     pub clr_sys_ref: Max35Text,
@@ -1365,32 +1202,26 @@ pub struct PaymentIdentification13 {
 impl Validate for PaymentIdentification13 {}
 
 
-// PaymentTypeInformation28
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:pacs.010.001.05")]
 pub struct PaymentTypeInformation28 {
-    // InstructionPriority
     #[yaserde(rename = "InstrPrty")]
     #[cfg_attr(feature = "serde", serde(rename = "InstrPrty"))]
     pub instr_prty: Priority2Code,
 
-    // ClearingChannel
     #[yaserde(rename = "ClrChanl")]
     #[cfg_attr(feature = "serde", serde(rename = "ClrChanl"))]
     pub clr_chanl: ClearingChannel2Code,
 
-    // ServiceLevel
     #[yaserde(rename = "SvcLvl")]
     #[cfg_attr(feature = "serde", serde(rename = "SvcLvl"))]
     pub svc_lvl: Vec<ServiceLevel8Choice>,
 
-    // LocalInstrument
     #[yaserde(rename = "LclInstrm")]
     #[cfg_attr(feature = "serde", serde(rename = "LclInstrm"))]
     pub lcl_instrm: LocalInstrument2Choice,
 
-    // CategoryPurpose
     #[yaserde(rename = "CtgyPurp")]
     #[cfg_attr(feature = "serde", serde(rename = "CtgyPurp"))]
     pub ctgy_purp: CategoryPurpose1Choice,
@@ -1399,87 +1230,70 @@ pub struct PaymentTypeInformation28 {
 impl Validate for PaymentTypeInformation28 {}
 
 
-// PostalAddress24
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:pacs.010.001.05")]
 pub struct PostalAddress24 {
-    // AddressType
     #[yaserde(rename = "AdrTp")]
     #[cfg_attr(feature = "serde", serde(rename = "AdrTp"))]
     pub adr_tp: AddressType3Choice,
 
-    // Department
     #[yaserde(rename = "Dept")]
     #[cfg_attr(feature = "serde", serde(rename = "Dept"))]
     pub dept: Max70Text,
 
-    // SubDepartment
     #[yaserde(rename = "SubDept")]
     #[cfg_attr(feature = "serde", serde(rename = "SubDept"))]
     pub sub_dept: Max70Text,
 
-    // StreetName
     #[yaserde(rename = "StrtNm")]
     #[cfg_attr(feature = "serde", serde(rename = "StrtNm"))]
     pub strt_nm: Max70Text,
 
-    // BuildingNumber
     #[yaserde(rename = "BldgNb")]
     #[cfg_attr(feature = "serde", serde(rename = "BldgNb"))]
     pub bldg_nb: Max16Text,
 
-    // BuildingName
     #[yaserde(rename = "BldgNm")]
     #[cfg_attr(feature = "serde", serde(rename = "BldgNm"))]
     pub bldg_nm: Max35Text,
 
-    // Floor
     #[yaserde(rename = "Flr")]
     #[cfg_attr(feature = "serde", serde(rename = "Flr"))]
     pub flr: Max70Text,
 
-    // PostBox
     #[yaserde(rename = "PstBx")]
     #[cfg_attr(feature = "serde", serde(rename = "PstBx"))]
     pub pst_bx: Max16Text,
 
-    // Room
     #[yaserde(rename = "Room")]
     #[cfg_attr(feature = "serde", serde(rename = "Room"))]
     pub room: Max70Text,
 
-    // PostCode
     #[yaserde(rename = "PstCd")]
     #[cfg_attr(feature = "serde", serde(rename = "PstCd"))]
     pub pst_cd: Max16Text,
 
-    // TownName
     #[yaserde(rename = "TwnNm")]
     #[cfg_attr(feature = "serde", serde(rename = "TwnNm"))]
     pub twn_nm: Max35Text,
 
-    // TownLocationName
     #[yaserde(rename = "TwnLctnNm")]
     #[cfg_attr(feature = "serde", serde(rename = "TwnLctnNm"))]
     pub twn_lctn_nm: Max35Text,
 
-    // DistrictName
     #[yaserde(rename = "DstrctNm")]
     #[cfg_attr(feature = "serde", serde(rename = "DstrctNm"))]
     pub dstrct_nm: Max35Text,
 
-    // CountrySubDivision
     #[yaserde(rename = "CtrySubDvsn")]
     #[cfg_attr(feature = "serde", serde(rename = "CtrySubDvsn"))]
     pub ctry_sub_dvsn: Max35Text,
 
-    // Country
     #[yaserde(rename = "Ctry")]
     #[cfg_attr(feature = "serde", serde(rename = "Ctry"))]
     pub ctry: CountryCode,
 
-    // AddressLine
     #[yaserde(rename = "AdrLine")]
     #[cfg_attr(feature = "serde", serde(rename = "AdrLine"))]
     pub adr_line: Vec<Max70Text>,
@@ -1488,16 +1302,13 @@ pub struct PostalAddress24 {
 impl Validate for PostalAddress24 {}
 
 
-// Priority2Code
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:pacs.010.001.05")]
 
 pub enum Priority2Code {
-    // High
     #[yaserde(rename = "HIGH")]
     #[cfg_attr(feature = "serde", serde(rename = "HIGH"))]
     High,
-    // Normal
     #[yaserde(rename = "NORM")]
     #[cfg_attr(feature = "serde", serde(rename = "NORM"))]
     Norm,
@@ -1514,20 +1325,16 @@ impl Validate for Priority2Code {}
 
 
 
-// Priority3Code
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:pacs.010.001.05")]
 
 pub enum Priority3Code {
-    // Urgent
     #[yaserde(rename = "URGT")]
     #[cfg_attr(feature = "serde", serde(rename = "URGT"))]
     Urgt,
-    // High
     #[yaserde(rename = "HIGH")]
     #[cfg_attr(feature = "serde", serde(rename = "HIGH"))]
     High,
-    // Normal
     #[yaserde(rename = "NORM")]
     #[cfg_attr(feature = "serde", serde(rename = "NORM"))]
     Norm,
@@ -1544,17 +1351,14 @@ impl Validate for Priority3Code {}
 
 
 
-// ProxyAccountIdentification1
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:pacs.010.001.05")]
 pub struct ProxyAccountIdentification1 {
-    // Type
     #[yaserde(rename = "Tp")]
     #[cfg_attr(feature = "serde", serde(rename = "Tp"))]
     pub tp: ProxyAccountType1Choice,
 
-    // Identification
     #[yaserde(rename = "Id")]
     #[cfg_attr(feature = "serde", serde(rename = "Id"))]
     pub id: Max2048Text,
@@ -1567,9 +1371,7 @@ impl Validate for ProxyAccountIdentification1 {}
 #[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:pacs.010.001.05")]
 
 pub enum ProxyAccountType1ChoiceChoice {
-    // Code
     Cd(ExternalProxyAccountType1Code),
-    // Proprietary
     Prtry(Max35Text),
     __Unknown__(String),
 }
@@ -1582,7 +1384,6 @@ impl Default for ProxyAccountType1ChoiceChoice {
 
 impl Validate for ProxyAccountType1ChoiceChoice {}
 
-// ProxyAccountType1Choice
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:pacs.010.001.05")]
@@ -1601,9 +1402,7 @@ impl Validate for ProxyAccountType1Choice {}
 #[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:pacs.010.001.05")]
 
 pub enum Purpose2ChoiceChoice {
-    // Code
     Cd(ExternalPurpose1Code),
-    // Proprietary
     Prtry(Max35Text),
     __Unknown__(String),
 }
@@ -1616,7 +1415,6 @@ impl Default for Purpose2ChoiceChoice {
 
 impl Validate for Purpose2ChoiceChoice {}
 
-// Purpose2Choice
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:pacs.010.001.05")]
@@ -1631,12 +1429,10 @@ impl Validate for Purpose2Choice {}
 
 
 
-// RemittanceInformation2
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:pacs.010.001.05")]
 pub struct RemittanceInformation2 {
-    // Unstructured
     #[yaserde(rename = "Ustrd")]
     #[cfg_attr(feature = "serde", serde(rename = "Ustrd"))]
     pub ustrd: Vec<Max140Text>,
@@ -1649,9 +1445,7 @@ impl Validate for RemittanceInformation2 {}
 #[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:pacs.010.001.05")]
 
 pub enum ServiceLevel8ChoiceChoice {
-    // Code
     Cd(ExternalServiceLevel1Code),
-    // Proprietary
     Prtry(Max35Text),
     __Unknown__(String),
 }
@@ -1664,7 +1458,6 @@ impl Default for ServiceLevel8ChoiceChoice {
 
 impl Validate for ServiceLevel8ChoiceChoice {}
 
-// ServiceLevel8Choice
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:pacs.010.001.05")]
@@ -1679,17 +1472,14 @@ impl Validate for ServiceLevel8Choice {}
 
 
 
-// SettlementDateTimeIndication1
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:pacs.010.001.05")]
 pub struct SettlementDateTimeIndication1 {
-    // DebitDateTime
     #[yaserde(rename = "DbtDtTm")]
     #[cfg_attr(feature = "serde", serde(rename = "DbtDtTm"))]
     pub dbt_dt_tm: IsodateTime,
 
-    // CreditDateTime
     #[yaserde(rename = "CdtDtTm")]
     #[cfg_attr(feature = "serde", serde(rename = "CdtDtTm"))]
     pub cdt_dt_tm: IsodateTime,
@@ -1698,27 +1488,22 @@ pub struct SettlementDateTimeIndication1 {
 impl Validate for SettlementDateTimeIndication1 {}
 
 
-// SettlementTimeRequest2
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:pacs.010.001.05")]
 pub struct SettlementTimeRequest2 {
-    // CLSTime
     #[yaserde(rename = "CLSTm")]
     #[cfg_attr(feature = "serde", serde(rename = "CLSTm"))]
     pub cls_tm: Isotime,
 
-    // TillTime
     #[yaserde(rename = "TillTm")]
     #[cfg_attr(feature = "serde", serde(rename = "TillTm"))]
     pub till_tm: Isotime,
 
-    // FromTime
     #[yaserde(rename = "FrTm")]
     #[cfg_attr(feature = "serde", serde(rename = "FrTm"))]
     pub fr_tm: Isotime,
 
-    // RejectTime
     #[yaserde(rename = "RjctTm")]
     #[cfg_attr(feature = "serde", serde(rename = "RjctTm"))]
     pub rjct_tm: Isotime,
@@ -1727,17 +1512,14 @@ pub struct SettlementTimeRequest2 {
 impl Validate for SettlementTimeRequest2 {}
 
 
-// SupplementaryData1
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:pacs.010.001.05")]
 pub struct SupplementaryData1 {
-    // PlaceAndName
     #[yaserde(rename = "PlcAndNm")]
     #[cfg_attr(feature = "serde", serde(rename = "PlcAndNm"))]
     pub plc_and_nm: Max350Text,
 
-    // Envelope
     #[yaserde(rename = "Envlp")]
     #[cfg_attr(feature = "serde", serde(rename = "Envlp"))]
     pub envlp: SupplementaryDataEnvelope1,
@@ -1746,7 +1528,6 @@ pub struct SupplementaryData1 {
 impl Validate for SupplementaryData1 {}
 
 
-// SupplementaryDataEnvelope1
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:pacs.010.001.05")]
@@ -1755,7 +1536,6 @@ pub struct SupplementaryDataEnvelope1 {}
 impl Validate for SupplementaryDataEnvelope1 {}
 
 
-// UUIDv4Identifier
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug)]
 pub struct Uuidv4Identifier (pub String);

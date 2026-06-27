@@ -14,7 +14,7 @@ mod mx_message;
 pub(crate) mod xml_scan;
 
 pub use business_area::BusinessArea;
-pub use envelope::{read_business_message, BusinessMessage};
+pub use envelope::{parse_envelope, read_business_message, BusinessMessage, Envelope};
 pub use error::{Error, Result};
 pub use message::{from_xml, to_xml, to_xml_fragment};
 #[cfg(feature = "serde")]
