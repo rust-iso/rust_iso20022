@@ -162,35 +162,21 @@ pub struct ComparisonResult2 {
     #[cfg_attr(feature = "serde", serde(rename = "ElmtNm"))]
     pub elmt_nm: Max35Text,
 
-    #[yaserde(rename = "ComparisonResult2Choice")]
-    #[cfg_attr(feature = "serde", serde(rename = "ComparisonResult2Choice"))]
-    pub comparison_result_2_choice: comparison_result_2::ComparisonResult2Choice,
+    #[yaserde(rename = "Rplcmnt")]
+    #[cfg_attr(feature = "serde", serde(rename = "Rplcmnt"))]
+    pub rplcmnt: Option<Replacement2>,
+    #[yaserde(rename = "Deltn")]
+    #[cfg_attr(feature = "serde", serde(rename = "Deltn"))]
+    pub deltn: Option<Deletion2>,
+    #[yaserde(rename = "Addtn")]
+    #[cfg_attr(feature = "serde", serde(rename = "Addtn"))]
+    pub addtn: Option<Addition2>,
 }
 
 impl Validate for ComparisonResult2 {}
 
 pub mod comparison_result_2 {
     use super::*;
-    
-    #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-    #[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:tsmt.015.001.03")]
-
-    pub enum ComparisonResult2Choice {
-        Rplcmnt(Replacement2),
-        Deltn(Deletion2),
-        Addtn(Addition2),
-        __Unknown__(String),
-    }
-
-    impl Default for ComparisonResult2Choice {
-        fn default() -> ComparisonResult2Choice {
-            Self::__Unknown__("No valid variants".into())
-        }
-    }
-
-    impl Validate for ComparisonResult2Choice {}
-
-
 }
 
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]

@@ -217,34 +217,18 @@ pub struct AlternateSecurityIdentification1 {
     #[cfg_attr(feature = "serde", serde(rename = "Id"))]
     pub id: Max35Text,
 
-    #[yaserde(rename = "AlternateSecurityIdentification1Choice")]
-    #[cfg_attr(feature = "serde", serde(rename = "AlternateSecurityIdentification1Choice"))]
-    pub alternate_security_identification_1_choice: alternate_security_identification_1::AlternateSecurityIdentification1Choice,
+    #[yaserde(rename = "DmstIdSrc")]
+    #[cfg_attr(feature = "serde", serde(rename = "DmstIdSrc"))]
+    pub dmst_id_src: Option<CountryCode>,
+    #[yaserde(rename = "PrtryIdSrc")]
+    #[cfg_attr(feature = "serde", serde(rename = "PrtryIdSrc"))]
+    pub prtry_id_src: Option<Max35Text>,
 }
 
 impl Validate for AlternateSecurityIdentification1 {}
 
 pub mod alternate_security_identification_1 {
     use super::*;
-    
-    #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-    #[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:semt.006.001.02")]
-
-    pub enum AlternateSecurityIdentification1Choice {
-        DmstIdSrc(CountryCode),
-        PrtryIdSrc(Max35Text),
-        __Unknown__(String),
-    }
-
-    impl Default for AlternateSecurityIdentification1Choice {
-        fn default() -> AlternateSecurityIdentification1Choice {
-            Self::__Unknown__("No valid variants".into())
-        }
-    }
-
-    impl Validate for AlternateSecurityIdentification1Choice {}
-
-
 }
 
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
@@ -683,34 +667,18 @@ pub struct Intermediary11 {
     #[cfg_attr(feature = "serde", serde(rename = "Acct"))]
     pub acct: Account7,
 
-    #[yaserde(rename = "Intermediary11Choice")]
-    #[cfg_attr(feature = "serde", serde(rename = "Intermediary11Choice"))]
-    pub intermediary_11_choice: intermediary_11::Intermediary11Choice,
+    #[yaserde(rename = "Role")]
+    #[cfg_attr(feature = "serde", serde(rename = "Role"))]
+    pub role: Option<InvestmentFundRole2Code>,
+    #[yaserde(rename = "XtndedRole")]
+    #[cfg_attr(feature = "serde", serde(rename = "XtndedRole"))]
+    pub xtnded_role: Option<Extended350Code>,
 }
 
 impl Validate for Intermediary11 {}
 
 pub mod intermediary_11 {
     use super::*;
-    
-    #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-    #[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:semt.006.001.02")]
-
-    pub enum Intermediary11Choice {
-        Role(InvestmentFundRole2Code),
-        XtndedRole(Extended350Code),
-        __Unknown__(String),
-    }
-
-    impl Default for Intermediary11Choice {
-        fn default() -> Intermediary11Choice {
-            Self::__Unknown__("No valid variants".into())
-        }
-    }
-
-    impl Validate for Intermediary11Choice {}
-
-
 }
 
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
@@ -789,9 +757,18 @@ impl Validate for InvestmentFundRole2Code {}
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:semt.006.001.02")]
 pub struct InvestmentFundTransaction3 {
-    #[yaserde(rename = "InvestmentFundTransaction3Choice")]
-    #[cfg_attr(feature = "serde", serde(rename = "InvestmentFundTransaction3Choice"))]
-    pub investment_fund_transaction_3_choice: investment_fund_transaction_3::InvestmentFundTransaction3Choice,
+    #[yaserde(rename = "TxTp")]
+    #[cfg_attr(feature = "serde", serde(rename = "TxTp"))]
+    pub tx_tp: Option<TransactionType2Code>,
+    #[yaserde(rename = "XtndedTxTp")]
+    #[cfg_attr(feature = "serde", serde(rename = "XtndedTxTp"))]
+    pub xtnded_tx_tp: Option<Extended350Code>,
+    #[yaserde(rename = "CorpActnEvtTp")]
+    #[cfg_attr(feature = "serde", serde(rename = "CorpActnEvtTp"))]
+    pub corp_actn_evt_tp: Option<CorporateActionEventType1Code>,
+    #[yaserde(rename = "XtndedCorpActnEvtTp")]
+    #[cfg_attr(feature = "serde", serde(rename = "XtndedCorpActnEvtTp"))]
+    pub xtnded_corp_actn_evt_tp: Option<Extended350Code>,
 
     #[yaserde(rename = "BookgSts")]
     #[cfg_attr(feature = "serde", serde(rename = "BookgSts"))]
@@ -874,27 +851,6 @@ impl Validate for InvestmentFundTransaction3 {}
 
 pub mod investment_fund_transaction_3 {
     use super::*;
-    
-    #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-    #[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:semt.006.001.02")]
-
-    pub enum InvestmentFundTransaction3Choice {
-        TxTp(TransactionType2Code),
-        XtndedTxTp(Extended350Code),
-        CorpActnEvtTp(CorporateActionEventType1Code),
-        XtndedCorpActnEvtTp(Extended350Code),
-        __Unknown__(String),
-    }
-
-    impl Default for InvestmentFundTransaction3Choice {
-        fn default() -> InvestmentFundTransaction3Choice {
-            Self::__Unknown__("No valid variants".into())
-        }
-    }
-
-    impl Validate for InvestmentFundTransaction3Choice {}
-
-
 }
 
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
@@ -1134,55 +1090,25 @@ impl Validate for Pagination {}
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:semt.006.001.02")]
 pub struct PaginationBalance1 {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub pagination_balance_1_choice: pagination_balance_1::PaginationBalance1Choice,
+    #[yaserde(rename = "FrstOpngBal")]
+    #[cfg_attr(feature = "serde", serde(rename = "FrstOpngBal"))]
+    pub frst_opng_bal: Option<FinancialInstrumentQuantity1>,
+    #[yaserde(rename = "IntrmyOpngBal")]
+    #[cfg_attr(feature = "serde", serde(rename = "IntrmyOpngBal"))]
+    pub intrmy_opng_bal: Option<FinancialInstrumentQuantity1>,
 
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub pagination_balance_1_choice_2: pagination_balance_1::PaginationBalance1Choice2,
+    #[yaserde(rename = "FnlClsgBal")]
+    #[cfg_attr(feature = "serde", serde(rename = "FnlClsgBal"))]
+    pub fnl_clsg_bal: Option<FinancialInstrumentQuantity1>,
+    #[yaserde(rename = "IntrmyClsgBal")]
+    #[cfg_attr(feature = "serde", serde(rename = "IntrmyClsgBal"))]
+    pub intrmy_clsg_bal: Option<FinancialInstrumentQuantity1>,
 }
 
 impl Validate for PaginationBalance1 {}
 
 pub mod pagination_balance_1 {
     use super::*;
-    
-    #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-    #[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:semt.006.001.02")]
-
-    pub enum PaginationBalance1Choice {
-        FrstOpngBal(FinancialInstrumentQuantity1),
-        IntrmyOpngBal(FinancialInstrumentQuantity1),
-        __Unknown__(String),
-    }
-
-    impl Default for PaginationBalance1Choice {
-        fn default() -> PaginationBalance1Choice {
-            Self::__Unknown__("No valid variants".into())
-        }
-    }
-
-    impl Validate for PaginationBalance1Choice {}
-
-    #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-    #[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:semt.006.001.02")]
-
-    pub enum PaginationBalance1Choice2 {
-        FnlClsgBal(FinancialInstrumentQuantity1),
-        IntrmyClsgBal(FinancialInstrumentQuantity1),
-        __Unknown__(String),
-    }
-
-    impl Default for PaginationBalance1Choice2 {
-        fn default() -> PaginationBalance1Choice2 {
-            Self::__Unknown__("No valid variants".into())
-        }
-    }
-
-    impl Validate for PaginationBalance1Choice2 {}
-
-
 }
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
@@ -1781,9 +1707,12 @@ impl Validate for TypeOfPrice10Code {}
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:semt.006.001.02")]
 pub struct UnitPrice11 {
-    #[yaserde(rename = "UnitPrice11Choice")]
-    #[cfg_attr(feature = "serde", serde(rename = "UnitPrice11Choice"))]
-    pub unit_price_11_choice: unit_price_11::UnitPrice11Choice,
+    #[yaserde(rename = "Tp")]
+    #[cfg_attr(feature = "serde", serde(rename = "Tp"))]
+    pub tp: Option<TypeOfPrice10Code>,
+    #[yaserde(rename = "XtndedTp")]
+    #[cfg_attr(feature = "serde", serde(rename = "XtndedTp"))]
+    pub xtnded_tp: Option<Extended350Code>,
 
     #[yaserde(rename = "Val")]
     #[cfg_attr(feature = "serde", serde(rename = "Val"))]
@@ -1798,25 +1727,6 @@ impl Validate for UnitPrice11 {}
 
 pub mod unit_price_11 {
     use super::*;
-    
-    #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-    #[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:semt.006.001.02")]
-
-    pub enum UnitPrice11Choice {
-        Tp(TypeOfPrice10Code),
-        XtndedTp(Extended350Code),
-        __Unknown__(String),
-    }
-
-    impl Default for UnitPrice11Choice {
-        fn default() -> UnitPrice11Choice {
-            Self::__Unknown__("No valid variants".into())
-        }
-    }
-
-    impl Validate for UnitPrice11Choice {}
-
-
 }
 
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]

@@ -1,9 +1,7 @@
-有几个test 被ignore 了 是什么原因可以 修复么
-test src/core/envelope.rs - core::envelope::parse_envelope (line 64) ... ignored
-test src/core/message.rs - core::message (line 8) ... ignored
-test src/core/mx_message.rs - core::mx_message::MxMessage (line 13) ... ignored
-test src/lib.rs - parse_as (line 57) ... ignored
 
+检查是否还有一些功能不支持
+检查是否有潜在的bug
+修改README.md 不要有prowide字样
 
 
 ISO 20022 XSD 比对报告（对照官方现行 Catalogue of messages）

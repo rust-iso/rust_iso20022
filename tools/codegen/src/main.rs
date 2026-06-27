@@ -128,11 +128,11 @@ fn choices_to_fields(body: &str) -> String {
     let mut enums: std::collections::HashMap<String, Vec<ChoiceVariant>> = Default::default();
     let mut i = 0;
     while i < lines.len() {
-        // Only top-level (column-0) choice enums; inline `<choice>`s live in
-        // indented submodules and are left as enums (the rarer, harder case).
-        if let Some(rest) = lines[i].strip_prefix("pub enum ") {
+        // Choice enums, top-level or inline (in an indented submodule). Inline
+        // disambiguated names carry a suffix (`…Choice2`, `…Choice3`).
+        if let Some(rest) = lines[i].trim_start().strip_prefix("pub enum ") {
             let name = rest.trim_end_matches('{').trim().to_string();
-            if name.ends_with("Choice") {
+            if is_choice_name(&name) {
                 if let Some((variants, end)) = parse_choice_enum(&lines, i) {
                     enums.insert(name, variants);
                     i = end;
@@ -154,7 +154,7 @@ fn choices_to_fields(body: &str) -> String {
         let t = line.trim_start();
 
         // Drop the enum block and its `impl Default` / `impl Validate` blocks.
-        if let Some(rest) = line.strip_prefix("pub enum ") {
+        if let Some(rest) = t.strip_prefix("pub enum ") {
             let name = rest.trim_end_matches('{').trim().to_string();
             if enums.contains_key(&name) {
                 i = skip_block(&lines, i); // the enum
@@ -178,14 +178,18 @@ fn choices_to_fields(body: &str) -> String {
         if t.starts_with("pub ") && t.ends_with(',') && t.contains(": ") {
             let decl = &t[4..t.len() - 1];
             if let Some((_fname, ty)) = decl.split_once(": ") {
-                // Top-level enum reference only (inline-choice fields use a path).
-                if let Some(variants) = (!ty.contains("::")).then(|| enums.get(ty)).flatten() {
+                // The field's enum is the last path segment (`mod::Enum` for
+                // inline choices, or a bare `Enum` for top-level ones).
+                let key = ty.rsplit("::").next().unwrap_or(ty);
+                if let Some(variants) = enums.get(key) {
                     let indent: String =
                         line.chars().take_while(|c| c.is_whitespace()).collect();
-                    // Drop the preceding `#[yaserde(flatten)]` / serde flatten lines.
+                    // Drop the choice field's own attribute lines (`flatten` for
+                    // top-level choices, a `rename` for submodule ones); the new
+                    // variant fields carry their own attributes.
                     while out
                         .last()
-                        .map(|l| l.trim_start().starts_with("#[") && l.contains("flatten"))
+                        .map(|l| l.trim_start().starts_with("#["))
                         .unwrap_or(false)
                     {
                         out.pop();
@@ -234,7 +238,7 @@ fn parse_choice_enum(lines: &[&str], start: usize) -> Option<(Vec<ChoiceVariant>
         if t == "}" {
             return Some((variants, i + 1));
         }
-        if t.is_empty() {
+        if t.is_empty() || t.starts_with("//") {
             i += 1;
             continue;
         }
@@ -310,6 +314,13 @@ fn skip_following_impls(lines: &[&str], mut i: usize, name: &str) -> usize {
         }
         return i;
     }
+}
+
+/// Whether an enum name is a choice wrapper (`…Choice`, or a disambiguated
+/// `…Choice2` / `…Choice3` from an inline choice).
+fn is_choice_name(name: &str) -> bool {
+    name.trim_end_matches(|c: char| c.is_ascii_digit())
+        .ends_with("Choice")
 }
 
 /// PascalCase identifier to snake_case (`InstdAmt` -> `instd_amt`).

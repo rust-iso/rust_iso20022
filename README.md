@@ -140,9 +140,7 @@ configurable and can target a schema mirror.
   monetary amounts) and keeps XML and JSON in sync.
 - **Choices** are modelled as a struct of `Option<…>` fields (JAXB/prowide
   style), so amounts inside a `<xsd:choice>` round-trip with their `Ccy`
-  attribute and unset choices are simply omitted. The exception is *inline*
-  choices nested in a sequence (16 messages), still modelled as enums — for those
-  an unset choice may emit a placeholder, which `to_xml` strips.
+  attribute and unset choices are simply omitted.
 - **JSON shape:** JSON uses the ISO 20022 element names (`MsgId`, `IBAN`, …),
   mirroring the yaserde renames; `to_json`/`from_json` round-trip.
 - XML round-tripping preserves the data model but not necessarily byte-for-byte

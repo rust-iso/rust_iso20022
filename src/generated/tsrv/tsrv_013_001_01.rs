@@ -199,34 +199,18 @@ impl Validate for CashAccount27 {}
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:tsrv.013.001.01")]
 pub struct CashAccountType2 {
-    #[yaserde(rename = "CashAccountType2Choice")]
-    #[cfg_attr(feature = "serde", serde(rename = "CashAccountType2Choice"))]
-    pub cash_account_type_2_choice: cash_account_type_2::CashAccountType2Choice,
+    #[yaserde(rename = "Cd")]
+    #[cfg_attr(feature = "serde", serde(rename = "Cd"))]
+    pub cd: Option<CashAccountType4Code>,
+    #[yaserde(rename = "Prtry")]
+    #[cfg_attr(feature = "serde", serde(rename = "Prtry"))]
+    pub prtry: Option<Max35Text>,
 }
 
 impl Validate for CashAccountType2 {}
 
 pub mod cash_account_type_2 {
     use super::*;
-    
-    #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-    #[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:tsrv.013.001.01")]
-
-    pub enum CashAccountType2Choice {
-        Cd(CashAccountType4Code),
-        Prtry(Max35Text),
-        __Unknown__(String),
-    }
-
-    impl Default for CashAccountType2Choice {
-        fn default() -> CashAccountType2Choice {
-            Self::__Unknown__("No valid variants".into())
-        }
-    }
-
-    impl Validate for CashAccountType2Choice {}
-
-
 }
 
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]

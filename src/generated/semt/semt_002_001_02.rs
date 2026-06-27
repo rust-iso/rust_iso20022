@@ -196,34 +196,18 @@ pub struct AdditionalBalanceInformation2 {
     #[cfg_attr(feature = "serde", serde(rename = "Qty"))]
     pub qty: SubBalanceQuantity1Choice,
 
-    #[yaserde(rename = "AdditionalBalanceInformation2Choice")]
-    #[cfg_attr(feature = "serde", serde(rename = "AdditionalBalanceInformation2Choice"))]
-    pub additional_balance_information_2_choice: additional_balance_information_2::AdditionalBalanceInformation2Choice,
+    #[yaserde(rename = "SubBalTp")]
+    #[cfg_attr(feature = "serde", serde(rename = "SubBalTp"))]
+    pub sub_bal_tp: Option<SecuritiesBalanceType2Code>,
+    #[yaserde(rename = "XtndedSubBalTp")]
+    #[cfg_attr(feature = "serde", serde(rename = "XtndedSubBalTp"))]
+    pub xtnded_sub_bal_tp: Option<Extended350Code>,
 }
 
 impl Validate for AdditionalBalanceInformation2 {}
 
 pub mod additional_balance_information_2 {
     use super::*;
-    
-    #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-    #[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:semt.002.001.02")]
-
-    pub enum AdditionalBalanceInformation2Choice {
-        SubBalTp(SecuritiesBalanceType2Code),
-        XtndedSubBalTp(Extended350Code),
-        __Unknown__(String),
-    }
-
-    impl Default for AdditionalBalanceInformation2Choice {
-        fn default() -> AdditionalBalanceInformation2Choice {
-            Self::__Unknown__("No valid variants".into())
-        }
-    }
-
-    impl Validate for AdditionalBalanceInformation2Choice {}
-
-
 }
 
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
@@ -425,34 +409,18 @@ pub struct AlternateSecurityIdentification1 {
     #[cfg_attr(feature = "serde", serde(rename = "Id"))]
     pub id: Max35Text,
 
-    #[yaserde(rename = "AlternateSecurityIdentification1Choice")]
-    #[cfg_attr(feature = "serde", serde(rename = "AlternateSecurityIdentification1Choice"))]
-    pub alternate_security_identification_1_choice: alternate_security_identification_1::AlternateSecurityIdentification1Choice,
+    #[yaserde(rename = "DmstIdSrc")]
+    #[cfg_attr(feature = "serde", serde(rename = "DmstIdSrc"))]
+    pub dmst_id_src: Option<CountryCode>,
+    #[yaserde(rename = "PrtryIdSrc")]
+    #[cfg_attr(feature = "serde", serde(rename = "PrtryIdSrc"))]
+    pub prtry_id_src: Option<Max35Text>,
 }
 
 impl Validate for AlternateSecurityIdentification1 {}
 
 pub mod alternate_security_identification_1 {
     use super::*;
-    
-    #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-    #[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:semt.002.001.02")]
-
-    pub enum AlternateSecurityIdentification1Choice {
-        DmstIdSrc(CountryCode),
-        PrtryIdSrc(Max35Text),
-        __Unknown__(String),
-    }
-
-    impl Default for AlternateSecurityIdentification1Choice {
-        fn default() -> AlternateSecurityIdentification1Choice {
-            Self::__Unknown__("No valid variants".into())
-        }
-    }
-
-    impl Validate for AlternateSecurityIdentification1Choice {}
-
-
 }
 
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
@@ -997,34 +965,18 @@ pub struct Intermediary11 {
     #[cfg_attr(feature = "serde", serde(rename = "Acct"))]
     pub acct: Account7,
 
-    #[yaserde(rename = "Intermediary11Choice")]
-    #[cfg_attr(feature = "serde", serde(rename = "Intermediary11Choice"))]
-    pub intermediary_11_choice: intermediary_11::Intermediary11Choice,
+    #[yaserde(rename = "Role")]
+    #[cfg_attr(feature = "serde", serde(rename = "Role"))]
+    pub role: Option<InvestmentFundRole2Code>,
+    #[yaserde(rename = "XtndedRole")]
+    #[cfg_attr(feature = "serde", serde(rename = "XtndedRole"))]
+    pub xtnded_role: Option<Extended350Code>,
 }
 
 impl Validate for Intermediary11 {}
 
 pub mod intermediary_11 {
     use super::*;
-    
-    #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-    #[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:semt.002.001.02")]
-
-    pub enum Intermediary11Choice {
-        Role(InvestmentFundRole2Code),
-        XtndedRole(Extended350Code),
-        __Unknown__(String),
-    }
-
-    impl Default for Intermediary11Choice {
-        fn default() -> Intermediary11Choice {
-            Self::__Unknown__("No valid variants".into())
-        }
-    }
-
-    impl Validate for Intermediary11Choice {}
-
-
 }
 
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
@@ -1385,9 +1337,12 @@ pub struct PriceInformation2 {
     #[cfg_attr(feature = "serde", serde(rename = "ValTp"))]
     pub val_tp: PriceValueType2Code,
 
-    #[yaserde(rename = "PriceInformation2Choice")]
-    #[cfg_attr(feature = "serde", serde(rename = "PriceInformation2Choice"))]
-    pub price_information_2_choice: price_information_2::PriceInformation2Choice,
+    #[yaserde(rename = "Tp")]
+    #[cfg_attr(feature = "serde", serde(rename = "Tp"))]
+    pub tp: Option<TypeOfPrice11Code>,
+    #[yaserde(rename = "XtndedTp")]
+    #[cfg_attr(feature = "serde", serde(rename = "XtndedTp"))]
+    pub xtnded_tp: Option<Extended350Code>,
 
     #[yaserde(rename = "SrcOfPric")]
     #[cfg_attr(feature = "serde", serde(rename = "SrcOfPric"))]
@@ -1406,25 +1361,6 @@ impl Validate for PriceInformation2 {}
 
 pub mod price_information_2 {
     use super::*;
-    
-    #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-    #[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:semt.002.001.02")]
-
-    pub enum PriceInformation2Choice {
-        Tp(TypeOfPrice11Code),
-        XtndedTp(Extended350Code),
-        __Unknown__(String),
-    }
-
-    impl Default for PriceInformation2Choice {
-        fn default() -> PriceInformation2Choice {
-            Self::__Unknown__("No valid variants".into())
-        }
-    }
-
-    impl Validate for PriceInformation2Choice {}
-
-
 }
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
@@ -2103,9 +2039,12 @@ pub struct SubBalanceInformation2 {
     #[cfg_attr(feature = "serde", serde(rename = "Qty"))]
     pub qty: SubBalanceQuantity1Choice,
 
-    #[yaserde(rename = "SubBalanceInformation2Choice")]
-    #[cfg_attr(feature = "serde", serde(rename = "SubBalanceInformation2Choice"))]
-    pub sub_balance_information_2_choice: sub_balance_information_2::SubBalanceInformation2Choice,
+    #[yaserde(rename = "SubBalTp")]
+    #[cfg_attr(feature = "serde", serde(rename = "SubBalTp"))]
+    pub sub_bal_tp: Option<SecuritiesBalanceType1Code>,
+    #[yaserde(rename = "XtndedSubBalTp")]
+    #[cfg_attr(feature = "serde", serde(rename = "XtndedSubBalTp"))]
+    pub xtnded_sub_bal_tp: Option<Extended350Code>,
 
     #[yaserde(rename = "AddtlBalBrkdwnDtls")]
     #[cfg_attr(feature = "serde", serde(rename = "AddtlBalBrkdwnDtls"))]
@@ -2116,25 +2055,6 @@ impl Validate for SubBalanceInformation2 {}
 
 pub mod sub_balance_information_2 {
     use super::*;
-    
-    #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-    #[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:semt.002.001.02")]
-
-    pub enum SubBalanceInformation2Choice {
-        SubBalTp(SecuritiesBalanceType1Code),
-        XtndedSubBalTp(Extended350Code),
-        __Unknown__(String),
-    }
-
-    impl Default for SubBalanceInformation2Choice {
-        fn default() -> SubBalanceInformation2Choice {
-            Self::__Unknown__("No valid variants".into())
-        }
-    }
-
-    impl Validate for SubBalanceInformation2Choice {}
-
-
 }
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]

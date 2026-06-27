@@ -215,34 +215,18 @@ impl Validate for CashAccount7 {}
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:tsin.002.001.01")]
 pub struct CashAccountType2 {
-    #[yaserde(rename = "CashAccountType2Choice")]
-    #[cfg_attr(feature = "serde", serde(rename = "CashAccountType2Choice"))]
-    pub cash_account_type_2_choice: cash_account_type_2::CashAccountType2Choice,
+    #[yaserde(rename = "Cd")]
+    #[cfg_attr(feature = "serde", serde(rename = "Cd"))]
+    pub cd: Option<CashAccountType4Code>,
+    #[yaserde(rename = "Prtry")]
+    #[cfg_attr(feature = "serde", serde(rename = "Prtry"))]
+    pub prtry: Option<Max35Text>,
 }
 
 impl Validate for CashAccountType2 {}
 
 pub mod cash_account_type_2 {
     use super::*;
-    
-    #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-    #[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:tsin.002.001.01")]
-
-    pub enum CashAccountType2Choice {
-        Cd(CashAccountType4Code),
-        Prtry(Max35Text),
-        __Unknown__(String),
-    }
-
-    impl Default for CashAccountType2Choice {
-        fn default() -> CashAccountType2Choice {
-            Self::__Unknown__("No valid variants".into())
-        }
-    }
-
-    impl Validate for CashAccountType2Choice {}
-
-
 }
 
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
@@ -1122,9 +1106,36 @@ impl Validate for PercentageRate {}
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:tsin.002.001.01")]
 pub struct PersonIdentification3 {
-    #[yaserde(rename = "PersonIdentification3Choice")]
-    #[cfg_attr(feature = "serde", serde(rename = "PersonIdentification3Choice"))]
-    pub person_identification_3_choice: person_identification_3::PersonIdentification3Choice,
+    #[yaserde(rename = "DrvrsLicNb")]
+    #[cfg_attr(feature = "serde", serde(rename = "DrvrsLicNb"))]
+    pub drvrs_lic_nb: Option<Max35Text>,
+    #[yaserde(rename = "CstmrNb")]
+    #[cfg_attr(feature = "serde", serde(rename = "CstmrNb"))]
+    pub cstmr_nb: Option<Max35Text>,
+    #[yaserde(rename = "SclSctyNb")]
+    #[cfg_attr(feature = "serde", serde(rename = "SclSctyNb"))]
+    pub scl_scty_nb: Option<Max35Text>,
+    #[yaserde(rename = "AlnRegnNb")]
+    #[cfg_attr(feature = "serde", serde(rename = "AlnRegnNb"))]
+    pub aln_regn_nb: Option<Max35Text>,
+    #[yaserde(rename = "PsptNb")]
+    #[cfg_attr(feature = "serde", serde(rename = "PsptNb"))]
+    pub pspt_nb: Option<Max35Text>,
+    #[yaserde(rename = "TaxIdNb")]
+    #[cfg_attr(feature = "serde", serde(rename = "TaxIdNb"))]
+    pub tax_id_nb: Option<Max35Text>,
+    #[yaserde(rename = "IdntyCardNb")]
+    #[cfg_attr(feature = "serde", serde(rename = "IdntyCardNb"))]
+    pub idnty_card_nb: Option<Max35Text>,
+    #[yaserde(rename = "MplyrIdNb")]
+    #[cfg_attr(feature = "serde", serde(rename = "MplyrIdNb"))]
+    pub mplyr_id_nb: Option<Max35Text>,
+    #[yaserde(rename = "DtAndPlcOfBirth")]
+    #[cfg_attr(feature = "serde", serde(rename = "DtAndPlcOfBirth"))]
+    pub dt_and_plc_of_birth: Option<DateAndPlaceOfBirth>,
+    #[yaserde(rename = "OthrId")]
+    #[cfg_attr(feature = "serde", serde(rename = "OthrId"))]
+    pub othr_id: Option<GenericIdentification4>,
 
     #[yaserde(rename = "Issr")]
     #[cfg_attr(feature = "serde", serde(rename = "Issr"))]
@@ -1135,33 +1146,6 @@ impl Validate for PersonIdentification3 {}
 
 pub mod person_identification_3 {
     use super::*;
-    
-    #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-    #[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:tsin.002.001.01")]
-
-    pub enum PersonIdentification3Choice {
-        DrvrsLicNb(Max35Text),
-        CstmrNb(Max35Text),
-        SclSctyNb(Max35Text),
-        AlnRegnNb(Max35Text),
-        PsptNb(Max35Text),
-        TaxIdNb(Max35Text),
-        IdntyCardNb(Max35Text),
-        MplyrIdNb(Max35Text),
-        DtAndPlcOfBirth(DateAndPlaceOfBirth),
-        OthrId(GenericIdentification4),
-        __Unknown__(String),
-    }
-
-    impl Default for PersonIdentification3Choice {
-        fn default() -> PersonIdentification3Choice {
-            Self::__Unknown__("No valid variants".into())
-        }
-    }
-
-    impl Validate for PersonIdentification3Choice {}
-
-
 }
 
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]

@@ -44,12 +44,12 @@ Status of `rust_iso20022`. ✅ = done, ⬜ = outstanding.
   `<__Unknown__>` placeholder elements that unset choices produce (round-trip
   preserved). A minOccurs-aware fix that also omits the now-empty parent element
   is still a future refinement.
-- ✅ **`Ccy` on choice-amounts — root-fixed.** codegen now models top-level
-  `<xsd:choice>`s as a struct of `Option<…>` fields (JAXB/prowide style), so the
-  amount struct serializes as a normal element with its `Ccy` attribute and the
-  `__Unknown__` placeholder is gone. pain.001 `InstdAmt Ccy` now round-trips.
-  (Inline choices nested in a sequence — 16 messages — are still modelled as
-  enums; a follow-up can extend the transform to them.)
+- ✅ **`Ccy` on choice-amounts — root-fixed.** codegen models **all**
+  `<xsd:choice>`s (top-level *and* inline/nested) as a struct of `Option<…>`
+  fields (JAXB/prowide style), so the amount struct serializes as a normal
+  element with its `Ccy` attribute and the `__Unknown__` placeholder is gone for
+  choices. pain.001 `InstdAmt Ccy` round-trips; verified across the inline-choice
+  families (reda/semt/secl/caam/camt/pain).
 - ✅ **Business-message reader** — `read_business_message` returns header +
   detected `MxId` + metadata in one call
 - ✅ **Typed envelope** — `Envelope<D>` + `parse_envelope::<D>` lift the
@@ -74,5 +74,3 @@ Status of `rust_iso20022`. ✅ = done, ⬜ = outstanding.
   `Document` constructs + serializes, on a large-stack thread) in each family;
   run via `cargo test --features model-<area>`
 - ✅ **Schema provenance unified** — re-sourced 721/722 schemas from
-  iso20022.org's authoritative static path (only the superseded `reda.074.001.01`
-  kept its mirror copy)

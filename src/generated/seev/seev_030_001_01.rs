@@ -53,59 +53,29 @@ pub struct AgentCADeactivationStatusAdviceV01 {
     #[cfg_attr(feature = "serde", serde(rename = "Id"))]
     pub id: DocumentIdentification8,
 
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub agent_ca_deactivation_status_advice_v01_choice: agent_ca_deactivation_status_advice_v01::AgentCADeactivationStatusAdviceV01Choice,
+    #[yaserde(rename = "AgtCADeactvtnInstrId")]
+    #[cfg_attr(feature = "serde", serde(rename = "AgtCADeactvtnInstrId"))]
+    pub agt_c_a_deactvtn_instr_id: Option<DocumentIdentification8>,
+    #[yaserde(rename = "AgtCADeactvtnCxlReqId")]
+    #[cfg_attr(feature = "serde", serde(rename = "AgtCADeactvtnCxlReqId"))]
+    pub agt_c_a_deactvtn_cxl_req_id: Option<DocumentIdentification8>,
 
     #[yaserde(rename = "CorpActnGnlInf")]
     #[cfg_attr(feature = "serde", serde(rename = "CorpActnGnlInf"))]
     pub corp_actn_gnl_inf: CorporateActionInformation1,
 
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub agent_ca_deactivation_status_advice_v01_choice_2: agent_ca_deactivation_status_advice_v01::AgentCADeactivationStatusAdviceV01Choice2,
+    #[yaserde(rename = "DeactvtnInstrSts")]
+    #[cfg_attr(feature = "serde", serde(rename = "DeactvtnInstrSts"))]
+    pub deactvtn_instr_sts: Vec<CorporateActionDeactivationInstructionStatus1>,
+    #[yaserde(rename = "DeactvtnCxlReqSts")]
+    #[cfg_attr(feature = "serde", serde(rename = "DeactvtnCxlReqSts"))]
+    pub deactvtn_cxl_req_sts: Option<CorporateActionDeactivationCancellationStatus1Choice>,
 }
 
 impl Validate for AgentCADeactivationStatusAdviceV01 {}
 
 pub mod agent_ca_deactivation_status_advice_v01 {
     use super::*;
-    
-    #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-    #[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:seev.030.001.01")]
-
-    pub enum AgentCADeactivationStatusAdviceV01Choice {
-        AgtCADeactvtnInstrId(DocumentIdentification8),
-        AgtCADeactvtnCxlReqId(DocumentIdentification8),
-        __Unknown__(String),
-    }
-
-    impl Default for AgentCADeactivationStatusAdviceV01Choice {
-        fn default() -> AgentCADeactivationStatusAdviceV01Choice {
-            Self::__Unknown__("No valid variants".into())
-        }
-    }
-
-    impl Validate for AgentCADeactivationStatusAdviceV01Choice {}
-
-    #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-    #[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:seev.030.001.01")]
-
-    pub enum AgentCADeactivationStatusAdviceV01Choice2 {
-        DeactvtnInstrSts(Vec<CorporateActionDeactivationInstructionStatus1>),
-        DeactvtnCxlReqSts(CorporateActionDeactivationCancellationStatus1Choice),
-        __Unknown__(String),
-    }
-
-    impl Default for AgentCADeactivationStatusAdviceV01Choice2 {
-        fn default() -> AgentCADeactivationStatusAdviceV01Choice2 {
-            Self::__Unknown__("No valid variants".into())
-        }
-    }
-
-    impl Validate for AgentCADeactivationStatusAdviceV01Choice2 {}
-
-
 }
 
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
@@ -116,34 +86,18 @@ pub struct AlternateSecurityIdentification3 {
     #[cfg_attr(feature = "serde", serde(rename = "Id"))]
     pub id: Max70Text,
 
-    #[yaserde(rename = "AlternateSecurityIdentification3Choice")]
-    #[cfg_attr(feature = "serde", serde(rename = "AlternateSecurityIdentification3Choice"))]
-    pub alternate_security_identification_3_choice: alternate_security_identification_3::AlternateSecurityIdentification3Choice,
+    #[yaserde(rename = "DmstIdSrc")]
+    #[cfg_attr(feature = "serde", serde(rename = "DmstIdSrc"))]
+    pub dmst_id_src: Option<CountryCode>,
+    #[yaserde(rename = "PrtryIdSrc")]
+    #[cfg_attr(feature = "serde", serde(rename = "PrtryIdSrc"))]
+    pub prtry_id_src: Option<Max35Text>,
 }
 
 impl Validate for AlternateSecurityIdentification3 {}
 
 pub mod alternate_security_identification_3 {
     use super::*;
-    
-    #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-    #[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:seev.030.001.01")]
-
-    pub enum AlternateSecurityIdentification3Choice {
-        DmstIdSrc(CountryCode),
-        PrtryIdSrc(Max35Text),
-        __Unknown__(String),
-    }
-
-    impl Default for AlternateSecurityIdentification3Choice {
-        fn default() -> AlternateSecurityIdentification3Choice {
-            Self::__Unknown__("No valid variants".into())
-        }
-    }
-
-    impl Validate for AlternateSecurityIdentification3Choice {}
-
-
 }
 
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
@@ -243,34 +197,18 @@ pub struct CorporateActionDeactivationInstructionStatus1 {
     #[cfg_attr(feature = "serde", serde(rename = "OptnNb"))]
     pub optn_nb: Exact3NumericText,
 
-    #[yaserde(rename = "CorporateActionDeactivationInstructionStatus1Choice")]
-    #[cfg_attr(feature = "serde", serde(rename = "CorporateActionDeactivationInstructionStatus1Choice"))]
-    pub corporate_action_deactivation_instruction_status_1_choice: corporate_action_deactivation_instruction_status_1::CorporateActionDeactivationInstructionStatus1Choice,
+    #[yaserde(rename = "PrcdSts")]
+    #[cfg_attr(feature = "serde", serde(rename = "PrcdSts"))]
+    pub prcd_sts: Option<CorporateActionDeactivationInstructionProcessingStatus1>,
+    #[yaserde(rename = "RjctdSts")]
+    #[cfg_attr(feature = "serde", serde(rename = "RjctdSts"))]
+    pub rjctd_sts: Option<CorporateActionDeactivationInstructionRejectionStatus1>,
 }
 
 impl Validate for CorporateActionDeactivationInstructionStatus1 {}
 
 pub mod corporate_action_deactivation_instruction_status_1 {
     use super::*;
-    
-    #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-    #[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:seev.030.001.01")]
-
-    pub enum CorporateActionDeactivationInstructionStatus1Choice {
-        PrcdSts(CorporateActionDeactivationInstructionProcessingStatus1),
-        RjctdSts(CorporateActionDeactivationInstructionRejectionStatus1),
-        __Unknown__(String),
-    }
-
-    impl Default for CorporateActionDeactivationInstructionStatus1Choice {
-        fn default() -> CorporateActionDeactivationInstructionStatus1Choice {
-            Self::__Unknown__("No valid variants".into())
-        }
-    }
-
-    impl Validate for CorporateActionDeactivationInstructionStatus1Choice {}
-
-
 }
 
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
@@ -1226,9 +1164,12 @@ impl Validate for RejectionReason7FormatChoice {}
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:seev.030.001.01")]
 pub struct SecurityIdentification7 {
-    #[yaserde(rename = "SecurityIdentification7Choice")]
-    #[cfg_attr(feature = "serde", serde(rename = "SecurityIdentification7Choice"))]
-    pub security_identification_7_choice: security_identification_7::SecurityIdentification7Choice,
+    #[yaserde(rename = "ISIN")]
+    #[cfg_attr(feature = "serde", serde(rename = "ISIN"))]
+    pub isin: Option<Isinidentifier>,
+    #[yaserde(rename = "OthrId")]
+    #[cfg_attr(feature = "serde", serde(rename = "OthrId"))]
+    pub othr_id: Option<AlternateSecurityIdentification3>,
 
     #[yaserde(rename = "Desc")]
     #[cfg_attr(feature = "serde", serde(rename = "Desc"))]
@@ -1239,27 +1180,6 @@ impl Validate for SecurityIdentification7 {}
 
 pub mod security_identification_7 {
     use super::*;
-    
-    #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-    #[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:seev.030.001.01")]
-
-    pub enum SecurityIdentification7Choice {
-        #[yaserde(rename = "ISIN")]
-        #[cfg_attr(feature = "serde", serde(rename = "ISIN"))]
-        Isin(Isinidentifier),
-        OthrId(AlternateSecurityIdentification3),
-        __Unknown__(String),
-    }
-
-    impl Default for SecurityIdentification7Choice {
-        fn default() -> SecurityIdentification7Choice {
-            Self::__Unknown__("No valid variants".into())
-        }
-    }
-
-    impl Validate for SecurityIdentification7Choice {}
-
-
 }
 
 impl crate::MxMessage for Document {
