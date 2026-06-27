@@ -13,3 +13,4 @@ Cargo.lock
 # IDE
 .idea
 .vscode
+/xsd_diff.md

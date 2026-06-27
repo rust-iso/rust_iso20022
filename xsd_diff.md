@@ -1,10 +1,3 @@
-
-检查是否还有一些prowide 功能的差异
-检查是否有潜在的bug 和问题
-修改README.md 不要有prowide字样
-wasm 支持的是否全面
-依赖升级
-
 ISO 20022 XSD 比对报告（对照官方现行 Catalogue of messages）
 
 

@@ -7,6 +7,12 @@ All notable changes to this project are documented here.
 Initial release.
 
 ### Changed
+- **Coverage expanded to 1130 messages:** added every current message version
+  from the iso20022.org catalogue that was missing (the latest versions, plus
+  newly-published messages), keeping the earlier versions so older messages still
+  parse. 5 current messages (camt.088.001.04, sese.020/021/022.001, sese.023.001.13)
+  are not downloadable from iso20022.org (static path 404s, download endpoint
+  Akamai-blocked) and are tracked in `TODO.md`.
 - **Dependency upgrades:** `phf` 0.11 → 0.14, `reqwest` 0.12 → 0.13; the
   floating deps (`regex`, `tokio`, `serde`, `chrono`, `rust_decimal`, `xml-rs`,
   `log`) resolve to their latest compatible releases. `yaserde`/`yaserde_derive`

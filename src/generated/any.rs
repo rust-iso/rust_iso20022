@@ -27,55 +27,105 @@ pub enum AnyMessage {
     #[cfg(feature = "model-acmt")]
     Acmt_007_001_04(Box<crate::generated::acmt::acmt_007_001_04::Document>),
     #[cfg(feature = "model-acmt")]
+    Acmt_007_001_05(Box<crate::generated::acmt::acmt_007_001_05::Document>),
+    #[cfg(feature = "model-acmt")]
     Acmt_008_001_04(Box<crate::generated::acmt::acmt_008_001_04::Document>),
+    #[cfg(feature = "model-acmt")]
+    Acmt_008_001_05(Box<crate::generated::acmt::acmt_008_001_05::Document>),
     #[cfg(feature = "model-acmt")]
     Acmt_009_001_03(Box<crate::generated::acmt::acmt_009_001_03::Document>),
     #[cfg(feature = "model-acmt")]
+    Acmt_009_001_04(Box<crate::generated::acmt::acmt_009_001_04::Document>),
+    #[cfg(feature = "model-acmt")]
     Acmt_010_001_03(Box<crate::generated::acmt::acmt_010_001_03::Document>),
+    #[cfg(feature = "model-acmt")]
+    Acmt_010_001_04(Box<crate::generated::acmt::acmt_010_001_04::Document>),
     #[cfg(feature = "model-acmt")]
     Acmt_011_001_03(Box<crate::generated::acmt::acmt_011_001_03::Document>),
     #[cfg(feature = "model-acmt")]
+    Acmt_011_001_04(Box<crate::generated::acmt::acmt_011_001_04::Document>),
+    #[cfg(feature = "model-acmt")]
     Acmt_012_001_03(Box<crate::generated::acmt::acmt_012_001_03::Document>),
+    #[cfg(feature = "model-acmt")]
+    Acmt_012_001_04(Box<crate::generated::acmt::acmt_012_001_04::Document>),
     #[cfg(feature = "model-acmt")]
     Acmt_013_001_03(Box<crate::generated::acmt::acmt_013_001_03::Document>),
     #[cfg(feature = "model-acmt")]
+    Acmt_013_001_04(Box<crate::generated::acmt::acmt_013_001_04::Document>),
+    #[cfg(feature = "model-acmt")]
     Acmt_014_001_04(Box<crate::generated::acmt::acmt_014_001_04::Document>),
+    #[cfg(feature = "model-acmt")]
+    Acmt_014_001_05(Box<crate::generated::acmt::acmt_014_001_05::Document>),
     #[cfg(feature = "model-acmt")]
     Acmt_015_001_03(Box<crate::generated::acmt::acmt_015_001_03::Document>),
     #[cfg(feature = "model-acmt")]
+    Acmt_015_001_05(Box<crate::generated::acmt::acmt_015_001_05::Document>),
+    #[cfg(feature = "model-acmt")]
     Acmt_016_001_03(Box<crate::generated::acmt::acmt_016_001_03::Document>),
+    #[cfg(feature = "model-acmt")]
+    Acmt_016_001_05(Box<crate::generated::acmt::acmt_016_001_05::Document>),
     #[cfg(feature = "model-acmt")]
     Acmt_017_001_03(Box<crate::generated::acmt::acmt_017_001_03::Document>),
     #[cfg(feature = "model-acmt")]
+    Acmt_017_001_05(Box<crate::generated::acmt::acmt_017_001_05::Document>),
+    #[cfg(feature = "model-acmt")]
     Acmt_018_001_03(Box<crate::generated::acmt::acmt_018_001_03::Document>),
+    #[cfg(feature = "model-acmt")]
+    Acmt_018_001_05(Box<crate::generated::acmt::acmt_018_001_05::Document>),
     #[cfg(feature = "model-acmt")]
     Acmt_019_001_03(Box<crate::generated::acmt::acmt_019_001_03::Document>),
     #[cfg(feature = "model-acmt")]
+    Acmt_019_001_04(Box<crate::generated::acmt::acmt_019_001_04::Document>),
+    #[cfg(feature = "model-acmt")]
     Acmt_020_001_03(Box<crate::generated::acmt::acmt_020_001_03::Document>),
+    #[cfg(feature = "model-acmt")]
+    Acmt_020_001_04(Box<crate::generated::acmt::acmt_020_001_04::Document>),
     #[cfg(feature = "model-acmt")]
     Acmt_021_001_03(Box<crate::generated::acmt::acmt_021_001_03::Document>),
     #[cfg(feature = "model-acmt")]
+    Acmt_021_001_04(Box<crate::generated::acmt::acmt_021_001_04::Document>),
+    #[cfg(feature = "model-acmt")]
     Acmt_022_001_03(Box<crate::generated::acmt::acmt_022_001_03::Document>),
+    #[cfg(feature = "model-acmt")]
+    Acmt_022_001_04(Box<crate::generated::acmt::acmt_022_001_04::Document>),
     #[cfg(feature = "model-acmt")]
     Acmt_023_001_03(Box<crate::generated::acmt::acmt_023_001_03::Document>),
     #[cfg(feature = "model-acmt")]
+    Acmt_023_001_04(Box<crate::generated::acmt::acmt_023_001_04::Document>),
+    #[cfg(feature = "model-acmt")]
     Acmt_024_001_03(Box<crate::generated::acmt::acmt_024_001_03::Document>),
+    #[cfg(feature = "model-acmt")]
+    Acmt_024_001_04(Box<crate::generated::acmt::acmt_024_001_04::Document>),
     #[cfg(feature = "model-acmt")]
     Acmt_027_001_04(Box<crate::generated::acmt::acmt_027_001_04::Document>),
     #[cfg(feature = "model-acmt")]
+    Acmt_027_001_06(Box<crate::generated::acmt::acmt_027_001_06::Document>),
+    #[cfg(feature = "model-acmt")]
     Acmt_028_001_04(Box<crate::generated::acmt::acmt_028_001_04::Document>),
+    #[cfg(feature = "model-acmt")]
+    Acmt_028_001_06(Box<crate::generated::acmt::acmt_028_001_06::Document>),
     #[cfg(feature = "model-acmt")]
     Acmt_029_001_04(Box<crate::generated::acmt::acmt_029_001_04::Document>),
     #[cfg(feature = "model-acmt")]
+    Acmt_029_001_06(Box<crate::generated::acmt::acmt_029_001_06::Document>),
+    #[cfg(feature = "model-acmt")]
     Acmt_030_001_03(Box<crate::generated::acmt::acmt_030_001_03::Document>),
+    #[cfg(feature = "model-acmt")]
+    Acmt_030_001_04(Box<crate::generated::acmt::acmt_030_001_04::Document>),
     #[cfg(feature = "model-acmt")]
     Acmt_031_001_04(Box<crate::generated::acmt::acmt_031_001_04::Document>),
     #[cfg(feature = "model-acmt")]
+    Acmt_031_001_06(Box<crate::generated::acmt::acmt_031_001_06::Document>),
+    #[cfg(feature = "model-acmt")]
     Acmt_032_001_04(Box<crate::generated::acmt::acmt_032_001_04::Document>),
+    #[cfg(feature = "model-acmt")]
+    Acmt_032_001_06(Box<crate::generated::acmt::acmt_032_001_06::Document>),
     #[cfg(feature = "model-acmt")]
     Acmt_033_001_02(Box<crate::generated::acmt::acmt_033_001_02::Document>),
     #[cfg(feature = "model-acmt")]
     Acmt_034_001_04(Box<crate::generated::acmt::acmt_034_001_04::Document>),
+    #[cfg(feature = "model-acmt")]
+    Acmt_034_001_06(Box<crate::generated::acmt::acmt_034_001_06::Document>),
     #[cfg(feature = "model-acmt")]
     Acmt_035_001_02(Box<crate::generated::acmt::acmt_035_001_02::Document>),
     #[cfg(feature = "model-acmt")]
@@ -89,6 +139,8 @@ pub enum AnyMessage {
     #[cfg(feature = "model-admi")]
     Admi_005_001_01(Box<crate::generated::admi::admi_005_001_01::Document>),
     #[cfg(feature = "model-admi")]
+    Admi_005_001_02(Box<crate::generated::admi::admi_005_001_02::Document>),
+    #[cfg(feature = "model-admi")]
     Admi_006_001_01(Box<crate::generated::admi::admi_006_001_01::Document>),
     #[cfg(feature = "model-admi")]
     Admi_007_001_01(Box<crate::generated::admi::admi_007_001_01::Document>),
@@ -100,10 +152,18 @@ pub enum AnyMessage {
     Admi_011_001_01(Box<crate::generated::admi::admi_011_001_01::Document>),
     #[cfg(feature = "model-admi")]
     Admi_017_001_01(Box<crate::generated::admi::admi_017_001_01::Document>),
+    #[cfg(feature = "model-admi")]
+    Admi_017_001_02(Box<crate::generated::admi::admi_017_001_02::Document>),
+    #[cfg(feature = "model-admi")]
+    Admi_024_001_01(Box<crate::generated::admi::admi_024_001_01::Document>),
     #[cfg(feature = "model-auth")]
     Auth_001_001_01(Box<crate::generated::auth::auth_001_001_01::Document>),
     #[cfg(feature = "model-auth")]
+    Auth_001_001_02(Box<crate::generated::auth::auth_001_001_02::Document>),
+    #[cfg(feature = "model-auth")]
     Auth_002_001_01(Box<crate::generated::auth::auth_002_001_01::Document>),
+    #[cfg(feature = "model-auth")]
+    Auth_002_001_02(Box<crate::generated::auth::auth_002_001_02::Document>),
     #[cfg(feature = "model-auth")]
     Auth_003_001_01(Box<crate::generated::auth::auth_003_001_01::Document>),
     #[cfg(feature = "model-auth")]
@@ -117,33 +177,59 @@ pub enum AnyMessage {
     #[cfg(feature = "model-auth")]
     Auth_016_001_02(Box<crate::generated::auth::auth_016_001_02::Document>),
     #[cfg(feature = "model-auth")]
+    Auth_016_001_03(Box<crate::generated::auth::auth_016_001_03::Document>),
+    #[cfg(feature = "model-auth")]
     Auth_017_001_02(Box<crate::generated::auth::auth_017_001_02::Document>),
     #[cfg(feature = "model-auth")]
     Auth_018_001_03(Box<crate::generated::auth::auth_018_001_03::Document>),
     #[cfg(feature = "model-auth")]
+    Auth_018_001_04(Box<crate::generated::auth::auth_018_001_04::Document>),
+    #[cfg(feature = "model-auth")]
     Auth_019_001_03(Box<crate::generated::auth::auth_019_001_03::Document>),
+    #[cfg(feature = "model-auth")]
+    Auth_019_001_04(Box<crate::generated::auth::auth_019_001_04::Document>),
     #[cfg(feature = "model-auth")]
     Auth_020_001_03(Box<crate::generated::auth::auth_020_001_03::Document>),
     #[cfg(feature = "model-auth")]
+    Auth_020_001_04(Box<crate::generated::auth::auth_020_001_04::Document>),
+    #[cfg(feature = "model-auth")]
     Auth_021_001_03(Box<crate::generated::auth::auth_021_001_03::Document>),
+    #[cfg(feature = "model-auth")]
+    Auth_021_001_04(Box<crate::generated::auth::auth_021_001_04::Document>),
     #[cfg(feature = "model-auth")]
     Auth_022_001_03(Box<crate::generated::auth::auth_022_001_03::Document>),
     #[cfg(feature = "model-auth")]
+    Auth_022_001_04(Box<crate::generated::auth::auth_022_001_04::Document>),
+    #[cfg(feature = "model-auth")]
     Auth_023_001_03(Box<crate::generated::auth::auth_023_001_03::Document>),
+    #[cfg(feature = "model-auth")]
+    Auth_023_001_04(Box<crate::generated::auth::auth_023_001_04::Document>),
     #[cfg(feature = "model-auth")]
     Auth_024_001_03(Box<crate::generated::auth::auth_024_001_03::Document>),
     #[cfg(feature = "model-auth")]
+    Auth_024_001_04(Box<crate::generated::auth::auth_024_001_04::Document>),
+    #[cfg(feature = "model-auth")]
     Auth_025_001_03(Box<crate::generated::auth::auth_025_001_03::Document>),
+    #[cfg(feature = "model-auth")]
+    Auth_025_001_04(Box<crate::generated::auth::auth_025_001_04::Document>),
     #[cfg(feature = "model-auth")]
     Auth_026_001_03(Box<crate::generated::auth::auth_026_001_03::Document>),
     #[cfg(feature = "model-auth")]
+    Auth_026_001_04(Box<crate::generated::auth::auth_026_001_04::Document>),
+    #[cfg(feature = "model-auth")]
     Auth_027_001_03(Box<crate::generated::auth::auth_027_001_03::Document>),
+    #[cfg(feature = "model-auth")]
+    Auth_027_001_04(Box<crate::generated::auth::auth_027_001_04::Document>),
     #[cfg(feature = "model-auth")]
     Auth_028_001_01(Box<crate::generated::auth::auth_028_001_01::Document>),
     #[cfg(feature = "model-auth")]
     Auth_029_001_02(Box<crate::generated::auth::auth_029_001_02::Document>),
     #[cfg(feature = "model-auth")]
+    Auth_029_001_05(Box<crate::generated::auth::auth_029_001_05::Document>),
+    #[cfg(feature = "model-auth")]
     Auth_030_001_02(Box<crate::generated::auth::auth_030_001_02::Document>),
+    #[cfg(feature = "model-auth")]
+    Auth_030_001_04(Box<crate::generated::auth::auth_030_001_04::Document>),
     #[cfg(feature = "model-auth")]
     Auth_031_001_01(Box<crate::generated::auth::auth_031_001_01::Document>),
     #[cfg(feature = "model-auth")]
@@ -151,11 +237,15 @@ pub enum AnyMessage {
     #[cfg(feature = "model-auth")]
     Auth_033_001_02(Box<crate::generated::auth::auth_033_001_02::Document>),
     #[cfg(feature = "model-auth")]
+    Auth_033_001_03(Box<crate::generated::auth::auth_033_001_03::Document>),
+    #[cfg(feature = "model-auth")]
     Auth_034_001_01(Box<crate::generated::auth::auth_034_001_01::Document>),
     #[cfg(feature = "model-auth")]
     Auth_035_001_01(Box<crate::generated::auth::auth_035_001_01::Document>),
     #[cfg(feature = "model-auth")]
     Auth_036_001_02(Box<crate::generated::auth::auth_036_001_02::Document>),
+    #[cfg(feature = "model-auth")]
+    Auth_036_001_03(Box<crate::generated::auth::auth_036_001_03::Document>),
     #[cfg(feature = "model-auth")]
     Auth_038_001_01(Box<crate::generated::auth::auth_038_001_01::Document>),
     #[cfg(feature = "model-auth")]
@@ -171,7 +261,11 @@ pub enum AnyMessage {
     #[cfg(feature = "model-auth")]
     Auth_044_001_02(Box<crate::generated::auth::auth_044_001_02::Document>),
     #[cfg(feature = "model-auth")]
+    Auth_044_001_03(Box<crate::generated::auth::auth_044_001_03::Document>),
+    #[cfg(feature = "model-auth")]
     Auth_045_001_02(Box<crate::generated::auth::auth_045_001_02::Document>),
+    #[cfg(feature = "model-auth")]
+    Auth_045_001_03(Box<crate::generated::auth::auth_045_001_03::Document>),
     #[cfg(feature = "model-auth")]
     Auth_047_001_01(Box<crate::generated::auth::auth_047_001_01::Document>),
     #[cfg(feature = "model-auth")]
@@ -193,19 +287,29 @@ pub enum AnyMessage {
     #[cfg(feature = "model-auth")]
     Auth_057_001_01(Box<crate::generated::auth::auth_057_001_01::Document>),
     #[cfg(feature = "model-auth")]
+    Auth_057_001_02(Box<crate::generated::auth::auth_057_001_02::Document>),
+    #[cfg(feature = "model-auth")]
     Auth_058_001_01(Box<crate::generated::auth::auth_058_001_01::Document>),
     #[cfg(feature = "model-auth")]
     Auth_059_001_01(Box<crate::generated::auth::auth_059_001_01::Document>),
     #[cfg(feature = "model-auth")]
+    Auth_059_001_02(Box<crate::generated::auth::auth_059_001_02::Document>),
+    #[cfg(feature = "model-auth")]
     Auth_060_001_01(Box<crate::generated::auth::auth_060_001_01::Document>),
     #[cfg(feature = "model-auth")]
+    Auth_060_001_02(Box<crate::generated::auth::auth_060_001_02::Document>),
+    #[cfg(feature = "model-auth")]
     Auth_061_001_01(Box<crate::generated::auth::auth_061_001_01::Document>),
+    #[cfg(feature = "model-auth")]
+    Auth_061_001_02(Box<crate::generated::auth::auth_061_001_02::Document>),
     #[cfg(feature = "model-auth")]
     Auth_062_001_01(Box<crate::generated::auth::auth_062_001_01::Document>),
     #[cfg(feature = "model-auth")]
     Auth_063_001_01(Box<crate::generated::auth::auth_063_001_01::Document>),
     #[cfg(feature = "model-auth")]
     Auth_064_001_01(Box<crate::generated::auth::auth_064_001_01::Document>),
+    #[cfg(feature = "model-auth")]
+    Auth_064_001_02(Box<crate::generated::auth::auth_064_001_02::Document>),
     #[cfg(feature = "model-auth")]
     Auth_065_001_01(Box<crate::generated::auth::auth_065_001_01::Document>),
     #[cfg(feature = "model-auth")]
@@ -216,6 +320,8 @@ pub enum AnyMessage {
     Auth_068_001_01(Box<crate::generated::auth::auth_068_001_01::Document>),
     #[cfg(feature = "model-auth")]
     Auth_069_001_01(Box<crate::generated::auth::auth_069_001_01::Document>),
+    #[cfg(feature = "model-auth")]
+    Auth_069_001_03(Box<crate::generated::auth::auth_069_001_03::Document>),
     #[cfg(feature = "model-auth")]
     Auth_070_001_02(Box<crate::generated::auth::auth_070_001_02::Document>),
     #[cfg(feature = "model-auth")]
@@ -243,9 +349,15 @@ pub enum AnyMessage {
     #[cfg(feature = "model-auth")]
     Auth_090_001_01(Box<crate::generated::auth::auth_090_001_01::Document>),
     #[cfg(feature = "model-auth")]
+    Auth_090_001_02(Box<crate::generated::auth::auth_090_001_02::Document>),
+    #[cfg(feature = "model-auth")]
     Auth_091_001_01(Box<crate::generated::auth::auth_091_001_01::Document>),
     #[cfg(feature = "model-auth")]
+    Auth_091_001_03(Box<crate::generated::auth::auth_091_001_03::Document>),
+    #[cfg(feature = "model-auth")]
     Auth_092_001_02(Box<crate::generated::auth::auth_092_001_02::Document>),
+    #[cfg(feature = "model-auth")]
+    Auth_092_001_04(Box<crate::generated::auth::auth_092_001_04::Document>),
     #[cfg(feature = "model-auth")]
     Auth_094_001_02(Box<crate::generated::auth::auth_094_001_02::Document>),
     #[cfg(feature = "model-auth")]
@@ -256,80 +368,186 @@ pub enum AnyMessage {
     Auth_102_001_01(Box<crate::generated::auth::auth_102_001_01::Document>),
     #[cfg(feature = "model-auth")]
     Auth_105_001_01(Box<crate::generated::auth::auth_105_001_01::Document>),
+    #[cfg(feature = "model-auth")]
+    Auth_106_001_01(Box<crate::generated::auth::auth_106_001_01::Document>),
+    #[cfg(feature = "model-auth")]
+    Auth_107_001_02(Box<crate::generated::auth::auth_107_001_02::Document>),
+    #[cfg(feature = "model-auth")]
+    Auth_108_001_02(Box<crate::generated::auth::auth_108_001_02::Document>),
+    #[cfg(feature = "model-auth")]
+    Auth_109_001_02(Box<crate::generated::auth::auth_109_001_02::Document>),
+    #[cfg(feature = "model-auth")]
+    Auth_112_001_01(Box<crate::generated::auth::auth_112_001_01::Document>),
+    #[cfg(feature = "model-auth")]
+    Auth_113_001_01(Box<crate::generated::auth::auth_113_001_01::Document>),
+    #[cfg(feature = "model-auth")]
+    Auth_114_001_01(Box<crate::generated::auth::auth_114_001_01::Document>),
+    #[cfg(feature = "model-auth")]
+    Auth_120_001_01(Box<crate::generated::auth::auth_120_001_01::Document>),
+    #[cfg(feature = "model-auth")]
+    Auth_121_001_01(Box<crate::generated::auth::auth_121_001_01::Document>),
+    #[cfg(feature = "model-auth")]
+    Auth_122_001_01(Box<crate::generated::auth::auth_122_001_01::Document>),
+    #[cfg(feature = "model-auth")]
+    Auth_123_001_01(Box<crate::generated::auth::auth_123_001_01::Document>),
+    #[cfg(feature = "model-auth")]
+    Auth_124_001_01(Box<crate::generated::auth::auth_124_001_01::Document>),
     #[cfg(feature = "model-caaa")]
     Caaa_001_001_10(Box<crate::generated::caaa::caaa_001_001_10::Document>),
     #[cfg(feature = "model-caaa")]
+    Caaa_001_001_15(Box<crate::generated::caaa::caaa_001_001_15::Document>),
+    #[cfg(feature = "model-caaa")]
     Caaa_002_001_10(Box<crate::generated::caaa::caaa_002_001_10::Document>),
+    #[cfg(feature = "model-caaa")]
+    Caaa_002_001_15(Box<crate::generated::caaa::caaa_002_001_15::Document>),
     #[cfg(feature = "model-caaa")]
     Caaa_003_001_10(Box<crate::generated::caaa::caaa_003_001_10::Document>),
     #[cfg(feature = "model-caaa")]
+    Caaa_003_001_15(Box<crate::generated::caaa::caaa_003_001_15::Document>),
+    #[cfg(feature = "model-caaa")]
     Caaa_004_001_09(Box<crate::generated::caaa::caaa_004_001_09::Document>),
+    #[cfg(feature = "model-caaa")]
+    Caaa_004_001_14(Box<crate::generated::caaa::caaa_004_001_14::Document>),
     #[cfg(feature = "model-caaa")]
     Caaa_005_001_10(Box<crate::generated::caaa::caaa_005_001_10::Document>),
     #[cfg(feature = "model-caaa")]
+    Caaa_005_001_15(Box<crate::generated::caaa::caaa_005_001_15::Document>),
+    #[cfg(feature = "model-caaa")]
     Caaa_006_001_09(Box<crate::generated::caaa::caaa_006_001_09::Document>),
+    #[cfg(feature = "model-caaa")]
+    Caaa_006_001_14(Box<crate::generated::caaa::caaa_006_001_14::Document>),
     #[cfg(feature = "model-caaa")]
     Caaa_007_001_10(Box<crate::generated::caaa::caaa_007_001_10::Document>),
     #[cfg(feature = "model-caaa")]
+    Caaa_007_001_15(Box<crate::generated::caaa::caaa_007_001_15::Document>),
+    #[cfg(feature = "model-caaa")]
     Caaa_008_001_09(Box<crate::generated::caaa::caaa_008_001_09::Document>),
+    #[cfg(feature = "model-caaa")]
+    Caaa_008_001_14(Box<crate::generated::caaa::caaa_008_001_14::Document>),
     #[cfg(feature = "model-caaa")]
     Caaa_009_001_09(Box<crate::generated::caaa::caaa_009_001_09::Document>),
     #[cfg(feature = "model-caaa")]
+    Caaa_009_001_14(Box<crate::generated::caaa::caaa_009_001_14::Document>),
+    #[cfg(feature = "model-caaa")]
     Caaa_010_001_08(Box<crate::generated::caaa::caaa_010_001_08::Document>),
+    #[cfg(feature = "model-caaa")]
+    Caaa_010_001_13(Box<crate::generated::caaa::caaa_010_001_13::Document>),
     #[cfg(feature = "model-caaa")]
     Caaa_011_001_10(Box<crate::generated::caaa::caaa_011_001_10::Document>),
     #[cfg(feature = "model-caaa")]
+    Caaa_011_001_15(Box<crate::generated::caaa::caaa_011_001_15::Document>),
+    #[cfg(feature = "model-caaa")]
     Caaa_012_001_09(Box<crate::generated::caaa::caaa_012_001_09::Document>),
+    #[cfg(feature = "model-caaa")]
+    Caaa_012_001_14(Box<crate::generated::caaa::caaa_012_001_14::Document>),
     #[cfg(feature = "model-caaa")]
     Caaa_013_001_09(Box<crate::generated::caaa::caaa_013_001_09::Document>),
     #[cfg(feature = "model-caaa")]
+    Caaa_013_001_14(Box<crate::generated::caaa::caaa_013_001_14::Document>),
+    #[cfg(feature = "model-caaa")]
     Caaa_014_001_08(Box<crate::generated::caaa::caaa_014_001_08::Document>),
+    #[cfg(feature = "model-caaa")]
+    Caaa_014_001_13(Box<crate::generated::caaa::caaa_014_001_13::Document>),
     #[cfg(feature = "model-caaa")]
     Caaa_015_001_06(Box<crate::generated::caaa::caaa_015_001_06::Document>),
     #[cfg(feature = "model-caaa")]
     Caaa_016_001_08(Box<crate::generated::caaa::caaa_016_001_08::Document>),
     #[cfg(feature = "model-caaa")]
+    Caaa_016_001_13(Box<crate::generated::caaa::caaa_016_001_13::Document>),
+    #[cfg(feature = "model-caaa")]
     Caaa_017_001_08(Box<crate::generated::caaa::caaa_017_001_08::Document>),
+    #[cfg(feature = "model-caaa")]
+    Caaa_017_001_13(Box<crate::generated::caaa::caaa_017_001_13::Document>),
     #[cfg(feature = "model-caaa")]
     Caaa_018_001_05(Box<crate::generated::caaa::caaa_018_001_05::Document>),
     #[cfg(feature = "model-caaa")]
+    Caaa_018_001_10(Box<crate::generated::caaa::caaa_018_001_10::Document>),
+    #[cfg(feature = "model-caaa")]
     Caaa_019_001_04(Box<crate::generated::caaa::caaa_019_001_04::Document>),
+    #[cfg(feature = "model-caaa")]
+    Caaa_019_001_09(Box<crate::generated::caaa::caaa_019_001_09::Document>),
     #[cfg(feature = "model-caaa")]
     Caaa_020_001_02(Box<crate::generated::caaa::caaa_020_001_02::Document>),
     #[cfg(feature = "model-caaa")]
+    Caaa_020_001_07(Box<crate::generated::caaa::caaa_020_001_07::Document>),
+    #[cfg(feature = "model-caaa")]
     Caaa_021_001_02(Box<crate::generated::caaa::caaa_021_001_02::Document>),
+    #[cfg(feature = "model-caaa")]
+    Caaa_021_001_07(Box<crate::generated::caaa::caaa_021_001_07::Document>),
     #[cfg(feature = "model-caaa")]
     Caaa_022_001_01(Box<crate::generated::caaa::caaa_022_001_01::Document>),
     #[cfg(feature = "model-caaa")]
+    Caaa_022_001_06(Box<crate::generated::caaa::caaa_022_001_06::Document>),
+    #[cfg(feature = "model-caaa")]
     Caaa_023_001_01(Box<crate::generated::caaa::caaa_023_001_01::Document>),
+    #[cfg(feature = "model-caaa")]
+    Caaa_023_001_06(Box<crate::generated::caaa::caaa_023_001_06::Document>),
     #[cfg(feature = "model-caaa")]
     Caaa_024_001_01(Box<crate::generated::caaa::caaa_024_001_01::Document>),
     #[cfg(feature = "model-caaa")]
+    Caaa_024_001_06(Box<crate::generated::caaa::caaa_024_001_06::Document>),
+    #[cfg(feature = "model-caaa")]
     Caaa_025_001_01(Box<crate::generated::caaa::caaa_025_001_01::Document>),
+    #[cfg(feature = "model-caaa")]
+    Caaa_025_001_06(Box<crate::generated::caaa::caaa_025_001_06::Document>),
+    #[cfg(feature = "model-caaa")]
+    Caaa_026_001_03(Box<crate::generated::caaa::caaa_026_001_03::Document>),
+    #[cfg(feature = "model-caaa")]
+    Caaa_027_001_03(Box<crate::generated::caaa::caaa_027_001_03::Document>),
     #[cfg(feature = "model-caad")]
     Caad_001_001_01(Box<crate::generated::caad::caad_001_001_01::Document>),
     #[cfg(feature = "model-caad")]
+    Caad_001_001_04(Box<crate::generated::caad::caad_001_001_04::Document>),
+    #[cfg(feature = "model-caad")]
     Caad_002_001_01(Box<crate::generated::caad::caad_002_001_01::Document>),
+    #[cfg(feature = "model-caad")]
+    Caad_002_001_04(Box<crate::generated::caad::caad_002_001_04::Document>),
     #[cfg(feature = "model-caad")]
     Caad_003_001_01(Box<crate::generated::caad::caad_003_001_01::Document>),
     #[cfg(feature = "model-caad")]
+    Caad_003_001_04(Box<crate::generated::caad::caad_003_001_04::Document>),
+    #[cfg(feature = "model-caad")]
     Caad_004_001_01(Box<crate::generated::caad::caad_004_001_01::Document>),
+    #[cfg(feature = "model-caad")]
+    Caad_004_001_04(Box<crate::generated::caad::caad_004_001_04::Document>),
     #[cfg(feature = "model-caad")]
     Caad_005_001_02(Box<crate::generated::caad::caad_005_001_02::Document>),
     #[cfg(feature = "model-caad")]
+    Caad_005_001_05(Box<crate::generated::caad::caad_005_001_05::Document>),
+    #[cfg(feature = "model-caad")]
     Caad_006_001_02(Box<crate::generated::caad::caad_006_001_02::Document>),
     #[cfg(feature = "model-caad")]
+    Caad_006_001_05(Box<crate::generated::caad::caad_006_001_05::Document>),
+    #[cfg(feature = "model-caad")]
     Caad_007_001_02(Box<crate::generated::caad::caad_007_001_02::Document>),
+    #[cfg(feature = "model-caad")]
+    Caad_007_001_05(Box<crate::generated::caad::caad_007_001_05::Document>),
+    #[cfg(feature = "model-caad")]
+    Caad_008_001_03(Box<crate::generated::caad::caad_008_001_03::Document>),
+    #[cfg(feature = "model-caad")]
+    Caad_009_001_03(Box<crate::generated::caad::caad_009_001_03::Document>),
+    #[cfg(feature = "model-caad")]
+    Caad_010_001_03(Box<crate::generated::caad::caad_010_001_03::Document>),
     #[cfg(feature = "model-caam")]
     Caam_001_001_03(Box<crate::generated::caam::caam_001_001_03::Document>),
     #[cfg(feature = "model-caam")]
+    Caam_001_001_05(Box<crate::generated::caam::caam_001_001_05::Document>),
+    #[cfg(feature = "model-caam")]
     Caam_002_001_03(Box<crate::generated::caam::caam_002_001_03::Document>),
+    #[cfg(feature = "model-caam")]
+    Caam_002_001_04(Box<crate::generated::caam::caam_002_001_04::Document>),
     #[cfg(feature = "model-caam")]
     Caam_003_001_03(Box<crate::generated::caam::caam_003_001_03::Document>),
     #[cfg(feature = "model-caam")]
+    Caam_003_001_05(Box<crate::generated::caam::caam_003_001_05::Document>),
+    #[cfg(feature = "model-caam")]
     Caam_004_001_03(Box<crate::generated::caam::caam_004_001_03::Document>),
     #[cfg(feature = "model-caam")]
+    Caam_004_001_05(Box<crate::generated::caam::caam_004_001_05::Document>),
+    #[cfg(feature = "model-caam")]
     Caam_005_001_02(Box<crate::generated::caam::caam_005_001_02::Document>),
+    #[cfg(feature = "model-caam")]
+    Caam_005_001_03(Box<crate::generated::caam::caam_005_001_03::Document>),
     #[cfg(feature = "model-caam")]
     Caam_006_001_02(Box<crate::generated::caam::caam_006_001_02::Document>),
     #[cfg(feature = "model-caam")]
@@ -339,47 +557,99 @@ pub enum AnyMessage {
     #[cfg(feature = "model-caam")]
     Caam_009_001_02(Box<crate::generated::caam::caam_009_001_02::Document>),
     #[cfg(feature = "model-caam")]
+    Caam_009_001_03(Box<crate::generated::caam::caam_009_001_03::Document>),
+    #[cfg(feature = "model-caam")]
     Caam_010_001_02(Box<crate::generated::caam::caam_010_001_02::Document>),
+    #[cfg(feature = "model-caam")]
+    Caam_010_001_03(Box<crate::generated::caam::caam_010_001_03::Document>),
     #[cfg(feature = "model-caam")]
     Caam_011_001_01(Box<crate::generated::caam::caam_011_001_01::Document>),
     #[cfg(feature = "model-caam")]
+    Caam_011_001_02(Box<crate::generated::caam::caam_011_001_02::Document>),
+    #[cfg(feature = "model-caam")]
     Caam_012_001_01(Box<crate::generated::caam::caam_012_001_01::Document>),
+    #[cfg(feature = "model-caam")]
+    Caam_012_001_02(Box<crate::generated::caam::caam_012_001_02::Document>),
+    #[cfg(feature = "model-caam")]
+    Caam_013_001_01(Box<crate::generated::caam::caam_013_001_01::Document>),
+    #[cfg(feature = "model-caam")]
+    Caam_014_001_01(Box<crate::generated::caam::caam_014_001_01::Document>),
+    #[cfg(feature = "model-caam")]
+    Caam_015_001_01(Box<crate::generated::caam::caam_015_001_01::Document>),
+    #[cfg(feature = "model-caam")]
+    Caam_016_001_01(Box<crate::generated::caam::caam_016_001_01::Document>),
     #[cfg(feature = "model-cafc")]
     Cafc_001_001_01(Box<crate::generated::cafc::cafc_001_001_01::Document>),
     #[cfg(feature = "model-cafc")]
+    Cafc_001_001_04(Box<crate::generated::cafc::cafc_001_001_04::Document>),
+    #[cfg(feature = "model-cafc")]
     Cafc_002_001_01(Box<crate::generated::cafc::cafc_002_001_01::Document>),
+    #[cfg(feature = "model-cafc")]
+    Cafc_002_001_04(Box<crate::generated::cafc::cafc_002_001_04::Document>),
     #[cfg(feature = "model-cafm")]
     Cafm_001_001_01(Box<crate::generated::cafm::cafm_001_001_01::Document>),
     #[cfg(feature = "model-cafm")]
+    Cafm_001_001_04(Box<crate::generated::cafm::cafm_001_001_04::Document>),
+    #[cfg(feature = "model-cafm")]
     Cafm_002_001_01(Box<crate::generated::cafm::cafm_002_001_01::Document>),
+    #[cfg(feature = "model-cafm")]
+    Cafm_002_001_04(Box<crate::generated::cafm::cafm_002_001_04::Document>),
     #[cfg(feature = "model-cafr")]
     Cafr_001_001_01(Box<crate::generated::cafr::cafr_001_001_01::Document>),
     #[cfg(feature = "model-cafr")]
+    Cafr_001_001_04(Box<crate::generated::cafr::cafr_001_001_04::Document>),
+    #[cfg(feature = "model-cafr")]
     Cafr_002_001_01(Box<crate::generated::cafr::cafr_002_001_01::Document>),
+    #[cfg(feature = "model-cafr")]
+    Cafr_002_001_04(Box<crate::generated::cafr::cafr_002_001_04::Document>),
     #[cfg(feature = "model-cafr")]
     Cafr_003_001_01(Box<crate::generated::cafr::cafr_003_001_01::Document>),
     #[cfg(feature = "model-cafr")]
+    Cafr_003_001_04(Box<crate::generated::cafr::cafr_003_001_04::Document>),
+    #[cfg(feature = "model-cafr")]
     Cafr_004_001_01(Box<crate::generated::cafr::cafr_004_001_01::Document>),
+    #[cfg(feature = "model-cafr")]
+    Cafr_004_001_04(Box<crate::generated::cafr::cafr_004_001_04::Document>),
     #[cfg(feature = "model-cain")]
     Cain_001_001_02(Box<crate::generated::cain::cain_001_001_02::Document>),
     #[cfg(feature = "model-cain")]
+    Cain_001_001_05(Box<crate::generated::cain::cain_001_001_05::Document>),
+    #[cfg(feature = "model-cain")]
     Cain_002_001_02(Box<crate::generated::cain::cain_002_001_02::Document>),
+    #[cfg(feature = "model-cain")]
+    Cain_002_001_05(Box<crate::generated::cain::cain_002_001_05::Document>),
     #[cfg(feature = "model-cain")]
     Cain_003_001_02(Box<crate::generated::cain::cain_003_001_02::Document>),
     #[cfg(feature = "model-cain")]
+    Cain_003_001_05(Box<crate::generated::cain::cain_003_001_05::Document>),
+    #[cfg(feature = "model-cain")]
     Cain_004_001_02(Box<crate::generated::cain::cain_004_001_02::Document>),
+    #[cfg(feature = "model-cain")]
+    Cain_004_001_05(Box<crate::generated::cain::cain_004_001_05::Document>),
     #[cfg(feature = "model-cain")]
     Cain_005_001_02(Box<crate::generated::cain::cain_005_001_02::Document>),
     #[cfg(feature = "model-cain")]
+    Cain_005_001_05(Box<crate::generated::cain::cain_005_001_05::Document>),
+    #[cfg(feature = "model-cain")]
     Cain_006_001_02(Box<crate::generated::cain::cain_006_001_02::Document>),
+    #[cfg(feature = "model-cain")]
+    Cain_006_001_05(Box<crate::generated::cain::cain_006_001_05::Document>),
     #[cfg(feature = "model-cain")]
     Cain_014_001_01(Box<crate::generated::cain::cain_014_001_01::Document>),
     #[cfg(feature = "model-cain")]
+    Cain_014_001_04(Box<crate::generated::cain::cain_014_001_04::Document>),
+    #[cfg(feature = "model-cain")]
     Cain_015_001_01(Box<crate::generated::cain::cain_015_001_01::Document>),
+    #[cfg(feature = "model-cain")]
+    Cain_015_001_04(Box<crate::generated::cain::cain_015_001_04::Document>),
     #[cfg(feature = "model-cain")]
     Cain_016_001_01(Box<crate::generated::cain::cain_016_001_01::Document>),
     #[cfg(feature = "model-cain")]
+    Cain_016_001_04(Box<crate::generated::cain::cain_016_001_04::Document>),
+    #[cfg(feature = "model-cain")]
     Cain_017_001_01(Box<crate::generated::cain::cain_017_001_01::Document>),
+    #[cfg(feature = "model-cain")]
+    Cain_017_001_04(Box<crate::generated::cain::cain_017_001_04::Document>),
     #[cfg(feature = "model-cain")]
     Cain_018_001_01(Box<crate::generated::cain::cain_018_001_01::Document>),
     #[cfg(feature = "model-cain")]
@@ -387,41 +657,79 @@ pub enum AnyMessage {
     #[cfg(feature = "model-cain")]
     Cain_020_001_01(Box<crate::generated::cain::cain_020_001_01::Document>),
     #[cfg(feature = "model-cain")]
+    Cain_020_001_04(Box<crate::generated::cain::cain_020_001_04::Document>),
+    #[cfg(feature = "model-cain")]
     Cain_021_001_01(Box<crate::generated::cain::cain_021_001_01::Document>),
+    #[cfg(feature = "model-cain")]
+    Cain_021_001_04(Box<crate::generated::cain::cain_021_001_04::Document>),
     #[cfg(feature = "model-cain")]
     Cain_022_001_01(Box<crate::generated::cain::cain_022_001_01::Document>),
     #[cfg(feature = "model-cain")]
+    Cain_022_001_04(Box<crate::generated::cain::cain_022_001_04::Document>),
+    #[cfg(feature = "model-cain")]
     Cain_023_001_01(Box<crate::generated::cain::cain_023_001_01::Document>),
+    #[cfg(feature = "model-cain")]
+    Cain_023_001_04(Box<crate::generated::cain::cain_023_001_04::Document>),
     #[cfg(feature = "model-cain")]
     Cain_024_001_01(Box<crate::generated::cain::cain_024_001_01::Document>),
     #[cfg(feature = "model-cain")]
+    Cain_024_001_04(Box<crate::generated::cain::cain_024_001_04::Document>),
+    #[cfg(feature = "model-cain")]
     Cain_025_001_01(Box<crate::generated::cain::cain_025_001_01::Document>),
+    #[cfg(feature = "model-cain")]
+    Cain_025_001_04(Box<crate::generated::cain::cain_025_001_04::Document>),
     #[cfg(feature = "model-cain")]
     Cain_026_001_01(Box<crate::generated::cain::cain_026_001_01::Document>),
     #[cfg(feature = "model-cain")]
+    Cain_026_001_04(Box<crate::generated::cain::cain_026_001_04::Document>),
+    #[cfg(feature = "model-cain")]
     Cain_027_001_01(Box<crate::generated::cain::cain_027_001_01::Document>),
     #[cfg(feature = "model-cain")]
+    Cain_027_001_04(Box<crate::generated::cain::cain_027_001_04::Document>),
+    #[cfg(feature = "model-cain")]
     Cain_028_001_01(Box<crate::generated::cain::cain_028_001_01::Document>),
+    #[cfg(feature = "model-cain")]
+    Cain_028_001_04(Box<crate::generated::cain::cain_028_001_04::Document>),
     #[cfg(feature = "model-camt")]
     Camt_003_001_07(Box<crate::generated::camt::camt_003_001_07::Document>),
     #[cfg(feature = "model-camt")]
+    Camt_003_001_08(Box<crate::generated::camt::camt_003_001_08::Document>),
+    #[cfg(feature = "model-camt")]
     Camt_004_001_09(Box<crate::generated::camt::camt_004_001_09::Document>),
+    #[cfg(feature = "model-camt")]
+    Camt_004_001_10(Box<crate::generated::camt::camt_004_001_10::Document>),
     #[cfg(feature = "model-camt")]
     Camt_005_001_09(Box<crate::generated::camt::camt_005_001_09::Document>),
     #[cfg(feature = "model-camt")]
+    Camt_005_001_11(Box<crate::generated::camt::camt_005_001_11::Document>),
+    #[cfg(feature = "model-camt")]
     Camt_006_001_09(Box<crate::generated::camt::camt_006_001_09::Document>),
+    #[cfg(feature = "model-camt")]
+    Camt_006_001_11(Box<crate::generated::camt::camt_006_001_11::Document>),
     #[cfg(feature = "model-camt")]
     Camt_007_001_08(Box<crate::generated::camt::camt_007_001_08::Document>),
     #[cfg(feature = "model-camt")]
+    Camt_007_001_10(Box<crate::generated::camt::camt_007_001_10::Document>),
+    #[cfg(feature = "model-camt")]
     Camt_008_001_09(Box<crate::generated::camt::camt_008_001_09::Document>),
+    #[cfg(feature = "model-camt")]
+    Camt_008_001_11(Box<crate::generated::camt::camt_008_001_11::Document>),
     #[cfg(feature = "model-camt")]
     Camt_009_001_07(Box<crate::generated::camt::camt_009_001_07::Document>),
     #[cfg(feature = "model-camt")]
+    Camt_009_001_08(Box<crate::generated::camt::camt_009_001_08::Document>),
+    #[cfg(feature = "model-camt")]
     Camt_010_001_08(Box<crate::generated::camt::camt_010_001_08::Document>),
+    #[cfg(feature = "model-camt")]
+    Camt_010_001_09(Box<crate::generated::camt::camt_010_001_09::Document>),
     #[cfg(feature = "model-camt")]
     Camt_011_001_07(Box<crate::generated::camt::camt_011_001_07::Document>),
     #[cfg(feature = "model-camt")]
+    Camt_011_001_08(Box<crate::generated::camt::camt_011_001_08::Document>),
+    #[cfg(feature = "model-camt")]
     Camt_012_001_07(Box<crate::generated::camt::camt_012_001_07::Document>),
+    #[cfg(feature = "model-camt")]
+    Camt_012_001_08(Box<crate::generated::camt::camt_012_001_08::Document>),
     #[cfg(feature = "model-camt")]
     Camt_013_001_04(Box<crate::generated::camt::camt_013_001_04::Document>),
     #[cfg(feature = "model-camt")]
@@ -445,39 +753,71 @@ pub enum AnyMessage {
     #[cfg(feature = "model-camt")]
     Camt_024_001_07(Box<crate::generated::camt::camt_024_001_07::Document>),
     #[cfg(feature = "model-camt")]
+    Camt_024_001_08(Box<crate::generated::camt::camt_024_001_08::Document>),
+    #[cfg(feature = "model-camt")]
     Camt_025_001_05(Box<crate::generated::camt::camt_025_001_05::Document>),
+    #[cfg(feature = "model-camt")]
+    Camt_025_001_09(Box<crate::generated::camt::camt_025_001_09::Document>),
     #[cfg(feature = "model-camt")]
     Camt_026_001_08(Box<crate::generated::camt::camt_026_001_08::Document>),
     #[cfg(feature = "model-camt")]
     Camt_026_001_09(Box<crate::generated::camt::camt_026_001_09::Document>),
     #[cfg(feature = "model-camt")]
+    Camt_026_001_10(Box<crate::generated::camt::camt_026_001_10::Document>),
+    #[cfg(feature = "model-camt")]
     Camt_027_001_09(Box<crate::generated::camt::camt_027_001_09::Document>),
     #[cfg(feature = "model-camt")]
+    Camt_027_001_10(Box<crate::generated::camt::camt_027_001_10::Document>),
+    #[cfg(feature = "model-camt")]
     Camt_028_001_11(Box<crate::generated::camt::camt_028_001_11::Document>),
+    #[cfg(feature = "model-camt")]
+    Camt_028_001_12(Box<crate::generated::camt::camt_028_001_12::Document>),
     #[cfg(feature = "model-camt")]
     Camt_029_001_10(Box<crate::generated::camt::camt_029_001_10::Document>),
     #[cfg(feature = "model-camt")]
     Camt_029_001_11(Box<crate::generated::camt::camt_029_001_11::Document>),
     #[cfg(feature = "model-camt")]
+    Camt_029_001_14(Box<crate::generated::camt::camt_029_001_14::Document>),
+    #[cfg(feature = "model-camt")]
     Camt_030_001_05(Box<crate::generated::camt::camt_030_001_05::Document>),
+    #[cfg(feature = "model-camt")]
+    Camt_030_001_06(Box<crate::generated::camt::camt_030_001_06::Document>),
     #[cfg(feature = "model-camt")]
     Camt_031_001_06(Box<crate::generated::camt::camt_031_001_06::Document>),
     #[cfg(feature = "model-camt")]
+    Camt_031_001_07(Box<crate::generated::camt::camt_031_001_07::Document>),
+    #[cfg(feature = "model-camt")]
     Camt_032_001_04(Box<crate::generated::camt::camt_032_001_04::Document>),
+    #[cfg(feature = "model-camt")]
+    Camt_032_001_05(Box<crate::generated::camt::camt_032_001_05::Document>),
     #[cfg(feature = "model-camt")]
     Camt_033_001_06(Box<crate::generated::camt::camt_033_001_06::Document>),
     #[cfg(feature = "model-camt")]
+    Camt_033_001_07(Box<crate::generated::camt::camt_033_001_07::Document>),
+    #[cfg(feature = "model-camt")]
     Camt_034_001_06(Box<crate::generated::camt::camt_034_001_06::Document>),
+    #[cfg(feature = "model-camt")]
+    Camt_034_001_07(Box<crate::generated::camt::camt_034_001_07::Document>),
     #[cfg(feature = "model-camt")]
     Camt_035_001_05(Box<crate::generated::camt::camt_035_001_05::Document>),
     #[cfg(feature = "model-camt")]
+    Camt_035_001_06(Box<crate::generated::camt::camt_035_001_06::Document>),
+    #[cfg(feature = "model-camt")]
     Camt_036_001_05(Box<crate::generated::camt::camt_036_001_05::Document>),
+    #[cfg(feature = "model-camt")]
+    Camt_036_001_06(Box<crate::generated::camt::camt_036_001_06::Document>),
     #[cfg(feature = "model-camt")]
     Camt_037_001_09(Box<crate::generated::camt::camt_037_001_09::Document>),
     #[cfg(feature = "model-camt")]
+    Camt_037_001_10(Box<crate::generated::camt::camt_037_001_10::Document>),
+    #[cfg(feature = "model-camt")]
     Camt_038_001_04(Box<crate::generated::camt::camt_038_001_04::Document>),
     #[cfg(feature = "model-camt")]
+    Camt_038_001_05(Box<crate::generated::camt::camt_038_001_05::Document>),
+    #[cfg(feature = "model-camt")]
     Camt_039_001_05(Box<crate::generated::camt::camt_039_001_05::Document>),
+    #[cfg(feature = "model-camt")]
+    Camt_039_001_06(Box<crate::generated::camt::camt_039_001_06::Document>),
     #[cfg(feature = "model-camt")]
     Camt_040_001_04(Box<crate::generated::camt::camt_040_001_04::Document>),
     #[cfg(feature = "model-camt")]
@@ -493,35 +833,65 @@ pub enum AnyMessage {
     #[cfg(feature = "model-camt")]
     Camt_046_001_06(Box<crate::generated::camt::camt_046_001_06::Document>),
     #[cfg(feature = "model-camt")]
+    Camt_046_001_08(Box<crate::generated::camt::camt_046_001_08::Document>),
+    #[cfg(feature = "model-camt")]
     Camt_047_001_07(Box<crate::generated::camt::camt_047_001_07::Document>),
+    #[cfg(feature = "model-camt")]
+    Camt_047_001_08(Box<crate::generated::camt::camt_047_001_08::Document>),
     #[cfg(feature = "model-camt")]
     Camt_048_001_06(Box<crate::generated::camt::camt_048_001_06::Document>),
     #[cfg(feature = "model-camt")]
+    Camt_048_001_07(Box<crate::generated::camt::camt_048_001_07::Document>),
+    #[cfg(feature = "model-camt")]
     Camt_049_001_06(Box<crate::generated::camt::camt_049_001_06::Document>),
+    #[cfg(feature = "model-camt")]
+    Camt_049_001_07(Box<crate::generated::camt::camt_049_001_07::Document>),
     #[cfg(feature = "model-camt")]
     Camt_050_001_06(Box<crate::generated::camt::camt_050_001_06::Document>),
     #[cfg(feature = "model-camt")]
+    Camt_050_001_07(Box<crate::generated::camt::camt_050_001_07::Document>),
+    #[cfg(feature = "model-camt")]
     Camt_051_001_05(Box<crate::generated::camt::camt_051_001_05::Document>),
+    #[cfg(feature = "model-camt")]
+    Camt_051_001_07(Box<crate::generated::camt::camt_051_001_07::Document>),
     #[cfg(feature = "model-camt")]
     Camt_052_001_09(Box<crate::generated::camt::camt_052_001_09::Document>),
     #[cfg(feature = "model-camt")]
+    Camt_052_001_14(Box<crate::generated::camt::camt_052_001_14::Document>),
+    #[cfg(feature = "model-camt")]
     Camt_053_001_09(Box<crate::generated::camt::camt_053_001_09::Document>),
+    #[cfg(feature = "model-camt")]
+    Camt_053_001_14(Box<crate::generated::camt::camt_053_001_14::Document>),
     #[cfg(feature = "model-camt")]
     Camt_054_001_09(Box<crate::generated::camt::camt_054_001_09::Document>),
     #[cfg(feature = "model-camt")]
+    Camt_054_001_14(Box<crate::generated::camt::camt_054_001_14::Document>),
+    #[cfg(feature = "model-camt")]
     Camt_055_001_10(Box<crate::generated::camt::camt_055_001_10::Document>),
+    #[cfg(feature = "model-camt")]
+    Camt_055_001_13(Box<crate::generated::camt::camt_055_001_13::Document>),
     #[cfg(feature = "model-camt")]
     Camt_056_001_09(Box<crate::generated::camt::camt_056_001_09::Document>),
     #[cfg(feature = "model-camt")]
     Camt_056_001_10(Box<crate::generated::camt::camt_056_001_10::Document>),
     #[cfg(feature = "model-camt")]
+    Camt_056_001_12(Box<crate::generated::camt::camt_056_001_12::Document>),
+    #[cfg(feature = "model-camt")]
     Camt_057_001_07(Box<crate::generated::camt::camt_057_001_07::Document>),
+    #[cfg(feature = "model-camt")]
+    Camt_057_001_09(Box<crate::generated::camt::camt_057_001_09::Document>),
     #[cfg(feature = "model-camt")]
     Camt_058_001_07(Box<crate::generated::camt::camt_058_001_07::Document>),
     #[cfg(feature = "model-camt")]
+    Camt_058_001_10(Box<crate::generated::camt::camt_058_001_10::Document>),
+    #[cfg(feature = "model-camt")]
     Camt_059_001_07(Box<crate::generated::camt::camt_059_001_07::Document>),
     #[cfg(feature = "model-camt")]
+    Camt_059_001_09(Box<crate::generated::camt::camt_059_001_09::Document>),
+    #[cfg(feature = "model-camt")]
     Camt_060_001_06(Box<crate::generated::camt::camt_060_001_06::Document>),
+    #[cfg(feature = "model-camt")]
+    Camt_060_001_07(Box<crate::generated::camt::camt_060_001_07::Document>),
     #[cfg(feature = "model-camt")]
     Camt_061_001_02(Box<crate::generated::camt::camt_061_001_02::Document>),
     #[cfg(feature = "model-camt")]
@@ -529,197 +899,387 @@ pub enum AnyMessage {
     #[cfg(feature = "model-camt")]
     Camt_063_001_02(Box<crate::generated::camt::camt_063_001_02::Document>),
     #[cfg(feature = "model-camt")]
+    Camt_064_001_01(Box<crate::generated::camt::camt_064_001_01::Document>),
+    #[cfg(feature = "model-camt")]
+    Camt_065_001_01(Box<crate::generated::camt::camt_065_001_01::Document>),
+    #[cfg(feature = "model-camt")]
     Camt_066_001_01(Box<crate::generated::camt::camt_066_001_01::Document>),
+    #[cfg(feature = "model-camt")]
+    Camt_066_001_02(Box<crate::generated::camt::camt_066_001_02::Document>),
     #[cfg(feature = "model-camt")]
     Camt_067_001_01(Box<crate::generated::camt::camt_067_001_01::Document>),
     #[cfg(feature = "model-camt")]
+    Camt_067_001_02(Box<crate::generated::camt::camt_067_001_02::Document>),
+    #[cfg(feature = "model-camt")]
     Camt_068_001_01(Box<crate::generated::camt::camt_068_001_01::Document>),
+    #[cfg(feature = "model-camt")]
+    Camt_068_001_02(Box<crate::generated::camt::camt_068_001_02::Document>),
     #[cfg(feature = "model-camt")]
     Camt_069_001_04(Box<crate::generated::camt::camt_069_001_04::Document>),
     #[cfg(feature = "model-camt")]
+    Camt_069_001_05(Box<crate::generated::camt::camt_069_001_05::Document>),
+    #[cfg(feature = "model-camt")]
     Camt_070_001_05(Box<crate::generated::camt::camt_070_001_05::Document>),
+    #[cfg(feature = "model-camt")]
+    Camt_070_001_06(Box<crate::generated::camt::camt_070_001_06::Document>),
     #[cfg(feature = "model-camt")]
     Camt_071_001_04(Box<crate::generated::camt::camt_071_001_04::Document>),
     #[cfg(feature = "model-camt")]
+    Camt_071_001_05(Box<crate::generated::camt::camt_071_001_05::Document>),
+    #[cfg(feature = "model-camt")]
     Camt_072_001_01(Box<crate::generated::camt::camt_072_001_01::Document>),
+    #[cfg(feature = "model-camt")]
+    Camt_072_001_02(Box<crate::generated::camt::camt_072_001_02::Document>),
     #[cfg(feature = "model-camt")]
     Camt_073_001_01(Box<crate::generated::camt::camt_073_001_01::Document>),
     #[cfg(feature = "model-camt")]
+    Camt_073_001_02(Box<crate::generated::camt::camt_073_001_02::Document>),
+    #[cfg(feature = "model-camt")]
     Camt_074_001_01(Box<crate::generated::camt::camt_074_001_01::Document>),
+    #[cfg(feature = "model-camt")]
+    Camt_074_001_02(Box<crate::generated::camt::camt_074_001_02::Document>),
     #[cfg(feature = "model-camt")]
     Camt_075_001_01(Box<crate::generated::camt::camt_075_001_01::Document>),
     #[cfg(feature = "model-camt")]
+    Camt_075_001_02(Box<crate::generated::camt::camt_075_001_02::Document>),
+    #[cfg(feature = "model-camt")]
+    Camt_076_001_01(Box<crate::generated::camt::camt_076_001_01::Document>),
+    #[cfg(feature = "model-camt")]
+    Camt_077_001_01(Box<crate::generated::camt::camt_077_001_01::Document>),
+    #[cfg(feature = "model-camt")]
     Camt_078_001_01(Box<crate::generated::camt::camt_078_001_01::Document>),
+    #[cfg(feature = "model-camt")]
+    Camt_078_001_02(Box<crate::generated::camt::camt_078_001_02::Document>),
     #[cfg(feature = "model-camt")]
     Camt_079_001_01(Box<crate::generated::camt::camt_079_001_01::Document>),
     #[cfg(feature = "model-camt")]
+    Camt_079_001_02(Box<crate::generated::camt::camt_079_001_02::Document>),
+    #[cfg(feature = "model-camt")]
     Camt_080_001_01(Box<crate::generated::camt::camt_080_001_01::Document>),
+    #[cfg(feature = "model-camt")]
+    Camt_080_001_02(Box<crate::generated::camt::camt_080_001_02::Document>),
     #[cfg(feature = "model-camt")]
     Camt_081_001_01(Box<crate::generated::camt::camt_081_001_01::Document>),
     #[cfg(feature = "model-camt")]
+    Camt_081_001_02(Box<crate::generated::camt::camt_081_001_02::Document>),
+    #[cfg(feature = "model-camt")]
     Camt_082_001_01(Box<crate::generated::camt::camt_082_001_01::Document>),
+    #[cfg(feature = "model-camt")]
+    Camt_082_001_02(Box<crate::generated::camt::camt_082_001_02::Document>),
     #[cfg(feature = "model-camt")]
     Camt_083_001_01(Box<crate::generated::camt::camt_083_001_01::Document>),
     #[cfg(feature = "model-camt")]
+    Camt_083_001_02(Box<crate::generated::camt::camt_083_001_02::Document>),
+    #[cfg(feature = "model-camt")]
     Camt_084_001_01(Box<crate::generated::camt::camt_084_001_01::Document>),
+    #[cfg(feature = "model-camt")]
+    Camt_084_001_02(Box<crate::generated::camt::camt_084_001_02::Document>),
     #[cfg(feature = "model-camt")]
     Camt_085_001_01(Box<crate::generated::camt::camt_085_001_01::Document>),
     #[cfg(feature = "model-camt")]
+    Camt_085_001_02(Box<crate::generated::camt::camt_085_001_02::Document>),
+    #[cfg(feature = "model-camt")]
     Camt_086_001_04(Box<crate::generated::camt::camt_086_001_04::Document>),
+    #[cfg(feature = "model-camt")]
+    Camt_086_001_05(Box<crate::generated::camt::camt_086_001_05::Document>),
     #[cfg(feature = "model-camt")]
     Camt_087_001_07(Box<crate::generated::camt::camt_087_001_07::Document>),
     #[cfg(feature = "model-camt")]
     Camt_087_001_08(Box<crate::generated::camt::camt_087_001_08::Document>),
     #[cfg(feature = "model-camt")]
+    Camt_087_001_09(Box<crate::generated::camt::camt_087_001_09::Document>),
+    #[cfg(feature = "model-camt")]
     Camt_088_001_01(Box<crate::generated::camt::camt_088_001_01::Document>),
     #[cfg(feature = "model-camt")]
     Camt_101_001_01(Box<crate::generated::camt::camt_101_001_01::Document>),
     #[cfg(feature = "model-camt")]
+    Camt_101_001_02(Box<crate::generated::camt::camt_101_001_02::Document>),
+    #[cfg(feature = "model-camt")]
     Camt_102_001_02(Box<crate::generated::camt::camt_102_001_02::Document>),
     #[cfg(feature = "model-camt")]
+    Camt_102_001_03(Box<crate::generated::camt::camt_102_001_03::Document>),
+    #[cfg(feature = "model-camt")]
     Camt_103_001_02(Box<crate::generated::camt::camt_103_001_02::Document>),
+    #[cfg(feature = "model-camt")]
+    Camt_103_001_03(Box<crate::generated::camt::camt_103_001_03::Document>),
     #[cfg(feature = "model-camt")]
     Camt_104_001_01(Box<crate::generated::camt::camt_104_001_01::Document>),
     #[cfg(feature = "model-camt")]
     Camt_105_001_01(Box<crate::generated::camt::camt_105_001_01::Document>),
     #[cfg(feature = "model-camt")]
+    Camt_105_001_03(Box<crate::generated::camt::camt_105_001_03::Document>),
+    #[cfg(feature = "model-camt")]
     Camt_106_001_01(Box<crate::generated::camt::camt_106_001_01::Document>),
+    #[cfg(feature = "model-camt")]
+    Camt_106_001_03(Box<crate::generated::camt::camt_106_001_03::Document>),
     #[cfg(feature = "model-camt")]
     Camt_107_001_01(Box<crate::generated::camt::camt_107_001_01::Document>),
     #[cfg(feature = "model-camt")]
+    Camt_107_001_02(Box<crate::generated::camt::camt_107_001_02::Document>),
+    #[cfg(feature = "model-camt")]
     Camt_108_001_01(Box<crate::generated::camt::camt_108_001_01::Document>),
     #[cfg(feature = "model-camt")]
+    Camt_108_001_02(Box<crate::generated::camt::camt_108_001_02::Document>),
+    #[cfg(feature = "model-camt")]
     Camt_109_001_01(Box<crate::generated::camt::camt_109_001_01::Document>),
+    #[cfg(feature = "model-camt")]
+    Camt_109_001_02(Box<crate::generated::camt::camt_109_001_02::Document>),
+    #[cfg(feature = "model-camt")]
+    Camt_110_001_02(Box<crate::generated::camt::camt_110_001_02::Document>),
+    #[cfg(feature = "model-camt")]
+    Camt_111_001_03(Box<crate::generated::camt::camt_111_001_03::Document>),
     #[cfg(feature = "model-canm")]
     Canm_001_001_02(Box<crate::generated::canm::canm_001_001_02::Document>),
     #[cfg(feature = "model-canm")]
+    Canm_001_001_05(Box<crate::generated::canm::canm_001_001_05::Document>),
+    #[cfg(feature = "model-canm")]
     Canm_002_001_02(Box<crate::generated::canm::canm_002_001_02::Document>),
+    #[cfg(feature = "model-canm")]
+    Canm_002_001_05(Box<crate::generated::canm::canm_002_001_05::Document>),
     #[cfg(feature = "model-canm")]
     Canm_003_001_02(Box<crate::generated::canm::canm_003_001_02::Document>),
     #[cfg(feature = "model-canm")]
+    Canm_003_001_05(Box<crate::generated::canm::canm_003_001_05::Document>),
+    #[cfg(feature = "model-canm")]
     Canm_004_001_02(Box<crate::generated::canm::canm_004_001_02::Document>),
+    #[cfg(feature = "model-canm")]
+    Canm_004_001_05(Box<crate::generated::canm::canm_004_001_05::Document>),
     #[cfg(feature = "model-casp")]
     Casp_001_001_03(Box<crate::generated::casp::casp_001_001_03::Document>),
     #[cfg(feature = "model-casp")]
+    Casp_001_001_08(Box<crate::generated::casp::casp_001_001_08::Document>),
+    #[cfg(feature = "model-casp")]
     Casp_002_001_03(Box<crate::generated::casp::casp_002_001_03::Document>),
+    #[cfg(feature = "model-casp")]
+    Casp_002_001_08(Box<crate::generated::casp::casp_002_001_08::Document>),
     #[cfg(feature = "model-casp")]
     Casp_003_001_03(Box<crate::generated::casp::casp_003_001_03::Document>),
     #[cfg(feature = "model-casp")]
+    Casp_003_001_08(Box<crate::generated::casp::casp_003_001_08::Document>),
+    #[cfg(feature = "model-casp")]
     Casp_004_001_03(Box<crate::generated::casp::casp_004_001_03::Document>),
+    #[cfg(feature = "model-casp")]
+    Casp_004_001_08(Box<crate::generated::casp::casp_004_001_08::Document>),
     #[cfg(feature = "model-casp")]
     Casp_005_001_03(Box<crate::generated::casp::casp_005_001_03::Document>),
     #[cfg(feature = "model-casp")]
+    Casp_005_001_08(Box<crate::generated::casp::casp_005_001_08::Document>),
+    #[cfg(feature = "model-casp")]
     Casp_006_001_03(Box<crate::generated::casp::casp_006_001_03::Document>),
+    #[cfg(feature = "model-casp")]
+    Casp_006_001_08(Box<crate::generated::casp::casp_006_001_08::Document>),
     #[cfg(feature = "model-casp")]
     Casp_007_001_03(Box<crate::generated::casp::casp_007_001_03::Document>),
     #[cfg(feature = "model-casp")]
+    Casp_007_001_08(Box<crate::generated::casp::casp_007_001_08::Document>),
+    #[cfg(feature = "model-casp")]
     Casp_008_001_03(Box<crate::generated::casp::casp_008_001_03::Document>),
+    #[cfg(feature = "model-casp")]
+    Casp_008_001_08(Box<crate::generated::casp::casp_008_001_08::Document>),
     #[cfg(feature = "model-casp")]
     Casp_009_001_03(Box<crate::generated::casp::casp_009_001_03::Document>),
     #[cfg(feature = "model-casp")]
+    Casp_009_001_08(Box<crate::generated::casp::casp_009_001_08::Document>),
+    #[cfg(feature = "model-casp")]
     Casp_010_001_03(Box<crate::generated::casp::casp_010_001_03::Document>),
+    #[cfg(feature = "model-casp")]
+    Casp_010_001_08(Box<crate::generated::casp::casp_010_001_08::Document>),
     #[cfg(feature = "model-casp")]
     Casp_011_001_03(Box<crate::generated::casp::casp_011_001_03::Document>),
     #[cfg(feature = "model-casp")]
+    Casp_011_001_08(Box<crate::generated::casp::casp_011_001_08::Document>),
+    #[cfg(feature = "model-casp")]
     Casp_012_001_03(Box<crate::generated::casp::casp_012_001_03::Document>),
+    #[cfg(feature = "model-casp")]
+    Casp_012_001_08(Box<crate::generated::casp::casp_012_001_08::Document>),
     #[cfg(feature = "model-casp")]
     Casp_013_001_02(Box<crate::generated::casp::casp_013_001_02::Document>),
     #[cfg(feature = "model-casp")]
     Casp_014_001_03(Box<crate::generated::casp::casp_014_001_03::Document>),
     #[cfg(feature = "model-casp")]
+    Casp_014_001_08(Box<crate::generated::casp::casp_014_001_08::Document>),
+    #[cfg(feature = "model-casp")]
     Casp_015_001_03(Box<crate::generated::casp::casp_015_001_03::Document>),
+    #[cfg(feature = "model-casp")]
+    Casp_015_001_08(Box<crate::generated::casp::casp_015_001_08::Document>),
     #[cfg(feature = "model-casp")]
     Casp_016_001_03(Box<crate::generated::casp::casp_016_001_03::Document>),
     #[cfg(feature = "model-casp")]
+    Casp_016_001_08(Box<crate::generated::casp::casp_016_001_08::Document>),
+    #[cfg(feature = "model-casp")]
     Casp_017_001_03(Box<crate::generated::casp::casp_017_001_03::Document>),
+    #[cfg(feature = "model-casp")]
+    Casp_017_001_08(Box<crate::generated::casp::casp_017_001_08::Document>),
     #[cfg(feature = "model-casr")]
     Casr_001_001_01(Box<crate::generated::casr::casr_001_001_01::Document>),
     #[cfg(feature = "model-casr")]
+    Casr_001_001_04(Box<crate::generated::casr::casr_001_001_04::Document>),
+    #[cfg(feature = "model-casr")]
     Casr_002_001_01(Box<crate::generated::casr::casr_002_001_01::Document>),
+    #[cfg(feature = "model-casr")]
+    Casr_002_001_04(Box<crate::generated::casr::casr_002_001_04::Document>),
     #[cfg(feature = "model-catm")]
     Catm_001_001_03(Box<crate::generated::catm::catm_001_001_03::Document>),
     #[cfg(feature = "model-catm")]
     Catm_001_001_10(Box<crate::generated::catm::catm_001_001_10::Document>),
     #[cfg(feature = "model-catm")]
+    Catm_001_001_15(Box<crate::generated::catm::catm_001_001_15::Document>),
+    #[cfg(feature = "model-catm")]
     Catm_002_001_09(Box<crate::generated::catm::catm_002_001_09::Document>),
     #[cfg(feature = "model-catm")]
+    Catm_002_001_14(Box<crate::generated::catm::catm_002_001_14::Document>),
+    #[cfg(feature = "model-catm")]
     Catm_003_001_10(Box<crate::generated::catm::catm_003_001_10::Document>),
+    #[cfg(feature = "model-catm")]
+    Catm_003_001_15(Box<crate::generated::catm::catm_003_001_15::Document>),
     #[cfg(feature = "model-catm")]
     Catm_004_001_05(Box<crate::generated::catm::catm_004_001_05::Document>),
     #[cfg(feature = "model-catm")]
     Catm_005_001_07(Box<crate::generated::catm::catm_005_001_07::Document>),
     #[cfg(feature = "model-catm")]
+    Catm_005_001_12(Box<crate::generated::catm::catm_005_001_12::Document>),
+    #[cfg(feature = "model-catm")]
     Catm_006_001_05(Box<crate::generated::catm::catm_006_001_05::Document>),
+    #[cfg(feature = "model-catm")]
+    Catm_006_001_08(Box<crate::generated::catm::catm_006_001_08::Document>),
     #[cfg(feature = "model-catm")]
     Catm_007_001_04(Box<crate::generated::catm::catm_007_001_04::Document>),
     #[cfg(feature = "model-catm")]
+    Catm_007_001_08(Box<crate::generated::catm::catm_007_001_08::Document>),
+    #[cfg(feature = "model-catm")]
     Catm_008_001_04(Box<crate::generated::catm::catm_008_001_04::Document>),
+    #[cfg(feature = "model-catm")]
+    Catm_008_001_07(Box<crate::generated::catm::catm_008_001_07::Document>),
     #[cfg(feature = "model-catp")]
     Catp_001_001_02(Box<crate::generated::catp::catp_001_001_02::Document>),
     #[cfg(feature = "model-catp")]
+    Catp_001_001_03(Box<crate::generated::catp::catp_001_001_03::Document>),
+    #[cfg(feature = "model-catp")]
     Catp_002_001_02(Box<crate::generated::catp::catp_002_001_02::Document>),
+    #[cfg(feature = "model-catp")]
+    Catp_002_001_03(Box<crate::generated::catp::catp_002_001_03::Document>),
     #[cfg(feature = "model-catp")]
     Catp_003_001_02(Box<crate::generated::catp::catp_003_001_02::Document>),
     #[cfg(feature = "model-catp")]
+    Catp_003_001_03(Box<crate::generated::catp::catp_003_001_03::Document>),
+    #[cfg(feature = "model-catp")]
     Catp_004_001_02(Box<crate::generated::catp::catp_004_001_02::Document>),
+    #[cfg(feature = "model-catp")]
+    Catp_004_001_03(Box<crate::generated::catp::catp_004_001_03::Document>),
     #[cfg(feature = "model-catp")]
     Catp_005_001_02(Box<crate::generated::catp::catp_005_001_02::Document>),
     #[cfg(feature = "model-catp")]
     Catp_006_001_02(Box<crate::generated::catp::catp_006_001_02::Document>),
     #[cfg(feature = "model-catp")]
+    Catp_006_001_03(Box<crate::generated::catp::catp_006_001_03::Document>),
+    #[cfg(feature = "model-catp")]
     Catp_007_001_02(Box<crate::generated::catp::catp_007_001_02::Document>),
+    #[cfg(feature = "model-catp")]
+    Catp_007_001_03(Box<crate::generated::catp::catp_007_001_03::Document>),
     #[cfg(feature = "model-catp")]
     Catp_008_001_02(Box<crate::generated::catp::catp_008_001_02::Document>),
     #[cfg(feature = "model-catp")]
+    Catp_008_001_03(Box<crate::generated::catp::catp_008_001_03::Document>),
+    #[cfg(feature = "model-catp")]
     Catp_009_001_02(Box<crate::generated::catp::catp_009_001_02::Document>),
+    #[cfg(feature = "model-catp")]
+    Catp_009_001_03(Box<crate::generated::catp::catp_009_001_03::Document>),
     #[cfg(feature = "model-catp")]
     Catp_010_001_02(Box<crate::generated::catp::catp_010_001_02::Document>),
     #[cfg(feature = "model-catp")]
+    Catp_010_001_03(Box<crate::generated::catp::catp_010_001_03::Document>),
+    #[cfg(feature = "model-catp")]
     Catp_011_001_02(Box<crate::generated::catp::catp_011_001_02::Document>),
+    #[cfg(feature = "model-catp")]
+    Catp_011_001_03(Box<crate::generated::catp::catp_011_001_03::Document>),
     #[cfg(feature = "model-catp")]
     Catp_012_001_01(Box<crate::generated::catp::catp_012_001_01::Document>),
     #[cfg(feature = "model-catp")]
+    Catp_012_001_02(Box<crate::generated::catp::catp_012_001_02::Document>),
+    #[cfg(feature = "model-catp")]
     Catp_013_001_01(Box<crate::generated::catp::catp_013_001_01::Document>),
+    #[cfg(feature = "model-catp")]
+    Catp_013_001_02(Box<crate::generated::catp::catp_013_001_02::Document>),
     #[cfg(feature = "model-catp")]
     Catp_014_001_01(Box<crate::generated::catp::catp_014_001_01::Document>),
     #[cfg(feature = "model-catp")]
+    Catp_014_001_02(Box<crate::generated::catp::catp_014_001_02::Document>),
+    #[cfg(feature = "model-catp")]
     Catp_015_001_01(Box<crate::generated::catp::catp_015_001_01::Document>),
+    #[cfg(feature = "model-catp")]
+    Catp_015_001_02(Box<crate::generated::catp::catp_015_001_02::Document>),
     #[cfg(feature = "model-catp")]
     Catp_016_001_01(Box<crate::generated::catp::catp_016_001_01::Document>),
     #[cfg(feature = "model-catp")]
+    Catp_016_001_02(Box<crate::generated::catp::catp_016_001_02::Document>),
+    #[cfg(feature = "model-catp")]
     Catp_017_001_01(Box<crate::generated::catp::catp_017_001_01::Document>),
+    #[cfg(feature = "model-catp")]
+    Catp_017_001_02(Box<crate::generated::catp::catp_017_001_02::Document>),
     #[cfg(feature = "model-colr")]
     Colr_001_001_01(Box<crate::generated::colr::colr_001_001_01::Document>),
     #[cfg(feature = "model-colr")]
+    Colr_001_001_02(Box<crate::generated::colr::colr_001_001_02::Document>),
+    #[cfg(feature = "model-colr")]
     Colr_002_001_01(Box<crate::generated::colr::colr_002_001_01::Document>),
+    #[cfg(feature = "model-colr")]
+    Colr_002_001_02(Box<crate::generated::colr::colr_002_001_02::Document>),
     #[cfg(feature = "model-colr")]
     Colr_003_001_04(Box<crate::generated::colr::colr_003_001_04::Document>),
     #[cfg(feature = "model-colr")]
+    Colr_003_001_05(Box<crate::generated::colr::colr_003_001_05::Document>),
+    #[cfg(feature = "model-colr")]
     Colr_004_001_04(Box<crate::generated::colr::colr_004_001_04::Document>),
+    #[cfg(feature = "model-colr")]
+    Colr_004_001_05(Box<crate::generated::colr::colr_004_001_05::Document>),
     #[cfg(feature = "model-colr")]
     Colr_005_001_05(Box<crate::generated::colr::colr_005_001_05::Document>),
     #[cfg(feature = "model-colr")]
+    Colr_005_001_06(Box<crate::generated::colr::colr_005_001_06::Document>),
+    #[cfg(feature = "model-colr")]
     Colr_006_001_04(Box<crate::generated::colr::colr_006_001_04::Document>),
+    #[cfg(feature = "model-colr")]
+    Colr_006_001_05(Box<crate::generated::colr::colr_006_001_05::Document>),
     #[cfg(feature = "model-colr")]
     Colr_007_001_05(Box<crate::generated::colr::colr_007_001_05::Document>),
     #[cfg(feature = "model-colr")]
+    Colr_007_001_06(Box<crate::generated::colr::colr_007_001_06::Document>),
+    #[cfg(feature = "model-colr")]
     Colr_008_001_05(Box<crate::generated::colr::colr_008_001_05::Document>),
+    #[cfg(feature = "model-colr")]
+    Colr_008_001_06(Box<crate::generated::colr::colr_008_001_06::Document>),
     #[cfg(feature = "model-colr")]
     Colr_009_001_04(Box<crate::generated::colr::colr_009_001_04::Document>),
     #[cfg(feature = "model-colr")]
+    Colr_009_001_05(Box<crate::generated::colr::colr_009_001_05::Document>),
+    #[cfg(feature = "model-colr")]
     Colr_010_001_04(Box<crate::generated::colr::colr_010_001_04::Document>),
+    #[cfg(feature = "model-colr")]
+    Colr_010_001_05(Box<crate::generated::colr::colr_010_001_05::Document>),
     #[cfg(feature = "model-colr")]
     Colr_011_001_04(Box<crate::generated::colr::colr_011_001_04::Document>),
     #[cfg(feature = "model-colr")]
+    Colr_011_001_05(Box<crate::generated::colr::colr_011_001_05::Document>),
+    #[cfg(feature = "model-colr")]
     Colr_012_001_04(Box<crate::generated::colr::colr_012_001_04::Document>),
+    #[cfg(feature = "model-colr")]
+    Colr_012_001_05(Box<crate::generated::colr::colr_012_001_05::Document>),
     #[cfg(feature = "model-colr")]
     Colr_013_001_04(Box<crate::generated::colr::colr_013_001_04::Document>),
     #[cfg(feature = "model-colr")]
+    Colr_013_001_05(Box<crate::generated::colr::colr_013_001_05::Document>),
+    #[cfg(feature = "model-colr")]
     Colr_014_001_04(Box<crate::generated::colr::colr_014_001_04::Document>),
+    #[cfg(feature = "model-colr")]
+    Colr_014_001_05(Box<crate::generated::colr::colr_014_001_05::Document>),
     #[cfg(feature = "model-colr")]
     Colr_015_001_04(Box<crate::generated::colr::colr_015_001_04::Document>),
     #[cfg(feature = "model-colr")]
+    Colr_015_001_05(Box<crate::generated::colr::colr_015_001_05::Document>),
+    #[cfg(feature = "model-colr")]
     Colr_016_001_04(Box<crate::generated::colr::colr_016_001_04::Document>),
+    #[cfg(feature = "model-colr")]
+    Colr_016_001_05(Box<crate::generated::colr::colr_016_001_05::Document>),
     #[cfg(feature = "model-colr")]
     Colr_019_001_01(Box<crate::generated::colr::colr_019_001_01::Document>),
     #[cfg(feature = "model-colr")]
@@ -735,93 +1295,169 @@ pub enum AnyMessage {
     #[cfg(feature = "model-fxtr")]
     Fxtr_008_001_06(Box<crate::generated::fxtr::fxtr_008_001_06::Document>),
     #[cfg(feature = "model-fxtr")]
+    Fxtr_008_001_08(Box<crate::generated::fxtr::fxtr_008_001_08::Document>),
+    #[cfg(feature = "model-fxtr")]
     Fxtr_013_001_03(Box<crate::generated::fxtr::fxtr_013_001_03::Document>),
     #[cfg(feature = "model-fxtr")]
     Fxtr_014_001_04(Box<crate::generated::fxtr::fxtr_014_001_04::Document>),
     #[cfg(feature = "model-fxtr")]
+    Fxtr_014_001_06(Box<crate::generated::fxtr::fxtr_014_001_06::Document>),
+    #[cfg(feature = "model-fxtr")]
     Fxtr_015_001_04(Box<crate::generated::fxtr::fxtr_015_001_04::Document>),
+    #[cfg(feature = "model-fxtr")]
+    Fxtr_015_001_06(Box<crate::generated::fxtr::fxtr_015_001_06::Document>),
     #[cfg(feature = "model-fxtr")]
     Fxtr_016_001_04(Box<crate::generated::fxtr::fxtr_016_001_04::Document>),
     #[cfg(feature = "model-fxtr")]
+    Fxtr_016_001_06(Box<crate::generated::fxtr::fxtr_016_001_06::Document>),
+    #[cfg(feature = "model-fxtr")]
     Fxtr_017_001_04(Box<crate::generated::fxtr::fxtr_017_001_04::Document>),
+    #[cfg(feature = "model-fxtr")]
+    Fxtr_017_001_06(Box<crate::generated::fxtr::fxtr_017_001_06::Document>),
     #[cfg(feature = "model-fxtr")]
     Fxtr_030_001_04(Box<crate::generated::fxtr::fxtr_030_001_04::Document>),
     #[cfg(feature = "model-fxtr")]
+    Fxtr_030_001_06(Box<crate::generated::fxtr::fxtr_030_001_06::Document>),
+    #[cfg(feature = "model-fxtr")]
     Fxtr_031_001_01(Box<crate::generated::fxtr::fxtr_031_001_01::Document>),
+    #[cfg(feature = "model-fxtr")]
+    Fxtr_031_001_02(Box<crate::generated::fxtr::fxtr_031_001_02::Document>),
     #[cfg(feature = "model-fxtr")]
     Fxtr_032_001_01(Box<crate::generated::fxtr::fxtr_032_001_01::Document>),
     #[cfg(feature = "model-fxtr")]
+    Fxtr_032_001_02(Box<crate::generated::fxtr::fxtr_032_001_02::Document>),
+    #[cfg(feature = "model-fxtr")]
     Fxtr_033_001_01(Box<crate::generated::fxtr::fxtr_033_001_01::Document>),
+    #[cfg(feature = "model-fxtr")]
+    Fxtr_033_001_02(Box<crate::generated::fxtr::fxtr_033_001_02::Document>),
     #[cfg(feature = "model-fxtr")]
     Fxtr_034_001_01(Box<crate::generated::fxtr::fxtr_034_001_01::Document>),
     #[cfg(feature = "model-fxtr")]
+    Fxtr_034_001_02(Box<crate::generated::fxtr::fxtr_034_001_02::Document>),
+    #[cfg(feature = "model-fxtr")]
     Fxtr_035_001_01(Box<crate::generated::fxtr::fxtr_035_001_01::Document>),
+    #[cfg(feature = "model-fxtr")]
+    Fxtr_035_001_02(Box<crate::generated::fxtr::fxtr_035_001_02::Document>),
     #[cfg(feature = "model-fxtr")]
     Fxtr_036_001_01(Box<crate::generated::fxtr::fxtr_036_001_01::Document>),
     #[cfg(feature = "model-fxtr")]
+    Fxtr_036_001_02(Box<crate::generated::fxtr::fxtr_036_001_02::Document>),
+    #[cfg(feature = "model-fxtr")]
     Fxtr_037_001_01(Box<crate::generated::fxtr::fxtr_037_001_01::Document>),
+    #[cfg(feature = "model-fxtr")]
+    Fxtr_037_001_02(Box<crate::generated::fxtr::fxtr_037_001_02::Document>),
+    #[cfg(feature = "model-fxtr")]
+    Fxtr_038_001_02(Box<crate::generated::fxtr::fxtr_038_001_02::Document>),
     #[cfg(feature = "model-pacs")]
     Pacs_002_001_10(Box<crate::generated::pacs::pacs_002_001_10::Document>),
     #[cfg(feature = "model-pacs")]
     Pacs_002_001_12(Box<crate::generated::pacs::pacs_002_001_12::Document>),
     #[cfg(feature = "model-pacs")]
+    Pacs_002_001_16(Box<crate::generated::pacs::pacs_002_001_16::Document>),
+    #[cfg(feature = "model-pacs")]
     Pacs_003_001_09(Box<crate::generated::pacs::pacs_003_001_09::Document>),
+    #[cfg(feature = "model-pacs")]
+    Pacs_003_001_12(Box<crate::generated::pacs::pacs_003_001_12::Document>),
     #[cfg(feature = "model-pacs")]
     Pacs_004_001_09(Box<crate::generated::pacs::pacs_004_001_09::Document>),
     #[cfg(feature = "model-pacs")]
     Pacs_004_001_11(Box<crate::generated::pacs::pacs_004_001_11::Document>),
     #[cfg(feature = "model-pacs")]
+    Pacs_004_001_15(Box<crate::generated::pacs::pacs_004_001_15::Document>),
+    #[cfg(feature = "model-pacs")]
     Pacs_007_001_11(Box<crate::generated::pacs::pacs_007_001_11::Document>),
+    #[cfg(feature = "model-pacs")]
+    Pacs_007_001_14(Box<crate::generated::pacs::pacs_007_001_14::Document>),
     #[cfg(feature = "model-pacs")]
     Pacs_008_001_08(Box<crate::generated::pacs::pacs_008_001_08::Document>),
     #[cfg(feature = "model-pacs")]
     Pacs_008_001_10(Box<crate::generated::pacs::pacs_008_001_10::Document>),
     #[cfg(feature = "model-pacs")]
+    Pacs_008_001_14(Box<crate::generated::pacs::pacs_008_001_14::Document>),
+    #[cfg(feature = "model-pacs")]
     Pacs_009_001_08(Box<crate::generated::pacs::pacs_009_001_08::Document>),
     #[cfg(feature = "model-pacs")]
     Pacs_009_001_10(Box<crate::generated::pacs::pacs_009_001_10::Document>),
     #[cfg(feature = "model-pacs")]
+    Pacs_009_001_13(Box<crate::generated::pacs::pacs_009_001_13::Document>),
+    #[cfg(feature = "model-pacs")]
     Pacs_010_001_05(Box<crate::generated::pacs::pacs_010_001_05::Document>),
+    #[cfg(feature = "model-pacs")]
+    Pacs_010_001_06(Box<crate::generated::pacs::pacs_010_001_06::Document>),
     #[cfg(feature = "model-pacs")]
     Pacs_028_001_05(Box<crate::generated::pacs::pacs_028_001_05::Document>),
     #[cfg(feature = "model-pacs")]
+    Pacs_028_001_07(Box<crate::generated::pacs::pacs_028_001_07::Document>),
+    #[cfg(feature = "model-pacs")]
     Pacs_029_001_01(Box<crate::generated::pacs::pacs_029_001_01::Document>),
+    #[cfg(feature = "model-pacs")]
+    Pacs_029_001_02(Box<crate::generated::pacs::pacs_029_001_02::Document>),
     #[cfg(feature = "model-pain")]
     Pain_001_001_09(Box<crate::generated::pain::pain_001_001_09::Document>),
     #[cfg(feature = "model-pain")]
     Pain_001_001_11(Box<crate::generated::pain::pain_001_001_11::Document>),
     #[cfg(feature = "model-pain")]
+    Pain_001_001_13(Box<crate::generated::pain::pain_001_001_13::Document>),
+    #[cfg(feature = "model-pain")]
     Pain_002_001_10(Box<crate::generated::pain::pain_002_001_10::Document>),
     #[cfg(feature = "model-pain")]
     Pain_002_001_12(Box<crate::generated::pain::pain_002_001_12::Document>),
     #[cfg(feature = "model-pain")]
+    Pain_002_001_15(Box<crate::generated::pain::pain_002_001_15::Document>),
+    #[cfg(feature = "model-pain")]
     Pain_007_001_11(Box<crate::generated::pain::pain_007_001_11::Document>),
+    #[cfg(feature = "model-pain")]
+    Pain_007_001_13(Box<crate::generated::pain::pain_007_001_13::Document>),
     #[cfg(feature = "model-pain")]
     Pain_008_001_10(Box<crate::generated::pain::pain_008_001_10::Document>),
     #[cfg(feature = "model-pain")]
+    Pain_008_001_12(Box<crate::generated::pain::pain_008_001_12::Document>),
+    #[cfg(feature = "model-pain")]
     Pain_009_001_07(Box<crate::generated::pain::pain_009_001_07::Document>),
+    #[cfg(feature = "model-pain")]
+    Pain_009_001_08(Box<crate::generated::pain::pain_009_001_08::Document>),
     #[cfg(feature = "model-pain")]
     Pain_010_001_07(Box<crate::generated::pain::pain_010_001_07::Document>),
     #[cfg(feature = "model-pain")]
+    Pain_010_001_08(Box<crate::generated::pain::pain_010_001_08::Document>),
+    #[cfg(feature = "model-pain")]
     Pain_011_001_07(Box<crate::generated::pain::pain_011_001_07::Document>),
     #[cfg(feature = "model-pain")]
+    Pain_011_001_08(Box<crate::generated::pain::pain_011_001_08::Document>),
+    #[cfg(feature = "model-pain")]
     Pain_012_001_07(Box<crate::generated::pain::pain_012_001_07::Document>),
+    #[cfg(feature = "model-pain")]
+    Pain_012_001_08(Box<crate::generated::pain::pain_012_001_08::Document>),
     #[cfg(feature = "model-pain")]
     Pain_013_001_01(Box<crate::generated::pain::pain_013_001_01::Document>),
     #[cfg(feature = "model-pain")]
     Pain_013_001_09(Box<crate::generated::pain::pain_013_001_09::Document>),
     #[cfg(feature = "model-pain")]
+    Pain_013_001_12(Box<crate::generated::pain::pain_013_001_12::Document>),
+    #[cfg(feature = "model-pain")]
     Pain_014_001_09(Box<crate::generated::pain::pain_014_001_09::Document>),
+    #[cfg(feature = "model-pain")]
+    Pain_014_001_12(Box<crate::generated::pain::pain_014_001_12::Document>),
     #[cfg(feature = "model-pain")]
     Pain_017_001_03(Box<crate::generated::pain::pain_017_001_03::Document>),
     #[cfg(feature = "model-pain")]
+    Pain_017_001_04(Box<crate::generated::pain::pain_017_001_04::Document>),
+    #[cfg(feature = "model-pain")]
     Pain_018_001_03(Box<crate::generated::pain::pain_018_001_03::Document>),
+    #[cfg(feature = "model-pain")]
+    Pain_018_001_04(Box<crate::generated::pain::pain_018_001_04::Document>),
     #[cfg(feature = "model-reda")]
     Reda_001_001_04(Box<crate::generated::reda::reda_001_001_04::Document>),
     #[cfg(feature = "model-reda")]
+    Reda_001_001_05(Box<crate::generated::reda::reda_001_001_05::Document>),
+    #[cfg(feature = "model-reda")]
     Reda_002_001_04(Box<crate::generated::reda::reda_002_001_04::Document>),
     #[cfg(feature = "model-reda")]
+    Reda_002_001_05(Box<crate::generated::reda::reda_002_001_05::Document>),
+    #[cfg(feature = "model-reda")]
     Reda_004_001_05(Box<crate::generated::reda::reda_004_001_05::Document>),
+    #[cfg(feature = "model-reda")]
+    Reda_004_001_07(Box<crate::generated::reda::reda_004_001_07::Document>),
     #[cfg(feature = "model-reda")]
     Reda_005_001_03(Box<crate::generated::reda::reda_005_001_03::Document>),
     #[cfg(feature = "model-reda")]
@@ -841,11 +1477,15 @@ pub enum AnyMessage {
     #[cfg(feature = "model-reda")]
     Reda_014_001_01(Box<crate::generated::reda::reda_014_001_01::Document>),
     #[cfg(feature = "model-reda")]
+    Reda_014_001_02(Box<crate::generated::reda::reda_014_001_02::Document>),
+    #[cfg(feature = "model-reda")]
     Reda_015_001_01(Box<crate::generated::reda::reda_015_001_01::Document>),
     #[cfg(feature = "model-reda")]
     Reda_016_001_01(Box<crate::generated::reda::reda_016_001_01::Document>),
     #[cfg(feature = "model-reda")]
     Reda_017_001_01(Box<crate::generated::reda::reda_017_001_01::Document>),
+    #[cfg(feature = "model-reda")]
+    Reda_017_001_02(Box<crate::generated::reda::reda_017_001_02::Document>),
     #[cfg(feature = "model-reda")]
     Reda_018_001_01(Box<crate::generated::reda::reda_018_001_01::Document>),
     #[cfg(feature = "model-reda")]
@@ -857,7 +1497,19 @@ pub enum AnyMessage {
     #[cfg(feature = "model-reda")]
     Reda_022_001_01(Box<crate::generated::reda::reda_022_001_01::Document>),
     #[cfg(feature = "model-reda")]
+    Reda_022_001_02(Box<crate::generated::reda::reda_022_001_02::Document>),
+    #[cfg(feature = "model-reda")]
     Reda_023_001_01(Box<crate::generated::reda::reda_023_001_01::Document>),
+    #[cfg(feature = "model-reda")]
+    Reda_024_001_01(Box<crate::generated::reda::reda_024_001_01::Document>),
+    #[cfg(feature = "model-reda")]
+    Reda_025_001_01(Box<crate::generated::reda::reda_025_001_01::Document>),
+    #[cfg(feature = "model-reda")]
+    Reda_026_001_01(Box<crate::generated::reda::reda_026_001_01::Document>),
+    #[cfg(feature = "model-reda")]
+    Reda_027_001_01(Box<crate::generated::reda::reda_027_001_01::Document>),
+    #[cfg(feature = "model-reda")]
+    Reda_028_001_01(Box<crate::generated::reda::reda_028_001_01::Document>),
     #[cfg(feature = "model-reda")]
     Reda_029_001_01(Box<crate::generated::reda::reda_029_001_01::Document>),
     #[cfg(feature = "model-reda")]
@@ -879,9 +1531,27 @@ pub enum AnyMessage {
     #[cfg(feature = "model-reda")]
     Reda_041_001_01(Box<crate::generated::reda::reda_041_001_01::Document>),
     #[cfg(feature = "model-reda")]
+    Reda_041_001_02(Box<crate::generated::reda::reda_041_001_02::Document>),
+    #[cfg(feature = "model-reda")]
     Reda_042_001_01(Box<crate::generated::reda::reda_042_001_01::Document>),
     #[cfg(feature = "model-reda")]
     Reda_043_001_01(Box<crate::generated::reda::reda_043_001_01::Document>),
+    #[cfg(feature = "model-reda")]
+    Reda_043_001_02(Box<crate::generated::reda::reda_043_001_02::Document>),
+    #[cfg(feature = "model-reda")]
+    Reda_044_001_01(Box<crate::generated::reda::reda_044_001_01::Document>),
+    #[cfg(feature = "model-reda")]
+    Reda_045_001_01(Box<crate::generated::reda::reda_045_001_01::Document>),
+    #[cfg(feature = "model-reda")]
+    Reda_046_001_01(Box<crate::generated::reda::reda_046_001_01::Document>),
+    #[cfg(feature = "model-reda")]
+    Reda_047_001_01(Box<crate::generated::reda::reda_047_001_01::Document>),
+    #[cfg(feature = "model-reda")]
+    Reda_049_001_01(Box<crate::generated::reda::reda_049_001_01::Document>),
+    #[cfg(feature = "model-reda")]
+    Reda_050_001_01(Box<crate::generated::reda::reda_050_001_01::Document>),
+    #[cfg(feature = "model-reda")]
+    Reda_051_001_01(Box<crate::generated::reda::reda_051_001_01::Document>),
     #[cfg(feature = "model-reda")]
     Reda_056_001_01(Box<crate::generated::reda::reda_056_001_01::Document>),
     #[cfg(feature = "model-reda")]
@@ -893,21 +1563,61 @@ pub enum AnyMessage {
     #[cfg(feature = "model-reda")]
     Reda_060_001_01(Box<crate::generated::reda::reda_060_001_01::Document>),
     #[cfg(feature = "model-reda")]
+    Reda_060_001_02(Box<crate::generated::reda::reda_060_001_02::Document>),
+    #[cfg(feature = "model-reda")]
     Reda_061_001_01(Box<crate::generated::reda::reda_061_001_01::Document>),
     #[cfg(feature = "model-reda")]
+    Reda_061_001_02(Box<crate::generated::reda::reda_061_001_02::Document>),
+    #[cfg(feature = "model-reda")]
+    Reda_064_001_02(Box<crate::generated::reda::reda_064_001_02::Document>),
+    #[cfg(feature = "model-reda")]
+    Reda_065_001_02(Box<crate::generated::reda::reda_065_001_02::Document>),
+    #[cfg(feature = "model-reda")]
+    Reda_066_001_02(Box<crate::generated::reda::reda_066_001_02::Document>),
+    #[cfg(feature = "model-reda")]
+    Reda_067_001_02(Box<crate::generated::reda::reda_067_001_02::Document>),
+    #[cfg(feature = "model-reda")]
+    Reda_068_001_02(Box<crate::generated::reda::reda_068_001_02::Document>),
+    #[cfg(feature = "model-reda")]
+    Reda_069_001_02(Box<crate::generated::reda::reda_069_001_02::Document>),
+    #[cfg(feature = "model-reda")]
+    Reda_070_001_02(Box<crate::generated::reda::reda_070_001_02::Document>),
+    #[cfg(feature = "model-reda")]
+    Reda_071_001_02(Box<crate::generated::reda::reda_071_001_02::Document>),
+    #[cfg(feature = "model-reda")]
+    Reda_072_001_02(Box<crate::generated::reda::reda_072_001_02::Document>),
+    #[cfg(feature = "model-reda")]
+    Reda_073_001_02(Box<crate::generated::reda::reda_073_001_02::Document>),
+    #[cfg(feature = "model-reda")]
     Reda_074_001_01(Box<crate::generated::reda::reda_074_001_01::Document>),
+    #[cfg(feature = "model-reda")]
+    Reda_075_001_01(Box<crate::generated::reda::reda_075_001_01::Document>),
+    #[cfg(feature = "model-reda")]
+    Reda_077_001_01(Box<crate::generated::reda::reda_077_001_01::Document>),
     #[cfg(feature = "model-remt")]
     Remt_001_001_05(Box<crate::generated::remt::remt_001_001_05::Document>),
     #[cfg(feature = "model-remt")]
+    Remt_001_001_07(Box<crate::generated::remt::remt_001_001_07::Document>),
+    #[cfg(feature = "model-remt")]
     Remt_002_001_02(Box<crate::generated::remt::remt_002_001_02::Document>),
+    #[cfg(feature = "model-remt")]
+    Remt_002_001_03(Box<crate::generated::remt::remt_002_001_03::Document>),
     #[cfg(feature = "model-secl")]
     Secl_001_001_03(Box<crate::generated::secl::secl_001_001_03::Document>),
     #[cfg(feature = "model-secl")]
+    Secl_001_001_05(Box<crate::generated::secl::secl_001_001_05::Document>),
+    #[cfg(feature = "model-secl")]
     Secl_002_001_03(Box<crate::generated::secl::secl_002_001_03::Document>),
+    #[cfg(feature = "model-secl")]
+    Secl_002_001_05(Box<crate::generated::secl::secl_002_001_05::Document>),
     #[cfg(feature = "model-secl")]
     Secl_003_001_03(Box<crate::generated::secl::secl_003_001_03::Document>),
     #[cfg(feature = "model-secl")]
+    Secl_003_001_05(Box<crate::generated::secl::secl_003_001_05::Document>),
+    #[cfg(feature = "model-secl")]
     Secl_004_001_03(Box<crate::generated::secl::secl_004_001_03::Document>),
+    #[cfg(feature = "model-secl")]
+    Secl_004_001_04(Box<crate::generated::secl::secl_004_001_04::Document>),
     #[cfg(feature = "model-secl")]
     Secl_005_001_02(Box<crate::generated::secl::secl_005_001_02::Document>),
     #[cfg(feature = "model-secl")]
@@ -920,28 +1630,50 @@ pub enum AnyMessage {
     Secl_009_001_03(Box<crate::generated::secl::secl_009_001_03::Document>),
     #[cfg(feature = "model-secl")]
     Secl_010_001_03(Box<crate::generated::secl::secl_010_001_03::Document>),
+    #[cfg(feature = "model-secl")]
+    Secl_010_001_04(Box<crate::generated::secl::secl_010_001_04::Document>),
     #[cfg(feature = "model-seev")]
     Seev_001_001_08(Box<crate::generated::seev::seev_001_001_08::Document>),
     #[cfg(feature = "model-seev")]
+    Seev_001_001_13(Box<crate::generated::seev::seev_001_001_13::Document>),
+    #[cfg(feature = "model-seev")]
     Seev_002_001_07(Box<crate::generated::seev::seev_002_001_07::Document>),
+    #[cfg(feature = "model-seev")]
+    Seev_002_001_10(Box<crate::generated::seev::seev_002_001_10::Document>),
     #[cfg(feature = "model-seev")]
     Seev_003_001_07(Box<crate::generated::seev::seev_003_001_07::Document>),
     #[cfg(feature = "model-seev")]
+    Seev_003_001_10(Box<crate::generated::seev::seev_003_001_10::Document>),
+    #[cfg(feature = "model-seev")]
     Seev_004_001_07(Box<crate::generated::seev::seev_004_001_07::Document>),
+    #[cfg(feature = "model-seev")]
+    Seev_004_001_11(Box<crate::generated::seev::seev_004_001_11::Document>),
     #[cfg(feature = "model-seev")]
     Seev_005_001_07(Box<crate::generated::seev::seev_005_001_07::Document>),
     #[cfg(feature = "model-seev")]
+    Seev_005_001_10(Box<crate::generated::seev::seev_005_001_10::Document>),
+    #[cfg(feature = "model-seev")]
     Seev_006_001_07(Box<crate::generated::seev::seev_006_001_07::Document>),
+    #[cfg(feature = "model-seev")]
+    Seev_006_001_12(Box<crate::generated::seev::seev_006_001_12::Document>),
     #[cfg(feature = "model-seev")]
     Seev_007_001_07(Box<crate::generated::seev::seev_007_001_07::Document>),
     #[cfg(feature = "model-seev")]
+    Seev_007_001_12(Box<crate::generated::seev::seev_007_001_12::Document>),
+    #[cfg(feature = "model-seev")]
     Seev_008_001_07(Box<crate::generated::seev::seev_008_001_07::Document>),
     #[cfg(feature = "model-seev")]
+    Seev_008_001_10(Box<crate::generated::seev::seev_008_001_10::Document>),
+    #[cfg(feature = "model-seev")]
     Seev_009_001_01(Box<crate::generated::seev::seev_009_001_01::Document>),
+    #[cfg(feature = "model-seev")]
+    Seev_009_001_03(Box<crate::generated::seev::seev_009_001_03::Document>),
     #[cfg(feature = "model-seev")]
     Seev_010_001_01(Box<crate::generated::seev::seev_010_001_01::Document>),
     #[cfg(feature = "model-seev")]
     Seev_011_001_01(Box<crate::generated::seev::seev_011_001_01::Document>),
+    #[cfg(feature = "model-seev")]
+    Seev_011_001_04(Box<crate::generated::seev::seev_011_001_04::Document>),
     #[cfg(feature = "model-seev")]
     Seev_012_001_01(Box<crate::generated::seev::seev_012_001_01::Document>),
     #[cfg(feature = "model-seev")]
@@ -983,27 +1715,83 @@ pub enum AnyMessage {
     #[cfg(feature = "model-seev")]
     Seev_031_001_11(Box<crate::generated::seev::seev_031_001_11::Document>),
     #[cfg(feature = "model-seev")]
+    Seev_031_001_16(Box<crate::generated::seev::seev_031_001_16::Document>),
+    #[cfg(feature = "model-seev")]
+    Seev_031_002_15(Box<crate::generated::seev::seev_031_002_15::Document>),
+    #[cfg(feature = "model-seev")]
     Seev_032_001_08(Box<crate::generated::seev::seev_032_001_08::Document>),
+    #[cfg(feature = "model-seev")]
+    Seev_032_001_09(Box<crate::generated::seev::seev_032_001_09::Document>),
+    #[cfg(feature = "model-seev")]
+    Seev_032_002_09(Box<crate::generated::seev::seev_032_002_09::Document>),
     #[cfg(feature = "model-seev")]
     Seev_033_001_11(Box<crate::generated::seev::seev_033_001_11::Document>),
     #[cfg(feature = "model-seev")]
+    Seev_033_001_14(Box<crate::generated::seev::seev_033_001_14::Document>),
+    #[cfg(feature = "model-seev")]
+    Seev_033_002_13(Box<crate::generated::seev::seev_033_002_13::Document>),
+    #[cfg(feature = "model-seev")]
+    Seev_034_001_16(Box<crate::generated::seev::seev_034_001_16::Document>),
+    #[cfg(feature = "model-seev")]
+    Seev_034_002_15(Box<crate::generated::seev::seev_034_002_15::Document>),
+    #[cfg(feature = "model-seev")]
     Seev_035_001_12(Box<crate::generated::seev::seev_035_001_12::Document>),
+    #[cfg(feature = "model-seev")]
+    Seev_035_001_17(Box<crate::generated::seev::seev_035_001_17::Document>),
+    #[cfg(feature = "model-seev")]
+    Seev_035_002_16(Box<crate::generated::seev::seev_035_002_16::Document>),
+    #[cfg(feature = "model-seev")]
+    Seev_036_001_17(Box<crate::generated::seev::seev_036_001_17::Document>),
+    #[cfg(feature = "model-seev")]
+    Seev_036_002_16(Box<crate::generated::seev::seev_036_002_16::Document>),
+    #[cfg(feature = "model-seev")]
+    Seev_037_001_17(Box<crate::generated::seev::seev_037_001_17::Document>),
+    #[cfg(feature = "model-seev")]
+    Seev_037_002_16(Box<crate::generated::seev::seev_037_002_16::Document>),
+    #[cfg(feature = "model-seev")]
+    Seev_038_001_09(Box<crate::generated::seev::seev_038_001_09::Document>),
+    #[cfg(feature = "model-seev")]
+    Seev_038_002_09(Box<crate::generated::seev::seev_038_002_09::Document>),
+    #[cfg(feature = "model-seev")]
+    Seev_039_001_13(Box<crate::generated::seev::seev_039_001_13::Document>),
     #[cfg(feature = "model-seev")]
     Seev_039_002_10(Box<crate::generated::seev::seev_039_002_10::Document>),
     #[cfg(feature = "model-seev")]
+    Seev_039_002_13(Box<crate::generated::seev::seev_039_002_13::Document>),
+    #[cfg(feature = "model-seev")]
+    Seev_040_001_13(Box<crate::generated::seev::seev_040_001_13::Document>),
+    #[cfg(feature = "model-seev")]
     Seev_040_002_10(Box<crate::generated::seev::seev_040_002_10::Document>),
+    #[cfg(feature = "model-seev")]
+    Seev_040_002_13(Box<crate::generated::seev::seev_040_002_13::Document>),
+    #[cfg(feature = "model-seev")]
+    Seev_041_001_15(Box<crate::generated::seev::seev_041_001_15::Document>),
     #[cfg(feature = "model-seev")]
     Seev_041_002_11(Box<crate::generated::seev::seev_041_002_11::Document>),
     #[cfg(feature = "model-seev")]
+    Seev_041_002_14(Box<crate::generated::seev::seev_041_002_14::Document>),
+    #[cfg(feature = "model-seev")]
+    Seev_042_001_14(Box<crate::generated::seev::seev_042_001_14::Document>),
+    #[cfg(feature = "model-seev")]
     Seev_042_002_10(Box<crate::generated::seev::seev_042_002_10::Document>),
+    #[cfg(feature = "model-seev")]
+    Seev_042_002_13(Box<crate::generated::seev::seev_042_002_13::Document>),
+    #[cfg(feature = "model-seev")]
+    Seev_044_001_13(Box<crate::generated::seev::seev_044_001_13::Document>),
     #[cfg(feature = "model-seev")]
     Seev_044_002_10(Box<crate::generated::seev::seev_044_002_10::Document>),
     #[cfg(feature = "model-seev")]
+    Seev_044_002_13(Box<crate::generated::seev::seev_044_002_13::Document>),
+    #[cfg(feature = "model-seev")]
     Seev_045_001_03(Box<crate::generated::seev::seev_045_001_03::Document>),
+    #[cfg(feature = "model-seev")]
+    Seev_045_001_04(Box<crate::generated::seev::seev_045_001_04::Document>),
     #[cfg(feature = "model-seev")]
     Seev_046_001_01(Box<crate::generated::seev::seev_046_001_01::Document>),
     #[cfg(feature = "model-seev")]
     Seev_047_001_02(Box<crate::generated::seev::seev_047_001_02::Document>),
+    #[cfg(feature = "model-seev")]
+    Seev_047_001_03(Box<crate::generated::seev::seev_047_001_03::Document>),
     #[cfg(feature = "model-seev")]
     Seev_048_001_01(Box<crate::generated::seev::seev_048_001_01::Document>),
     #[cfg(feature = "model-seev")]
@@ -1011,11 +1799,35 @@ pub enum AnyMessage {
     #[cfg(feature = "model-seev")]
     Seev_050_001_01(Box<crate::generated::seev::seev_050_001_01::Document>),
     #[cfg(feature = "model-seev")]
+    Seev_050_001_04(Box<crate::generated::seev::seev_050_001_04::Document>),
+    #[cfg(feature = "model-seev")]
     Seev_051_001_01(Box<crate::generated::seev::seev_051_001_01::Document>),
+    #[cfg(feature = "model-seev")]
+    Seev_051_001_02(Box<crate::generated::seev::seev_051_001_02::Document>),
     #[cfg(feature = "model-seev")]
     Seev_052_001_01(Box<crate::generated::seev::seev_052_001_01::Document>),
     #[cfg(feature = "model-seev")]
+    Seev_052_001_04(Box<crate::generated::seev::seev_052_001_04::Document>),
+    #[cfg(feature = "model-seev")]
     Seev_053_001_01(Box<crate::generated::seev::seev_053_001_01::Document>),
+    #[cfg(feature = "model-seev")]
+    Seev_053_001_04(Box<crate::generated::seev::seev_053_001_04::Document>),
+    #[cfg(feature = "model-seev")]
+    Seev_060_001_01(Box<crate::generated::seev::seev_060_001_01::Document>),
+    #[cfg(feature = "model-seev")]
+    Seev_061_001_01(Box<crate::generated::seev::seev_061_001_01::Document>),
+    #[cfg(feature = "model-seev")]
+    Seev_062_001_01(Box<crate::generated::seev::seev_062_001_01::Document>),
+    #[cfg(feature = "model-seev")]
+    Seev_063_001_01(Box<crate::generated::seev::seev_063_001_01::Document>),
+    #[cfg(feature = "model-seev")]
+    Seev_064_001_01(Box<crate::generated::seev::seev_064_001_01::Document>),
+    #[cfg(feature = "model-seev")]
+    Seev_065_001_01(Box<crate::generated::seev::seev_065_001_01::Document>),
+    #[cfg(feature = "model-seev")]
+    Seev_066_001_01(Box<crate::generated::seev::seev_066_001_01::Document>),
+    #[cfg(feature = "model-seev")]
+    Seev_067_001_01(Box<crate::generated::seev::seev_067_001_01::Document>),
     #[cfg(feature = "model-semt")]
     Semt_001_001_03(Box<crate::generated::semt::semt_001_001_03::Document>),
     #[cfg(feature = "model-semt")]
@@ -1475,55 +2287,105 @@ impl AnyMessage {
             #[cfg(feature = "model-acmt")]
             AnyMessage::Acmt_007_001_04(_) => <crate::generated::acmt::acmt_007_001_04::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-acmt")]
+            AnyMessage::Acmt_007_001_05(_) => <crate::generated::acmt::acmt_007_001_05::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-acmt")]
             AnyMessage::Acmt_008_001_04(_) => <crate::generated::acmt::acmt_008_001_04::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-acmt")]
+            AnyMessage::Acmt_008_001_05(_) => <crate::generated::acmt::acmt_008_001_05::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-acmt")]
             AnyMessage::Acmt_009_001_03(_) => <crate::generated::acmt::acmt_009_001_03::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-acmt")]
+            AnyMessage::Acmt_009_001_04(_) => <crate::generated::acmt::acmt_009_001_04::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-acmt")]
             AnyMessage::Acmt_010_001_03(_) => <crate::generated::acmt::acmt_010_001_03::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-acmt")]
+            AnyMessage::Acmt_010_001_04(_) => <crate::generated::acmt::acmt_010_001_04::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-acmt")]
             AnyMessage::Acmt_011_001_03(_) => <crate::generated::acmt::acmt_011_001_03::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-acmt")]
+            AnyMessage::Acmt_011_001_04(_) => <crate::generated::acmt::acmt_011_001_04::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-acmt")]
             AnyMessage::Acmt_012_001_03(_) => <crate::generated::acmt::acmt_012_001_03::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-acmt")]
+            AnyMessage::Acmt_012_001_04(_) => <crate::generated::acmt::acmt_012_001_04::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-acmt")]
             AnyMessage::Acmt_013_001_03(_) => <crate::generated::acmt::acmt_013_001_03::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-acmt")]
+            AnyMessage::Acmt_013_001_04(_) => <crate::generated::acmt::acmt_013_001_04::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-acmt")]
             AnyMessage::Acmt_014_001_04(_) => <crate::generated::acmt::acmt_014_001_04::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-acmt")]
+            AnyMessage::Acmt_014_001_05(_) => <crate::generated::acmt::acmt_014_001_05::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-acmt")]
             AnyMessage::Acmt_015_001_03(_) => <crate::generated::acmt::acmt_015_001_03::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-acmt")]
+            AnyMessage::Acmt_015_001_05(_) => <crate::generated::acmt::acmt_015_001_05::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-acmt")]
             AnyMessage::Acmt_016_001_03(_) => <crate::generated::acmt::acmt_016_001_03::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-acmt")]
+            AnyMessage::Acmt_016_001_05(_) => <crate::generated::acmt::acmt_016_001_05::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-acmt")]
             AnyMessage::Acmt_017_001_03(_) => <crate::generated::acmt::acmt_017_001_03::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-acmt")]
+            AnyMessage::Acmt_017_001_05(_) => <crate::generated::acmt::acmt_017_001_05::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-acmt")]
             AnyMessage::Acmt_018_001_03(_) => <crate::generated::acmt::acmt_018_001_03::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-acmt")]
+            AnyMessage::Acmt_018_001_05(_) => <crate::generated::acmt::acmt_018_001_05::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-acmt")]
             AnyMessage::Acmt_019_001_03(_) => <crate::generated::acmt::acmt_019_001_03::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-acmt")]
+            AnyMessage::Acmt_019_001_04(_) => <crate::generated::acmt::acmt_019_001_04::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-acmt")]
             AnyMessage::Acmt_020_001_03(_) => <crate::generated::acmt::acmt_020_001_03::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-acmt")]
+            AnyMessage::Acmt_020_001_04(_) => <crate::generated::acmt::acmt_020_001_04::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-acmt")]
             AnyMessage::Acmt_021_001_03(_) => <crate::generated::acmt::acmt_021_001_03::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-acmt")]
+            AnyMessage::Acmt_021_001_04(_) => <crate::generated::acmt::acmt_021_001_04::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-acmt")]
             AnyMessage::Acmt_022_001_03(_) => <crate::generated::acmt::acmt_022_001_03::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-acmt")]
+            AnyMessage::Acmt_022_001_04(_) => <crate::generated::acmt::acmt_022_001_04::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-acmt")]
             AnyMessage::Acmt_023_001_03(_) => <crate::generated::acmt::acmt_023_001_03::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-acmt")]
+            AnyMessage::Acmt_023_001_04(_) => <crate::generated::acmt::acmt_023_001_04::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-acmt")]
             AnyMessage::Acmt_024_001_03(_) => <crate::generated::acmt::acmt_024_001_03::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-acmt")]
+            AnyMessage::Acmt_024_001_04(_) => <crate::generated::acmt::acmt_024_001_04::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-acmt")]
             AnyMessage::Acmt_027_001_04(_) => <crate::generated::acmt::acmt_027_001_04::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-acmt")]
+            AnyMessage::Acmt_027_001_06(_) => <crate::generated::acmt::acmt_027_001_06::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-acmt")]
             AnyMessage::Acmt_028_001_04(_) => <crate::generated::acmt::acmt_028_001_04::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-acmt")]
+            AnyMessage::Acmt_028_001_06(_) => <crate::generated::acmt::acmt_028_001_06::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-acmt")]
             AnyMessage::Acmt_029_001_04(_) => <crate::generated::acmt::acmt_029_001_04::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-acmt")]
+            AnyMessage::Acmt_029_001_06(_) => <crate::generated::acmt::acmt_029_001_06::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-acmt")]
             AnyMessage::Acmt_030_001_03(_) => <crate::generated::acmt::acmt_030_001_03::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-acmt")]
+            AnyMessage::Acmt_030_001_04(_) => <crate::generated::acmt::acmt_030_001_04::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-acmt")]
             AnyMessage::Acmt_031_001_04(_) => <crate::generated::acmt::acmt_031_001_04::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-acmt")]
+            AnyMessage::Acmt_031_001_06(_) => <crate::generated::acmt::acmt_031_001_06::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-acmt")]
             AnyMessage::Acmt_032_001_04(_) => <crate::generated::acmt::acmt_032_001_04::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-acmt")]
+            AnyMessage::Acmt_032_001_06(_) => <crate::generated::acmt::acmt_032_001_06::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-acmt")]
             AnyMessage::Acmt_033_001_02(_) => <crate::generated::acmt::acmt_033_001_02::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-acmt")]
             AnyMessage::Acmt_034_001_04(_) => <crate::generated::acmt::acmt_034_001_04::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-acmt")]
+            AnyMessage::Acmt_034_001_06(_) => <crate::generated::acmt::acmt_034_001_06::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-acmt")]
             AnyMessage::Acmt_035_001_02(_) => <crate::generated::acmt::acmt_035_001_02::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-acmt")]
@@ -1537,6 +2399,8 @@ impl AnyMessage {
             #[cfg(feature = "model-admi")]
             AnyMessage::Admi_005_001_01(_) => <crate::generated::admi::admi_005_001_01::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-admi")]
+            AnyMessage::Admi_005_001_02(_) => <crate::generated::admi::admi_005_001_02::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-admi")]
             AnyMessage::Admi_006_001_01(_) => <crate::generated::admi::admi_006_001_01::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-admi")]
             AnyMessage::Admi_007_001_01(_) => <crate::generated::admi::admi_007_001_01::Document as MxMessage>::MESSAGE_NAME,
@@ -1548,10 +2412,18 @@ impl AnyMessage {
             AnyMessage::Admi_011_001_01(_) => <crate::generated::admi::admi_011_001_01::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-admi")]
             AnyMessage::Admi_017_001_01(_) => <crate::generated::admi::admi_017_001_01::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-admi")]
+            AnyMessage::Admi_017_001_02(_) => <crate::generated::admi::admi_017_001_02::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-admi")]
+            AnyMessage::Admi_024_001_01(_) => <crate::generated::admi::admi_024_001_01::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-auth")]
             AnyMessage::Auth_001_001_01(_) => <crate::generated::auth::auth_001_001_01::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-auth")]
+            AnyMessage::Auth_001_001_02(_) => <crate::generated::auth::auth_001_001_02::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-auth")]
             AnyMessage::Auth_002_001_01(_) => <crate::generated::auth::auth_002_001_01::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-auth")]
+            AnyMessage::Auth_002_001_02(_) => <crate::generated::auth::auth_002_001_02::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-auth")]
             AnyMessage::Auth_003_001_01(_) => <crate::generated::auth::auth_003_001_01::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-auth")]
@@ -1565,33 +2437,59 @@ impl AnyMessage {
             #[cfg(feature = "model-auth")]
             AnyMessage::Auth_016_001_02(_) => <crate::generated::auth::auth_016_001_02::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-auth")]
+            AnyMessage::Auth_016_001_03(_) => <crate::generated::auth::auth_016_001_03::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-auth")]
             AnyMessage::Auth_017_001_02(_) => <crate::generated::auth::auth_017_001_02::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-auth")]
             AnyMessage::Auth_018_001_03(_) => <crate::generated::auth::auth_018_001_03::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-auth")]
+            AnyMessage::Auth_018_001_04(_) => <crate::generated::auth::auth_018_001_04::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-auth")]
             AnyMessage::Auth_019_001_03(_) => <crate::generated::auth::auth_019_001_03::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-auth")]
+            AnyMessage::Auth_019_001_04(_) => <crate::generated::auth::auth_019_001_04::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-auth")]
             AnyMessage::Auth_020_001_03(_) => <crate::generated::auth::auth_020_001_03::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-auth")]
+            AnyMessage::Auth_020_001_04(_) => <crate::generated::auth::auth_020_001_04::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-auth")]
             AnyMessage::Auth_021_001_03(_) => <crate::generated::auth::auth_021_001_03::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-auth")]
+            AnyMessage::Auth_021_001_04(_) => <crate::generated::auth::auth_021_001_04::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-auth")]
             AnyMessage::Auth_022_001_03(_) => <crate::generated::auth::auth_022_001_03::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-auth")]
+            AnyMessage::Auth_022_001_04(_) => <crate::generated::auth::auth_022_001_04::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-auth")]
             AnyMessage::Auth_023_001_03(_) => <crate::generated::auth::auth_023_001_03::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-auth")]
+            AnyMessage::Auth_023_001_04(_) => <crate::generated::auth::auth_023_001_04::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-auth")]
             AnyMessage::Auth_024_001_03(_) => <crate::generated::auth::auth_024_001_03::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-auth")]
+            AnyMessage::Auth_024_001_04(_) => <crate::generated::auth::auth_024_001_04::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-auth")]
             AnyMessage::Auth_025_001_03(_) => <crate::generated::auth::auth_025_001_03::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-auth")]
+            AnyMessage::Auth_025_001_04(_) => <crate::generated::auth::auth_025_001_04::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-auth")]
             AnyMessage::Auth_026_001_03(_) => <crate::generated::auth::auth_026_001_03::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-auth")]
+            AnyMessage::Auth_026_001_04(_) => <crate::generated::auth::auth_026_001_04::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-auth")]
             AnyMessage::Auth_027_001_03(_) => <crate::generated::auth::auth_027_001_03::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-auth")]
+            AnyMessage::Auth_027_001_04(_) => <crate::generated::auth::auth_027_001_04::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-auth")]
             AnyMessage::Auth_028_001_01(_) => <crate::generated::auth::auth_028_001_01::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-auth")]
             AnyMessage::Auth_029_001_02(_) => <crate::generated::auth::auth_029_001_02::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-auth")]
+            AnyMessage::Auth_029_001_05(_) => <crate::generated::auth::auth_029_001_05::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-auth")]
             AnyMessage::Auth_030_001_02(_) => <crate::generated::auth::auth_030_001_02::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-auth")]
+            AnyMessage::Auth_030_001_04(_) => <crate::generated::auth::auth_030_001_04::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-auth")]
             AnyMessage::Auth_031_001_01(_) => <crate::generated::auth::auth_031_001_01::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-auth")]
@@ -1599,11 +2497,15 @@ impl AnyMessage {
             #[cfg(feature = "model-auth")]
             AnyMessage::Auth_033_001_02(_) => <crate::generated::auth::auth_033_001_02::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-auth")]
+            AnyMessage::Auth_033_001_03(_) => <crate::generated::auth::auth_033_001_03::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-auth")]
             AnyMessage::Auth_034_001_01(_) => <crate::generated::auth::auth_034_001_01::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-auth")]
             AnyMessage::Auth_035_001_01(_) => <crate::generated::auth::auth_035_001_01::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-auth")]
             AnyMessage::Auth_036_001_02(_) => <crate::generated::auth::auth_036_001_02::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-auth")]
+            AnyMessage::Auth_036_001_03(_) => <crate::generated::auth::auth_036_001_03::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-auth")]
             AnyMessage::Auth_038_001_01(_) => <crate::generated::auth::auth_038_001_01::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-auth")]
@@ -1619,7 +2521,11 @@ impl AnyMessage {
             #[cfg(feature = "model-auth")]
             AnyMessage::Auth_044_001_02(_) => <crate::generated::auth::auth_044_001_02::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-auth")]
+            AnyMessage::Auth_044_001_03(_) => <crate::generated::auth::auth_044_001_03::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-auth")]
             AnyMessage::Auth_045_001_02(_) => <crate::generated::auth::auth_045_001_02::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-auth")]
+            AnyMessage::Auth_045_001_03(_) => <crate::generated::auth::auth_045_001_03::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-auth")]
             AnyMessage::Auth_047_001_01(_) => <crate::generated::auth::auth_047_001_01::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-auth")]
@@ -1641,19 +2547,29 @@ impl AnyMessage {
             #[cfg(feature = "model-auth")]
             AnyMessage::Auth_057_001_01(_) => <crate::generated::auth::auth_057_001_01::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-auth")]
+            AnyMessage::Auth_057_001_02(_) => <crate::generated::auth::auth_057_001_02::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-auth")]
             AnyMessage::Auth_058_001_01(_) => <crate::generated::auth::auth_058_001_01::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-auth")]
             AnyMessage::Auth_059_001_01(_) => <crate::generated::auth::auth_059_001_01::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-auth")]
+            AnyMessage::Auth_059_001_02(_) => <crate::generated::auth::auth_059_001_02::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-auth")]
             AnyMessage::Auth_060_001_01(_) => <crate::generated::auth::auth_060_001_01::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-auth")]
+            AnyMessage::Auth_060_001_02(_) => <crate::generated::auth::auth_060_001_02::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-auth")]
             AnyMessage::Auth_061_001_01(_) => <crate::generated::auth::auth_061_001_01::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-auth")]
+            AnyMessage::Auth_061_001_02(_) => <crate::generated::auth::auth_061_001_02::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-auth")]
             AnyMessage::Auth_062_001_01(_) => <crate::generated::auth::auth_062_001_01::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-auth")]
             AnyMessage::Auth_063_001_01(_) => <crate::generated::auth::auth_063_001_01::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-auth")]
             AnyMessage::Auth_064_001_01(_) => <crate::generated::auth::auth_064_001_01::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-auth")]
+            AnyMessage::Auth_064_001_02(_) => <crate::generated::auth::auth_064_001_02::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-auth")]
             AnyMessage::Auth_065_001_01(_) => <crate::generated::auth::auth_065_001_01::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-auth")]
@@ -1664,6 +2580,8 @@ impl AnyMessage {
             AnyMessage::Auth_068_001_01(_) => <crate::generated::auth::auth_068_001_01::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-auth")]
             AnyMessage::Auth_069_001_01(_) => <crate::generated::auth::auth_069_001_01::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-auth")]
+            AnyMessage::Auth_069_001_03(_) => <crate::generated::auth::auth_069_001_03::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-auth")]
             AnyMessage::Auth_070_001_02(_) => <crate::generated::auth::auth_070_001_02::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-auth")]
@@ -1691,9 +2609,15 @@ impl AnyMessage {
             #[cfg(feature = "model-auth")]
             AnyMessage::Auth_090_001_01(_) => <crate::generated::auth::auth_090_001_01::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-auth")]
+            AnyMessage::Auth_090_001_02(_) => <crate::generated::auth::auth_090_001_02::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-auth")]
             AnyMessage::Auth_091_001_01(_) => <crate::generated::auth::auth_091_001_01::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-auth")]
+            AnyMessage::Auth_091_001_03(_) => <crate::generated::auth::auth_091_001_03::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-auth")]
             AnyMessage::Auth_092_001_02(_) => <crate::generated::auth::auth_092_001_02::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-auth")]
+            AnyMessage::Auth_092_001_04(_) => <crate::generated::auth::auth_092_001_04::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-auth")]
             AnyMessage::Auth_094_001_02(_) => <crate::generated::auth::auth_094_001_02::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-auth")]
@@ -1704,80 +2628,186 @@ impl AnyMessage {
             AnyMessage::Auth_102_001_01(_) => <crate::generated::auth::auth_102_001_01::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-auth")]
             AnyMessage::Auth_105_001_01(_) => <crate::generated::auth::auth_105_001_01::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-auth")]
+            AnyMessage::Auth_106_001_01(_) => <crate::generated::auth::auth_106_001_01::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-auth")]
+            AnyMessage::Auth_107_001_02(_) => <crate::generated::auth::auth_107_001_02::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-auth")]
+            AnyMessage::Auth_108_001_02(_) => <crate::generated::auth::auth_108_001_02::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-auth")]
+            AnyMessage::Auth_109_001_02(_) => <crate::generated::auth::auth_109_001_02::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-auth")]
+            AnyMessage::Auth_112_001_01(_) => <crate::generated::auth::auth_112_001_01::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-auth")]
+            AnyMessage::Auth_113_001_01(_) => <crate::generated::auth::auth_113_001_01::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-auth")]
+            AnyMessage::Auth_114_001_01(_) => <crate::generated::auth::auth_114_001_01::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-auth")]
+            AnyMessage::Auth_120_001_01(_) => <crate::generated::auth::auth_120_001_01::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-auth")]
+            AnyMessage::Auth_121_001_01(_) => <crate::generated::auth::auth_121_001_01::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-auth")]
+            AnyMessage::Auth_122_001_01(_) => <crate::generated::auth::auth_122_001_01::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-auth")]
+            AnyMessage::Auth_123_001_01(_) => <crate::generated::auth::auth_123_001_01::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-auth")]
+            AnyMessage::Auth_124_001_01(_) => <crate::generated::auth::auth_124_001_01::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-caaa")]
             AnyMessage::Caaa_001_001_10(_) => <crate::generated::caaa::caaa_001_001_10::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-caaa")]
+            AnyMessage::Caaa_001_001_15(_) => <crate::generated::caaa::caaa_001_001_15::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-caaa")]
             AnyMessage::Caaa_002_001_10(_) => <crate::generated::caaa::caaa_002_001_10::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-caaa")]
+            AnyMessage::Caaa_002_001_15(_) => <crate::generated::caaa::caaa_002_001_15::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-caaa")]
             AnyMessage::Caaa_003_001_10(_) => <crate::generated::caaa::caaa_003_001_10::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-caaa")]
+            AnyMessage::Caaa_003_001_15(_) => <crate::generated::caaa::caaa_003_001_15::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-caaa")]
             AnyMessage::Caaa_004_001_09(_) => <crate::generated::caaa::caaa_004_001_09::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-caaa")]
+            AnyMessage::Caaa_004_001_14(_) => <crate::generated::caaa::caaa_004_001_14::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-caaa")]
             AnyMessage::Caaa_005_001_10(_) => <crate::generated::caaa::caaa_005_001_10::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-caaa")]
+            AnyMessage::Caaa_005_001_15(_) => <crate::generated::caaa::caaa_005_001_15::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-caaa")]
             AnyMessage::Caaa_006_001_09(_) => <crate::generated::caaa::caaa_006_001_09::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-caaa")]
+            AnyMessage::Caaa_006_001_14(_) => <crate::generated::caaa::caaa_006_001_14::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-caaa")]
             AnyMessage::Caaa_007_001_10(_) => <crate::generated::caaa::caaa_007_001_10::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-caaa")]
+            AnyMessage::Caaa_007_001_15(_) => <crate::generated::caaa::caaa_007_001_15::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-caaa")]
             AnyMessage::Caaa_008_001_09(_) => <crate::generated::caaa::caaa_008_001_09::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-caaa")]
+            AnyMessage::Caaa_008_001_14(_) => <crate::generated::caaa::caaa_008_001_14::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-caaa")]
             AnyMessage::Caaa_009_001_09(_) => <crate::generated::caaa::caaa_009_001_09::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-caaa")]
+            AnyMessage::Caaa_009_001_14(_) => <crate::generated::caaa::caaa_009_001_14::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-caaa")]
             AnyMessage::Caaa_010_001_08(_) => <crate::generated::caaa::caaa_010_001_08::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-caaa")]
+            AnyMessage::Caaa_010_001_13(_) => <crate::generated::caaa::caaa_010_001_13::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-caaa")]
             AnyMessage::Caaa_011_001_10(_) => <crate::generated::caaa::caaa_011_001_10::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-caaa")]
+            AnyMessage::Caaa_011_001_15(_) => <crate::generated::caaa::caaa_011_001_15::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-caaa")]
             AnyMessage::Caaa_012_001_09(_) => <crate::generated::caaa::caaa_012_001_09::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-caaa")]
+            AnyMessage::Caaa_012_001_14(_) => <crate::generated::caaa::caaa_012_001_14::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-caaa")]
             AnyMessage::Caaa_013_001_09(_) => <crate::generated::caaa::caaa_013_001_09::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-caaa")]
+            AnyMessage::Caaa_013_001_14(_) => <crate::generated::caaa::caaa_013_001_14::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-caaa")]
             AnyMessage::Caaa_014_001_08(_) => <crate::generated::caaa::caaa_014_001_08::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-caaa")]
+            AnyMessage::Caaa_014_001_13(_) => <crate::generated::caaa::caaa_014_001_13::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-caaa")]
             AnyMessage::Caaa_015_001_06(_) => <crate::generated::caaa::caaa_015_001_06::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-caaa")]
             AnyMessage::Caaa_016_001_08(_) => <crate::generated::caaa::caaa_016_001_08::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-caaa")]
+            AnyMessage::Caaa_016_001_13(_) => <crate::generated::caaa::caaa_016_001_13::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-caaa")]
             AnyMessage::Caaa_017_001_08(_) => <crate::generated::caaa::caaa_017_001_08::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-caaa")]
+            AnyMessage::Caaa_017_001_13(_) => <crate::generated::caaa::caaa_017_001_13::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-caaa")]
             AnyMessage::Caaa_018_001_05(_) => <crate::generated::caaa::caaa_018_001_05::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-caaa")]
+            AnyMessage::Caaa_018_001_10(_) => <crate::generated::caaa::caaa_018_001_10::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-caaa")]
             AnyMessage::Caaa_019_001_04(_) => <crate::generated::caaa::caaa_019_001_04::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-caaa")]
+            AnyMessage::Caaa_019_001_09(_) => <crate::generated::caaa::caaa_019_001_09::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-caaa")]
             AnyMessage::Caaa_020_001_02(_) => <crate::generated::caaa::caaa_020_001_02::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-caaa")]
+            AnyMessage::Caaa_020_001_07(_) => <crate::generated::caaa::caaa_020_001_07::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-caaa")]
             AnyMessage::Caaa_021_001_02(_) => <crate::generated::caaa::caaa_021_001_02::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-caaa")]
+            AnyMessage::Caaa_021_001_07(_) => <crate::generated::caaa::caaa_021_001_07::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-caaa")]
             AnyMessage::Caaa_022_001_01(_) => <crate::generated::caaa::caaa_022_001_01::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-caaa")]
+            AnyMessage::Caaa_022_001_06(_) => <crate::generated::caaa::caaa_022_001_06::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-caaa")]
             AnyMessage::Caaa_023_001_01(_) => <crate::generated::caaa::caaa_023_001_01::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-caaa")]
+            AnyMessage::Caaa_023_001_06(_) => <crate::generated::caaa::caaa_023_001_06::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-caaa")]
             AnyMessage::Caaa_024_001_01(_) => <crate::generated::caaa::caaa_024_001_01::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-caaa")]
+            AnyMessage::Caaa_024_001_06(_) => <crate::generated::caaa::caaa_024_001_06::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-caaa")]
             AnyMessage::Caaa_025_001_01(_) => <crate::generated::caaa::caaa_025_001_01::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-caaa")]
+            AnyMessage::Caaa_025_001_06(_) => <crate::generated::caaa::caaa_025_001_06::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-caaa")]
+            AnyMessage::Caaa_026_001_03(_) => <crate::generated::caaa::caaa_026_001_03::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-caaa")]
+            AnyMessage::Caaa_027_001_03(_) => <crate::generated::caaa::caaa_027_001_03::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-caad")]
             AnyMessage::Caad_001_001_01(_) => <crate::generated::caad::caad_001_001_01::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-caad")]
+            AnyMessage::Caad_001_001_04(_) => <crate::generated::caad::caad_001_001_04::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-caad")]
             AnyMessage::Caad_002_001_01(_) => <crate::generated::caad::caad_002_001_01::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-caad")]
+            AnyMessage::Caad_002_001_04(_) => <crate::generated::caad::caad_002_001_04::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-caad")]
             AnyMessage::Caad_003_001_01(_) => <crate::generated::caad::caad_003_001_01::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-caad")]
+            AnyMessage::Caad_003_001_04(_) => <crate::generated::caad::caad_003_001_04::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-caad")]
             AnyMessage::Caad_004_001_01(_) => <crate::generated::caad::caad_004_001_01::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-caad")]
+            AnyMessage::Caad_004_001_04(_) => <crate::generated::caad::caad_004_001_04::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-caad")]
             AnyMessage::Caad_005_001_02(_) => <crate::generated::caad::caad_005_001_02::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-caad")]
+            AnyMessage::Caad_005_001_05(_) => <crate::generated::caad::caad_005_001_05::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-caad")]
             AnyMessage::Caad_006_001_02(_) => <crate::generated::caad::caad_006_001_02::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-caad")]
+            AnyMessage::Caad_006_001_05(_) => <crate::generated::caad::caad_006_001_05::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-caad")]
             AnyMessage::Caad_007_001_02(_) => <crate::generated::caad::caad_007_001_02::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-caad")]
+            AnyMessage::Caad_007_001_05(_) => <crate::generated::caad::caad_007_001_05::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-caad")]
+            AnyMessage::Caad_008_001_03(_) => <crate::generated::caad::caad_008_001_03::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-caad")]
+            AnyMessage::Caad_009_001_03(_) => <crate::generated::caad::caad_009_001_03::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-caad")]
+            AnyMessage::Caad_010_001_03(_) => <crate::generated::caad::caad_010_001_03::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-caam")]
             AnyMessage::Caam_001_001_03(_) => <crate::generated::caam::caam_001_001_03::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-caam")]
+            AnyMessage::Caam_001_001_05(_) => <crate::generated::caam::caam_001_001_05::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-caam")]
             AnyMessage::Caam_002_001_03(_) => <crate::generated::caam::caam_002_001_03::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-caam")]
+            AnyMessage::Caam_002_001_04(_) => <crate::generated::caam::caam_002_001_04::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-caam")]
             AnyMessage::Caam_003_001_03(_) => <crate::generated::caam::caam_003_001_03::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-caam")]
+            AnyMessage::Caam_003_001_05(_) => <crate::generated::caam::caam_003_001_05::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-caam")]
             AnyMessage::Caam_004_001_03(_) => <crate::generated::caam::caam_004_001_03::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-caam")]
+            AnyMessage::Caam_004_001_05(_) => <crate::generated::caam::caam_004_001_05::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-caam")]
             AnyMessage::Caam_005_001_02(_) => <crate::generated::caam::caam_005_001_02::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-caam")]
+            AnyMessage::Caam_005_001_03(_) => <crate::generated::caam::caam_005_001_03::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-caam")]
             AnyMessage::Caam_006_001_02(_) => <crate::generated::caam::caam_006_001_02::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-caam")]
@@ -1787,47 +2817,99 @@ impl AnyMessage {
             #[cfg(feature = "model-caam")]
             AnyMessage::Caam_009_001_02(_) => <crate::generated::caam::caam_009_001_02::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-caam")]
+            AnyMessage::Caam_009_001_03(_) => <crate::generated::caam::caam_009_001_03::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-caam")]
             AnyMessage::Caam_010_001_02(_) => <crate::generated::caam::caam_010_001_02::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-caam")]
+            AnyMessage::Caam_010_001_03(_) => <crate::generated::caam::caam_010_001_03::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-caam")]
             AnyMessage::Caam_011_001_01(_) => <crate::generated::caam::caam_011_001_01::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-caam")]
+            AnyMessage::Caam_011_001_02(_) => <crate::generated::caam::caam_011_001_02::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-caam")]
             AnyMessage::Caam_012_001_01(_) => <crate::generated::caam::caam_012_001_01::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-caam")]
+            AnyMessage::Caam_012_001_02(_) => <crate::generated::caam::caam_012_001_02::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-caam")]
+            AnyMessage::Caam_013_001_01(_) => <crate::generated::caam::caam_013_001_01::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-caam")]
+            AnyMessage::Caam_014_001_01(_) => <crate::generated::caam::caam_014_001_01::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-caam")]
+            AnyMessage::Caam_015_001_01(_) => <crate::generated::caam::caam_015_001_01::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-caam")]
+            AnyMessage::Caam_016_001_01(_) => <crate::generated::caam::caam_016_001_01::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-cafc")]
             AnyMessage::Cafc_001_001_01(_) => <crate::generated::cafc::cafc_001_001_01::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-cafc")]
+            AnyMessage::Cafc_001_001_04(_) => <crate::generated::cafc::cafc_001_001_04::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-cafc")]
             AnyMessage::Cafc_002_001_01(_) => <crate::generated::cafc::cafc_002_001_01::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-cafc")]
+            AnyMessage::Cafc_002_001_04(_) => <crate::generated::cafc::cafc_002_001_04::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-cafm")]
             AnyMessage::Cafm_001_001_01(_) => <crate::generated::cafm::cafm_001_001_01::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-cafm")]
+            AnyMessage::Cafm_001_001_04(_) => <crate::generated::cafm::cafm_001_001_04::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-cafm")]
             AnyMessage::Cafm_002_001_01(_) => <crate::generated::cafm::cafm_002_001_01::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-cafm")]
+            AnyMessage::Cafm_002_001_04(_) => <crate::generated::cafm::cafm_002_001_04::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-cafr")]
             AnyMessage::Cafr_001_001_01(_) => <crate::generated::cafr::cafr_001_001_01::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-cafr")]
+            AnyMessage::Cafr_001_001_04(_) => <crate::generated::cafr::cafr_001_001_04::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-cafr")]
             AnyMessage::Cafr_002_001_01(_) => <crate::generated::cafr::cafr_002_001_01::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-cafr")]
+            AnyMessage::Cafr_002_001_04(_) => <crate::generated::cafr::cafr_002_001_04::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-cafr")]
             AnyMessage::Cafr_003_001_01(_) => <crate::generated::cafr::cafr_003_001_01::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-cafr")]
+            AnyMessage::Cafr_003_001_04(_) => <crate::generated::cafr::cafr_003_001_04::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-cafr")]
             AnyMessage::Cafr_004_001_01(_) => <crate::generated::cafr::cafr_004_001_01::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-cafr")]
+            AnyMessage::Cafr_004_001_04(_) => <crate::generated::cafr::cafr_004_001_04::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-cain")]
             AnyMessage::Cain_001_001_02(_) => <crate::generated::cain::cain_001_001_02::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-cain")]
+            AnyMessage::Cain_001_001_05(_) => <crate::generated::cain::cain_001_001_05::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-cain")]
             AnyMessage::Cain_002_001_02(_) => <crate::generated::cain::cain_002_001_02::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-cain")]
+            AnyMessage::Cain_002_001_05(_) => <crate::generated::cain::cain_002_001_05::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-cain")]
             AnyMessage::Cain_003_001_02(_) => <crate::generated::cain::cain_003_001_02::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-cain")]
+            AnyMessage::Cain_003_001_05(_) => <crate::generated::cain::cain_003_001_05::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-cain")]
             AnyMessage::Cain_004_001_02(_) => <crate::generated::cain::cain_004_001_02::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-cain")]
+            AnyMessage::Cain_004_001_05(_) => <crate::generated::cain::cain_004_001_05::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-cain")]
             AnyMessage::Cain_005_001_02(_) => <crate::generated::cain::cain_005_001_02::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-cain")]
+            AnyMessage::Cain_005_001_05(_) => <crate::generated::cain::cain_005_001_05::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-cain")]
             AnyMessage::Cain_006_001_02(_) => <crate::generated::cain::cain_006_001_02::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-cain")]
+            AnyMessage::Cain_006_001_05(_) => <crate::generated::cain::cain_006_001_05::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-cain")]
             AnyMessage::Cain_014_001_01(_) => <crate::generated::cain::cain_014_001_01::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-cain")]
+            AnyMessage::Cain_014_001_04(_) => <crate::generated::cain::cain_014_001_04::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-cain")]
             AnyMessage::Cain_015_001_01(_) => <crate::generated::cain::cain_015_001_01::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-cain")]
+            AnyMessage::Cain_015_001_04(_) => <crate::generated::cain::cain_015_001_04::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-cain")]
             AnyMessage::Cain_016_001_01(_) => <crate::generated::cain::cain_016_001_01::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-cain")]
+            AnyMessage::Cain_016_001_04(_) => <crate::generated::cain::cain_016_001_04::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-cain")]
             AnyMessage::Cain_017_001_01(_) => <crate::generated::cain::cain_017_001_01::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-cain")]
+            AnyMessage::Cain_017_001_04(_) => <crate::generated::cain::cain_017_001_04::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-cain")]
             AnyMessage::Cain_018_001_01(_) => <crate::generated::cain::cain_018_001_01::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-cain")]
@@ -1835,41 +2917,79 @@ impl AnyMessage {
             #[cfg(feature = "model-cain")]
             AnyMessage::Cain_020_001_01(_) => <crate::generated::cain::cain_020_001_01::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-cain")]
+            AnyMessage::Cain_020_001_04(_) => <crate::generated::cain::cain_020_001_04::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-cain")]
             AnyMessage::Cain_021_001_01(_) => <crate::generated::cain::cain_021_001_01::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-cain")]
+            AnyMessage::Cain_021_001_04(_) => <crate::generated::cain::cain_021_001_04::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-cain")]
             AnyMessage::Cain_022_001_01(_) => <crate::generated::cain::cain_022_001_01::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-cain")]
+            AnyMessage::Cain_022_001_04(_) => <crate::generated::cain::cain_022_001_04::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-cain")]
             AnyMessage::Cain_023_001_01(_) => <crate::generated::cain::cain_023_001_01::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-cain")]
+            AnyMessage::Cain_023_001_04(_) => <crate::generated::cain::cain_023_001_04::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-cain")]
             AnyMessage::Cain_024_001_01(_) => <crate::generated::cain::cain_024_001_01::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-cain")]
+            AnyMessage::Cain_024_001_04(_) => <crate::generated::cain::cain_024_001_04::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-cain")]
             AnyMessage::Cain_025_001_01(_) => <crate::generated::cain::cain_025_001_01::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-cain")]
+            AnyMessage::Cain_025_001_04(_) => <crate::generated::cain::cain_025_001_04::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-cain")]
             AnyMessage::Cain_026_001_01(_) => <crate::generated::cain::cain_026_001_01::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-cain")]
+            AnyMessage::Cain_026_001_04(_) => <crate::generated::cain::cain_026_001_04::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-cain")]
             AnyMessage::Cain_027_001_01(_) => <crate::generated::cain::cain_027_001_01::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-cain")]
+            AnyMessage::Cain_027_001_04(_) => <crate::generated::cain::cain_027_001_04::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-cain")]
             AnyMessage::Cain_028_001_01(_) => <crate::generated::cain::cain_028_001_01::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-cain")]
+            AnyMessage::Cain_028_001_04(_) => <crate::generated::cain::cain_028_001_04::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-camt")]
             AnyMessage::Camt_003_001_07(_) => <crate::generated::camt::camt_003_001_07::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_003_001_08(_) => <crate::generated::camt::camt_003_001_08::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-camt")]
             AnyMessage::Camt_004_001_09(_) => <crate::generated::camt::camt_004_001_09::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_004_001_10(_) => <crate::generated::camt::camt_004_001_10::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-camt")]
             AnyMessage::Camt_005_001_09(_) => <crate::generated::camt::camt_005_001_09::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_005_001_11(_) => <crate::generated::camt::camt_005_001_11::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-camt")]
             AnyMessage::Camt_006_001_09(_) => <crate::generated::camt::camt_006_001_09::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_006_001_11(_) => <crate::generated::camt::camt_006_001_11::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-camt")]
             AnyMessage::Camt_007_001_08(_) => <crate::generated::camt::camt_007_001_08::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_007_001_10(_) => <crate::generated::camt::camt_007_001_10::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-camt")]
             AnyMessage::Camt_008_001_09(_) => <crate::generated::camt::camt_008_001_09::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_008_001_11(_) => <crate::generated::camt::camt_008_001_11::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-camt")]
             AnyMessage::Camt_009_001_07(_) => <crate::generated::camt::camt_009_001_07::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_009_001_08(_) => <crate::generated::camt::camt_009_001_08::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-camt")]
             AnyMessage::Camt_010_001_08(_) => <crate::generated::camt::camt_010_001_08::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_010_001_09(_) => <crate::generated::camt::camt_010_001_09::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-camt")]
             AnyMessage::Camt_011_001_07(_) => <crate::generated::camt::camt_011_001_07::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_011_001_08(_) => <crate::generated::camt::camt_011_001_08::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-camt")]
             AnyMessage::Camt_012_001_07(_) => <crate::generated::camt::camt_012_001_07::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_012_001_08(_) => <crate::generated::camt::camt_012_001_08::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-camt")]
             AnyMessage::Camt_013_001_04(_) => <crate::generated::camt::camt_013_001_04::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-camt")]
@@ -1893,39 +3013,71 @@ impl AnyMessage {
             #[cfg(feature = "model-camt")]
             AnyMessage::Camt_024_001_07(_) => <crate::generated::camt::camt_024_001_07::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_024_001_08(_) => <crate::generated::camt::camt_024_001_08::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-camt")]
             AnyMessage::Camt_025_001_05(_) => <crate::generated::camt::camt_025_001_05::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_025_001_09(_) => <crate::generated::camt::camt_025_001_09::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-camt")]
             AnyMessage::Camt_026_001_08(_) => <crate::generated::camt::camt_026_001_08::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-camt")]
             AnyMessage::Camt_026_001_09(_) => <crate::generated::camt::camt_026_001_09::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_026_001_10(_) => <crate::generated::camt::camt_026_001_10::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-camt")]
             AnyMessage::Camt_027_001_09(_) => <crate::generated::camt::camt_027_001_09::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_027_001_10(_) => <crate::generated::camt::camt_027_001_10::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-camt")]
             AnyMessage::Camt_028_001_11(_) => <crate::generated::camt::camt_028_001_11::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_028_001_12(_) => <crate::generated::camt::camt_028_001_12::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-camt")]
             AnyMessage::Camt_029_001_10(_) => <crate::generated::camt::camt_029_001_10::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-camt")]
             AnyMessage::Camt_029_001_11(_) => <crate::generated::camt::camt_029_001_11::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_029_001_14(_) => <crate::generated::camt::camt_029_001_14::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-camt")]
             AnyMessage::Camt_030_001_05(_) => <crate::generated::camt::camt_030_001_05::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_030_001_06(_) => <crate::generated::camt::camt_030_001_06::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-camt")]
             AnyMessage::Camt_031_001_06(_) => <crate::generated::camt::camt_031_001_06::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_031_001_07(_) => <crate::generated::camt::camt_031_001_07::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-camt")]
             AnyMessage::Camt_032_001_04(_) => <crate::generated::camt::camt_032_001_04::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_032_001_05(_) => <crate::generated::camt::camt_032_001_05::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-camt")]
             AnyMessage::Camt_033_001_06(_) => <crate::generated::camt::camt_033_001_06::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_033_001_07(_) => <crate::generated::camt::camt_033_001_07::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-camt")]
             AnyMessage::Camt_034_001_06(_) => <crate::generated::camt::camt_034_001_06::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_034_001_07(_) => <crate::generated::camt::camt_034_001_07::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-camt")]
             AnyMessage::Camt_035_001_05(_) => <crate::generated::camt::camt_035_001_05::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_035_001_06(_) => <crate::generated::camt::camt_035_001_06::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-camt")]
             AnyMessage::Camt_036_001_05(_) => <crate::generated::camt::camt_036_001_05::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_036_001_06(_) => <crate::generated::camt::camt_036_001_06::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-camt")]
             AnyMessage::Camt_037_001_09(_) => <crate::generated::camt::camt_037_001_09::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_037_001_10(_) => <crate::generated::camt::camt_037_001_10::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-camt")]
             AnyMessage::Camt_038_001_04(_) => <crate::generated::camt::camt_038_001_04::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_038_001_05(_) => <crate::generated::camt::camt_038_001_05::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-camt")]
             AnyMessage::Camt_039_001_05(_) => <crate::generated::camt::camt_039_001_05::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_039_001_06(_) => <crate::generated::camt::camt_039_001_06::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-camt")]
             AnyMessage::Camt_040_001_04(_) => <crate::generated::camt::camt_040_001_04::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-camt")]
@@ -1941,35 +3093,65 @@ impl AnyMessage {
             #[cfg(feature = "model-camt")]
             AnyMessage::Camt_046_001_06(_) => <crate::generated::camt::camt_046_001_06::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_046_001_08(_) => <crate::generated::camt::camt_046_001_08::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-camt")]
             AnyMessage::Camt_047_001_07(_) => <crate::generated::camt::camt_047_001_07::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_047_001_08(_) => <crate::generated::camt::camt_047_001_08::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-camt")]
             AnyMessage::Camt_048_001_06(_) => <crate::generated::camt::camt_048_001_06::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_048_001_07(_) => <crate::generated::camt::camt_048_001_07::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-camt")]
             AnyMessage::Camt_049_001_06(_) => <crate::generated::camt::camt_049_001_06::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_049_001_07(_) => <crate::generated::camt::camt_049_001_07::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-camt")]
             AnyMessage::Camt_050_001_06(_) => <crate::generated::camt::camt_050_001_06::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_050_001_07(_) => <crate::generated::camt::camt_050_001_07::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-camt")]
             AnyMessage::Camt_051_001_05(_) => <crate::generated::camt::camt_051_001_05::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_051_001_07(_) => <crate::generated::camt::camt_051_001_07::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-camt")]
             AnyMessage::Camt_052_001_09(_) => <crate::generated::camt::camt_052_001_09::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_052_001_14(_) => <crate::generated::camt::camt_052_001_14::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-camt")]
             AnyMessage::Camt_053_001_09(_) => <crate::generated::camt::camt_053_001_09::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_053_001_14(_) => <crate::generated::camt::camt_053_001_14::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-camt")]
             AnyMessage::Camt_054_001_09(_) => <crate::generated::camt::camt_054_001_09::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_054_001_14(_) => <crate::generated::camt::camt_054_001_14::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-camt")]
             AnyMessage::Camt_055_001_10(_) => <crate::generated::camt::camt_055_001_10::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_055_001_13(_) => <crate::generated::camt::camt_055_001_13::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-camt")]
             AnyMessage::Camt_056_001_09(_) => <crate::generated::camt::camt_056_001_09::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-camt")]
             AnyMessage::Camt_056_001_10(_) => <crate::generated::camt::camt_056_001_10::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_056_001_12(_) => <crate::generated::camt::camt_056_001_12::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-camt")]
             AnyMessage::Camt_057_001_07(_) => <crate::generated::camt::camt_057_001_07::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_057_001_09(_) => <crate::generated::camt::camt_057_001_09::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-camt")]
             AnyMessage::Camt_058_001_07(_) => <crate::generated::camt::camt_058_001_07::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_058_001_10(_) => <crate::generated::camt::camt_058_001_10::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-camt")]
             AnyMessage::Camt_059_001_07(_) => <crate::generated::camt::camt_059_001_07::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_059_001_09(_) => <crate::generated::camt::camt_059_001_09::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-camt")]
             AnyMessage::Camt_060_001_06(_) => <crate::generated::camt::camt_060_001_06::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_060_001_07(_) => <crate::generated::camt::camt_060_001_07::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-camt")]
             AnyMessage::Camt_061_001_02(_) => <crate::generated::camt::camt_061_001_02::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-camt")]
@@ -1977,197 +3159,387 @@ impl AnyMessage {
             #[cfg(feature = "model-camt")]
             AnyMessage::Camt_063_001_02(_) => <crate::generated::camt::camt_063_001_02::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_064_001_01(_) => <crate::generated::camt::camt_064_001_01::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_065_001_01(_) => <crate::generated::camt::camt_065_001_01::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-camt")]
             AnyMessage::Camt_066_001_01(_) => <crate::generated::camt::camt_066_001_01::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_066_001_02(_) => <crate::generated::camt::camt_066_001_02::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-camt")]
             AnyMessage::Camt_067_001_01(_) => <crate::generated::camt::camt_067_001_01::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_067_001_02(_) => <crate::generated::camt::camt_067_001_02::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-camt")]
             AnyMessage::Camt_068_001_01(_) => <crate::generated::camt::camt_068_001_01::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_068_001_02(_) => <crate::generated::camt::camt_068_001_02::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-camt")]
             AnyMessage::Camt_069_001_04(_) => <crate::generated::camt::camt_069_001_04::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_069_001_05(_) => <crate::generated::camt::camt_069_001_05::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-camt")]
             AnyMessage::Camt_070_001_05(_) => <crate::generated::camt::camt_070_001_05::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_070_001_06(_) => <crate::generated::camt::camt_070_001_06::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-camt")]
             AnyMessage::Camt_071_001_04(_) => <crate::generated::camt::camt_071_001_04::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_071_001_05(_) => <crate::generated::camt::camt_071_001_05::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-camt")]
             AnyMessage::Camt_072_001_01(_) => <crate::generated::camt::camt_072_001_01::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_072_001_02(_) => <crate::generated::camt::camt_072_001_02::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-camt")]
             AnyMessage::Camt_073_001_01(_) => <crate::generated::camt::camt_073_001_01::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_073_001_02(_) => <crate::generated::camt::camt_073_001_02::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-camt")]
             AnyMessage::Camt_074_001_01(_) => <crate::generated::camt::camt_074_001_01::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_074_001_02(_) => <crate::generated::camt::camt_074_001_02::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-camt")]
             AnyMessage::Camt_075_001_01(_) => <crate::generated::camt::camt_075_001_01::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_075_001_02(_) => <crate::generated::camt::camt_075_001_02::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_076_001_01(_) => <crate::generated::camt::camt_076_001_01::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_077_001_01(_) => <crate::generated::camt::camt_077_001_01::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-camt")]
             AnyMessage::Camt_078_001_01(_) => <crate::generated::camt::camt_078_001_01::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_078_001_02(_) => <crate::generated::camt::camt_078_001_02::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-camt")]
             AnyMessage::Camt_079_001_01(_) => <crate::generated::camt::camt_079_001_01::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_079_001_02(_) => <crate::generated::camt::camt_079_001_02::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-camt")]
             AnyMessage::Camt_080_001_01(_) => <crate::generated::camt::camt_080_001_01::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_080_001_02(_) => <crate::generated::camt::camt_080_001_02::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-camt")]
             AnyMessage::Camt_081_001_01(_) => <crate::generated::camt::camt_081_001_01::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_081_001_02(_) => <crate::generated::camt::camt_081_001_02::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-camt")]
             AnyMessage::Camt_082_001_01(_) => <crate::generated::camt::camt_082_001_01::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_082_001_02(_) => <crate::generated::camt::camt_082_001_02::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-camt")]
             AnyMessage::Camt_083_001_01(_) => <crate::generated::camt::camt_083_001_01::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_083_001_02(_) => <crate::generated::camt::camt_083_001_02::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-camt")]
             AnyMessage::Camt_084_001_01(_) => <crate::generated::camt::camt_084_001_01::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_084_001_02(_) => <crate::generated::camt::camt_084_001_02::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-camt")]
             AnyMessage::Camt_085_001_01(_) => <crate::generated::camt::camt_085_001_01::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_085_001_02(_) => <crate::generated::camt::camt_085_001_02::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-camt")]
             AnyMessage::Camt_086_001_04(_) => <crate::generated::camt::camt_086_001_04::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_086_001_05(_) => <crate::generated::camt::camt_086_001_05::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-camt")]
             AnyMessage::Camt_087_001_07(_) => <crate::generated::camt::camt_087_001_07::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-camt")]
             AnyMessage::Camt_087_001_08(_) => <crate::generated::camt::camt_087_001_08::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_087_001_09(_) => <crate::generated::camt::camt_087_001_09::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-camt")]
             AnyMessage::Camt_088_001_01(_) => <crate::generated::camt::camt_088_001_01::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-camt")]
             AnyMessage::Camt_101_001_01(_) => <crate::generated::camt::camt_101_001_01::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_101_001_02(_) => <crate::generated::camt::camt_101_001_02::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-camt")]
             AnyMessage::Camt_102_001_02(_) => <crate::generated::camt::camt_102_001_02::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_102_001_03(_) => <crate::generated::camt::camt_102_001_03::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-camt")]
             AnyMessage::Camt_103_001_02(_) => <crate::generated::camt::camt_103_001_02::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_103_001_03(_) => <crate::generated::camt::camt_103_001_03::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-camt")]
             AnyMessage::Camt_104_001_01(_) => <crate::generated::camt::camt_104_001_01::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-camt")]
             AnyMessage::Camt_105_001_01(_) => <crate::generated::camt::camt_105_001_01::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_105_001_03(_) => <crate::generated::camt::camt_105_001_03::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-camt")]
             AnyMessage::Camt_106_001_01(_) => <crate::generated::camt::camt_106_001_01::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_106_001_03(_) => <crate::generated::camt::camt_106_001_03::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-camt")]
             AnyMessage::Camt_107_001_01(_) => <crate::generated::camt::camt_107_001_01::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_107_001_02(_) => <crate::generated::camt::camt_107_001_02::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-camt")]
             AnyMessage::Camt_108_001_01(_) => <crate::generated::camt::camt_108_001_01::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_108_001_02(_) => <crate::generated::camt::camt_108_001_02::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-camt")]
             AnyMessage::Camt_109_001_01(_) => <crate::generated::camt::camt_109_001_01::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_109_001_02(_) => <crate::generated::camt::camt_109_001_02::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_110_001_02(_) => <crate::generated::camt::camt_110_001_02::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_111_001_03(_) => <crate::generated::camt::camt_111_001_03::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-canm")]
             AnyMessage::Canm_001_001_02(_) => <crate::generated::canm::canm_001_001_02::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-canm")]
+            AnyMessage::Canm_001_001_05(_) => <crate::generated::canm::canm_001_001_05::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-canm")]
             AnyMessage::Canm_002_001_02(_) => <crate::generated::canm::canm_002_001_02::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-canm")]
+            AnyMessage::Canm_002_001_05(_) => <crate::generated::canm::canm_002_001_05::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-canm")]
             AnyMessage::Canm_003_001_02(_) => <crate::generated::canm::canm_003_001_02::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-canm")]
+            AnyMessage::Canm_003_001_05(_) => <crate::generated::canm::canm_003_001_05::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-canm")]
             AnyMessage::Canm_004_001_02(_) => <crate::generated::canm::canm_004_001_02::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-canm")]
+            AnyMessage::Canm_004_001_05(_) => <crate::generated::canm::canm_004_001_05::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-casp")]
             AnyMessage::Casp_001_001_03(_) => <crate::generated::casp::casp_001_001_03::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-casp")]
+            AnyMessage::Casp_001_001_08(_) => <crate::generated::casp::casp_001_001_08::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-casp")]
             AnyMessage::Casp_002_001_03(_) => <crate::generated::casp::casp_002_001_03::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-casp")]
+            AnyMessage::Casp_002_001_08(_) => <crate::generated::casp::casp_002_001_08::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-casp")]
             AnyMessage::Casp_003_001_03(_) => <crate::generated::casp::casp_003_001_03::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-casp")]
+            AnyMessage::Casp_003_001_08(_) => <crate::generated::casp::casp_003_001_08::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-casp")]
             AnyMessage::Casp_004_001_03(_) => <crate::generated::casp::casp_004_001_03::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-casp")]
+            AnyMessage::Casp_004_001_08(_) => <crate::generated::casp::casp_004_001_08::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-casp")]
             AnyMessage::Casp_005_001_03(_) => <crate::generated::casp::casp_005_001_03::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-casp")]
+            AnyMessage::Casp_005_001_08(_) => <crate::generated::casp::casp_005_001_08::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-casp")]
             AnyMessage::Casp_006_001_03(_) => <crate::generated::casp::casp_006_001_03::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-casp")]
+            AnyMessage::Casp_006_001_08(_) => <crate::generated::casp::casp_006_001_08::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-casp")]
             AnyMessage::Casp_007_001_03(_) => <crate::generated::casp::casp_007_001_03::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-casp")]
+            AnyMessage::Casp_007_001_08(_) => <crate::generated::casp::casp_007_001_08::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-casp")]
             AnyMessage::Casp_008_001_03(_) => <crate::generated::casp::casp_008_001_03::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-casp")]
+            AnyMessage::Casp_008_001_08(_) => <crate::generated::casp::casp_008_001_08::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-casp")]
             AnyMessage::Casp_009_001_03(_) => <crate::generated::casp::casp_009_001_03::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-casp")]
+            AnyMessage::Casp_009_001_08(_) => <crate::generated::casp::casp_009_001_08::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-casp")]
             AnyMessage::Casp_010_001_03(_) => <crate::generated::casp::casp_010_001_03::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-casp")]
+            AnyMessage::Casp_010_001_08(_) => <crate::generated::casp::casp_010_001_08::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-casp")]
             AnyMessage::Casp_011_001_03(_) => <crate::generated::casp::casp_011_001_03::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-casp")]
+            AnyMessage::Casp_011_001_08(_) => <crate::generated::casp::casp_011_001_08::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-casp")]
             AnyMessage::Casp_012_001_03(_) => <crate::generated::casp::casp_012_001_03::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-casp")]
+            AnyMessage::Casp_012_001_08(_) => <crate::generated::casp::casp_012_001_08::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-casp")]
             AnyMessage::Casp_013_001_02(_) => <crate::generated::casp::casp_013_001_02::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-casp")]
             AnyMessage::Casp_014_001_03(_) => <crate::generated::casp::casp_014_001_03::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-casp")]
+            AnyMessage::Casp_014_001_08(_) => <crate::generated::casp::casp_014_001_08::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-casp")]
             AnyMessage::Casp_015_001_03(_) => <crate::generated::casp::casp_015_001_03::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-casp")]
+            AnyMessage::Casp_015_001_08(_) => <crate::generated::casp::casp_015_001_08::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-casp")]
             AnyMessage::Casp_016_001_03(_) => <crate::generated::casp::casp_016_001_03::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-casp")]
+            AnyMessage::Casp_016_001_08(_) => <crate::generated::casp::casp_016_001_08::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-casp")]
             AnyMessage::Casp_017_001_03(_) => <crate::generated::casp::casp_017_001_03::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-casp")]
+            AnyMessage::Casp_017_001_08(_) => <crate::generated::casp::casp_017_001_08::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-casr")]
             AnyMessage::Casr_001_001_01(_) => <crate::generated::casr::casr_001_001_01::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-casr")]
+            AnyMessage::Casr_001_001_04(_) => <crate::generated::casr::casr_001_001_04::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-casr")]
             AnyMessage::Casr_002_001_01(_) => <crate::generated::casr::casr_002_001_01::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-casr")]
+            AnyMessage::Casr_002_001_04(_) => <crate::generated::casr::casr_002_001_04::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-catm")]
             AnyMessage::Catm_001_001_03(_) => <crate::generated::catm::catm_001_001_03::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-catm")]
             AnyMessage::Catm_001_001_10(_) => <crate::generated::catm::catm_001_001_10::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-catm")]
+            AnyMessage::Catm_001_001_15(_) => <crate::generated::catm::catm_001_001_15::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-catm")]
             AnyMessage::Catm_002_001_09(_) => <crate::generated::catm::catm_002_001_09::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-catm")]
+            AnyMessage::Catm_002_001_14(_) => <crate::generated::catm::catm_002_001_14::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-catm")]
             AnyMessage::Catm_003_001_10(_) => <crate::generated::catm::catm_003_001_10::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-catm")]
+            AnyMessage::Catm_003_001_15(_) => <crate::generated::catm::catm_003_001_15::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-catm")]
             AnyMessage::Catm_004_001_05(_) => <crate::generated::catm::catm_004_001_05::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-catm")]
             AnyMessage::Catm_005_001_07(_) => <crate::generated::catm::catm_005_001_07::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-catm")]
+            AnyMessage::Catm_005_001_12(_) => <crate::generated::catm::catm_005_001_12::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-catm")]
             AnyMessage::Catm_006_001_05(_) => <crate::generated::catm::catm_006_001_05::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-catm")]
+            AnyMessage::Catm_006_001_08(_) => <crate::generated::catm::catm_006_001_08::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-catm")]
             AnyMessage::Catm_007_001_04(_) => <crate::generated::catm::catm_007_001_04::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-catm")]
+            AnyMessage::Catm_007_001_08(_) => <crate::generated::catm::catm_007_001_08::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-catm")]
             AnyMessage::Catm_008_001_04(_) => <crate::generated::catm::catm_008_001_04::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-catm")]
+            AnyMessage::Catm_008_001_07(_) => <crate::generated::catm::catm_008_001_07::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-catp")]
             AnyMessage::Catp_001_001_02(_) => <crate::generated::catp::catp_001_001_02::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-catp")]
+            AnyMessage::Catp_001_001_03(_) => <crate::generated::catp::catp_001_001_03::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-catp")]
             AnyMessage::Catp_002_001_02(_) => <crate::generated::catp::catp_002_001_02::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-catp")]
+            AnyMessage::Catp_002_001_03(_) => <crate::generated::catp::catp_002_001_03::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-catp")]
             AnyMessage::Catp_003_001_02(_) => <crate::generated::catp::catp_003_001_02::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-catp")]
+            AnyMessage::Catp_003_001_03(_) => <crate::generated::catp::catp_003_001_03::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-catp")]
             AnyMessage::Catp_004_001_02(_) => <crate::generated::catp::catp_004_001_02::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-catp")]
+            AnyMessage::Catp_004_001_03(_) => <crate::generated::catp::catp_004_001_03::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-catp")]
             AnyMessage::Catp_005_001_02(_) => <crate::generated::catp::catp_005_001_02::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-catp")]
             AnyMessage::Catp_006_001_02(_) => <crate::generated::catp::catp_006_001_02::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-catp")]
+            AnyMessage::Catp_006_001_03(_) => <crate::generated::catp::catp_006_001_03::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-catp")]
             AnyMessage::Catp_007_001_02(_) => <crate::generated::catp::catp_007_001_02::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-catp")]
+            AnyMessage::Catp_007_001_03(_) => <crate::generated::catp::catp_007_001_03::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-catp")]
             AnyMessage::Catp_008_001_02(_) => <crate::generated::catp::catp_008_001_02::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-catp")]
+            AnyMessage::Catp_008_001_03(_) => <crate::generated::catp::catp_008_001_03::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-catp")]
             AnyMessage::Catp_009_001_02(_) => <crate::generated::catp::catp_009_001_02::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-catp")]
+            AnyMessage::Catp_009_001_03(_) => <crate::generated::catp::catp_009_001_03::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-catp")]
             AnyMessage::Catp_010_001_02(_) => <crate::generated::catp::catp_010_001_02::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-catp")]
+            AnyMessage::Catp_010_001_03(_) => <crate::generated::catp::catp_010_001_03::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-catp")]
             AnyMessage::Catp_011_001_02(_) => <crate::generated::catp::catp_011_001_02::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-catp")]
+            AnyMessage::Catp_011_001_03(_) => <crate::generated::catp::catp_011_001_03::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-catp")]
             AnyMessage::Catp_012_001_01(_) => <crate::generated::catp::catp_012_001_01::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-catp")]
+            AnyMessage::Catp_012_001_02(_) => <crate::generated::catp::catp_012_001_02::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-catp")]
             AnyMessage::Catp_013_001_01(_) => <crate::generated::catp::catp_013_001_01::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-catp")]
+            AnyMessage::Catp_013_001_02(_) => <crate::generated::catp::catp_013_001_02::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-catp")]
             AnyMessage::Catp_014_001_01(_) => <crate::generated::catp::catp_014_001_01::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-catp")]
+            AnyMessage::Catp_014_001_02(_) => <crate::generated::catp::catp_014_001_02::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-catp")]
             AnyMessage::Catp_015_001_01(_) => <crate::generated::catp::catp_015_001_01::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-catp")]
+            AnyMessage::Catp_015_001_02(_) => <crate::generated::catp::catp_015_001_02::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-catp")]
             AnyMessage::Catp_016_001_01(_) => <crate::generated::catp::catp_016_001_01::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-catp")]
+            AnyMessage::Catp_016_001_02(_) => <crate::generated::catp::catp_016_001_02::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-catp")]
             AnyMessage::Catp_017_001_01(_) => <crate::generated::catp::catp_017_001_01::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-catp")]
+            AnyMessage::Catp_017_001_02(_) => <crate::generated::catp::catp_017_001_02::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-colr")]
             AnyMessage::Colr_001_001_01(_) => <crate::generated::colr::colr_001_001_01::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-colr")]
+            AnyMessage::Colr_001_001_02(_) => <crate::generated::colr::colr_001_001_02::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-colr")]
             AnyMessage::Colr_002_001_01(_) => <crate::generated::colr::colr_002_001_01::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-colr")]
+            AnyMessage::Colr_002_001_02(_) => <crate::generated::colr::colr_002_001_02::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-colr")]
             AnyMessage::Colr_003_001_04(_) => <crate::generated::colr::colr_003_001_04::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-colr")]
+            AnyMessage::Colr_003_001_05(_) => <crate::generated::colr::colr_003_001_05::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-colr")]
             AnyMessage::Colr_004_001_04(_) => <crate::generated::colr::colr_004_001_04::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-colr")]
+            AnyMessage::Colr_004_001_05(_) => <crate::generated::colr::colr_004_001_05::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-colr")]
             AnyMessage::Colr_005_001_05(_) => <crate::generated::colr::colr_005_001_05::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-colr")]
+            AnyMessage::Colr_005_001_06(_) => <crate::generated::colr::colr_005_001_06::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-colr")]
             AnyMessage::Colr_006_001_04(_) => <crate::generated::colr::colr_006_001_04::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-colr")]
+            AnyMessage::Colr_006_001_05(_) => <crate::generated::colr::colr_006_001_05::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-colr")]
             AnyMessage::Colr_007_001_05(_) => <crate::generated::colr::colr_007_001_05::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-colr")]
+            AnyMessage::Colr_007_001_06(_) => <crate::generated::colr::colr_007_001_06::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-colr")]
             AnyMessage::Colr_008_001_05(_) => <crate::generated::colr::colr_008_001_05::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-colr")]
+            AnyMessage::Colr_008_001_06(_) => <crate::generated::colr::colr_008_001_06::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-colr")]
             AnyMessage::Colr_009_001_04(_) => <crate::generated::colr::colr_009_001_04::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-colr")]
+            AnyMessage::Colr_009_001_05(_) => <crate::generated::colr::colr_009_001_05::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-colr")]
             AnyMessage::Colr_010_001_04(_) => <crate::generated::colr::colr_010_001_04::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-colr")]
+            AnyMessage::Colr_010_001_05(_) => <crate::generated::colr::colr_010_001_05::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-colr")]
             AnyMessage::Colr_011_001_04(_) => <crate::generated::colr::colr_011_001_04::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-colr")]
+            AnyMessage::Colr_011_001_05(_) => <crate::generated::colr::colr_011_001_05::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-colr")]
             AnyMessage::Colr_012_001_04(_) => <crate::generated::colr::colr_012_001_04::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-colr")]
+            AnyMessage::Colr_012_001_05(_) => <crate::generated::colr::colr_012_001_05::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-colr")]
             AnyMessage::Colr_013_001_04(_) => <crate::generated::colr::colr_013_001_04::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-colr")]
+            AnyMessage::Colr_013_001_05(_) => <crate::generated::colr::colr_013_001_05::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-colr")]
             AnyMessage::Colr_014_001_04(_) => <crate::generated::colr::colr_014_001_04::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-colr")]
+            AnyMessage::Colr_014_001_05(_) => <crate::generated::colr::colr_014_001_05::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-colr")]
             AnyMessage::Colr_015_001_04(_) => <crate::generated::colr::colr_015_001_04::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-colr")]
+            AnyMessage::Colr_015_001_05(_) => <crate::generated::colr::colr_015_001_05::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-colr")]
             AnyMessage::Colr_016_001_04(_) => <crate::generated::colr::colr_016_001_04::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-colr")]
+            AnyMessage::Colr_016_001_05(_) => <crate::generated::colr::colr_016_001_05::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-colr")]
             AnyMessage::Colr_019_001_01(_) => <crate::generated::colr::colr_019_001_01::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-colr")]
@@ -2183,93 +3555,169 @@ impl AnyMessage {
             #[cfg(feature = "model-fxtr")]
             AnyMessage::Fxtr_008_001_06(_) => <crate::generated::fxtr::fxtr_008_001_06::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-fxtr")]
+            AnyMessage::Fxtr_008_001_08(_) => <crate::generated::fxtr::fxtr_008_001_08::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-fxtr")]
             AnyMessage::Fxtr_013_001_03(_) => <crate::generated::fxtr::fxtr_013_001_03::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-fxtr")]
             AnyMessage::Fxtr_014_001_04(_) => <crate::generated::fxtr::fxtr_014_001_04::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-fxtr")]
+            AnyMessage::Fxtr_014_001_06(_) => <crate::generated::fxtr::fxtr_014_001_06::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-fxtr")]
             AnyMessage::Fxtr_015_001_04(_) => <crate::generated::fxtr::fxtr_015_001_04::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-fxtr")]
+            AnyMessage::Fxtr_015_001_06(_) => <crate::generated::fxtr::fxtr_015_001_06::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-fxtr")]
             AnyMessage::Fxtr_016_001_04(_) => <crate::generated::fxtr::fxtr_016_001_04::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-fxtr")]
+            AnyMessage::Fxtr_016_001_06(_) => <crate::generated::fxtr::fxtr_016_001_06::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-fxtr")]
             AnyMessage::Fxtr_017_001_04(_) => <crate::generated::fxtr::fxtr_017_001_04::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-fxtr")]
+            AnyMessage::Fxtr_017_001_06(_) => <crate::generated::fxtr::fxtr_017_001_06::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-fxtr")]
             AnyMessage::Fxtr_030_001_04(_) => <crate::generated::fxtr::fxtr_030_001_04::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-fxtr")]
+            AnyMessage::Fxtr_030_001_06(_) => <crate::generated::fxtr::fxtr_030_001_06::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-fxtr")]
             AnyMessage::Fxtr_031_001_01(_) => <crate::generated::fxtr::fxtr_031_001_01::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-fxtr")]
+            AnyMessage::Fxtr_031_001_02(_) => <crate::generated::fxtr::fxtr_031_001_02::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-fxtr")]
             AnyMessage::Fxtr_032_001_01(_) => <crate::generated::fxtr::fxtr_032_001_01::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-fxtr")]
+            AnyMessage::Fxtr_032_001_02(_) => <crate::generated::fxtr::fxtr_032_001_02::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-fxtr")]
             AnyMessage::Fxtr_033_001_01(_) => <crate::generated::fxtr::fxtr_033_001_01::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-fxtr")]
+            AnyMessage::Fxtr_033_001_02(_) => <crate::generated::fxtr::fxtr_033_001_02::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-fxtr")]
             AnyMessage::Fxtr_034_001_01(_) => <crate::generated::fxtr::fxtr_034_001_01::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-fxtr")]
+            AnyMessage::Fxtr_034_001_02(_) => <crate::generated::fxtr::fxtr_034_001_02::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-fxtr")]
             AnyMessage::Fxtr_035_001_01(_) => <crate::generated::fxtr::fxtr_035_001_01::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-fxtr")]
+            AnyMessage::Fxtr_035_001_02(_) => <crate::generated::fxtr::fxtr_035_001_02::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-fxtr")]
             AnyMessage::Fxtr_036_001_01(_) => <crate::generated::fxtr::fxtr_036_001_01::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-fxtr")]
+            AnyMessage::Fxtr_036_001_02(_) => <crate::generated::fxtr::fxtr_036_001_02::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-fxtr")]
             AnyMessage::Fxtr_037_001_01(_) => <crate::generated::fxtr::fxtr_037_001_01::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-fxtr")]
+            AnyMessage::Fxtr_037_001_02(_) => <crate::generated::fxtr::fxtr_037_001_02::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-fxtr")]
+            AnyMessage::Fxtr_038_001_02(_) => <crate::generated::fxtr::fxtr_038_001_02::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-pacs")]
             AnyMessage::Pacs_002_001_10(_) => <crate::generated::pacs::pacs_002_001_10::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-pacs")]
             AnyMessage::Pacs_002_001_12(_) => <crate::generated::pacs::pacs_002_001_12::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-pacs")]
+            AnyMessage::Pacs_002_001_16(_) => <crate::generated::pacs::pacs_002_001_16::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-pacs")]
             AnyMessage::Pacs_003_001_09(_) => <crate::generated::pacs::pacs_003_001_09::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-pacs")]
+            AnyMessage::Pacs_003_001_12(_) => <crate::generated::pacs::pacs_003_001_12::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-pacs")]
             AnyMessage::Pacs_004_001_09(_) => <crate::generated::pacs::pacs_004_001_09::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-pacs")]
             AnyMessage::Pacs_004_001_11(_) => <crate::generated::pacs::pacs_004_001_11::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-pacs")]
+            AnyMessage::Pacs_004_001_15(_) => <crate::generated::pacs::pacs_004_001_15::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-pacs")]
             AnyMessage::Pacs_007_001_11(_) => <crate::generated::pacs::pacs_007_001_11::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-pacs")]
+            AnyMessage::Pacs_007_001_14(_) => <crate::generated::pacs::pacs_007_001_14::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-pacs")]
             AnyMessage::Pacs_008_001_08(_) => <crate::generated::pacs::pacs_008_001_08::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-pacs")]
             AnyMessage::Pacs_008_001_10(_) => <crate::generated::pacs::pacs_008_001_10::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-pacs")]
+            AnyMessage::Pacs_008_001_14(_) => <crate::generated::pacs::pacs_008_001_14::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-pacs")]
             AnyMessage::Pacs_009_001_08(_) => <crate::generated::pacs::pacs_009_001_08::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-pacs")]
             AnyMessage::Pacs_009_001_10(_) => <crate::generated::pacs::pacs_009_001_10::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-pacs")]
+            AnyMessage::Pacs_009_001_13(_) => <crate::generated::pacs::pacs_009_001_13::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-pacs")]
             AnyMessage::Pacs_010_001_05(_) => <crate::generated::pacs::pacs_010_001_05::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-pacs")]
+            AnyMessage::Pacs_010_001_06(_) => <crate::generated::pacs::pacs_010_001_06::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-pacs")]
             AnyMessage::Pacs_028_001_05(_) => <crate::generated::pacs::pacs_028_001_05::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-pacs")]
+            AnyMessage::Pacs_028_001_07(_) => <crate::generated::pacs::pacs_028_001_07::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-pacs")]
             AnyMessage::Pacs_029_001_01(_) => <crate::generated::pacs::pacs_029_001_01::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-pacs")]
+            AnyMessage::Pacs_029_001_02(_) => <crate::generated::pacs::pacs_029_001_02::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-pain")]
             AnyMessage::Pain_001_001_09(_) => <crate::generated::pain::pain_001_001_09::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-pain")]
             AnyMessage::Pain_001_001_11(_) => <crate::generated::pain::pain_001_001_11::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-pain")]
+            AnyMessage::Pain_001_001_13(_) => <crate::generated::pain::pain_001_001_13::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-pain")]
             AnyMessage::Pain_002_001_10(_) => <crate::generated::pain::pain_002_001_10::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-pain")]
             AnyMessage::Pain_002_001_12(_) => <crate::generated::pain::pain_002_001_12::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-pain")]
+            AnyMessage::Pain_002_001_15(_) => <crate::generated::pain::pain_002_001_15::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-pain")]
             AnyMessage::Pain_007_001_11(_) => <crate::generated::pain::pain_007_001_11::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-pain")]
+            AnyMessage::Pain_007_001_13(_) => <crate::generated::pain::pain_007_001_13::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-pain")]
             AnyMessage::Pain_008_001_10(_) => <crate::generated::pain::pain_008_001_10::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-pain")]
+            AnyMessage::Pain_008_001_12(_) => <crate::generated::pain::pain_008_001_12::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-pain")]
             AnyMessage::Pain_009_001_07(_) => <crate::generated::pain::pain_009_001_07::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-pain")]
+            AnyMessage::Pain_009_001_08(_) => <crate::generated::pain::pain_009_001_08::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-pain")]
             AnyMessage::Pain_010_001_07(_) => <crate::generated::pain::pain_010_001_07::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-pain")]
+            AnyMessage::Pain_010_001_08(_) => <crate::generated::pain::pain_010_001_08::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-pain")]
             AnyMessage::Pain_011_001_07(_) => <crate::generated::pain::pain_011_001_07::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-pain")]
+            AnyMessage::Pain_011_001_08(_) => <crate::generated::pain::pain_011_001_08::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-pain")]
             AnyMessage::Pain_012_001_07(_) => <crate::generated::pain::pain_012_001_07::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-pain")]
+            AnyMessage::Pain_012_001_08(_) => <crate::generated::pain::pain_012_001_08::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-pain")]
             AnyMessage::Pain_013_001_01(_) => <crate::generated::pain::pain_013_001_01::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-pain")]
             AnyMessage::Pain_013_001_09(_) => <crate::generated::pain::pain_013_001_09::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-pain")]
+            AnyMessage::Pain_013_001_12(_) => <crate::generated::pain::pain_013_001_12::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-pain")]
             AnyMessage::Pain_014_001_09(_) => <crate::generated::pain::pain_014_001_09::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-pain")]
+            AnyMessage::Pain_014_001_12(_) => <crate::generated::pain::pain_014_001_12::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-pain")]
             AnyMessage::Pain_017_001_03(_) => <crate::generated::pain::pain_017_001_03::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-pain")]
+            AnyMessage::Pain_017_001_04(_) => <crate::generated::pain::pain_017_001_04::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-pain")]
             AnyMessage::Pain_018_001_03(_) => <crate::generated::pain::pain_018_001_03::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-pain")]
+            AnyMessage::Pain_018_001_04(_) => <crate::generated::pain::pain_018_001_04::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-reda")]
             AnyMessage::Reda_001_001_04(_) => <crate::generated::reda::reda_001_001_04::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-reda")]
+            AnyMessage::Reda_001_001_05(_) => <crate::generated::reda::reda_001_001_05::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-reda")]
             AnyMessage::Reda_002_001_04(_) => <crate::generated::reda::reda_002_001_04::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-reda")]
+            AnyMessage::Reda_002_001_05(_) => <crate::generated::reda::reda_002_001_05::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-reda")]
             AnyMessage::Reda_004_001_05(_) => <crate::generated::reda::reda_004_001_05::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-reda")]
+            AnyMessage::Reda_004_001_07(_) => <crate::generated::reda::reda_004_001_07::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-reda")]
             AnyMessage::Reda_005_001_03(_) => <crate::generated::reda::reda_005_001_03::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-reda")]
@@ -2289,11 +3737,15 @@ impl AnyMessage {
             #[cfg(feature = "model-reda")]
             AnyMessage::Reda_014_001_01(_) => <crate::generated::reda::reda_014_001_01::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-reda")]
+            AnyMessage::Reda_014_001_02(_) => <crate::generated::reda::reda_014_001_02::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-reda")]
             AnyMessage::Reda_015_001_01(_) => <crate::generated::reda::reda_015_001_01::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-reda")]
             AnyMessage::Reda_016_001_01(_) => <crate::generated::reda::reda_016_001_01::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-reda")]
             AnyMessage::Reda_017_001_01(_) => <crate::generated::reda::reda_017_001_01::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-reda")]
+            AnyMessage::Reda_017_001_02(_) => <crate::generated::reda::reda_017_001_02::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-reda")]
             AnyMessage::Reda_018_001_01(_) => <crate::generated::reda::reda_018_001_01::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-reda")]
@@ -2305,7 +3757,19 @@ impl AnyMessage {
             #[cfg(feature = "model-reda")]
             AnyMessage::Reda_022_001_01(_) => <crate::generated::reda::reda_022_001_01::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-reda")]
+            AnyMessage::Reda_022_001_02(_) => <crate::generated::reda::reda_022_001_02::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-reda")]
             AnyMessage::Reda_023_001_01(_) => <crate::generated::reda::reda_023_001_01::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-reda")]
+            AnyMessage::Reda_024_001_01(_) => <crate::generated::reda::reda_024_001_01::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-reda")]
+            AnyMessage::Reda_025_001_01(_) => <crate::generated::reda::reda_025_001_01::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-reda")]
+            AnyMessage::Reda_026_001_01(_) => <crate::generated::reda::reda_026_001_01::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-reda")]
+            AnyMessage::Reda_027_001_01(_) => <crate::generated::reda::reda_027_001_01::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-reda")]
+            AnyMessage::Reda_028_001_01(_) => <crate::generated::reda::reda_028_001_01::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-reda")]
             AnyMessage::Reda_029_001_01(_) => <crate::generated::reda::reda_029_001_01::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-reda")]
@@ -2327,9 +3791,27 @@ impl AnyMessage {
             #[cfg(feature = "model-reda")]
             AnyMessage::Reda_041_001_01(_) => <crate::generated::reda::reda_041_001_01::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-reda")]
+            AnyMessage::Reda_041_001_02(_) => <crate::generated::reda::reda_041_001_02::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-reda")]
             AnyMessage::Reda_042_001_01(_) => <crate::generated::reda::reda_042_001_01::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-reda")]
             AnyMessage::Reda_043_001_01(_) => <crate::generated::reda::reda_043_001_01::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-reda")]
+            AnyMessage::Reda_043_001_02(_) => <crate::generated::reda::reda_043_001_02::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-reda")]
+            AnyMessage::Reda_044_001_01(_) => <crate::generated::reda::reda_044_001_01::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-reda")]
+            AnyMessage::Reda_045_001_01(_) => <crate::generated::reda::reda_045_001_01::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-reda")]
+            AnyMessage::Reda_046_001_01(_) => <crate::generated::reda::reda_046_001_01::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-reda")]
+            AnyMessage::Reda_047_001_01(_) => <crate::generated::reda::reda_047_001_01::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-reda")]
+            AnyMessage::Reda_049_001_01(_) => <crate::generated::reda::reda_049_001_01::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-reda")]
+            AnyMessage::Reda_050_001_01(_) => <crate::generated::reda::reda_050_001_01::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-reda")]
+            AnyMessage::Reda_051_001_01(_) => <crate::generated::reda::reda_051_001_01::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-reda")]
             AnyMessage::Reda_056_001_01(_) => <crate::generated::reda::reda_056_001_01::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-reda")]
@@ -2341,21 +3823,61 @@ impl AnyMessage {
             #[cfg(feature = "model-reda")]
             AnyMessage::Reda_060_001_01(_) => <crate::generated::reda::reda_060_001_01::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-reda")]
+            AnyMessage::Reda_060_001_02(_) => <crate::generated::reda::reda_060_001_02::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-reda")]
             AnyMessage::Reda_061_001_01(_) => <crate::generated::reda::reda_061_001_01::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-reda")]
+            AnyMessage::Reda_061_001_02(_) => <crate::generated::reda::reda_061_001_02::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-reda")]
+            AnyMessage::Reda_064_001_02(_) => <crate::generated::reda::reda_064_001_02::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-reda")]
+            AnyMessage::Reda_065_001_02(_) => <crate::generated::reda::reda_065_001_02::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-reda")]
+            AnyMessage::Reda_066_001_02(_) => <crate::generated::reda::reda_066_001_02::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-reda")]
+            AnyMessage::Reda_067_001_02(_) => <crate::generated::reda::reda_067_001_02::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-reda")]
+            AnyMessage::Reda_068_001_02(_) => <crate::generated::reda::reda_068_001_02::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-reda")]
+            AnyMessage::Reda_069_001_02(_) => <crate::generated::reda::reda_069_001_02::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-reda")]
+            AnyMessage::Reda_070_001_02(_) => <crate::generated::reda::reda_070_001_02::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-reda")]
+            AnyMessage::Reda_071_001_02(_) => <crate::generated::reda::reda_071_001_02::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-reda")]
+            AnyMessage::Reda_072_001_02(_) => <crate::generated::reda::reda_072_001_02::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-reda")]
+            AnyMessage::Reda_073_001_02(_) => <crate::generated::reda::reda_073_001_02::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-reda")]
             AnyMessage::Reda_074_001_01(_) => <crate::generated::reda::reda_074_001_01::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-reda")]
+            AnyMessage::Reda_075_001_01(_) => <crate::generated::reda::reda_075_001_01::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-reda")]
+            AnyMessage::Reda_077_001_01(_) => <crate::generated::reda::reda_077_001_01::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-remt")]
             AnyMessage::Remt_001_001_05(_) => <crate::generated::remt::remt_001_001_05::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-remt")]
+            AnyMessage::Remt_001_001_07(_) => <crate::generated::remt::remt_001_001_07::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-remt")]
             AnyMessage::Remt_002_001_02(_) => <crate::generated::remt::remt_002_001_02::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-remt")]
+            AnyMessage::Remt_002_001_03(_) => <crate::generated::remt::remt_002_001_03::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-secl")]
             AnyMessage::Secl_001_001_03(_) => <crate::generated::secl::secl_001_001_03::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-secl")]
+            AnyMessage::Secl_001_001_05(_) => <crate::generated::secl::secl_001_001_05::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-secl")]
             AnyMessage::Secl_002_001_03(_) => <crate::generated::secl::secl_002_001_03::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-secl")]
+            AnyMessage::Secl_002_001_05(_) => <crate::generated::secl::secl_002_001_05::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-secl")]
             AnyMessage::Secl_003_001_03(_) => <crate::generated::secl::secl_003_001_03::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-secl")]
+            AnyMessage::Secl_003_001_05(_) => <crate::generated::secl::secl_003_001_05::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-secl")]
             AnyMessage::Secl_004_001_03(_) => <crate::generated::secl::secl_004_001_03::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-secl")]
+            AnyMessage::Secl_004_001_04(_) => <crate::generated::secl::secl_004_001_04::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-secl")]
             AnyMessage::Secl_005_001_02(_) => <crate::generated::secl::secl_005_001_02::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-secl")]
@@ -2368,28 +3890,50 @@ impl AnyMessage {
             AnyMessage::Secl_009_001_03(_) => <crate::generated::secl::secl_009_001_03::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-secl")]
             AnyMessage::Secl_010_001_03(_) => <crate::generated::secl::secl_010_001_03::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-secl")]
+            AnyMessage::Secl_010_001_04(_) => <crate::generated::secl::secl_010_001_04::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-seev")]
             AnyMessage::Seev_001_001_08(_) => <crate::generated::seev::seev_001_001_08::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_001_001_13(_) => <crate::generated::seev::seev_001_001_13::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-seev")]
             AnyMessage::Seev_002_001_07(_) => <crate::generated::seev::seev_002_001_07::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_002_001_10(_) => <crate::generated::seev::seev_002_001_10::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-seev")]
             AnyMessage::Seev_003_001_07(_) => <crate::generated::seev::seev_003_001_07::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_003_001_10(_) => <crate::generated::seev::seev_003_001_10::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-seev")]
             AnyMessage::Seev_004_001_07(_) => <crate::generated::seev::seev_004_001_07::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_004_001_11(_) => <crate::generated::seev::seev_004_001_11::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-seev")]
             AnyMessage::Seev_005_001_07(_) => <crate::generated::seev::seev_005_001_07::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_005_001_10(_) => <crate::generated::seev::seev_005_001_10::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-seev")]
             AnyMessage::Seev_006_001_07(_) => <crate::generated::seev::seev_006_001_07::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_006_001_12(_) => <crate::generated::seev::seev_006_001_12::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-seev")]
             AnyMessage::Seev_007_001_07(_) => <crate::generated::seev::seev_007_001_07::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_007_001_12(_) => <crate::generated::seev::seev_007_001_12::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-seev")]
             AnyMessage::Seev_008_001_07(_) => <crate::generated::seev::seev_008_001_07::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_008_001_10(_) => <crate::generated::seev::seev_008_001_10::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-seev")]
             AnyMessage::Seev_009_001_01(_) => <crate::generated::seev::seev_009_001_01::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_009_001_03(_) => <crate::generated::seev::seev_009_001_03::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-seev")]
             AnyMessage::Seev_010_001_01(_) => <crate::generated::seev::seev_010_001_01::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-seev")]
             AnyMessage::Seev_011_001_01(_) => <crate::generated::seev::seev_011_001_01::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_011_001_04(_) => <crate::generated::seev::seev_011_001_04::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-seev")]
             AnyMessage::Seev_012_001_01(_) => <crate::generated::seev::seev_012_001_01::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-seev")]
@@ -2431,27 +3975,83 @@ impl AnyMessage {
             #[cfg(feature = "model-seev")]
             AnyMessage::Seev_031_001_11(_) => <crate::generated::seev::seev_031_001_11::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_031_001_16(_) => <crate::generated::seev::seev_031_001_16::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_031_002_15(_) => <crate::generated::seev::seev_031_002_15::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-seev")]
             AnyMessage::Seev_032_001_08(_) => <crate::generated::seev::seev_032_001_08::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_032_001_09(_) => <crate::generated::seev::seev_032_001_09::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_032_002_09(_) => <crate::generated::seev::seev_032_002_09::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-seev")]
             AnyMessage::Seev_033_001_11(_) => <crate::generated::seev::seev_033_001_11::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_033_001_14(_) => <crate::generated::seev::seev_033_001_14::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_033_002_13(_) => <crate::generated::seev::seev_033_002_13::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_034_001_16(_) => <crate::generated::seev::seev_034_001_16::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_034_002_15(_) => <crate::generated::seev::seev_034_002_15::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-seev")]
             AnyMessage::Seev_035_001_12(_) => <crate::generated::seev::seev_035_001_12::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_035_001_17(_) => <crate::generated::seev::seev_035_001_17::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_035_002_16(_) => <crate::generated::seev::seev_035_002_16::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_036_001_17(_) => <crate::generated::seev::seev_036_001_17::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_036_002_16(_) => <crate::generated::seev::seev_036_002_16::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_037_001_17(_) => <crate::generated::seev::seev_037_001_17::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_037_002_16(_) => <crate::generated::seev::seev_037_002_16::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_038_001_09(_) => <crate::generated::seev::seev_038_001_09::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_038_002_09(_) => <crate::generated::seev::seev_038_002_09::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_039_001_13(_) => <crate::generated::seev::seev_039_001_13::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-seev")]
             AnyMessage::Seev_039_002_10(_) => <crate::generated::seev::seev_039_002_10::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_039_002_13(_) => <crate::generated::seev::seev_039_002_13::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_040_001_13(_) => <crate::generated::seev::seev_040_001_13::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-seev")]
             AnyMessage::Seev_040_002_10(_) => <crate::generated::seev::seev_040_002_10::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_040_002_13(_) => <crate::generated::seev::seev_040_002_13::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_041_001_15(_) => <crate::generated::seev::seev_041_001_15::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-seev")]
             AnyMessage::Seev_041_002_11(_) => <crate::generated::seev::seev_041_002_11::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_041_002_14(_) => <crate::generated::seev::seev_041_002_14::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_042_001_14(_) => <crate::generated::seev::seev_042_001_14::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-seev")]
             AnyMessage::Seev_042_002_10(_) => <crate::generated::seev::seev_042_002_10::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_042_002_13(_) => <crate::generated::seev::seev_042_002_13::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_044_001_13(_) => <crate::generated::seev::seev_044_001_13::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-seev")]
             AnyMessage::Seev_044_002_10(_) => <crate::generated::seev::seev_044_002_10::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_044_002_13(_) => <crate::generated::seev::seev_044_002_13::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-seev")]
             AnyMessage::Seev_045_001_03(_) => <crate::generated::seev::seev_045_001_03::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_045_001_04(_) => <crate::generated::seev::seev_045_001_04::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-seev")]
             AnyMessage::Seev_046_001_01(_) => <crate::generated::seev::seev_046_001_01::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-seev")]
             AnyMessage::Seev_047_001_02(_) => <crate::generated::seev::seev_047_001_02::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_047_001_03(_) => <crate::generated::seev::seev_047_001_03::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-seev")]
             AnyMessage::Seev_048_001_01(_) => <crate::generated::seev::seev_048_001_01::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-seev")]
@@ -2459,11 +4059,35 @@ impl AnyMessage {
             #[cfg(feature = "model-seev")]
             AnyMessage::Seev_050_001_01(_) => <crate::generated::seev::seev_050_001_01::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_050_001_04(_) => <crate::generated::seev::seev_050_001_04::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-seev")]
             AnyMessage::Seev_051_001_01(_) => <crate::generated::seev::seev_051_001_01::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_051_001_02(_) => <crate::generated::seev::seev_051_001_02::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-seev")]
             AnyMessage::Seev_052_001_01(_) => <crate::generated::seev::seev_052_001_01::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_052_001_04(_) => <crate::generated::seev::seev_052_001_04::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-seev")]
             AnyMessage::Seev_053_001_01(_) => <crate::generated::seev::seev_053_001_01::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_053_001_04(_) => <crate::generated::seev::seev_053_001_04::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_060_001_01(_) => <crate::generated::seev::seev_060_001_01::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_061_001_01(_) => <crate::generated::seev::seev_061_001_01::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_062_001_01(_) => <crate::generated::seev::seev_062_001_01::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_063_001_01(_) => <crate::generated::seev::seev_063_001_01::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_064_001_01(_) => <crate::generated::seev::seev_064_001_01::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_065_001_01(_) => <crate::generated::seev::seev_065_001_01::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_066_001_01(_) => <crate::generated::seev::seev_066_001_01::Document as MxMessage>::MESSAGE_NAME,
+            #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_067_001_01(_) => <crate::generated::seev::seev_067_001_01::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-semt")]
             AnyMessage::Semt_001_001_03(_) => <crate::generated::semt::semt_001_001_03::Document as MxMessage>::MESSAGE_NAME,
             #[cfg(feature = "model-semt")]
@@ -2923,55 +4547,105 @@ impl AnyMessage {
             #[cfg(feature = "model-acmt")]
             AnyMessage::Acmt_007_001_04(_) => <crate::generated::acmt::acmt_007_001_04::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-acmt")]
+            AnyMessage::Acmt_007_001_05(_) => <crate::generated::acmt::acmt_007_001_05::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-acmt")]
             AnyMessage::Acmt_008_001_04(_) => <crate::generated::acmt::acmt_008_001_04::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-acmt")]
+            AnyMessage::Acmt_008_001_05(_) => <crate::generated::acmt::acmt_008_001_05::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-acmt")]
             AnyMessage::Acmt_009_001_03(_) => <crate::generated::acmt::acmt_009_001_03::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-acmt")]
+            AnyMessage::Acmt_009_001_04(_) => <crate::generated::acmt::acmt_009_001_04::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-acmt")]
             AnyMessage::Acmt_010_001_03(_) => <crate::generated::acmt::acmt_010_001_03::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-acmt")]
+            AnyMessage::Acmt_010_001_04(_) => <crate::generated::acmt::acmt_010_001_04::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-acmt")]
             AnyMessage::Acmt_011_001_03(_) => <crate::generated::acmt::acmt_011_001_03::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-acmt")]
+            AnyMessage::Acmt_011_001_04(_) => <crate::generated::acmt::acmt_011_001_04::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-acmt")]
             AnyMessage::Acmt_012_001_03(_) => <crate::generated::acmt::acmt_012_001_03::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-acmt")]
+            AnyMessage::Acmt_012_001_04(_) => <crate::generated::acmt::acmt_012_001_04::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-acmt")]
             AnyMessage::Acmt_013_001_03(_) => <crate::generated::acmt::acmt_013_001_03::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-acmt")]
+            AnyMessage::Acmt_013_001_04(_) => <crate::generated::acmt::acmt_013_001_04::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-acmt")]
             AnyMessage::Acmt_014_001_04(_) => <crate::generated::acmt::acmt_014_001_04::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-acmt")]
+            AnyMessage::Acmt_014_001_05(_) => <crate::generated::acmt::acmt_014_001_05::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-acmt")]
             AnyMessage::Acmt_015_001_03(_) => <crate::generated::acmt::acmt_015_001_03::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-acmt")]
+            AnyMessage::Acmt_015_001_05(_) => <crate::generated::acmt::acmt_015_001_05::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-acmt")]
             AnyMessage::Acmt_016_001_03(_) => <crate::generated::acmt::acmt_016_001_03::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-acmt")]
+            AnyMessage::Acmt_016_001_05(_) => <crate::generated::acmt::acmt_016_001_05::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-acmt")]
             AnyMessage::Acmt_017_001_03(_) => <crate::generated::acmt::acmt_017_001_03::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-acmt")]
+            AnyMessage::Acmt_017_001_05(_) => <crate::generated::acmt::acmt_017_001_05::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-acmt")]
             AnyMessage::Acmt_018_001_03(_) => <crate::generated::acmt::acmt_018_001_03::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-acmt")]
+            AnyMessage::Acmt_018_001_05(_) => <crate::generated::acmt::acmt_018_001_05::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-acmt")]
             AnyMessage::Acmt_019_001_03(_) => <crate::generated::acmt::acmt_019_001_03::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-acmt")]
+            AnyMessage::Acmt_019_001_04(_) => <crate::generated::acmt::acmt_019_001_04::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-acmt")]
             AnyMessage::Acmt_020_001_03(_) => <crate::generated::acmt::acmt_020_001_03::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-acmt")]
+            AnyMessage::Acmt_020_001_04(_) => <crate::generated::acmt::acmt_020_001_04::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-acmt")]
             AnyMessage::Acmt_021_001_03(_) => <crate::generated::acmt::acmt_021_001_03::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-acmt")]
+            AnyMessage::Acmt_021_001_04(_) => <crate::generated::acmt::acmt_021_001_04::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-acmt")]
             AnyMessage::Acmt_022_001_03(_) => <crate::generated::acmt::acmt_022_001_03::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-acmt")]
+            AnyMessage::Acmt_022_001_04(_) => <crate::generated::acmt::acmt_022_001_04::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-acmt")]
             AnyMessage::Acmt_023_001_03(_) => <crate::generated::acmt::acmt_023_001_03::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-acmt")]
+            AnyMessage::Acmt_023_001_04(_) => <crate::generated::acmt::acmt_023_001_04::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-acmt")]
             AnyMessage::Acmt_024_001_03(_) => <crate::generated::acmt::acmt_024_001_03::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-acmt")]
+            AnyMessage::Acmt_024_001_04(_) => <crate::generated::acmt::acmt_024_001_04::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-acmt")]
             AnyMessage::Acmt_027_001_04(_) => <crate::generated::acmt::acmt_027_001_04::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-acmt")]
+            AnyMessage::Acmt_027_001_06(_) => <crate::generated::acmt::acmt_027_001_06::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-acmt")]
             AnyMessage::Acmt_028_001_04(_) => <crate::generated::acmt::acmt_028_001_04::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-acmt")]
+            AnyMessage::Acmt_028_001_06(_) => <crate::generated::acmt::acmt_028_001_06::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-acmt")]
             AnyMessage::Acmt_029_001_04(_) => <crate::generated::acmt::acmt_029_001_04::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-acmt")]
+            AnyMessage::Acmt_029_001_06(_) => <crate::generated::acmt::acmt_029_001_06::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-acmt")]
             AnyMessage::Acmt_030_001_03(_) => <crate::generated::acmt::acmt_030_001_03::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-acmt")]
+            AnyMessage::Acmt_030_001_04(_) => <crate::generated::acmt::acmt_030_001_04::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-acmt")]
             AnyMessage::Acmt_031_001_04(_) => <crate::generated::acmt::acmt_031_001_04::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-acmt")]
+            AnyMessage::Acmt_031_001_06(_) => <crate::generated::acmt::acmt_031_001_06::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-acmt")]
             AnyMessage::Acmt_032_001_04(_) => <crate::generated::acmt::acmt_032_001_04::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-acmt")]
+            AnyMessage::Acmt_032_001_06(_) => <crate::generated::acmt::acmt_032_001_06::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-acmt")]
             AnyMessage::Acmt_033_001_02(_) => <crate::generated::acmt::acmt_033_001_02::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-acmt")]
             AnyMessage::Acmt_034_001_04(_) => <crate::generated::acmt::acmt_034_001_04::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-acmt")]
+            AnyMessage::Acmt_034_001_06(_) => <crate::generated::acmt::acmt_034_001_06::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-acmt")]
             AnyMessage::Acmt_035_001_02(_) => <crate::generated::acmt::acmt_035_001_02::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-acmt")]
@@ -2985,6 +4659,8 @@ impl AnyMessage {
             #[cfg(feature = "model-admi")]
             AnyMessage::Admi_005_001_01(_) => <crate::generated::admi::admi_005_001_01::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-admi")]
+            AnyMessage::Admi_005_001_02(_) => <crate::generated::admi::admi_005_001_02::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-admi")]
             AnyMessage::Admi_006_001_01(_) => <crate::generated::admi::admi_006_001_01::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-admi")]
             AnyMessage::Admi_007_001_01(_) => <crate::generated::admi::admi_007_001_01::Document as MxMessage>::mx_id(),
@@ -2996,10 +4672,18 @@ impl AnyMessage {
             AnyMessage::Admi_011_001_01(_) => <crate::generated::admi::admi_011_001_01::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-admi")]
             AnyMessage::Admi_017_001_01(_) => <crate::generated::admi::admi_017_001_01::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-admi")]
+            AnyMessage::Admi_017_001_02(_) => <crate::generated::admi::admi_017_001_02::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-admi")]
+            AnyMessage::Admi_024_001_01(_) => <crate::generated::admi::admi_024_001_01::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-auth")]
             AnyMessage::Auth_001_001_01(_) => <crate::generated::auth::auth_001_001_01::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-auth")]
+            AnyMessage::Auth_001_001_02(_) => <crate::generated::auth::auth_001_001_02::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-auth")]
             AnyMessage::Auth_002_001_01(_) => <crate::generated::auth::auth_002_001_01::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-auth")]
+            AnyMessage::Auth_002_001_02(_) => <crate::generated::auth::auth_002_001_02::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-auth")]
             AnyMessage::Auth_003_001_01(_) => <crate::generated::auth::auth_003_001_01::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-auth")]
@@ -3013,33 +4697,59 @@ impl AnyMessage {
             #[cfg(feature = "model-auth")]
             AnyMessage::Auth_016_001_02(_) => <crate::generated::auth::auth_016_001_02::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-auth")]
+            AnyMessage::Auth_016_001_03(_) => <crate::generated::auth::auth_016_001_03::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-auth")]
             AnyMessage::Auth_017_001_02(_) => <crate::generated::auth::auth_017_001_02::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-auth")]
             AnyMessage::Auth_018_001_03(_) => <crate::generated::auth::auth_018_001_03::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-auth")]
+            AnyMessage::Auth_018_001_04(_) => <crate::generated::auth::auth_018_001_04::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-auth")]
             AnyMessage::Auth_019_001_03(_) => <crate::generated::auth::auth_019_001_03::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-auth")]
+            AnyMessage::Auth_019_001_04(_) => <crate::generated::auth::auth_019_001_04::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-auth")]
             AnyMessage::Auth_020_001_03(_) => <crate::generated::auth::auth_020_001_03::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-auth")]
+            AnyMessage::Auth_020_001_04(_) => <crate::generated::auth::auth_020_001_04::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-auth")]
             AnyMessage::Auth_021_001_03(_) => <crate::generated::auth::auth_021_001_03::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-auth")]
+            AnyMessage::Auth_021_001_04(_) => <crate::generated::auth::auth_021_001_04::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-auth")]
             AnyMessage::Auth_022_001_03(_) => <crate::generated::auth::auth_022_001_03::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-auth")]
+            AnyMessage::Auth_022_001_04(_) => <crate::generated::auth::auth_022_001_04::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-auth")]
             AnyMessage::Auth_023_001_03(_) => <crate::generated::auth::auth_023_001_03::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-auth")]
+            AnyMessage::Auth_023_001_04(_) => <crate::generated::auth::auth_023_001_04::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-auth")]
             AnyMessage::Auth_024_001_03(_) => <crate::generated::auth::auth_024_001_03::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-auth")]
+            AnyMessage::Auth_024_001_04(_) => <crate::generated::auth::auth_024_001_04::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-auth")]
             AnyMessage::Auth_025_001_03(_) => <crate::generated::auth::auth_025_001_03::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-auth")]
+            AnyMessage::Auth_025_001_04(_) => <crate::generated::auth::auth_025_001_04::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-auth")]
             AnyMessage::Auth_026_001_03(_) => <crate::generated::auth::auth_026_001_03::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-auth")]
+            AnyMessage::Auth_026_001_04(_) => <crate::generated::auth::auth_026_001_04::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-auth")]
             AnyMessage::Auth_027_001_03(_) => <crate::generated::auth::auth_027_001_03::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-auth")]
+            AnyMessage::Auth_027_001_04(_) => <crate::generated::auth::auth_027_001_04::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-auth")]
             AnyMessage::Auth_028_001_01(_) => <crate::generated::auth::auth_028_001_01::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-auth")]
             AnyMessage::Auth_029_001_02(_) => <crate::generated::auth::auth_029_001_02::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-auth")]
+            AnyMessage::Auth_029_001_05(_) => <crate::generated::auth::auth_029_001_05::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-auth")]
             AnyMessage::Auth_030_001_02(_) => <crate::generated::auth::auth_030_001_02::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-auth")]
+            AnyMessage::Auth_030_001_04(_) => <crate::generated::auth::auth_030_001_04::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-auth")]
             AnyMessage::Auth_031_001_01(_) => <crate::generated::auth::auth_031_001_01::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-auth")]
@@ -3047,11 +4757,15 @@ impl AnyMessage {
             #[cfg(feature = "model-auth")]
             AnyMessage::Auth_033_001_02(_) => <crate::generated::auth::auth_033_001_02::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-auth")]
+            AnyMessage::Auth_033_001_03(_) => <crate::generated::auth::auth_033_001_03::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-auth")]
             AnyMessage::Auth_034_001_01(_) => <crate::generated::auth::auth_034_001_01::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-auth")]
             AnyMessage::Auth_035_001_01(_) => <crate::generated::auth::auth_035_001_01::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-auth")]
             AnyMessage::Auth_036_001_02(_) => <crate::generated::auth::auth_036_001_02::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-auth")]
+            AnyMessage::Auth_036_001_03(_) => <crate::generated::auth::auth_036_001_03::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-auth")]
             AnyMessage::Auth_038_001_01(_) => <crate::generated::auth::auth_038_001_01::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-auth")]
@@ -3067,7 +4781,11 @@ impl AnyMessage {
             #[cfg(feature = "model-auth")]
             AnyMessage::Auth_044_001_02(_) => <crate::generated::auth::auth_044_001_02::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-auth")]
+            AnyMessage::Auth_044_001_03(_) => <crate::generated::auth::auth_044_001_03::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-auth")]
             AnyMessage::Auth_045_001_02(_) => <crate::generated::auth::auth_045_001_02::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-auth")]
+            AnyMessage::Auth_045_001_03(_) => <crate::generated::auth::auth_045_001_03::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-auth")]
             AnyMessage::Auth_047_001_01(_) => <crate::generated::auth::auth_047_001_01::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-auth")]
@@ -3089,19 +4807,29 @@ impl AnyMessage {
             #[cfg(feature = "model-auth")]
             AnyMessage::Auth_057_001_01(_) => <crate::generated::auth::auth_057_001_01::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-auth")]
+            AnyMessage::Auth_057_001_02(_) => <crate::generated::auth::auth_057_001_02::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-auth")]
             AnyMessage::Auth_058_001_01(_) => <crate::generated::auth::auth_058_001_01::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-auth")]
             AnyMessage::Auth_059_001_01(_) => <crate::generated::auth::auth_059_001_01::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-auth")]
+            AnyMessage::Auth_059_001_02(_) => <crate::generated::auth::auth_059_001_02::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-auth")]
             AnyMessage::Auth_060_001_01(_) => <crate::generated::auth::auth_060_001_01::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-auth")]
+            AnyMessage::Auth_060_001_02(_) => <crate::generated::auth::auth_060_001_02::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-auth")]
             AnyMessage::Auth_061_001_01(_) => <crate::generated::auth::auth_061_001_01::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-auth")]
+            AnyMessage::Auth_061_001_02(_) => <crate::generated::auth::auth_061_001_02::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-auth")]
             AnyMessage::Auth_062_001_01(_) => <crate::generated::auth::auth_062_001_01::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-auth")]
             AnyMessage::Auth_063_001_01(_) => <crate::generated::auth::auth_063_001_01::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-auth")]
             AnyMessage::Auth_064_001_01(_) => <crate::generated::auth::auth_064_001_01::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-auth")]
+            AnyMessage::Auth_064_001_02(_) => <crate::generated::auth::auth_064_001_02::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-auth")]
             AnyMessage::Auth_065_001_01(_) => <crate::generated::auth::auth_065_001_01::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-auth")]
@@ -3112,6 +4840,8 @@ impl AnyMessage {
             AnyMessage::Auth_068_001_01(_) => <crate::generated::auth::auth_068_001_01::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-auth")]
             AnyMessage::Auth_069_001_01(_) => <crate::generated::auth::auth_069_001_01::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-auth")]
+            AnyMessage::Auth_069_001_03(_) => <crate::generated::auth::auth_069_001_03::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-auth")]
             AnyMessage::Auth_070_001_02(_) => <crate::generated::auth::auth_070_001_02::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-auth")]
@@ -3139,9 +4869,15 @@ impl AnyMessage {
             #[cfg(feature = "model-auth")]
             AnyMessage::Auth_090_001_01(_) => <crate::generated::auth::auth_090_001_01::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-auth")]
+            AnyMessage::Auth_090_001_02(_) => <crate::generated::auth::auth_090_001_02::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-auth")]
             AnyMessage::Auth_091_001_01(_) => <crate::generated::auth::auth_091_001_01::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-auth")]
+            AnyMessage::Auth_091_001_03(_) => <crate::generated::auth::auth_091_001_03::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-auth")]
             AnyMessage::Auth_092_001_02(_) => <crate::generated::auth::auth_092_001_02::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-auth")]
+            AnyMessage::Auth_092_001_04(_) => <crate::generated::auth::auth_092_001_04::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-auth")]
             AnyMessage::Auth_094_001_02(_) => <crate::generated::auth::auth_094_001_02::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-auth")]
@@ -3152,80 +4888,186 @@ impl AnyMessage {
             AnyMessage::Auth_102_001_01(_) => <crate::generated::auth::auth_102_001_01::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-auth")]
             AnyMessage::Auth_105_001_01(_) => <crate::generated::auth::auth_105_001_01::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-auth")]
+            AnyMessage::Auth_106_001_01(_) => <crate::generated::auth::auth_106_001_01::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-auth")]
+            AnyMessage::Auth_107_001_02(_) => <crate::generated::auth::auth_107_001_02::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-auth")]
+            AnyMessage::Auth_108_001_02(_) => <crate::generated::auth::auth_108_001_02::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-auth")]
+            AnyMessage::Auth_109_001_02(_) => <crate::generated::auth::auth_109_001_02::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-auth")]
+            AnyMessage::Auth_112_001_01(_) => <crate::generated::auth::auth_112_001_01::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-auth")]
+            AnyMessage::Auth_113_001_01(_) => <crate::generated::auth::auth_113_001_01::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-auth")]
+            AnyMessage::Auth_114_001_01(_) => <crate::generated::auth::auth_114_001_01::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-auth")]
+            AnyMessage::Auth_120_001_01(_) => <crate::generated::auth::auth_120_001_01::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-auth")]
+            AnyMessage::Auth_121_001_01(_) => <crate::generated::auth::auth_121_001_01::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-auth")]
+            AnyMessage::Auth_122_001_01(_) => <crate::generated::auth::auth_122_001_01::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-auth")]
+            AnyMessage::Auth_123_001_01(_) => <crate::generated::auth::auth_123_001_01::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-auth")]
+            AnyMessage::Auth_124_001_01(_) => <crate::generated::auth::auth_124_001_01::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-caaa")]
             AnyMessage::Caaa_001_001_10(_) => <crate::generated::caaa::caaa_001_001_10::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-caaa")]
+            AnyMessage::Caaa_001_001_15(_) => <crate::generated::caaa::caaa_001_001_15::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-caaa")]
             AnyMessage::Caaa_002_001_10(_) => <crate::generated::caaa::caaa_002_001_10::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-caaa")]
+            AnyMessage::Caaa_002_001_15(_) => <crate::generated::caaa::caaa_002_001_15::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-caaa")]
             AnyMessage::Caaa_003_001_10(_) => <crate::generated::caaa::caaa_003_001_10::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-caaa")]
+            AnyMessage::Caaa_003_001_15(_) => <crate::generated::caaa::caaa_003_001_15::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-caaa")]
             AnyMessage::Caaa_004_001_09(_) => <crate::generated::caaa::caaa_004_001_09::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-caaa")]
+            AnyMessage::Caaa_004_001_14(_) => <crate::generated::caaa::caaa_004_001_14::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-caaa")]
             AnyMessage::Caaa_005_001_10(_) => <crate::generated::caaa::caaa_005_001_10::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-caaa")]
+            AnyMessage::Caaa_005_001_15(_) => <crate::generated::caaa::caaa_005_001_15::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-caaa")]
             AnyMessage::Caaa_006_001_09(_) => <crate::generated::caaa::caaa_006_001_09::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-caaa")]
+            AnyMessage::Caaa_006_001_14(_) => <crate::generated::caaa::caaa_006_001_14::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-caaa")]
             AnyMessage::Caaa_007_001_10(_) => <crate::generated::caaa::caaa_007_001_10::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-caaa")]
+            AnyMessage::Caaa_007_001_15(_) => <crate::generated::caaa::caaa_007_001_15::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-caaa")]
             AnyMessage::Caaa_008_001_09(_) => <crate::generated::caaa::caaa_008_001_09::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-caaa")]
+            AnyMessage::Caaa_008_001_14(_) => <crate::generated::caaa::caaa_008_001_14::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-caaa")]
             AnyMessage::Caaa_009_001_09(_) => <crate::generated::caaa::caaa_009_001_09::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-caaa")]
+            AnyMessage::Caaa_009_001_14(_) => <crate::generated::caaa::caaa_009_001_14::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-caaa")]
             AnyMessage::Caaa_010_001_08(_) => <crate::generated::caaa::caaa_010_001_08::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-caaa")]
+            AnyMessage::Caaa_010_001_13(_) => <crate::generated::caaa::caaa_010_001_13::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-caaa")]
             AnyMessage::Caaa_011_001_10(_) => <crate::generated::caaa::caaa_011_001_10::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-caaa")]
+            AnyMessage::Caaa_011_001_15(_) => <crate::generated::caaa::caaa_011_001_15::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-caaa")]
             AnyMessage::Caaa_012_001_09(_) => <crate::generated::caaa::caaa_012_001_09::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-caaa")]
+            AnyMessage::Caaa_012_001_14(_) => <crate::generated::caaa::caaa_012_001_14::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-caaa")]
             AnyMessage::Caaa_013_001_09(_) => <crate::generated::caaa::caaa_013_001_09::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-caaa")]
+            AnyMessage::Caaa_013_001_14(_) => <crate::generated::caaa::caaa_013_001_14::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-caaa")]
             AnyMessage::Caaa_014_001_08(_) => <crate::generated::caaa::caaa_014_001_08::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-caaa")]
+            AnyMessage::Caaa_014_001_13(_) => <crate::generated::caaa::caaa_014_001_13::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-caaa")]
             AnyMessage::Caaa_015_001_06(_) => <crate::generated::caaa::caaa_015_001_06::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-caaa")]
             AnyMessage::Caaa_016_001_08(_) => <crate::generated::caaa::caaa_016_001_08::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-caaa")]
+            AnyMessage::Caaa_016_001_13(_) => <crate::generated::caaa::caaa_016_001_13::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-caaa")]
             AnyMessage::Caaa_017_001_08(_) => <crate::generated::caaa::caaa_017_001_08::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-caaa")]
+            AnyMessage::Caaa_017_001_13(_) => <crate::generated::caaa::caaa_017_001_13::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-caaa")]
             AnyMessage::Caaa_018_001_05(_) => <crate::generated::caaa::caaa_018_001_05::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-caaa")]
+            AnyMessage::Caaa_018_001_10(_) => <crate::generated::caaa::caaa_018_001_10::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-caaa")]
             AnyMessage::Caaa_019_001_04(_) => <crate::generated::caaa::caaa_019_001_04::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-caaa")]
+            AnyMessage::Caaa_019_001_09(_) => <crate::generated::caaa::caaa_019_001_09::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-caaa")]
             AnyMessage::Caaa_020_001_02(_) => <crate::generated::caaa::caaa_020_001_02::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-caaa")]
+            AnyMessage::Caaa_020_001_07(_) => <crate::generated::caaa::caaa_020_001_07::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-caaa")]
             AnyMessage::Caaa_021_001_02(_) => <crate::generated::caaa::caaa_021_001_02::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-caaa")]
+            AnyMessage::Caaa_021_001_07(_) => <crate::generated::caaa::caaa_021_001_07::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-caaa")]
             AnyMessage::Caaa_022_001_01(_) => <crate::generated::caaa::caaa_022_001_01::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-caaa")]
+            AnyMessage::Caaa_022_001_06(_) => <crate::generated::caaa::caaa_022_001_06::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-caaa")]
             AnyMessage::Caaa_023_001_01(_) => <crate::generated::caaa::caaa_023_001_01::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-caaa")]
+            AnyMessage::Caaa_023_001_06(_) => <crate::generated::caaa::caaa_023_001_06::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-caaa")]
             AnyMessage::Caaa_024_001_01(_) => <crate::generated::caaa::caaa_024_001_01::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-caaa")]
+            AnyMessage::Caaa_024_001_06(_) => <crate::generated::caaa::caaa_024_001_06::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-caaa")]
             AnyMessage::Caaa_025_001_01(_) => <crate::generated::caaa::caaa_025_001_01::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-caaa")]
+            AnyMessage::Caaa_025_001_06(_) => <crate::generated::caaa::caaa_025_001_06::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-caaa")]
+            AnyMessage::Caaa_026_001_03(_) => <crate::generated::caaa::caaa_026_001_03::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-caaa")]
+            AnyMessage::Caaa_027_001_03(_) => <crate::generated::caaa::caaa_027_001_03::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-caad")]
             AnyMessage::Caad_001_001_01(_) => <crate::generated::caad::caad_001_001_01::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-caad")]
+            AnyMessage::Caad_001_001_04(_) => <crate::generated::caad::caad_001_001_04::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-caad")]
             AnyMessage::Caad_002_001_01(_) => <crate::generated::caad::caad_002_001_01::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-caad")]
+            AnyMessage::Caad_002_001_04(_) => <crate::generated::caad::caad_002_001_04::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-caad")]
             AnyMessage::Caad_003_001_01(_) => <crate::generated::caad::caad_003_001_01::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-caad")]
+            AnyMessage::Caad_003_001_04(_) => <crate::generated::caad::caad_003_001_04::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-caad")]
             AnyMessage::Caad_004_001_01(_) => <crate::generated::caad::caad_004_001_01::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-caad")]
+            AnyMessage::Caad_004_001_04(_) => <crate::generated::caad::caad_004_001_04::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-caad")]
             AnyMessage::Caad_005_001_02(_) => <crate::generated::caad::caad_005_001_02::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-caad")]
+            AnyMessage::Caad_005_001_05(_) => <crate::generated::caad::caad_005_001_05::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-caad")]
             AnyMessage::Caad_006_001_02(_) => <crate::generated::caad::caad_006_001_02::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-caad")]
+            AnyMessage::Caad_006_001_05(_) => <crate::generated::caad::caad_006_001_05::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-caad")]
             AnyMessage::Caad_007_001_02(_) => <crate::generated::caad::caad_007_001_02::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-caad")]
+            AnyMessage::Caad_007_001_05(_) => <crate::generated::caad::caad_007_001_05::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-caad")]
+            AnyMessage::Caad_008_001_03(_) => <crate::generated::caad::caad_008_001_03::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-caad")]
+            AnyMessage::Caad_009_001_03(_) => <crate::generated::caad::caad_009_001_03::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-caad")]
+            AnyMessage::Caad_010_001_03(_) => <crate::generated::caad::caad_010_001_03::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-caam")]
             AnyMessage::Caam_001_001_03(_) => <crate::generated::caam::caam_001_001_03::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-caam")]
+            AnyMessage::Caam_001_001_05(_) => <crate::generated::caam::caam_001_001_05::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-caam")]
             AnyMessage::Caam_002_001_03(_) => <crate::generated::caam::caam_002_001_03::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-caam")]
+            AnyMessage::Caam_002_001_04(_) => <crate::generated::caam::caam_002_001_04::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-caam")]
             AnyMessage::Caam_003_001_03(_) => <crate::generated::caam::caam_003_001_03::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-caam")]
+            AnyMessage::Caam_003_001_05(_) => <crate::generated::caam::caam_003_001_05::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-caam")]
             AnyMessage::Caam_004_001_03(_) => <crate::generated::caam::caam_004_001_03::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-caam")]
+            AnyMessage::Caam_004_001_05(_) => <crate::generated::caam::caam_004_001_05::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-caam")]
             AnyMessage::Caam_005_001_02(_) => <crate::generated::caam::caam_005_001_02::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-caam")]
+            AnyMessage::Caam_005_001_03(_) => <crate::generated::caam::caam_005_001_03::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-caam")]
             AnyMessage::Caam_006_001_02(_) => <crate::generated::caam::caam_006_001_02::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-caam")]
@@ -3235,47 +5077,99 @@ impl AnyMessage {
             #[cfg(feature = "model-caam")]
             AnyMessage::Caam_009_001_02(_) => <crate::generated::caam::caam_009_001_02::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-caam")]
+            AnyMessage::Caam_009_001_03(_) => <crate::generated::caam::caam_009_001_03::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-caam")]
             AnyMessage::Caam_010_001_02(_) => <crate::generated::caam::caam_010_001_02::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-caam")]
+            AnyMessage::Caam_010_001_03(_) => <crate::generated::caam::caam_010_001_03::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-caam")]
             AnyMessage::Caam_011_001_01(_) => <crate::generated::caam::caam_011_001_01::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-caam")]
+            AnyMessage::Caam_011_001_02(_) => <crate::generated::caam::caam_011_001_02::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-caam")]
             AnyMessage::Caam_012_001_01(_) => <crate::generated::caam::caam_012_001_01::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-caam")]
+            AnyMessage::Caam_012_001_02(_) => <crate::generated::caam::caam_012_001_02::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-caam")]
+            AnyMessage::Caam_013_001_01(_) => <crate::generated::caam::caam_013_001_01::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-caam")]
+            AnyMessage::Caam_014_001_01(_) => <crate::generated::caam::caam_014_001_01::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-caam")]
+            AnyMessage::Caam_015_001_01(_) => <crate::generated::caam::caam_015_001_01::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-caam")]
+            AnyMessage::Caam_016_001_01(_) => <crate::generated::caam::caam_016_001_01::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-cafc")]
             AnyMessage::Cafc_001_001_01(_) => <crate::generated::cafc::cafc_001_001_01::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-cafc")]
+            AnyMessage::Cafc_001_001_04(_) => <crate::generated::cafc::cafc_001_001_04::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-cafc")]
             AnyMessage::Cafc_002_001_01(_) => <crate::generated::cafc::cafc_002_001_01::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-cafc")]
+            AnyMessage::Cafc_002_001_04(_) => <crate::generated::cafc::cafc_002_001_04::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-cafm")]
             AnyMessage::Cafm_001_001_01(_) => <crate::generated::cafm::cafm_001_001_01::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-cafm")]
+            AnyMessage::Cafm_001_001_04(_) => <crate::generated::cafm::cafm_001_001_04::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-cafm")]
             AnyMessage::Cafm_002_001_01(_) => <crate::generated::cafm::cafm_002_001_01::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-cafm")]
+            AnyMessage::Cafm_002_001_04(_) => <crate::generated::cafm::cafm_002_001_04::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-cafr")]
             AnyMessage::Cafr_001_001_01(_) => <crate::generated::cafr::cafr_001_001_01::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-cafr")]
+            AnyMessage::Cafr_001_001_04(_) => <crate::generated::cafr::cafr_001_001_04::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-cafr")]
             AnyMessage::Cafr_002_001_01(_) => <crate::generated::cafr::cafr_002_001_01::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-cafr")]
+            AnyMessage::Cafr_002_001_04(_) => <crate::generated::cafr::cafr_002_001_04::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-cafr")]
             AnyMessage::Cafr_003_001_01(_) => <crate::generated::cafr::cafr_003_001_01::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-cafr")]
+            AnyMessage::Cafr_003_001_04(_) => <crate::generated::cafr::cafr_003_001_04::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-cafr")]
             AnyMessage::Cafr_004_001_01(_) => <crate::generated::cafr::cafr_004_001_01::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-cafr")]
+            AnyMessage::Cafr_004_001_04(_) => <crate::generated::cafr::cafr_004_001_04::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-cain")]
             AnyMessage::Cain_001_001_02(_) => <crate::generated::cain::cain_001_001_02::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-cain")]
+            AnyMessage::Cain_001_001_05(_) => <crate::generated::cain::cain_001_001_05::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-cain")]
             AnyMessage::Cain_002_001_02(_) => <crate::generated::cain::cain_002_001_02::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-cain")]
+            AnyMessage::Cain_002_001_05(_) => <crate::generated::cain::cain_002_001_05::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-cain")]
             AnyMessage::Cain_003_001_02(_) => <crate::generated::cain::cain_003_001_02::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-cain")]
+            AnyMessage::Cain_003_001_05(_) => <crate::generated::cain::cain_003_001_05::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-cain")]
             AnyMessage::Cain_004_001_02(_) => <crate::generated::cain::cain_004_001_02::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-cain")]
+            AnyMessage::Cain_004_001_05(_) => <crate::generated::cain::cain_004_001_05::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-cain")]
             AnyMessage::Cain_005_001_02(_) => <crate::generated::cain::cain_005_001_02::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-cain")]
+            AnyMessage::Cain_005_001_05(_) => <crate::generated::cain::cain_005_001_05::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-cain")]
             AnyMessage::Cain_006_001_02(_) => <crate::generated::cain::cain_006_001_02::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-cain")]
+            AnyMessage::Cain_006_001_05(_) => <crate::generated::cain::cain_006_001_05::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-cain")]
             AnyMessage::Cain_014_001_01(_) => <crate::generated::cain::cain_014_001_01::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-cain")]
+            AnyMessage::Cain_014_001_04(_) => <crate::generated::cain::cain_014_001_04::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-cain")]
             AnyMessage::Cain_015_001_01(_) => <crate::generated::cain::cain_015_001_01::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-cain")]
+            AnyMessage::Cain_015_001_04(_) => <crate::generated::cain::cain_015_001_04::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-cain")]
             AnyMessage::Cain_016_001_01(_) => <crate::generated::cain::cain_016_001_01::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-cain")]
+            AnyMessage::Cain_016_001_04(_) => <crate::generated::cain::cain_016_001_04::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-cain")]
             AnyMessage::Cain_017_001_01(_) => <crate::generated::cain::cain_017_001_01::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-cain")]
+            AnyMessage::Cain_017_001_04(_) => <crate::generated::cain::cain_017_001_04::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-cain")]
             AnyMessage::Cain_018_001_01(_) => <crate::generated::cain::cain_018_001_01::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-cain")]
@@ -3283,41 +5177,79 @@ impl AnyMessage {
             #[cfg(feature = "model-cain")]
             AnyMessage::Cain_020_001_01(_) => <crate::generated::cain::cain_020_001_01::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-cain")]
+            AnyMessage::Cain_020_001_04(_) => <crate::generated::cain::cain_020_001_04::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-cain")]
             AnyMessage::Cain_021_001_01(_) => <crate::generated::cain::cain_021_001_01::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-cain")]
+            AnyMessage::Cain_021_001_04(_) => <crate::generated::cain::cain_021_001_04::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-cain")]
             AnyMessage::Cain_022_001_01(_) => <crate::generated::cain::cain_022_001_01::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-cain")]
+            AnyMessage::Cain_022_001_04(_) => <crate::generated::cain::cain_022_001_04::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-cain")]
             AnyMessage::Cain_023_001_01(_) => <crate::generated::cain::cain_023_001_01::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-cain")]
+            AnyMessage::Cain_023_001_04(_) => <crate::generated::cain::cain_023_001_04::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-cain")]
             AnyMessage::Cain_024_001_01(_) => <crate::generated::cain::cain_024_001_01::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-cain")]
+            AnyMessage::Cain_024_001_04(_) => <crate::generated::cain::cain_024_001_04::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-cain")]
             AnyMessage::Cain_025_001_01(_) => <crate::generated::cain::cain_025_001_01::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-cain")]
+            AnyMessage::Cain_025_001_04(_) => <crate::generated::cain::cain_025_001_04::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-cain")]
             AnyMessage::Cain_026_001_01(_) => <crate::generated::cain::cain_026_001_01::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-cain")]
+            AnyMessage::Cain_026_001_04(_) => <crate::generated::cain::cain_026_001_04::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-cain")]
             AnyMessage::Cain_027_001_01(_) => <crate::generated::cain::cain_027_001_01::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-cain")]
+            AnyMessage::Cain_027_001_04(_) => <crate::generated::cain::cain_027_001_04::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-cain")]
             AnyMessage::Cain_028_001_01(_) => <crate::generated::cain::cain_028_001_01::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-cain")]
+            AnyMessage::Cain_028_001_04(_) => <crate::generated::cain::cain_028_001_04::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-camt")]
             AnyMessage::Camt_003_001_07(_) => <crate::generated::camt::camt_003_001_07::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_003_001_08(_) => <crate::generated::camt::camt_003_001_08::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-camt")]
             AnyMessage::Camt_004_001_09(_) => <crate::generated::camt::camt_004_001_09::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_004_001_10(_) => <crate::generated::camt::camt_004_001_10::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-camt")]
             AnyMessage::Camt_005_001_09(_) => <crate::generated::camt::camt_005_001_09::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_005_001_11(_) => <crate::generated::camt::camt_005_001_11::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-camt")]
             AnyMessage::Camt_006_001_09(_) => <crate::generated::camt::camt_006_001_09::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_006_001_11(_) => <crate::generated::camt::camt_006_001_11::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-camt")]
             AnyMessage::Camt_007_001_08(_) => <crate::generated::camt::camt_007_001_08::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_007_001_10(_) => <crate::generated::camt::camt_007_001_10::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-camt")]
             AnyMessage::Camt_008_001_09(_) => <crate::generated::camt::camt_008_001_09::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_008_001_11(_) => <crate::generated::camt::camt_008_001_11::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-camt")]
             AnyMessage::Camt_009_001_07(_) => <crate::generated::camt::camt_009_001_07::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_009_001_08(_) => <crate::generated::camt::camt_009_001_08::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-camt")]
             AnyMessage::Camt_010_001_08(_) => <crate::generated::camt::camt_010_001_08::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_010_001_09(_) => <crate::generated::camt::camt_010_001_09::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-camt")]
             AnyMessage::Camt_011_001_07(_) => <crate::generated::camt::camt_011_001_07::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_011_001_08(_) => <crate::generated::camt::camt_011_001_08::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-camt")]
             AnyMessage::Camt_012_001_07(_) => <crate::generated::camt::camt_012_001_07::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_012_001_08(_) => <crate::generated::camt::camt_012_001_08::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-camt")]
             AnyMessage::Camt_013_001_04(_) => <crate::generated::camt::camt_013_001_04::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-camt")]
@@ -3341,39 +5273,71 @@ impl AnyMessage {
             #[cfg(feature = "model-camt")]
             AnyMessage::Camt_024_001_07(_) => <crate::generated::camt::camt_024_001_07::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_024_001_08(_) => <crate::generated::camt::camt_024_001_08::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-camt")]
             AnyMessage::Camt_025_001_05(_) => <crate::generated::camt::camt_025_001_05::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_025_001_09(_) => <crate::generated::camt::camt_025_001_09::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-camt")]
             AnyMessage::Camt_026_001_08(_) => <crate::generated::camt::camt_026_001_08::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-camt")]
             AnyMessage::Camt_026_001_09(_) => <crate::generated::camt::camt_026_001_09::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_026_001_10(_) => <crate::generated::camt::camt_026_001_10::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-camt")]
             AnyMessage::Camt_027_001_09(_) => <crate::generated::camt::camt_027_001_09::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_027_001_10(_) => <crate::generated::camt::camt_027_001_10::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-camt")]
             AnyMessage::Camt_028_001_11(_) => <crate::generated::camt::camt_028_001_11::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_028_001_12(_) => <crate::generated::camt::camt_028_001_12::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-camt")]
             AnyMessage::Camt_029_001_10(_) => <crate::generated::camt::camt_029_001_10::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-camt")]
             AnyMessage::Camt_029_001_11(_) => <crate::generated::camt::camt_029_001_11::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_029_001_14(_) => <crate::generated::camt::camt_029_001_14::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-camt")]
             AnyMessage::Camt_030_001_05(_) => <crate::generated::camt::camt_030_001_05::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_030_001_06(_) => <crate::generated::camt::camt_030_001_06::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-camt")]
             AnyMessage::Camt_031_001_06(_) => <crate::generated::camt::camt_031_001_06::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_031_001_07(_) => <crate::generated::camt::camt_031_001_07::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-camt")]
             AnyMessage::Camt_032_001_04(_) => <crate::generated::camt::camt_032_001_04::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_032_001_05(_) => <crate::generated::camt::camt_032_001_05::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-camt")]
             AnyMessage::Camt_033_001_06(_) => <crate::generated::camt::camt_033_001_06::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_033_001_07(_) => <crate::generated::camt::camt_033_001_07::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-camt")]
             AnyMessage::Camt_034_001_06(_) => <crate::generated::camt::camt_034_001_06::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_034_001_07(_) => <crate::generated::camt::camt_034_001_07::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-camt")]
             AnyMessage::Camt_035_001_05(_) => <crate::generated::camt::camt_035_001_05::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_035_001_06(_) => <crate::generated::camt::camt_035_001_06::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-camt")]
             AnyMessage::Camt_036_001_05(_) => <crate::generated::camt::camt_036_001_05::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_036_001_06(_) => <crate::generated::camt::camt_036_001_06::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-camt")]
             AnyMessage::Camt_037_001_09(_) => <crate::generated::camt::camt_037_001_09::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_037_001_10(_) => <crate::generated::camt::camt_037_001_10::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-camt")]
             AnyMessage::Camt_038_001_04(_) => <crate::generated::camt::camt_038_001_04::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_038_001_05(_) => <crate::generated::camt::camt_038_001_05::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-camt")]
             AnyMessage::Camt_039_001_05(_) => <crate::generated::camt::camt_039_001_05::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_039_001_06(_) => <crate::generated::camt::camt_039_001_06::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-camt")]
             AnyMessage::Camt_040_001_04(_) => <crate::generated::camt::camt_040_001_04::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-camt")]
@@ -3389,35 +5353,65 @@ impl AnyMessage {
             #[cfg(feature = "model-camt")]
             AnyMessage::Camt_046_001_06(_) => <crate::generated::camt::camt_046_001_06::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_046_001_08(_) => <crate::generated::camt::camt_046_001_08::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-camt")]
             AnyMessage::Camt_047_001_07(_) => <crate::generated::camt::camt_047_001_07::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_047_001_08(_) => <crate::generated::camt::camt_047_001_08::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-camt")]
             AnyMessage::Camt_048_001_06(_) => <crate::generated::camt::camt_048_001_06::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_048_001_07(_) => <crate::generated::camt::camt_048_001_07::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-camt")]
             AnyMessage::Camt_049_001_06(_) => <crate::generated::camt::camt_049_001_06::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_049_001_07(_) => <crate::generated::camt::camt_049_001_07::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-camt")]
             AnyMessage::Camt_050_001_06(_) => <crate::generated::camt::camt_050_001_06::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_050_001_07(_) => <crate::generated::camt::camt_050_001_07::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-camt")]
             AnyMessage::Camt_051_001_05(_) => <crate::generated::camt::camt_051_001_05::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_051_001_07(_) => <crate::generated::camt::camt_051_001_07::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-camt")]
             AnyMessage::Camt_052_001_09(_) => <crate::generated::camt::camt_052_001_09::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_052_001_14(_) => <crate::generated::camt::camt_052_001_14::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-camt")]
             AnyMessage::Camt_053_001_09(_) => <crate::generated::camt::camt_053_001_09::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_053_001_14(_) => <crate::generated::camt::camt_053_001_14::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-camt")]
             AnyMessage::Camt_054_001_09(_) => <crate::generated::camt::camt_054_001_09::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_054_001_14(_) => <crate::generated::camt::camt_054_001_14::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-camt")]
             AnyMessage::Camt_055_001_10(_) => <crate::generated::camt::camt_055_001_10::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_055_001_13(_) => <crate::generated::camt::camt_055_001_13::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-camt")]
             AnyMessage::Camt_056_001_09(_) => <crate::generated::camt::camt_056_001_09::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-camt")]
             AnyMessage::Camt_056_001_10(_) => <crate::generated::camt::camt_056_001_10::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_056_001_12(_) => <crate::generated::camt::camt_056_001_12::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-camt")]
             AnyMessage::Camt_057_001_07(_) => <crate::generated::camt::camt_057_001_07::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_057_001_09(_) => <crate::generated::camt::camt_057_001_09::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-camt")]
             AnyMessage::Camt_058_001_07(_) => <crate::generated::camt::camt_058_001_07::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_058_001_10(_) => <crate::generated::camt::camt_058_001_10::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-camt")]
             AnyMessage::Camt_059_001_07(_) => <crate::generated::camt::camt_059_001_07::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_059_001_09(_) => <crate::generated::camt::camt_059_001_09::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-camt")]
             AnyMessage::Camt_060_001_06(_) => <crate::generated::camt::camt_060_001_06::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_060_001_07(_) => <crate::generated::camt::camt_060_001_07::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-camt")]
             AnyMessage::Camt_061_001_02(_) => <crate::generated::camt::camt_061_001_02::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-camt")]
@@ -3425,197 +5419,387 @@ impl AnyMessage {
             #[cfg(feature = "model-camt")]
             AnyMessage::Camt_063_001_02(_) => <crate::generated::camt::camt_063_001_02::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_064_001_01(_) => <crate::generated::camt::camt_064_001_01::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_065_001_01(_) => <crate::generated::camt::camt_065_001_01::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-camt")]
             AnyMessage::Camt_066_001_01(_) => <crate::generated::camt::camt_066_001_01::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_066_001_02(_) => <crate::generated::camt::camt_066_001_02::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-camt")]
             AnyMessage::Camt_067_001_01(_) => <crate::generated::camt::camt_067_001_01::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_067_001_02(_) => <crate::generated::camt::camt_067_001_02::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-camt")]
             AnyMessage::Camt_068_001_01(_) => <crate::generated::camt::camt_068_001_01::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_068_001_02(_) => <crate::generated::camt::camt_068_001_02::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-camt")]
             AnyMessage::Camt_069_001_04(_) => <crate::generated::camt::camt_069_001_04::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_069_001_05(_) => <crate::generated::camt::camt_069_001_05::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-camt")]
             AnyMessage::Camt_070_001_05(_) => <crate::generated::camt::camt_070_001_05::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_070_001_06(_) => <crate::generated::camt::camt_070_001_06::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-camt")]
             AnyMessage::Camt_071_001_04(_) => <crate::generated::camt::camt_071_001_04::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_071_001_05(_) => <crate::generated::camt::camt_071_001_05::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-camt")]
             AnyMessage::Camt_072_001_01(_) => <crate::generated::camt::camt_072_001_01::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_072_001_02(_) => <crate::generated::camt::camt_072_001_02::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-camt")]
             AnyMessage::Camt_073_001_01(_) => <crate::generated::camt::camt_073_001_01::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_073_001_02(_) => <crate::generated::camt::camt_073_001_02::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-camt")]
             AnyMessage::Camt_074_001_01(_) => <crate::generated::camt::camt_074_001_01::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_074_001_02(_) => <crate::generated::camt::camt_074_001_02::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-camt")]
             AnyMessage::Camt_075_001_01(_) => <crate::generated::camt::camt_075_001_01::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_075_001_02(_) => <crate::generated::camt::camt_075_001_02::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_076_001_01(_) => <crate::generated::camt::camt_076_001_01::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_077_001_01(_) => <crate::generated::camt::camt_077_001_01::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-camt")]
             AnyMessage::Camt_078_001_01(_) => <crate::generated::camt::camt_078_001_01::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_078_001_02(_) => <crate::generated::camt::camt_078_001_02::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-camt")]
             AnyMessage::Camt_079_001_01(_) => <crate::generated::camt::camt_079_001_01::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_079_001_02(_) => <crate::generated::camt::camt_079_001_02::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-camt")]
             AnyMessage::Camt_080_001_01(_) => <crate::generated::camt::camt_080_001_01::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_080_001_02(_) => <crate::generated::camt::camt_080_001_02::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-camt")]
             AnyMessage::Camt_081_001_01(_) => <crate::generated::camt::camt_081_001_01::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_081_001_02(_) => <crate::generated::camt::camt_081_001_02::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-camt")]
             AnyMessage::Camt_082_001_01(_) => <crate::generated::camt::camt_082_001_01::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_082_001_02(_) => <crate::generated::camt::camt_082_001_02::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-camt")]
             AnyMessage::Camt_083_001_01(_) => <crate::generated::camt::camt_083_001_01::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_083_001_02(_) => <crate::generated::camt::camt_083_001_02::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-camt")]
             AnyMessage::Camt_084_001_01(_) => <crate::generated::camt::camt_084_001_01::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_084_001_02(_) => <crate::generated::camt::camt_084_001_02::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-camt")]
             AnyMessage::Camt_085_001_01(_) => <crate::generated::camt::camt_085_001_01::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_085_001_02(_) => <crate::generated::camt::camt_085_001_02::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-camt")]
             AnyMessage::Camt_086_001_04(_) => <crate::generated::camt::camt_086_001_04::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_086_001_05(_) => <crate::generated::camt::camt_086_001_05::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-camt")]
             AnyMessage::Camt_087_001_07(_) => <crate::generated::camt::camt_087_001_07::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-camt")]
             AnyMessage::Camt_087_001_08(_) => <crate::generated::camt::camt_087_001_08::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_087_001_09(_) => <crate::generated::camt::camt_087_001_09::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-camt")]
             AnyMessage::Camt_088_001_01(_) => <crate::generated::camt::camt_088_001_01::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-camt")]
             AnyMessage::Camt_101_001_01(_) => <crate::generated::camt::camt_101_001_01::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_101_001_02(_) => <crate::generated::camt::camt_101_001_02::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-camt")]
             AnyMessage::Camt_102_001_02(_) => <crate::generated::camt::camt_102_001_02::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_102_001_03(_) => <crate::generated::camt::camt_102_001_03::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-camt")]
             AnyMessage::Camt_103_001_02(_) => <crate::generated::camt::camt_103_001_02::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_103_001_03(_) => <crate::generated::camt::camt_103_001_03::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-camt")]
             AnyMessage::Camt_104_001_01(_) => <crate::generated::camt::camt_104_001_01::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-camt")]
             AnyMessage::Camt_105_001_01(_) => <crate::generated::camt::camt_105_001_01::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_105_001_03(_) => <crate::generated::camt::camt_105_001_03::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-camt")]
             AnyMessage::Camt_106_001_01(_) => <crate::generated::camt::camt_106_001_01::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_106_001_03(_) => <crate::generated::camt::camt_106_001_03::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-camt")]
             AnyMessage::Camt_107_001_01(_) => <crate::generated::camt::camt_107_001_01::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_107_001_02(_) => <crate::generated::camt::camt_107_001_02::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-camt")]
             AnyMessage::Camt_108_001_01(_) => <crate::generated::camt::camt_108_001_01::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_108_001_02(_) => <crate::generated::camt::camt_108_001_02::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-camt")]
             AnyMessage::Camt_109_001_01(_) => <crate::generated::camt::camt_109_001_01::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_109_001_02(_) => <crate::generated::camt::camt_109_001_02::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_110_001_02(_) => <crate::generated::camt::camt_110_001_02::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-camt")]
+            AnyMessage::Camt_111_001_03(_) => <crate::generated::camt::camt_111_001_03::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-canm")]
             AnyMessage::Canm_001_001_02(_) => <crate::generated::canm::canm_001_001_02::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-canm")]
+            AnyMessage::Canm_001_001_05(_) => <crate::generated::canm::canm_001_001_05::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-canm")]
             AnyMessage::Canm_002_001_02(_) => <crate::generated::canm::canm_002_001_02::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-canm")]
+            AnyMessage::Canm_002_001_05(_) => <crate::generated::canm::canm_002_001_05::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-canm")]
             AnyMessage::Canm_003_001_02(_) => <crate::generated::canm::canm_003_001_02::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-canm")]
+            AnyMessage::Canm_003_001_05(_) => <crate::generated::canm::canm_003_001_05::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-canm")]
             AnyMessage::Canm_004_001_02(_) => <crate::generated::canm::canm_004_001_02::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-canm")]
+            AnyMessage::Canm_004_001_05(_) => <crate::generated::canm::canm_004_001_05::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-casp")]
             AnyMessage::Casp_001_001_03(_) => <crate::generated::casp::casp_001_001_03::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-casp")]
+            AnyMessage::Casp_001_001_08(_) => <crate::generated::casp::casp_001_001_08::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-casp")]
             AnyMessage::Casp_002_001_03(_) => <crate::generated::casp::casp_002_001_03::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-casp")]
+            AnyMessage::Casp_002_001_08(_) => <crate::generated::casp::casp_002_001_08::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-casp")]
             AnyMessage::Casp_003_001_03(_) => <crate::generated::casp::casp_003_001_03::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-casp")]
+            AnyMessage::Casp_003_001_08(_) => <crate::generated::casp::casp_003_001_08::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-casp")]
             AnyMessage::Casp_004_001_03(_) => <crate::generated::casp::casp_004_001_03::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-casp")]
+            AnyMessage::Casp_004_001_08(_) => <crate::generated::casp::casp_004_001_08::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-casp")]
             AnyMessage::Casp_005_001_03(_) => <crate::generated::casp::casp_005_001_03::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-casp")]
+            AnyMessage::Casp_005_001_08(_) => <crate::generated::casp::casp_005_001_08::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-casp")]
             AnyMessage::Casp_006_001_03(_) => <crate::generated::casp::casp_006_001_03::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-casp")]
+            AnyMessage::Casp_006_001_08(_) => <crate::generated::casp::casp_006_001_08::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-casp")]
             AnyMessage::Casp_007_001_03(_) => <crate::generated::casp::casp_007_001_03::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-casp")]
+            AnyMessage::Casp_007_001_08(_) => <crate::generated::casp::casp_007_001_08::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-casp")]
             AnyMessage::Casp_008_001_03(_) => <crate::generated::casp::casp_008_001_03::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-casp")]
+            AnyMessage::Casp_008_001_08(_) => <crate::generated::casp::casp_008_001_08::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-casp")]
             AnyMessage::Casp_009_001_03(_) => <crate::generated::casp::casp_009_001_03::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-casp")]
+            AnyMessage::Casp_009_001_08(_) => <crate::generated::casp::casp_009_001_08::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-casp")]
             AnyMessage::Casp_010_001_03(_) => <crate::generated::casp::casp_010_001_03::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-casp")]
+            AnyMessage::Casp_010_001_08(_) => <crate::generated::casp::casp_010_001_08::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-casp")]
             AnyMessage::Casp_011_001_03(_) => <crate::generated::casp::casp_011_001_03::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-casp")]
+            AnyMessage::Casp_011_001_08(_) => <crate::generated::casp::casp_011_001_08::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-casp")]
             AnyMessage::Casp_012_001_03(_) => <crate::generated::casp::casp_012_001_03::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-casp")]
+            AnyMessage::Casp_012_001_08(_) => <crate::generated::casp::casp_012_001_08::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-casp")]
             AnyMessage::Casp_013_001_02(_) => <crate::generated::casp::casp_013_001_02::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-casp")]
             AnyMessage::Casp_014_001_03(_) => <crate::generated::casp::casp_014_001_03::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-casp")]
+            AnyMessage::Casp_014_001_08(_) => <crate::generated::casp::casp_014_001_08::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-casp")]
             AnyMessage::Casp_015_001_03(_) => <crate::generated::casp::casp_015_001_03::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-casp")]
+            AnyMessage::Casp_015_001_08(_) => <crate::generated::casp::casp_015_001_08::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-casp")]
             AnyMessage::Casp_016_001_03(_) => <crate::generated::casp::casp_016_001_03::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-casp")]
+            AnyMessage::Casp_016_001_08(_) => <crate::generated::casp::casp_016_001_08::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-casp")]
             AnyMessage::Casp_017_001_03(_) => <crate::generated::casp::casp_017_001_03::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-casp")]
+            AnyMessage::Casp_017_001_08(_) => <crate::generated::casp::casp_017_001_08::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-casr")]
             AnyMessage::Casr_001_001_01(_) => <crate::generated::casr::casr_001_001_01::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-casr")]
+            AnyMessage::Casr_001_001_04(_) => <crate::generated::casr::casr_001_001_04::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-casr")]
             AnyMessage::Casr_002_001_01(_) => <crate::generated::casr::casr_002_001_01::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-casr")]
+            AnyMessage::Casr_002_001_04(_) => <crate::generated::casr::casr_002_001_04::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-catm")]
             AnyMessage::Catm_001_001_03(_) => <crate::generated::catm::catm_001_001_03::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-catm")]
             AnyMessage::Catm_001_001_10(_) => <crate::generated::catm::catm_001_001_10::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-catm")]
+            AnyMessage::Catm_001_001_15(_) => <crate::generated::catm::catm_001_001_15::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-catm")]
             AnyMessage::Catm_002_001_09(_) => <crate::generated::catm::catm_002_001_09::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-catm")]
+            AnyMessage::Catm_002_001_14(_) => <crate::generated::catm::catm_002_001_14::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-catm")]
             AnyMessage::Catm_003_001_10(_) => <crate::generated::catm::catm_003_001_10::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-catm")]
+            AnyMessage::Catm_003_001_15(_) => <crate::generated::catm::catm_003_001_15::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-catm")]
             AnyMessage::Catm_004_001_05(_) => <crate::generated::catm::catm_004_001_05::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-catm")]
             AnyMessage::Catm_005_001_07(_) => <crate::generated::catm::catm_005_001_07::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-catm")]
+            AnyMessage::Catm_005_001_12(_) => <crate::generated::catm::catm_005_001_12::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-catm")]
             AnyMessage::Catm_006_001_05(_) => <crate::generated::catm::catm_006_001_05::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-catm")]
+            AnyMessage::Catm_006_001_08(_) => <crate::generated::catm::catm_006_001_08::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-catm")]
             AnyMessage::Catm_007_001_04(_) => <crate::generated::catm::catm_007_001_04::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-catm")]
+            AnyMessage::Catm_007_001_08(_) => <crate::generated::catm::catm_007_001_08::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-catm")]
             AnyMessage::Catm_008_001_04(_) => <crate::generated::catm::catm_008_001_04::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-catm")]
+            AnyMessage::Catm_008_001_07(_) => <crate::generated::catm::catm_008_001_07::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-catp")]
             AnyMessage::Catp_001_001_02(_) => <crate::generated::catp::catp_001_001_02::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-catp")]
+            AnyMessage::Catp_001_001_03(_) => <crate::generated::catp::catp_001_001_03::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-catp")]
             AnyMessage::Catp_002_001_02(_) => <crate::generated::catp::catp_002_001_02::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-catp")]
+            AnyMessage::Catp_002_001_03(_) => <crate::generated::catp::catp_002_001_03::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-catp")]
             AnyMessage::Catp_003_001_02(_) => <crate::generated::catp::catp_003_001_02::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-catp")]
+            AnyMessage::Catp_003_001_03(_) => <crate::generated::catp::catp_003_001_03::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-catp")]
             AnyMessage::Catp_004_001_02(_) => <crate::generated::catp::catp_004_001_02::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-catp")]
+            AnyMessage::Catp_004_001_03(_) => <crate::generated::catp::catp_004_001_03::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-catp")]
             AnyMessage::Catp_005_001_02(_) => <crate::generated::catp::catp_005_001_02::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-catp")]
             AnyMessage::Catp_006_001_02(_) => <crate::generated::catp::catp_006_001_02::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-catp")]
+            AnyMessage::Catp_006_001_03(_) => <crate::generated::catp::catp_006_001_03::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-catp")]
             AnyMessage::Catp_007_001_02(_) => <crate::generated::catp::catp_007_001_02::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-catp")]
+            AnyMessage::Catp_007_001_03(_) => <crate::generated::catp::catp_007_001_03::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-catp")]
             AnyMessage::Catp_008_001_02(_) => <crate::generated::catp::catp_008_001_02::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-catp")]
+            AnyMessage::Catp_008_001_03(_) => <crate::generated::catp::catp_008_001_03::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-catp")]
             AnyMessage::Catp_009_001_02(_) => <crate::generated::catp::catp_009_001_02::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-catp")]
+            AnyMessage::Catp_009_001_03(_) => <crate::generated::catp::catp_009_001_03::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-catp")]
             AnyMessage::Catp_010_001_02(_) => <crate::generated::catp::catp_010_001_02::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-catp")]
+            AnyMessage::Catp_010_001_03(_) => <crate::generated::catp::catp_010_001_03::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-catp")]
             AnyMessage::Catp_011_001_02(_) => <crate::generated::catp::catp_011_001_02::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-catp")]
+            AnyMessage::Catp_011_001_03(_) => <crate::generated::catp::catp_011_001_03::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-catp")]
             AnyMessage::Catp_012_001_01(_) => <crate::generated::catp::catp_012_001_01::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-catp")]
+            AnyMessage::Catp_012_001_02(_) => <crate::generated::catp::catp_012_001_02::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-catp")]
             AnyMessage::Catp_013_001_01(_) => <crate::generated::catp::catp_013_001_01::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-catp")]
+            AnyMessage::Catp_013_001_02(_) => <crate::generated::catp::catp_013_001_02::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-catp")]
             AnyMessage::Catp_014_001_01(_) => <crate::generated::catp::catp_014_001_01::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-catp")]
+            AnyMessage::Catp_014_001_02(_) => <crate::generated::catp::catp_014_001_02::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-catp")]
             AnyMessage::Catp_015_001_01(_) => <crate::generated::catp::catp_015_001_01::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-catp")]
+            AnyMessage::Catp_015_001_02(_) => <crate::generated::catp::catp_015_001_02::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-catp")]
             AnyMessage::Catp_016_001_01(_) => <crate::generated::catp::catp_016_001_01::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-catp")]
+            AnyMessage::Catp_016_001_02(_) => <crate::generated::catp::catp_016_001_02::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-catp")]
             AnyMessage::Catp_017_001_01(_) => <crate::generated::catp::catp_017_001_01::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-catp")]
+            AnyMessage::Catp_017_001_02(_) => <crate::generated::catp::catp_017_001_02::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-colr")]
             AnyMessage::Colr_001_001_01(_) => <crate::generated::colr::colr_001_001_01::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-colr")]
+            AnyMessage::Colr_001_001_02(_) => <crate::generated::colr::colr_001_001_02::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-colr")]
             AnyMessage::Colr_002_001_01(_) => <crate::generated::colr::colr_002_001_01::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-colr")]
+            AnyMessage::Colr_002_001_02(_) => <crate::generated::colr::colr_002_001_02::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-colr")]
             AnyMessage::Colr_003_001_04(_) => <crate::generated::colr::colr_003_001_04::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-colr")]
+            AnyMessage::Colr_003_001_05(_) => <crate::generated::colr::colr_003_001_05::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-colr")]
             AnyMessage::Colr_004_001_04(_) => <crate::generated::colr::colr_004_001_04::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-colr")]
+            AnyMessage::Colr_004_001_05(_) => <crate::generated::colr::colr_004_001_05::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-colr")]
             AnyMessage::Colr_005_001_05(_) => <crate::generated::colr::colr_005_001_05::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-colr")]
+            AnyMessage::Colr_005_001_06(_) => <crate::generated::colr::colr_005_001_06::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-colr")]
             AnyMessage::Colr_006_001_04(_) => <crate::generated::colr::colr_006_001_04::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-colr")]
+            AnyMessage::Colr_006_001_05(_) => <crate::generated::colr::colr_006_001_05::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-colr")]
             AnyMessage::Colr_007_001_05(_) => <crate::generated::colr::colr_007_001_05::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-colr")]
+            AnyMessage::Colr_007_001_06(_) => <crate::generated::colr::colr_007_001_06::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-colr")]
             AnyMessage::Colr_008_001_05(_) => <crate::generated::colr::colr_008_001_05::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-colr")]
+            AnyMessage::Colr_008_001_06(_) => <crate::generated::colr::colr_008_001_06::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-colr")]
             AnyMessage::Colr_009_001_04(_) => <crate::generated::colr::colr_009_001_04::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-colr")]
+            AnyMessage::Colr_009_001_05(_) => <crate::generated::colr::colr_009_001_05::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-colr")]
             AnyMessage::Colr_010_001_04(_) => <crate::generated::colr::colr_010_001_04::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-colr")]
+            AnyMessage::Colr_010_001_05(_) => <crate::generated::colr::colr_010_001_05::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-colr")]
             AnyMessage::Colr_011_001_04(_) => <crate::generated::colr::colr_011_001_04::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-colr")]
+            AnyMessage::Colr_011_001_05(_) => <crate::generated::colr::colr_011_001_05::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-colr")]
             AnyMessage::Colr_012_001_04(_) => <crate::generated::colr::colr_012_001_04::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-colr")]
+            AnyMessage::Colr_012_001_05(_) => <crate::generated::colr::colr_012_001_05::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-colr")]
             AnyMessage::Colr_013_001_04(_) => <crate::generated::colr::colr_013_001_04::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-colr")]
+            AnyMessage::Colr_013_001_05(_) => <crate::generated::colr::colr_013_001_05::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-colr")]
             AnyMessage::Colr_014_001_04(_) => <crate::generated::colr::colr_014_001_04::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-colr")]
+            AnyMessage::Colr_014_001_05(_) => <crate::generated::colr::colr_014_001_05::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-colr")]
             AnyMessage::Colr_015_001_04(_) => <crate::generated::colr::colr_015_001_04::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-colr")]
+            AnyMessage::Colr_015_001_05(_) => <crate::generated::colr::colr_015_001_05::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-colr")]
             AnyMessage::Colr_016_001_04(_) => <crate::generated::colr::colr_016_001_04::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-colr")]
+            AnyMessage::Colr_016_001_05(_) => <crate::generated::colr::colr_016_001_05::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-colr")]
             AnyMessage::Colr_019_001_01(_) => <crate::generated::colr::colr_019_001_01::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-colr")]
@@ -3631,93 +5815,169 @@ impl AnyMessage {
             #[cfg(feature = "model-fxtr")]
             AnyMessage::Fxtr_008_001_06(_) => <crate::generated::fxtr::fxtr_008_001_06::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-fxtr")]
+            AnyMessage::Fxtr_008_001_08(_) => <crate::generated::fxtr::fxtr_008_001_08::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-fxtr")]
             AnyMessage::Fxtr_013_001_03(_) => <crate::generated::fxtr::fxtr_013_001_03::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-fxtr")]
             AnyMessage::Fxtr_014_001_04(_) => <crate::generated::fxtr::fxtr_014_001_04::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-fxtr")]
+            AnyMessage::Fxtr_014_001_06(_) => <crate::generated::fxtr::fxtr_014_001_06::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-fxtr")]
             AnyMessage::Fxtr_015_001_04(_) => <crate::generated::fxtr::fxtr_015_001_04::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-fxtr")]
+            AnyMessage::Fxtr_015_001_06(_) => <crate::generated::fxtr::fxtr_015_001_06::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-fxtr")]
             AnyMessage::Fxtr_016_001_04(_) => <crate::generated::fxtr::fxtr_016_001_04::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-fxtr")]
+            AnyMessage::Fxtr_016_001_06(_) => <crate::generated::fxtr::fxtr_016_001_06::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-fxtr")]
             AnyMessage::Fxtr_017_001_04(_) => <crate::generated::fxtr::fxtr_017_001_04::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-fxtr")]
+            AnyMessage::Fxtr_017_001_06(_) => <crate::generated::fxtr::fxtr_017_001_06::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-fxtr")]
             AnyMessage::Fxtr_030_001_04(_) => <crate::generated::fxtr::fxtr_030_001_04::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-fxtr")]
+            AnyMessage::Fxtr_030_001_06(_) => <crate::generated::fxtr::fxtr_030_001_06::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-fxtr")]
             AnyMessage::Fxtr_031_001_01(_) => <crate::generated::fxtr::fxtr_031_001_01::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-fxtr")]
+            AnyMessage::Fxtr_031_001_02(_) => <crate::generated::fxtr::fxtr_031_001_02::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-fxtr")]
             AnyMessage::Fxtr_032_001_01(_) => <crate::generated::fxtr::fxtr_032_001_01::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-fxtr")]
+            AnyMessage::Fxtr_032_001_02(_) => <crate::generated::fxtr::fxtr_032_001_02::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-fxtr")]
             AnyMessage::Fxtr_033_001_01(_) => <crate::generated::fxtr::fxtr_033_001_01::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-fxtr")]
+            AnyMessage::Fxtr_033_001_02(_) => <crate::generated::fxtr::fxtr_033_001_02::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-fxtr")]
             AnyMessage::Fxtr_034_001_01(_) => <crate::generated::fxtr::fxtr_034_001_01::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-fxtr")]
+            AnyMessage::Fxtr_034_001_02(_) => <crate::generated::fxtr::fxtr_034_001_02::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-fxtr")]
             AnyMessage::Fxtr_035_001_01(_) => <crate::generated::fxtr::fxtr_035_001_01::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-fxtr")]
+            AnyMessage::Fxtr_035_001_02(_) => <crate::generated::fxtr::fxtr_035_001_02::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-fxtr")]
             AnyMessage::Fxtr_036_001_01(_) => <crate::generated::fxtr::fxtr_036_001_01::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-fxtr")]
+            AnyMessage::Fxtr_036_001_02(_) => <crate::generated::fxtr::fxtr_036_001_02::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-fxtr")]
             AnyMessage::Fxtr_037_001_01(_) => <crate::generated::fxtr::fxtr_037_001_01::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-fxtr")]
+            AnyMessage::Fxtr_037_001_02(_) => <crate::generated::fxtr::fxtr_037_001_02::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-fxtr")]
+            AnyMessage::Fxtr_038_001_02(_) => <crate::generated::fxtr::fxtr_038_001_02::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-pacs")]
             AnyMessage::Pacs_002_001_10(_) => <crate::generated::pacs::pacs_002_001_10::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-pacs")]
             AnyMessage::Pacs_002_001_12(_) => <crate::generated::pacs::pacs_002_001_12::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-pacs")]
+            AnyMessage::Pacs_002_001_16(_) => <crate::generated::pacs::pacs_002_001_16::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-pacs")]
             AnyMessage::Pacs_003_001_09(_) => <crate::generated::pacs::pacs_003_001_09::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-pacs")]
+            AnyMessage::Pacs_003_001_12(_) => <crate::generated::pacs::pacs_003_001_12::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-pacs")]
             AnyMessage::Pacs_004_001_09(_) => <crate::generated::pacs::pacs_004_001_09::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-pacs")]
             AnyMessage::Pacs_004_001_11(_) => <crate::generated::pacs::pacs_004_001_11::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-pacs")]
+            AnyMessage::Pacs_004_001_15(_) => <crate::generated::pacs::pacs_004_001_15::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-pacs")]
             AnyMessage::Pacs_007_001_11(_) => <crate::generated::pacs::pacs_007_001_11::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-pacs")]
+            AnyMessage::Pacs_007_001_14(_) => <crate::generated::pacs::pacs_007_001_14::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-pacs")]
             AnyMessage::Pacs_008_001_08(_) => <crate::generated::pacs::pacs_008_001_08::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-pacs")]
             AnyMessage::Pacs_008_001_10(_) => <crate::generated::pacs::pacs_008_001_10::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-pacs")]
+            AnyMessage::Pacs_008_001_14(_) => <crate::generated::pacs::pacs_008_001_14::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-pacs")]
             AnyMessage::Pacs_009_001_08(_) => <crate::generated::pacs::pacs_009_001_08::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-pacs")]
             AnyMessage::Pacs_009_001_10(_) => <crate::generated::pacs::pacs_009_001_10::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-pacs")]
+            AnyMessage::Pacs_009_001_13(_) => <crate::generated::pacs::pacs_009_001_13::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-pacs")]
             AnyMessage::Pacs_010_001_05(_) => <crate::generated::pacs::pacs_010_001_05::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-pacs")]
+            AnyMessage::Pacs_010_001_06(_) => <crate::generated::pacs::pacs_010_001_06::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-pacs")]
             AnyMessage::Pacs_028_001_05(_) => <crate::generated::pacs::pacs_028_001_05::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-pacs")]
+            AnyMessage::Pacs_028_001_07(_) => <crate::generated::pacs::pacs_028_001_07::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-pacs")]
             AnyMessage::Pacs_029_001_01(_) => <crate::generated::pacs::pacs_029_001_01::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-pacs")]
+            AnyMessage::Pacs_029_001_02(_) => <crate::generated::pacs::pacs_029_001_02::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-pain")]
             AnyMessage::Pain_001_001_09(_) => <crate::generated::pain::pain_001_001_09::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-pain")]
             AnyMessage::Pain_001_001_11(_) => <crate::generated::pain::pain_001_001_11::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-pain")]
+            AnyMessage::Pain_001_001_13(_) => <crate::generated::pain::pain_001_001_13::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-pain")]
             AnyMessage::Pain_002_001_10(_) => <crate::generated::pain::pain_002_001_10::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-pain")]
             AnyMessage::Pain_002_001_12(_) => <crate::generated::pain::pain_002_001_12::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-pain")]
+            AnyMessage::Pain_002_001_15(_) => <crate::generated::pain::pain_002_001_15::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-pain")]
             AnyMessage::Pain_007_001_11(_) => <crate::generated::pain::pain_007_001_11::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-pain")]
+            AnyMessage::Pain_007_001_13(_) => <crate::generated::pain::pain_007_001_13::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-pain")]
             AnyMessage::Pain_008_001_10(_) => <crate::generated::pain::pain_008_001_10::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-pain")]
+            AnyMessage::Pain_008_001_12(_) => <crate::generated::pain::pain_008_001_12::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-pain")]
             AnyMessage::Pain_009_001_07(_) => <crate::generated::pain::pain_009_001_07::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-pain")]
+            AnyMessage::Pain_009_001_08(_) => <crate::generated::pain::pain_009_001_08::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-pain")]
             AnyMessage::Pain_010_001_07(_) => <crate::generated::pain::pain_010_001_07::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-pain")]
+            AnyMessage::Pain_010_001_08(_) => <crate::generated::pain::pain_010_001_08::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-pain")]
             AnyMessage::Pain_011_001_07(_) => <crate::generated::pain::pain_011_001_07::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-pain")]
+            AnyMessage::Pain_011_001_08(_) => <crate::generated::pain::pain_011_001_08::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-pain")]
             AnyMessage::Pain_012_001_07(_) => <crate::generated::pain::pain_012_001_07::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-pain")]
+            AnyMessage::Pain_012_001_08(_) => <crate::generated::pain::pain_012_001_08::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-pain")]
             AnyMessage::Pain_013_001_01(_) => <crate::generated::pain::pain_013_001_01::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-pain")]
             AnyMessage::Pain_013_001_09(_) => <crate::generated::pain::pain_013_001_09::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-pain")]
+            AnyMessage::Pain_013_001_12(_) => <crate::generated::pain::pain_013_001_12::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-pain")]
             AnyMessage::Pain_014_001_09(_) => <crate::generated::pain::pain_014_001_09::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-pain")]
+            AnyMessage::Pain_014_001_12(_) => <crate::generated::pain::pain_014_001_12::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-pain")]
             AnyMessage::Pain_017_001_03(_) => <crate::generated::pain::pain_017_001_03::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-pain")]
+            AnyMessage::Pain_017_001_04(_) => <crate::generated::pain::pain_017_001_04::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-pain")]
             AnyMessage::Pain_018_001_03(_) => <crate::generated::pain::pain_018_001_03::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-pain")]
+            AnyMessage::Pain_018_001_04(_) => <crate::generated::pain::pain_018_001_04::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-reda")]
             AnyMessage::Reda_001_001_04(_) => <crate::generated::reda::reda_001_001_04::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-reda")]
+            AnyMessage::Reda_001_001_05(_) => <crate::generated::reda::reda_001_001_05::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-reda")]
             AnyMessage::Reda_002_001_04(_) => <crate::generated::reda::reda_002_001_04::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-reda")]
+            AnyMessage::Reda_002_001_05(_) => <crate::generated::reda::reda_002_001_05::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-reda")]
             AnyMessage::Reda_004_001_05(_) => <crate::generated::reda::reda_004_001_05::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-reda")]
+            AnyMessage::Reda_004_001_07(_) => <crate::generated::reda::reda_004_001_07::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-reda")]
             AnyMessage::Reda_005_001_03(_) => <crate::generated::reda::reda_005_001_03::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-reda")]
@@ -3737,11 +5997,15 @@ impl AnyMessage {
             #[cfg(feature = "model-reda")]
             AnyMessage::Reda_014_001_01(_) => <crate::generated::reda::reda_014_001_01::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-reda")]
+            AnyMessage::Reda_014_001_02(_) => <crate::generated::reda::reda_014_001_02::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-reda")]
             AnyMessage::Reda_015_001_01(_) => <crate::generated::reda::reda_015_001_01::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-reda")]
             AnyMessage::Reda_016_001_01(_) => <crate::generated::reda::reda_016_001_01::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-reda")]
             AnyMessage::Reda_017_001_01(_) => <crate::generated::reda::reda_017_001_01::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-reda")]
+            AnyMessage::Reda_017_001_02(_) => <crate::generated::reda::reda_017_001_02::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-reda")]
             AnyMessage::Reda_018_001_01(_) => <crate::generated::reda::reda_018_001_01::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-reda")]
@@ -3753,7 +6017,19 @@ impl AnyMessage {
             #[cfg(feature = "model-reda")]
             AnyMessage::Reda_022_001_01(_) => <crate::generated::reda::reda_022_001_01::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-reda")]
+            AnyMessage::Reda_022_001_02(_) => <crate::generated::reda::reda_022_001_02::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-reda")]
             AnyMessage::Reda_023_001_01(_) => <crate::generated::reda::reda_023_001_01::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-reda")]
+            AnyMessage::Reda_024_001_01(_) => <crate::generated::reda::reda_024_001_01::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-reda")]
+            AnyMessage::Reda_025_001_01(_) => <crate::generated::reda::reda_025_001_01::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-reda")]
+            AnyMessage::Reda_026_001_01(_) => <crate::generated::reda::reda_026_001_01::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-reda")]
+            AnyMessage::Reda_027_001_01(_) => <crate::generated::reda::reda_027_001_01::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-reda")]
+            AnyMessage::Reda_028_001_01(_) => <crate::generated::reda::reda_028_001_01::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-reda")]
             AnyMessage::Reda_029_001_01(_) => <crate::generated::reda::reda_029_001_01::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-reda")]
@@ -3775,9 +6051,27 @@ impl AnyMessage {
             #[cfg(feature = "model-reda")]
             AnyMessage::Reda_041_001_01(_) => <crate::generated::reda::reda_041_001_01::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-reda")]
+            AnyMessage::Reda_041_001_02(_) => <crate::generated::reda::reda_041_001_02::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-reda")]
             AnyMessage::Reda_042_001_01(_) => <crate::generated::reda::reda_042_001_01::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-reda")]
             AnyMessage::Reda_043_001_01(_) => <crate::generated::reda::reda_043_001_01::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-reda")]
+            AnyMessage::Reda_043_001_02(_) => <crate::generated::reda::reda_043_001_02::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-reda")]
+            AnyMessage::Reda_044_001_01(_) => <crate::generated::reda::reda_044_001_01::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-reda")]
+            AnyMessage::Reda_045_001_01(_) => <crate::generated::reda::reda_045_001_01::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-reda")]
+            AnyMessage::Reda_046_001_01(_) => <crate::generated::reda::reda_046_001_01::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-reda")]
+            AnyMessage::Reda_047_001_01(_) => <crate::generated::reda::reda_047_001_01::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-reda")]
+            AnyMessage::Reda_049_001_01(_) => <crate::generated::reda::reda_049_001_01::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-reda")]
+            AnyMessage::Reda_050_001_01(_) => <crate::generated::reda::reda_050_001_01::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-reda")]
+            AnyMessage::Reda_051_001_01(_) => <crate::generated::reda::reda_051_001_01::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-reda")]
             AnyMessage::Reda_056_001_01(_) => <crate::generated::reda::reda_056_001_01::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-reda")]
@@ -3789,21 +6083,61 @@ impl AnyMessage {
             #[cfg(feature = "model-reda")]
             AnyMessage::Reda_060_001_01(_) => <crate::generated::reda::reda_060_001_01::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-reda")]
+            AnyMessage::Reda_060_001_02(_) => <crate::generated::reda::reda_060_001_02::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-reda")]
             AnyMessage::Reda_061_001_01(_) => <crate::generated::reda::reda_061_001_01::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-reda")]
+            AnyMessage::Reda_061_001_02(_) => <crate::generated::reda::reda_061_001_02::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-reda")]
+            AnyMessage::Reda_064_001_02(_) => <crate::generated::reda::reda_064_001_02::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-reda")]
+            AnyMessage::Reda_065_001_02(_) => <crate::generated::reda::reda_065_001_02::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-reda")]
+            AnyMessage::Reda_066_001_02(_) => <crate::generated::reda::reda_066_001_02::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-reda")]
+            AnyMessage::Reda_067_001_02(_) => <crate::generated::reda::reda_067_001_02::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-reda")]
+            AnyMessage::Reda_068_001_02(_) => <crate::generated::reda::reda_068_001_02::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-reda")]
+            AnyMessage::Reda_069_001_02(_) => <crate::generated::reda::reda_069_001_02::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-reda")]
+            AnyMessage::Reda_070_001_02(_) => <crate::generated::reda::reda_070_001_02::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-reda")]
+            AnyMessage::Reda_071_001_02(_) => <crate::generated::reda::reda_071_001_02::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-reda")]
+            AnyMessage::Reda_072_001_02(_) => <crate::generated::reda::reda_072_001_02::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-reda")]
+            AnyMessage::Reda_073_001_02(_) => <crate::generated::reda::reda_073_001_02::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-reda")]
             AnyMessage::Reda_074_001_01(_) => <crate::generated::reda::reda_074_001_01::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-reda")]
+            AnyMessage::Reda_075_001_01(_) => <crate::generated::reda::reda_075_001_01::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-reda")]
+            AnyMessage::Reda_077_001_01(_) => <crate::generated::reda::reda_077_001_01::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-remt")]
             AnyMessage::Remt_001_001_05(_) => <crate::generated::remt::remt_001_001_05::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-remt")]
+            AnyMessage::Remt_001_001_07(_) => <crate::generated::remt::remt_001_001_07::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-remt")]
             AnyMessage::Remt_002_001_02(_) => <crate::generated::remt::remt_002_001_02::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-remt")]
+            AnyMessage::Remt_002_001_03(_) => <crate::generated::remt::remt_002_001_03::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-secl")]
             AnyMessage::Secl_001_001_03(_) => <crate::generated::secl::secl_001_001_03::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-secl")]
+            AnyMessage::Secl_001_001_05(_) => <crate::generated::secl::secl_001_001_05::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-secl")]
             AnyMessage::Secl_002_001_03(_) => <crate::generated::secl::secl_002_001_03::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-secl")]
+            AnyMessage::Secl_002_001_05(_) => <crate::generated::secl::secl_002_001_05::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-secl")]
             AnyMessage::Secl_003_001_03(_) => <crate::generated::secl::secl_003_001_03::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-secl")]
+            AnyMessage::Secl_003_001_05(_) => <crate::generated::secl::secl_003_001_05::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-secl")]
             AnyMessage::Secl_004_001_03(_) => <crate::generated::secl::secl_004_001_03::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-secl")]
+            AnyMessage::Secl_004_001_04(_) => <crate::generated::secl::secl_004_001_04::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-secl")]
             AnyMessage::Secl_005_001_02(_) => <crate::generated::secl::secl_005_001_02::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-secl")]
@@ -3816,28 +6150,50 @@ impl AnyMessage {
             AnyMessage::Secl_009_001_03(_) => <crate::generated::secl::secl_009_001_03::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-secl")]
             AnyMessage::Secl_010_001_03(_) => <crate::generated::secl::secl_010_001_03::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-secl")]
+            AnyMessage::Secl_010_001_04(_) => <crate::generated::secl::secl_010_001_04::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-seev")]
             AnyMessage::Seev_001_001_08(_) => <crate::generated::seev::seev_001_001_08::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_001_001_13(_) => <crate::generated::seev::seev_001_001_13::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-seev")]
             AnyMessage::Seev_002_001_07(_) => <crate::generated::seev::seev_002_001_07::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_002_001_10(_) => <crate::generated::seev::seev_002_001_10::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-seev")]
             AnyMessage::Seev_003_001_07(_) => <crate::generated::seev::seev_003_001_07::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_003_001_10(_) => <crate::generated::seev::seev_003_001_10::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-seev")]
             AnyMessage::Seev_004_001_07(_) => <crate::generated::seev::seev_004_001_07::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_004_001_11(_) => <crate::generated::seev::seev_004_001_11::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-seev")]
             AnyMessage::Seev_005_001_07(_) => <crate::generated::seev::seev_005_001_07::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_005_001_10(_) => <crate::generated::seev::seev_005_001_10::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-seev")]
             AnyMessage::Seev_006_001_07(_) => <crate::generated::seev::seev_006_001_07::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_006_001_12(_) => <crate::generated::seev::seev_006_001_12::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-seev")]
             AnyMessage::Seev_007_001_07(_) => <crate::generated::seev::seev_007_001_07::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_007_001_12(_) => <crate::generated::seev::seev_007_001_12::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-seev")]
             AnyMessage::Seev_008_001_07(_) => <crate::generated::seev::seev_008_001_07::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_008_001_10(_) => <crate::generated::seev::seev_008_001_10::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-seev")]
             AnyMessage::Seev_009_001_01(_) => <crate::generated::seev::seev_009_001_01::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_009_001_03(_) => <crate::generated::seev::seev_009_001_03::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-seev")]
             AnyMessage::Seev_010_001_01(_) => <crate::generated::seev::seev_010_001_01::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-seev")]
             AnyMessage::Seev_011_001_01(_) => <crate::generated::seev::seev_011_001_01::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_011_001_04(_) => <crate::generated::seev::seev_011_001_04::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-seev")]
             AnyMessage::Seev_012_001_01(_) => <crate::generated::seev::seev_012_001_01::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-seev")]
@@ -3879,27 +6235,83 @@ impl AnyMessage {
             #[cfg(feature = "model-seev")]
             AnyMessage::Seev_031_001_11(_) => <crate::generated::seev::seev_031_001_11::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_031_001_16(_) => <crate::generated::seev::seev_031_001_16::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_031_002_15(_) => <crate::generated::seev::seev_031_002_15::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-seev")]
             AnyMessage::Seev_032_001_08(_) => <crate::generated::seev::seev_032_001_08::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_032_001_09(_) => <crate::generated::seev::seev_032_001_09::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_032_002_09(_) => <crate::generated::seev::seev_032_002_09::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-seev")]
             AnyMessage::Seev_033_001_11(_) => <crate::generated::seev::seev_033_001_11::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_033_001_14(_) => <crate::generated::seev::seev_033_001_14::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_033_002_13(_) => <crate::generated::seev::seev_033_002_13::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_034_001_16(_) => <crate::generated::seev::seev_034_001_16::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_034_002_15(_) => <crate::generated::seev::seev_034_002_15::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-seev")]
             AnyMessage::Seev_035_001_12(_) => <crate::generated::seev::seev_035_001_12::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_035_001_17(_) => <crate::generated::seev::seev_035_001_17::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_035_002_16(_) => <crate::generated::seev::seev_035_002_16::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_036_001_17(_) => <crate::generated::seev::seev_036_001_17::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_036_002_16(_) => <crate::generated::seev::seev_036_002_16::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_037_001_17(_) => <crate::generated::seev::seev_037_001_17::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_037_002_16(_) => <crate::generated::seev::seev_037_002_16::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_038_001_09(_) => <crate::generated::seev::seev_038_001_09::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_038_002_09(_) => <crate::generated::seev::seev_038_002_09::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_039_001_13(_) => <crate::generated::seev::seev_039_001_13::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-seev")]
             AnyMessage::Seev_039_002_10(_) => <crate::generated::seev::seev_039_002_10::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_039_002_13(_) => <crate::generated::seev::seev_039_002_13::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_040_001_13(_) => <crate::generated::seev::seev_040_001_13::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-seev")]
             AnyMessage::Seev_040_002_10(_) => <crate::generated::seev::seev_040_002_10::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_040_002_13(_) => <crate::generated::seev::seev_040_002_13::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_041_001_15(_) => <crate::generated::seev::seev_041_001_15::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-seev")]
             AnyMessage::Seev_041_002_11(_) => <crate::generated::seev::seev_041_002_11::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_041_002_14(_) => <crate::generated::seev::seev_041_002_14::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_042_001_14(_) => <crate::generated::seev::seev_042_001_14::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-seev")]
             AnyMessage::Seev_042_002_10(_) => <crate::generated::seev::seev_042_002_10::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_042_002_13(_) => <crate::generated::seev::seev_042_002_13::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_044_001_13(_) => <crate::generated::seev::seev_044_001_13::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-seev")]
             AnyMessage::Seev_044_002_10(_) => <crate::generated::seev::seev_044_002_10::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_044_002_13(_) => <crate::generated::seev::seev_044_002_13::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-seev")]
             AnyMessage::Seev_045_001_03(_) => <crate::generated::seev::seev_045_001_03::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_045_001_04(_) => <crate::generated::seev::seev_045_001_04::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-seev")]
             AnyMessage::Seev_046_001_01(_) => <crate::generated::seev::seev_046_001_01::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-seev")]
             AnyMessage::Seev_047_001_02(_) => <crate::generated::seev::seev_047_001_02::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_047_001_03(_) => <crate::generated::seev::seev_047_001_03::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-seev")]
             AnyMessage::Seev_048_001_01(_) => <crate::generated::seev::seev_048_001_01::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-seev")]
@@ -3907,11 +6319,35 @@ impl AnyMessage {
             #[cfg(feature = "model-seev")]
             AnyMessage::Seev_050_001_01(_) => <crate::generated::seev::seev_050_001_01::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_050_001_04(_) => <crate::generated::seev::seev_050_001_04::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-seev")]
             AnyMessage::Seev_051_001_01(_) => <crate::generated::seev::seev_051_001_01::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_051_001_02(_) => <crate::generated::seev::seev_051_001_02::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-seev")]
             AnyMessage::Seev_052_001_01(_) => <crate::generated::seev::seev_052_001_01::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_052_001_04(_) => <crate::generated::seev::seev_052_001_04::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-seev")]
             AnyMessage::Seev_053_001_01(_) => <crate::generated::seev::seev_053_001_01::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_053_001_04(_) => <crate::generated::seev::seev_053_001_04::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_060_001_01(_) => <crate::generated::seev::seev_060_001_01::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_061_001_01(_) => <crate::generated::seev::seev_061_001_01::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_062_001_01(_) => <crate::generated::seev::seev_062_001_01::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_063_001_01(_) => <crate::generated::seev::seev_063_001_01::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_064_001_01(_) => <crate::generated::seev::seev_064_001_01::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_065_001_01(_) => <crate::generated::seev::seev_065_001_01::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_066_001_01(_) => <crate::generated::seev::seev_066_001_01::Document as MxMessage>::mx_id(),
+            #[cfg(feature = "model-seev")]
+            AnyMessage::Seev_067_001_01(_) => <crate::generated::seev::seev_067_001_01::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-semt")]
             AnyMessage::Semt_001_001_03(_) => <crate::generated::semt::semt_001_001_03::Document as MxMessage>::mx_id(),
             #[cfg(feature = "model-semt")]
@@ -4375,55 +6811,105 @@ pub fn parse_auto(xml: &str) -> crate::Result<AnyMessage> {
         #[cfg(feature = "model-acmt")]
         "acmt.007.001.04" => Ok(AnyMessage::Acmt_007_001_04(parse_boxed::<crate::generated::acmt::acmt_007_001_04::Document>(xml)?)),
         #[cfg(feature = "model-acmt")]
+        "acmt.007.001.05" => Ok(AnyMessage::Acmt_007_001_05(parse_boxed::<crate::generated::acmt::acmt_007_001_05::Document>(xml)?)),
+        #[cfg(feature = "model-acmt")]
         "acmt.008.001.04" => Ok(AnyMessage::Acmt_008_001_04(parse_boxed::<crate::generated::acmt::acmt_008_001_04::Document>(xml)?)),
+        #[cfg(feature = "model-acmt")]
+        "acmt.008.001.05" => Ok(AnyMessage::Acmt_008_001_05(parse_boxed::<crate::generated::acmt::acmt_008_001_05::Document>(xml)?)),
         #[cfg(feature = "model-acmt")]
         "acmt.009.001.03" => Ok(AnyMessage::Acmt_009_001_03(parse_boxed::<crate::generated::acmt::acmt_009_001_03::Document>(xml)?)),
         #[cfg(feature = "model-acmt")]
+        "acmt.009.001.04" => Ok(AnyMessage::Acmt_009_001_04(parse_boxed::<crate::generated::acmt::acmt_009_001_04::Document>(xml)?)),
+        #[cfg(feature = "model-acmt")]
         "acmt.010.001.03" => Ok(AnyMessage::Acmt_010_001_03(parse_boxed::<crate::generated::acmt::acmt_010_001_03::Document>(xml)?)),
+        #[cfg(feature = "model-acmt")]
+        "acmt.010.001.04" => Ok(AnyMessage::Acmt_010_001_04(parse_boxed::<crate::generated::acmt::acmt_010_001_04::Document>(xml)?)),
         #[cfg(feature = "model-acmt")]
         "acmt.011.001.03" => Ok(AnyMessage::Acmt_011_001_03(parse_boxed::<crate::generated::acmt::acmt_011_001_03::Document>(xml)?)),
         #[cfg(feature = "model-acmt")]
+        "acmt.011.001.04" => Ok(AnyMessage::Acmt_011_001_04(parse_boxed::<crate::generated::acmt::acmt_011_001_04::Document>(xml)?)),
+        #[cfg(feature = "model-acmt")]
         "acmt.012.001.03" => Ok(AnyMessage::Acmt_012_001_03(parse_boxed::<crate::generated::acmt::acmt_012_001_03::Document>(xml)?)),
+        #[cfg(feature = "model-acmt")]
+        "acmt.012.001.04" => Ok(AnyMessage::Acmt_012_001_04(parse_boxed::<crate::generated::acmt::acmt_012_001_04::Document>(xml)?)),
         #[cfg(feature = "model-acmt")]
         "acmt.013.001.03" => Ok(AnyMessage::Acmt_013_001_03(parse_boxed::<crate::generated::acmt::acmt_013_001_03::Document>(xml)?)),
         #[cfg(feature = "model-acmt")]
+        "acmt.013.001.04" => Ok(AnyMessage::Acmt_013_001_04(parse_boxed::<crate::generated::acmt::acmt_013_001_04::Document>(xml)?)),
+        #[cfg(feature = "model-acmt")]
         "acmt.014.001.04" => Ok(AnyMessage::Acmt_014_001_04(parse_boxed::<crate::generated::acmt::acmt_014_001_04::Document>(xml)?)),
+        #[cfg(feature = "model-acmt")]
+        "acmt.014.001.05" => Ok(AnyMessage::Acmt_014_001_05(parse_boxed::<crate::generated::acmt::acmt_014_001_05::Document>(xml)?)),
         #[cfg(feature = "model-acmt")]
         "acmt.015.001.03" => Ok(AnyMessage::Acmt_015_001_03(parse_boxed::<crate::generated::acmt::acmt_015_001_03::Document>(xml)?)),
         #[cfg(feature = "model-acmt")]
+        "acmt.015.001.05" => Ok(AnyMessage::Acmt_015_001_05(parse_boxed::<crate::generated::acmt::acmt_015_001_05::Document>(xml)?)),
+        #[cfg(feature = "model-acmt")]
         "acmt.016.001.03" => Ok(AnyMessage::Acmt_016_001_03(parse_boxed::<crate::generated::acmt::acmt_016_001_03::Document>(xml)?)),
+        #[cfg(feature = "model-acmt")]
+        "acmt.016.001.05" => Ok(AnyMessage::Acmt_016_001_05(parse_boxed::<crate::generated::acmt::acmt_016_001_05::Document>(xml)?)),
         #[cfg(feature = "model-acmt")]
         "acmt.017.001.03" => Ok(AnyMessage::Acmt_017_001_03(parse_boxed::<crate::generated::acmt::acmt_017_001_03::Document>(xml)?)),
         #[cfg(feature = "model-acmt")]
+        "acmt.017.001.05" => Ok(AnyMessage::Acmt_017_001_05(parse_boxed::<crate::generated::acmt::acmt_017_001_05::Document>(xml)?)),
+        #[cfg(feature = "model-acmt")]
         "acmt.018.001.03" => Ok(AnyMessage::Acmt_018_001_03(parse_boxed::<crate::generated::acmt::acmt_018_001_03::Document>(xml)?)),
+        #[cfg(feature = "model-acmt")]
+        "acmt.018.001.05" => Ok(AnyMessage::Acmt_018_001_05(parse_boxed::<crate::generated::acmt::acmt_018_001_05::Document>(xml)?)),
         #[cfg(feature = "model-acmt")]
         "acmt.019.001.03" => Ok(AnyMessage::Acmt_019_001_03(parse_boxed::<crate::generated::acmt::acmt_019_001_03::Document>(xml)?)),
         #[cfg(feature = "model-acmt")]
+        "acmt.019.001.04" => Ok(AnyMessage::Acmt_019_001_04(parse_boxed::<crate::generated::acmt::acmt_019_001_04::Document>(xml)?)),
+        #[cfg(feature = "model-acmt")]
         "acmt.020.001.03" => Ok(AnyMessage::Acmt_020_001_03(parse_boxed::<crate::generated::acmt::acmt_020_001_03::Document>(xml)?)),
+        #[cfg(feature = "model-acmt")]
+        "acmt.020.001.04" => Ok(AnyMessage::Acmt_020_001_04(parse_boxed::<crate::generated::acmt::acmt_020_001_04::Document>(xml)?)),
         #[cfg(feature = "model-acmt")]
         "acmt.021.001.03" => Ok(AnyMessage::Acmt_021_001_03(parse_boxed::<crate::generated::acmt::acmt_021_001_03::Document>(xml)?)),
         #[cfg(feature = "model-acmt")]
+        "acmt.021.001.04" => Ok(AnyMessage::Acmt_021_001_04(parse_boxed::<crate::generated::acmt::acmt_021_001_04::Document>(xml)?)),
+        #[cfg(feature = "model-acmt")]
         "acmt.022.001.03" => Ok(AnyMessage::Acmt_022_001_03(parse_boxed::<crate::generated::acmt::acmt_022_001_03::Document>(xml)?)),
+        #[cfg(feature = "model-acmt")]
+        "acmt.022.001.04" => Ok(AnyMessage::Acmt_022_001_04(parse_boxed::<crate::generated::acmt::acmt_022_001_04::Document>(xml)?)),
         #[cfg(feature = "model-acmt")]
         "acmt.023.001.03" => Ok(AnyMessage::Acmt_023_001_03(parse_boxed::<crate::generated::acmt::acmt_023_001_03::Document>(xml)?)),
         #[cfg(feature = "model-acmt")]
+        "acmt.023.001.04" => Ok(AnyMessage::Acmt_023_001_04(parse_boxed::<crate::generated::acmt::acmt_023_001_04::Document>(xml)?)),
+        #[cfg(feature = "model-acmt")]
         "acmt.024.001.03" => Ok(AnyMessage::Acmt_024_001_03(parse_boxed::<crate::generated::acmt::acmt_024_001_03::Document>(xml)?)),
+        #[cfg(feature = "model-acmt")]
+        "acmt.024.001.04" => Ok(AnyMessage::Acmt_024_001_04(parse_boxed::<crate::generated::acmt::acmt_024_001_04::Document>(xml)?)),
         #[cfg(feature = "model-acmt")]
         "acmt.027.001.04" => Ok(AnyMessage::Acmt_027_001_04(parse_boxed::<crate::generated::acmt::acmt_027_001_04::Document>(xml)?)),
         #[cfg(feature = "model-acmt")]
+        "acmt.027.001.06" => Ok(AnyMessage::Acmt_027_001_06(parse_boxed::<crate::generated::acmt::acmt_027_001_06::Document>(xml)?)),
+        #[cfg(feature = "model-acmt")]
         "acmt.028.001.04" => Ok(AnyMessage::Acmt_028_001_04(parse_boxed::<crate::generated::acmt::acmt_028_001_04::Document>(xml)?)),
+        #[cfg(feature = "model-acmt")]
+        "acmt.028.001.06" => Ok(AnyMessage::Acmt_028_001_06(parse_boxed::<crate::generated::acmt::acmt_028_001_06::Document>(xml)?)),
         #[cfg(feature = "model-acmt")]
         "acmt.029.001.04" => Ok(AnyMessage::Acmt_029_001_04(parse_boxed::<crate::generated::acmt::acmt_029_001_04::Document>(xml)?)),
         #[cfg(feature = "model-acmt")]
+        "acmt.029.001.06" => Ok(AnyMessage::Acmt_029_001_06(parse_boxed::<crate::generated::acmt::acmt_029_001_06::Document>(xml)?)),
+        #[cfg(feature = "model-acmt")]
         "acmt.030.001.03" => Ok(AnyMessage::Acmt_030_001_03(parse_boxed::<crate::generated::acmt::acmt_030_001_03::Document>(xml)?)),
+        #[cfg(feature = "model-acmt")]
+        "acmt.030.001.04" => Ok(AnyMessage::Acmt_030_001_04(parse_boxed::<crate::generated::acmt::acmt_030_001_04::Document>(xml)?)),
         #[cfg(feature = "model-acmt")]
         "acmt.031.001.04" => Ok(AnyMessage::Acmt_031_001_04(parse_boxed::<crate::generated::acmt::acmt_031_001_04::Document>(xml)?)),
         #[cfg(feature = "model-acmt")]
+        "acmt.031.001.06" => Ok(AnyMessage::Acmt_031_001_06(parse_boxed::<crate::generated::acmt::acmt_031_001_06::Document>(xml)?)),
+        #[cfg(feature = "model-acmt")]
         "acmt.032.001.04" => Ok(AnyMessage::Acmt_032_001_04(parse_boxed::<crate::generated::acmt::acmt_032_001_04::Document>(xml)?)),
+        #[cfg(feature = "model-acmt")]
+        "acmt.032.001.06" => Ok(AnyMessage::Acmt_032_001_06(parse_boxed::<crate::generated::acmt::acmt_032_001_06::Document>(xml)?)),
         #[cfg(feature = "model-acmt")]
         "acmt.033.001.02" => Ok(AnyMessage::Acmt_033_001_02(parse_boxed::<crate::generated::acmt::acmt_033_001_02::Document>(xml)?)),
         #[cfg(feature = "model-acmt")]
         "acmt.034.001.04" => Ok(AnyMessage::Acmt_034_001_04(parse_boxed::<crate::generated::acmt::acmt_034_001_04::Document>(xml)?)),
+        #[cfg(feature = "model-acmt")]
+        "acmt.034.001.06" => Ok(AnyMessage::Acmt_034_001_06(parse_boxed::<crate::generated::acmt::acmt_034_001_06::Document>(xml)?)),
         #[cfg(feature = "model-acmt")]
         "acmt.035.001.02" => Ok(AnyMessage::Acmt_035_001_02(parse_boxed::<crate::generated::acmt::acmt_035_001_02::Document>(xml)?)),
         #[cfg(feature = "model-acmt")]
@@ -4437,6 +6923,8 @@ pub fn parse_auto(xml: &str) -> crate::Result<AnyMessage> {
         #[cfg(feature = "model-admi")]
         "admi.005.001.01" => Ok(AnyMessage::Admi_005_001_01(parse_boxed::<crate::generated::admi::admi_005_001_01::Document>(xml)?)),
         #[cfg(feature = "model-admi")]
+        "admi.005.001.02" => Ok(AnyMessage::Admi_005_001_02(parse_boxed::<crate::generated::admi::admi_005_001_02::Document>(xml)?)),
+        #[cfg(feature = "model-admi")]
         "admi.006.001.01" => Ok(AnyMessage::Admi_006_001_01(parse_boxed::<crate::generated::admi::admi_006_001_01::Document>(xml)?)),
         #[cfg(feature = "model-admi")]
         "admi.007.001.01" => Ok(AnyMessage::Admi_007_001_01(parse_boxed::<crate::generated::admi::admi_007_001_01::Document>(xml)?)),
@@ -4448,10 +6936,18 @@ pub fn parse_auto(xml: &str) -> crate::Result<AnyMessage> {
         "admi.011.001.01" => Ok(AnyMessage::Admi_011_001_01(parse_boxed::<crate::generated::admi::admi_011_001_01::Document>(xml)?)),
         #[cfg(feature = "model-admi")]
         "admi.017.001.01" => Ok(AnyMessage::Admi_017_001_01(parse_boxed::<crate::generated::admi::admi_017_001_01::Document>(xml)?)),
+        #[cfg(feature = "model-admi")]
+        "admi.017.001.02" => Ok(AnyMessage::Admi_017_001_02(parse_boxed::<crate::generated::admi::admi_017_001_02::Document>(xml)?)),
+        #[cfg(feature = "model-admi")]
+        "admi.024.001.01" => Ok(AnyMessage::Admi_024_001_01(parse_boxed::<crate::generated::admi::admi_024_001_01::Document>(xml)?)),
         #[cfg(feature = "model-auth")]
         "auth.001.001.01" => Ok(AnyMessage::Auth_001_001_01(parse_boxed::<crate::generated::auth::auth_001_001_01::Document>(xml)?)),
         #[cfg(feature = "model-auth")]
+        "auth.001.001.02" => Ok(AnyMessage::Auth_001_001_02(parse_boxed::<crate::generated::auth::auth_001_001_02::Document>(xml)?)),
+        #[cfg(feature = "model-auth")]
         "auth.002.001.01" => Ok(AnyMessage::Auth_002_001_01(parse_boxed::<crate::generated::auth::auth_002_001_01::Document>(xml)?)),
+        #[cfg(feature = "model-auth")]
+        "auth.002.001.02" => Ok(AnyMessage::Auth_002_001_02(parse_boxed::<crate::generated::auth::auth_002_001_02::Document>(xml)?)),
         #[cfg(feature = "model-auth")]
         "auth.003.001.01" => Ok(AnyMessage::Auth_003_001_01(parse_boxed::<crate::generated::auth::auth_003_001_01::Document>(xml)?)),
         #[cfg(feature = "model-auth")]
@@ -4465,33 +6961,59 @@ pub fn parse_auto(xml: &str) -> crate::Result<AnyMessage> {
         #[cfg(feature = "model-auth")]
         "auth.016.001.02" => Ok(AnyMessage::Auth_016_001_02(parse_boxed::<crate::generated::auth::auth_016_001_02::Document>(xml)?)),
         #[cfg(feature = "model-auth")]
+        "auth.016.001.03" => Ok(AnyMessage::Auth_016_001_03(parse_boxed::<crate::generated::auth::auth_016_001_03::Document>(xml)?)),
+        #[cfg(feature = "model-auth")]
         "auth.017.001.02" => Ok(AnyMessage::Auth_017_001_02(parse_boxed::<crate::generated::auth::auth_017_001_02::Document>(xml)?)),
         #[cfg(feature = "model-auth")]
         "auth.018.001.03" => Ok(AnyMessage::Auth_018_001_03(parse_boxed::<crate::generated::auth::auth_018_001_03::Document>(xml)?)),
         #[cfg(feature = "model-auth")]
+        "auth.018.001.04" => Ok(AnyMessage::Auth_018_001_04(parse_boxed::<crate::generated::auth::auth_018_001_04::Document>(xml)?)),
+        #[cfg(feature = "model-auth")]
         "auth.019.001.03" => Ok(AnyMessage::Auth_019_001_03(parse_boxed::<crate::generated::auth::auth_019_001_03::Document>(xml)?)),
+        #[cfg(feature = "model-auth")]
+        "auth.019.001.04" => Ok(AnyMessage::Auth_019_001_04(parse_boxed::<crate::generated::auth::auth_019_001_04::Document>(xml)?)),
         #[cfg(feature = "model-auth")]
         "auth.020.001.03" => Ok(AnyMessage::Auth_020_001_03(parse_boxed::<crate::generated::auth::auth_020_001_03::Document>(xml)?)),
         #[cfg(feature = "model-auth")]
+        "auth.020.001.04" => Ok(AnyMessage::Auth_020_001_04(parse_boxed::<crate::generated::auth::auth_020_001_04::Document>(xml)?)),
+        #[cfg(feature = "model-auth")]
         "auth.021.001.03" => Ok(AnyMessage::Auth_021_001_03(parse_boxed::<crate::generated::auth::auth_021_001_03::Document>(xml)?)),
+        #[cfg(feature = "model-auth")]
+        "auth.021.001.04" => Ok(AnyMessage::Auth_021_001_04(parse_boxed::<crate::generated::auth::auth_021_001_04::Document>(xml)?)),
         #[cfg(feature = "model-auth")]
         "auth.022.001.03" => Ok(AnyMessage::Auth_022_001_03(parse_boxed::<crate::generated::auth::auth_022_001_03::Document>(xml)?)),
         #[cfg(feature = "model-auth")]
+        "auth.022.001.04" => Ok(AnyMessage::Auth_022_001_04(parse_boxed::<crate::generated::auth::auth_022_001_04::Document>(xml)?)),
+        #[cfg(feature = "model-auth")]
         "auth.023.001.03" => Ok(AnyMessage::Auth_023_001_03(parse_boxed::<crate::generated::auth::auth_023_001_03::Document>(xml)?)),
+        #[cfg(feature = "model-auth")]
+        "auth.023.001.04" => Ok(AnyMessage::Auth_023_001_04(parse_boxed::<crate::generated::auth::auth_023_001_04::Document>(xml)?)),
         #[cfg(feature = "model-auth")]
         "auth.024.001.03" => Ok(AnyMessage::Auth_024_001_03(parse_boxed::<crate::generated::auth::auth_024_001_03::Document>(xml)?)),
         #[cfg(feature = "model-auth")]
+        "auth.024.001.04" => Ok(AnyMessage::Auth_024_001_04(parse_boxed::<crate::generated::auth::auth_024_001_04::Document>(xml)?)),
+        #[cfg(feature = "model-auth")]
         "auth.025.001.03" => Ok(AnyMessage::Auth_025_001_03(parse_boxed::<crate::generated::auth::auth_025_001_03::Document>(xml)?)),
+        #[cfg(feature = "model-auth")]
+        "auth.025.001.04" => Ok(AnyMessage::Auth_025_001_04(parse_boxed::<crate::generated::auth::auth_025_001_04::Document>(xml)?)),
         #[cfg(feature = "model-auth")]
         "auth.026.001.03" => Ok(AnyMessage::Auth_026_001_03(parse_boxed::<crate::generated::auth::auth_026_001_03::Document>(xml)?)),
         #[cfg(feature = "model-auth")]
+        "auth.026.001.04" => Ok(AnyMessage::Auth_026_001_04(parse_boxed::<crate::generated::auth::auth_026_001_04::Document>(xml)?)),
+        #[cfg(feature = "model-auth")]
         "auth.027.001.03" => Ok(AnyMessage::Auth_027_001_03(parse_boxed::<crate::generated::auth::auth_027_001_03::Document>(xml)?)),
+        #[cfg(feature = "model-auth")]
+        "auth.027.001.04" => Ok(AnyMessage::Auth_027_001_04(parse_boxed::<crate::generated::auth::auth_027_001_04::Document>(xml)?)),
         #[cfg(feature = "model-auth")]
         "auth.028.001.01" => Ok(AnyMessage::Auth_028_001_01(parse_boxed::<crate::generated::auth::auth_028_001_01::Document>(xml)?)),
         #[cfg(feature = "model-auth")]
         "auth.029.001.02" => Ok(AnyMessage::Auth_029_001_02(parse_boxed::<crate::generated::auth::auth_029_001_02::Document>(xml)?)),
         #[cfg(feature = "model-auth")]
+        "auth.029.001.05" => Ok(AnyMessage::Auth_029_001_05(parse_boxed::<crate::generated::auth::auth_029_001_05::Document>(xml)?)),
+        #[cfg(feature = "model-auth")]
         "auth.030.001.02" => Ok(AnyMessage::Auth_030_001_02(parse_boxed::<crate::generated::auth::auth_030_001_02::Document>(xml)?)),
+        #[cfg(feature = "model-auth")]
+        "auth.030.001.04" => Ok(AnyMessage::Auth_030_001_04(parse_boxed::<crate::generated::auth::auth_030_001_04::Document>(xml)?)),
         #[cfg(feature = "model-auth")]
         "auth.031.001.01" => Ok(AnyMessage::Auth_031_001_01(parse_boxed::<crate::generated::auth::auth_031_001_01::Document>(xml)?)),
         #[cfg(feature = "model-auth")]
@@ -4499,11 +7021,15 @@ pub fn parse_auto(xml: &str) -> crate::Result<AnyMessage> {
         #[cfg(feature = "model-auth")]
         "auth.033.001.02" => Ok(AnyMessage::Auth_033_001_02(parse_boxed::<crate::generated::auth::auth_033_001_02::Document>(xml)?)),
         #[cfg(feature = "model-auth")]
+        "auth.033.001.03" => Ok(AnyMessage::Auth_033_001_03(parse_boxed::<crate::generated::auth::auth_033_001_03::Document>(xml)?)),
+        #[cfg(feature = "model-auth")]
         "auth.034.001.01" => Ok(AnyMessage::Auth_034_001_01(parse_boxed::<crate::generated::auth::auth_034_001_01::Document>(xml)?)),
         #[cfg(feature = "model-auth")]
         "auth.035.001.01" => Ok(AnyMessage::Auth_035_001_01(parse_boxed::<crate::generated::auth::auth_035_001_01::Document>(xml)?)),
         #[cfg(feature = "model-auth")]
         "auth.036.001.02" => Ok(AnyMessage::Auth_036_001_02(parse_boxed::<crate::generated::auth::auth_036_001_02::Document>(xml)?)),
+        #[cfg(feature = "model-auth")]
+        "auth.036.001.03" => Ok(AnyMessage::Auth_036_001_03(parse_boxed::<crate::generated::auth::auth_036_001_03::Document>(xml)?)),
         #[cfg(feature = "model-auth")]
         "auth.038.001.01" => Ok(AnyMessage::Auth_038_001_01(parse_boxed::<crate::generated::auth::auth_038_001_01::Document>(xml)?)),
         #[cfg(feature = "model-auth")]
@@ -4519,7 +7045,11 @@ pub fn parse_auto(xml: &str) -> crate::Result<AnyMessage> {
         #[cfg(feature = "model-auth")]
         "auth.044.001.02" => Ok(AnyMessage::Auth_044_001_02(parse_boxed::<crate::generated::auth::auth_044_001_02::Document>(xml)?)),
         #[cfg(feature = "model-auth")]
+        "auth.044.001.03" => Ok(AnyMessage::Auth_044_001_03(parse_boxed::<crate::generated::auth::auth_044_001_03::Document>(xml)?)),
+        #[cfg(feature = "model-auth")]
         "auth.045.001.02" => Ok(AnyMessage::Auth_045_001_02(parse_boxed::<crate::generated::auth::auth_045_001_02::Document>(xml)?)),
+        #[cfg(feature = "model-auth")]
+        "auth.045.001.03" => Ok(AnyMessage::Auth_045_001_03(parse_boxed::<crate::generated::auth::auth_045_001_03::Document>(xml)?)),
         #[cfg(feature = "model-auth")]
         "auth.047.001.01" => Ok(AnyMessage::Auth_047_001_01(parse_boxed::<crate::generated::auth::auth_047_001_01::Document>(xml)?)),
         #[cfg(feature = "model-auth")]
@@ -4541,19 +7071,29 @@ pub fn parse_auto(xml: &str) -> crate::Result<AnyMessage> {
         #[cfg(feature = "model-auth")]
         "auth.057.001.01" => Ok(AnyMessage::Auth_057_001_01(parse_boxed::<crate::generated::auth::auth_057_001_01::Document>(xml)?)),
         #[cfg(feature = "model-auth")]
+        "auth.057.001.02" => Ok(AnyMessage::Auth_057_001_02(parse_boxed::<crate::generated::auth::auth_057_001_02::Document>(xml)?)),
+        #[cfg(feature = "model-auth")]
         "auth.058.001.01" => Ok(AnyMessage::Auth_058_001_01(parse_boxed::<crate::generated::auth::auth_058_001_01::Document>(xml)?)),
         #[cfg(feature = "model-auth")]
         "auth.059.001.01" => Ok(AnyMessage::Auth_059_001_01(parse_boxed::<crate::generated::auth::auth_059_001_01::Document>(xml)?)),
         #[cfg(feature = "model-auth")]
+        "auth.059.001.02" => Ok(AnyMessage::Auth_059_001_02(parse_boxed::<crate::generated::auth::auth_059_001_02::Document>(xml)?)),
+        #[cfg(feature = "model-auth")]
         "auth.060.001.01" => Ok(AnyMessage::Auth_060_001_01(parse_boxed::<crate::generated::auth::auth_060_001_01::Document>(xml)?)),
         #[cfg(feature = "model-auth")]
+        "auth.060.001.02" => Ok(AnyMessage::Auth_060_001_02(parse_boxed::<crate::generated::auth::auth_060_001_02::Document>(xml)?)),
+        #[cfg(feature = "model-auth")]
         "auth.061.001.01" => Ok(AnyMessage::Auth_061_001_01(parse_boxed::<crate::generated::auth::auth_061_001_01::Document>(xml)?)),
+        #[cfg(feature = "model-auth")]
+        "auth.061.001.02" => Ok(AnyMessage::Auth_061_001_02(parse_boxed::<crate::generated::auth::auth_061_001_02::Document>(xml)?)),
         #[cfg(feature = "model-auth")]
         "auth.062.001.01" => Ok(AnyMessage::Auth_062_001_01(parse_boxed::<crate::generated::auth::auth_062_001_01::Document>(xml)?)),
         #[cfg(feature = "model-auth")]
         "auth.063.001.01" => Ok(AnyMessage::Auth_063_001_01(parse_boxed::<crate::generated::auth::auth_063_001_01::Document>(xml)?)),
         #[cfg(feature = "model-auth")]
         "auth.064.001.01" => Ok(AnyMessage::Auth_064_001_01(parse_boxed::<crate::generated::auth::auth_064_001_01::Document>(xml)?)),
+        #[cfg(feature = "model-auth")]
+        "auth.064.001.02" => Ok(AnyMessage::Auth_064_001_02(parse_boxed::<crate::generated::auth::auth_064_001_02::Document>(xml)?)),
         #[cfg(feature = "model-auth")]
         "auth.065.001.01" => Ok(AnyMessage::Auth_065_001_01(parse_boxed::<crate::generated::auth::auth_065_001_01::Document>(xml)?)),
         #[cfg(feature = "model-auth")]
@@ -4564,6 +7104,8 @@ pub fn parse_auto(xml: &str) -> crate::Result<AnyMessage> {
         "auth.068.001.01" => Ok(AnyMessage::Auth_068_001_01(parse_boxed::<crate::generated::auth::auth_068_001_01::Document>(xml)?)),
         #[cfg(feature = "model-auth")]
         "auth.069.001.01" => Ok(AnyMessage::Auth_069_001_01(parse_boxed::<crate::generated::auth::auth_069_001_01::Document>(xml)?)),
+        #[cfg(feature = "model-auth")]
+        "auth.069.001.03" => Ok(AnyMessage::Auth_069_001_03(parse_boxed::<crate::generated::auth::auth_069_001_03::Document>(xml)?)),
         #[cfg(feature = "model-auth")]
         "auth.070.001.02" => Ok(AnyMessage::Auth_070_001_02(parse_boxed::<crate::generated::auth::auth_070_001_02::Document>(xml)?)),
         #[cfg(feature = "model-auth")]
@@ -4591,9 +7133,15 @@ pub fn parse_auto(xml: &str) -> crate::Result<AnyMessage> {
         #[cfg(feature = "model-auth")]
         "auth.090.001.01" => Ok(AnyMessage::Auth_090_001_01(parse_boxed::<crate::generated::auth::auth_090_001_01::Document>(xml)?)),
         #[cfg(feature = "model-auth")]
+        "auth.090.001.02" => Ok(AnyMessage::Auth_090_001_02(parse_boxed::<crate::generated::auth::auth_090_001_02::Document>(xml)?)),
+        #[cfg(feature = "model-auth")]
         "auth.091.001.01" => Ok(AnyMessage::Auth_091_001_01(parse_boxed::<crate::generated::auth::auth_091_001_01::Document>(xml)?)),
         #[cfg(feature = "model-auth")]
+        "auth.091.001.03" => Ok(AnyMessage::Auth_091_001_03(parse_boxed::<crate::generated::auth::auth_091_001_03::Document>(xml)?)),
+        #[cfg(feature = "model-auth")]
         "auth.092.001.02" => Ok(AnyMessage::Auth_092_001_02(parse_boxed::<crate::generated::auth::auth_092_001_02::Document>(xml)?)),
+        #[cfg(feature = "model-auth")]
+        "auth.092.001.04" => Ok(AnyMessage::Auth_092_001_04(parse_boxed::<crate::generated::auth::auth_092_001_04::Document>(xml)?)),
         #[cfg(feature = "model-auth")]
         "auth.094.001.02" => Ok(AnyMessage::Auth_094_001_02(parse_boxed::<crate::generated::auth::auth_094_001_02::Document>(xml)?)),
         #[cfg(feature = "model-auth")]
@@ -4604,80 +7152,186 @@ pub fn parse_auto(xml: &str) -> crate::Result<AnyMessage> {
         "auth.102.001.01" => Ok(AnyMessage::Auth_102_001_01(parse_boxed::<crate::generated::auth::auth_102_001_01::Document>(xml)?)),
         #[cfg(feature = "model-auth")]
         "auth.105.001.01" => Ok(AnyMessage::Auth_105_001_01(parse_boxed::<crate::generated::auth::auth_105_001_01::Document>(xml)?)),
+        #[cfg(feature = "model-auth")]
+        "auth.106.001.01" => Ok(AnyMessage::Auth_106_001_01(parse_boxed::<crate::generated::auth::auth_106_001_01::Document>(xml)?)),
+        #[cfg(feature = "model-auth")]
+        "auth.107.001.02" => Ok(AnyMessage::Auth_107_001_02(parse_boxed::<crate::generated::auth::auth_107_001_02::Document>(xml)?)),
+        #[cfg(feature = "model-auth")]
+        "auth.108.001.02" => Ok(AnyMessage::Auth_108_001_02(parse_boxed::<crate::generated::auth::auth_108_001_02::Document>(xml)?)),
+        #[cfg(feature = "model-auth")]
+        "auth.109.001.02" => Ok(AnyMessage::Auth_109_001_02(parse_boxed::<crate::generated::auth::auth_109_001_02::Document>(xml)?)),
+        #[cfg(feature = "model-auth")]
+        "auth.112.001.01" => Ok(AnyMessage::Auth_112_001_01(parse_boxed::<crate::generated::auth::auth_112_001_01::Document>(xml)?)),
+        #[cfg(feature = "model-auth")]
+        "auth.113.001.01" => Ok(AnyMessage::Auth_113_001_01(parse_boxed::<crate::generated::auth::auth_113_001_01::Document>(xml)?)),
+        #[cfg(feature = "model-auth")]
+        "auth.114.001.01" => Ok(AnyMessage::Auth_114_001_01(parse_boxed::<crate::generated::auth::auth_114_001_01::Document>(xml)?)),
+        #[cfg(feature = "model-auth")]
+        "auth.120.001.01" => Ok(AnyMessage::Auth_120_001_01(parse_boxed::<crate::generated::auth::auth_120_001_01::Document>(xml)?)),
+        #[cfg(feature = "model-auth")]
+        "auth.121.001.01" => Ok(AnyMessage::Auth_121_001_01(parse_boxed::<crate::generated::auth::auth_121_001_01::Document>(xml)?)),
+        #[cfg(feature = "model-auth")]
+        "auth.122.001.01" => Ok(AnyMessage::Auth_122_001_01(parse_boxed::<crate::generated::auth::auth_122_001_01::Document>(xml)?)),
+        #[cfg(feature = "model-auth")]
+        "auth.123.001.01" => Ok(AnyMessage::Auth_123_001_01(parse_boxed::<crate::generated::auth::auth_123_001_01::Document>(xml)?)),
+        #[cfg(feature = "model-auth")]
+        "auth.124.001.01" => Ok(AnyMessage::Auth_124_001_01(parse_boxed::<crate::generated::auth::auth_124_001_01::Document>(xml)?)),
         #[cfg(feature = "model-caaa")]
         "caaa.001.001.10" => Ok(AnyMessage::Caaa_001_001_10(parse_boxed::<crate::generated::caaa::caaa_001_001_10::Document>(xml)?)),
         #[cfg(feature = "model-caaa")]
+        "caaa.001.001.15" => Ok(AnyMessage::Caaa_001_001_15(parse_boxed::<crate::generated::caaa::caaa_001_001_15::Document>(xml)?)),
+        #[cfg(feature = "model-caaa")]
         "caaa.002.001.10" => Ok(AnyMessage::Caaa_002_001_10(parse_boxed::<crate::generated::caaa::caaa_002_001_10::Document>(xml)?)),
+        #[cfg(feature = "model-caaa")]
+        "caaa.002.001.15" => Ok(AnyMessage::Caaa_002_001_15(parse_boxed::<crate::generated::caaa::caaa_002_001_15::Document>(xml)?)),
         #[cfg(feature = "model-caaa")]
         "caaa.003.001.10" => Ok(AnyMessage::Caaa_003_001_10(parse_boxed::<crate::generated::caaa::caaa_003_001_10::Document>(xml)?)),
         #[cfg(feature = "model-caaa")]
+        "caaa.003.001.15" => Ok(AnyMessage::Caaa_003_001_15(parse_boxed::<crate::generated::caaa::caaa_003_001_15::Document>(xml)?)),
+        #[cfg(feature = "model-caaa")]
         "caaa.004.001.09" => Ok(AnyMessage::Caaa_004_001_09(parse_boxed::<crate::generated::caaa::caaa_004_001_09::Document>(xml)?)),
+        #[cfg(feature = "model-caaa")]
+        "caaa.004.001.14" => Ok(AnyMessage::Caaa_004_001_14(parse_boxed::<crate::generated::caaa::caaa_004_001_14::Document>(xml)?)),
         #[cfg(feature = "model-caaa")]
         "caaa.005.001.10" => Ok(AnyMessage::Caaa_005_001_10(parse_boxed::<crate::generated::caaa::caaa_005_001_10::Document>(xml)?)),
         #[cfg(feature = "model-caaa")]
+        "caaa.005.001.15" => Ok(AnyMessage::Caaa_005_001_15(parse_boxed::<crate::generated::caaa::caaa_005_001_15::Document>(xml)?)),
+        #[cfg(feature = "model-caaa")]
         "caaa.006.001.09" => Ok(AnyMessage::Caaa_006_001_09(parse_boxed::<crate::generated::caaa::caaa_006_001_09::Document>(xml)?)),
+        #[cfg(feature = "model-caaa")]
+        "caaa.006.001.14" => Ok(AnyMessage::Caaa_006_001_14(parse_boxed::<crate::generated::caaa::caaa_006_001_14::Document>(xml)?)),
         #[cfg(feature = "model-caaa")]
         "caaa.007.001.10" => Ok(AnyMessage::Caaa_007_001_10(parse_boxed::<crate::generated::caaa::caaa_007_001_10::Document>(xml)?)),
         #[cfg(feature = "model-caaa")]
+        "caaa.007.001.15" => Ok(AnyMessage::Caaa_007_001_15(parse_boxed::<crate::generated::caaa::caaa_007_001_15::Document>(xml)?)),
+        #[cfg(feature = "model-caaa")]
         "caaa.008.001.09" => Ok(AnyMessage::Caaa_008_001_09(parse_boxed::<crate::generated::caaa::caaa_008_001_09::Document>(xml)?)),
+        #[cfg(feature = "model-caaa")]
+        "caaa.008.001.14" => Ok(AnyMessage::Caaa_008_001_14(parse_boxed::<crate::generated::caaa::caaa_008_001_14::Document>(xml)?)),
         #[cfg(feature = "model-caaa")]
         "caaa.009.001.09" => Ok(AnyMessage::Caaa_009_001_09(parse_boxed::<crate::generated::caaa::caaa_009_001_09::Document>(xml)?)),
         #[cfg(feature = "model-caaa")]
+        "caaa.009.001.14" => Ok(AnyMessage::Caaa_009_001_14(parse_boxed::<crate::generated::caaa::caaa_009_001_14::Document>(xml)?)),
+        #[cfg(feature = "model-caaa")]
         "caaa.010.001.08" => Ok(AnyMessage::Caaa_010_001_08(parse_boxed::<crate::generated::caaa::caaa_010_001_08::Document>(xml)?)),
+        #[cfg(feature = "model-caaa")]
+        "caaa.010.001.13" => Ok(AnyMessage::Caaa_010_001_13(parse_boxed::<crate::generated::caaa::caaa_010_001_13::Document>(xml)?)),
         #[cfg(feature = "model-caaa")]
         "caaa.011.001.10" => Ok(AnyMessage::Caaa_011_001_10(parse_boxed::<crate::generated::caaa::caaa_011_001_10::Document>(xml)?)),
         #[cfg(feature = "model-caaa")]
+        "caaa.011.001.15" => Ok(AnyMessage::Caaa_011_001_15(parse_boxed::<crate::generated::caaa::caaa_011_001_15::Document>(xml)?)),
+        #[cfg(feature = "model-caaa")]
         "caaa.012.001.09" => Ok(AnyMessage::Caaa_012_001_09(parse_boxed::<crate::generated::caaa::caaa_012_001_09::Document>(xml)?)),
+        #[cfg(feature = "model-caaa")]
+        "caaa.012.001.14" => Ok(AnyMessage::Caaa_012_001_14(parse_boxed::<crate::generated::caaa::caaa_012_001_14::Document>(xml)?)),
         #[cfg(feature = "model-caaa")]
         "caaa.013.001.09" => Ok(AnyMessage::Caaa_013_001_09(parse_boxed::<crate::generated::caaa::caaa_013_001_09::Document>(xml)?)),
         #[cfg(feature = "model-caaa")]
+        "caaa.013.001.14" => Ok(AnyMessage::Caaa_013_001_14(parse_boxed::<crate::generated::caaa::caaa_013_001_14::Document>(xml)?)),
+        #[cfg(feature = "model-caaa")]
         "caaa.014.001.08" => Ok(AnyMessage::Caaa_014_001_08(parse_boxed::<crate::generated::caaa::caaa_014_001_08::Document>(xml)?)),
+        #[cfg(feature = "model-caaa")]
+        "caaa.014.001.13" => Ok(AnyMessage::Caaa_014_001_13(parse_boxed::<crate::generated::caaa::caaa_014_001_13::Document>(xml)?)),
         #[cfg(feature = "model-caaa")]
         "caaa.015.001.06" => Ok(AnyMessage::Caaa_015_001_06(parse_boxed::<crate::generated::caaa::caaa_015_001_06::Document>(xml)?)),
         #[cfg(feature = "model-caaa")]
         "caaa.016.001.08" => Ok(AnyMessage::Caaa_016_001_08(parse_boxed::<crate::generated::caaa::caaa_016_001_08::Document>(xml)?)),
         #[cfg(feature = "model-caaa")]
+        "caaa.016.001.13" => Ok(AnyMessage::Caaa_016_001_13(parse_boxed::<crate::generated::caaa::caaa_016_001_13::Document>(xml)?)),
+        #[cfg(feature = "model-caaa")]
         "caaa.017.001.08" => Ok(AnyMessage::Caaa_017_001_08(parse_boxed::<crate::generated::caaa::caaa_017_001_08::Document>(xml)?)),
+        #[cfg(feature = "model-caaa")]
+        "caaa.017.001.13" => Ok(AnyMessage::Caaa_017_001_13(parse_boxed::<crate::generated::caaa::caaa_017_001_13::Document>(xml)?)),
         #[cfg(feature = "model-caaa")]
         "caaa.018.001.05" => Ok(AnyMessage::Caaa_018_001_05(parse_boxed::<crate::generated::caaa::caaa_018_001_05::Document>(xml)?)),
         #[cfg(feature = "model-caaa")]
+        "caaa.018.001.10" => Ok(AnyMessage::Caaa_018_001_10(parse_boxed::<crate::generated::caaa::caaa_018_001_10::Document>(xml)?)),
+        #[cfg(feature = "model-caaa")]
         "caaa.019.001.04" => Ok(AnyMessage::Caaa_019_001_04(parse_boxed::<crate::generated::caaa::caaa_019_001_04::Document>(xml)?)),
+        #[cfg(feature = "model-caaa")]
+        "caaa.019.001.09" => Ok(AnyMessage::Caaa_019_001_09(parse_boxed::<crate::generated::caaa::caaa_019_001_09::Document>(xml)?)),
         #[cfg(feature = "model-caaa")]
         "caaa.020.001.02" => Ok(AnyMessage::Caaa_020_001_02(parse_boxed::<crate::generated::caaa::caaa_020_001_02::Document>(xml)?)),
         #[cfg(feature = "model-caaa")]
+        "caaa.020.001.07" => Ok(AnyMessage::Caaa_020_001_07(parse_boxed::<crate::generated::caaa::caaa_020_001_07::Document>(xml)?)),
+        #[cfg(feature = "model-caaa")]
         "caaa.021.001.02" => Ok(AnyMessage::Caaa_021_001_02(parse_boxed::<crate::generated::caaa::caaa_021_001_02::Document>(xml)?)),
+        #[cfg(feature = "model-caaa")]
+        "caaa.021.001.07" => Ok(AnyMessage::Caaa_021_001_07(parse_boxed::<crate::generated::caaa::caaa_021_001_07::Document>(xml)?)),
         #[cfg(feature = "model-caaa")]
         "caaa.022.001.01" => Ok(AnyMessage::Caaa_022_001_01(parse_boxed::<crate::generated::caaa::caaa_022_001_01::Document>(xml)?)),
         #[cfg(feature = "model-caaa")]
+        "caaa.022.001.06" => Ok(AnyMessage::Caaa_022_001_06(parse_boxed::<crate::generated::caaa::caaa_022_001_06::Document>(xml)?)),
+        #[cfg(feature = "model-caaa")]
         "caaa.023.001.01" => Ok(AnyMessage::Caaa_023_001_01(parse_boxed::<crate::generated::caaa::caaa_023_001_01::Document>(xml)?)),
+        #[cfg(feature = "model-caaa")]
+        "caaa.023.001.06" => Ok(AnyMessage::Caaa_023_001_06(parse_boxed::<crate::generated::caaa::caaa_023_001_06::Document>(xml)?)),
         #[cfg(feature = "model-caaa")]
         "caaa.024.001.01" => Ok(AnyMessage::Caaa_024_001_01(parse_boxed::<crate::generated::caaa::caaa_024_001_01::Document>(xml)?)),
         #[cfg(feature = "model-caaa")]
+        "caaa.024.001.06" => Ok(AnyMessage::Caaa_024_001_06(parse_boxed::<crate::generated::caaa::caaa_024_001_06::Document>(xml)?)),
+        #[cfg(feature = "model-caaa")]
         "caaa.025.001.01" => Ok(AnyMessage::Caaa_025_001_01(parse_boxed::<crate::generated::caaa::caaa_025_001_01::Document>(xml)?)),
+        #[cfg(feature = "model-caaa")]
+        "caaa.025.001.06" => Ok(AnyMessage::Caaa_025_001_06(parse_boxed::<crate::generated::caaa::caaa_025_001_06::Document>(xml)?)),
+        #[cfg(feature = "model-caaa")]
+        "caaa.026.001.03" => Ok(AnyMessage::Caaa_026_001_03(parse_boxed::<crate::generated::caaa::caaa_026_001_03::Document>(xml)?)),
+        #[cfg(feature = "model-caaa")]
+        "caaa.027.001.03" => Ok(AnyMessage::Caaa_027_001_03(parse_boxed::<crate::generated::caaa::caaa_027_001_03::Document>(xml)?)),
         #[cfg(feature = "model-caad")]
         "caad.001.001.01" => Ok(AnyMessage::Caad_001_001_01(parse_boxed::<crate::generated::caad::caad_001_001_01::Document>(xml)?)),
         #[cfg(feature = "model-caad")]
+        "caad.001.001.04" => Ok(AnyMessage::Caad_001_001_04(parse_boxed::<crate::generated::caad::caad_001_001_04::Document>(xml)?)),
+        #[cfg(feature = "model-caad")]
         "caad.002.001.01" => Ok(AnyMessage::Caad_002_001_01(parse_boxed::<crate::generated::caad::caad_002_001_01::Document>(xml)?)),
+        #[cfg(feature = "model-caad")]
+        "caad.002.001.04" => Ok(AnyMessage::Caad_002_001_04(parse_boxed::<crate::generated::caad::caad_002_001_04::Document>(xml)?)),
         #[cfg(feature = "model-caad")]
         "caad.003.001.01" => Ok(AnyMessage::Caad_003_001_01(parse_boxed::<crate::generated::caad::caad_003_001_01::Document>(xml)?)),
         #[cfg(feature = "model-caad")]
+        "caad.003.001.04" => Ok(AnyMessage::Caad_003_001_04(parse_boxed::<crate::generated::caad::caad_003_001_04::Document>(xml)?)),
+        #[cfg(feature = "model-caad")]
         "caad.004.001.01" => Ok(AnyMessage::Caad_004_001_01(parse_boxed::<crate::generated::caad::caad_004_001_01::Document>(xml)?)),
+        #[cfg(feature = "model-caad")]
+        "caad.004.001.04" => Ok(AnyMessage::Caad_004_001_04(parse_boxed::<crate::generated::caad::caad_004_001_04::Document>(xml)?)),
         #[cfg(feature = "model-caad")]
         "caad.005.001.02" => Ok(AnyMessage::Caad_005_001_02(parse_boxed::<crate::generated::caad::caad_005_001_02::Document>(xml)?)),
         #[cfg(feature = "model-caad")]
+        "caad.005.001.05" => Ok(AnyMessage::Caad_005_001_05(parse_boxed::<crate::generated::caad::caad_005_001_05::Document>(xml)?)),
+        #[cfg(feature = "model-caad")]
         "caad.006.001.02" => Ok(AnyMessage::Caad_006_001_02(parse_boxed::<crate::generated::caad::caad_006_001_02::Document>(xml)?)),
         #[cfg(feature = "model-caad")]
+        "caad.006.001.05" => Ok(AnyMessage::Caad_006_001_05(parse_boxed::<crate::generated::caad::caad_006_001_05::Document>(xml)?)),
+        #[cfg(feature = "model-caad")]
         "caad.007.001.02" => Ok(AnyMessage::Caad_007_001_02(parse_boxed::<crate::generated::caad::caad_007_001_02::Document>(xml)?)),
+        #[cfg(feature = "model-caad")]
+        "caad.007.001.05" => Ok(AnyMessage::Caad_007_001_05(parse_boxed::<crate::generated::caad::caad_007_001_05::Document>(xml)?)),
+        #[cfg(feature = "model-caad")]
+        "caad.008.001.03" => Ok(AnyMessage::Caad_008_001_03(parse_boxed::<crate::generated::caad::caad_008_001_03::Document>(xml)?)),
+        #[cfg(feature = "model-caad")]
+        "caad.009.001.03" => Ok(AnyMessage::Caad_009_001_03(parse_boxed::<crate::generated::caad::caad_009_001_03::Document>(xml)?)),
+        #[cfg(feature = "model-caad")]
+        "caad.010.001.03" => Ok(AnyMessage::Caad_010_001_03(parse_boxed::<crate::generated::caad::caad_010_001_03::Document>(xml)?)),
         #[cfg(feature = "model-caam")]
         "caam.001.001.03" => Ok(AnyMessage::Caam_001_001_03(parse_boxed::<crate::generated::caam::caam_001_001_03::Document>(xml)?)),
         #[cfg(feature = "model-caam")]
+        "caam.001.001.05" => Ok(AnyMessage::Caam_001_001_05(parse_boxed::<crate::generated::caam::caam_001_001_05::Document>(xml)?)),
+        #[cfg(feature = "model-caam")]
         "caam.002.001.03" => Ok(AnyMessage::Caam_002_001_03(parse_boxed::<crate::generated::caam::caam_002_001_03::Document>(xml)?)),
+        #[cfg(feature = "model-caam")]
+        "caam.002.001.04" => Ok(AnyMessage::Caam_002_001_04(parse_boxed::<crate::generated::caam::caam_002_001_04::Document>(xml)?)),
         #[cfg(feature = "model-caam")]
         "caam.003.001.03" => Ok(AnyMessage::Caam_003_001_03(parse_boxed::<crate::generated::caam::caam_003_001_03::Document>(xml)?)),
         #[cfg(feature = "model-caam")]
+        "caam.003.001.05" => Ok(AnyMessage::Caam_003_001_05(parse_boxed::<crate::generated::caam::caam_003_001_05::Document>(xml)?)),
+        #[cfg(feature = "model-caam")]
         "caam.004.001.03" => Ok(AnyMessage::Caam_004_001_03(parse_boxed::<crate::generated::caam::caam_004_001_03::Document>(xml)?)),
         #[cfg(feature = "model-caam")]
+        "caam.004.001.05" => Ok(AnyMessage::Caam_004_001_05(parse_boxed::<crate::generated::caam::caam_004_001_05::Document>(xml)?)),
+        #[cfg(feature = "model-caam")]
         "caam.005.001.02" => Ok(AnyMessage::Caam_005_001_02(parse_boxed::<crate::generated::caam::caam_005_001_02::Document>(xml)?)),
+        #[cfg(feature = "model-caam")]
+        "caam.005.001.03" => Ok(AnyMessage::Caam_005_001_03(parse_boxed::<crate::generated::caam::caam_005_001_03::Document>(xml)?)),
         #[cfg(feature = "model-caam")]
         "caam.006.001.02" => Ok(AnyMessage::Caam_006_001_02(parse_boxed::<crate::generated::caam::caam_006_001_02::Document>(xml)?)),
         #[cfg(feature = "model-caam")]
@@ -4687,47 +7341,99 @@ pub fn parse_auto(xml: &str) -> crate::Result<AnyMessage> {
         #[cfg(feature = "model-caam")]
         "caam.009.001.02" => Ok(AnyMessage::Caam_009_001_02(parse_boxed::<crate::generated::caam::caam_009_001_02::Document>(xml)?)),
         #[cfg(feature = "model-caam")]
+        "caam.009.001.03" => Ok(AnyMessage::Caam_009_001_03(parse_boxed::<crate::generated::caam::caam_009_001_03::Document>(xml)?)),
+        #[cfg(feature = "model-caam")]
         "caam.010.001.02" => Ok(AnyMessage::Caam_010_001_02(parse_boxed::<crate::generated::caam::caam_010_001_02::Document>(xml)?)),
+        #[cfg(feature = "model-caam")]
+        "caam.010.001.03" => Ok(AnyMessage::Caam_010_001_03(parse_boxed::<crate::generated::caam::caam_010_001_03::Document>(xml)?)),
         #[cfg(feature = "model-caam")]
         "caam.011.001.01" => Ok(AnyMessage::Caam_011_001_01(parse_boxed::<crate::generated::caam::caam_011_001_01::Document>(xml)?)),
         #[cfg(feature = "model-caam")]
+        "caam.011.001.02" => Ok(AnyMessage::Caam_011_001_02(parse_boxed::<crate::generated::caam::caam_011_001_02::Document>(xml)?)),
+        #[cfg(feature = "model-caam")]
         "caam.012.001.01" => Ok(AnyMessage::Caam_012_001_01(parse_boxed::<crate::generated::caam::caam_012_001_01::Document>(xml)?)),
+        #[cfg(feature = "model-caam")]
+        "caam.012.001.02" => Ok(AnyMessage::Caam_012_001_02(parse_boxed::<crate::generated::caam::caam_012_001_02::Document>(xml)?)),
+        #[cfg(feature = "model-caam")]
+        "caam.013.001.01" => Ok(AnyMessage::Caam_013_001_01(parse_boxed::<crate::generated::caam::caam_013_001_01::Document>(xml)?)),
+        #[cfg(feature = "model-caam")]
+        "caam.014.001.01" => Ok(AnyMessage::Caam_014_001_01(parse_boxed::<crate::generated::caam::caam_014_001_01::Document>(xml)?)),
+        #[cfg(feature = "model-caam")]
+        "caam.015.001.01" => Ok(AnyMessage::Caam_015_001_01(parse_boxed::<crate::generated::caam::caam_015_001_01::Document>(xml)?)),
+        #[cfg(feature = "model-caam")]
+        "caam.016.001.01" => Ok(AnyMessage::Caam_016_001_01(parse_boxed::<crate::generated::caam::caam_016_001_01::Document>(xml)?)),
         #[cfg(feature = "model-cafc")]
         "cafc.001.001.01" => Ok(AnyMessage::Cafc_001_001_01(parse_boxed::<crate::generated::cafc::cafc_001_001_01::Document>(xml)?)),
         #[cfg(feature = "model-cafc")]
+        "cafc.001.001.04" => Ok(AnyMessage::Cafc_001_001_04(parse_boxed::<crate::generated::cafc::cafc_001_001_04::Document>(xml)?)),
+        #[cfg(feature = "model-cafc")]
         "cafc.002.001.01" => Ok(AnyMessage::Cafc_002_001_01(parse_boxed::<crate::generated::cafc::cafc_002_001_01::Document>(xml)?)),
+        #[cfg(feature = "model-cafc")]
+        "cafc.002.001.04" => Ok(AnyMessage::Cafc_002_001_04(parse_boxed::<crate::generated::cafc::cafc_002_001_04::Document>(xml)?)),
         #[cfg(feature = "model-cafm")]
         "cafm.001.001.01" => Ok(AnyMessage::Cafm_001_001_01(parse_boxed::<crate::generated::cafm::cafm_001_001_01::Document>(xml)?)),
         #[cfg(feature = "model-cafm")]
+        "cafm.001.001.04" => Ok(AnyMessage::Cafm_001_001_04(parse_boxed::<crate::generated::cafm::cafm_001_001_04::Document>(xml)?)),
+        #[cfg(feature = "model-cafm")]
         "cafm.002.001.01" => Ok(AnyMessage::Cafm_002_001_01(parse_boxed::<crate::generated::cafm::cafm_002_001_01::Document>(xml)?)),
+        #[cfg(feature = "model-cafm")]
+        "cafm.002.001.04" => Ok(AnyMessage::Cafm_002_001_04(parse_boxed::<crate::generated::cafm::cafm_002_001_04::Document>(xml)?)),
         #[cfg(feature = "model-cafr")]
         "cafr.001.001.01" => Ok(AnyMessage::Cafr_001_001_01(parse_boxed::<crate::generated::cafr::cafr_001_001_01::Document>(xml)?)),
         #[cfg(feature = "model-cafr")]
+        "cafr.001.001.04" => Ok(AnyMessage::Cafr_001_001_04(parse_boxed::<crate::generated::cafr::cafr_001_001_04::Document>(xml)?)),
+        #[cfg(feature = "model-cafr")]
         "cafr.002.001.01" => Ok(AnyMessage::Cafr_002_001_01(parse_boxed::<crate::generated::cafr::cafr_002_001_01::Document>(xml)?)),
+        #[cfg(feature = "model-cafr")]
+        "cafr.002.001.04" => Ok(AnyMessage::Cafr_002_001_04(parse_boxed::<crate::generated::cafr::cafr_002_001_04::Document>(xml)?)),
         #[cfg(feature = "model-cafr")]
         "cafr.003.001.01" => Ok(AnyMessage::Cafr_003_001_01(parse_boxed::<crate::generated::cafr::cafr_003_001_01::Document>(xml)?)),
         #[cfg(feature = "model-cafr")]
+        "cafr.003.001.04" => Ok(AnyMessage::Cafr_003_001_04(parse_boxed::<crate::generated::cafr::cafr_003_001_04::Document>(xml)?)),
+        #[cfg(feature = "model-cafr")]
         "cafr.004.001.01" => Ok(AnyMessage::Cafr_004_001_01(parse_boxed::<crate::generated::cafr::cafr_004_001_01::Document>(xml)?)),
+        #[cfg(feature = "model-cafr")]
+        "cafr.004.001.04" => Ok(AnyMessage::Cafr_004_001_04(parse_boxed::<crate::generated::cafr::cafr_004_001_04::Document>(xml)?)),
         #[cfg(feature = "model-cain")]
         "cain.001.001.02" => Ok(AnyMessage::Cain_001_001_02(parse_boxed::<crate::generated::cain::cain_001_001_02::Document>(xml)?)),
         #[cfg(feature = "model-cain")]
+        "cain.001.001.05" => Ok(AnyMessage::Cain_001_001_05(parse_boxed::<crate::generated::cain::cain_001_001_05::Document>(xml)?)),
+        #[cfg(feature = "model-cain")]
         "cain.002.001.02" => Ok(AnyMessage::Cain_002_001_02(parse_boxed::<crate::generated::cain::cain_002_001_02::Document>(xml)?)),
+        #[cfg(feature = "model-cain")]
+        "cain.002.001.05" => Ok(AnyMessage::Cain_002_001_05(parse_boxed::<crate::generated::cain::cain_002_001_05::Document>(xml)?)),
         #[cfg(feature = "model-cain")]
         "cain.003.001.02" => Ok(AnyMessage::Cain_003_001_02(parse_boxed::<crate::generated::cain::cain_003_001_02::Document>(xml)?)),
         #[cfg(feature = "model-cain")]
+        "cain.003.001.05" => Ok(AnyMessage::Cain_003_001_05(parse_boxed::<crate::generated::cain::cain_003_001_05::Document>(xml)?)),
+        #[cfg(feature = "model-cain")]
         "cain.004.001.02" => Ok(AnyMessage::Cain_004_001_02(parse_boxed::<crate::generated::cain::cain_004_001_02::Document>(xml)?)),
+        #[cfg(feature = "model-cain")]
+        "cain.004.001.05" => Ok(AnyMessage::Cain_004_001_05(parse_boxed::<crate::generated::cain::cain_004_001_05::Document>(xml)?)),
         #[cfg(feature = "model-cain")]
         "cain.005.001.02" => Ok(AnyMessage::Cain_005_001_02(parse_boxed::<crate::generated::cain::cain_005_001_02::Document>(xml)?)),
         #[cfg(feature = "model-cain")]
+        "cain.005.001.05" => Ok(AnyMessage::Cain_005_001_05(parse_boxed::<crate::generated::cain::cain_005_001_05::Document>(xml)?)),
+        #[cfg(feature = "model-cain")]
         "cain.006.001.02" => Ok(AnyMessage::Cain_006_001_02(parse_boxed::<crate::generated::cain::cain_006_001_02::Document>(xml)?)),
+        #[cfg(feature = "model-cain")]
+        "cain.006.001.05" => Ok(AnyMessage::Cain_006_001_05(parse_boxed::<crate::generated::cain::cain_006_001_05::Document>(xml)?)),
         #[cfg(feature = "model-cain")]
         "cain.014.001.01" => Ok(AnyMessage::Cain_014_001_01(parse_boxed::<crate::generated::cain::cain_014_001_01::Document>(xml)?)),
         #[cfg(feature = "model-cain")]
+        "cain.014.001.04" => Ok(AnyMessage::Cain_014_001_04(parse_boxed::<crate::generated::cain::cain_014_001_04::Document>(xml)?)),
+        #[cfg(feature = "model-cain")]
         "cain.015.001.01" => Ok(AnyMessage::Cain_015_001_01(parse_boxed::<crate::generated::cain::cain_015_001_01::Document>(xml)?)),
+        #[cfg(feature = "model-cain")]
+        "cain.015.001.04" => Ok(AnyMessage::Cain_015_001_04(parse_boxed::<crate::generated::cain::cain_015_001_04::Document>(xml)?)),
         #[cfg(feature = "model-cain")]
         "cain.016.001.01" => Ok(AnyMessage::Cain_016_001_01(parse_boxed::<crate::generated::cain::cain_016_001_01::Document>(xml)?)),
         #[cfg(feature = "model-cain")]
+        "cain.016.001.04" => Ok(AnyMessage::Cain_016_001_04(parse_boxed::<crate::generated::cain::cain_016_001_04::Document>(xml)?)),
+        #[cfg(feature = "model-cain")]
         "cain.017.001.01" => Ok(AnyMessage::Cain_017_001_01(parse_boxed::<crate::generated::cain::cain_017_001_01::Document>(xml)?)),
+        #[cfg(feature = "model-cain")]
+        "cain.017.001.04" => Ok(AnyMessage::Cain_017_001_04(parse_boxed::<crate::generated::cain::cain_017_001_04::Document>(xml)?)),
         #[cfg(feature = "model-cain")]
         "cain.018.001.01" => Ok(AnyMessage::Cain_018_001_01(parse_boxed::<crate::generated::cain::cain_018_001_01::Document>(xml)?)),
         #[cfg(feature = "model-cain")]
@@ -4735,41 +7441,79 @@ pub fn parse_auto(xml: &str) -> crate::Result<AnyMessage> {
         #[cfg(feature = "model-cain")]
         "cain.020.001.01" => Ok(AnyMessage::Cain_020_001_01(parse_boxed::<crate::generated::cain::cain_020_001_01::Document>(xml)?)),
         #[cfg(feature = "model-cain")]
+        "cain.020.001.04" => Ok(AnyMessage::Cain_020_001_04(parse_boxed::<crate::generated::cain::cain_020_001_04::Document>(xml)?)),
+        #[cfg(feature = "model-cain")]
         "cain.021.001.01" => Ok(AnyMessage::Cain_021_001_01(parse_boxed::<crate::generated::cain::cain_021_001_01::Document>(xml)?)),
+        #[cfg(feature = "model-cain")]
+        "cain.021.001.04" => Ok(AnyMessage::Cain_021_001_04(parse_boxed::<crate::generated::cain::cain_021_001_04::Document>(xml)?)),
         #[cfg(feature = "model-cain")]
         "cain.022.001.01" => Ok(AnyMessage::Cain_022_001_01(parse_boxed::<crate::generated::cain::cain_022_001_01::Document>(xml)?)),
         #[cfg(feature = "model-cain")]
+        "cain.022.001.04" => Ok(AnyMessage::Cain_022_001_04(parse_boxed::<crate::generated::cain::cain_022_001_04::Document>(xml)?)),
+        #[cfg(feature = "model-cain")]
         "cain.023.001.01" => Ok(AnyMessage::Cain_023_001_01(parse_boxed::<crate::generated::cain::cain_023_001_01::Document>(xml)?)),
+        #[cfg(feature = "model-cain")]
+        "cain.023.001.04" => Ok(AnyMessage::Cain_023_001_04(parse_boxed::<crate::generated::cain::cain_023_001_04::Document>(xml)?)),
         #[cfg(feature = "model-cain")]
         "cain.024.001.01" => Ok(AnyMessage::Cain_024_001_01(parse_boxed::<crate::generated::cain::cain_024_001_01::Document>(xml)?)),
         #[cfg(feature = "model-cain")]
+        "cain.024.001.04" => Ok(AnyMessage::Cain_024_001_04(parse_boxed::<crate::generated::cain::cain_024_001_04::Document>(xml)?)),
+        #[cfg(feature = "model-cain")]
         "cain.025.001.01" => Ok(AnyMessage::Cain_025_001_01(parse_boxed::<crate::generated::cain::cain_025_001_01::Document>(xml)?)),
+        #[cfg(feature = "model-cain")]
+        "cain.025.001.04" => Ok(AnyMessage::Cain_025_001_04(parse_boxed::<crate::generated::cain::cain_025_001_04::Document>(xml)?)),
         #[cfg(feature = "model-cain")]
         "cain.026.001.01" => Ok(AnyMessage::Cain_026_001_01(parse_boxed::<crate::generated::cain::cain_026_001_01::Document>(xml)?)),
         #[cfg(feature = "model-cain")]
+        "cain.026.001.04" => Ok(AnyMessage::Cain_026_001_04(parse_boxed::<crate::generated::cain::cain_026_001_04::Document>(xml)?)),
+        #[cfg(feature = "model-cain")]
         "cain.027.001.01" => Ok(AnyMessage::Cain_027_001_01(parse_boxed::<crate::generated::cain::cain_027_001_01::Document>(xml)?)),
         #[cfg(feature = "model-cain")]
+        "cain.027.001.04" => Ok(AnyMessage::Cain_027_001_04(parse_boxed::<crate::generated::cain::cain_027_001_04::Document>(xml)?)),
+        #[cfg(feature = "model-cain")]
         "cain.028.001.01" => Ok(AnyMessage::Cain_028_001_01(parse_boxed::<crate::generated::cain::cain_028_001_01::Document>(xml)?)),
+        #[cfg(feature = "model-cain")]
+        "cain.028.001.04" => Ok(AnyMessage::Cain_028_001_04(parse_boxed::<crate::generated::cain::cain_028_001_04::Document>(xml)?)),
         #[cfg(feature = "model-camt")]
         "camt.003.001.07" => Ok(AnyMessage::Camt_003_001_07(parse_boxed::<crate::generated::camt::camt_003_001_07::Document>(xml)?)),
         #[cfg(feature = "model-camt")]
+        "camt.003.001.08" => Ok(AnyMessage::Camt_003_001_08(parse_boxed::<crate::generated::camt::camt_003_001_08::Document>(xml)?)),
+        #[cfg(feature = "model-camt")]
         "camt.004.001.09" => Ok(AnyMessage::Camt_004_001_09(parse_boxed::<crate::generated::camt::camt_004_001_09::Document>(xml)?)),
+        #[cfg(feature = "model-camt")]
+        "camt.004.001.10" => Ok(AnyMessage::Camt_004_001_10(parse_boxed::<crate::generated::camt::camt_004_001_10::Document>(xml)?)),
         #[cfg(feature = "model-camt")]
         "camt.005.001.09" => Ok(AnyMessage::Camt_005_001_09(parse_boxed::<crate::generated::camt::camt_005_001_09::Document>(xml)?)),
         #[cfg(feature = "model-camt")]
+        "camt.005.001.11" => Ok(AnyMessage::Camt_005_001_11(parse_boxed::<crate::generated::camt::camt_005_001_11::Document>(xml)?)),
+        #[cfg(feature = "model-camt")]
         "camt.006.001.09" => Ok(AnyMessage::Camt_006_001_09(parse_boxed::<crate::generated::camt::camt_006_001_09::Document>(xml)?)),
+        #[cfg(feature = "model-camt")]
+        "camt.006.001.11" => Ok(AnyMessage::Camt_006_001_11(parse_boxed::<crate::generated::camt::camt_006_001_11::Document>(xml)?)),
         #[cfg(feature = "model-camt")]
         "camt.007.001.08" => Ok(AnyMessage::Camt_007_001_08(parse_boxed::<crate::generated::camt::camt_007_001_08::Document>(xml)?)),
         #[cfg(feature = "model-camt")]
+        "camt.007.001.10" => Ok(AnyMessage::Camt_007_001_10(parse_boxed::<crate::generated::camt::camt_007_001_10::Document>(xml)?)),
+        #[cfg(feature = "model-camt")]
         "camt.008.001.09" => Ok(AnyMessage::Camt_008_001_09(parse_boxed::<crate::generated::camt::camt_008_001_09::Document>(xml)?)),
+        #[cfg(feature = "model-camt")]
+        "camt.008.001.11" => Ok(AnyMessage::Camt_008_001_11(parse_boxed::<crate::generated::camt::camt_008_001_11::Document>(xml)?)),
         #[cfg(feature = "model-camt")]
         "camt.009.001.07" => Ok(AnyMessage::Camt_009_001_07(parse_boxed::<crate::generated::camt::camt_009_001_07::Document>(xml)?)),
         #[cfg(feature = "model-camt")]
+        "camt.009.001.08" => Ok(AnyMessage::Camt_009_001_08(parse_boxed::<crate::generated::camt::camt_009_001_08::Document>(xml)?)),
+        #[cfg(feature = "model-camt")]
         "camt.010.001.08" => Ok(AnyMessage::Camt_010_001_08(parse_boxed::<crate::generated::camt::camt_010_001_08::Document>(xml)?)),
+        #[cfg(feature = "model-camt")]
+        "camt.010.001.09" => Ok(AnyMessage::Camt_010_001_09(parse_boxed::<crate::generated::camt::camt_010_001_09::Document>(xml)?)),
         #[cfg(feature = "model-camt")]
         "camt.011.001.07" => Ok(AnyMessage::Camt_011_001_07(parse_boxed::<crate::generated::camt::camt_011_001_07::Document>(xml)?)),
         #[cfg(feature = "model-camt")]
+        "camt.011.001.08" => Ok(AnyMessage::Camt_011_001_08(parse_boxed::<crate::generated::camt::camt_011_001_08::Document>(xml)?)),
+        #[cfg(feature = "model-camt")]
         "camt.012.001.07" => Ok(AnyMessage::Camt_012_001_07(parse_boxed::<crate::generated::camt::camt_012_001_07::Document>(xml)?)),
+        #[cfg(feature = "model-camt")]
+        "camt.012.001.08" => Ok(AnyMessage::Camt_012_001_08(parse_boxed::<crate::generated::camt::camt_012_001_08::Document>(xml)?)),
         #[cfg(feature = "model-camt")]
         "camt.013.001.04" => Ok(AnyMessage::Camt_013_001_04(parse_boxed::<crate::generated::camt::camt_013_001_04::Document>(xml)?)),
         #[cfg(feature = "model-camt")]
@@ -4793,39 +7537,71 @@ pub fn parse_auto(xml: &str) -> crate::Result<AnyMessage> {
         #[cfg(feature = "model-camt")]
         "camt.024.001.07" => Ok(AnyMessage::Camt_024_001_07(parse_boxed::<crate::generated::camt::camt_024_001_07::Document>(xml)?)),
         #[cfg(feature = "model-camt")]
+        "camt.024.001.08" => Ok(AnyMessage::Camt_024_001_08(parse_boxed::<crate::generated::camt::camt_024_001_08::Document>(xml)?)),
+        #[cfg(feature = "model-camt")]
         "camt.025.001.05" => Ok(AnyMessage::Camt_025_001_05(parse_boxed::<crate::generated::camt::camt_025_001_05::Document>(xml)?)),
+        #[cfg(feature = "model-camt")]
+        "camt.025.001.09" => Ok(AnyMessage::Camt_025_001_09(parse_boxed::<crate::generated::camt::camt_025_001_09::Document>(xml)?)),
         #[cfg(feature = "model-camt")]
         "camt.026.001.08" => Ok(AnyMessage::Camt_026_001_08(parse_boxed::<crate::generated::camt::camt_026_001_08::Document>(xml)?)),
         #[cfg(feature = "model-camt")]
         "camt.026.001.09" => Ok(AnyMessage::Camt_026_001_09(parse_boxed::<crate::generated::camt::camt_026_001_09::Document>(xml)?)),
         #[cfg(feature = "model-camt")]
+        "camt.026.001.10" => Ok(AnyMessage::Camt_026_001_10(parse_boxed::<crate::generated::camt::camt_026_001_10::Document>(xml)?)),
+        #[cfg(feature = "model-camt")]
         "camt.027.001.09" => Ok(AnyMessage::Camt_027_001_09(parse_boxed::<crate::generated::camt::camt_027_001_09::Document>(xml)?)),
         #[cfg(feature = "model-camt")]
+        "camt.027.001.10" => Ok(AnyMessage::Camt_027_001_10(parse_boxed::<crate::generated::camt::camt_027_001_10::Document>(xml)?)),
+        #[cfg(feature = "model-camt")]
         "camt.028.001.11" => Ok(AnyMessage::Camt_028_001_11(parse_boxed::<crate::generated::camt::camt_028_001_11::Document>(xml)?)),
+        #[cfg(feature = "model-camt")]
+        "camt.028.001.12" => Ok(AnyMessage::Camt_028_001_12(parse_boxed::<crate::generated::camt::camt_028_001_12::Document>(xml)?)),
         #[cfg(feature = "model-camt")]
         "camt.029.001.10" => Ok(AnyMessage::Camt_029_001_10(parse_boxed::<crate::generated::camt::camt_029_001_10::Document>(xml)?)),
         #[cfg(feature = "model-camt")]
         "camt.029.001.11" => Ok(AnyMessage::Camt_029_001_11(parse_boxed::<crate::generated::camt::camt_029_001_11::Document>(xml)?)),
         #[cfg(feature = "model-camt")]
+        "camt.029.001.14" => Ok(AnyMessage::Camt_029_001_14(parse_boxed::<crate::generated::camt::camt_029_001_14::Document>(xml)?)),
+        #[cfg(feature = "model-camt")]
         "camt.030.001.05" => Ok(AnyMessage::Camt_030_001_05(parse_boxed::<crate::generated::camt::camt_030_001_05::Document>(xml)?)),
+        #[cfg(feature = "model-camt")]
+        "camt.030.001.06" => Ok(AnyMessage::Camt_030_001_06(parse_boxed::<crate::generated::camt::camt_030_001_06::Document>(xml)?)),
         #[cfg(feature = "model-camt")]
         "camt.031.001.06" => Ok(AnyMessage::Camt_031_001_06(parse_boxed::<crate::generated::camt::camt_031_001_06::Document>(xml)?)),
         #[cfg(feature = "model-camt")]
+        "camt.031.001.07" => Ok(AnyMessage::Camt_031_001_07(parse_boxed::<crate::generated::camt::camt_031_001_07::Document>(xml)?)),
+        #[cfg(feature = "model-camt")]
         "camt.032.001.04" => Ok(AnyMessage::Camt_032_001_04(parse_boxed::<crate::generated::camt::camt_032_001_04::Document>(xml)?)),
+        #[cfg(feature = "model-camt")]
+        "camt.032.001.05" => Ok(AnyMessage::Camt_032_001_05(parse_boxed::<crate::generated::camt::camt_032_001_05::Document>(xml)?)),
         #[cfg(feature = "model-camt")]
         "camt.033.001.06" => Ok(AnyMessage::Camt_033_001_06(parse_boxed::<crate::generated::camt::camt_033_001_06::Document>(xml)?)),
         #[cfg(feature = "model-camt")]
+        "camt.033.001.07" => Ok(AnyMessage::Camt_033_001_07(parse_boxed::<crate::generated::camt::camt_033_001_07::Document>(xml)?)),
+        #[cfg(feature = "model-camt")]
         "camt.034.001.06" => Ok(AnyMessage::Camt_034_001_06(parse_boxed::<crate::generated::camt::camt_034_001_06::Document>(xml)?)),
+        #[cfg(feature = "model-camt")]
+        "camt.034.001.07" => Ok(AnyMessage::Camt_034_001_07(parse_boxed::<crate::generated::camt::camt_034_001_07::Document>(xml)?)),
         #[cfg(feature = "model-camt")]
         "camt.035.001.05" => Ok(AnyMessage::Camt_035_001_05(parse_boxed::<crate::generated::camt::camt_035_001_05::Document>(xml)?)),
         #[cfg(feature = "model-camt")]
+        "camt.035.001.06" => Ok(AnyMessage::Camt_035_001_06(parse_boxed::<crate::generated::camt::camt_035_001_06::Document>(xml)?)),
+        #[cfg(feature = "model-camt")]
         "camt.036.001.05" => Ok(AnyMessage::Camt_036_001_05(parse_boxed::<crate::generated::camt::camt_036_001_05::Document>(xml)?)),
+        #[cfg(feature = "model-camt")]
+        "camt.036.001.06" => Ok(AnyMessage::Camt_036_001_06(parse_boxed::<crate::generated::camt::camt_036_001_06::Document>(xml)?)),
         #[cfg(feature = "model-camt")]
         "camt.037.001.09" => Ok(AnyMessage::Camt_037_001_09(parse_boxed::<crate::generated::camt::camt_037_001_09::Document>(xml)?)),
         #[cfg(feature = "model-camt")]
+        "camt.037.001.10" => Ok(AnyMessage::Camt_037_001_10(parse_boxed::<crate::generated::camt::camt_037_001_10::Document>(xml)?)),
+        #[cfg(feature = "model-camt")]
         "camt.038.001.04" => Ok(AnyMessage::Camt_038_001_04(parse_boxed::<crate::generated::camt::camt_038_001_04::Document>(xml)?)),
         #[cfg(feature = "model-camt")]
+        "camt.038.001.05" => Ok(AnyMessage::Camt_038_001_05(parse_boxed::<crate::generated::camt::camt_038_001_05::Document>(xml)?)),
+        #[cfg(feature = "model-camt")]
         "camt.039.001.05" => Ok(AnyMessage::Camt_039_001_05(parse_boxed::<crate::generated::camt::camt_039_001_05::Document>(xml)?)),
+        #[cfg(feature = "model-camt")]
+        "camt.039.001.06" => Ok(AnyMessage::Camt_039_001_06(parse_boxed::<crate::generated::camt::camt_039_001_06::Document>(xml)?)),
         #[cfg(feature = "model-camt")]
         "camt.040.001.04" => Ok(AnyMessage::Camt_040_001_04(parse_boxed::<crate::generated::camt::camt_040_001_04::Document>(xml)?)),
         #[cfg(feature = "model-camt")]
@@ -4841,35 +7617,65 @@ pub fn parse_auto(xml: &str) -> crate::Result<AnyMessage> {
         #[cfg(feature = "model-camt")]
         "camt.046.001.06" => Ok(AnyMessage::Camt_046_001_06(parse_boxed::<crate::generated::camt::camt_046_001_06::Document>(xml)?)),
         #[cfg(feature = "model-camt")]
+        "camt.046.001.08" => Ok(AnyMessage::Camt_046_001_08(parse_boxed::<crate::generated::camt::camt_046_001_08::Document>(xml)?)),
+        #[cfg(feature = "model-camt")]
         "camt.047.001.07" => Ok(AnyMessage::Camt_047_001_07(parse_boxed::<crate::generated::camt::camt_047_001_07::Document>(xml)?)),
+        #[cfg(feature = "model-camt")]
+        "camt.047.001.08" => Ok(AnyMessage::Camt_047_001_08(parse_boxed::<crate::generated::camt::camt_047_001_08::Document>(xml)?)),
         #[cfg(feature = "model-camt")]
         "camt.048.001.06" => Ok(AnyMessage::Camt_048_001_06(parse_boxed::<crate::generated::camt::camt_048_001_06::Document>(xml)?)),
         #[cfg(feature = "model-camt")]
+        "camt.048.001.07" => Ok(AnyMessage::Camt_048_001_07(parse_boxed::<crate::generated::camt::camt_048_001_07::Document>(xml)?)),
+        #[cfg(feature = "model-camt")]
         "camt.049.001.06" => Ok(AnyMessage::Camt_049_001_06(parse_boxed::<crate::generated::camt::camt_049_001_06::Document>(xml)?)),
+        #[cfg(feature = "model-camt")]
+        "camt.049.001.07" => Ok(AnyMessage::Camt_049_001_07(parse_boxed::<crate::generated::camt::camt_049_001_07::Document>(xml)?)),
         #[cfg(feature = "model-camt")]
         "camt.050.001.06" => Ok(AnyMessage::Camt_050_001_06(parse_boxed::<crate::generated::camt::camt_050_001_06::Document>(xml)?)),
         #[cfg(feature = "model-camt")]
+        "camt.050.001.07" => Ok(AnyMessage::Camt_050_001_07(parse_boxed::<crate::generated::camt::camt_050_001_07::Document>(xml)?)),
+        #[cfg(feature = "model-camt")]
         "camt.051.001.05" => Ok(AnyMessage::Camt_051_001_05(parse_boxed::<crate::generated::camt::camt_051_001_05::Document>(xml)?)),
+        #[cfg(feature = "model-camt")]
+        "camt.051.001.07" => Ok(AnyMessage::Camt_051_001_07(parse_boxed::<crate::generated::camt::camt_051_001_07::Document>(xml)?)),
         #[cfg(feature = "model-camt")]
         "camt.052.001.09" => Ok(AnyMessage::Camt_052_001_09(parse_boxed::<crate::generated::camt::camt_052_001_09::Document>(xml)?)),
         #[cfg(feature = "model-camt")]
+        "camt.052.001.14" => Ok(AnyMessage::Camt_052_001_14(parse_boxed::<crate::generated::camt::camt_052_001_14::Document>(xml)?)),
+        #[cfg(feature = "model-camt")]
         "camt.053.001.09" => Ok(AnyMessage::Camt_053_001_09(parse_boxed::<crate::generated::camt::camt_053_001_09::Document>(xml)?)),
+        #[cfg(feature = "model-camt")]
+        "camt.053.001.14" => Ok(AnyMessage::Camt_053_001_14(parse_boxed::<crate::generated::camt::camt_053_001_14::Document>(xml)?)),
         #[cfg(feature = "model-camt")]
         "camt.054.001.09" => Ok(AnyMessage::Camt_054_001_09(parse_boxed::<crate::generated::camt::camt_054_001_09::Document>(xml)?)),
         #[cfg(feature = "model-camt")]
+        "camt.054.001.14" => Ok(AnyMessage::Camt_054_001_14(parse_boxed::<crate::generated::camt::camt_054_001_14::Document>(xml)?)),
+        #[cfg(feature = "model-camt")]
         "camt.055.001.10" => Ok(AnyMessage::Camt_055_001_10(parse_boxed::<crate::generated::camt::camt_055_001_10::Document>(xml)?)),
+        #[cfg(feature = "model-camt")]
+        "camt.055.001.13" => Ok(AnyMessage::Camt_055_001_13(parse_boxed::<crate::generated::camt::camt_055_001_13::Document>(xml)?)),
         #[cfg(feature = "model-camt")]
         "camt.056.001.09" => Ok(AnyMessage::Camt_056_001_09(parse_boxed::<crate::generated::camt::camt_056_001_09::Document>(xml)?)),
         #[cfg(feature = "model-camt")]
         "camt.056.001.10" => Ok(AnyMessage::Camt_056_001_10(parse_boxed::<crate::generated::camt::camt_056_001_10::Document>(xml)?)),
         #[cfg(feature = "model-camt")]
+        "camt.056.001.12" => Ok(AnyMessage::Camt_056_001_12(parse_boxed::<crate::generated::camt::camt_056_001_12::Document>(xml)?)),
+        #[cfg(feature = "model-camt")]
         "camt.057.001.07" => Ok(AnyMessage::Camt_057_001_07(parse_boxed::<crate::generated::camt::camt_057_001_07::Document>(xml)?)),
+        #[cfg(feature = "model-camt")]
+        "camt.057.001.09" => Ok(AnyMessage::Camt_057_001_09(parse_boxed::<crate::generated::camt::camt_057_001_09::Document>(xml)?)),
         #[cfg(feature = "model-camt")]
         "camt.058.001.07" => Ok(AnyMessage::Camt_058_001_07(parse_boxed::<crate::generated::camt::camt_058_001_07::Document>(xml)?)),
         #[cfg(feature = "model-camt")]
+        "camt.058.001.10" => Ok(AnyMessage::Camt_058_001_10(parse_boxed::<crate::generated::camt::camt_058_001_10::Document>(xml)?)),
+        #[cfg(feature = "model-camt")]
         "camt.059.001.07" => Ok(AnyMessage::Camt_059_001_07(parse_boxed::<crate::generated::camt::camt_059_001_07::Document>(xml)?)),
         #[cfg(feature = "model-camt")]
+        "camt.059.001.09" => Ok(AnyMessage::Camt_059_001_09(parse_boxed::<crate::generated::camt::camt_059_001_09::Document>(xml)?)),
+        #[cfg(feature = "model-camt")]
         "camt.060.001.06" => Ok(AnyMessage::Camt_060_001_06(parse_boxed::<crate::generated::camt::camt_060_001_06::Document>(xml)?)),
+        #[cfg(feature = "model-camt")]
+        "camt.060.001.07" => Ok(AnyMessage::Camt_060_001_07(parse_boxed::<crate::generated::camt::camt_060_001_07::Document>(xml)?)),
         #[cfg(feature = "model-camt")]
         "camt.061.001.02" => Ok(AnyMessage::Camt_061_001_02(parse_boxed::<crate::generated::camt::camt_061_001_02::Document>(xml)?)),
         #[cfg(feature = "model-camt")]
@@ -4877,197 +7683,387 @@ pub fn parse_auto(xml: &str) -> crate::Result<AnyMessage> {
         #[cfg(feature = "model-camt")]
         "camt.063.001.02" => Ok(AnyMessage::Camt_063_001_02(parse_boxed::<crate::generated::camt::camt_063_001_02::Document>(xml)?)),
         #[cfg(feature = "model-camt")]
+        "camt.064.001.01" => Ok(AnyMessage::Camt_064_001_01(parse_boxed::<crate::generated::camt::camt_064_001_01::Document>(xml)?)),
+        #[cfg(feature = "model-camt")]
+        "camt.065.001.01" => Ok(AnyMessage::Camt_065_001_01(parse_boxed::<crate::generated::camt::camt_065_001_01::Document>(xml)?)),
+        #[cfg(feature = "model-camt")]
         "camt.066.001.01" => Ok(AnyMessage::Camt_066_001_01(parse_boxed::<crate::generated::camt::camt_066_001_01::Document>(xml)?)),
+        #[cfg(feature = "model-camt")]
+        "camt.066.001.02" => Ok(AnyMessage::Camt_066_001_02(parse_boxed::<crate::generated::camt::camt_066_001_02::Document>(xml)?)),
         #[cfg(feature = "model-camt")]
         "camt.067.001.01" => Ok(AnyMessage::Camt_067_001_01(parse_boxed::<crate::generated::camt::camt_067_001_01::Document>(xml)?)),
         #[cfg(feature = "model-camt")]
+        "camt.067.001.02" => Ok(AnyMessage::Camt_067_001_02(parse_boxed::<crate::generated::camt::camt_067_001_02::Document>(xml)?)),
+        #[cfg(feature = "model-camt")]
         "camt.068.001.01" => Ok(AnyMessage::Camt_068_001_01(parse_boxed::<crate::generated::camt::camt_068_001_01::Document>(xml)?)),
+        #[cfg(feature = "model-camt")]
+        "camt.068.001.02" => Ok(AnyMessage::Camt_068_001_02(parse_boxed::<crate::generated::camt::camt_068_001_02::Document>(xml)?)),
         #[cfg(feature = "model-camt")]
         "camt.069.001.04" => Ok(AnyMessage::Camt_069_001_04(parse_boxed::<crate::generated::camt::camt_069_001_04::Document>(xml)?)),
         #[cfg(feature = "model-camt")]
+        "camt.069.001.05" => Ok(AnyMessage::Camt_069_001_05(parse_boxed::<crate::generated::camt::camt_069_001_05::Document>(xml)?)),
+        #[cfg(feature = "model-camt")]
         "camt.070.001.05" => Ok(AnyMessage::Camt_070_001_05(parse_boxed::<crate::generated::camt::camt_070_001_05::Document>(xml)?)),
+        #[cfg(feature = "model-camt")]
+        "camt.070.001.06" => Ok(AnyMessage::Camt_070_001_06(parse_boxed::<crate::generated::camt::camt_070_001_06::Document>(xml)?)),
         #[cfg(feature = "model-camt")]
         "camt.071.001.04" => Ok(AnyMessage::Camt_071_001_04(parse_boxed::<crate::generated::camt::camt_071_001_04::Document>(xml)?)),
         #[cfg(feature = "model-camt")]
+        "camt.071.001.05" => Ok(AnyMessage::Camt_071_001_05(parse_boxed::<crate::generated::camt::camt_071_001_05::Document>(xml)?)),
+        #[cfg(feature = "model-camt")]
         "camt.072.001.01" => Ok(AnyMessage::Camt_072_001_01(parse_boxed::<crate::generated::camt::camt_072_001_01::Document>(xml)?)),
+        #[cfg(feature = "model-camt")]
+        "camt.072.001.02" => Ok(AnyMessage::Camt_072_001_02(parse_boxed::<crate::generated::camt::camt_072_001_02::Document>(xml)?)),
         #[cfg(feature = "model-camt")]
         "camt.073.001.01" => Ok(AnyMessage::Camt_073_001_01(parse_boxed::<crate::generated::camt::camt_073_001_01::Document>(xml)?)),
         #[cfg(feature = "model-camt")]
+        "camt.073.001.02" => Ok(AnyMessage::Camt_073_001_02(parse_boxed::<crate::generated::camt::camt_073_001_02::Document>(xml)?)),
+        #[cfg(feature = "model-camt")]
         "camt.074.001.01" => Ok(AnyMessage::Camt_074_001_01(parse_boxed::<crate::generated::camt::camt_074_001_01::Document>(xml)?)),
+        #[cfg(feature = "model-camt")]
+        "camt.074.001.02" => Ok(AnyMessage::Camt_074_001_02(parse_boxed::<crate::generated::camt::camt_074_001_02::Document>(xml)?)),
         #[cfg(feature = "model-camt")]
         "camt.075.001.01" => Ok(AnyMessage::Camt_075_001_01(parse_boxed::<crate::generated::camt::camt_075_001_01::Document>(xml)?)),
         #[cfg(feature = "model-camt")]
+        "camt.075.001.02" => Ok(AnyMessage::Camt_075_001_02(parse_boxed::<crate::generated::camt::camt_075_001_02::Document>(xml)?)),
+        #[cfg(feature = "model-camt")]
+        "camt.076.001.01" => Ok(AnyMessage::Camt_076_001_01(parse_boxed::<crate::generated::camt::camt_076_001_01::Document>(xml)?)),
+        #[cfg(feature = "model-camt")]
+        "camt.077.001.01" => Ok(AnyMessage::Camt_077_001_01(parse_boxed::<crate::generated::camt::camt_077_001_01::Document>(xml)?)),
+        #[cfg(feature = "model-camt")]
         "camt.078.001.01" => Ok(AnyMessage::Camt_078_001_01(parse_boxed::<crate::generated::camt::camt_078_001_01::Document>(xml)?)),
+        #[cfg(feature = "model-camt")]
+        "camt.078.001.02" => Ok(AnyMessage::Camt_078_001_02(parse_boxed::<crate::generated::camt::camt_078_001_02::Document>(xml)?)),
         #[cfg(feature = "model-camt")]
         "camt.079.001.01" => Ok(AnyMessage::Camt_079_001_01(parse_boxed::<crate::generated::camt::camt_079_001_01::Document>(xml)?)),
         #[cfg(feature = "model-camt")]
+        "camt.079.001.02" => Ok(AnyMessage::Camt_079_001_02(parse_boxed::<crate::generated::camt::camt_079_001_02::Document>(xml)?)),
+        #[cfg(feature = "model-camt")]
         "camt.080.001.01" => Ok(AnyMessage::Camt_080_001_01(parse_boxed::<crate::generated::camt::camt_080_001_01::Document>(xml)?)),
+        #[cfg(feature = "model-camt")]
+        "camt.080.001.02" => Ok(AnyMessage::Camt_080_001_02(parse_boxed::<crate::generated::camt::camt_080_001_02::Document>(xml)?)),
         #[cfg(feature = "model-camt")]
         "camt.081.001.01" => Ok(AnyMessage::Camt_081_001_01(parse_boxed::<crate::generated::camt::camt_081_001_01::Document>(xml)?)),
         #[cfg(feature = "model-camt")]
+        "camt.081.001.02" => Ok(AnyMessage::Camt_081_001_02(parse_boxed::<crate::generated::camt::camt_081_001_02::Document>(xml)?)),
+        #[cfg(feature = "model-camt")]
         "camt.082.001.01" => Ok(AnyMessage::Camt_082_001_01(parse_boxed::<crate::generated::camt::camt_082_001_01::Document>(xml)?)),
+        #[cfg(feature = "model-camt")]
+        "camt.082.001.02" => Ok(AnyMessage::Camt_082_001_02(parse_boxed::<crate::generated::camt::camt_082_001_02::Document>(xml)?)),
         #[cfg(feature = "model-camt")]
         "camt.083.001.01" => Ok(AnyMessage::Camt_083_001_01(parse_boxed::<crate::generated::camt::camt_083_001_01::Document>(xml)?)),
         #[cfg(feature = "model-camt")]
+        "camt.083.001.02" => Ok(AnyMessage::Camt_083_001_02(parse_boxed::<crate::generated::camt::camt_083_001_02::Document>(xml)?)),
+        #[cfg(feature = "model-camt")]
         "camt.084.001.01" => Ok(AnyMessage::Camt_084_001_01(parse_boxed::<crate::generated::camt::camt_084_001_01::Document>(xml)?)),
+        #[cfg(feature = "model-camt")]
+        "camt.084.001.02" => Ok(AnyMessage::Camt_084_001_02(parse_boxed::<crate::generated::camt::camt_084_001_02::Document>(xml)?)),
         #[cfg(feature = "model-camt")]
         "camt.085.001.01" => Ok(AnyMessage::Camt_085_001_01(parse_boxed::<crate::generated::camt::camt_085_001_01::Document>(xml)?)),
         #[cfg(feature = "model-camt")]
+        "camt.085.001.02" => Ok(AnyMessage::Camt_085_001_02(parse_boxed::<crate::generated::camt::camt_085_001_02::Document>(xml)?)),
+        #[cfg(feature = "model-camt")]
         "camt.086.001.04" => Ok(AnyMessage::Camt_086_001_04(parse_boxed::<crate::generated::camt::camt_086_001_04::Document>(xml)?)),
+        #[cfg(feature = "model-camt")]
+        "camt.086.001.05" => Ok(AnyMessage::Camt_086_001_05(parse_boxed::<crate::generated::camt::camt_086_001_05::Document>(xml)?)),
         #[cfg(feature = "model-camt")]
         "camt.087.001.07" => Ok(AnyMessage::Camt_087_001_07(parse_boxed::<crate::generated::camt::camt_087_001_07::Document>(xml)?)),
         #[cfg(feature = "model-camt")]
         "camt.087.001.08" => Ok(AnyMessage::Camt_087_001_08(parse_boxed::<crate::generated::camt::camt_087_001_08::Document>(xml)?)),
         #[cfg(feature = "model-camt")]
+        "camt.087.001.09" => Ok(AnyMessage::Camt_087_001_09(parse_boxed::<crate::generated::camt::camt_087_001_09::Document>(xml)?)),
+        #[cfg(feature = "model-camt")]
         "camt.088.001.01" => Ok(AnyMessage::Camt_088_001_01(parse_boxed::<crate::generated::camt::camt_088_001_01::Document>(xml)?)),
         #[cfg(feature = "model-camt")]
         "camt.101.001.01" => Ok(AnyMessage::Camt_101_001_01(parse_boxed::<crate::generated::camt::camt_101_001_01::Document>(xml)?)),
         #[cfg(feature = "model-camt")]
+        "camt.101.001.02" => Ok(AnyMessage::Camt_101_001_02(parse_boxed::<crate::generated::camt::camt_101_001_02::Document>(xml)?)),
+        #[cfg(feature = "model-camt")]
         "camt.102.001.02" => Ok(AnyMessage::Camt_102_001_02(parse_boxed::<crate::generated::camt::camt_102_001_02::Document>(xml)?)),
         #[cfg(feature = "model-camt")]
+        "camt.102.001.03" => Ok(AnyMessage::Camt_102_001_03(parse_boxed::<crate::generated::camt::camt_102_001_03::Document>(xml)?)),
+        #[cfg(feature = "model-camt")]
         "camt.103.001.02" => Ok(AnyMessage::Camt_103_001_02(parse_boxed::<crate::generated::camt::camt_103_001_02::Document>(xml)?)),
+        #[cfg(feature = "model-camt")]
+        "camt.103.001.03" => Ok(AnyMessage::Camt_103_001_03(parse_boxed::<crate::generated::camt::camt_103_001_03::Document>(xml)?)),
         #[cfg(feature = "model-camt")]
         "camt.104.001.01" => Ok(AnyMessage::Camt_104_001_01(parse_boxed::<crate::generated::camt::camt_104_001_01::Document>(xml)?)),
         #[cfg(feature = "model-camt")]
         "camt.105.001.01" => Ok(AnyMessage::Camt_105_001_01(parse_boxed::<crate::generated::camt::camt_105_001_01::Document>(xml)?)),
         #[cfg(feature = "model-camt")]
+        "camt.105.001.03" => Ok(AnyMessage::Camt_105_001_03(parse_boxed::<crate::generated::camt::camt_105_001_03::Document>(xml)?)),
+        #[cfg(feature = "model-camt")]
         "camt.106.001.01" => Ok(AnyMessage::Camt_106_001_01(parse_boxed::<crate::generated::camt::camt_106_001_01::Document>(xml)?)),
+        #[cfg(feature = "model-camt")]
+        "camt.106.001.03" => Ok(AnyMessage::Camt_106_001_03(parse_boxed::<crate::generated::camt::camt_106_001_03::Document>(xml)?)),
         #[cfg(feature = "model-camt")]
         "camt.107.001.01" => Ok(AnyMessage::Camt_107_001_01(parse_boxed::<crate::generated::camt::camt_107_001_01::Document>(xml)?)),
         #[cfg(feature = "model-camt")]
+        "camt.107.001.02" => Ok(AnyMessage::Camt_107_001_02(parse_boxed::<crate::generated::camt::camt_107_001_02::Document>(xml)?)),
+        #[cfg(feature = "model-camt")]
         "camt.108.001.01" => Ok(AnyMessage::Camt_108_001_01(parse_boxed::<crate::generated::camt::camt_108_001_01::Document>(xml)?)),
         #[cfg(feature = "model-camt")]
+        "camt.108.001.02" => Ok(AnyMessage::Camt_108_001_02(parse_boxed::<crate::generated::camt::camt_108_001_02::Document>(xml)?)),
+        #[cfg(feature = "model-camt")]
         "camt.109.001.01" => Ok(AnyMessage::Camt_109_001_01(parse_boxed::<crate::generated::camt::camt_109_001_01::Document>(xml)?)),
+        #[cfg(feature = "model-camt")]
+        "camt.109.001.02" => Ok(AnyMessage::Camt_109_001_02(parse_boxed::<crate::generated::camt::camt_109_001_02::Document>(xml)?)),
+        #[cfg(feature = "model-camt")]
+        "camt.110.001.02" => Ok(AnyMessage::Camt_110_001_02(parse_boxed::<crate::generated::camt::camt_110_001_02::Document>(xml)?)),
+        #[cfg(feature = "model-camt")]
+        "camt.111.001.03" => Ok(AnyMessage::Camt_111_001_03(parse_boxed::<crate::generated::camt::camt_111_001_03::Document>(xml)?)),
         #[cfg(feature = "model-canm")]
         "canm.001.001.02" => Ok(AnyMessage::Canm_001_001_02(parse_boxed::<crate::generated::canm::canm_001_001_02::Document>(xml)?)),
         #[cfg(feature = "model-canm")]
+        "canm.001.001.05" => Ok(AnyMessage::Canm_001_001_05(parse_boxed::<crate::generated::canm::canm_001_001_05::Document>(xml)?)),
+        #[cfg(feature = "model-canm")]
         "canm.002.001.02" => Ok(AnyMessage::Canm_002_001_02(parse_boxed::<crate::generated::canm::canm_002_001_02::Document>(xml)?)),
+        #[cfg(feature = "model-canm")]
+        "canm.002.001.05" => Ok(AnyMessage::Canm_002_001_05(parse_boxed::<crate::generated::canm::canm_002_001_05::Document>(xml)?)),
         #[cfg(feature = "model-canm")]
         "canm.003.001.02" => Ok(AnyMessage::Canm_003_001_02(parse_boxed::<crate::generated::canm::canm_003_001_02::Document>(xml)?)),
         #[cfg(feature = "model-canm")]
+        "canm.003.001.05" => Ok(AnyMessage::Canm_003_001_05(parse_boxed::<crate::generated::canm::canm_003_001_05::Document>(xml)?)),
+        #[cfg(feature = "model-canm")]
         "canm.004.001.02" => Ok(AnyMessage::Canm_004_001_02(parse_boxed::<crate::generated::canm::canm_004_001_02::Document>(xml)?)),
+        #[cfg(feature = "model-canm")]
+        "canm.004.001.05" => Ok(AnyMessage::Canm_004_001_05(parse_boxed::<crate::generated::canm::canm_004_001_05::Document>(xml)?)),
         #[cfg(feature = "model-casp")]
         "casp.001.001.03" => Ok(AnyMessage::Casp_001_001_03(parse_boxed::<crate::generated::casp::casp_001_001_03::Document>(xml)?)),
         #[cfg(feature = "model-casp")]
+        "casp.001.001.08" => Ok(AnyMessage::Casp_001_001_08(parse_boxed::<crate::generated::casp::casp_001_001_08::Document>(xml)?)),
+        #[cfg(feature = "model-casp")]
         "casp.002.001.03" => Ok(AnyMessage::Casp_002_001_03(parse_boxed::<crate::generated::casp::casp_002_001_03::Document>(xml)?)),
+        #[cfg(feature = "model-casp")]
+        "casp.002.001.08" => Ok(AnyMessage::Casp_002_001_08(parse_boxed::<crate::generated::casp::casp_002_001_08::Document>(xml)?)),
         #[cfg(feature = "model-casp")]
         "casp.003.001.03" => Ok(AnyMessage::Casp_003_001_03(parse_boxed::<crate::generated::casp::casp_003_001_03::Document>(xml)?)),
         #[cfg(feature = "model-casp")]
+        "casp.003.001.08" => Ok(AnyMessage::Casp_003_001_08(parse_boxed::<crate::generated::casp::casp_003_001_08::Document>(xml)?)),
+        #[cfg(feature = "model-casp")]
         "casp.004.001.03" => Ok(AnyMessage::Casp_004_001_03(parse_boxed::<crate::generated::casp::casp_004_001_03::Document>(xml)?)),
+        #[cfg(feature = "model-casp")]
+        "casp.004.001.08" => Ok(AnyMessage::Casp_004_001_08(parse_boxed::<crate::generated::casp::casp_004_001_08::Document>(xml)?)),
         #[cfg(feature = "model-casp")]
         "casp.005.001.03" => Ok(AnyMessage::Casp_005_001_03(parse_boxed::<crate::generated::casp::casp_005_001_03::Document>(xml)?)),
         #[cfg(feature = "model-casp")]
+        "casp.005.001.08" => Ok(AnyMessage::Casp_005_001_08(parse_boxed::<crate::generated::casp::casp_005_001_08::Document>(xml)?)),
+        #[cfg(feature = "model-casp")]
         "casp.006.001.03" => Ok(AnyMessage::Casp_006_001_03(parse_boxed::<crate::generated::casp::casp_006_001_03::Document>(xml)?)),
+        #[cfg(feature = "model-casp")]
+        "casp.006.001.08" => Ok(AnyMessage::Casp_006_001_08(parse_boxed::<crate::generated::casp::casp_006_001_08::Document>(xml)?)),
         #[cfg(feature = "model-casp")]
         "casp.007.001.03" => Ok(AnyMessage::Casp_007_001_03(parse_boxed::<crate::generated::casp::casp_007_001_03::Document>(xml)?)),
         #[cfg(feature = "model-casp")]
+        "casp.007.001.08" => Ok(AnyMessage::Casp_007_001_08(parse_boxed::<crate::generated::casp::casp_007_001_08::Document>(xml)?)),
+        #[cfg(feature = "model-casp")]
         "casp.008.001.03" => Ok(AnyMessage::Casp_008_001_03(parse_boxed::<crate::generated::casp::casp_008_001_03::Document>(xml)?)),
+        #[cfg(feature = "model-casp")]
+        "casp.008.001.08" => Ok(AnyMessage::Casp_008_001_08(parse_boxed::<crate::generated::casp::casp_008_001_08::Document>(xml)?)),
         #[cfg(feature = "model-casp")]
         "casp.009.001.03" => Ok(AnyMessage::Casp_009_001_03(parse_boxed::<crate::generated::casp::casp_009_001_03::Document>(xml)?)),
         #[cfg(feature = "model-casp")]
+        "casp.009.001.08" => Ok(AnyMessage::Casp_009_001_08(parse_boxed::<crate::generated::casp::casp_009_001_08::Document>(xml)?)),
+        #[cfg(feature = "model-casp")]
         "casp.010.001.03" => Ok(AnyMessage::Casp_010_001_03(parse_boxed::<crate::generated::casp::casp_010_001_03::Document>(xml)?)),
+        #[cfg(feature = "model-casp")]
+        "casp.010.001.08" => Ok(AnyMessage::Casp_010_001_08(parse_boxed::<crate::generated::casp::casp_010_001_08::Document>(xml)?)),
         #[cfg(feature = "model-casp")]
         "casp.011.001.03" => Ok(AnyMessage::Casp_011_001_03(parse_boxed::<crate::generated::casp::casp_011_001_03::Document>(xml)?)),
         #[cfg(feature = "model-casp")]
+        "casp.011.001.08" => Ok(AnyMessage::Casp_011_001_08(parse_boxed::<crate::generated::casp::casp_011_001_08::Document>(xml)?)),
+        #[cfg(feature = "model-casp")]
         "casp.012.001.03" => Ok(AnyMessage::Casp_012_001_03(parse_boxed::<crate::generated::casp::casp_012_001_03::Document>(xml)?)),
+        #[cfg(feature = "model-casp")]
+        "casp.012.001.08" => Ok(AnyMessage::Casp_012_001_08(parse_boxed::<crate::generated::casp::casp_012_001_08::Document>(xml)?)),
         #[cfg(feature = "model-casp")]
         "casp.013.001.02" => Ok(AnyMessage::Casp_013_001_02(parse_boxed::<crate::generated::casp::casp_013_001_02::Document>(xml)?)),
         #[cfg(feature = "model-casp")]
         "casp.014.001.03" => Ok(AnyMessage::Casp_014_001_03(parse_boxed::<crate::generated::casp::casp_014_001_03::Document>(xml)?)),
         #[cfg(feature = "model-casp")]
+        "casp.014.001.08" => Ok(AnyMessage::Casp_014_001_08(parse_boxed::<crate::generated::casp::casp_014_001_08::Document>(xml)?)),
+        #[cfg(feature = "model-casp")]
         "casp.015.001.03" => Ok(AnyMessage::Casp_015_001_03(parse_boxed::<crate::generated::casp::casp_015_001_03::Document>(xml)?)),
+        #[cfg(feature = "model-casp")]
+        "casp.015.001.08" => Ok(AnyMessage::Casp_015_001_08(parse_boxed::<crate::generated::casp::casp_015_001_08::Document>(xml)?)),
         #[cfg(feature = "model-casp")]
         "casp.016.001.03" => Ok(AnyMessage::Casp_016_001_03(parse_boxed::<crate::generated::casp::casp_016_001_03::Document>(xml)?)),
         #[cfg(feature = "model-casp")]
+        "casp.016.001.08" => Ok(AnyMessage::Casp_016_001_08(parse_boxed::<crate::generated::casp::casp_016_001_08::Document>(xml)?)),
+        #[cfg(feature = "model-casp")]
         "casp.017.001.03" => Ok(AnyMessage::Casp_017_001_03(parse_boxed::<crate::generated::casp::casp_017_001_03::Document>(xml)?)),
+        #[cfg(feature = "model-casp")]
+        "casp.017.001.08" => Ok(AnyMessage::Casp_017_001_08(parse_boxed::<crate::generated::casp::casp_017_001_08::Document>(xml)?)),
         #[cfg(feature = "model-casr")]
         "casr.001.001.01" => Ok(AnyMessage::Casr_001_001_01(parse_boxed::<crate::generated::casr::casr_001_001_01::Document>(xml)?)),
         #[cfg(feature = "model-casr")]
+        "casr.001.001.04" => Ok(AnyMessage::Casr_001_001_04(parse_boxed::<crate::generated::casr::casr_001_001_04::Document>(xml)?)),
+        #[cfg(feature = "model-casr")]
         "casr.002.001.01" => Ok(AnyMessage::Casr_002_001_01(parse_boxed::<crate::generated::casr::casr_002_001_01::Document>(xml)?)),
+        #[cfg(feature = "model-casr")]
+        "casr.002.001.04" => Ok(AnyMessage::Casr_002_001_04(parse_boxed::<crate::generated::casr::casr_002_001_04::Document>(xml)?)),
         #[cfg(feature = "model-catm")]
         "catm.001.001.03" => Ok(AnyMessage::Catm_001_001_03(parse_boxed::<crate::generated::catm::catm_001_001_03::Document>(xml)?)),
         #[cfg(feature = "model-catm")]
         "catm.001.001.10" => Ok(AnyMessage::Catm_001_001_10(parse_boxed::<crate::generated::catm::catm_001_001_10::Document>(xml)?)),
         #[cfg(feature = "model-catm")]
+        "catm.001.001.15" => Ok(AnyMessage::Catm_001_001_15(parse_boxed::<crate::generated::catm::catm_001_001_15::Document>(xml)?)),
+        #[cfg(feature = "model-catm")]
         "catm.002.001.09" => Ok(AnyMessage::Catm_002_001_09(parse_boxed::<crate::generated::catm::catm_002_001_09::Document>(xml)?)),
         #[cfg(feature = "model-catm")]
+        "catm.002.001.14" => Ok(AnyMessage::Catm_002_001_14(parse_boxed::<crate::generated::catm::catm_002_001_14::Document>(xml)?)),
+        #[cfg(feature = "model-catm")]
         "catm.003.001.10" => Ok(AnyMessage::Catm_003_001_10(parse_boxed::<crate::generated::catm::catm_003_001_10::Document>(xml)?)),
+        #[cfg(feature = "model-catm")]
+        "catm.003.001.15" => Ok(AnyMessage::Catm_003_001_15(parse_boxed::<crate::generated::catm::catm_003_001_15::Document>(xml)?)),
         #[cfg(feature = "model-catm")]
         "catm.004.001.05" => Ok(AnyMessage::Catm_004_001_05(parse_boxed::<crate::generated::catm::catm_004_001_05::Document>(xml)?)),
         #[cfg(feature = "model-catm")]
         "catm.005.001.07" => Ok(AnyMessage::Catm_005_001_07(parse_boxed::<crate::generated::catm::catm_005_001_07::Document>(xml)?)),
         #[cfg(feature = "model-catm")]
+        "catm.005.001.12" => Ok(AnyMessage::Catm_005_001_12(parse_boxed::<crate::generated::catm::catm_005_001_12::Document>(xml)?)),
+        #[cfg(feature = "model-catm")]
         "catm.006.001.05" => Ok(AnyMessage::Catm_006_001_05(parse_boxed::<crate::generated::catm::catm_006_001_05::Document>(xml)?)),
+        #[cfg(feature = "model-catm")]
+        "catm.006.001.08" => Ok(AnyMessage::Catm_006_001_08(parse_boxed::<crate::generated::catm::catm_006_001_08::Document>(xml)?)),
         #[cfg(feature = "model-catm")]
         "catm.007.001.04" => Ok(AnyMessage::Catm_007_001_04(parse_boxed::<crate::generated::catm::catm_007_001_04::Document>(xml)?)),
         #[cfg(feature = "model-catm")]
+        "catm.007.001.08" => Ok(AnyMessage::Catm_007_001_08(parse_boxed::<crate::generated::catm::catm_007_001_08::Document>(xml)?)),
+        #[cfg(feature = "model-catm")]
         "catm.008.001.04" => Ok(AnyMessage::Catm_008_001_04(parse_boxed::<crate::generated::catm::catm_008_001_04::Document>(xml)?)),
+        #[cfg(feature = "model-catm")]
+        "catm.008.001.07" => Ok(AnyMessage::Catm_008_001_07(parse_boxed::<crate::generated::catm::catm_008_001_07::Document>(xml)?)),
         #[cfg(feature = "model-catp")]
         "catp.001.001.02" => Ok(AnyMessage::Catp_001_001_02(parse_boxed::<crate::generated::catp::catp_001_001_02::Document>(xml)?)),
         #[cfg(feature = "model-catp")]
+        "catp.001.001.03" => Ok(AnyMessage::Catp_001_001_03(parse_boxed::<crate::generated::catp::catp_001_001_03::Document>(xml)?)),
+        #[cfg(feature = "model-catp")]
         "catp.002.001.02" => Ok(AnyMessage::Catp_002_001_02(parse_boxed::<crate::generated::catp::catp_002_001_02::Document>(xml)?)),
+        #[cfg(feature = "model-catp")]
+        "catp.002.001.03" => Ok(AnyMessage::Catp_002_001_03(parse_boxed::<crate::generated::catp::catp_002_001_03::Document>(xml)?)),
         #[cfg(feature = "model-catp")]
         "catp.003.001.02" => Ok(AnyMessage::Catp_003_001_02(parse_boxed::<crate::generated::catp::catp_003_001_02::Document>(xml)?)),
         #[cfg(feature = "model-catp")]
+        "catp.003.001.03" => Ok(AnyMessage::Catp_003_001_03(parse_boxed::<crate::generated::catp::catp_003_001_03::Document>(xml)?)),
+        #[cfg(feature = "model-catp")]
         "catp.004.001.02" => Ok(AnyMessage::Catp_004_001_02(parse_boxed::<crate::generated::catp::catp_004_001_02::Document>(xml)?)),
+        #[cfg(feature = "model-catp")]
+        "catp.004.001.03" => Ok(AnyMessage::Catp_004_001_03(parse_boxed::<crate::generated::catp::catp_004_001_03::Document>(xml)?)),
         #[cfg(feature = "model-catp")]
         "catp.005.001.02" => Ok(AnyMessage::Catp_005_001_02(parse_boxed::<crate::generated::catp::catp_005_001_02::Document>(xml)?)),
         #[cfg(feature = "model-catp")]
         "catp.006.001.02" => Ok(AnyMessage::Catp_006_001_02(parse_boxed::<crate::generated::catp::catp_006_001_02::Document>(xml)?)),
         #[cfg(feature = "model-catp")]
+        "catp.006.001.03" => Ok(AnyMessage::Catp_006_001_03(parse_boxed::<crate::generated::catp::catp_006_001_03::Document>(xml)?)),
+        #[cfg(feature = "model-catp")]
         "catp.007.001.02" => Ok(AnyMessage::Catp_007_001_02(parse_boxed::<crate::generated::catp::catp_007_001_02::Document>(xml)?)),
+        #[cfg(feature = "model-catp")]
+        "catp.007.001.03" => Ok(AnyMessage::Catp_007_001_03(parse_boxed::<crate::generated::catp::catp_007_001_03::Document>(xml)?)),
         #[cfg(feature = "model-catp")]
         "catp.008.001.02" => Ok(AnyMessage::Catp_008_001_02(parse_boxed::<crate::generated::catp::catp_008_001_02::Document>(xml)?)),
         #[cfg(feature = "model-catp")]
+        "catp.008.001.03" => Ok(AnyMessage::Catp_008_001_03(parse_boxed::<crate::generated::catp::catp_008_001_03::Document>(xml)?)),
+        #[cfg(feature = "model-catp")]
         "catp.009.001.02" => Ok(AnyMessage::Catp_009_001_02(parse_boxed::<crate::generated::catp::catp_009_001_02::Document>(xml)?)),
+        #[cfg(feature = "model-catp")]
+        "catp.009.001.03" => Ok(AnyMessage::Catp_009_001_03(parse_boxed::<crate::generated::catp::catp_009_001_03::Document>(xml)?)),
         #[cfg(feature = "model-catp")]
         "catp.010.001.02" => Ok(AnyMessage::Catp_010_001_02(parse_boxed::<crate::generated::catp::catp_010_001_02::Document>(xml)?)),
         #[cfg(feature = "model-catp")]
+        "catp.010.001.03" => Ok(AnyMessage::Catp_010_001_03(parse_boxed::<crate::generated::catp::catp_010_001_03::Document>(xml)?)),
+        #[cfg(feature = "model-catp")]
         "catp.011.001.02" => Ok(AnyMessage::Catp_011_001_02(parse_boxed::<crate::generated::catp::catp_011_001_02::Document>(xml)?)),
+        #[cfg(feature = "model-catp")]
+        "catp.011.001.03" => Ok(AnyMessage::Catp_011_001_03(parse_boxed::<crate::generated::catp::catp_011_001_03::Document>(xml)?)),
         #[cfg(feature = "model-catp")]
         "catp.012.001.01" => Ok(AnyMessage::Catp_012_001_01(parse_boxed::<crate::generated::catp::catp_012_001_01::Document>(xml)?)),
         #[cfg(feature = "model-catp")]
+        "catp.012.001.02" => Ok(AnyMessage::Catp_012_001_02(parse_boxed::<crate::generated::catp::catp_012_001_02::Document>(xml)?)),
+        #[cfg(feature = "model-catp")]
         "catp.013.001.01" => Ok(AnyMessage::Catp_013_001_01(parse_boxed::<crate::generated::catp::catp_013_001_01::Document>(xml)?)),
+        #[cfg(feature = "model-catp")]
+        "catp.013.001.02" => Ok(AnyMessage::Catp_013_001_02(parse_boxed::<crate::generated::catp::catp_013_001_02::Document>(xml)?)),
         #[cfg(feature = "model-catp")]
         "catp.014.001.01" => Ok(AnyMessage::Catp_014_001_01(parse_boxed::<crate::generated::catp::catp_014_001_01::Document>(xml)?)),
         #[cfg(feature = "model-catp")]
+        "catp.014.001.02" => Ok(AnyMessage::Catp_014_001_02(parse_boxed::<crate::generated::catp::catp_014_001_02::Document>(xml)?)),
+        #[cfg(feature = "model-catp")]
         "catp.015.001.01" => Ok(AnyMessage::Catp_015_001_01(parse_boxed::<crate::generated::catp::catp_015_001_01::Document>(xml)?)),
+        #[cfg(feature = "model-catp")]
+        "catp.015.001.02" => Ok(AnyMessage::Catp_015_001_02(parse_boxed::<crate::generated::catp::catp_015_001_02::Document>(xml)?)),
         #[cfg(feature = "model-catp")]
         "catp.016.001.01" => Ok(AnyMessage::Catp_016_001_01(parse_boxed::<crate::generated::catp::catp_016_001_01::Document>(xml)?)),
         #[cfg(feature = "model-catp")]
+        "catp.016.001.02" => Ok(AnyMessage::Catp_016_001_02(parse_boxed::<crate::generated::catp::catp_016_001_02::Document>(xml)?)),
+        #[cfg(feature = "model-catp")]
         "catp.017.001.01" => Ok(AnyMessage::Catp_017_001_01(parse_boxed::<crate::generated::catp::catp_017_001_01::Document>(xml)?)),
+        #[cfg(feature = "model-catp")]
+        "catp.017.001.02" => Ok(AnyMessage::Catp_017_001_02(parse_boxed::<crate::generated::catp::catp_017_001_02::Document>(xml)?)),
         #[cfg(feature = "model-colr")]
         "colr.001.001.01" => Ok(AnyMessage::Colr_001_001_01(parse_boxed::<crate::generated::colr::colr_001_001_01::Document>(xml)?)),
         #[cfg(feature = "model-colr")]
+        "colr.001.001.02" => Ok(AnyMessage::Colr_001_001_02(parse_boxed::<crate::generated::colr::colr_001_001_02::Document>(xml)?)),
+        #[cfg(feature = "model-colr")]
         "colr.002.001.01" => Ok(AnyMessage::Colr_002_001_01(parse_boxed::<crate::generated::colr::colr_002_001_01::Document>(xml)?)),
+        #[cfg(feature = "model-colr")]
+        "colr.002.001.02" => Ok(AnyMessage::Colr_002_001_02(parse_boxed::<crate::generated::colr::colr_002_001_02::Document>(xml)?)),
         #[cfg(feature = "model-colr")]
         "colr.003.001.04" => Ok(AnyMessage::Colr_003_001_04(parse_boxed::<crate::generated::colr::colr_003_001_04::Document>(xml)?)),
         #[cfg(feature = "model-colr")]
+        "colr.003.001.05" => Ok(AnyMessage::Colr_003_001_05(parse_boxed::<crate::generated::colr::colr_003_001_05::Document>(xml)?)),
+        #[cfg(feature = "model-colr")]
         "colr.004.001.04" => Ok(AnyMessage::Colr_004_001_04(parse_boxed::<crate::generated::colr::colr_004_001_04::Document>(xml)?)),
+        #[cfg(feature = "model-colr")]
+        "colr.004.001.05" => Ok(AnyMessage::Colr_004_001_05(parse_boxed::<crate::generated::colr::colr_004_001_05::Document>(xml)?)),
         #[cfg(feature = "model-colr")]
         "colr.005.001.05" => Ok(AnyMessage::Colr_005_001_05(parse_boxed::<crate::generated::colr::colr_005_001_05::Document>(xml)?)),
         #[cfg(feature = "model-colr")]
+        "colr.005.001.06" => Ok(AnyMessage::Colr_005_001_06(parse_boxed::<crate::generated::colr::colr_005_001_06::Document>(xml)?)),
+        #[cfg(feature = "model-colr")]
         "colr.006.001.04" => Ok(AnyMessage::Colr_006_001_04(parse_boxed::<crate::generated::colr::colr_006_001_04::Document>(xml)?)),
+        #[cfg(feature = "model-colr")]
+        "colr.006.001.05" => Ok(AnyMessage::Colr_006_001_05(parse_boxed::<crate::generated::colr::colr_006_001_05::Document>(xml)?)),
         #[cfg(feature = "model-colr")]
         "colr.007.001.05" => Ok(AnyMessage::Colr_007_001_05(parse_boxed::<crate::generated::colr::colr_007_001_05::Document>(xml)?)),
         #[cfg(feature = "model-colr")]
+        "colr.007.001.06" => Ok(AnyMessage::Colr_007_001_06(parse_boxed::<crate::generated::colr::colr_007_001_06::Document>(xml)?)),
+        #[cfg(feature = "model-colr")]
         "colr.008.001.05" => Ok(AnyMessage::Colr_008_001_05(parse_boxed::<crate::generated::colr::colr_008_001_05::Document>(xml)?)),
+        #[cfg(feature = "model-colr")]
+        "colr.008.001.06" => Ok(AnyMessage::Colr_008_001_06(parse_boxed::<crate::generated::colr::colr_008_001_06::Document>(xml)?)),
         #[cfg(feature = "model-colr")]
         "colr.009.001.04" => Ok(AnyMessage::Colr_009_001_04(parse_boxed::<crate::generated::colr::colr_009_001_04::Document>(xml)?)),
         #[cfg(feature = "model-colr")]
+        "colr.009.001.05" => Ok(AnyMessage::Colr_009_001_05(parse_boxed::<crate::generated::colr::colr_009_001_05::Document>(xml)?)),
+        #[cfg(feature = "model-colr")]
         "colr.010.001.04" => Ok(AnyMessage::Colr_010_001_04(parse_boxed::<crate::generated::colr::colr_010_001_04::Document>(xml)?)),
+        #[cfg(feature = "model-colr")]
+        "colr.010.001.05" => Ok(AnyMessage::Colr_010_001_05(parse_boxed::<crate::generated::colr::colr_010_001_05::Document>(xml)?)),
         #[cfg(feature = "model-colr")]
         "colr.011.001.04" => Ok(AnyMessage::Colr_011_001_04(parse_boxed::<crate::generated::colr::colr_011_001_04::Document>(xml)?)),
         #[cfg(feature = "model-colr")]
+        "colr.011.001.05" => Ok(AnyMessage::Colr_011_001_05(parse_boxed::<crate::generated::colr::colr_011_001_05::Document>(xml)?)),
+        #[cfg(feature = "model-colr")]
         "colr.012.001.04" => Ok(AnyMessage::Colr_012_001_04(parse_boxed::<crate::generated::colr::colr_012_001_04::Document>(xml)?)),
+        #[cfg(feature = "model-colr")]
+        "colr.012.001.05" => Ok(AnyMessage::Colr_012_001_05(parse_boxed::<crate::generated::colr::colr_012_001_05::Document>(xml)?)),
         #[cfg(feature = "model-colr")]
         "colr.013.001.04" => Ok(AnyMessage::Colr_013_001_04(parse_boxed::<crate::generated::colr::colr_013_001_04::Document>(xml)?)),
         #[cfg(feature = "model-colr")]
+        "colr.013.001.05" => Ok(AnyMessage::Colr_013_001_05(parse_boxed::<crate::generated::colr::colr_013_001_05::Document>(xml)?)),
+        #[cfg(feature = "model-colr")]
         "colr.014.001.04" => Ok(AnyMessage::Colr_014_001_04(parse_boxed::<crate::generated::colr::colr_014_001_04::Document>(xml)?)),
+        #[cfg(feature = "model-colr")]
+        "colr.014.001.05" => Ok(AnyMessage::Colr_014_001_05(parse_boxed::<crate::generated::colr::colr_014_001_05::Document>(xml)?)),
         #[cfg(feature = "model-colr")]
         "colr.015.001.04" => Ok(AnyMessage::Colr_015_001_04(parse_boxed::<crate::generated::colr::colr_015_001_04::Document>(xml)?)),
         #[cfg(feature = "model-colr")]
+        "colr.015.001.05" => Ok(AnyMessage::Colr_015_001_05(parse_boxed::<crate::generated::colr::colr_015_001_05::Document>(xml)?)),
+        #[cfg(feature = "model-colr")]
         "colr.016.001.04" => Ok(AnyMessage::Colr_016_001_04(parse_boxed::<crate::generated::colr::colr_016_001_04::Document>(xml)?)),
+        #[cfg(feature = "model-colr")]
+        "colr.016.001.05" => Ok(AnyMessage::Colr_016_001_05(parse_boxed::<crate::generated::colr::colr_016_001_05::Document>(xml)?)),
         #[cfg(feature = "model-colr")]
         "colr.019.001.01" => Ok(AnyMessage::Colr_019_001_01(parse_boxed::<crate::generated::colr::colr_019_001_01::Document>(xml)?)),
         #[cfg(feature = "model-colr")]
@@ -5083,93 +8079,169 @@ pub fn parse_auto(xml: &str) -> crate::Result<AnyMessage> {
         #[cfg(feature = "model-fxtr")]
         "fxtr.008.001.06" => Ok(AnyMessage::Fxtr_008_001_06(parse_boxed::<crate::generated::fxtr::fxtr_008_001_06::Document>(xml)?)),
         #[cfg(feature = "model-fxtr")]
+        "fxtr.008.001.08" => Ok(AnyMessage::Fxtr_008_001_08(parse_boxed::<crate::generated::fxtr::fxtr_008_001_08::Document>(xml)?)),
+        #[cfg(feature = "model-fxtr")]
         "fxtr.013.001.03" => Ok(AnyMessage::Fxtr_013_001_03(parse_boxed::<crate::generated::fxtr::fxtr_013_001_03::Document>(xml)?)),
         #[cfg(feature = "model-fxtr")]
         "fxtr.014.001.04" => Ok(AnyMessage::Fxtr_014_001_04(parse_boxed::<crate::generated::fxtr::fxtr_014_001_04::Document>(xml)?)),
         #[cfg(feature = "model-fxtr")]
+        "fxtr.014.001.06" => Ok(AnyMessage::Fxtr_014_001_06(parse_boxed::<crate::generated::fxtr::fxtr_014_001_06::Document>(xml)?)),
+        #[cfg(feature = "model-fxtr")]
         "fxtr.015.001.04" => Ok(AnyMessage::Fxtr_015_001_04(parse_boxed::<crate::generated::fxtr::fxtr_015_001_04::Document>(xml)?)),
+        #[cfg(feature = "model-fxtr")]
+        "fxtr.015.001.06" => Ok(AnyMessage::Fxtr_015_001_06(parse_boxed::<crate::generated::fxtr::fxtr_015_001_06::Document>(xml)?)),
         #[cfg(feature = "model-fxtr")]
         "fxtr.016.001.04" => Ok(AnyMessage::Fxtr_016_001_04(parse_boxed::<crate::generated::fxtr::fxtr_016_001_04::Document>(xml)?)),
         #[cfg(feature = "model-fxtr")]
+        "fxtr.016.001.06" => Ok(AnyMessage::Fxtr_016_001_06(parse_boxed::<crate::generated::fxtr::fxtr_016_001_06::Document>(xml)?)),
+        #[cfg(feature = "model-fxtr")]
         "fxtr.017.001.04" => Ok(AnyMessage::Fxtr_017_001_04(parse_boxed::<crate::generated::fxtr::fxtr_017_001_04::Document>(xml)?)),
+        #[cfg(feature = "model-fxtr")]
+        "fxtr.017.001.06" => Ok(AnyMessage::Fxtr_017_001_06(parse_boxed::<crate::generated::fxtr::fxtr_017_001_06::Document>(xml)?)),
         #[cfg(feature = "model-fxtr")]
         "fxtr.030.001.04" => Ok(AnyMessage::Fxtr_030_001_04(parse_boxed::<crate::generated::fxtr::fxtr_030_001_04::Document>(xml)?)),
         #[cfg(feature = "model-fxtr")]
+        "fxtr.030.001.06" => Ok(AnyMessage::Fxtr_030_001_06(parse_boxed::<crate::generated::fxtr::fxtr_030_001_06::Document>(xml)?)),
+        #[cfg(feature = "model-fxtr")]
         "fxtr.031.001.01" => Ok(AnyMessage::Fxtr_031_001_01(parse_boxed::<crate::generated::fxtr::fxtr_031_001_01::Document>(xml)?)),
+        #[cfg(feature = "model-fxtr")]
+        "fxtr.031.001.02" => Ok(AnyMessage::Fxtr_031_001_02(parse_boxed::<crate::generated::fxtr::fxtr_031_001_02::Document>(xml)?)),
         #[cfg(feature = "model-fxtr")]
         "fxtr.032.001.01" => Ok(AnyMessage::Fxtr_032_001_01(parse_boxed::<crate::generated::fxtr::fxtr_032_001_01::Document>(xml)?)),
         #[cfg(feature = "model-fxtr")]
+        "fxtr.032.001.02" => Ok(AnyMessage::Fxtr_032_001_02(parse_boxed::<crate::generated::fxtr::fxtr_032_001_02::Document>(xml)?)),
+        #[cfg(feature = "model-fxtr")]
         "fxtr.033.001.01" => Ok(AnyMessage::Fxtr_033_001_01(parse_boxed::<crate::generated::fxtr::fxtr_033_001_01::Document>(xml)?)),
+        #[cfg(feature = "model-fxtr")]
+        "fxtr.033.001.02" => Ok(AnyMessage::Fxtr_033_001_02(parse_boxed::<crate::generated::fxtr::fxtr_033_001_02::Document>(xml)?)),
         #[cfg(feature = "model-fxtr")]
         "fxtr.034.001.01" => Ok(AnyMessage::Fxtr_034_001_01(parse_boxed::<crate::generated::fxtr::fxtr_034_001_01::Document>(xml)?)),
         #[cfg(feature = "model-fxtr")]
+        "fxtr.034.001.02" => Ok(AnyMessage::Fxtr_034_001_02(parse_boxed::<crate::generated::fxtr::fxtr_034_001_02::Document>(xml)?)),
+        #[cfg(feature = "model-fxtr")]
         "fxtr.035.001.01" => Ok(AnyMessage::Fxtr_035_001_01(parse_boxed::<crate::generated::fxtr::fxtr_035_001_01::Document>(xml)?)),
+        #[cfg(feature = "model-fxtr")]
+        "fxtr.035.001.02" => Ok(AnyMessage::Fxtr_035_001_02(parse_boxed::<crate::generated::fxtr::fxtr_035_001_02::Document>(xml)?)),
         #[cfg(feature = "model-fxtr")]
         "fxtr.036.001.01" => Ok(AnyMessage::Fxtr_036_001_01(parse_boxed::<crate::generated::fxtr::fxtr_036_001_01::Document>(xml)?)),
         #[cfg(feature = "model-fxtr")]
+        "fxtr.036.001.02" => Ok(AnyMessage::Fxtr_036_001_02(parse_boxed::<crate::generated::fxtr::fxtr_036_001_02::Document>(xml)?)),
+        #[cfg(feature = "model-fxtr")]
         "fxtr.037.001.01" => Ok(AnyMessage::Fxtr_037_001_01(parse_boxed::<crate::generated::fxtr::fxtr_037_001_01::Document>(xml)?)),
+        #[cfg(feature = "model-fxtr")]
+        "fxtr.037.001.02" => Ok(AnyMessage::Fxtr_037_001_02(parse_boxed::<crate::generated::fxtr::fxtr_037_001_02::Document>(xml)?)),
+        #[cfg(feature = "model-fxtr")]
+        "fxtr.038.001.02" => Ok(AnyMessage::Fxtr_038_001_02(parse_boxed::<crate::generated::fxtr::fxtr_038_001_02::Document>(xml)?)),
         #[cfg(feature = "model-pacs")]
         "pacs.002.001.10" => Ok(AnyMessage::Pacs_002_001_10(parse_boxed::<crate::generated::pacs::pacs_002_001_10::Document>(xml)?)),
         #[cfg(feature = "model-pacs")]
         "pacs.002.001.12" => Ok(AnyMessage::Pacs_002_001_12(parse_boxed::<crate::generated::pacs::pacs_002_001_12::Document>(xml)?)),
         #[cfg(feature = "model-pacs")]
+        "pacs.002.001.16" => Ok(AnyMessage::Pacs_002_001_16(parse_boxed::<crate::generated::pacs::pacs_002_001_16::Document>(xml)?)),
+        #[cfg(feature = "model-pacs")]
         "pacs.003.001.09" => Ok(AnyMessage::Pacs_003_001_09(parse_boxed::<crate::generated::pacs::pacs_003_001_09::Document>(xml)?)),
+        #[cfg(feature = "model-pacs")]
+        "pacs.003.001.12" => Ok(AnyMessage::Pacs_003_001_12(parse_boxed::<crate::generated::pacs::pacs_003_001_12::Document>(xml)?)),
         #[cfg(feature = "model-pacs")]
         "pacs.004.001.09" => Ok(AnyMessage::Pacs_004_001_09(parse_boxed::<crate::generated::pacs::pacs_004_001_09::Document>(xml)?)),
         #[cfg(feature = "model-pacs")]
         "pacs.004.001.11" => Ok(AnyMessage::Pacs_004_001_11(parse_boxed::<crate::generated::pacs::pacs_004_001_11::Document>(xml)?)),
         #[cfg(feature = "model-pacs")]
+        "pacs.004.001.15" => Ok(AnyMessage::Pacs_004_001_15(parse_boxed::<crate::generated::pacs::pacs_004_001_15::Document>(xml)?)),
+        #[cfg(feature = "model-pacs")]
         "pacs.007.001.11" => Ok(AnyMessage::Pacs_007_001_11(parse_boxed::<crate::generated::pacs::pacs_007_001_11::Document>(xml)?)),
+        #[cfg(feature = "model-pacs")]
+        "pacs.007.001.14" => Ok(AnyMessage::Pacs_007_001_14(parse_boxed::<crate::generated::pacs::pacs_007_001_14::Document>(xml)?)),
         #[cfg(feature = "model-pacs")]
         "pacs.008.001.08" => Ok(AnyMessage::Pacs_008_001_08(parse_boxed::<crate::generated::pacs::pacs_008_001_08::Document>(xml)?)),
         #[cfg(feature = "model-pacs")]
         "pacs.008.001.10" => Ok(AnyMessage::Pacs_008_001_10(parse_boxed::<crate::generated::pacs::pacs_008_001_10::Document>(xml)?)),
         #[cfg(feature = "model-pacs")]
+        "pacs.008.001.14" => Ok(AnyMessage::Pacs_008_001_14(parse_boxed::<crate::generated::pacs::pacs_008_001_14::Document>(xml)?)),
+        #[cfg(feature = "model-pacs")]
         "pacs.009.001.08" => Ok(AnyMessage::Pacs_009_001_08(parse_boxed::<crate::generated::pacs::pacs_009_001_08::Document>(xml)?)),
         #[cfg(feature = "model-pacs")]
         "pacs.009.001.10" => Ok(AnyMessage::Pacs_009_001_10(parse_boxed::<crate::generated::pacs::pacs_009_001_10::Document>(xml)?)),
         #[cfg(feature = "model-pacs")]
+        "pacs.009.001.13" => Ok(AnyMessage::Pacs_009_001_13(parse_boxed::<crate::generated::pacs::pacs_009_001_13::Document>(xml)?)),
+        #[cfg(feature = "model-pacs")]
         "pacs.010.001.05" => Ok(AnyMessage::Pacs_010_001_05(parse_boxed::<crate::generated::pacs::pacs_010_001_05::Document>(xml)?)),
+        #[cfg(feature = "model-pacs")]
+        "pacs.010.001.06" => Ok(AnyMessage::Pacs_010_001_06(parse_boxed::<crate::generated::pacs::pacs_010_001_06::Document>(xml)?)),
         #[cfg(feature = "model-pacs")]
         "pacs.028.001.05" => Ok(AnyMessage::Pacs_028_001_05(parse_boxed::<crate::generated::pacs::pacs_028_001_05::Document>(xml)?)),
         #[cfg(feature = "model-pacs")]
+        "pacs.028.001.07" => Ok(AnyMessage::Pacs_028_001_07(parse_boxed::<crate::generated::pacs::pacs_028_001_07::Document>(xml)?)),
+        #[cfg(feature = "model-pacs")]
         "pacs.029.001.01" => Ok(AnyMessage::Pacs_029_001_01(parse_boxed::<crate::generated::pacs::pacs_029_001_01::Document>(xml)?)),
+        #[cfg(feature = "model-pacs")]
+        "pacs.029.001.02" => Ok(AnyMessage::Pacs_029_001_02(parse_boxed::<crate::generated::pacs::pacs_029_001_02::Document>(xml)?)),
         #[cfg(feature = "model-pain")]
         "pain.001.001.09" => Ok(AnyMessage::Pain_001_001_09(parse_boxed::<crate::generated::pain::pain_001_001_09::Document>(xml)?)),
         #[cfg(feature = "model-pain")]
         "pain.001.001.11" => Ok(AnyMessage::Pain_001_001_11(parse_boxed::<crate::generated::pain::pain_001_001_11::Document>(xml)?)),
         #[cfg(feature = "model-pain")]
+        "pain.001.001.13" => Ok(AnyMessage::Pain_001_001_13(parse_boxed::<crate::generated::pain::pain_001_001_13::Document>(xml)?)),
+        #[cfg(feature = "model-pain")]
         "pain.002.001.10" => Ok(AnyMessage::Pain_002_001_10(parse_boxed::<crate::generated::pain::pain_002_001_10::Document>(xml)?)),
         #[cfg(feature = "model-pain")]
         "pain.002.001.12" => Ok(AnyMessage::Pain_002_001_12(parse_boxed::<crate::generated::pain::pain_002_001_12::Document>(xml)?)),
         #[cfg(feature = "model-pain")]
+        "pain.002.001.15" => Ok(AnyMessage::Pain_002_001_15(parse_boxed::<crate::generated::pain::pain_002_001_15::Document>(xml)?)),
+        #[cfg(feature = "model-pain")]
         "pain.007.001.11" => Ok(AnyMessage::Pain_007_001_11(parse_boxed::<crate::generated::pain::pain_007_001_11::Document>(xml)?)),
+        #[cfg(feature = "model-pain")]
+        "pain.007.001.13" => Ok(AnyMessage::Pain_007_001_13(parse_boxed::<crate::generated::pain::pain_007_001_13::Document>(xml)?)),
         #[cfg(feature = "model-pain")]
         "pain.008.001.10" => Ok(AnyMessage::Pain_008_001_10(parse_boxed::<crate::generated::pain::pain_008_001_10::Document>(xml)?)),
         #[cfg(feature = "model-pain")]
+        "pain.008.001.12" => Ok(AnyMessage::Pain_008_001_12(parse_boxed::<crate::generated::pain::pain_008_001_12::Document>(xml)?)),
+        #[cfg(feature = "model-pain")]
         "pain.009.001.07" => Ok(AnyMessage::Pain_009_001_07(parse_boxed::<crate::generated::pain::pain_009_001_07::Document>(xml)?)),
+        #[cfg(feature = "model-pain")]
+        "pain.009.001.08" => Ok(AnyMessage::Pain_009_001_08(parse_boxed::<crate::generated::pain::pain_009_001_08::Document>(xml)?)),
         #[cfg(feature = "model-pain")]
         "pain.010.001.07" => Ok(AnyMessage::Pain_010_001_07(parse_boxed::<crate::generated::pain::pain_010_001_07::Document>(xml)?)),
         #[cfg(feature = "model-pain")]
+        "pain.010.001.08" => Ok(AnyMessage::Pain_010_001_08(parse_boxed::<crate::generated::pain::pain_010_001_08::Document>(xml)?)),
+        #[cfg(feature = "model-pain")]
         "pain.011.001.07" => Ok(AnyMessage::Pain_011_001_07(parse_boxed::<crate::generated::pain::pain_011_001_07::Document>(xml)?)),
         #[cfg(feature = "model-pain")]
+        "pain.011.001.08" => Ok(AnyMessage::Pain_011_001_08(parse_boxed::<crate::generated::pain::pain_011_001_08::Document>(xml)?)),
+        #[cfg(feature = "model-pain")]
         "pain.012.001.07" => Ok(AnyMessage::Pain_012_001_07(parse_boxed::<crate::generated::pain::pain_012_001_07::Document>(xml)?)),
+        #[cfg(feature = "model-pain")]
+        "pain.012.001.08" => Ok(AnyMessage::Pain_012_001_08(parse_boxed::<crate::generated::pain::pain_012_001_08::Document>(xml)?)),
         #[cfg(feature = "model-pain")]
         "pain.013.001.01" => Ok(AnyMessage::Pain_013_001_01(parse_boxed::<crate::generated::pain::pain_013_001_01::Document>(xml)?)),
         #[cfg(feature = "model-pain")]
         "pain.013.001.09" => Ok(AnyMessage::Pain_013_001_09(parse_boxed::<crate::generated::pain::pain_013_001_09::Document>(xml)?)),
         #[cfg(feature = "model-pain")]
+        "pain.013.001.12" => Ok(AnyMessage::Pain_013_001_12(parse_boxed::<crate::generated::pain::pain_013_001_12::Document>(xml)?)),
+        #[cfg(feature = "model-pain")]
         "pain.014.001.09" => Ok(AnyMessage::Pain_014_001_09(parse_boxed::<crate::generated::pain::pain_014_001_09::Document>(xml)?)),
+        #[cfg(feature = "model-pain")]
+        "pain.014.001.12" => Ok(AnyMessage::Pain_014_001_12(parse_boxed::<crate::generated::pain::pain_014_001_12::Document>(xml)?)),
         #[cfg(feature = "model-pain")]
         "pain.017.001.03" => Ok(AnyMessage::Pain_017_001_03(parse_boxed::<crate::generated::pain::pain_017_001_03::Document>(xml)?)),
         #[cfg(feature = "model-pain")]
+        "pain.017.001.04" => Ok(AnyMessage::Pain_017_001_04(parse_boxed::<crate::generated::pain::pain_017_001_04::Document>(xml)?)),
+        #[cfg(feature = "model-pain")]
         "pain.018.001.03" => Ok(AnyMessage::Pain_018_001_03(parse_boxed::<crate::generated::pain::pain_018_001_03::Document>(xml)?)),
+        #[cfg(feature = "model-pain")]
+        "pain.018.001.04" => Ok(AnyMessage::Pain_018_001_04(parse_boxed::<crate::generated::pain::pain_018_001_04::Document>(xml)?)),
         #[cfg(feature = "model-reda")]
         "reda.001.001.04" => Ok(AnyMessage::Reda_001_001_04(parse_boxed::<crate::generated::reda::reda_001_001_04::Document>(xml)?)),
         #[cfg(feature = "model-reda")]
+        "reda.001.001.05" => Ok(AnyMessage::Reda_001_001_05(parse_boxed::<crate::generated::reda::reda_001_001_05::Document>(xml)?)),
+        #[cfg(feature = "model-reda")]
         "reda.002.001.04" => Ok(AnyMessage::Reda_002_001_04(parse_boxed::<crate::generated::reda::reda_002_001_04::Document>(xml)?)),
         #[cfg(feature = "model-reda")]
+        "reda.002.001.05" => Ok(AnyMessage::Reda_002_001_05(parse_boxed::<crate::generated::reda::reda_002_001_05::Document>(xml)?)),
+        #[cfg(feature = "model-reda")]
         "reda.004.001.05" => Ok(AnyMessage::Reda_004_001_05(parse_boxed::<crate::generated::reda::reda_004_001_05::Document>(xml)?)),
+        #[cfg(feature = "model-reda")]
+        "reda.004.001.07" => Ok(AnyMessage::Reda_004_001_07(parse_boxed::<crate::generated::reda::reda_004_001_07::Document>(xml)?)),
         #[cfg(feature = "model-reda")]
         "reda.005.001.03" => Ok(AnyMessage::Reda_005_001_03(parse_boxed::<crate::generated::reda::reda_005_001_03::Document>(xml)?)),
         #[cfg(feature = "model-reda")]
@@ -5189,11 +8261,15 @@ pub fn parse_auto(xml: &str) -> crate::Result<AnyMessage> {
         #[cfg(feature = "model-reda")]
         "reda.014.001.01" => Ok(AnyMessage::Reda_014_001_01(parse_boxed::<crate::generated::reda::reda_014_001_01::Document>(xml)?)),
         #[cfg(feature = "model-reda")]
+        "reda.014.001.02" => Ok(AnyMessage::Reda_014_001_02(parse_boxed::<crate::generated::reda::reda_014_001_02::Document>(xml)?)),
+        #[cfg(feature = "model-reda")]
         "reda.015.001.01" => Ok(AnyMessage::Reda_015_001_01(parse_boxed::<crate::generated::reda::reda_015_001_01::Document>(xml)?)),
         #[cfg(feature = "model-reda")]
         "reda.016.001.01" => Ok(AnyMessage::Reda_016_001_01(parse_boxed::<crate::generated::reda::reda_016_001_01::Document>(xml)?)),
         #[cfg(feature = "model-reda")]
         "reda.017.001.01" => Ok(AnyMessage::Reda_017_001_01(parse_boxed::<crate::generated::reda::reda_017_001_01::Document>(xml)?)),
+        #[cfg(feature = "model-reda")]
+        "reda.017.001.02" => Ok(AnyMessage::Reda_017_001_02(parse_boxed::<crate::generated::reda::reda_017_001_02::Document>(xml)?)),
         #[cfg(feature = "model-reda")]
         "reda.018.001.01" => Ok(AnyMessage::Reda_018_001_01(parse_boxed::<crate::generated::reda::reda_018_001_01::Document>(xml)?)),
         #[cfg(feature = "model-reda")]
@@ -5205,7 +8281,19 @@ pub fn parse_auto(xml: &str) -> crate::Result<AnyMessage> {
         #[cfg(feature = "model-reda")]
         "reda.022.001.01" => Ok(AnyMessage::Reda_022_001_01(parse_boxed::<crate::generated::reda::reda_022_001_01::Document>(xml)?)),
         #[cfg(feature = "model-reda")]
+        "reda.022.001.02" => Ok(AnyMessage::Reda_022_001_02(parse_boxed::<crate::generated::reda::reda_022_001_02::Document>(xml)?)),
+        #[cfg(feature = "model-reda")]
         "reda.023.001.01" => Ok(AnyMessage::Reda_023_001_01(parse_boxed::<crate::generated::reda::reda_023_001_01::Document>(xml)?)),
+        #[cfg(feature = "model-reda")]
+        "reda.024.001.01" => Ok(AnyMessage::Reda_024_001_01(parse_boxed::<crate::generated::reda::reda_024_001_01::Document>(xml)?)),
+        #[cfg(feature = "model-reda")]
+        "reda.025.001.01" => Ok(AnyMessage::Reda_025_001_01(parse_boxed::<crate::generated::reda::reda_025_001_01::Document>(xml)?)),
+        #[cfg(feature = "model-reda")]
+        "reda.026.001.01" => Ok(AnyMessage::Reda_026_001_01(parse_boxed::<crate::generated::reda::reda_026_001_01::Document>(xml)?)),
+        #[cfg(feature = "model-reda")]
+        "reda.027.001.01" => Ok(AnyMessage::Reda_027_001_01(parse_boxed::<crate::generated::reda::reda_027_001_01::Document>(xml)?)),
+        #[cfg(feature = "model-reda")]
+        "reda.028.001.01" => Ok(AnyMessage::Reda_028_001_01(parse_boxed::<crate::generated::reda::reda_028_001_01::Document>(xml)?)),
         #[cfg(feature = "model-reda")]
         "reda.029.001.01" => Ok(AnyMessage::Reda_029_001_01(parse_boxed::<crate::generated::reda::reda_029_001_01::Document>(xml)?)),
         #[cfg(feature = "model-reda")]
@@ -5227,9 +8315,27 @@ pub fn parse_auto(xml: &str) -> crate::Result<AnyMessage> {
         #[cfg(feature = "model-reda")]
         "reda.041.001.01" => Ok(AnyMessage::Reda_041_001_01(parse_boxed::<crate::generated::reda::reda_041_001_01::Document>(xml)?)),
         #[cfg(feature = "model-reda")]
+        "reda.041.001.02" => Ok(AnyMessage::Reda_041_001_02(parse_boxed::<crate::generated::reda::reda_041_001_02::Document>(xml)?)),
+        #[cfg(feature = "model-reda")]
         "reda.042.001.01" => Ok(AnyMessage::Reda_042_001_01(parse_boxed::<crate::generated::reda::reda_042_001_01::Document>(xml)?)),
         #[cfg(feature = "model-reda")]
         "reda.043.001.01" => Ok(AnyMessage::Reda_043_001_01(parse_boxed::<crate::generated::reda::reda_043_001_01::Document>(xml)?)),
+        #[cfg(feature = "model-reda")]
+        "reda.043.001.02" => Ok(AnyMessage::Reda_043_001_02(parse_boxed::<crate::generated::reda::reda_043_001_02::Document>(xml)?)),
+        #[cfg(feature = "model-reda")]
+        "reda.044.001.01" => Ok(AnyMessage::Reda_044_001_01(parse_boxed::<crate::generated::reda::reda_044_001_01::Document>(xml)?)),
+        #[cfg(feature = "model-reda")]
+        "reda.045.001.01" => Ok(AnyMessage::Reda_045_001_01(parse_boxed::<crate::generated::reda::reda_045_001_01::Document>(xml)?)),
+        #[cfg(feature = "model-reda")]
+        "reda.046.001.01" => Ok(AnyMessage::Reda_046_001_01(parse_boxed::<crate::generated::reda::reda_046_001_01::Document>(xml)?)),
+        #[cfg(feature = "model-reda")]
+        "reda.047.001.01" => Ok(AnyMessage::Reda_047_001_01(parse_boxed::<crate::generated::reda::reda_047_001_01::Document>(xml)?)),
+        #[cfg(feature = "model-reda")]
+        "reda.049.001.01" => Ok(AnyMessage::Reda_049_001_01(parse_boxed::<crate::generated::reda::reda_049_001_01::Document>(xml)?)),
+        #[cfg(feature = "model-reda")]
+        "reda.050.001.01" => Ok(AnyMessage::Reda_050_001_01(parse_boxed::<crate::generated::reda::reda_050_001_01::Document>(xml)?)),
+        #[cfg(feature = "model-reda")]
+        "reda.051.001.01" => Ok(AnyMessage::Reda_051_001_01(parse_boxed::<crate::generated::reda::reda_051_001_01::Document>(xml)?)),
         #[cfg(feature = "model-reda")]
         "reda.056.001.01" => Ok(AnyMessage::Reda_056_001_01(parse_boxed::<crate::generated::reda::reda_056_001_01::Document>(xml)?)),
         #[cfg(feature = "model-reda")]
@@ -5241,21 +8347,61 @@ pub fn parse_auto(xml: &str) -> crate::Result<AnyMessage> {
         #[cfg(feature = "model-reda")]
         "reda.060.001.01" => Ok(AnyMessage::Reda_060_001_01(parse_boxed::<crate::generated::reda::reda_060_001_01::Document>(xml)?)),
         #[cfg(feature = "model-reda")]
+        "reda.060.001.02" => Ok(AnyMessage::Reda_060_001_02(parse_boxed::<crate::generated::reda::reda_060_001_02::Document>(xml)?)),
+        #[cfg(feature = "model-reda")]
         "reda.061.001.01" => Ok(AnyMessage::Reda_061_001_01(parse_boxed::<crate::generated::reda::reda_061_001_01::Document>(xml)?)),
         #[cfg(feature = "model-reda")]
+        "reda.061.001.02" => Ok(AnyMessage::Reda_061_001_02(parse_boxed::<crate::generated::reda::reda_061_001_02::Document>(xml)?)),
+        #[cfg(feature = "model-reda")]
+        "reda.064.001.02" => Ok(AnyMessage::Reda_064_001_02(parse_boxed::<crate::generated::reda::reda_064_001_02::Document>(xml)?)),
+        #[cfg(feature = "model-reda")]
+        "reda.065.001.02" => Ok(AnyMessage::Reda_065_001_02(parse_boxed::<crate::generated::reda::reda_065_001_02::Document>(xml)?)),
+        #[cfg(feature = "model-reda")]
+        "reda.066.001.02" => Ok(AnyMessage::Reda_066_001_02(parse_boxed::<crate::generated::reda::reda_066_001_02::Document>(xml)?)),
+        #[cfg(feature = "model-reda")]
+        "reda.067.001.02" => Ok(AnyMessage::Reda_067_001_02(parse_boxed::<crate::generated::reda::reda_067_001_02::Document>(xml)?)),
+        #[cfg(feature = "model-reda")]
+        "reda.068.001.02" => Ok(AnyMessage::Reda_068_001_02(parse_boxed::<crate::generated::reda::reda_068_001_02::Document>(xml)?)),
+        #[cfg(feature = "model-reda")]
+        "reda.069.001.02" => Ok(AnyMessage::Reda_069_001_02(parse_boxed::<crate::generated::reda::reda_069_001_02::Document>(xml)?)),
+        #[cfg(feature = "model-reda")]
+        "reda.070.001.02" => Ok(AnyMessage::Reda_070_001_02(parse_boxed::<crate::generated::reda::reda_070_001_02::Document>(xml)?)),
+        #[cfg(feature = "model-reda")]
+        "reda.071.001.02" => Ok(AnyMessage::Reda_071_001_02(parse_boxed::<crate::generated::reda::reda_071_001_02::Document>(xml)?)),
+        #[cfg(feature = "model-reda")]
+        "reda.072.001.02" => Ok(AnyMessage::Reda_072_001_02(parse_boxed::<crate::generated::reda::reda_072_001_02::Document>(xml)?)),
+        #[cfg(feature = "model-reda")]
+        "reda.073.001.02" => Ok(AnyMessage::Reda_073_001_02(parse_boxed::<crate::generated::reda::reda_073_001_02::Document>(xml)?)),
+        #[cfg(feature = "model-reda")]
         "reda.074.001.01" => Ok(AnyMessage::Reda_074_001_01(parse_boxed::<crate::generated::reda::reda_074_001_01::Document>(xml)?)),
+        #[cfg(feature = "model-reda")]
+        "reda.075.001.01" => Ok(AnyMessage::Reda_075_001_01(parse_boxed::<crate::generated::reda::reda_075_001_01::Document>(xml)?)),
+        #[cfg(feature = "model-reda")]
+        "reda.077.001.01" => Ok(AnyMessage::Reda_077_001_01(parse_boxed::<crate::generated::reda::reda_077_001_01::Document>(xml)?)),
         #[cfg(feature = "model-remt")]
         "remt.001.001.05" => Ok(AnyMessage::Remt_001_001_05(parse_boxed::<crate::generated::remt::remt_001_001_05::Document>(xml)?)),
         #[cfg(feature = "model-remt")]
+        "remt.001.001.07" => Ok(AnyMessage::Remt_001_001_07(parse_boxed::<crate::generated::remt::remt_001_001_07::Document>(xml)?)),
+        #[cfg(feature = "model-remt")]
         "remt.002.001.02" => Ok(AnyMessage::Remt_002_001_02(parse_boxed::<crate::generated::remt::remt_002_001_02::Document>(xml)?)),
+        #[cfg(feature = "model-remt")]
+        "remt.002.001.03" => Ok(AnyMessage::Remt_002_001_03(parse_boxed::<crate::generated::remt::remt_002_001_03::Document>(xml)?)),
         #[cfg(feature = "model-secl")]
         "secl.001.001.03" => Ok(AnyMessage::Secl_001_001_03(parse_boxed::<crate::generated::secl::secl_001_001_03::Document>(xml)?)),
         #[cfg(feature = "model-secl")]
+        "secl.001.001.05" => Ok(AnyMessage::Secl_001_001_05(parse_boxed::<crate::generated::secl::secl_001_001_05::Document>(xml)?)),
+        #[cfg(feature = "model-secl")]
         "secl.002.001.03" => Ok(AnyMessage::Secl_002_001_03(parse_boxed::<crate::generated::secl::secl_002_001_03::Document>(xml)?)),
+        #[cfg(feature = "model-secl")]
+        "secl.002.001.05" => Ok(AnyMessage::Secl_002_001_05(parse_boxed::<crate::generated::secl::secl_002_001_05::Document>(xml)?)),
         #[cfg(feature = "model-secl")]
         "secl.003.001.03" => Ok(AnyMessage::Secl_003_001_03(parse_boxed::<crate::generated::secl::secl_003_001_03::Document>(xml)?)),
         #[cfg(feature = "model-secl")]
+        "secl.003.001.05" => Ok(AnyMessage::Secl_003_001_05(parse_boxed::<crate::generated::secl::secl_003_001_05::Document>(xml)?)),
+        #[cfg(feature = "model-secl")]
         "secl.004.001.03" => Ok(AnyMessage::Secl_004_001_03(parse_boxed::<crate::generated::secl::secl_004_001_03::Document>(xml)?)),
+        #[cfg(feature = "model-secl")]
+        "secl.004.001.04" => Ok(AnyMessage::Secl_004_001_04(parse_boxed::<crate::generated::secl::secl_004_001_04::Document>(xml)?)),
         #[cfg(feature = "model-secl")]
         "secl.005.001.02" => Ok(AnyMessage::Secl_005_001_02(parse_boxed::<crate::generated::secl::secl_005_001_02::Document>(xml)?)),
         #[cfg(feature = "model-secl")]
@@ -5268,28 +8414,50 @@ pub fn parse_auto(xml: &str) -> crate::Result<AnyMessage> {
         "secl.009.001.03" => Ok(AnyMessage::Secl_009_001_03(parse_boxed::<crate::generated::secl::secl_009_001_03::Document>(xml)?)),
         #[cfg(feature = "model-secl")]
         "secl.010.001.03" => Ok(AnyMessage::Secl_010_001_03(parse_boxed::<crate::generated::secl::secl_010_001_03::Document>(xml)?)),
+        #[cfg(feature = "model-secl")]
+        "secl.010.001.04" => Ok(AnyMessage::Secl_010_001_04(parse_boxed::<crate::generated::secl::secl_010_001_04::Document>(xml)?)),
         #[cfg(feature = "model-seev")]
         "seev.001.001.08" => Ok(AnyMessage::Seev_001_001_08(parse_boxed::<crate::generated::seev::seev_001_001_08::Document>(xml)?)),
         #[cfg(feature = "model-seev")]
+        "seev.001.001.13" => Ok(AnyMessage::Seev_001_001_13(parse_boxed::<crate::generated::seev::seev_001_001_13::Document>(xml)?)),
+        #[cfg(feature = "model-seev")]
         "seev.002.001.07" => Ok(AnyMessage::Seev_002_001_07(parse_boxed::<crate::generated::seev::seev_002_001_07::Document>(xml)?)),
+        #[cfg(feature = "model-seev")]
+        "seev.002.001.10" => Ok(AnyMessage::Seev_002_001_10(parse_boxed::<crate::generated::seev::seev_002_001_10::Document>(xml)?)),
         #[cfg(feature = "model-seev")]
         "seev.003.001.07" => Ok(AnyMessage::Seev_003_001_07(parse_boxed::<crate::generated::seev::seev_003_001_07::Document>(xml)?)),
         #[cfg(feature = "model-seev")]
+        "seev.003.001.10" => Ok(AnyMessage::Seev_003_001_10(parse_boxed::<crate::generated::seev::seev_003_001_10::Document>(xml)?)),
+        #[cfg(feature = "model-seev")]
         "seev.004.001.07" => Ok(AnyMessage::Seev_004_001_07(parse_boxed::<crate::generated::seev::seev_004_001_07::Document>(xml)?)),
+        #[cfg(feature = "model-seev")]
+        "seev.004.001.11" => Ok(AnyMessage::Seev_004_001_11(parse_boxed::<crate::generated::seev::seev_004_001_11::Document>(xml)?)),
         #[cfg(feature = "model-seev")]
         "seev.005.001.07" => Ok(AnyMessage::Seev_005_001_07(parse_boxed::<crate::generated::seev::seev_005_001_07::Document>(xml)?)),
         #[cfg(feature = "model-seev")]
+        "seev.005.001.10" => Ok(AnyMessage::Seev_005_001_10(parse_boxed::<crate::generated::seev::seev_005_001_10::Document>(xml)?)),
+        #[cfg(feature = "model-seev")]
         "seev.006.001.07" => Ok(AnyMessage::Seev_006_001_07(parse_boxed::<crate::generated::seev::seev_006_001_07::Document>(xml)?)),
+        #[cfg(feature = "model-seev")]
+        "seev.006.001.12" => Ok(AnyMessage::Seev_006_001_12(parse_boxed::<crate::generated::seev::seev_006_001_12::Document>(xml)?)),
         #[cfg(feature = "model-seev")]
         "seev.007.001.07" => Ok(AnyMessage::Seev_007_001_07(parse_boxed::<crate::generated::seev::seev_007_001_07::Document>(xml)?)),
         #[cfg(feature = "model-seev")]
+        "seev.007.001.12" => Ok(AnyMessage::Seev_007_001_12(parse_boxed::<crate::generated::seev::seev_007_001_12::Document>(xml)?)),
+        #[cfg(feature = "model-seev")]
         "seev.008.001.07" => Ok(AnyMessage::Seev_008_001_07(parse_boxed::<crate::generated::seev::seev_008_001_07::Document>(xml)?)),
         #[cfg(feature = "model-seev")]
+        "seev.008.001.10" => Ok(AnyMessage::Seev_008_001_10(parse_boxed::<crate::generated::seev::seev_008_001_10::Document>(xml)?)),
+        #[cfg(feature = "model-seev")]
         "seev.009.001.01" => Ok(AnyMessage::Seev_009_001_01(parse_boxed::<crate::generated::seev::seev_009_001_01::Document>(xml)?)),
+        #[cfg(feature = "model-seev")]
+        "seev.009.001.03" => Ok(AnyMessage::Seev_009_001_03(parse_boxed::<crate::generated::seev::seev_009_001_03::Document>(xml)?)),
         #[cfg(feature = "model-seev")]
         "seev.010.001.01" => Ok(AnyMessage::Seev_010_001_01(parse_boxed::<crate::generated::seev::seev_010_001_01::Document>(xml)?)),
         #[cfg(feature = "model-seev")]
         "seev.011.001.01" => Ok(AnyMessage::Seev_011_001_01(parse_boxed::<crate::generated::seev::seev_011_001_01::Document>(xml)?)),
+        #[cfg(feature = "model-seev")]
+        "seev.011.001.04" => Ok(AnyMessage::Seev_011_001_04(parse_boxed::<crate::generated::seev::seev_011_001_04::Document>(xml)?)),
         #[cfg(feature = "model-seev")]
         "seev.012.001.01" => Ok(AnyMessage::Seev_012_001_01(parse_boxed::<crate::generated::seev::seev_012_001_01::Document>(xml)?)),
         #[cfg(feature = "model-seev")]
@@ -5331,27 +8499,83 @@ pub fn parse_auto(xml: &str) -> crate::Result<AnyMessage> {
         #[cfg(feature = "model-seev")]
         "seev.031.001.11" => Ok(AnyMessage::Seev_031_001_11(parse_boxed::<crate::generated::seev::seev_031_001_11::Document>(xml)?)),
         #[cfg(feature = "model-seev")]
+        "seev.031.001.16" => Ok(AnyMessage::Seev_031_001_16(parse_boxed::<crate::generated::seev::seev_031_001_16::Document>(xml)?)),
+        #[cfg(feature = "model-seev")]
+        "seev.031.002.15" => Ok(AnyMessage::Seev_031_002_15(parse_boxed::<crate::generated::seev::seev_031_002_15::Document>(xml)?)),
+        #[cfg(feature = "model-seev")]
         "seev.032.001.08" => Ok(AnyMessage::Seev_032_001_08(parse_boxed::<crate::generated::seev::seev_032_001_08::Document>(xml)?)),
+        #[cfg(feature = "model-seev")]
+        "seev.032.001.09" => Ok(AnyMessage::Seev_032_001_09(parse_boxed::<crate::generated::seev::seev_032_001_09::Document>(xml)?)),
+        #[cfg(feature = "model-seev")]
+        "seev.032.002.09" => Ok(AnyMessage::Seev_032_002_09(parse_boxed::<crate::generated::seev::seev_032_002_09::Document>(xml)?)),
         #[cfg(feature = "model-seev")]
         "seev.033.001.11" => Ok(AnyMessage::Seev_033_001_11(parse_boxed::<crate::generated::seev::seev_033_001_11::Document>(xml)?)),
         #[cfg(feature = "model-seev")]
+        "seev.033.001.14" => Ok(AnyMessage::Seev_033_001_14(parse_boxed::<crate::generated::seev::seev_033_001_14::Document>(xml)?)),
+        #[cfg(feature = "model-seev")]
+        "seev.033.002.13" => Ok(AnyMessage::Seev_033_002_13(parse_boxed::<crate::generated::seev::seev_033_002_13::Document>(xml)?)),
+        #[cfg(feature = "model-seev")]
+        "seev.034.001.16" => Ok(AnyMessage::Seev_034_001_16(parse_boxed::<crate::generated::seev::seev_034_001_16::Document>(xml)?)),
+        #[cfg(feature = "model-seev")]
+        "seev.034.002.15" => Ok(AnyMessage::Seev_034_002_15(parse_boxed::<crate::generated::seev::seev_034_002_15::Document>(xml)?)),
+        #[cfg(feature = "model-seev")]
         "seev.035.001.12" => Ok(AnyMessage::Seev_035_001_12(parse_boxed::<crate::generated::seev::seev_035_001_12::Document>(xml)?)),
+        #[cfg(feature = "model-seev")]
+        "seev.035.001.17" => Ok(AnyMessage::Seev_035_001_17(parse_boxed::<crate::generated::seev::seev_035_001_17::Document>(xml)?)),
+        #[cfg(feature = "model-seev")]
+        "seev.035.002.16" => Ok(AnyMessage::Seev_035_002_16(parse_boxed::<crate::generated::seev::seev_035_002_16::Document>(xml)?)),
+        #[cfg(feature = "model-seev")]
+        "seev.036.001.17" => Ok(AnyMessage::Seev_036_001_17(parse_boxed::<crate::generated::seev::seev_036_001_17::Document>(xml)?)),
+        #[cfg(feature = "model-seev")]
+        "seev.036.002.16" => Ok(AnyMessage::Seev_036_002_16(parse_boxed::<crate::generated::seev::seev_036_002_16::Document>(xml)?)),
+        #[cfg(feature = "model-seev")]
+        "seev.037.001.17" => Ok(AnyMessage::Seev_037_001_17(parse_boxed::<crate::generated::seev::seev_037_001_17::Document>(xml)?)),
+        #[cfg(feature = "model-seev")]
+        "seev.037.002.16" => Ok(AnyMessage::Seev_037_002_16(parse_boxed::<crate::generated::seev::seev_037_002_16::Document>(xml)?)),
+        #[cfg(feature = "model-seev")]
+        "seev.038.001.09" => Ok(AnyMessage::Seev_038_001_09(parse_boxed::<crate::generated::seev::seev_038_001_09::Document>(xml)?)),
+        #[cfg(feature = "model-seev")]
+        "seev.038.002.09" => Ok(AnyMessage::Seev_038_002_09(parse_boxed::<crate::generated::seev::seev_038_002_09::Document>(xml)?)),
+        #[cfg(feature = "model-seev")]
+        "seev.039.001.13" => Ok(AnyMessage::Seev_039_001_13(parse_boxed::<crate::generated::seev::seev_039_001_13::Document>(xml)?)),
         #[cfg(feature = "model-seev")]
         "seev.039.002.10" => Ok(AnyMessage::Seev_039_002_10(parse_boxed::<crate::generated::seev::seev_039_002_10::Document>(xml)?)),
         #[cfg(feature = "model-seev")]
+        "seev.039.002.13" => Ok(AnyMessage::Seev_039_002_13(parse_boxed::<crate::generated::seev::seev_039_002_13::Document>(xml)?)),
+        #[cfg(feature = "model-seev")]
+        "seev.040.001.13" => Ok(AnyMessage::Seev_040_001_13(parse_boxed::<crate::generated::seev::seev_040_001_13::Document>(xml)?)),
+        #[cfg(feature = "model-seev")]
         "seev.040.002.10" => Ok(AnyMessage::Seev_040_002_10(parse_boxed::<crate::generated::seev::seev_040_002_10::Document>(xml)?)),
+        #[cfg(feature = "model-seev")]
+        "seev.040.002.13" => Ok(AnyMessage::Seev_040_002_13(parse_boxed::<crate::generated::seev::seev_040_002_13::Document>(xml)?)),
+        #[cfg(feature = "model-seev")]
+        "seev.041.001.15" => Ok(AnyMessage::Seev_041_001_15(parse_boxed::<crate::generated::seev::seev_041_001_15::Document>(xml)?)),
         #[cfg(feature = "model-seev")]
         "seev.041.002.11" => Ok(AnyMessage::Seev_041_002_11(parse_boxed::<crate::generated::seev::seev_041_002_11::Document>(xml)?)),
         #[cfg(feature = "model-seev")]
+        "seev.041.002.14" => Ok(AnyMessage::Seev_041_002_14(parse_boxed::<crate::generated::seev::seev_041_002_14::Document>(xml)?)),
+        #[cfg(feature = "model-seev")]
+        "seev.042.001.14" => Ok(AnyMessage::Seev_042_001_14(parse_boxed::<crate::generated::seev::seev_042_001_14::Document>(xml)?)),
+        #[cfg(feature = "model-seev")]
         "seev.042.002.10" => Ok(AnyMessage::Seev_042_002_10(parse_boxed::<crate::generated::seev::seev_042_002_10::Document>(xml)?)),
+        #[cfg(feature = "model-seev")]
+        "seev.042.002.13" => Ok(AnyMessage::Seev_042_002_13(parse_boxed::<crate::generated::seev::seev_042_002_13::Document>(xml)?)),
+        #[cfg(feature = "model-seev")]
+        "seev.044.001.13" => Ok(AnyMessage::Seev_044_001_13(parse_boxed::<crate::generated::seev::seev_044_001_13::Document>(xml)?)),
         #[cfg(feature = "model-seev")]
         "seev.044.002.10" => Ok(AnyMessage::Seev_044_002_10(parse_boxed::<crate::generated::seev::seev_044_002_10::Document>(xml)?)),
         #[cfg(feature = "model-seev")]
+        "seev.044.002.13" => Ok(AnyMessage::Seev_044_002_13(parse_boxed::<crate::generated::seev::seev_044_002_13::Document>(xml)?)),
+        #[cfg(feature = "model-seev")]
         "seev.045.001.03" => Ok(AnyMessage::Seev_045_001_03(parse_boxed::<crate::generated::seev::seev_045_001_03::Document>(xml)?)),
+        #[cfg(feature = "model-seev")]
+        "seev.045.001.04" => Ok(AnyMessage::Seev_045_001_04(parse_boxed::<crate::generated::seev::seev_045_001_04::Document>(xml)?)),
         #[cfg(feature = "model-seev")]
         "seev.046.001.01" => Ok(AnyMessage::Seev_046_001_01(parse_boxed::<crate::generated::seev::seev_046_001_01::Document>(xml)?)),
         #[cfg(feature = "model-seev")]
         "seev.047.001.02" => Ok(AnyMessage::Seev_047_001_02(parse_boxed::<crate::generated::seev::seev_047_001_02::Document>(xml)?)),
+        #[cfg(feature = "model-seev")]
+        "seev.047.001.03" => Ok(AnyMessage::Seev_047_001_03(parse_boxed::<crate::generated::seev::seev_047_001_03::Document>(xml)?)),
         #[cfg(feature = "model-seev")]
         "seev.048.001.01" => Ok(AnyMessage::Seev_048_001_01(parse_boxed::<crate::generated::seev::seev_048_001_01::Document>(xml)?)),
         #[cfg(feature = "model-seev")]
@@ -5359,11 +8583,35 @@ pub fn parse_auto(xml: &str) -> crate::Result<AnyMessage> {
         #[cfg(feature = "model-seev")]
         "seev.050.001.01" => Ok(AnyMessage::Seev_050_001_01(parse_boxed::<crate::generated::seev::seev_050_001_01::Document>(xml)?)),
         #[cfg(feature = "model-seev")]
+        "seev.050.001.04" => Ok(AnyMessage::Seev_050_001_04(parse_boxed::<crate::generated::seev::seev_050_001_04::Document>(xml)?)),
+        #[cfg(feature = "model-seev")]
         "seev.051.001.01" => Ok(AnyMessage::Seev_051_001_01(parse_boxed::<crate::generated::seev::seev_051_001_01::Document>(xml)?)),
+        #[cfg(feature = "model-seev")]
+        "seev.051.001.02" => Ok(AnyMessage::Seev_051_001_02(parse_boxed::<crate::generated::seev::seev_051_001_02::Document>(xml)?)),
         #[cfg(feature = "model-seev")]
         "seev.052.001.01" => Ok(AnyMessage::Seev_052_001_01(parse_boxed::<crate::generated::seev::seev_052_001_01::Document>(xml)?)),
         #[cfg(feature = "model-seev")]
+        "seev.052.001.04" => Ok(AnyMessage::Seev_052_001_04(parse_boxed::<crate::generated::seev::seev_052_001_04::Document>(xml)?)),
+        #[cfg(feature = "model-seev")]
         "seev.053.001.01" => Ok(AnyMessage::Seev_053_001_01(parse_boxed::<crate::generated::seev::seev_053_001_01::Document>(xml)?)),
+        #[cfg(feature = "model-seev")]
+        "seev.053.001.04" => Ok(AnyMessage::Seev_053_001_04(parse_boxed::<crate::generated::seev::seev_053_001_04::Document>(xml)?)),
+        #[cfg(feature = "model-seev")]
+        "seev.060.001.01" => Ok(AnyMessage::Seev_060_001_01(parse_boxed::<crate::generated::seev::seev_060_001_01::Document>(xml)?)),
+        #[cfg(feature = "model-seev")]
+        "seev.061.001.01" => Ok(AnyMessage::Seev_061_001_01(parse_boxed::<crate::generated::seev::seev_061_001_01::Document>(xml)?)),
+        #[cfg(feature = "model-seev")]
+        "seev.062.001.01" => Ok(AnyMessage::Seev_062_001_01(parse_boxed::<crate::generated::seev::seev_062_001_01::Document>(xml)?)),
+        #[cfg(feature = "model-seev")]
+        "seev.063.001.01" => Ok(AnyMessage::Seev_063_001_01(parse_boxed::<crate::generated::seev::seev_063_001_01::Document>(xml)?)),
+        #[cfg(feature = "model-seev")]
+        "seev.064.001.01" => Ok(AnyMessage::Seev_064_001_01(parse_boxed::<crate::generated::seev::seev_064_001_01::Document>(xml)?)),
+        #[cfg(feature = "model-seev")]
+        "seev.065.001.01" => Ok(AnyMessage::Seev_065_001_01(parse_boxed::<crate::generated::seev::seev_065_001_01::Document>(xml)?)),
+        #[cfg(feature = "model-seev")]
+        "seev.066.001.01" => Ok(AnyMessage::Seev_066_001_01(parse_boxed::<crate::generated::seev::seev_066_001_01::Document>(xml)?)),
+        #[cfg(feature = "model-seev")]
+        "seev.067.001.01" => Ok(AnyMessage::Seev_067_001_01(parse_boxed::<crate::generated::seev::seev_067_001_01::Document>(xml)?)),
         #[cfg(feature = "model-semt")]
         "semt.001.001.03" => Ok(AnyMessage::Semt_001_001_03(parse_boxed::<crate::generated::semt::semt_001_001_03::Document>(xml)?)),
         #[cfg(feature = "model-semt")]

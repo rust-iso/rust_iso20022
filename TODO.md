@@ -74,3 +74,13 @@ Status of `rust_iso20022`. ✅ = done, ⬜ = outstanding.
   `Document` constructs + serializes, on a large-stack thread) in each family;
   run via `cargo test --features model-<area>`
 - ✅ **Schema provenance unified** — re-sourced 721/722 schemas from
+
+## Schema fetch gaps (2026-06-27)
+5 current messages are not downloadable from iso20022.org — the static schema
+path 404s and the `/message/{id}/download` endpoint is Akamai-blocked for
+non-browser clients. Fetch manually (in a browser) and drop into `xsds/`:
+- ⬜ camt.088.001.04 (id 23566)
+- ⬜ sese.020.001.09 (id 23573)
+- ⬜ sese.021.001.08 (id 23574)
+- ⬜ sese.022.001.08 (id 23575)
+- ⬜ sese.023.001.13 (id 23576)

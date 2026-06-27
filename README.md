@@ -18,12 +18,12 @@ The crate has three layers:
 | Model | `generated` | generated from XSD | one module per message version, e.g. `generated::pacs::pacs_008_001_08` |
 | Catalogue | `catalogue` | generated from XSD | every message id + namespace as static `phf` tables |
 
-**Coverage:** a typed model is generated for **722** message schemas across
+**Coverage:** a typed model is generated for **1130** message schemas across
 32 business areas (`acmt`, `admi`, `auth`, `caaa`, `caad`, `caam`, `cafc`,
 `cafm`, `cafr`, `cain`, `camt`, `canm`, `casp`, `casr`, `catm`, `catp`, `colr`,
 `fxtr`, `head`, `pacs`, `pain`, `reda`, `remt`, `secl`, `seev`, `semt`, `sese`,
-`setr`, `tsin`, `tsmt`, `tsrv`, `trck`) — including the securities settlement /
-management and trade-services families.
+`setr`, `tsin`, `tsmt`, `tsrv`, `trck`) — the current iso20022.org catalogue
+(latest versions) plus the earlier versions, so older messages still parse.
 
 The generated types derive [`yaserde`](https://crates.io/crates/yaserde)'s
 `YaSerialize` / `YaDeserialize` for XML, and (with the `serde` feature)
