@@ -44,8 +44,18 @@ fi
 # 3. tests: always-available core + the typed model
 echo ">> Testing core + catalogue"
 cargo test
-echo ">> Testing the generated model (this is slow: ~495 modules)"
-cargo test --features model
+
+# The model is tested one business area at a time. Compiling all ~1130 modules
+# into a single test binary needs far more memory than most machines have (the
+# linker step is OOM-killed); per-area builds give identical coverage and finish.
+MODEL_AREAS="acmt admi auth caaa caad caam cafc cafm cafr cain camt canm casp \
+casr catm catp colr fxtr head pacs pain reda remt secl seev semt sese setr \
+trck tsin tsmt tsrv"
+echo ">> Testing the generated model per area (slow: 32 areas, ~1130 modules total)"
+for area in $MODEL_AREAS; do
+    echo ">> model-$area"
+    cargo test --features "model-$area"
+done
 
 # 4. crates.io
 if [ "$DRY_RUN" = 1 ]; then
