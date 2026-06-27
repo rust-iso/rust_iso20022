@@ -6475,7 +6475,7 @@ pub struct TradeReport33Choice {
     pub new: Option<TradeData43>,
     #[yaserde(rename = "Mod")]
     #[cfg_attr(feature = "serde", serde(rename = "Mod"))]
-    pub mod: Option<TradeData43>,
+    pub r#mod: Option<TradeData43>,
     #[yaserde(rename = "Crrctn")]
     #[cfg_attr(feature = "serde", serde(rename = "Crrctn"))]
     pub crrctn: Option<TradeData43>,

@@ -5389,7 +5389,7 @@ pub struct TradeReport22Choice {
     pub new: Option<TradeNewTransaction13>,
     #[yaserde(rename = "Mod")]
     #[cfg_attr(feature = "serde", serde(rename = "Mod"))]
-    pub mod: Option<TradeTransactionCorrection13>,
+    pub r#mod: Option<TradeTransactionCorrection13>,
     #[yaserde(rename = "Err")]
     #[cfg_attr(feature = "serde", serde(rename = "Err"))]
     pub err: Option<TradeError9>,

@@ -5049,7 +5049,7 @@ pub struct UpdateType38Choice {
     pub deltn: Option<SecuritiesSettlementTransactionDetails54>,
     #[yaserde(rename = "Mod")]
     #[cfg_attr(feature = "serde", serde(rename = "Mod"))]
-    pub mod: Option<SecuritiesSettlementTransactionDetails55>,
+    pub r#mod: Option<SecuritiesSettlementTransactionDetails55>,
 }
 
 impl Validate for UpdateType38Choice {}

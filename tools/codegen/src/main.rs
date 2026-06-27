@@ -336,7 +336,30 @@ fn to_snake(s: &str) -> String {
             out.push(c);
         }
     }
+    // A field whose snake_case name collides with a Rust keyword (e.g. `Mod` ->
+    // `mod`) must use a raw identifier. The yaserde/serde `rename` attributes
+    // preserve the wire name, so this only affects the Rust binding.
+    if is_rust_keyword(&out) {
+        return format!("r#{out}");
+    }
     out
+}
+
+/// Whether `s` is a Rust keyword that cannot be used as a bare identifier (and
+/// so must be written as a raw identifier `r#s` when used as a field name).
+fn is_rust_keyword(s: &str) -> bool {
+    matches!(
+        s,
+        // `crate`/`self`/`super`/`Self` are deliberately excluded: they cannot be
+        // raw identifiers. They do not occur as ISO 20022 element names.
+        "as" | "break" | "const" | "continue" | "dyn" | "else"
+            | "enum" | "extern" | "false" | "fn" | "for" | "if" | "impl"
+            | "in" | "let" | "loop" | "match" | "mod" | "move" | "mut"
+            | "pub" | "ref" | "return" | "static" | "struct" | "trait"
+            | "true" | "type" | "union" | "unsafe" | "use" | "where" | "while"
+            | "async" | "await" | "box" | "do" | "final" | "macro" | "override"
+            | "priv" | "try" | "typeof" | "unsized" | "virtual" | "yield"
+    )
 }
 
 /// Replace the `UtilsTupleIo` / `UtilsDefaultSerde` derives (from the
