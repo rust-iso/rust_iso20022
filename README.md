@@ -40,7 +40,7 @@ and (with the `serde` feature) `serde::{Serialize, Deserialize}` for JSON.
 | Generic tree — read any message without the model | `MxNode::parse` |
 | Typed scalars (amount → `Decimal`, dates → `chrono`) | `convert::{to_decimal, to_date, to_datetime}` (feature `convert`) |
 | Message catalogue | `catalogue` |
-| WebAssembly / JS bindings | `src/wasm.rs` (build via `scripts/build-wasm.sh`) |
+| WebAssembly / JS bindings | `src/wasm.rs` (build via `scripts/build-wasm.sh`; see [docs/wasm-api.md](docs/wasm-api.md)) |
 
 ## Quick start
 
