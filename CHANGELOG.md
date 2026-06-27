@@ -48,6 +48,7 @@ Initial release.
 
 ### Known gaps
 - 5 current messages (`camt.088.001.04`, `sese.020/021/022.001`,
-  `sese.023.001.13`) are not downloadable from iso20022.org (see `TODO.md`).
+  `sese.023.001.13`) are not downloadable from iso20022.org (see
+  `docs/status.md`).
 - `yaserde` is pinned at 0.7 (0.8+ changed the derive macro incompatibly with the
   generated code).
