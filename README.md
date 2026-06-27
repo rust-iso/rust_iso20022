@@ -6,6 +6,49 @@ messages with XML and JSON parsing/serialization, message identification, a
 generic message tree for reading any message without the model, and business
 metadata extraction.
 
+## Installation
+
+Add it with cargo (enable only the features you need — see [Features](#features)):
+
+```bash
+cargo add rust_iso20022                                  # core: identify, MxNode, catalogue
+cargo add rust_iso20022 --features model-pacs            # + the typed pacs model
+cargo add rust_iso20022 --features model-pacs,serde,convert
+```
+
+or in `Cargo.toml`:
+
+```toml
+[dependencies]
+# Core only (identification, generic tree, catalogue) — no model compiled.
+rust_iso20022 = "0.1"
+
+# Or pull in one or more typed message families plus JSON and typed scalars:
+rust_iso20022 = { version = "0.1", features = ["model-pacs", "serde", "convert"] }
+```
+
+> Enabling the umbrella `model` feature compiles all ~1130 message modules and is
+> slow; prefer the per-area `model-<area>` features for the families you actually
+> use.
+
+Minimal first program — no features required:
+
+```rust
+use rust_iso20022::{detect, MxNode};
+
+fn main() {
+    let xml = r#"<Document xmlns="urn:iso:std:iso:20022:tech:xsd:pacs.008.001.08">
+      <FIToFICstmrCdtTrf><GrpHdr><MsgId>ABC-1</MsgId></GrpHdr></FIToFICstmrCdtTrf>
+    </Document>"#;
+
+    let id = detect(xml).expect("recognised");
+    println!("type = {}", id.message_name());            // pacs.008.001.08
+
+    let doc = MxNode::parse(xml).unwrap();
+    println!("MsgId = {:?}", doc.find("MsgId").and_then(|n| n.text())); // Some("ABC-1")
+}
+```
+
 ## What's in the crate
 
 | Layer | Module | Always available? |
