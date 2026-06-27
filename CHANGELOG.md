@@ -3,6 +3,15 @@
 All notable changes to this project are documented here. This project adheres to
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.1] - unreleased
+
+### Fixed
+- docs.rs now renders the generated message model. The `generated` module is
+  gated behind `__model`/`model-*` (off by default), so docs.rs — which builds
+  with default features only — previously published an empty crate with no
+  message modules. Added `[package.metadata.docs.rs]` to build the docs with
+  the full `model` plus `serde`/`convert`/`cli`.
+
 ## [0.1.0] - unreleased
 
 Initial release.

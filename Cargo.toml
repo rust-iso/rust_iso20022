@@ -1,6 +1,6 @@
 [package]
 name = "rust_iso20022"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 rust-version = "1.85"
 description = "ISO 20022 message definitions and external code sets for Rust, generated from the official XSD schemas."
@@ -12,6 +12,16 @@ documentation = "https://docs.rs/rust_iso20022/"
 # The XSD sources and code-generation tooling are not needed by downstream
 # crates; keep them out of the published package.
 exclude = ["xsds/", "tools/", "thrdpty/", "a.rs"]
+
+# docs.rs builds with only `default` features, but the generated message model
+# (the `generated` module) is gated behind `__model`/`model-*` and is off by
+# default — without this, docs.rs would render an empty crate with no message
+# modules. Enable the full model plus the optional helpers so the published
+# docs cover everything. (NOTE: ~502 yaserde modules; if docs.rs hits its
+# build time/memory limit, drop to a representative subset of `model-*`.)
+[package.metadata.docs.rs]
+features = ["model", "serde", "convert", "cli"]
+rustdoc-args = ["--cfg", "docsrs"]
 
 # The codegen tooling (which has a git dependency) lives in a separate,
 # unpublished crate so the published `rust_iso20022` has no git dependencies.
