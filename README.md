@@ -1,12 +1,10 @@
 # rust_iso20022
 
-ISO 20022 (MX / SWIFT) financial message definitions, identification and
-metadata for Rust, generated from the official iso20022.org XSD schemas.
-
-The ISO 20022 counterpart to
-[`rust_iso3166`](https://github.com/rust-iso/rust_iso3166): a strongly-typed
-model for MX messages plus XML/JSON parsing, serialization, identification, a
-generic message tree, and business metadata.
+A Rust library for ISO 20022 (MX / SWIFT) financial messages, generated from the
+official iso20022.org XSD schemas. It provides a strongly-typed model for MX
+messages with XML and JSON parsing/serialization, message identification, a
+generic message tree for reading any message without the model, and business
+metadata extraction.
 
 ## What's in the crate
 
