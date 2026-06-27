@@ -1,33 +1,31 @@
 # rust_iso20022
 
-ISO 20022 financial message definitions, identification and code sets for Rust,
-generated from the official ISO 20022 XSD schemas.
+ISO 20022 (MX / SWIFT) financial message definitions, identification and
+metadata for Rust, generated from the official iso20022.org XSD schemas.
 
-This is the ISO 20022 (MX / SWIFT payments) counterpart to
+The ISO 20022 counterpart to
 [`rust_iso3166`](https://github.com/rust-iso/rust_iso3166): a strongly-typed
-model for MX messages plus XML/JSON parsing, serialization, identification and
-message metadata.
+model for MX messages plus XML/JSON parsing, serialization, identification, a
+generic message tree, and business metadata.
 
 ## What's in the crate
 
-The crate has three layers:
+| Layer | Module | Always available? |
+|-------|--------|-------------------|
+| Core | (root) | yes — `MxId`, `BusinessArea`, `from_xml`/`to_xml`, `detect`, `MxNode`, `Error` |
+| Catalogue | `catalogue` | yes — every message id + namespace as static [`phf`](https://crates.io/crates/phf) tables |
+| Model | `generated` | per area — `generated::<area>::<msg>::Document`, enable with `model-<area>` |
 
-| Layer | Module | Source | Description |
-|-------|--------|--------|-------------|
-| Core  | (root) | hand-written | `MxId`, `BusinessArea`, `from_xml`/`to_xml`, `Error` |
-| Model | `generated` | generated from XSD | one module per message version, e.g. `generated::pacs::pacs_008_001_08` |
-| Catalogue | `catalogue` | generated from XSD | every message id + namespace as static `phf` tables |
-
-**Coverage:** a typed model is generated for **1130** message schemas across
-32 business areas (`acmt`, `admi`, `auth`, `caaa`, `caad`, `caam`, `cafc`,
+**Coverage:** a typed model is generated for **1130** message versions across
+**32** business areas (`acmt`, `admi`, `auth`, `caaa`, `caad`, `caam`, `cafc`,
 `cafm`, `cafr`, `cain`, `camt`, `canm`, `casp`, `casr`, `catm`, `catp`, `colr`,
 `fxtr`, `head`, `pacs`, `pain`, `reda`, `remt`, `secl`, `seev`, `semt`, `sese`,
-`setr`, `tsin`, `tsmt`, `tsrv`, `trck`) — the current iso20022.org catalogue
-(latest versions) plus the earlier versions, so older messages still parse.
+`setr`, `tsin`, `tsmt`, `tsrv`, `trck`). This is the current iso20022.org
+catalogue (latest versions) plus the earlier versions, so older in-circulation
+messages still parse.
 
-The generated types derive [`yaserde`](https://crates.io/crates/yaserde)'s
-`YaSerialize` / `YaDeserialize` for XML, and (with the `serde` feature)
-`serde::{Serialize, Deserialize}` for JSON.
+The generated types derive [`yaserde`](https://crates.io/crates/yaserde) for XML
+and (with the `serde` feature) `serde::{Serialize, Deserialize}` for JSON.
 
 ## Capabilities
 
@@ -35,137 +33,108 @@ The generated types derive [`yaserde`](https://crates.io/crates/yaserde)'s
 |---|---|
 | Typed model, all message versions | `generated::<area>::<msg>::Document` |
 | XML parse / serialize | `from_xml` / `to_xml` |
-| JSON parse / serialize | `from_json` / `to_json` (feature `serde`) |
-| Per-message identity (namespace, MxId, area, functionality, variant, version) | the `MxMessage` trait, implemented by every `Document` |
-| Auto-detect & parse | `detect(xml)`, `parse_as::<T>()`, `generated::any::parse_auto(xml)` → `AnyMessage` |
-| Business Application Header (BAH / `head.001`) read & build | `app_hdr::parse_business_header` / `BusinessHeader::to_app_hdr_xml` |
+| JSON parse / serialize (ISO element names) | `from_json` / `to_json` (feature `serde`) |
+| Per-message identity (namespace, MxId, area, functionality, variant, version) | the `MxMessage` trait on every `Document` |
+| Auto-detect & parse | `detect`, `parse_as::<T>()`, `generated::any::parse_auto` → `AnyMessage` |
+| Business Application Header — read & build | `app_hdr::parse_business_header` / `BusinessHeader::to_app_hdr_xml` |
 | Business metadata extraction | `metadata::extract` |
-| Typed envelope (header + document) | `Envelope<D>` / `parse_envelope` |
+| Business message (header + typed document) | `Envelope<D>` / `parse_envelope`, `read_business_message` |
 | Generic tree — read any message without the model | `MxNode::parse` |
+| Typed scalars (amount → `Decimal`, dates → `chrono`) | `convert::{to_decimal, to_date, to_datetime}` (feature `convert`) |
 | Message catalogue | `catalogue` |
-| WebAssembly / JS bindings | `wasm` (build with `scripts/build-wasm.sh`) |
+| WebAssembly / JS bindings | `src/wasm.rs` (build via `scripts/build-wasm.sh`) |
+
+## Quick start
+
+Identify a message and read its metadata — no `model` feature needed:
 
 ```rust
-# #[cfg(feature = "model")] {
-use rust_iso20022::{MxMessage, detect};
-use rust_iso20022::generated::any::{parse_auto, AnyMessage};
+use rust_iso20022::{detect, BusinessArea, MxNode};
 
-// Auto-detect and parse any supported message:
-let msg = parse_auto(&xml)?;
-println!("{} from {:?}", msg.message_name(), msg.mx_id().business_area);
+let xml = r#"<Document xmlns="urn:iso:std:iso:20022:tech:xsd:pacs.008.001.08">
+  <FIToFICstmrCdtTrf><GrpHdr><MsgId>ABC-1</MsgId></GrpHdr>
+    <CdtTrfTxInf><IntrBkSttlmAmt Ccy="EUR">1234.56</IntrBkSttlmAmt></CdtTrfTxInf>
+  </FIToFICstmrCdtTrf></Document>"#;
 
-// Or work with a known type, which carries its own identity:
-use rust_iso20022::generated::pacs::pacs_008_001_08::Document;
-assert_eq!(Document::MESSAGE_NAME, "pacs.008.001.08");
-# }
-```
-
-## Usage
-
-```rust
-use rust_iso20022::{MxId, BusinessArea};
-
-// Identify a message from its namespace or bare name.
-let id = rust_iso20022::from_namespace(
-    "urn:iso:std:iso:20022:tech:xsd:pacs.008.001.08",
-).unwrap();
-assert_eq!(id.business_area, BusinessArea::pacs);
-assert_eq!(id.functionality, "008");
+let id = detect(xml).unwrap();
 assert_eq!(id.message_name(), "pacs.008.001.08");
+assert_eq!(id.business_area, BusinessArea::pacs);
 
-// The catalogue knows every staged message.
-assert!(rust_iso20022::catalogue::contains("pacs.008.001.08"));
-let entry = rust_iso20022::catalogue::from_message_name("pacs.008.001.08").unwrap();
-assert_eq!(entry.namespace, "urn:iso:std:iso:20022:tech:xsd:pacs.008.001.08");
+// Read fields from the generic tree without the typed model:
+let doc = MxNode::parse(xml).unwrap();
+assert_eq!(doc.find("MsgId").and_then(|n| n.text()), Some("ABC-1"));
+let amt = doc.find("IntrBkSttlmAmt").unwrap();
+assert_eq!((amt.text(), amt.attr("Ccy")), (Some("1234.56"), Some("EUR")));
 ```
 
-Parsing and serializing a message (enable that area's model feature, e.g.
+Typed parse / serialize (enable the area's model, e.g.
 `cargo add rust_iso20022 -F model-pacs`):
 
 ```rust,ignore
 use rust_iso20022::generated::pacs::pacs_008_001_08::Document;
 
-let xml = std::fs::read_to_string("message.xml")?;
 let doc: Document = rust_iso20022::from_xml(&xml)?;
 let back: String = rust_iso20022::to_xml(&doc)?;
 ```
 
-Reading any message **without** the typed model, via the generic tree:
+See the runnable examples:
 
-```rust
-use rust_iso20022::MxNode;
-
-let xml = r#"<Document xmlns="urn:iso:std:iso:20022:tech:xsd:pacs.008.001.08">
-  <FIToFICstmrCdtTrf><GrpHdr><MsgId>ABC-1</MsgId></GrpHdr></FIToFICstmrCdtTrf>
-</Document>"#;
-let doc = MxNode::parse(xml).unwrap();
-assert_eq!(doc.find("MsgId").and_then(|n| n.text()), Some("ABC-1"));
+```bash
+cargo run --example inspect_message                                   # no features
+cargo run --example typed_payment --features model-pacs,serde,convert # typed
 ```
 
 ## Features
 
 | Feature | Default | Effect |
 |---------|---------|--------|
-| `model-<area>` | no | the typed model for one business area, e.g. `model-pacs`, `model-camt`. Enable only what you need — compiling a single family takes seconds vs many minutes for all |
-| `model` | no | all `model-<area>` at once (~722 modules; slow to compile) |
-| `serde` | no | `serde` support for `MxId`, `BusinessArea`, `CatalogueEntry` (serialize to canonical strings) |
+| `model-<area>` | no | the typed model for one business area, e.g. `model-pacs`. Enable only what you need — a single area compiles in seconds vs many minutes for all |
+| `model` | no | all `model-<area>` at once (~1130 modules; slow to compile) |
+| `serde` | no | `serde` + JSON (`to_json`/`from_json`) for the core, catalogue and message types |
 | `convert` | no | typed scalar conversions (`to_decimal`/`to_date`/`to_datetime`) via `rust_decimal`/`chrono` |
 | `cli` | no | the `iso20022` command-line catalogue lookup tool |
 | `catalogue` | no | runtime XSD fetcher (`fetch` module): pulls in `tokio`, `reqwest`, `regex` |
 
-The XSD → Rust generator is a separate workspace crate (`tools/codegen`), not a
-feature of the published crate.
-
-> The core (`MxId`, `BusinessArea`) and `catalogue` are always available; the
-> typed `generated` model requires a `model-<area>` feature (or `model`).
+The core (`MxId`, `BusinessArea`, `MxNode`, `detect`) and the `catalogue` are
+always available. The XSD → Rust generator is a separate, unpublished workspace
+crate (`tools/codegen`), so the published crate has **no git dependencies**.
 
 ## Command-line tool
 
 ```bash
-cargo run --features cli --bin iso20022 -- pacs.008
+cargo run --features cli --bin iso20022 -- pacs.008   # all pacs.008 versions
 # or after `cargo install rust_iso20022 --features cli`:
 iso20022 camt          # every message in the camt business area
-iso20022 008.001.08    # match on functionality/variant/version
 iso20022               # the whole catalogue
 ```
 
-It prints a table of matching messages (name, area, description, whether a typed
-model exists, and the namespace).
-
 ## Regenerating the model
 
-The model and catalogue are produced from XSD schemas in `xsds/` by the codegen
-tool, which lives in a separate, unpublished workspace crate (`tools/codegen`)
-so the published crate has no git dependencies:
+The model and catalogue are produced from the XSD schemas in `xsds/` by the
+codegen tool:
 
 ```bash
 cargo run -p rust_iso20022_codegen -- --input xsds --output src/generated
 ```
 
-To (re)download the schemas, the `catalogue` feature provides a `Fetcher`. The
-canonical source is <https://www.iso20022.org>, but that host is behind Akamai
-bot-protection that refuses non-browser clients, so the fetcher's source is
-configurable and can target a schema mirror.
+To (re)download schemas, the `catalogue` feature provides a `Fetcher`. The
+authoritative source is iso20022.org; its static schema path
+(`/sites/default/files/documents/messages/<area>/schemas/<name>.xsd`) is the
+reliable programmatic download path (`Fetcher::download_schema`).
 
-## Design notes & limitations
+## Design notes
 
-- **Scalar values are `String`.** `xsd-types` scalars (`Decimal`, `Date`,
-  `DateTime`, …) lack `serde` support, so generated leaf values are exposed as
-  `String`. This is lossless (exact text, no float rounding — desirable for
-  monetary amounts) and keeps XML and JSON in sync.
+- **Scalars are `String`** — lossless (exact text, no float rounding, ideal for
+  money) and keeps XML and JSON in sync. Convert on demand with the `convert`
+  feature.
 - **Choices** are modelled as a struct of `Option<…>` fields (the same shape
-  JAXB uses), so amounts inside a `<xsd:choice>` round-trip with their `Ccy`
+  JAXB uses), so an amount inside a `<xsd:choice>` round-trips with its `Ccy`
   attribute and unset choices are simply omitted.
-- **JSON shape:** JSON uses the ISO 20022 element names (`MsgId`, `IBAN`, …),
-  mirroring the yaserde renames; `to_json`/`from_json` round-trip.
-- XML round-tripping preserves the data model but not necessarily byte-for-byte
-  formatting (namespaces, whitespace).
-- **Unrecognised code values:** a value that is not a known member of a coded
-  enumeration parses to an `__Unknown__(String)` fallback that re-serialises with
-  an `<__Unknown__>` wrapper. Valid codes (the normal case) are unaffected; this
-  only surfaces for invalid input.
-- The generator handles multi-`<xsd:choice>` complexTypes by disambiguation, so
-  all 722 messages have a model (no skips).
+- **JSON** uses the ISO 20022 element names (`MsgId`, `IBAN`, …); `to_json` /
+  `from_json` round-trip.
+- A value that is not a known member of a coded enumeration parses to an
+  `__Unknown__(String)` fallback (surfaces only for invalid input).
+- XML round-tripping preserves the data model, not byte-for-byte formatting.
 
 ## License
 

@@ -3,9 +3,6 @@ Cargo.lock
 **/*.rs.bk
 .DS_Store
 
-# Downloaded XSD schemas (fetched by the `catalogue` feature / staged for codegen)
-/xsds
-
 # Third-party reference material (the prowide-iso20022 Java sources), kept
 # locally for reference but not part of this codebase.
 /thrdpty
@@ -13,4 +10,3 @@ Cargo.lock
 # IDE
 .idea
 .vscode
-/xsd_diff.md
