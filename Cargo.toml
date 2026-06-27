@@ -85,7 +85,11 @@ crate-type = ["cdylib", "rlib"]
 
 [dependencies]
 log = "0.4"
-phf = { version = "0.11", features = ["macros"] }
+phf = { version = "0.14", features = ["macros"] }
+# Pinned to 0.7: the generated model and the `tools/codegen` pipeline target
+# yaserde 0.7's derive semantics (namespace/prefix/flatten handling). yaserde
+# 0.8+ changed the derive macro incompatibly (its 0.12 derive panics on the
+# generated attributes), so moving up needs a full regenerate + re-validation.
 yaserde = "0.7"
 yaserde_derive = "0.7"
 # Referenced as `xml::...` by the generated `simple_type!` yaserde impls.
@@ -104,7 +108,7 @@ chrono = { version = "0.4", default-features = false, features = ["std"], option
 
 # Optional: runtime catalogue scraper (feature = "catalogue").
 tokio = { version = "1", features = ["rt", "rt-multi-thread", "macros", "fs"], optional = true }
-reqwest = { version = "0.12", features = ["json"], optional = true }
+reqwest = { version = "0.13", features = ["json"], optional = true }
 regex = { version = "1", optional = true }
 
 [[bin]]

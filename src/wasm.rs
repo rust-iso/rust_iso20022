@@ -158,6 +158,38 @@ pub fn read_business_message(xml: &str) -> String {
     )
 }
 
+// --------------------------------------------------------------- generic tree ---
+
+/// Text at a `/`-separated path of local element names, e.g.
+/// `"FIToFICstmrCdtTrf/GrpHdr/MsgId"` — read any message without the model.
+#[wasm_bindgen]
+pub fn node_text(xml: &str, path: &str) -> Option<String> {
+    let root = crate::MxNode::parse(xml)?;
+    let segs: Vec<&str> = path.split('/').filter(|s| !s.is_empty()).collect();
+    root.at(&segs).and_then(|n| n.text()).map(str::to_string)
+}
+
+/// Text of the first descendant element with the given local name.
+#[wasm_bindgen]
+pub fn node_find(xml: &str, local: &str) -> Option<String> {
+    let root = crate::MxNode::parse(xml)?;
+    root.find(local).and_then(|n| n.text()).map(str::to_string)
+}
+
+/// The texts of every descendant element with the given local name.
+#[wasm_bindgen]
+pub fn node_find_all(xml: &str, local: &str) -> Array {
+    match crate::MxNode::parse(xml) {
+        Some(root) => root
+            .find_all(local)
+            .into_iter()
+            .filter_map(|n| n.text())
+            .map(JsValue::from_str)
+            .collect(),
+        None => Array::new(),
+    }
+}
+
 // -------------------------------------------------------------------- utils ---
 
 /// JSON-encode a string value (with quotes and minimal escaping).

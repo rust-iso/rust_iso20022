@@ -6,13 +6,24 @@ All notable changes to this project are documented here.
 
 Initial release.
 
+### Changed
+- **Dependency upgrades:** `phf` 0.11 → 0.14, `reqwest` 0.12 → 0.13; the
+  floating deps (`regex`, `tokio`, `serde`, `chrono`, `rust_decimal`, `xml-rs`,
+  `log`) resolve to their latest compatible releases. `yaserde`/`yaserde_derive`
+  stay at 0.7 — the generated model and the `tools/codegen` pipeline target its
+  derive semantics, and 0.8+ changed the derive macro incompatibly (0.12 panics
+  on the generated attributes); moving up needs a full regenerate + re-validation.
+
 ### Added
 - **`MxNode`** — a generic message tree: parse any MX XML and navigate it by
   local element name (`parse`/`at`/`find`/`find_all`/`attr`), without the typed
   model or a `model-<area>` feature.
-- **Comprehensive WASM bindings** (`src/wasm.rs`): identification (`detect`,
-  `mx_id`), catalogue (incl. `catalogue_entry`, `has_model`, `business_areas`),
-  header read/build, metadata, and `read_business_message`.
+- **Comprehensive WASM bindings** (`src/wasm.rs`, 18 functions): identification
+  (`detect`, `mx_id`), catalogue (incl. `catalogue_entry`, `has_model`,
+  `business_areas`), header read/build, metadata, `read_business_message`, and
+  generic-tree access (`node_text`, `node_find`, `node_find_all`).
+- Removed the obsolete `to_xml` `__Unknown__` stripping (choices are now
+  `Option` fields), making serialization faithful for unrecognised code values.
 - **`convert` feature:** typed scalar access (`to_decimal`/`to_date`/`to_datetime`
   via `rust_decimal`/`chrono`) over the lossless `String` values, matching
   prowide's typed getters.

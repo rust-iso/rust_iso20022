@@ -90,6 +90,18 @@ let doc: Document = rust_iso20022::from_xml(&xml)?;
 let back: String = rust_iso20022::to_xml(&doc)?;
 ```
 
+Reading any message **without** the typed model, via the generic tree:
+
+```rust
+use rust_iso20022::MxNode;
+
+let xml = r#"<Document xmlns="urn:iso:std:iso:20022:tech:xsd:pacs.008.001.08">
+  <FIToFICstmrCdtTrf><GrpHdr><MsgId>ABC-1</MsgId></GrpHdr></FIToFICstmrCdtTrf>
+</Document>"#;
+let doc = MxNode::parse(xml).unwrap();
+assert_eq!(doc.find("MsgId").and_then(|n| n.text()), Some("ABC-1"));
+```
+
 ## Features
 
 | Feature | Default | Effect |
