@@ -37,8 +37,10 @@ Initial release.
 - **Typed scalars:** `convert::{to_decimal, to_date, to_datetime}` (`convert`).
 - **Catalogue:** `catalogue` phf tables; runtime `fetch::Fetcher` (`catalogue`).
 - **CLI:** the `iso20022` catalogue-lookup tool (`cli`).
-- **WASM:** 20 JS bindings for the identification / catalogue / header /
-  metadata / generic-tree layer (`src/wasm.rs`).
+- **WASM:** 21 JS bindings for the identification / catalogue / header /
+  metadata / generic-tree layer (including `node_to_json` to dump a whole
+  message tree), with a `console_error_panic_hook` for readable panics
+  (`src/wasm.rs`).
 
 ### Packaging
 - No git dependencies — publishable to crates.io. Apache-2.0 licensed, with

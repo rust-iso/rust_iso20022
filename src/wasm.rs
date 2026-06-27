@@ -12,6 +12,14 @@
 use js_sys::Array;
 use wasm_bindgen::prelude::*;
 
+/// Module entry point: install a panic hook that routes Rust panics to
+/// `console.error`, so wasm failures show a readable message and stack trace
+/// instead of an opaque `unreachable`. Runs automatically on module load.
+#[wasm_bindgen(start)]
+pub fn start() {
+    console_error_panic_hook::set_once();
+}
+
 // ----------------------------------------------------------------- identity ---
 
 /// Detect the message name from an XML document, e.g. `"pacs.008.001.08"`.
@@ -193,6 +201,14 @@ pub fn node_find_attr(xml: &str, local: &str, attr: &str) -> Option<String> {
     root.find(local).and_then(|n| n.attr(attr)).map(str::to_string)
 }
 
+/// The whole parsed message tree as JSON, recursively:
+/// `{name, value, attributes: {…}, children: [...]}`. Lets JS walk any message
+/// without the typed model.
+#[wasm_bindgen]
+pub fn node_to_json(xml: &str) -> Option<String> {
+    crate::MxNode::parse(xml).as_ref().map(json_node)
+}
+
 /// The texts of every descendant element with the given local name.
 #[wasm_bindgen]
 pub fn node_find_all(xml: &str, local: &str) -> Array {
@@ -233,6 +249,32 @@ fn jso(v: &Option<String>) -> String {
         Some(s) => js(s),
         None => "null".to_string(),
     }
+}
+
+/// Recursively JSON-encode an `MxNode` tree.
+fn json_node(n: &crate::MxNode) -> String {
+    let mut out = String::from("{\"name\":");
+    out.push_str(&js(&n.name));
+    out.push_str(",\"value\":");
+    out.push_str(&jso(&n.value));
+    out.push_str(",\"attributes\":{");
+    for (i, (k, v)) in n.attributes.iter().enumerate() {
+        if i > 0 {
+            out.push(',');
+        }
+        out.push_str(&js(k));
+        out.push(':');
+        out.push_str(&js(v));
+    }
+    out.push_str("},\"children\":[");
+    for (i, c) in n.children.iter().enumerate() {
+        if i > 0 {
+            out.push(',');
+        }
+        out.push_str(&json_node(c));
+    }
+    out.push_str("]}");
+    out
 }
 
 fn json_header(h: &crate::app_hdr::BusinessHeader) -> String {
