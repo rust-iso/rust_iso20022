@@ -37,7 +37,7 @@ Initial release.
 - **Typed scalars:** `convert::{to_decimal, to_date, to_datetime}` (`convert`).
 - **Catalogue:** `catalogue` phf tables; runtime `fetch::Fetcher` (`catalogue`).
 - **CLI:** the `iso20022` catalogue-lookup tool (`cli`).
-- **WASM:** 18 JS bindings for the identification / catalogue / header /
+- **WASM:** 20 JS bindings for the identification / catalogue / header /
   metadata / generic-tree layer (`src/wasm.rs`).
 
 ### Packaging

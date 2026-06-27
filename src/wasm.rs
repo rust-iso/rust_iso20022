@@ -176,6 +176,23 @@ pub fn node_find(xml: &str, local: &str) -> Option<String> {
     root.find(local).and_then(|n| n.text()).map(str::to_string)
 }
 
+/// Value of an attribute on the element at a `/`-separated path of local names,
+/// e.g. the `Ccy` of `"FIToFICstmrCdtTrf/CdtTrfTxInf/IntrBkSttlmAmt"`.
+#[wasm_bindgen]
+pub fn node_attr(xml: &str, path: &str, attr: &str) -> Option<String> {
+    let root = crate::MxNode::parse(xml)?;
+    let segs: Vec<&str> = path.split('/').filter(|s| !s.is_empty()).collect();
+    root.at(&segs).and_then(|n| n.attr(attr)).map(str::to_string)
+}
+
+/// Value of an attribute on the first descendant element with the given local
+/// name, e.g. `node_find_attr(xml, "IntrBkSttlmAmt", "Ccy")` → `"EUR"`.
+#[wasm_bindgen]
+pub fn node_find_attr(xml: &str, local: &str, attr: &str) -> Option<String> {
+    let root = crate::MxNode::parse(xml)?;
+    root.find(local).and_then(|n| n.attr(attr)).map(str::to_string)
+}
+
 /// The texts of every descendant element with the given local name.
 #[wasm_bindgen]
 pub fn node_find_all(xml: &str, local: &str) -> Array {
