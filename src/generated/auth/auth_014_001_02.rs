@@ -57,32 +57,18 @@ crate::simple_type!(BaseOneRate);
 
 impl Validate for BaseOneRate {}
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:auth.014.001.02")]
-
-pub enum CounterpartyIdentification3ChoiceChoice {
-    #[yaserde(rename = "LEI")]
-    #[cfg_attr(feature = "serde", serde(rename = "LEI"))]
-    Lei(Leiidentifier),
-    SctrAndLctn(SectorAndLocation1),
-    NmAndLctn(NameAndLocation1),
-    __Unknown__(String),
-}
-
-impl Default for CounterpartyIdentification3ChoiceChoice {
-    fn default() -> CounterpartyIdentification3ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for CounterpartyIdentification3ChoiceChoice {}
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:auth.014.001.02")]
 pub struct CounterpartyIdentification3Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub counterparty_identification_3_choice_choice: CounterpartyIdentification3ChoiceChoice,
+    #[yaserde(rename = "LEI")]
+    #[cfg_attr(feature = "serde", serde(rename = "LEI"))]
+    pub lei: Option<Leiidentifier>,
+    #[yaserde(rename = "SctrAndLctn")]
+    #[cfg_attr(feature = "serde", serde(rename = "SctrAndLctn"))]
+    pub sctr_and_lctn: Option<SectorAndLocation1>,
+    #[yaserde(rename = "NmAndLctn")]
+    #[cfg_attr(feature = "serde", serde(rename = "NmAndLctn"))]
+    pub nm_and_lctn: Option<NameAndLocation1>,
 }
 
 impl Validate for CounterpartyIdentification3Choice {}
@@ -97,29 +83,15 @@ crate::simple_type!(CountryCode);
 
 impl Validate for CountryCode {}
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:auth.014.001.02")]
-
-pub enum DateAndDateTimeChoiceChoice {
-    Dt(Isodate),
-    DtTm(IsodateTime),
-    __Unknown__(String),
-}
-
-impl Default for DateAndDateTimeChoiceChoice {
-    fn default() -> DateAndDateTimeChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for DateAndDateTimeChoiceChoice {}
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:auth.014.001.02")]
 pub struct DateAndDateTimeChoice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub date_and_date_time_choice_choice: DateAndDateTimeChoiceChoice,
+    #[yaserde(rename = "Dt")]
+    #[cfg_attr(feature = "serde", serde(rename = "Dt"))]
+    pub dt: Option<Isodate>,
+    #[yaserde(rename = "DtTm")]
+    #[cfg_attr(feature = "serde", serde(rename = "DtTm"))]
+    pub dt_tm: Option<IsodateTime>,
 }
 
 impl Validate for DateAndDateTimeChoice {}
@@ -179,32 +151,16 @@ pub struct ForeignExchange1 {
 }
 
 impl Validate for ForeignExchange1 {}
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:auth.014.001.02")]
-
-pub enum ForeignExchangeSwap3ChoiceChoice {
-    DataSetActn(ReportPeriodActivity3Code),
-    Tx(Vec<ForeignExchangeSwapTransaction3>),
-    __Unknown__(String),
-}
-
-impl Default for ForeignExchangeSwap3ChoiceChoice {
-    fn default() -> ForeignExchangeSwap3ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for ForeignExchangeSwap3ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:auth.014.001.02")]
 pub struct ForeignExchangeSwap3Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub foreign_exchange_swap_3_choice_choice: ForeignExchangeSwap3ChoiceChoice,
+    #[yaserde(rename = "DataSetActn")]
+    #[cfg_attr(feature = "serde", serde(rename = "DataSetActn"))]
+    pub data_set_actn: Option<ReportPeriodActivity3Code>,
+    #[yaserde(rename = "Tx")]
+    #[cfg_attr(feature = "serde", serde(rename = "Tx"))]
+    pub tx: Vec<ForeignExchangeSwapTransaction3>,
 }
 
 impl Validate for ForeignExchangeSwap3Choice {}

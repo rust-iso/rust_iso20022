@@ -62,33 +62,19 @@ pub struct DocumentNumber19 {
 }
 
 impl Validate for DocumentNumber19 {}
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:sese.021.002.06")]
-
-pub enum DocumentNumber6ChoiceChoice {
-    ShrtNb(Exact3NumericText),
-    LngNb(Iso20022MessageIdentificationText),
-    PrtryNb(GenericIdentification86),
-    __Unknown__(String),
-}
-
-impl Default for DocumentNumber6ChoiceChoice {
-    fn default() -> DocumentNumber6ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for DocumentNumber6ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:sese.021.002.06")]
 pub struct DocumentNumber6Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub document_number_6_choice_choice: DocumentNumber6ChoiceChoice,
+    #[yaserde(rename = "ShrtNb")]
+    #[cfg_attr(feature = "serde", serde(rename = "ShrtNb"))]
+    pub shrt_nb: Option<Exact3NumericText>,
+    #[yaserde(rename = "LngNb")]
+    #[cfg_attr(feature = "serde", serde(rename = "LngNb"))]
+    pub lng_nb: Option<Iso20022MessageIdentificationText>,
+    #[yaserde(rename = "PrtryNb")]
+    #[cfg_attr(feature = "serde", serde(rename = "PrtryNb"))]
+    pub prtry_nb: Option<GenericIdentification86>,
 }
 
 impl Validate for DocumentNumber6Choice {}
@@ -297,31 +283,16 @@ impl Validate for Max70Text {
         Ok(())
     }
 }
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:sese.021.002.06")]
-
-pub enum PartyIdentification136ChoiceChoice {
-    AnyBIC(AnyBICDec2014Identifier),
-    PrtryId(GenericIdentification84),
-    __Unknown__(String),
-}
-
-impl Default for PartyIdentification136ChoiceChoice {
-    fn default() -> PartyIdentification136ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for PartyIdentification136ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:sese.021.002.06")]
 pub struct PartyIdentification136Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub party_identification_136_choice_choice: PartyIdentification136ChoiceChoice,
+    #[yaserde(rename = "AnyBIC")]
+    #[cfg_attr(feature = "serde", serde(rename = "AnyBIC"))]
+    pub any_b_i_c: Option<AnyBICDec2014Identifier>,
+    #[yaserde(rename = "PrtryId")]
+    #[cfg_attr(feature = "serde", serde(rename = "PrtryId"))]
+    pub prtry_id: Option<GenericIdentification84>,
 }
 
 impl Validate for PartyIdentification136Choice {}

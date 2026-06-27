@@ -121,35 +121,19 @@ pub struct AtmcommandIdentification1 {
 }
 
 impl Validate for AtmcommandIdentification1 {}
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:caam.004.001.03")]
-
-pub enum AtmcommandParameters1ChoiceChoice {
-    #[yaserde(rename = "ATMReqrdGblSts")]
-    #[cfg_attr(feature = "serde", serde(rename = "ATMReqrdGblSts"))]
-    AtmreqrdGblSts(Atmstatus1Code),
-    XpctdMsgFctn(MessageFunction8Code),
-    ReqrdCfgtnParam(AtmconfigurationParameter1),
-    __Unknown__(String),
-}
-
-impl Default for AtmcommandParameters1ChoiceChoice {
-    fn default() -> AtmcommandParameters1ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for AtmcommandParameters1ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:caam.004.001.03")]
 pub struct AtmcommandParameters1Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub atm_command_parameters_1_choice_choice: AtmcommandParameters1ChoiceChoice,
+    #[yaserde(rename = "ATMReqrdGblSts")]
+    #[cfg_attr(feature = "serde", serde(rename = "ATMReqrdGblSts"))]
+    pub atmreqrd_gbl_sts: Option<Atmstatus1Code>,
+    #[yaserde(rename = "XpctdMsgFctn")]
+    #[cfg_attr(feature = "serde", serde(rename = "XpctdMsgFctn"))]
+    pub xpctd_msg_fctn: Option<MessageFunction8Code>,
+    #[yaserde(rename = "ReqrdCfgtnParam")]
+    #[cfg_attr(feature = "serde", serde(rename = "ReqrdCfgtnParam"))]
+    pub reqrd_cfgtn_param: Option<AtmconfigurationParameter1>,
 }
 
 impl Validate for AtmcommandParameters1Choice {}
@@ -505,35 +489,16 @@ impl Default for AtmsecurityScheme3Code {
 }
 
 impl Validate for AtmsecurityScheme3Code {}
-
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:caam.004.001.03")]
-
-pub enum Atmsignature2ChoiceChoice {
-    DgtlSgntr(ContentInformationType14),
-    #[yaserde(rename = "TRRltdData")]
-    #[cfg_attr(feature = "serde", serde(rename = "TRRltdData"))]
-    TrrltdData(TrrelatedData2),
-    __Unknown__(String),
-}
-
-impl Default for Atmsignature2ChoiceChoice {
-    fn default() -> Atmsignature2ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for Atmsignature2ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:caam.004.001.03")]
 pub struct Atmsignature2Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub atm_signature_2_choice_choice: Atmsignature2ChoiceChoice,
+    #[yaserde(rename = "DgtlSgntr")]
+    #[cfg_attr(feature = "serde", serde(rename = "DgtlSgntr"))]
+    pub dgtl_sgntr: Option<ContentInformationType14>,
+    #[yaserde(rename = "TRRltdData")]
+    #[cfg_attr(feature = "serde", serde(rename = "TRRltdData"))]
+    pub trrltd_data: Option<TrrelatedData2>,
 }
 
 impl Validate for Atmsignature2Choice {}
@@ -1394,34 +1359,16 @@ pub struct GeographicCoordinates1 {
 }
 
 impl Validate for GeographicCoordinates1 {}
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:caam.004.001.03")]
-
-pub enum GeographicLocation1ChoiceChoice {
-    GeogcCordints(GeographicCoordinates1),
-    #[yaserde(rename = "UTMCordints")]
-    #[cfg_attr(feature = "serde", serde(rename = "UTMCordints"))]
-    Utmcordints(Utmcoordinates1),
-    __Unknown__(String),
-}
-
-impl Default for GeographicLocation1ChoiceChoice {
-    fn default() -> GeographicLocation1ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for GeographicLocation1ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:caam.004.001.03")]
 pub struct GeographicLocation1Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub geographic_location_1_choice_choice: GeographicLocation1ChoiceChoice,
+    #[yaserde(rename = "GeogcCordints")]
+    #[cfg_attr(feature = "serde", serde(rename = "GeogcCordints"))]
+    pub geogc_cordints: Option<GeographicCoordinates1>,
+    #[yaserde(rename = "UTMCordints")]
+    #[cfg_attr(feature = "serde", serde(rename = "UTMCordints"))]
+    pub utmcordints: Option<Utmcoordinates1>,
 }
 
 impl Validate for GeographicLocation1Choice {}
@@ -1537,34 +1484,16 @@ pub struct Kekidentifier2 {
 }
 
 impl Validate for Kekidentifier2 {}
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:caam.004.001.03")]
-
-pub enum KeyChoiceValue2Choice {
-    NcrptdKeyVal(ContentInformationType10),
-    #[yaserde(rename = "TRRltdData")]
-    #[cfg_attr(feature = "serde", serde(rename = "TRRltdData"))]
-    TrrltdData(TrrelatedData2),
-    __Unknown__(String),
-}
-
-impl Default for KeyChoiceValue2Choice {
-    fn default() -> KeyChoiceValue2Choice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for KeyChoiceValue2Choice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:caam.004.001.03")]
 pub struct KeyChoiceValue2 {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub key_choice_value_2_choice: KeyChoiceValue2Choice,
+    #[yaserde(rename = "NcrptdKeyVal")]
+    #[cfg_attr(feature = "serde", serde(rename = "NcrptdKeyVal"))]
+    pub ncrptd_key_val: Option<ContentInformationType10>,
+    #[yaserde(rename = "TRRltdData")]
+    #[cfg_attr(feature = "serde", serde(rename = "TRRltdData"))]
+    pub trrltd_data: Option<TrrelatedData2>,
 }
 
 impl Validate for KeyChoiceValue2 {}
@@ -2360,66 +2289,32 @@ pub struct PublicRSAKey1 {
 }
 
 impl Validate for PublicRSAKey1 {}
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:caam.004.001.03")]
-
-pub enum Recipient4ChoiceChoice {
-    KeyTrnsprt(KeyTransport4),
-    #[yaserde(rename = "KEK")]
-    #[cfg_attr(feature = "serde", serde(rename = "KEK"))]
-    Kek(Kek4),
-    KeyIdr(Kekidentifier2),
-    __Unknown__(String),
-}
-
-impl Default for Recipient4ChoiceChoice {
-    fn default() -> Recipient4ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for Recipient4ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:caam.004.001.03")]
 pub struct Recipient4Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub recipient_4_choice_choice: Recipient4ChoiceChoice,
+    #[yaserde(rename = "KeyTrnsprt")]
+    #[cfg_attr(feature = "serde", serde(rename = "KeyTrnsprt"))]
+    pub key_trnsprt: Option<KeyTransport4>,
+    #[yaserde(rename = "KEK")]
+    #[cfg_attr(feature = "serde", serde(rename = "KEK"))]
+    pub kek: Option<Kek4>,
+    #[yaserde(rename = "KeyIdr")]
+    #[cfg_attr(feature = "serde", serde(rename = "KeyIdr"))]
+    pub key_idr: Option<Kekidentifier2>,
 }
 
 impl Validate for Recipient4Choice {}
-
-
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:caam.004.001.03")]
-
-pub enum Recipient5ChoiceChoice {
-    IssrAndSrlNb(IssuerAndSerialNumber1),
-    KeyIdr(Kekidentifier2),
-    __Unknown__(String),
-}
-
-impl Default for Recipient5ChoiceChoice {
-    fn default() -> Recipient5ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for Recipient5ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:caam.004.001.03")]
 pub struct Recipient5Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub recipient_5_choice_choice: Recipient5ChoiceChoice,
+    #[yaserde(rename = "IssrAndSrlNb")]
+    #[cfg_attr(feature = "serde", serde(rename = "IssrAndSrlNb"))]
+    pub issr_and_srl_nb: Option<IssuerAndSerialNumber1>,
+    #[yaserde(rename = "KeyIdr")]
+    #[cfg_attr(feature = "serde", serde(rename = "KeyIdr"))]
+    pub key_idr: Option<Kekidentifier2>,
 }
 
 impl Validate for Recipient5Choice {}

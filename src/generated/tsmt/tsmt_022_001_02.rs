@@ -140,32 +140,16 @@ pub struct RejectedElement1 {
 }
 
 impl Validate for RejectedElement1 {}
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:tsmt.022.001.02")]
-
-pub enum RejectionReason1ChoiceChoice {
-    GblRjctnRsn(Reason2),
-    RjctdElmt(Vec<RejectedElement1>),
-    __Unknown__(String),
-}
-
-impl Default for RejectionReason1ChoiceChoice {
-    fn default() -> RejectionReason1ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for RejectionReason1ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:tsmt.022.001.02")]
 pub struct RejectionReason1Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub rejection_reason_1_choice_choice: RejectionReason1ChoiceChoice,
+    #[yaserde(rename = "GblRjctnRsn")]
+    #[cfg_attr(feature = "serde", serde(rename = "GblRjctnRsn"))]
+    pub gbl_rjctn_rsn: Option<Reason2>,
+    #[yaserde(rename = "RjctdElmt")]
+    #[cfg_attr(feature = "serde", serde(rename = "RjctdElmt"))]
+    pub rjctd_elmt: Vec<RejectedElement1>,
 }
 
 impl Validate for RejectionReason1Choice {}

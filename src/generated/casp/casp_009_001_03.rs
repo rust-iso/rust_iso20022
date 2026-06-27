@@ -1345,41 +1345,22 @@ impl Default for CardholderVerificationCapability4Code {
 }
 
 impl Validate for CardholderVerificationCapability4Code {}
-
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:casp.009.001.03")]
-
-pub enum CashAccountIdentification7ChoiceChoice {
-    #[yaserde(rename = "IBAN")]
-    #[cfg_attr(feature = "serde", serde(rename = "IBAN"))]
-    Iban(Iban2007Identifier),
-    #[yaserde(rename = "BBAN")]
-    #[cfg_attr(feature = "serde", serde(rename = "BBAN"))]
-    Bban(Bbanidentifier),
-    #[yaserde(rename = "UPIC")]
-    #[cfg_attr(feature = "serde", serde(rename = "UPIC"))]
-    Upic(Upicidentifier),
-    DmstAcct(SimpleIdentificationInformation4),
-    __Unknown__(String),
-}
-
-impl Default for CashAccountIdentification7ChoiceChoice {
-    fn default() -> CashAccountIdentification7ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for CashAccountIdentification7ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:casp.009.001.03")]
 pub struct CashAccountIdentification7Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub cash_account_identification_7_choice_choice: CashAccountIdentification7ChoiceChoice,
+    #[yaserde(rename = "IBAN")]
+    #[cfg_attr(feature = "serde", serde(rename = "IBAN"))]
+    pub iban: Option<Iban2007Identifier>,
+    #[yaserde(rename = "BBAN")]
+    #[cfg_attr(feature = "serde", serde(rename = "BBAN"))]
+    pub bban: Option<Bbanidentifier>,
+    #[yaserde(rename = "UPIC")]
+    #[cfg_attr(feature = "serde", serde(rename = "UPIC"))]
+    pub upic: Option<Upicidentifier>,
+    #[yaserde(rename = "DmstAcct")]
+    #[cfg_attr(feature = "serde", serde(rename = "DmstAcct"))]
+    pub dmst_acct: Option<SimpleIdentificationInformation4>,
 }
 
 impl Validate for CashAccountIdentification7Choice {}
@@ -3968,33 +3949,19 @@ pub struct Parameter9 {
 }
 
 impl Validate for Parameter9 {}
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:casp.009.001.03")]
-
-pub enum PartyIdentification178ChoiceChoice {
-    AnyBIC(AnyBICDec2014Identifier),
-    PrtryId(GenericIdentification36),
-    NmAndAdr(NameAndAddress6),
-    __Unknown__(String),
-}
-
-impl Default for PartyIdentification178ChoiceChoice {
-    fn default() -> PartyIdentification178ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for PartyIdentification178ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:casp.009.001.03")]
 pub struct PartyIdentification178Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub party_identification_178_choice_choice: PartyIdentification178ChoiceChoice,
+    #[yaserde(rename = "AnyBIC")]
+    #[cfg_attr(feature = "serde", serde(rename = "AnyBIC"))]
+    pub any_b_i_c: Option<AnyBICDec2014Identifier>,
+    #[yaserde(rename = "PrtryId")]
+    #[cfg_attr(feature = "serde", serde(rename = "PrtryId"))]
+    pub prtry_id: Option<GenericIdentification36>,
+    #[yaserde(rename = "NmAndAdr")]
+    #[cfg_attr(feature = "serde", serde(rename = "NmAndAdr"))]
+    pub nm_and_adr: Option<NameAndAddress6>,
 }
 
 impl Validate for PartyIdentification178Choice {}
@@ -4788,66 +4755,32 @@ pub struct PostalAddress22 {
 }
 
 impl Validate for PostalAddress22 {}
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:casp.009.001.03")]
-
-pub enum Recipient10ChoiceChoice {
-    KeyTrnsprt(KeyTransport7),
-    #[yaserde(rename = "KEK")]
-    #[cfg_attr(feature = "serde", serde(rename = "KEK"))]
-    Kek(Kek7),
-    KeyIdr(Kekidentifier2),
-    __Unknown__(String),
-}
-
-impl Default for Recipient10ChoiceChoice {
-    fn default() -> Recipient10ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for Recipient10ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:casp.009.001.03")]
 pub struct Recipient10Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub recipient_10_choice_choice: Recipient10ChoiceChoice,
+    #[yaserde(rename = "KeyTrnsprt")]
+    #[cfg_attr(feature = "serde", serde(rename = "KeyTrnsprt"))]
+    pub key_trnsprt: Option<KeyTransport7>,
+    #[yaserde(rename = "KEK")]
+    #[cfg_attr(feature = "serde", serde(rename = "KEK"))]
+    pub kek: Option<Kek7>,
+    #[yaserde(rename = "KeyIdr")]
+    #[cfg_attr(feature = "serde", serde(rename = "KeyIdr"))]
+    pub key_idr: Option<Kekidentifier2>,
 }
 
 impl Validate for Recipient10Choice {}
-
-
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:casp.009.001.03")]
-
-pub enum Recipient9ChoiceChoice {
-    IssrAndSrlNb(IssuerAndSerialNumber2),
-    KeyIdr(Kekidentifier2),
-    __Unknown__(String),
-}
-
-impl Default for Recipient9ChoiceChoice {
-    fn default() -> Recipient9ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for Recipient9ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:casp.009.001.03")]
 pub struct Recipient9Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub recipient_9_choice_choice: Recipient9ChoiceChoice,
+    #[yaserde(rename = "IssrAndSrlNb")]
+    #[cfg_attr(feature = "serde", serde(rename = "IssrAndSrlNb"))]
+    pub issr_and_srl_nb: Option<IssuerAndSerialNumber2>,
+    #[yaserde(rename = "KeyIdr")]
+    #[cfg_attr(feature = "serde", serde(rename = "KeyIdr"))]
+    pub key_idr: Option<Kekidentifier2>,
 }
 
 impl Validate for Recipient9Choice {}

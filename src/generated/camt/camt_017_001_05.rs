@@ -92,32 +92,16 @@ pub struct Document {
 }
 
 impl Validate for Document {}
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:camt.017.001.05")]
-
-pub enum ErrorHandling1ChoiceChoice {
-    Cd(ErrorHandling1Code),
-    Prtry(Max4AlphaNumericText),
-    __Unknown__(String),
-}
-
-impl Default for ErrorHandling1ChoiceChoice {
-    fn default() -> ErrorHandling1ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for ErrorHandling1ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:camt.017.001.05")]
 pub struct ErrorHandling1Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub error_handling_1_choice_choice: ErrorHandling1ChoiceChoice,
+    #[yaserde(rename = "Cd")]
+    #[cfg_attr(feature = "serde", serde(rename = "Cd"))]
+    pub cd: Option<ErrorHandling1Code>,
+    #[yaserde(rename = "Prtry")]
+    #[cfg_attr(feature = "serde", serde(rename = "Prtry"))]
+    pub prtry: Option<Max4AlphaNumericText>,
 }
 
 impl Validate for ErrorHandling1Choice {}
@@ -159,94 +143,42 @@ pub struct ErrorHandling3 {
 }
 
 impl Validate for ErrorHandling3 {}
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:camt.017.001.05")]
-
-pub enum ExchangeRateOrPercentage1ChoiceChoice {
-    Rate(BaseOneRate),
-    Pctg(PercentageRate),
-    __Unknown__(String),
-}
-
-impl Default for ExchangeRateOrPercentage1ChoiceChoice {
-    fn default() -> ExchangeRateOrPercentage1ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for ExchangeRateOrPercentage1ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:camt.017.001.05")]
 pub struct ExchangeRateOrPercentage1Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub exchange_rate_or_percentage_1_choice_choice: ExchangeRateOrPercentage1ChoiceChoice,
+    #[yaserde(rename = "Rate")]
+    #[cfg_attr(feature = "serde", serde(rename = "Rate"))]
+    pub rate: Option<BaseOneRate>,
+    #[yaserde(rename = "Pctg")]
+    #[cfg_attr(feature = "serde", serde(rename = "Pctg"))]
+    pub pctg: Option<PercentageRate>,
 }
 
 impl Validate for ExchangeRateOrPercentage1Choice {}
-
-
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:camt.017.001.05")]
-
-pub enum ExchangeRateReportOrError3ChoiceChoice {
-    CcyXchgRpt(Vec<CurrencyExchangeReport4>),
-    OprlErr(Vec<ErrorHandling3>),
-    __Unknown__(String),
-}
-
-impl Default for ExchangeRateReportOrError3ChoiceChoice {
-    fn default() -> ExchangeRateReportOrError3ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for ExchangeRateReportOrError3ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:camt.017.001.05")]
 pub struct ExchangeRateReportOrError3Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub exchange_rate_report_or_error_3_choice_choice: ExchangeRateReportOrError3ChoiceChoice,
+    #[yaserde(rename = "CcyXchgRpt")]
+    #[cfg_attr(feature = "serde", serde(rename = "CcyXchgRpt"))]
+    pub ccy_xchg_rpt: Vec<CurrencyExchangeReport4>,
+    #[yaserde(rename = "OprlErr")]
+    #[cfg_attr(feature = "serde", serde(rename = "OprlErr"))]
+    pub oprl_err: Vec<ErrorHandling3>,
 }
 
 impl Validate for ExchangeRateReportOrError3Choice {}
-
-
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:camt.017.001.05")]
-
-pub enum ExchangeRateReportOrError4ChoiceChoice {
-    BizErr(Vec<ErrorHandling3>),
-    CcyXchg(CurrencyExchange20),
-    __Unknown__(String),
-}
-
-impl Default for ExchangeRateReportOrError4ChoiceChoice {
-    fn default() -> ExchangeRateReportOrError4ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for ExchangeRateReportOrError4ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:camt.017.001.05")]
 pub struct ExchangeRateReportOrError4Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub exchange_rate_report_or_error_4_choice_choice: ExchangeRateReportOrError4ChoiceChoice,
+    #[yaserde(rename = "BizErr")]
+    #[cfg_attr(feature = "serde", serde(rename = "BizErr"))]
+    pub biz_err: Vec<ErrorHandling3>,
+    #[yaserde(rename = "CcyXchg")]
+    #[cfg_attr(feature = "serde", serde(rename = "CcyXchg"))]
+    pub ccy_xchg: Option<CurrencyExchange20>,
 }
 
 impl Validate for ExchangeRateReportOrError4Choice {}
@@ -443,30 +375,18 @@ crate::simple_type!(PercentageRate);
 
 impl Validate for PercentageRate {}
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:camt.017.001.05")]
-
-pub enum RequestType4ChoiceChoice {
-    PmtCtrl(ExternalPaymentControlRequestType1Code),
-    Enqry(ExternalEnquiryRequestType1Code),
-    Prtry(GenericIdentification1),
-    __Unknown__(String),
-}
-
-impl Default for RequestType4ChoiceChoice {
-    fn default() -> RequestType4ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for RequestType4ChoiceChoice {}
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:camt.017.001.05")]
 pub struct RequestType4Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub request_type_4_choice_choice: RequestType4ChoiceChoice,
+    #[yaserde(rename = "PmtCtrl")]
+    #[cfg_attr(feature = "serde", serde(rename = "PmtCtrl"))]
+    pub pmt_ctrl: Option<ExternalPaymentControlRequestType1Code>,
+    #[yaserde(rename = "Enqry")]
+    #[cfg_attr(feature = "serde", serde(rename = "Enqry"))]
+    pub enqry: Option<ExternalEnquiryRequestType1Code>,
+    #[yaserde(rename = "Prtry")]
+    #[cfg_attr(feature = "serde", serde(rename = "Prtry"))]
+    pub prtry: Option<GenericIdentification1>,
 }
 
 impl Validate for RequestType4Choice {}

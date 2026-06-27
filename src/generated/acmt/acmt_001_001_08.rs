@@ -40,65 +40,29 @@ pub struct Account32 {
 }
 
 impl Validate for Account32 {}
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
-
-pub enum AccountDesignation1ChoiceChoice {
-    Cd(Rank1Code),
-    Prtry(GenericIdentification47),
-    __Unknown__(String),
-}
-
-impl Default for AccountDesignation1ChoiceChoice {
-    fn default() -> AccountDesignation1ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for AccountDesignation1ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
 pub struct AccountDesignation1Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub account_designation_1_choice_choice: AccountDesignation1ChoiceChoice,
+    #[yaserde(rename = "Cd")]
+    #[cfg_attr(feature = "serde", serde(rename = "Cd"))]
+    pub cd: Option<Rank1Code>,
+    #[yaserde(rename = "Prtry")]
+    #[cfg_attr(feature = "serde", serde(rename = "Prtry"))]
+    pub prtry: Option<GenericIdentification47>,
 }
 
 impl Validate for AccountDesignation1Choice {}
-
-
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
-
-pub enum AccountIdentification4ChoiceChoice {
-    #[yaserde(rename = "IBAN")]
-    #[cfg_attr(feature = "serde", serde(rename = "IBAN"))]
-    Iban(Iban2007Identifier),
-    Othr(GenericAccountIdentification1),
-    __Unknown__(String),
-}
-
-impl Default for AccountIdentification4ChoiceChoice {
-    fn default() -> AccountIdentification4ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for AccountIdentification4ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
 pub struct AccountIdentification4Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub account_identification_4_choice_choice: AccountIdentification4ChoiceChoice,
+    #[yaserde(rename = "IBAN")]
+    #[cfg_attr(feature = "serde", serde(rename = "IBAN"))]
+    pub iban: Option<Iban2007Identifier>,
+    #[yaserde(rename = "Othr")]
+    #[cfg_attr(feature = "serde", serde(rename = "Othr"))]
+    pub othr: Option<GenericAccountIdentification1>,
 }
 
 impl Validate for AccountIdentification4Choice {}
@@ -192,32 +156,16 @@ pub struct AccountOpeningInstructionV08 {
 }
 
 impl Validate for AccountOpeningInstructionV08 {}
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
-
-pub enum AccountOpeningType1ChoiceChoice {
-    Cd(AccountOpeningType1Code),
-    Prtry(GenericIdentification47),
-    __Unknown__(String),
-}
-
-impl Default for AccountOpeningType1ChoiceChoice {
-    fn default() -> AccountOpeningType1ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for AccountOpeningType1ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
 pub struct AccountOpeningType1Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub account_opening_type_1_choice_choice: AccountOpeningType1ChoiceChoice,
+    #[yaserde(rename = "Cd")]
+    #[cfg_attr(feature = "serde", serde(rename = "Cd"))]
+    pub cd: Option<AccountOpeningType1Code>,
+    #[yaserde(rename = "Prtry")]
+    #[cfg_attr(feature = "serde", serde(rename = "Prtry"))]
+    pub prtry: Option<GenericIdentification47>,
 }
 
 impl Validate for AccountOpeningType1Choice {}
@@ -316,35 +264,22 @@ impl Default for AccountOwnershipType4Code {
 }
 
 impl Validate for AccountOwnershipType4Code {}
-
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
-
-pub enum AccountParties12ChoiceChoice {
-    PmryOwnr(InvestmentAccountOwnershipInformation16),
-    Trstee(Vec<InvestmentAccountOwnershipInformation16>),
-    Nmnee(InvestmentAccountOwnershipInformation16),
-    JntOwnr(Vec<InvestmentAccountOwnershipInformation16>),
-    __Unknown__(String),
-}
-
-impl Default for AccountParties12ChoiceChoice {
-    fn default() -> AccountParties12ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for AccountParties12ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
 pub struct AccountParties12Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub account_parties_12_choice_choice: AccountParties12ChoiceChoice,
+    #[yaserde(rename = "PmryOwnr")]
+    #[cfg_attr(feature = "serde", serde(rename = "PmryOwnr"))]
+    pub pmry_ownr: Option<InvestmentAccountOwnershipInformation16>,
+    #[yaserde(rename = "Trstee")]
+    #[cfg_attr(feature = "serde", serde(rename = "Trstee"))]
+    pub trstee: Vec<InvestmentAccountOwnershipInformation16>,
+    #[yaserde(rename = "Nmnee")]
+    #[cfg_attr(feature = "serde", serde(rename = "Nmnee"))]
+    pub nmnee: Option<InvestmentAccountOwnershipInformation16>,
+    #[yaserde(rename = "JntOwnr")]
+    #[cfg_attr(feature = "serde", serde(rename = "JntOwnr"))]
+    pub jnt_ownr: Vec<InvestmentAccountOwnershipInformation16>,
 }
 
 impl Validate for AccountParties12Choice {}
@@ -414,94 +349,42 @@ pub struct AccountParties17 {
 }
 
 impl Validate for AccountParties17 {}
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
-
-pub enum AccountSchemeName1ChoiceChoice {
-    Cd(ExternalAccountIdentification1Code),
-    Prtry(Max35Text),
-    __Unknown__(String),
-}
-
-impl Default for AccountSchemeName1ChoiceChoice {
-    fn default() -> AccountSchemeName1ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for AccountSchemeName1ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
 pub struct AccountSchemeName1Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub account_scheme_name_1_choice_choice: AccountSchemeName1ChoiceChoice,
+    #[yaserde(rename = "Cd")]
+    #[cfg_attr(feature = "serde", serde(rename = "Cd"))]
+    pub cd: Option<ExternalAccountIdentification1Code>,
+    #[yaserde(rename = "Prtry")]
+    #[cfg_attr(feature = "serde", serde(rename = "Prtry"))]
+    pub prtry: Option<Max35Text>,
 }
 
 impl Validate for AccountSchemeName1Choice {}
-
-
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
-
-pub enum AccountType2ChoiceChoice {
-    Cd(FundCashAccount4Code),
-    Prtry(GenericIdentification47),
-    __Unknown__(String),
-}
-
-impl Default for AccountType2ChoiceChoice {
-    fn default() -> AccountType2ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for AccountType2ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
 pub struct AccountType2Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub account_type_2_choice_choice: AccountType2ChoiceChoice,
+    #[yaserde(rename = "Cd")]
+    #[cfg_attr(feature = "serde", serde(rename = "Cd"))]
+    pub cd: Option<FundCashAccount4Code>,
+    #[yaserde(rename = "Prtry")]
+    #[cfg_attr(feature = "serde", serde(rename = "Prtry"))]
+    pub prtry: Option<GenericIdentification47>,
 }
 
 impl Validate for AccountType2Choice {}
-
-
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
-
-pub enum AccountUsageType2ChoiceChoice {
-    Cd(AccountUsageType2Code),
-    Prtry(GenericIdentification47),
-    __Unknown__(String),
-}
-
-impl Default for AccountUsageType2ChoiceChoice {
-    fn default() -> AccountUsageType2ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for AccountUsageType2ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
 pub struct AccountUsageType2Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub account_usage_type_2_choice_choice: AccountUsageType2ChoiceChoice,
+    #[yaserde(rename = "Cd")]
+    #[cfg_attr(feature = "serde", serde(rename = "Cd"))]
+    pub cd: Option<AccountUsageType2Code>,
+    #[yaserde(rename = "Prtry")]
+    #[cfg_attr(feature = "serde", serde(rename = "Prtry"))]
+    pub prtry: Option<GenericIdentification47>,
 }
 
 impl Validate for AccountUsageType2Choice {}
@@ -535,33 +418,16 @@ impl Default for AccountUsageType2Code {
 }
 
 impl Validate for AccountUsageType2Code {}
-
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
-
-pub enum AccountingStatus1ChoiceChoice {
-    Cd(AccountingStatus1Code),
-    Prtry(GenericIdentification47),
-    __Unknown__(String),
-}
-
-impl Default for AccountingStatus1ChoiceChoice {
-    fn default() -> AccountingStatus1ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for AccountingStatus1ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
 pub struct AccountingStatus1Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub accounting_status_1_choice_choice: AccountingStatus1ChoiceChoice,
+    #[yaserde(rename = "Cd")]
+    #[cfg_attr(feature = "serde", serde(rename = "Cd"))]
+    pub cd: Option<AccountingStatus1Code>,
+    #[yaserde(rename = "Prtry")]
+    #[cfg_attr(feature = "serde", serde(rename = "Prtry"))]
+    pub prtry: Option<GenericIdentification47>,
 }
 
 impl Validate for AccountingStatus1Choice {}
@@ -714,32 +580,16 @@ pub struct AdditiononalInformation13 {
 }
 
 impl Validate for AdditiononalInformation13 {}
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
-
-pub enum AddressType1ChoiceChoice {
-    Cd(AddressType1Code),
-    Prtry(GenericIdentification47),
-    __Unknown__(String),
-}
-
-impl Default for AddressType1ChoiceChoice {
-    fn default() -> AddressType1ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for AddressType1ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
 pub struct AddressType1Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub address_type_1_choice_choice: AddressType1ChoiceChoice,
+    #[yaserde(rename = "Cd")]
+    #[cfg_attr(feature = "serde", serde(rename = "Cd"))]
+    pub cd: Option<AddressType1Code>,
+    #[yaserde(rename = "Prtry")]
+    #[cfg_attr(feature = "serde", serde(rename = "Prtry"))]
+    pub prtry: Option<GenericIdentification47>,
 }
 
 impl Validate for AddressType1Choice {}
@@ -767,33 +617,16 @@ impl Default for AddressType1Code {
 }
 
 impl Validate for AddressType1Code {}
-
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
-
-pub enum AddressType2ChoiceChoice {
-    Cd(AddressType2Code),
-    Prtry(GenericIdentification47),
-    __Unknown__(String),
-}
-
-impl Default for AddressType2ChoiceChoice {
-    fn default() -> AddressType2ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for AddressType2ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
 pub struct AddressType2Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub address_type_2_choice_choice: AddressType2ChoiceChoice,
+    #[yaserde(rename = "Cd")]
+    #[cfg_attr(feature = "serde", serde(rename = "Cd"))]
+    pub cd: Option<AddressType2Code>,
+    #[yaserde(rename = "Prtry")]
+    #[cfg_attr(feature = "serde", serde(rename = "Prtry"))]
+    pub prtry: Option<GenericIdentification47>,
 }
 
 impl Validate for AddressType2Choice {}
@@ -894,32 +727,16 @@ pub struct BlockedHoldingDetails2 {
 }
 
 impl Validate for BlockedHoldingDetails2 {}
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
-
-pub enum BlockedReason2ChoiceChoice {
-    Cd(BlockedReason2Code),
-    Prtry(GenericIdentification47),
-    __Unknown__(String),
-}
-
-impl Default for BlockedReason2ChoiceChoice {
-    fn default() -> BlockedReason2ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for BlockedReason2ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
 pub struct BlockedReason2Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub blocked_reason_2_choice_choice: BlockedReason2ChoiceChoice,
+    #[yaserde(rename = "Cd")]
+    #[cfg_attr(feature = "serde", serde(rename = "Cd"))]
+    pub cd: Option<BlockedReason2Code>,
+    #[yaserde(rename = "Prtry")]
+    #[cfg_attr(feature = "serde", serde(rename = "Prtry"))]
+    pub prtry: Option<GenericIdentification47>,
 }
 
 impl Validate for BlockedReason2Choice {}
@@ -993,32 +810,16 @@ pub struct BlockedStatusReason2 {
 }
 
 impl Validate for BlockedStatusReason2 {}
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
-
-pub enum BlockedStatusReason2ChoiceChoice {
-    NoSpcfdRsn(NoReasonCode),
-    Rsn(Vec<BlockedStatusReason2>),
-    __Unknown__(String),
-}
-
-impl Default for BlockedStatusReason2ChoiceChoice {
-    fn default() -> BlockedStatusReason2ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for BlockedStatusReason2ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
 pub struct BlockedStatusReason2Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub blocked_status_reason_2_choice_choice: BlockedStatusReason2ChoiceChoice,
+    #[yaserde(rename = "NoSpcfdRsn")]
+    #[cfg_attr(feature = "serde", serde(rename = "NoSpcfdRsn"))]
+    pub no_spcfd_rsn: Option<NoReasonCode>,
+    #[yaserde(rename = "Rsn")]
+    #[cfg_attr(feature = "serde", serde(rename = "Rsn"))]
+    pub rsn: Vec<BlockedStatusReason2>,
 }
 
 impl Validate for BlockedStatusReason2Choice {}
@@ -1065,29 +866,15 @@ crate::simple_type!(ChipsuniversalIdentifier);
 
 impl Validate for ChipsuniversalIdentifier {}
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
-
-pub enum Crsform1ChoiceChoice {
-    Cd(CrsformType1Code),
-    Prtry(GenericIdentification47),
-    __Unknown__(String),
-}
-
-impl Default for Crsform1ChoiceChoice {
-    fn default() -> Crsform1ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for Crsform1ChoiceChoice {}
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
 pub struct Crsform1Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub crs_form_1_choice_choice: Crsform1ChoiceChoice,
+    #[yaserde(rename = "Cd")]
+    #[cfg_attr(feature = "serde", serde(rename = "Cd"))]
+    pub cd: Option<CrsformType1Code>,
+    #[yaserde(rename = "Prtry")]
+    #[cfg_attr(feature = "serde", serde(rename = "Prtry"))]
+    pub prtry: Option<GenericIdentification47>,
 }
 
 impl Validate for Crsform1Choice {}
@@ -1133,33 +920,16 @@ impl Default for CrsformType1Code {
 }
 
 impl Validate for CrsformType1Code {}
-
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
-
-pub enum Crssource1ChoiceChoice {
-    Cd(CrssourceStatus1Code),
-    Prtry(GenericIdentification47),
-    __Unknown__(String),
-}
-
-impl Default for Crssource1ChoiceChoice {
-    fn default() -> Crssource1ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for Crssource1ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
 pub struct Crssource1Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub crs_source_1_choice_choice: Crssource1ChoiceChoice,
+    #[yaserde(rename = "Cd")]
+    #[cfg_attr(feature = "serde", serde(rename = "Cd"))]
+    pub cd: Option<CrssourceStatus1Code>,
+    #[yaserde(rename = "Prtry")]
+    #[cfg_attr(feature = "serde", serde(rename = "Prtry"))]
+    pub prtry: Option<GenericIdentification47>,
 }
 
 impl Validate for Crssource1Choice {}
@@ -1218,33 +988,16 @@ impl Default for Crsstatus1Code {
 }
 
 impl Validate for Crsstatus1Code {}
-
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
-
-pub enum Crsstatus3ChoiceChoice {
-    Cd(Crsstatus1Code),
-    Prtry(GenericIdentification47),
-    __Unknown__(String),
-}
-
-impl Default for Crsstatus3ChoiceChoice {
-    fn default() -> Crsstatus3ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for Crsstatus3ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
 pub struct Crsstatus3Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub crs_status_3_choice_choice: Crsstatus3ChoiceChoice,
+    #[yaserde(rename = "Cd")]
+    #[cfg_attr(feature = "serde", serde(rename = "Cd"))]
+    pub cd: Option<Crsstatus1Code>,
+    #[yaserde(rename = "Prtry")]
+    #[cfg_attr(feature = "serde", serde(rename = "Prtry"))]
+    pub prtry: Option<GenericIdentification47>,
 }
 
 impl Validate for Crsstatus3Choice {}
@@ -1361,32 +1114,16 @@ pub struct CashAccount204 {
 }
 
 impl Validate for CashAccount204 {}
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
-
-pub enum CashAccountType3ChoiceChoice {
-    Cd(CashAccountType5Code),
-    Prtry(GenericIdentification47),
-    __Unknown__(String),
-}
-
-impl Default for CashAccountType3ChoiceChoice {
-    fn default() -> CashAccountType3ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for CashAccountType3ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
 pub struct CashAccountType3Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub cash_account_type_3_choice_choice: CashAccountType3ChoiceChoice,
+    #[yaserde(rename = "Cd")]
+    #[cfg_attr(feature = "serde", serde(rename = "Cd"))]
+    pub cd: Option<CashAccountType5Code>,
+    #[yaserde(rename = "Prtry")]
+    #[cfg_attr(feature = "serde", serde(rename = "Prtry"))]
+    pub prtry: Option<GenericIdentification47>,
 }
 
 impl Validate for CashAccountType3Choice {}
@@ -1486,33 +1223,16 @@ impl Default for CertificateType2Code {
 }
 
 impl Validate for CertificateType2Code {}
-
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
-
-pub enum CertificationType1ChoiceChoice {
-    Cd(CertificateType2Code),
-    Prtry(GenericIdentification47),
-    __Unknown__(String),
-}
-
-impl Default for CertificationType1ChoiceChoice {
-    fn default() -> CertificationType1ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for CertificationType1ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
 pub struct CertificationType1Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub certification_type_1_choice_choice: CertificationType1ChoiceChoice,
+    #[yaserde(rename = "Cd")]
+    #[cfg_attr(feature = "serde", serde(rename = "Cd"))]
+    pub cd: Option<CertificateType2Code>,
+    #[yaserde(rename = "Prtry")]
+    #[cfg_attr(feature = "serde", serde(rename = "Prtry"))]
+    pub prtry: Option<GenericIdentification47>,
 }
 
 impl Validate for CertificationType1Choice {}
@@ -1546,32 +1266,16 @@ pub struct CitizenshipInformation2 {
 }
 
 impl Validate for CitizenshipInformation2 {}
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
-
-pub enum CivilStatus1ChoiceChoice {
-    Cd(CivilStatus1Code),
-    Prtry(GenericIdentification47),
-    __Unknown__(String),
-}
-
-impl Default for CivilStatus1ChoiceChoice {
-    fn default() -> CivilStatus1ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for CivilStatus1ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
 pub struct CivilStatus1Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub civil_status_1_choice_choice: CivilStatus1ChoiceChoice,
+    #[yaserde(rename = "Cd")]
+    #[cfg_attr(feature = "serde", serde(rename = "Cd"))]
+    pub cd: Option<CivilStatus1Code>,
+    #[yaserde(rename = "Prtry")]
+    #[cfg_attr(feature = "serde", serde(rename = "Prtry"))]
+    pub prtry: Option<GenericIdentification47>,
 }
 
 impl Validate for CivilStatus1Choice {}
@@ -1614,88 +1318,67 @@ impl Default for CivilStatus1Code {
 }
 
 impl Validate for CivilStatus1Code {}
-
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
-
-pub enum ClearingSystemMemberIdentification4ChoiceChoice {
-    #[yaserde(rename = "USCHU")]
-    #[cfg_attr(feature = "serde", serde(rename = "USCHU"))]
-    Uschu(ChipsuniversalIdentifier),
-    #[yaserde(rename = "NZNCC")]
-    #[cfg_attr(feature = "serde", serde(rename = "NZNCC"))]
-    Nzncc(NewZealandNCCIdentifier),
-    #[yaserde(rename = "IENSC")]
-    #[cfg_attr(feature = "serde", serde(rename = "IENSC"))]
-    Iensc(IrishNSCIdentifier),
-    #[yaserde(rename = "GBSC")]
-    #[cfg_attr(feature = "serde", serde(rename = "GBSC"))]
-    Gbsc(UkdomesticSortCodeIdentifier),
-    #[yaserde(rename = "USCH")]
-    #[cfg_attr(feature = "serde", serde(rename = "USCH"))]
-    Usch(ChipsparticipantIdentifier),
-    #[yaserde(rename = "CHBC")]
-    #[cfg_attr(feature = "serde", serde(rename = "CHBC"))]
-    Chbc(SwissBCIdentifier),
-    #[yaserde(rename = "USFW")]
-    #[cfg_attr(feature = "serde", serde(rename = "USFW"))]
-    Usfw(FedwireRoutingNumberIdentifier),
-    #[yaserde(rename = "PTNCC")]
-    #[cfg_attr(feature = "serde", serde(rename = "PTNCC"))]
-    Ptncc(PortugueseNCCIdentifier),
-    #[yaserde(rename = "RUCB")]
-    #[cfg_attr(feature = "serde", serde(rename = "RUCB"))]
-    Rucb(RussianCentralBankIdentificationCodeIdentifier),
-    #[yaserde(rename = "ITNCC")]
-    #[cfg_attr(feature = "serde", serde(rename = "ITNCC"))]
-    Itncc(ItalianDomesticIdentifier),
-    #[yaserde(rename = "ATBLZ")]
-    #[cfg_attr(feature = "serde", serde(rename = "ATBLZ"))]
-    Atblz(AustrianBankleitzahlIdentifier),
-    #[yaserde(rename = "CACPA")]
-    #[cfg_attr(feature = "serde", serde(rename = "CACPA"))]
-    Cacpa(CanadianPaymentsARNIdentifier),
-    #[yaserde(rename = "CHSIC")]
-    #[cfg_attr(feature = "serde", serde(rename = "CHSIC"))]
-    Chsic(SwissSICIdentifier),
-    #[yaserde(rename = "DEBLZ")]
-    #[cfg_attr(feature = "serde", serde(rename = "DEBLZ"))]
-    Deblz(GermanBankleitzahlIdentifier),
-    #[yaserde(rename = "ESNCC")]
-    #[cfg_attr(feature = "serde", serde(rename = "ESNCC"))]
-    Esncc(SpanishDomesticInterbankingIdentifier),
-    #[yaserde(rename = "ZANCC")]
-    #[cfg_attr(feature = "serde", serde(rename = "ZANCC"))]
-    Zancc(SouthAfricanNCCIdentifier),
-    #[yaserde(rename = "HKNCC")]
-    #[cfg_attr(feature = "serde", serde(rename = "HKNCC"))]
-    Hkncc(HongKongBankIdentifier),
-    #[yaserde(rename = "AUBSBx")]
-    #[cfg_attr(feature = "serde", serde(rename = "AUBSBx"))]
-    Aubsbx(ExtensiveBranchNetworkIdentifier),
-    #[yaserde(rename = "AUBSBs")]
-    #[cfg_attr(feature = "serde", serde(rename = "AUBSBs"))]
-    Aubsbs(SmallNetworkIdentifier),
-    __Unknown__(String),
-}
-
-impl Default for ClearingSystemMemberIdentification4ChoiceChoice {
-    fn default() -> ClearingSystemMemberIdentification4ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for ClearingSystemMemberIdentification4ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
 pub struct ClearingSystemMemberIdentification4Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub clearing_system_member_identification_4_choice_choice: ClearingSystemMemberIdentification4ChoiceChoice,
+    #[yaserde(rename = "USCHU")]
+    #[cfg_attr(feature = "serde", serde(rename = "USCHU"))]
+    pub uschu: Option<ChipsuniversalIdentifier>,
+    #[yaserde(rename = "NZNCC")]
+    #[cfg_attr(feature = "serde", serde(rename = "NZNCC"))]
+    pub nzncc: Option<NewZealandNCCIdentifier>,
+    #[yaserde(rename = "IENSC")]
+    #[cfg_attr(feature = "serde", serde(rename = "IENSC"))]
+    pub iensc: Option<IrishNSCIdentifier>,
+    #[yaserde(rename = "GBSC")]
+    #[cfg_attr(feature = "serde", serde(rename = "GBSC"))]
+    pub gbsc: Option<UkdomesticSortCodeIdentifier>,
+    #[yaserde(rename = "USCH")]
+    #[cfg_attr(feature = "serde", serde(rename = "USCH"))]
+    pub usch: Option<ChipsparticipantIdentifier>,
+    #[yaserde(rename = "CHBC")]
+    #[cfg_attr(feature = "serde", serde(rename = "CHBC"))]
+    pub chbc: Option<SwissBCIdentifier>,
+    #[yaserde(rename = "USFW")]
+    #[cfg_attr(feature = "serde", serde(rename = "USFW"))]
+    pub usfw: Option<FedwireRoutingNumberIdentifier>,
+    #[yaserde(rename = "PTNCC")]
+    #[cfg_attr(feature = "serde", serde(rename = "PTNCC"))]
+    pub ptncc: Option<PortugueseNCCIdentifier>,
+    #[yaserde(rename = "RUCB")]
+    #[cfg_attr(feature = "serde", serde(rename = "RUCB"))]
+    pub rucb: Option<RussianCentralBankIdentificationCodeIdentifier>,
+    #[yaserde(rename = "ITNCC")]
+    #[cfg_attr(feature = "serde", serde(rename = "ITNCC"))]
+    pub itncc: Option<ItalianDomesticIdentifier>,
+    #[yaserde(rename = "ATBLZ")]
+    #[cfg_attr(feature = "serde", serde(rename = "ATBLZ"))]
+    pub atblz: Option<AustrianBankleitzahlIdentifier>,
+    #[yaserde(rename = "CACPA")]
+    #[cfg_attr(feature = "serde", serde(rename = "CACPA"))]
+    pub cacpa: Option<CanadianPaymentsARNIdentifier>,
+    #[yaserde(rename = "CHSIC")]
+    #[cfg_attr(feature = "serde", serde(rename = "CHSIC"))]
+    pub chsic: Option<SwissSICIdentifier>,
+    #[yaserde(rename = "DEBLZ")]
+    #[cfg_attr(feature = "serde", serde(rename = "DEBLZ"))]
+    pub deblz: Option<GermanBankleitzahlIdentifier>,
+    #[yaserde(rename = "ESNCC")]
+    #[cfg_attr(feature = "serde", serde(rename = "ESNCC"))]
+    pub esncc: Option<SpanishDomesticInterbankingIdentifier>,
+    #[yaserde(rename = "ZANCC")]
+    #[cfg_attr(feature = "serde", serde(rename = "ZANCC"))]
+    pub zancc: Option<SouthAfricanNCCIdentifier>,
+    #[yaserde(rename = "HKNCC")]
+    #[cfg_attr(feature = "serde", serde(rename = "HKNCC"))]
+    pub hkncc: Option<HongKongBankIdentifier>,
+    #[yaserde(rename = "AUBSBx")]
+    #[cfg_attr(feature = "serde", serde(rename = "AUBSBx"))]
+    pub aubsbx: Option<ExtensiveBranchNetworkIdentifier>,
+    #[yaserde(rename = "AUBSBs")]
+    #[cfg_attr(feature = "serde", serde(rename = "AUBSBs"))]
+    pub aubsbs: Option<SmallNetworkIdentifier>,
 }
 
 impl Validate for ClearingSystemMemberIdentification4Choice {}
@@ -1791,64 +1474,29 @@ impl Default for CommunicationMethod1Code {
 }
 
 impl Validate for CommunicationMethod1Code {}
-
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
-
-pub enum CommunicationMethod3ChoiceChoice {
-    Cd(CommunicationMethod1Code),
-    Prtry(GenericIdentification47),
-    __Unknown__(String),
-}
-
-impl Default for CommunicationMethod3ChoiceChoice {
-    fn default() -> CommunicationMethod3ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for CommunicationMethod3ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
 pub struct CommunicationMethod3Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub communication_method_3_choice_choice: CommunicationMethod3ChoiceChoice,
+    #[yaserde(rename = "Cd")]
+    #[cfg_attr(feature = "serde", serde(rename = "Cd"))]
+    pub cd: Option<CommunicationMethod1Code>,
+    #[yaserde(rename = "Prtry")]
+    #[cfg_attr(feature = "serde", serde(rename = "Prtry"))]
+    pub prtry: Option<GenericIdentification47>,
 }
 
 impl Validate for CommunicationMethod3Choice {}
-
-
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
-
-pub enum CompanyLink1ChoiceChoice {
-    Cd(CompanyLink1Code),
-    Prtry(GenericIdentification47),
-    __Unknown__(String),
-}
-
-impl Default for CompanyLink1ChoiceChoice {
-    fn default() -> CompanyLink1ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for CompanyLink1ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
 pub struct CompanyLink1Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub company_link_1_choice_choice: CompanyLink1ChoiceChoice,
+    #[yaserde(rename = "Cd")]
+    #[cfg_attr(feature = "serde", serde(rename = "Cd"))]
+    pub cd: Option<CompanyLink1Code>,
+    #[yaserde(rename = "Prtry")]
+    #[cfg_attr(feature = "serde", serde(rename = "Prtry"))]
+    pub prtry: Option<GenericIdentification47>,
 }
 
 impl Validate for CompanyLink1Choice {}
@@ -1934,31 +1582,16 @@ impl Validate for ConsolidatedTapeAssociationIdentifier {
         Ok(())
     }
 }
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
-
-pub enum ConsolidationType1ChoiceChoice {
-    Cd(ConsolidationType1Code),
-    Prtry(GenericIdentification47),
-    __Unknown__(String),
-}
-
-impl Default for ConsolidationType1ChoiceChoice {
-    fn default() -> ConsolidationType1ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for ConsolidationType1ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
 pub struct ConsolidationType1Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub consolidation_type_1_choice_choice: ConsolidationType1ChoiceChoice,
+    #[yaserde(rename = "Cd")]
+    #[cfg_attr(feature = "serde", serde(rename = "Cd"))]
+    pub cd: Option<ConsolidationType1Code>,
+    #[yaserde(rename = "Prtry")]
+    #[cfg_attr(feature = "serde", serde(rename = "Prtry"))]
+    pub prtry: Option<GenericIdentification47>,
 }
 
 impl Validate for ConsolidationType1Choice {}
@@ -2031,33 +1664,16 @@ impl Default for CreditDebit3Code {
 }
 
 impl Validate for CreditDebit3Code {}
-
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
-
-pub enum CustomerConductClassification1ChoiceChoice {
-    Cd(ConductClassification1Code),
-    Prtry(GenericIdentification47),
-    __Unknown__(String),
-}
-
-impl Default for CustomerConductClassification1ChoiceChoice {
-    fn default() -> CustomerConductClassification1ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for CustomerConductClassification1ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
 pub struct CustomerConductClassification1Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub customer_conduct_classification_1_choice_choice: CustomerConductClassification1ChoiceChoice,
+    #[yaserde(rename = "Cd")]
+    #[cfg_attr(feature = "serde", serde(rename = "Cd"))]
+    pub cd: Option<ConductClassification1Code>,
+    #[yaserde(rename = "Prtry")]
+    #[cfg_attr(feature = "serde", serde(rename = "Prtry"))]
+    pub prtry: Option<GenericIdentification47>,
 }
 
 impl Validate for CustomerConductClassification1Choice {}
@@ -2095,32 +1711,16 @@ pub struct DateAndAmount1 {
 }
 
 impl Validate for DateAndAmount1 {}
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
-
-pub enum DateAndDateTime1ChoiceChoice {
-    Dt(Isodate),
-    DtTm(IsodateTime),
-    __Unknown__(String),
-}
-
-impl Default for DateAndDateTime1ChoiceChoice {
-    fn default() -> DateAndDateTime1ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for DateAndDateTime1ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
 pub struct DateAndDateTime1Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub date_and_date_time_1_choice_choice: DateAndDateTime1ChoiceChoice,
+    #[yaserde(rename = "Dt")]
+    #[cfg_attr(feature = "serde", serde(rename = "Dt"))]
+    pub dt: Option<Isodate>,
+    #[yaserde(rename = "DtTm")]
+    #[cfg_attr(feature = "serde", serde(rename = "DtTm"))]
+    pub dt_tm: Option<IsodateTime>,
 }
 
 impl Validate for DateAndDateTime1Choice {}
@@ -2142,32 +1742,16 @@ pub struct DateTimePeriod2 {
 }
 
 impl Validate for DateTimePeriod2 {}
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
-
-pub enum DeMinimus1ChoiceChoice {
-    DeMnmsAplbl(DeMinimusApplicable1),
-    DeMnmsNotAplbl(DeMinimusNotApplicable1),
-    __Unknown__(String),
-}
-
-impl Default for DeMinimus1ChoiceChoice {
-    fn default() -> DeMinimus1ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for DeMinimus1ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
 pub struct DeMinimus1Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub de_minimus_1_choice_choice: DeMinimus1ChoiceChoice,
+    #[yaserde(rename = "DeMnmsAplbl")]
+    #[cfg_attr(feature = "serde", serde(rename = "DeMnmsAplbl"))]
+    pub de_mnms_aplbl: Option<DeMinimusApplicable1>,
+    #[yaserde(rename = "DeMnmsNotAplbl")]
+    #[cfg_attr(feature = "serde", serde(rename = "DeMnmsNotAplbl"))]
+    pub de_mnms_not_aplbl: Option<DeMinimusNotApplicable1>,
 }
 
 impl Validate for DeMinimus1Choice {}
@@ -2642,31 +2226,16 @@ impl Validate for ExternalAccountIdentification1Code {
         Ok(())
     }
 }
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
-
-pub enum Fatcaform1ChoiceChoice {
-    Cd(FatcaformType1Code),
-    Prtry(GenericIdentification47),
-    __Unknown__(String),
-}
-
-impl Default for Fatcaform1ChoiceChoice {
-    fn default() -> Fatcaform1ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for Fatcaform1ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
 pub struct Fatcaform1Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub fatca_form_1_choice_choice: Fatcaform1ChoiceChoice,
+    #[yaserde(rename = "Cd")]
+    #[cfg_attr(feature = "serde", serde(rename = "Cd"))]
+    pub cd: Option<FatcaformType1Code>,
+    #[yaserde(rename = "Prtry")]
+    #[cfg_attr(feature = "serde", serde(rename = "Prtry"))]
+    pub prtry: Option<GenericIdentification47>,
 }
 
 impl Validate for Fatcaform1Choice {}
@@ -2709,33 +2278,16 @@ impl Default for FatcaformType1Code {
 }
 
 impl Validate for FatcaformType1Code {}
-
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
-
-pub enum Fatcasource1ChoiceChoice {
-    Cd(FatcasourceStatus1Code),
-    Prtry(GenericIdentification47),
-    __Unknown__(String),
-}
-
-impl Default for Fatcasource1ChoiceChoice {
-    fn default() -> Fatcasource1ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for Fatcasource1ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
 pub struct Fatcasource1Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub fatca_source_1_choice_choice: Fatcasource1ChoiceChoice,
+    #[yaserde(rename = "Cd")]
+    #[cfg_attr(feature = "serde", serde(rename = "Cd"))]
+    pub cd: Option<FatcasourceStatus1Code>,
+    #[yaserde(rename = "Prtry")]
+    #[cfg_attr(feature = "serde", serde(rename = "Prtry"))]
+    pub prtry: Option<GenericIdentification47>,
 }
 
 impl Validate for Fatcasource1Choice {}
@@ -2808,32 +2360,16 @@ pub struct Fatcastatus2 {
 }
 
 impl Validate for Fatcastatus2 {}
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
-
-pub enum Fatcastatus2ChoiceChoice {
-    Cd(Fatcastatus1Code),
-    Prtry(GenericIdentification47),
-    __Unknown__(String),
-}
-
-impl Default for Fatcastatus2ChoiceChoice {
-    fn default() -> Fatcastatus2ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for Fatcastatus2ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
 pub struct Fatcastatus2Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub fatca_status_2_choice_choice: Fatcastatus2ChoiceChoice,
+    #[yaserde(rename = "Cd")]
+    #[cfg_attr(feature = "serde", serde(rename = "Cd"))]
+    pub cd: Option<Fatcastatus1Code>,
+    #[yaserde(rename = "Prtry")]
+    #[cfg_attr(feature = "serde", serde(rename = "Prtry"))]
+    pub prtry: Option<GenericIdentification47>,
 }
 
 impl Validate for Fatcastatus2Choice {}
@@ -2848,33 +2384,21 @@ crate::simple_type!(FedwireRoutingNumberIdentifier);
 
 impl Validate for FedwireRoutingNumberIdentifier {}
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
-
-pub enum FinancialInstitutionIdentification11ChoiceChoice {
-    NmAndAdr(NameAndAddress5),
-    #[yaserde(rename = "BICFI")]
-    #[cfg_attr(feature = "serde", serde(rename = "BICFI"))]
-    Bicfi(Bicfidec2014Identifier),
-    ClrSysMmbId(ClearingSystemMemberIdentification4Choice),
-    PrtryId(SimpleIdentificationInformation4),
-    __Unknown__(String),
-}
-
-impl Default for FinancialInstitutionIdentification11ChoiceChoice {
-    fn default() -> FinancialInstitutionIdentification11ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for FinancialInstitutionIdentification11ChoiceChoice {}
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
 pub struct FinancialInstitutionIdentification11Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub financial_institution_identification_11_choice_choice: FinancialInstitutionIdentification11ChoiceChoice,
+    #[yaserde(rename = "NmAndAdr")]
+    #[cfg_attr(feature = "serde", serde(rename = "NmAndAdr"))]
+    pub nm_and_adr: Option<NameAndAddress5>,
+    #[yaserde(rename = "BICFI")]
+    #[cfg_attr(feature = "serde", serde(rename = "BICFI"))]
+    pub bicfi: Option<Bicfidec2014Identifier>,
+    #[yaserde(rename = "ClrSysMmbId")]
+    #[cfg_attr(feature = "serde", serde(rename = "ClrSysMmbId"))]
+    pub clr_sys_mmb_id: Option<ClearingSystemMemberIdentification4Choice>,
+    #[yaserde(rename = "PrtryId")]
+    #[cfg_attr(feature = "serde", serde(rename = "PrtryId"))]
+    pub prtry_id: Option<SimpleIdentificationInformation4>,
 }
 
 impl Validate for FinancialInstitutionIdentification11Choice {}
@@ -2948,32 +2472,16 @@ pub struct FinancialInstrument87 {
 }
 
 impl Validate for FinancialInstrument87 {}
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
-
-pub enum FiscalYear1ChoiceChoice {
-    StartDt(Isodate),
-    EndDt(Isodate),
-    __Unknown__(String),
-}
-
-impl Default for FiscalYear1ChoiceChoice {
-    fn default() -> FiscalYear1ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for FiscalYear1ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
 pub struct FiscalYear1Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub fiscal_year_1_choice_choice: FiscalYear1ChoiceChoice,
+    #[yaserde(rename = "StartDt")]
+    #[cfg_attr(feature = "serde", serde(rename = "StartDt"))]
+    pub start_dt: Option<Isodate>,
+    #[yaserde(rename = "EndDt")]
+    #[cfg_attr(feature = "serde", serde(rename = "EndDt"))]
+    pub end_dt: Option<Isodate>,
 }
 
 impl Validate for FiscalYear1Choice {}
@@ -3001,33 +2509,16 @@ impl Default for FormOfSecurity1Code {
 }
 
 impl Validate for FormOfSecurity1Code {}
-
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
-
-pub enum Frequency20ChoiceChoice {
-    Cd(EventFrequency8Code),
-    Prtry(GenericIdentification47),
-    __Unknown__(String),
-}
-
-impl Default for Frequency20ChoiceChoice {
-    fn default() -> Frequency20ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for Frequency20ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
 pub struct Frequency20Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub frequency_20_choice_choice: Frequency20ChoiceChoice,
+    #[yaserde(rename = "Cd")]
+    #[cfg_attr(feature = "serde", serde(rename = "Cd"))]
+    pub cd: Option<EventFrequency8Code>,
+    #[yaserde(rename = "Prtry")]
+    #[cfg_attr(feature = "serde", serde(rename = "Prtry"))]
+    pub prtry: Option<GenericIdentification47>,
 }
 
 impl Validate for Frequency20Choice {}
@@ -3149,32 +2640,16 @@ pub struct Gdprdata1 {
 }
 
 impl Validate for Gdprdata1 {}
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
-
-pub enum GdprdataConsent1ChoiceChoice {
-    Cd(GdprdataConsent1Code),
-    Prtry(GenericIdentification47),
-    __Unknown__(String),
-}
-
-impl Default for GdprdataConsent1ChoiceChoice {
-    fn default() -> GdprdataConsent1ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for GdprdataConsent1ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
 pub struct GdprdataConsent1Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub gdpr_data_consent_1_choice_choice: GdprdataConsent1ChoiceChoice,
+    #[yaserde(rename = "Cd")]
+    #[cfg_attr(feature = "serde", serde(rename = "Cd"))]
+    pub cd: Option<GdprdataConsent1Code>,
+    #[yaserde(rename = "Prtry")]
+    #[cfg_attr(feature = "serde", serde(rename = "Prtry"))]
+    pub prtry: Option<GenericIdentification47>,
 }
 
 impl Validate for GdprdataConsent1Choice {}
@@ -3419,29 +2894,15 @@ crate::simple_type!(IsoyearMonth);
 
 impl Validate for IsoyearMonth {}
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
-
-pub enum IdentificationSource1ChoiceChoice {
-    Dmst(CountryCode),
-    Prtry(Max35Text),
-    __Unknown__(String),
-}
-
-impl Default for IdentificationSource1ChoiceChoice {
-    fn default() -> IdentificationSource1ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for IdentificationSource1ChoiceChoice {}
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
 pub struct IdentificationSource1Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub identification_source_1_choice_choice: IdentificationSource1ChoiceChoice,
+    #[yaserde(rename = "Dmst")]
+    #[cfg_attr(feature = "serde", serde(rename = "Dmst"))]
+    pub dmst: Option<CountryCode>,
+    #[yaserde(rename = "Prtry")]
+    #[cfg_attr(feature = "serde", serde(rename = "Prtry"))]
+    pub prtry: Option<Max35Text>,
 }
 
 impl Validate for IdentificationSource1Choice {}
@@ -3590,32 +3051,16 @@ pub struct IndividualPerson37 {
 }
 
 impl Validate for IndividualPerson37 {}
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
-
-pub enum InformationDistribution1ChoiceChoice {
-    Cd(InformationDistribution2Code),
-    Prtry(GenericIdentification47),
-    __Unknown__(String),
-}
-
-impl Default for InformationDistribution1ChoiceChoice {
-    fn default() -> InformationDistribution1ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for InformationDistribution1ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
 pub struct InformationDistribution1Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub information_distribution_1_choice_choice: InformationDistribution1ChoiceChoice,
+    #[yaserde(rename = "Cd")]
+    #[cfg_attr(feature = "serde", serde(rename = "Cd"))]
+    pub cd: Option<InformationDistribution2Code>,
+    #[yaserde(rename = "Prtry")]
+    #[cfg_attr(feature = "serde", serde(rename = "Prtry"))]
+    pub prtry: Option<GenericIdentification47>,
 }
 
 impl Validate for InformationDistribution1Choice {}
@@ -3646,33 +3091,16 @@ impl Default for InformationDistribution2Code {
 }
 
 impl Validate for InformationDistribution2Code {}
-
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
-
-pub enum InitialAmount1ChoiceChoice {
-    InitlNbOfInstlmts(Number),
-    Amt(ActiveCurrencyAndAmount),
-    __Unknown__(String),
-}
-
-impl Default for InitialAmount1ChoiceChoice {
-    fn default() -> InitialAmount1ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for InitialAmount1ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
 pub struct InitialAmount1Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub initial_amount_1_choice_choice: InitialAmount1ChoiceChoice,
+    #[yaserde(rename = "InitlNbOfInstlmts")]
+    #[cfg_attr(feature = "serde", serde(rename = "InitlNbOfInstlmts"))]
+    pub initl_nb_of_instlmts: Option<Number>,
+    #[yaserde(rename = "Amt")]
+    #[cfg_attr(feature = "serde", serde(rename = "Amt"))]
+    pub amt: Option<ActiveCurrencyAndAmount>,
 }
 
 impl Validate for InitialAmount1Choice {}
@@ -3700,33 +3128,16 @@ impl Default for Insurance1Code {
 }
 
 impl Validate for Insurance1Code {}
-
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
-
-pub enum InsuranceType2ChoiceChoice {
-    Cd(Insurance1Code),
-    Prtry(GenericIdentification47),
-    __Unknown__(String),
-}
-
-impl Default for InsuranceType2ChoiceChoice {
-    fn default() -> InsuranceType2ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for InsuranceType2ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
 pub struct InsuranceType2Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub insurance_type_2_choice_choice: InsuranceType2ChoiceChoice,
+    #[yaserde(rename = "Cd")]
+    #[cfg_attr(feature = "serde", serde(rename = "Cd"))]
+    pub cd: Option<Insurance1Code>,
+    #[yaserde(rename = "Prtry")]
+    #[cfg_attr(feature = "serde", serde(rename = "Prtry"))]
+    pub prtry: Option<GenericIdentification47>,
 }
 
 impl Validate for InsuranceType2Choice {}
@@ -3932,32 +3343,16 @@ pub struct InvestmentAccount73 {
 }
 
 impl Validate for InvestmentAccount73 {}
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
-
-pub enum InvestmentAccountCategory1ChoiceChoice {
-    Cd(InvestmentAccountCategory1Code),
-    Prtry(GenericIdentification47),
-    __Unknown__(String),
-}
-
-impl Default for InvestmentAccountCategory1ChoiceChoice {
-    fn default() -> InvestmentAccountCategory1ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for InvestmentAccountCategory1ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
 pub struct InvestmentAccountCategory1Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub investment_account_category_1_choice_choice: InvestmentAccountCategory1ChoiceChoice,
+    #[yaserde(rename = "Cd")]
+    #[cfg_attr(feature = "serde", serde(rename = "Cd"))]
+    pub cd: Option<InvestmentAccountCategory1Code>,
+    #[yaserde(rename = "Prtry")]
+    #[cfg_attr(feature = "serde", serde(rename = "Prtry"))]
+    pub prtry: Option<GenericIdentification47>,
 }
 
 impl Validate for InvestmentAccountCategory1Choice {}
@@ -4478,32 +3873,16 @@ pub struct InvestorProfile2 {
 }
 
 impl Validate for InvestorProfile2 {}
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
-
-pub enum InvestorProfileStatus1ChoiceChoice {
-    Cd(InvestorProfileStatus1Code),
-    Prtry(GenericIdentification47),
-    __Unknown__(String),
-}
-
-impl Default for InvestorProfileStatus1ChoiceChoice {
-    fn default() -> InvestorProfileStatus1ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for InvestorProfileStatus1ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
 pub struct InvestorProfileStatus1Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub investor_profile_status_1_choice_choice: InvestorProfileStatus1ChoiceChoice,
+    #[yaserde(rename = "Cd")]
+    #[cfg_attr(feature = "serde", serde(rename = "Cd"))]
+    pub cd: Option<InvestorProfileStatus1Code>,
+    #[yaserde(rename = "Prtry")]
+    #[cfg_attr(feature = "serde", serde(rename = "Prtry"))]
+    pub prtry: Option<GenericIdentification47>,
 }
 
 impl Validate for InvestorProfileStatus1Choice {}
@@ -4571,29 +3950,15 @@ crate::simple_type!(ItalianDomesticIdentifier);
 
 impl Validate for ItalianDomesticIdentifier {}
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
-
-pub enum KyccheckType1ChoiceChoice {
-    Cd(KnowYourCustomerCheckType1Code),
-    Prtry(GenericIdentification47),
-    __Unknown__(String),
-}
-
-impl Default for KyccheckType1ChoiceChoice {
-    fn default() -> KyccheckType1ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for KyccheckType1ChoiceChoice {}
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
 pub struct KyccheckType1Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub kyc_check_type_1_choice_choice: KyccheckType1ChoiceChoice,
+    #[yaserde(rename = "Cd")]
+    #[cfg_attr(feature = "serde", serde(rename = "Cd"))]
+    pub cd: Option<KnowYourCustomerCheckType1Code>,
+    #[yaserde(rename = "Prtry")]
+    #[cfg_attr(feature = "serde", serde(rename = "Prtry"))]
+    pub prtry: Option<GenericIdentification47>,
 }
 
 impl Validate for KyccheckType1Choice {}
@@ -4661,32 +4026,16 @@ pub struct LetterIntent1 {
 }
 
 impl Validate for LetterIntent1 {}
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
-
-pub enum LevelOfControl1ChoiceChoice {
-    Cd(LevelOfControl1Code),
-    Prtry(GenericIdentification47),
-    __Unknown__(String),
-}
-
-impl Default for LevelOfControl1ChoiceChoice {
-    fn default() -> LevelOfControl1ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for LevelOfControl1ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
 pub struct LevelOfControl1Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub level_of_control_1_choice_choice: LevelOfControl1ChoiceChoice,
+    #[yaserde(rename = "Cd")]
+    #[cfg_attr(feature = "serde", serde(rename = "Cd"))]
+    pub cd: Option<LevelOfControl1Code>,
+    #[yaserde(rename = "Prtry")]
+    #[cfg_attr(feature = "serde", serde(rename = "Prtry"))]
+    pub prtry: Option<GenericIdentification47>,
 }
 
 impl Validate for LevelOfControl1Choice {}
@@ -4714,33 +4063,16 @@ impl Default for LevelOfControl1Code {
 }
 
 impl Validate for LevelOfControl1Code {}
-
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
-
-pub enum Liability1ChoiceChoice {
-    Cd(Liability1Code),
-    Prtry(GenericIdentification47),
-    __Unknown__(String),
-}
-
-impl Default for Liability1ChoiceChoice {
-    fn default() -> Liability1ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for Liability1ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
 pub struct Liability1Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub liability_1_choice_choice: Liability1ChoiceChoice,
+    #[yaserde(rename = "Cd")]
+    #[cfg_attr(feature = "serde", serde(rename = "Cd"))]
+    pub cd: Option<Liability1Code>,
+    #[yaserde(rename = "Prtry")]
+    #[cfg_attr(feature = "serde", serde(rename = "Prtry"))]
+    pub prtry: Option<GenericIdentification47>,
 }
 
 impl Validate for Liability1Choice {}
@@ -4778,29 +4110,15 @@ crate::simple_type!(Micidentifier);
 
 impl Validate for Micidentifier {}
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
-
-pub enum MailType1ChoiceChoice {
-    Cd(MailType1Code),
-    Prtry(GenericIdentification47),
-    __Unknown__(String),
-}
-
-impl Default for MailType1ChoiceChoice {
-    fn default() -> MailType1ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for MailType1ChoiceChoice {}
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
 pub struct MailType1Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub mail_type_1_choice_choice: MailType1ChoiceChoice,
+    #[yaserde(rename = "Cd")]
+    #[cfg_attr(feature = "serde", serde(rename = "Cd"))]
+    pub cd: Option<MailType1Code>,
+    #[yaserde(rename = "Prtry")]
+    #[cfg_attr(feature = "serde", serde(rename = "Prtry"))]
+    pub prtry: Option<GenericIdentification47>,
 }
 
 impl Validate for MailType1Choice {}
@@ -5088,32 +4406,16 @@ pub struct MiFIDClassification1 {
 }
 
 impl Validate for MiFIDClassification1 {}
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
-
-pub enum MoneyLaunderingCheck1ChoiceChoice {
-    Cd(MoneyLaunderingCheck1Code),
-    Prtry(GenericIdentification47),
-    __Unknown__(String),
-}
-
-impl Default for MoneyLaunderingCheck1ChoiceChoice {
-    fn default() -> MoneyLaunderingCheck1ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for MoneyLaunderingCheck1ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
 pub struct MoneyLaunderingCheck1Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub money_laundering_check_1_choice_choice: MoneyLaunderingCheck1ChoiceChoice,
+    #[yaserde(rename = "Cd")]
+    #[cfg_attr(feature = "serde", serde(rename = "Cd"))]
+    pub cd: Option<MoneyLaunderingCheck1Code>,
+    #[yaserde(rename = "Prtry")]
+    #[cfg_attr(feature = "serde", serde(rename = "Prtry"))]
+    pub prtry: Option<GenericIdentification47>,
 }
 
 impl Validate for MoneyLaunderingCheck1Choice {}
@@ -5186,32 +4488,16 @@ pub struct NameAndAddress5 {
 }
 
 impl Validate for NameAndAddress5 {}
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
-
-pub enum NamePrefix1ChoiceChoice {
-    Cd(NamePrefix1Code),
-    Prtry(GenericIdentification47),
-    __Unknown__(String),
-}
-
-impl Default for NamePrefix1ChoiceChoice {
-    fn default() -> NamePrefix1ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for NamePrefix1ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
 pub struct NamePrefix1Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub name_prefix_1_choice_choice: NamePrefix1ChoiceChoice,
+    #[yaserde(rename = "Cd")]
+    #[cfg_attr(feature = "serde", serde(rename = "Cd"))]
+    pub cd: Option<NamePrefix1Code>,
+    #[yaserde(rename = "Prtry")]
+    #[cfg_attr(feature = "serde", serde(rename = "Prtry"))]
+    pub prtry: Option<GenericIdentification47>,
 }
 
 impl Validate for NamePrefix1Choice {}
@@ -5441,32 +4727,16 @@ pub struct Organisation39 {
 }
 
 impl Validate for Organisation39 {}
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
-
-pub enum OrganisationType1ChoiceChoice {
-    Cd(OrganisationType1Code),
-    Prtry(GenericIdentification47),
-    __Unknown__(String),
-}
-
-impl Default for OrganisationType1ChoiceChoice {
-    fn default() -> OrganisationType1ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for OrganisationType1ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
 pub struct OrganisationType1Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub organisation_type_1_choice_choice: OrganisationType1ChoiceChoice,
+    #[yaserde(rename = "Cd")]
+    #[cfg_attr(feature = "serde", serde(rename = "Cd"))]
+    pub cd: Option<OrganisationType1Code>,
+    #[yaserde(rename = "Prtry")]
+    #[cfg_attr(feature = "serde", serde(rename = "Prtry"))]
+    pub prtry: Option<GenericIdentification47>,
 }
 
 impl Validate for OrganisationType1Choice {}
@@ -5500,33 +4770,16 @@ impl Default for OrganisationType1Code {
 }
 
 impl Validate for OrganisationType1Code {}
-
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
-
-pub enum OtherIdentification3ChoiceChoice {
-    Cd(PartyIdentificationType7Code),
-    Prtry(GenericIdentification47),
-    __Unknown__(String),
-}
-
-impl Default for OtherIdentification3ChoiceChoice {
-    fn default() -> OtherIdentification3ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for OtherIdentification3ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
 pub struct OtherIdentification3Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub other_identification_3_choice_choice: OtherIdentification3ChoiceChoice,
+    #[yaserde(rename = "Cd")]
+    #[cfg_attr(feature = "serde", serde(rename = "Cd"))]
+    pub cd: Option<PartyIdentificationType7Code>,
+    #[yaserde(rename = "Prtry")]
+    #[cfg_attr(feature = "serde", serde(rename = "Prtry"))]
+    pub prtry: Option<GenericIdentification47>,
 }
 
 impl Validate for OtherIdentification3Choice {}
@@ -5548,126 +4801,58 @@ pub struct OwnershipBeneficiaryRate1 {
 }
 
 impl Validate for OwnershipBeneficiaryRate1 {}
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
-
-pub enum OwnershipType2ChoiceChoice {
-    Cd(AccountOwnershipType4Code),
-    Prtry(GenericIdentification47),
-    __Unknown__(String),
-}
-
-impl Default for OwnershipType2ChoiceChoice {
-    fn default() -> OwnershipType2ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for OwnershipType2ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
 pub struct OwnershipType2Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub ownership_type_2_choice_choice: OwnershipType2ChoiceChoice,
+    #[yaserde(rename = "Cd")]
+    #[cfg_attr(feature = "serde", serde(rename = "Cd"))]
+    pub cd: Option<AccountOwnershipType4Code>,
+    #[yaserde(rename = "Prtry")]
+    #[cfg_attr(feature = "serde", serde(rename = "Prtry"))]
+    pub prtry: Option<GenericIdentification47>,
 }
 
 impl Validate for OwnershipType2Choice {}
-
-
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
-
-pub enum Party47ChoiceChoice {
-    Org(Organisation39),
-    IndvPrsn(IndividualPerson37),
-    __Unknown__(String),
-}
-
-impl Default for Party47ChoiceChoice {
-    fn default() -> Party47ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for Party47ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
 pub struct Party47Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub party_47_choice_choice: Party47ChoiceChoice,
+    #[yaserde(rename = "Org")]
+    #[cfg_attr(feature = "serde", serde(rename = "Org"))]
+    pub org: Option<Organisation39>,
+    #[yaserde(rename = "IndvPrsn")]
+    #[cfg_attr(feature = "serde", serde(rename = "IndvPrsn"))]
+    pub indv_prsn: Option<IndividualPerson37>,
 }
 
 impl Validate for Party47Choice {}
-
-
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
-
-pub enum PartyIdentification125ChoiceChoice {
-    AnyBIC(AnyBICDec2014Identifier),
-    PrtryId(GenericIdentification1),
-    NmAndAdr(NameAndAddress5),
-    __Unknown__(String),
-}
-
-impl Default for PartyIdentification125ChoiceChoice {
-    fn default() -> PartyIdentification125ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for PartyIdentification125ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
 pub struct PartyIdentification125Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub party_identification_125_choice_choice: PartyIdentification125ChoiceChoice,
+    #[yaserde(rename = "AnyBIC")]
+    #[cfg_attr(feature = "serde", serde(rename = "AnyBIC"))]
+    pub any_b_i_c: Option<AnyBICDec2014Identifier>,
+    #[yaserde(rename = "PrtryId")]
+    #[cfg_attr(feature = "serde", serde(rename = "PrtryId"))]
+    pub prtry_id: Option<GenericIdentification1>,
+    #[yaserde(rename = "NmAndAdr")]
+    #[cfg_attr(feature = "serde", serde(rename = "NmAndAdr"))]
+    pub nm_and_adr: Option<NameAndAddress5>,
 }
 
 impl Validate for PartyIdentification125Choice {}
-
-
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
-
-pub enum PartyIdentification177ChoiceChoice {
-    AnyBIC(AnyBICDec2014Identifier),
-    PrtryId(GenericIdentification1),
-    __Unknown__(String),
-}
-
-impl Default for PartyIdentification177ChoiceChoice {
-    fn default() -> PartyIdentification177ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for PartyIdentification177ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
 pub struct PartyIdentification177Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub party_identification_177_choice_choice: PartyIdentification177ChoiceChoice,
+    #[yaserde(rename = "AnyBIC")]
+    #[cfg_attr(feature = "serde", serde(rename = "AnyBIC"))]
+    pub any_b_i_c: Option<AnyBICDec2014Identifier>,
+    #[yaserde(rename = "PrtryId")]
+    #[cfg_attr(feature = "serde", serde(rename = "PrtryId"))]
+    pub prtry_id: Option<GenericIdentification1>,
 }
 
 impl Validate for PartyIdentification177Choice {}
@@ -5830,95 +5015,42 @@ impl Default for PartyRole1Code {
 }
 
 impl Validate for PartyRole1Code {}
-
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
-
-pub enum PartyRole2ChoiceChoice {
-    Cd(InvestmentFundRole6Code),
-    Prtry(GenericIdentification47),
-    __Unknown__(String),
-}
-
-impl Default for PartyRole2ChoiceChoice {
-    fn default() -> PartyRole2ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for PartyRole2ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
 pub struct PartyRole2Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub party_role_2_choice_choice: PartyRole2ChoiceChoice,
+    #[yaserde(rename = "Cd")]
+    #[cfg_attr(feature = "serde", serde(rename = "Cd"))]
+    pub cd: Option<InvestmentFundRole6Code>,
+    #[yaserde(rename = "Prtry")]
+    #[cfg_attr(feature = "serde", serde(rename = "Prtry"))]
+    pub prtry: Option<GenericIdentification47>,
 }
 
 impl Validate for PartyRole2Choice {}
-
-
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
-
-pub enum PartyRole4ChoiceChoice {
-    Cd(InvestmentFundRole7Code),
-    Prtry(GenericIdentification47),
-    __Unknown__(String),
-}
-
-impl Default for PartyRole4ChoiceChoice {
-    fn default() -> PartyRole4ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for PartyRole4ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
 pub struct PartyRole4Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub party_role_4_choice_choice: PartyRole4ChoiceChoice,
+    #[yaserde(rename = "Cd")]
+    #[cfg_attr(feature = "serde", serde(rename = "Cd"))]
+    pub cd: Option<InvestmentFundRole7Code>,
+    #[yaserde(rename = "Prtry")]
+    #[cfg_attr(feature = "serde", serde(rename = "Prtry"))]
+    pub prtry: Option<GenericIdentification47>,
 }
 
 impl Validate for PartyRole4Choice {}
-
-
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
-
-pub enum PartyRole5ChoiceChoice {
-    Cd(PartyRole1Code),
-    Prtry(GenericIdentification47),
-    __Unknown__(String),
-}
-
-impl Default for PartyRole5ChoiceChoice {
-    fn default() -> PartyRole5ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for PartyRole5ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
 pub struct PartyRole5Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub party_role_5_choice_choice: PartyRole5ChoiceChoice,
+    #[yaserde(rename = "Cd")]
+    #[cfg_attr(feature = "serde", serde(rename = "Cd"))]
+    pub cd: Option<PartyRole1Code>,
+    #[yaserde(rename = "Prtry")]
+    #[cfg_attr(feature = "serde", serde(rename = "Prtry"))]
+    pub prtry: Option<GenericIdentification47>,
 }
 
 impl Validate for PartyRole5Choice {}
@@ -6004,65 +5136,35 @@ pub struct PaymentInstrument17 {
 }
 
 impl Validate for PaymentInstrument17 {}
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
-
-pub enum PaymentInstrument19ChoiceChoice {
-    ChqDtls(Cheque4),
-    BkrsDrftDtls(Cheque4),
-    __Unknown__(String),
-}
-
-impl Default for PaymentInstrument19ChoiceChoice {
-    fn default() -> PaymentInstrument19ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for PaymentInstrument19ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
 pub struct PaymentInstrument19Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub payment_instrument_19_choice_choice: PaymentInstrument19ChoiceChoice,
+    #[yaserde(rename = "ChqDtls")]
+    #[cfg_attr(feature = "serde", serde(rename = "ChqDtls"))]
+    pub chq_dtls: Option<Cheque4>,
+    #[yaserde(rename = "BkrsDrftDtls")]
+    #[cfg_attr(feature = "serde", serde(rename = "BkrsDrftDtls"))]
+    pub bkrs_drft_dtls: Option<Cheque4>,
 }
 
 impl Validate for PaymentInstrument19Choice {}
-
-
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
-
-pub enum PaymentInstrument24ChoiceChoice {
-    PmtCardDtls(PaymentCard29),
-    DrctDbtDtls(DirectDebitMandate7),
-    Chq(YesNoIndicator),
-    BkrsDrft(YesNoIndicator),
-    __Unknown__(String),
-}
-
-impl Default for PaymentInstrument24ChoiceChoice {
-    fn default() -> PaymentInstrument24ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for PaymentInstrument24ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
 pub struct PaymentInstrument24Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub payment_instrument_24_choice_choice: PaymentInstrument24ChoiceChoice,
+    #[yaserde(rename = "PmtCardDtls")]
+    #[cfg_attr(feature = "serde", serde(rename = "PmtCardDtls"))]
+    pub pmt_card_dtls: Option<PaymentCard29>,
+    #[yaserde(rename = "DrctDbtDtls")]
+    #[cfg_attr(feature = "serde", serde(rename = "DrctDbtDtls"))]
+    pub drct_dbt_dtls: Option<DirectDebitMandate7>,
+    #[yaserde(rename = "Chq")]
+    #[cfg_attr(feature = "serde", serde(rename = "Chq"))]
+    pub chq: Option<YesNoIndicator>,
+    #[yaserde(rename = "BkrsDrft")]
+    #[cfg_attr(feature = "serde", serde(rename = "BkrsDrft"))]
+    pub bkrs_drft: Option<YesNoIndicator>,
 }
 
 impl Validate for PaymentInstrument24Choice {}
@@ -6142,64 +5244,29 @@ impl Default for PlanStatus1Code {
 }
 
 impl Validate for PlanStatus1Code {}
-
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
-
-pub enum PlanStatus2ChoiceChoice {
-    Cd(PlanStatus1Code),
-    Prtry(GenericIdentification47),
-    __Unknown__(String),
-}
-
-impl Default for PlanStatus2ChoiceChoice {
-    fn default() -> PlanStatus2ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for PlanStatus2ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
 pub struct PlanStatus2Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub plan_status_2_choice_choice: PlanStatus2ChoiceChoice,
+    #[yaserde(rename = "Cd")]
+    #[cfg_attr(feature = "serde", serde(rename = "Cd"))]
+    pub cd: Option<PlanStatus1Code>,
+    #[yaserde(rename = "Prtry")]
+    #[cfg_attr(feature = "serde", serde(rename = "Prtry"))]
+    pub prtry: Option<GenericIdentification47>,
 }
 
 impl Validate for PlanStatus2Choice {}
-
-
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
-
-pub enum PoliticalExposureType2ChoiceChoice {
-    Cd(PoliticalExposureType2Code),
-    Prtry(GenericIdentification47),
-    __Unknown__(String),
-}
-
-impl Default for PoliticalExposureType2ChoiceChoice {
-    fn default() -> PoliticalExposureType2ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for PoliticalExposureType2ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
 pub struct PoliticalExposureType2Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub political_exposure_type_2_choice_choice: PoliticalExposureType2ChoiceChoice,
+    #[yaserde(rename = "Cd")]
+    #[cfg_attr(feature = "serde", serde(rename = "Cd"))]
+    pub cd: Option<PoliticalExposureType2Code>,
+    #[yaserde(rename = "Prtry")]
+    #[cfg_attr(feature = "serde", serde(rename = "Prtry"))]
+    pub prtry: Option<GenericIdentification47>,
 }
 
 impl Validate for PoliticalExposureType2Choice {}
@@ -6250,32 +5317,16 @@ pub struct PoliticallyExposedPerson1 {
 }
 
 impl Validate for PoliticallyExposedPerson1 {}
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
-
-pub enum PoliticallyExposedPersonStatus1ChoiceChoice {
-    Cd(PoliticallyExposedPersonStatus1Code),
-    Prtry(GenericIdentification47),
-    __Unknown__(String),
-}
-
-impl Default for PoliticallyExposedPersonStatus1ChoiceChoice {
-    fn default() -> PoliticallyExposedPersonStatus1ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for PoliticallyExposedPersonStatus1ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
 pub struct PoliticallyExposedPersonStatus1Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub politically_exposed_person_status_1_choice_choice: PoliticallyExposedPersonStatus1ChoiceChoice,
+    #[yaserde(rename = "Cd")]
+    #[cfg_attr(feature = "serde", serde(rename = "Cd"))]
+    pub cd: Option<PoliticallyExposedPersonStatus1Code>,
+    #[yaserde(rename = "Prtry")]
+    #[cfg_attr(feature = "serde", serde(rename = "Prtry"))]
+    pub prtry: Option<GenericIdentification47>,
 }
 
 impl Validate for PoliticallyExposedPersonStatus1Choice {}
@@ -6456,32 +5507,16 @@ pub struct PostalAddress21 {
 }
 
 impl Validate for PostalAddress21 {}
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
-
-pub enum ProfileType1ChoiceChoice {
-    Cd(ProfileType1Code),
-    Prtry(GenericIdentification47),
-    __Unknown__(String),
-}
-
-impl Default for ProfileType1ChoiceChoice {
-    fn default() -> ProfileType1ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for ProfileType1ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
 pub struct ProfileType1Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub profile_type_1_choice_choice: ProfileType1ChoiceChoice,
+    #[yaserde(rename = "Cd")]
+    #[cfg_attr(feature = "serde", serde(rename = "Cd"))]
+    pub cd: Option<ProfileType1Code>,
+    #[yaserde(rename = "Prtry")]
+    #[cfg_attr(feature = "serde", serde(rename = "Prtry"))]
+    pub prtry: Option<GenericIdentification47>,
 }
 
 impl Validate for ProfileType1Choice {}
@@ -6628,32 +5663,16 @@ pub struct ReferredAgent3 {
 }
 
 impl Validate for ReferredAgent3 {}
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
-
-pub enum RegisteredShareholderName1ChoiceChoice {
-    IndvPrsn(IndividualPerson29),
-    Org(Organisation23),
-    __Unknown__(String),
-}
-
-impl Default for RegisteredShareholderName1ChoiceChoice {
-    fn default() -> RegisteredShareholderName1ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for RegisteredShareholderName1ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
 pub struct RegisteredShareholderName1Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub registered_shareholder_name_1_choice_choice: RegisteredShareholderName1ChoiceChoice,
+    #[yaserde(rename = "IndvPrsn")]
+    #[cfg_attr(feature = "serde", serde(rename = "IndvPrsn"))]
+    pub indv_prsn: Option<IndividualPerson29>,
+    #[yaserde(rename = "Org")]
+    #[cfg_attr(feature = "serde", serde(rename = "Org"))]
+    pub org: Option<Organisation23>,
 }
 
 impl Validate for RegisteredShareholderName1Choice {}
@@ -6748,33 +5767,16 @@ impl Default for ResidentialStatus1Code {
 }
 
 impl Validate for ResidentialStatus1Code {}
-
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
-
-pub enum RestrictionStatus1ChoiceChoice {
-    Cd(RestrictionStatus1Code),
-    Prtry(GenericIdentification47),
-    __Unknown__(String),
-}
-
-impl Default for RestrictionStatus1ChoiceChoice {
-    fn default() -> RestrictionStatus1ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for RestrictionStatus1ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
 pub struct RestrictionStatus1Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub restriction_status_1_choice_choice: RestrictionStatus1ChoiceChoice,
+    #[yaserde(rename = "Cd")]
+    #[cfg_attr(feature = "serde", serde(rename = "Cd"))]
+    pub cd: Option<RestrictionStatus1Code>,
+    #[yaserde(rename = "Prtry")]
+    #[cfg_attr(feature = "serde", serde(rename = "Prtry"))]
+    pub prtry: Option<GenericIdentification47>,
 }
 
 impl Validate for RestrictionStatus1Choice {}
@@ -6828,33 +5830,16 @@ impl Default for RiskLevel1Code {
 }
 
 impl Validate for RiskLevel1Code {}
-
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
-
-pub enum RiskLevel2ChoiceChoice {
-    Cd(RiskLevel1Code),
-    Prtry(GenericIdentification47),
-    __Unknown__(String),
-}
-
-impl Default for RiskLevel2ChoiceChoice {
-    fn default() -> RiskLevel2ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for RiskLevel2ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
 pub struct RiskLevel2Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub risk_level_2_choice_choice: RiskLevel2ChoiceChoice,
+    #[yaserde(rename = "Cd")]
+    #[cfg_attr(feature = "serde", serde(rename = "Cd"))]
+    pub cd: Option<RiskLevel1Code>,
+    #[yaserde(rename = "Prtry")]
+    #[cfg_attr(feature = "serde", serde(rename = "Prtry"))]
+    pub prtry: Option<GenericIdentification47>,
 }
 
 impl Validate for RiskLevel2Choice {}
@@ -6920,118 +5905,80 @@ crate::simple_type!(Sedolidentifier);
 
 impl Validate for Sedolidentifier {}
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
-
-pub enum SecurityIdentification25ChoiceChoice {
-    #[yaserde(rename = "ISIN")]
-    #[cfg_attr(feature = "serde", serde(rename = "ISIN"))]
-    Isin(Isinoct2015Identifier),
-    #[yaserde(rename = "SEDOL")]
-    #[cfg_attr(feature = "serde", serde(rename = "SEDOL"))]
-    Sedol(Sedolidentifier),
-    #[yaserde(rename = "CUSIP")]
-    #[cfg_attr(feature = "serde", serde(rename = "CUSIP"))]
-    Cusip(Cusipidentifier),
-    #[yaserde(rename = "RIC")]
-    #[cfg_attr(feature = "serde", serde(rename = "RIC"))]
-    Ric(Ricidentifier),
-    TckrSymb(TickerIdentifier),
-    Blmbrg(Bloomberg2Identifier),
-    #[yaserde(rename = "CTA")]
-    #[cfg_attr(feature = "serde", serde(rename = "CTA"))]
-    Cta(ConsolidatedTapeAssociationIdentifier),
-    #[yaserde(rename = "QUICK")]
-    #[cfg_attr(feature = "serde", serde(rename = "QUICK"))]
-    Quick(Quickidentifier),
-    Wrtppr(WertpapierIdentifier),
-    Dtch(DutchIdentifier),
-    Vlrn(ValorenIdentifier),
-    #[yaserde(rename = "SCVM")]
-    #[cfg_attr(feature = "serde", serde(rename = "SCVM"))]
-    Scvm(SicovamIdentifier),
-    Belgn(BelgianIdentifier),
-    Cmon(EuroclearClearstreamIdentifier),
-    OthrPrtryId(AlternateSecurityIdentification7),
-    __Unknown__(String),
-}
-
-impl Default for SecurityIdentification25ChoiceChoice {
-    fn default() -> SecurityIdentification25ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for SecurityIdentification25ChoiceChoice {}
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
 pub struct SecurityIdentification25Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub security_identification_25_choice_choice: SecurityIdentification25ChoiceChoice,
+    #[yaserde(rename = "ISIN")]
+    #[cfg_attr(feature = "serde", serde(rename = "ISIN"))]
+    pub isin: Option<Isinoct2015Identifier>,
+    #[yaserde(rename = "SEDOL")]
+    #[cfg_attr(feature = "serde", serde(rename = "SEDOL"))]
+    pub sedol: Option<Sedolidentifier>,
+    #[yaserde(rename = "CUSIP")]
+    #[cfg_attr(feature = "serde", serde(rename = "CUSIP"))]
+    pub cusip: Option<Cusipidentifier>,
+    #[yaserde(rename = "RIC")]
+    #[cfg_attr(feature = "serde", serde(rename = "RIC"))]
+    pub ric: Option<Ricidentifier>,
+    #[yaserde(rename = "TckrSymb")]
+    #[cfg_attr(feature = "serde", serde(rename = "TckrSymb"))]
+    pub tckr_symb: Option<TickerIdentifier>,
+    #[yaserde(rename = "Blmbrg")]
+    #[cfg_attr(feature = "serde", serde(rename = "Blmbrg"))]
+    pub blmbrg: Option<Bloomberg2Identifier>,
+    #[yaserde(rename = "CTA")]
+    #[cfg_attr(feature = "serde", serde(rename = "CTA"))]
+    pub cta: Option<ConsolidatedTapeAssociationIdentifier>,
+    #[yaserde(rename = "QUICK")]
+    #[cfg_attr(feature = "serde", serde(rename = "QUICK"))]
+    pub quick: Option<Quickidentifier>,
+    #[yaserde(rename = "Wrtppr")]
+    #[cfg_attr(feature = "serde", serde(rename = "Wrtppr"))]
+    pub wrtppr: Option<WertpapierIdentifier>,
+    #[yaserde(rename = "Dtch")]
+    #[cfg_attr(feature = "serde", serde(rename = "Dtch"))]
+    pub dtch: Option<DutchIdentifier>,
+    #[yaserde(rename = "Vlrn")]
+    #[cfg_attr(feature = "serde", serde(rename = "Vlrn"))]
+    pub vlrn: Option<ValorenIdentifier>,
+    #[yaserde(rename = "SCVM")]
+    #[cfg_attr(feature = "serde", serde(rename = "SCVM"))]
+    pub scvm: Option<SicovamIdentifier>,
+    #[yaserde(rename = "Belgn")]
+    #[cfg_attr(feature = "serde", serde(rename = "Belgn"))]
+    pub belgn: Option<BelgianIdentifier>,
+    #[yaserde(rename = "Cmon")]
+    #[cfg_attr(feature = "serde", serde(rename = "Cmon"))]
+    pub cmon: Option<EuroclearClearstreamIdentifier>,
+    #[yaserde(rename = "OthrPrtryId")]
+    #[cfg_attr(feature = "serde", serde(rename = "OthrPrtryId"))]
+    pub othr_prtry_id: Option<AlternateSecurityIdentification7>,
 }
 
 impl Validate for SecurityIdentification25Choice {}
-
-
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
-
-pub enum SettlementFrequency1ChoiceChoice {
-    Cd(EventFrequency10Code),
-    Prtry(GenericIdentification47),
-    __Unknown__(String),
-}
-
-impl Default for SettlementFrequency1ChoiceChoice {
-    fn default() -> SettlementFrequency1ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for SettlementFrequency1ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
 pub struct SettlementFrequency1Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub settlement_frequency_1_choice_choice: SettlementFrequency1ChoiceChoice,
+    #[yaserde(rename = "Cd")]
+    #[cfg_attr(feature = "serde", serde(rename = "Cd"))]
+    pub cd: Option<EventFrequency10Code>,
+    #[yaserde(rename = "Prtry")]
+    #[cfg_attr(feature = "serde", serde(rename = "Prtry"))]
+    pub prtry: Option<GenericIdentification47>,
 }
 
 impl Validate for SettlementFrequency1Choice {}
-
-
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
-
-pub enum SettlementInstructionReason1ChoiceChoice {
-    Cd(SettlementInstructionReason1Code),
-    Prtry(GenericIdentification47),
-    __Unknown__(String),
-}
-
-impl Default for SettlementInstructionReason1ChoiceChoice {
-    fn default() -> SettlementInstructionReason1ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for SettlementInstructionReason1ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
 pub struct SettlementInstructionReason1Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub settlement_instruction_reason_1_choice_choice: SettlementInstructionReason1ChoiceChoice,
+    #[yaserde(rename = "Cd")]
+    #[cfg_attr(feature = "serde", serde(rename = "Cd"))]
+    pub cd: Option<SettlementInstructionReason1Code>,
+    #[yaserde(rename = "Prtry")]
+    #[cfg_attr(feature = "serde", serde(rename = "Prtry"))]
+    pub prtry: Option<GenericIdentification47>,
 }
 
 impl Validate for SettlementInstructionReason1Choice {}
@@ -7135,29 +6082,15 @@ crate::simple_type!(SpanishDomesticInterbankingIdentifier);
 
 impl Validate for SpanishDomesticInterbankingIdentifier {}
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
-
-pub enum StatementFrequencyReason2ChoiceChoice {
-    Cd(EventFrequency9Code),
-    Prtry(GenericIdentification47),
-    __Unknown__(String),
-}
-
-impl Default for StatementFrequencyReason2ChoiceChoice {
-    fn default() -> StatementFrequencyReason2ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for StatementFrequencyReason2ChoiceChoice {}
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
 pub struct StatementFrequencyReason2Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub statement_frequency_reason_2_choice_choice: StatementFrequencyReason2ChoiceChoice,
+    #[yaserde(rename = "Cd")]
+    #[cfg_attr(feature = "serde", serde(rename = "Cd"))]
+    pub cd: Option<EventFrequency9Code>,
+    #[yaserde(rename = "Prtry")]
+    #[cfg_attr(feature = "serde", serde(rename = "Prtry"))]
+    pub prtry: Option<GenericIdentification47>,
 }
 
 impl Validate for StatementFrequencyReason2Choice {}
@@ -7320,33 +6253,16 @@ impl Default for TaxExemptReason3Code {
 }
 
 impl Validate for TaxExemptReason3Code {}
-
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
-
-pub enum TaxExemptionReason2ChoiceChoice {
-    Cd(TaxExemptReason3Code),
-    Prtry(GenericIdentification47),
-    __Unknown__(String),
-}
-
-impl Default for TaxExemptionReason2ChoiceChoice {
-    fn default() -> TaxExemptionReason2ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for TaxExemptionReason2ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
 pub struct TaxExemptionReason2Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub tax_exemption_reason_2_choice_choice: TaxExemptionReason2ChoiceChoice,
+    #[yaserde(rename = "Cd")]
+    #[cfg_attr(feature = "serde", serde(rename = "Cd"))]
+    pub cd: Option<TaxExemptReason3Code>,
+    #[yaserde(rename = "Prtry")]
+    #[cfg_attr(feature = "serde", serde(rename = "Prtry"))]
+    pub prtry: Option<GenericIdentification47>,
 }
 
 impl Validate for TaxExemptionReason2Choice {}
@@ -7503,64 +6419,29 @@ impl Default for TransactionChannel2Code {
 }
 
 impl Validate for TransactionChannel2Code {}
-
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
-
-pub enum TransactionChannelType1ChoiceChoice {
-    Cd(TransactionChannel2Code),
-    Prtry(GenericIdentification47),
-    __Unknown__(String),
-}
-
-impl Default for TransactionChannelType1ChoiceChoice {
-    fn default() -> TransactionChannelType1ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for TransactionChannelType1ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
 pub struct TransactionChannelType1Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub transaction_channel_type_1_choice_choice: TransactionChannelType1ChoiceChoice,
+    #[yaserde(rename = "Cd")]
+    #[cfg_attr(feature = "serde", serde(rename = "Cd"))]
+    pub cd: Option<TransactionChannel2Code>,
+    #[yaserde(rename = "Prtry")]
+    #[cfg_attr(feature = "serde", serde(rename = "Prtry"))]
+    pub prtry: Option<GenericIdentification47>,
 }
 
 impl Validate for TransactionChannelType1Choice {}
-
-
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
-
-pub enum TransactionType5ChoiceChoice {
-    Cd(InvestmentFundTransactionType1Code),
-    Prtry(GenericIdentification47),
-    __Unknown__(String),
-}
-
-impl Default for TransactionType5ChoiceChoice {
-    fn default() -> TransactionType5ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for TransactionType5ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
 pub struct TransactionType5Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub transaction_type_5_choice_choice: TransactionType5ChoiceChoice,
+    #[yaserde(rename = "Cd")]
+    #[cfg_attr(feature = "serde", serde(rename = "Cd"))]
+    pub cd: Option<InvestmentFundTransactionType1Code>,
+    #[yaserde(rename = "Prtry")]
+    #[cfg_attr(feature = "serde", serde(rename = "Prtry"))]
+    pub prtry: Option<GenericIdentification47>,
 }
 
 impl Validate for TransactionType5Choice {}
@@ -7595,61 +6476,31 @@ crate::simple_type!(UkdomesticSortCodeIdentifier);
 
 impl Validate for UkdomesticSortCodeIdentifier {}
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
-
-pub enum UnitsOrAmount1ChoiceChoice {
-    Amt(ActiveCurrencyAndAmount),
-    Unit(DecimalNumber),
-    __Unknown__(String),
-}
-
-impl Default for UnitsOrAmount1ChoiceChoice {
-    fn default() -> UnitsOrAmount1ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for UnitsOrAmount1ChoiceChoice {}
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
 pub struct UnitsOrAmount1Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub units_or_amount_1_choice_choice: UnitsOrAmount1ChoiceChoice,
+    #[yaserde(rename = "Amt")]
+    #[cfg_attr(feature = "serde", serde(rename = "Amt"))]
+    pub amt: Option<ActiveCurrencyAndAmount>,
+    #[yaserde(rename = "Unit")]
+    #[cfg_attr(feature = "serde", serde(rename = "Unit"))]
+    pub unit: Option<DecimalNumber>,
 }
 
 impl Validate for UnitsOrAmount1Choice {}
-
-
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
-
-pub enum UnitsOrAmountOrPercentage1ChoiceChoice {
-    Amt(ActiveCurrencyAndAmount),
-    Unit(DecimalNumber),
-    Pctg(PercentageRate),
-    __Unknown__(String),
-}
-
-impl Default for UnitsOrAmountOrPercentage1ChoiceChoice {
-    fn default() -> UnitsOrAmountOrPercentage1ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for UnitsOrAmountOrPercentage1ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08")]
 pub struct UnitsOrAmountOrPercentage1Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub units_or_amount_or_percentage_1_choice_choice: UnitsOrAmountOrPercentage1ChoiceChoice,
+    #[yaserde(rename = "Amt")]
+    #[cfg_attr(feature = "serde", serde(rename = "Amt"))]
+    pub amt: Option<ActiveCurrencyAndAmount>,
+    #[yaserde(rename = "Unit")]
+    #[cfg_attr(feature = "serde", serde(rename = "Unit"))]
+    pub unit: Option<DecimalNumber>,
+    #[yaserde(rename = "Pctg")]
+    #[cfg_attr(feature = "serde", serde(rename = "Pctg"))]
+    pub pctg: Option<PercentageRate>,
 }
 
 impl Validate for UnitsOrAmountOrPercentage1Choice {}

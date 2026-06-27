@@ -44,10 +44,12 @@ Status of `rust_iso20022`. ✅ = done, ⬜ = outstanding.
   `<__Unknown__>` placeholder elements that unset choices produce (round-trip
   preserved). A minOccurs-aware fix that also omits the now-empty parent element
   is still a future refinement.
-- ⬜ **`Ccy` on choice-nested amounts not written** — confirmed a yaserde 0.7
-  limitation (a flattened enum variant drops its inner struct's attributes). The
-  clean fix is to model choices as optional fields (JAXB/prowide style), which
-  also retires `__Unknown__` — a large codegen redesign, deferred. Documented.
+- ✅ **`Ccy` on choice-amounts — root-fixed.** codegen now models top-level
+  `<xsd:choice>`s as a struct of `Option<…>` fields (JAXB/prowide style), so the
+  amount struct serializes as a normal element with its `Ccy` attribute and the
+  `__Unknown__` placeholder is gone. pain.001 `InstdAmt Ccy` now round-trips.
+  (Inline choices nested in a sequence — 16 messages — are still modelled as
+  enums; a follow-up can extend the transform to them.)
 - ✅ **Business-message reader** — `read_business_message` returns header +
   detected `MxId` + metadata in one call
 - ✅ **Typed envelope** — `Envelope<D>` + `parse_envelope::<D>` lift the

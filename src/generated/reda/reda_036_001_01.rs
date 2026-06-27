@@ -24,39 +24,25 @@ pub struct DatePeriod2 {
 }
 
 impl Validate for DatePeriod2 {}
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:reda.036.001.01")]
-
-pub enum DatePeriodSearch1ChoiceChoice {
-    FrDt(Isodate),
-    ToDt(Isodate),
-    FrToDt(DatePeriod2),
-    #[yaserde(rename = "EQDt")]
-    #[cfg_attr(feature = "serde", serde(rename = "EQDt"))]
-    Eqdt(Isodate),
-    #[yaserde(rename = "NEQDt")]
-    #[cfg_attr(feature = "serde", serde(rename = "NEQDt"))]
-    Neqdt(Isodate),
-    __Unknown__(String),
-}
-
-impl Default for DatePeriodSearch1ChoiceChoice {
-    fn default() -> DatePeriodSearch1ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for DatePeriodSearch1ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:reda.036.001.01")]
 pub struct DatePeriodSearch1Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub date_period_search_1_choice_choice: DatePeriodSearch1ChoiceChoice,
+    #[yaserde(rename = "FrDt")]
+    #[cfg_attr(feature = "serde", serde(rename = "FrDt"))]
+    pub fr_dt: Option<Isodate>,
+    #[yaserde(rename = "ToDt")]
+    #[cfg_attr(feature = "serde", serde(rename = "ToDt"))]
+    pub to_dt: Option<Isodate>,
+    #[yaserde(rename = "FrToDt")]
+    #[cfg_attr(feature = "serde", serde(rename = "FrToDt"))]
+    pub fr_to_dt: Option<DatePeriod2>,
+    #[yaserde(rename = "EQDt")]
+    #[cfg_attr(feature = "serde", serde(rename = "EQDt"))]
+    pub eqdt: Option<Isodate>,
+    #[yaserde(rename = "NEQDt")]
+    #[cfg_attr(feature = "serde", serde(rename = "NEQDt"))]
+    pub neqdt: Option<Isodate>,
 }
 
 impl Validate for DatePeriodSearch1Choice {}

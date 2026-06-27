@@ -11,37 +11,21 @@ use yaserde_derive::{YaDeserialize, YaSerialize};
 
 // pub type Document = Document;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:tsin.003.001.01")]
-
-pub enum AccountIdentification3ChoiceChoice {
-    #[yaserde(rename = "IBAN")]
-    #[cfg_attr(feature = "serde", serde(rename = "IBAN"))]
-    Iban(Ibanidentifier),
-    #[yaserde(rename = "BBAN")]
-    #[cfg_attr(feature = "serde", serde(rename = "BBAN"))]
-    Bban(Bbanidentifier),
-    #[yaserde(rename = "UPIC")]
-    #[cfg_attr(feature = "serde", serde(rename = "UPIC"))]
-    Upic(Upicidentifier),
-    PrtryAcct(SimpleIdentificationInformation2),
-    __Unknown__(String),
-}
-
-impl Default for AccountIdentification3ChoiceChoice {
-    fn default() -> AccountIdentification3ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for AccountIdentification3ChoiceChoice {}
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:tsin.003.001.01")]
 pub struct AccountIdentification3Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub account_identification_3_choice_choice: AccountIdentification3ChoiceChoice,
+    #[yaserde(rename = "IBAN")]
+    #[cfg_attr(feature = "serde", serde(rename = "IBAN"))]
+    pub iban: Option<Ibanidentifier>,
+    #[yaserde(rename = "BBAN")]
+    #[cfg_attr(feature = "serde", serde(rename = "BBAN"))]
+    pub bban: Option<Bbanidentifier>,
+    #[yaserde(rename = "UPIC")]
+    #[cfg_attr(feature = "serde", serde(rename = "UPIC"))]
+    pub upic: Option<Upicidentifier>,
+    #[yaserde(rename = "PrtryAcct")]
+    #[cfg_attr(feature = "serde", serde(rename = "PrtryAcct"))]
+    pub prtry_acct: Option<SimpleIdentificationInformation2>,
 }
 
 impl Validate for AccountIdentification3Choice {}
@@ -285,98 +269,79 @@ impl Default for CashAccountType4Code {
 }
 
 impl Validate for CashAccountType4Code {}
-
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:tsin.003.001.01")]
-
-pub enum ClearingSystemMemberIdentification2ChoiceChoice {
-    #[yaserde(rename = "USCHU")]
-    #[cfg_attr(feature = "serde", serde(rename = "USCHU"))]
-    Uschu(ChipsuniversalIdentifier),
-    #[yaserde(rename = "NZNCC")]
-    #[cfg_attr(feature = "serde", serde(rename = "NZNCC"))]
-    Nzncc(NewZealandNCCIdentifier),
-    #[yaserde(rename = "IENSC")]
-    #[cfg_attr(feature = "serde", serde(rename = "IENSC"))]
-    Iensc(IrishNSCIdentifier),
-    #[yaserde(rename = "GBSC")]
-    #[cfg_attr(feature = "serde", serde(rename = "GBSC"))]
-    Gbsc(UkdomesticSortCodeIdentifier),
-    #[yaserde(rename = "USCH")]
-    #[cfg_attr(feature = "serde", serde(rename = "USCH"))]
-    Usch(ChipsparticipantIdentifier),
-    #[yaserde(rename = "CHBC")]
-    #[cfg_attr(feature = "serde", serde(rename = "CHBC"))]
-    Chbc(SwissBCIdentifier),
-    #[yaserde(rename = "USFW")]
-    #[cfg_attr(feature = "serde", serde(rename = "USFW"))]
-    Usfw(FedwireRoutingNumberIdentifier),
-    #[yaserde(rename = "PTNCC")]
-    #[cfg_attr(feature = "serde", serde(rename = "PTNCC"))]
-    Ptncc(PortugueseNCCIdentifier),
-    #[yaserde(rename = "RUCB")]
-    #[cfg_attr(feature = "serde", serde(rename = "RUCB"))]
-    Rucb(RussianCentralBankIdentificationCodeIdentifier),
-    #[yaserde(rename = "ITNCC")]
-    #[cfg_attr(feature = "serde", serde(rename = "ITNCC"))]
-    Itncc(ItalianDomesticIdentifier),
-    #[yaserde(rename = "ATBLZ")]
-    #[cfg_attr(feature = "serde", serde(rename = "ATBLZ"))]
-    Atblz(AustrianBankleitzahlIdentifier),
-    #[yaserde(rename = "CACPA")]
-    #[cfg_attr(feature = "serde", serde(rename = "CACPA"))]
-    Cacpa(CanadianPaymentsARNIdentifier),
-    #[yaserde(rename = "CHSIC")]
-    #[cfg_attr(feature = "serde", serde(rename = "CHSIC"))]
-    Chsic(SwissSICIdentifier),
-    #[yaserde(rename = "DEBLZ")]
-    #[cfg_attr(feature = "serde", serde(rename = "DEBLZ"))]
-    Deblz(GermanBankleitzahlIdentifier),
-    #[yaserde(rename = "ESNCC")]
-    #[cfg_attr(feature = "serde", serde(rename = "ESNCC"))]
-    Esncc(SpanishDomesticInterbankingIdentifier),
-    #[yaserde(rename = "ZANCC")]
-    #[cfg_attr(feature = "serde", serde(rename = "ZANCC"))]
-    Zancc(SouthAfricanNCCIdentifier),
-    #[yaserde(rename = "HKNCC")]
-    #[cfg_attr(feature = "serde", serde(rename = "HKNCC"))]
-    Hkncc(HongKongBankIdentifier),
-    #[yaserde(rename = "AUBSBx")]
-    #[cfg_attr(feature = "serde", serde(rename = "AUBSBx"))]
-    Aubsbx(ExtensiveBranchNetworkIdentifier),
-    #[yaserde(rename = "AUBSBs")]
-    #[cfg_attr(feature = "serde", serde(rename = "AUBSBs"))]
-    Aubsbs(SmallNetworkIdentifier),
-    #[yaserde(rename = "INIFSC")]
-    #[cfg_attr(feature = "serde", serde(rename = "INIFSC"))]
-    Inifsc(IndianFinancialSystemCodeIdentifier),
-    #[yaserde(rename = "GRHEBIC")]
-    #[cfg_attr(feature = "serde", serde(rename = "GRHEBIC"))]
-    Grhebic(HellenicBankIdentificationCodeIdentifier),
-    #[yaserde(rename = "PLKNR")]
-    #[cfg_attr(feature = "serde", serde(rename = "PLKNR"))]
-    Plknr(PolishNationalClearingCodeIdentifier),
-    OthrClrCdId(Max35Text),
-    __Unknown__(String),
-}
-
-impl Default for ClearingSystemMemberIdentification2ChoiceChoice {
-    fn default() -> ClearingSystemMemberIdentification2ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for ClearingSystemMemberIdentification2ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:tsin.003.001.01")]
 pub struct ClearingSystemMemberIdentification2Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub clearing_system_member_identification_2_choice_choice: ClearingSystemMemberIdentification2ChoiceChoice,
+    #[yaserde(rename = "USCHU")]
+    #[cfg_attr(feature = "serde", serde(rename = "USCHU"))]
+    pub uschu: Option<ChipsuniversalIdentifier>,
+    #[yaserde(rename = "NZNCC")]
+    #[cfg_attr(feature = "serde", serde(rename = "NZNCC"))]
+    pub nzncc: Option<NewZealandNCCIdentifier>,
+    #[yaserde(rename = "IENSC")]
+    #[cfg_attr(feature = "serde", serde(rename = "IENSC"))]
+    pub iensc: Option<IrishNSCIdentifier>,
+    #[yaserde(rename = "GBSC")]
+    #[cfg_attr(feature = "serde", serde(rename = "GBSC"))]
+    pub gbsc: Option<UkdomesticSortCodeIdentifier>,
+    #[yaserde(rename = "USCH")]
+    #[cfg_attr(feature = "serde", serde(rename = "USCH"))]
+    pub usch: Option<ChipsparticipantIdentifier>,
+    #[yaserde(rename = "CHBC")]
+    #[cfg_attr(feature = "serde", serde(rename = "CHBC"))]
+    pub chbc: Option<SwissBCIdentifier>,
+    #[yaserde(rename = "USFW")]
+    #[cfg_attr(feature = "serde", serde(rename = "USFW"))]
+    pub usfw: Option<FedwireRoutingNumberIdentifier>,
+    #[yaserde(rename = "PTNCC")]
+    #[cfg_attr(feature = "serde", serde(rename = "PTNCC"))]
+    pub ptncc: Option<PortugueseNCCIdentifier>,
+    #[yaserde(rename = "RUCB")]
+    #[cfg_attr(feature = "serde", serde(rename = "RUCB"))]
+    pub rucb: Option<RussianCentralBankIdentificationCodeIdentifier>,
+    #[yaserde(rename = "ITNCC")]
+    #[cfg_attr(feature = "serde", serde(rename = "ITNCC"))]
+    pub itncc: Option<ItalianDomesticIdentifier>,
+    #[yaserde(rename = "ATBLZ")]
+    #[cfg_attr(feature = "serde", serde(rename = "ATBLZ"))]
+    pub atblz: Option<AustrianBankleitzahlIdentifier>,
+    #[yaserde(rename = "CACPA")]
+    #[cfg_attr(feature = "serde", serde(rename = "CACPA"))]
+    pub cacpa: Option<CanadianPaymentsARNIdentifier>,
+    #[yaserde(rename = "CHSIC")]
+    #[cfg_attr(feature = "serde", serde(rename = "CHSIC"))]
+    pub chsic: Option<SwissSICIdentifier>,
+    #[yaserde(rename = "DEBLZ")]
+    #[cfg_attr(feature = "serde", serde(rename = "DEBLZ"))]
+    pub deblz: Option<GermanBankleitzahlIdentifier>,
+    #[yaserde(rename = "ESNCC")]
+    #[cfg_attr(feature = "serde", serde(rename = "ESNCC"))]
+    pub esncc: Option<SpanishDomesticInterbankingIdentifier>,
+    #[yaserde(rename = "ZANCC")]
+    #[cfg_attr(feature = "serde", serde(rename = "ZANCC"))]
+    pub zancc: Option<SouthAfricanNCCIdentifier>,
+    #[yaserde(rename = "HKNCC")]
+    #[cfg_attr(feature = "serde", serde(rename = "HKNCC"))]
+    pub hkncc: Option<HongKongBankIdentifier>,
+    #[yaserde(rename = "AUBSBx")]
+    #[cfg_attr(feature = "serde", serde(rename = "AUBSBx"))]
+    pub aubsbx: Option<ExtensiveBranchNetworkIdentifier>,
+    #[yaserde(rename = "AUBSBs")]
+    #[cfg_attr(feature = "serde", serde(rename = "AUBSBs"))]
+    pub aubsbs: Option<SmallNetworkIdentifier>,
+    #[yaserde(rename = "INIFSC")]
+    #[cfg_attr(feature = "serde", serde(rename = "INIFSC"))]
+    pub inifsc: Option<IndianFinancialSystemCodeIdentifier>,
+    #[yaserde(rename = "GRHEBIC")]
+    #[cfg_attr(feature = "serde", serde(rename = "GRHEBIC"))]
+    pub grhebic: Option<HellenicBankIdentificationCodeIdentifier>,
+    #[yaserde(rename = "PLKNR")]
+    #[cfg_attr(feature = "serde", serde(rename = "PLKNR"))]
+    pub plknr: Option<PolishNationalClearingCodeIdentifier>,
+    #[yaserde(rename = "OthrClrCdId")]
+    #[cfg_attr(feature = "serde", serde(rename = "OthrClrCdId"))]
+    pub othr_clr_cd_id: Option<Max35Text>,
 }
 
 impl Validate for ClearingSystemMemberIdentification2Choice {}

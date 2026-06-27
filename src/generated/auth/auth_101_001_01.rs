@@ -269,32 +269,16 @@ pub struct SecuritiesSettlementSystemIdentification2 {
 }
 
 impl Validate for SecuritiesSettlementSystemIdentification2 {}
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:auth.101.001.01")]
-
-pub enum SettlementDataRate1ChoiceChoice {
-    NbOfInstrs(PercentageRate),
-    ValOfInstrs(PercentageRate),
-    __Unknown__(String),
-}
-
-impl Default for SettlementDataRate1ChoiceChoice {
-    fn default() -> SettlementDataRate1ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for SettlementDataRate1ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:auth.101.001.01")]
 pub struct SettlementDataRate1Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub settlement_data_rate_1_choice_choice: SettlementDataRate1ChoiceChoice,
+    #[yaserde(rename = "NbOfInstrs")]
+    #[cfg_attr(feature = "serde", serde(rename = "NbOfInstrs"))]
+    pub nb_of_instrs: Option<PercentageRate>,
+    #[yaserde(rename = "ValOfInstrs")]
+    #[cfg_attr(feature = "serde", serde(rename = "ValOfInstrs"))]
+    pub val_of_instrs: Option<PercentageRate>,
 }
 
 impl Validate for SettlementDataRate1Choice {}

@@ -111,29 +111,15 @@ crate::simple_type!(IsodateTime);
 
 impl Validate for IsodateTime {}
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:auth.100.001.01")]
-
-pub enum IdentificationSource3ChoiceChoice {
-    Cd(ExternalFinancialInstrumentIdentificationType1Code),
-    Prtry(Max35Text),
-    __Unknown__(String),
-}
-
-impl Default for IdentificationSource3ChoiceChoice {
-    fn default() -> IdentificationSource3ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for IdentificationSource3ChoiceChoice {}
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:auth.100.001.01")]
 pub struct IdentificationSource3Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub identification_source_3_choice_choice: IdentificationSource3ChoiceChoice,
+    #[yaserde(rename = "Cd")]
+    #[cfg_attr(feature = "serde", serde(rename = "Cd"))]
+    pub cd: Option<ExternalFinancialInstrumentIdentificationType1Code>,
+    #[yaserde(rename = "Prtry")]
+    #[cfg_attr(feature = "serde", serde(rename = "Prtry"))]
+    pub prtry: Option<Max35Text>,
 }
 
 impl Validate for IdentificationSource3Choice {}
@@ -408,32 +394,16 @@ pub struct SecurityIdentification19 {
 }
 
 impl Validate for SecurityIdentification19 {}
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:auth.100.001.01")]
-
-pub enum SettlementDailyFailureReason1ChoiceChoice {
-    DataSetActn(ReportPeriodActivity1Code),
-    Data(SettlementDailyFailureReason3),
-    __Unknown__(String),
-}
-
-impl Default for SettlementDailyFailureReason1ChoiceChoice {
-    fn default() -> SettlementDailyFailureReason1ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for SettlementDailyFailureReason1ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:auth.100.001.01")]
 pub struct SettlementDailyFailureReason1Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub settlement_daily_failure_reason_1_choice_choice: SettlementDailyFailureReason1ChoiceChoice,
+    #[yaserde(rename = "DataSetActn")]
+    #[cfg_attr(feature = "serde", serde(rename = "DataSetActn"))]
+    pub data_set_actn: Option<ReportPeriodActivity1Code>,
+    #[yaserde(rename = "Data")]
+    #[cfg_attr(feature = "serde", serde(rename = "Data"))]
+    pub data: Option<SettlementDailyFailureReason3>,
 }
 
 impl Validate for SettlementDailyFailureReason1Choice {}
@@ -503,32 +473,16 @@ pub struct SettlementFailsCurrency2 {
 }
 
 impl Validate for SettlementFailsCurrency2 {}
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:auth.100.001.01")]
-
-pub enum SettlementFailsDailyCSD1ChoiceChoice {
-    DataSetActn(ReportPeriodActivity1Code),
-    Data(SettlementFailsDailyCSD3),
-    __Unknown__(String),
-}
-
-impl Default for SettlementFailsDailyCSD1ChoiceChoice {
-    fn default() -> SettlementFailsDailyCSD1ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for SettlementFailsDailyCSD1ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:auth.100.001.01")]
 pub struct SettlementFailsDailyCSD1Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub settlement_fails_daily_csd1_choice_choice: SettlementFailsDailyCSD1ChoiceChoice,
+    #[yaserde(rename = "DataSetActn")]
+    #[cfg_attr(feature = "serde", serde(rename = "DataSetActn"))]
+    pub data_set_actn: Option<ReportPeriodActivity1Code>,
+    #[yaserde(rename = "Data")]
+    #[cfg_attr(feature = "serde", serde(rename = "Data"))]
+    pub data: Option<SettlementFailsDailyCSD3>,
 }
 
 impl Validate for SettlementFailsDailyCSD1Choice {}
@@ -566,32 +520,16 @@ pub struct SettlementFailsDailyData3 {
 }
 
 impl Validate for SettlementFailsDailyData3 {}
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:auth.100.001.01")]
-
-pub enum SettlementFailsDailyInstructionType1ChoiceChoice {
-    DataSetActn(ReportPeriodActivity1Code),
-    Data(SettlementFailsDailyInstructionType3),
-    __Unknown__(String),
-}
-
-impl Default for SettlementFailsDailyInstructionType1ChoiceChoice {
-    fn default() -> SettlementFailsDailyInstructionType1ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for SettlementFailsDailyInstructionType1ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:auth.100.001.01")]
 pub struct SettlementFailsDailyInstructionType1Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub settlement_fails_daily_instruction_type_1_choice_choice: SettlementFailsDailyInstructionType1ChoiceChoice,
+    #[yaserde(rename = "DataSetActn")]
+    #[cfg_attr(feature = "serde", serde(rename = "DataSetActn"))]
+    pub data_set_actn: Option<ReportPeriodActivity1Code>,
+    #[yaserde(rename = "Data")]
+    #[cfg_attr(feature = "serde", serde(rename = "Data"))]
+    pub data: Option<SettlementFailsDailyInstructionType3>,
 }
 
 impl Validate for SettlementFailsDailyInstructionType1Choice {}
@@ -665,32 +603,16 @@ pub struct SettlementFailsDailyInstrument3 {
 }
 
 impl Validate for SettlementFailsDailyInstrument3 {}
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:auth.100.001.01")]
-
-pub enum SettlementFailsDailyTransactionType1ChoiceChoice {
-    DataSetActn(ReportPeriodActivity1Code),
-    Data(SettlementFailsDailyTransactionType3),
-    __Unknown__(String),
-}
-
-impl Default for SettlementFailsDailyTransactionType1ChoiceChoice {
-    fn default() -> SettlementFailsDailyTransactionType1ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for SettlementFailsDailyTransactionType1ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:auth.100.001.01")]
 pub struct SettlementFailsDailyTransactionType1Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub settlement_fails_daily_transaction_type_1_choice_choice: SettlementFailsDailyTransactionType1ChoiceChoice,
+    #[yaserde(rename = "DataSetActn")]
+    #[cfg_attr(feature = "serde", serde(rename = "DataSetActn"))]
+    pub data_set_actn: Option<ReportPeriodActivity1Code>,
+    #[yaserde(rename = "Data")]
+    #[cfg_attr(feature = "serde", serde(rename = "Data"))]
+    pub data: Option<SettlementFailsDailyTransactionType3>,
 }
 
 impl Validate for SettlementFailsDailyTransactionType1Choice {}
@@ -1012,32 +934,16 @@ pub struct SettlementTotalData1 {
 }
 
 impl Validate for SettlementTotalData1 {}
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:auth.100.001.01")]
-
-pub enum SettlementTotalData1ChoiceChoice {
-    DataSetActn(ReportPeriodActivity1Code),
-    Data(SettlementTotalData1),
-    __Unknown__(String),
-}
-
-impl Default for SettlementTotalData1ChoiceChoice {
-    fn default() -> SettlementTotalData1ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for SettlementTotalData1ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:auth.100.001.01")]
 pub struct SettlementTotalData1Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub settlement_total_data_1_choice_choice: SettlementTotalData1ChoiceChoice,
+    #[yaserde(rename = "DataSetActn")]
+    #[cfg_attr(feature = "serde", serde(rename = "DataSetActn"))]
+    pub data_set_actn: Option<ReportPeriodActivity1Code>,
+    #[yaserde(rename = "Data")]
+    #[cfg_attr(feature = "serde", serde(rename = "Data"))]
+    pub data: Option<SettlementTotalData1>,
 }
 
 impl Validate for SettlementTotalData1Choice {}

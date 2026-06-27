@@ -11,29 +11,15 @@ use yaserde_derive::{YaDeserialize, YaSerialize};
 
 // pub type Document = Document;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:camt.063.001.02")]
-
-pub enum AcknowledgementDetails1ChoiceChoice {
-    PayInSchdlRef(Max35Text),
-    PayInCallRef(Max35Text),
-    __Unknown__(String),
-}
-
-impl Default for AcknowledgementDetails1ChoiceChoice {
-    fn default() -> AcknowledgementDetails1ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for AcknowledgementDetails1ChoiceChoice {}
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:camt.063.001.02")]
 pub struct AcknowledgementDetails1Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub acknowledgement_details_1_choice_choice: AcknowledgementDetails1ChoiceChoice,
+    #[yaserde(rename = "PayInSchdlRef")]
+    #[cfg_attr(feature = "serde", serde(rename = "PayInSchdlRef"))]
+    pub pay_in_schdl_ref: Option<Max35Text>,
+    #[yaserde(rename = "PayInCallRef")]
+    #[cfg_attr(feature = "serde", serde(rename = "PayInCallRef"))]
+    pub pay_in_call_ref: Option<Max35Text>,
 }
 
 impl Validate for AcknowledgementDetails1Choice {}

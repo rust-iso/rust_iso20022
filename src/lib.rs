@@ -54,9 +54,13 @@ pub use crate::core::{from_json, to_json};
 /// matches `T` (prowide-style guarded parse). Requires the `model` feature on
 /// the caller side to name a concrete `Document` type.
 ///
-/// ```ignore
+/// ```
+/// # #[cfg(feature = "model-pacs")] {
 /// use rust_iso20022::generated::pacs::pacs_008_001_08::Document;
-/// let doc = rust_iso20022::parse_as::<Document>(&xml)?;
+/// let xml = r#"<Document xmlns="urn:iso:std:iso:20022:tech:xsd:pacs.008.001.08"></Document>"#;
+/// // Parses because the detected type matches `Document`.
+/// let _ = rust_iso20022::parse_as::<Document>(xml);
+/// # }
 /// ```
 pub fn parse_as<T: MxMessage>(xml: &str) -> Result<T> {
     T::parse_checked(xml)

@@ -176,31 +176,16 @@ impl Validate for Max70Text {
         Ok(())
     }
 }
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:semt.020.002.07")]
-
-pub enum PartyIdentification136ChoiceChoice {
-    AnyBIC(AnyBICDec2014Identifier),
-    PrtryId(GenericIdentification84),
-    __Unknown__(String),
-}
-
-impl Default for PartyIdentification136ChoiceChoice {
-    fn default() -> PartyIdentification136ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for PartyIdentification136ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:semt.020.002.07")]
 pub struct PartyIdentification136Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub party_identification_136_choice_choice: PartyIdentification136ChoiceChoice,
+    #[yaserde(rename = "AnyBIC")]
+    #[cfg_attr(feature = "serde", serde(rename = "AnyBIC"))]
+    pub any_b_i_c: Option<AnyBICDec2014Identifier>,
+    #[yaserde(rename = "PrtryId")]
+    #[cfg_attr(feature = "serde", serde(rename = "PrtryId"))]
+    pub prtry_id: Option<GenericIdentification84>,
 }
 
 impl Validate for PartyIdentification136Choice {}
@@ -244,48 +229,61 @@ impl Default for ReceiveDelivery1Code {
 }
 
 impl Validate for ReceiveDelivery1Code {}
-
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:semt.020.002.07")]
-
-pub enum References79ChoiceChoice {
-    SctiesSttlmTxConfId(SettlementTypeAndIdentification22),
-    IntraPosMvmntConfId(RestrictedFINXMax16Text),
-    SctiesBalAcctgRptId(RestrictedFINXMax16Text),
-    SctiesBalCtdyRptId(RestrictedFINXMax16Text),
-    IntraPosMvmntPstngRptId(RestrictedFINXMax16Text),
-    SctiesFincgConfId(SettlementTypeAndIdentification22),
-    SctiesTxPdgRptId(RestrictedFINXMax16Text),
-    SctiesTxPstngRptId(RestrictedFINXMax16Text),
-    SctiesSttlmTxAllgmtRptId(RestrictedFINXMax16Text),
-    SctiesSttlmTxAllgmtNtfctnTxId(SettlementTypeAndIdentification22),
-    PrtflTrfNtfctnId(RestrictedFINXMax16Text),
-    SctiesSttlmTxGnrtnNtfctnId(SettlementTypeAndIdentification22),
-    OthrMsgId(RestrictedFINXMax16Text),
-    TtlPrtflValtnRptId(RestrictedFINXMax16Text),
-    TrptyCollTxInstrPrcgStsAdvcId(RestrictedFINXMax16Text),
-    TrptyCollStsAdvcId(RestrictedFINXMax16Text),
-    TrptyCollAndXpsrRptId(RestrictedFINXMax16Text),
-    __Unknown__(String),
-}
-
-impl Default for References79ChoiceChoice {
-    fn default() -> References79ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for References79ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:semt.020.002.07")]
 pub struct References79Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub references_79_choice_choice: References79ChoiceChoice,
+    #[yaserde(rename = "SctiesSttlmTxConfId")]
+    #[cfg_attr(feature = "serde", serde(rename = "SctiesSttlmTxConfId"))]
+    pub scties_sttlm_tx_conf_id: Option<SettlementTypeAndIdentification22>,
+    #[yaserde(rename = "IntraPosMvmntConfId")]
+    #[cfg_attr(feature = "serde", serde(rename = "IntraPosMvmntConfId"))]
+    pub intra_pos_mvmnt_conf_id: Option<RestrictedFINXMax16Text>,
+    #[yaserde(rename = "SctiesBalAcctgRptId")]
+    #[cfg_attr(feature = "serde", serde(rename = "SctiesBalAcctgRptId"))]
+    pub scties_bal_acctg_rpt_id: Option<RestrictedFINXMax16Text>,
+    #[yaserde(rename = "SctiesBalCtdyRptId")]
+    #[cfg_attr(feature = "serde", serde(rename = "SctiesBalCtdyRptId"))]
+    pub scties_bal_ctdy_rpt_id: Option<RestrictedFINXMax16Text>,
+    #[yaserde(rename = "IntraPosMvmntPstngRptId")]
+    #[cfg_attr(feature = "serde", serde(rename = "IntraPosMvmntPstngRptId"))]
+    pub intra_pos_mvmnt_pstng_rpt_id: Option<RestrictedFINXMax16Text>,
+    #[yaserde(rename = "SctiesFincgConfId")]
+    #[cfg_attr(feature = "serde", serde(rename = "SctiesFincgConfId"))]
+    pub scties_fincg_conf_id: Option<SettlementTypeAndIdentification22>,
+    #[yaserde(rename = "SctiesTxPdgRptId")]
+    #[cfg_attr(feature = "serde", serde(rename = "SctiesTxPdgRptId"))]
+    pub scties_tx_pdg_rpt_id: Option<RestrictedFINXMax16Text>,
+    #[yaserde(rename = "SctiesTxPstngRptId")]
+    #[cfg_attr(feature = "serde", serde(rename = "SctiesTxPstngRptId"))]
+    pub scties_tx_pstng_rpt_id: Option<RestrictedFINXMax16Text>,
+    #[yaserde(rename = "SctiesSttlmTxAllgmtRptId")]
+    #[cfg_attr(feature = "serde", serde(rename = "SctiesSttlmTxAllgmtRptId"))]
+    pub scties_sttlm_tx_allgmt_rpt_id: Option<RestrictedFINXMax16Text>,
+    #[yaserde(rename = "SctiesSttlmTxAllgmtNtfctnTxId")]
+    #[cfg_attr(feature = "serde", serde(rename = "SctiesSttlmTxAllgmtNtfctnTxId"))]
+    pub scties_sttlm_tx_allgmt_ntfctn_tx_id: Option<SettlementTypeAndIdentification22>,
+    #[yaserde(rename = "PrtflTrfNtfctnId")]
+    #[cfg_attr(feature = "serde", serde(rename = "PrtflTrfNtfctnId"))]
+    pub prtfl_trf_ntfctn_id: Option<RestrictedFINXMax16Text>,
+    #[yaserde(rename = "SctiesSttlmTxGnrtnNtfctnId")]
+    #[cfg_attr(feature = "serde", serde(rename = "SctiesSttlmTxGnrtnNtfctnId"))]
+    pub scties_sttlm_tx_gnrtn_ntfctn_id: Option<SettlementTypeAndIdentification22>,
+    #[yaserde(rename = "OthrMsgId")]
+    #[cfg_attr(feature = "serde", serde(rename = "OthrMsgId"))]
+    pub othr_msg_id: Option<RestrictedFINXMax16Text>,
+    #[yaserde(rename = "TtlPrtflValtnRptId")]
+    #[cfg_attr(feature = "serde", serde(rename = "TtlPrtflValtnRptId"))]
+    pub ttl_prtfl_valtn_rpt_id: Option<RestrictedFINXMax16Text>,
+    #[yaserde(rename = "TrptyCollTxInstrPrcgStsAdvcId")]
+    #[cfg_attr(feature = "serde", serde(rename = "TrptyCollTxInstrPrcgStsAdvcId"))]
+    pub trpty_coll_tx_instr_prcg_sts_advc_id: Option<RestrictedFINXMax16Text>,
+    #[yaserde(rename = "TrptyCollStsAdvcId")]
+    #[cfg_attr(feature = "serde", serde(rename = "TrptyCollStsAdvcId"))]
+    pub trpty_coll_sts_advc_id: Option<RestrictedFINXMax16Text>,
+    #[yaserde(rename = "TrptyCollAndXpsrRptId")]
+    #[cfg_attr(feature = "serde", serde(rename = "TrptyCollAndXpsrRptId"))]
+    pub trpty_coll_and_xpsr_rpt_id: Option<RestrictedFINXMax16Text>,
 }
 
 impl Validate for References79Choice {}

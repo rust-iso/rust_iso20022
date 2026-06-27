@@ -817,32 +817,16 @@ pub struct EncryptedData1 {
 }
 
 impl Validate for EncryptedData1 {}
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:caad.004.001.01")]
-
-pub enum EncryptedData1ChoiceChoice {
-    BinryData(Max100KBinary),
-    HexBinryVal(Max9999HexBinaryText),
-    __Unknown__(String),
-}
-
-impl Default for EncryptedData1ChoiceChoice {
-    fn default() -> EncryptedData1ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for EncryptedData1ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:caad.004.001.01")]
 pub struct EncryptedData1Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub encrypted_data_1_choice_choice: EncryptedData1ChoiceChoice,
+    #[yaserde(rename = "BinryData")]
+    #[cfg_attr(feature = "serde", serde(rename = "BinryData"))]
+    pub binry_data: Option<Max100KBinary>,
+    #[yaserde(rename = "HexBinryVal")]
+    #[cfg_attr(feature = "serde", serde(rename = "HexBinryVal"))]
+    pub hex_binry_val: Option<Max9999HexBinaryText>,
 }
 
 impl Validate for EncryptedData1Choice {}
@@ -1952,66 +1936,32 @@ pub struct ProtectedData1 {
 }
 
 impl Validate for ProtectedData1 {}
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:caad.004.001.01")]
-
-pub enum Recipient5ChoiceChoice {
-    IssrAndSrlNb(IssuerAndSerialNumber1),
-    KeyIdr(Kekidentifier2),
-    __Unknown__(String),
-}
-
-impl Default for Recipient5ChoiceChoice {
-    fn default() -> Recipient5ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for Recipient5ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:caad.004.001.01")]
 pub struct Recipient5Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub recipient_5_choice_choice: Recipient5ChoiceChoice,
+    #[yaserde(rename = "IssrAndSrlNb")]
+    #[cfg_attr(feature = "serde", serde(rename = "IssrAndSrlNb"))]
+    pub issr_and_srl_nb: Option<IssuerAndSerialNumber1>,
+    #[yaserde(rename = "KeyIdr")]
+    #[cfg_attr(feature = "serde", serde(rename = "KeyIdr"))]
+    pub key_idr: Option<Kekidentifier2>,
 }
 
 impl Validate for Recipient5Choice {}
-
-
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:caad.004.001.01")]
-
-pub enum Recipient7ChoiceChoice {
-    KeyTrnsprt(KeyTransport6),
-    #[yaserde(rename = "KEK")]
-    #[cfg_attr(feature = "serde", serde(rename = "KEK"))]
-    Kek(Kek6),
-    KeyIdr(Kekidentifier6),
-    __Unknown__(String),
-}
-
-impl Default for Recipient7ChoiceChoice {
-    fn default() -> Recipient7ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for Recipient7ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:caad.004.001.01")]
 pub struct Recipient7Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub recipient_7_choice_choice: Recipient7ChoiceChoice,
+    #[yaserde(rename = "KeyTrnsprt")]
+    #[cfg_attr(feature = "serde", serde(rename = "KeyTrnsprt"))]
+    pub key_trnsprt: Option<KeyTransport6>,
+    #[yaserde(rename = "KEK")]
+    #[cfg_attr(feature = "serde", serde(rename = "KEK"))]
+    pub kek: Option<Kek6>,
+    #[yaserde(rename = "KeyIdr")]
+    #[cfg_attr(feature = "serde", serde(rename = "KeyIdr"))]
+    pub key_idr: Option<Kekidentifier6>,
 }
 
 impl Validate for Recipient7Choice {}
@@ -2041,68 +1991,124 @@ pub struct Record1 {
 }
 
 impl Validate for Record1 {}
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:caad.004.001.01")]
-
-pub enum RecordMessage1ChoiceChoice {
-    AdddmInitn(Max2MBBinary),
-    AdddmRspn(Max2MBBinary),
-    Amdmnt(Max2MBBinary),
-    AuthstnInitn(Max2MBBinary),
-    AuthstnRspn(Max2MBBinary),
-    CardMgmtInitn(Max2MBBinary),
-    CardMgmtRspn(Max2MBBinary),
-    ChrgBckInitn(Max2MBBinary),
-    ChrgBckRspn(Max2MBBinary),
-    Err(Max2MBBinary),
-    FeeColltnInitn(Max2MBBinary),
-    FeeColltnRspn(Max2MBBinary),
-    FileActnInitn(Max2MBBinary),
-    FileActnRspn(Max2MBBinary),
-    FinInitn(Max2MBBinary),
-    FinRspn(Max2MBBinary),
-    FrdDspstnInitn(Max2MBBinary),
-    FrdDspstnRspn(Max2MBBinary),
-    FrdRptgInitn(Max2MBBinary),
-    FrdRptgRspn(Max2MBBinary),
-    NqryInitn(Max2MBBinary),
-    NqryRspn(Max2MBBinary),
-    KeyXchgInitn(Max2MBBinary),
-    KeyXchgRspn(Max2MBBinary),
-    NtwkMgmtInitn(Max2MBBinary),
-    NtwkMgmtRspn(Max2MBBinary),
-    RcncltnInitn(Max2MBBinary),
-    RcncltnRspn(Max2MBBinary),
-    RtrvlInitn(Max2MBBinary),
-    RtrvlRspn(Max2MBBinary),
-    RtrvlFlfmtInitn(Max2MBBinary),
-    RtrvlFlfmtRspn(Max2MBBinary),
-    RvslInitn(Max2MBBinary),
-    RvslRspn(Max2MBBinary),
-    SttlmRptgInitn(Max2MBBinary),
-    SttlmRptgRspn(Max2MBBinary),
-    VrfctnInitn(Max2MBBinary),
-    VrfctnRspn(Max2MBBinary),
-    __Unknown__(String),
-}
-
-impl Default for RecordMessage1ChoiceChoice {
-    fn default() -> RecordMessage1ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for RecordMessage1ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:caad.004.001.01")]
 pub struct RecordMessage1Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub record_message_1_choice_choice: RecordMessage1ChoiceChoice,
+    #[yaserde(rename = "AdddmInitn")]
+    #[cfg_attr(feature = "serde", serde(rename = "AdddmInitn"))]
+    pub adddm_initn: Option<Max2MBBinary>,
+    #[yaserde(rename = "AdddmRspn")]
+    #[cfg_attr(feature = "serde", serde(rename = "AdddmRspn"))]
+    pub adddm_rspn: Option<Max2MBBinary>,
+    #[yaserde(rename = "Amdmnt")]
+    #[cfg_attr(feature = "serde", serde(rename = "Amdmnt"))]
+    pub amdmnt: Option<Max2MBBinary>,
+    #[yaserde(rename = "AuthstnInitn")]
+    #[cfg_attr(feature = "serde", serde(rename = "AuthstnInitn"))]
+    pub authstn_initn: Option<Max2MBBinary>,
+    #[yaserde(rename = "AuthstnRspn")]
+    #[cfg_attr(feature = "serde", serde(rename = "AuthstnRspn"))]
+    pub authstn_rspn: Option<Max2MBBinary>,
+    #[yaserde(rename = "CardMgmtInitn")]
+    #[cfg_attr(feature = "serde", serde(rename = "CardMgmtInitn"))]
+    pub card_mgmt_initn: Option<Max2MBBinary>,
+    #[yaserde(rename = "CardMgmtRspn")]
+    #[cfg_attr(feature = "serde", serde(rename = "CardMgmtRspn"))]
+    pub card_mgmt_rspn: Option<Max2MBBinary>,
+    #[yaserde(rename = "ChrgBckInitn")]
+    #[cfg_attr(feature = "serde", serde(rename = "ChrgBckInitn"))]
+    pub chrg_bck_initn: Option<Max2MBBinary>,
+    #[yaserde(rename = "ChrgBckRspn")]
+    #[cfg_attr(feature = "serde", serde(rename = "ChrgBckRspn"))]
+    pub chrg_bck_rspn: Option<Max2MBBinary>,
+    #[yaserde(rename = "Err")]
+    #[cfg_attr(feature = "serde", serde(rename = "Err"))]
+    pub err: Option<Max2MBBinary>,
+    #[yaserde(rename = "FeeColltnInitn")]
+    #[cfg_attr(feature = "serde", serde(rename = "FeeColltnInitn"))]
+    pub fee_colltn_initn: Option<Max2MBBinary>,
+    #[yaserde(rename = "FeeColltnRspn")]
+    #[cfg_attr(feature = "serde", serde(rename = "FeeColltnRspn"))]
+    pub fee_colltn_rspn: Option<Max2MBBinary>,
+    #[yaserde(rename = "FileActnInitn")]
+    #[cfg_attr(feature = "serde", serde(rename = "FileActnInitn"))]
+    pub file_actn_initn: Option<Max2MBBinary>,
+    #[yaserde(rename = "FileActnRspn")]
+    #[cfg_attr(feature = "serde", serde(rename = "FileActnRspn"))]
+    pub file_actn_rspn: Option<Max2MBBinary>,
+    #[yaserde(rename = "FinInitn")]
+    #[cfg_attr(feature = "serde", serde(rename = "FinInitn"))]
+    pub fin_initn: Option<Max2MBBinary>,
+    #[yaserde(rename = "FinRspn")]
+    #[cfg_attr(feature = "serde", serde(rename = "FinRspn"))]
+    pub fin_rspn: Option<Max2MBBinary>,
+    #[yaserde(rename = "FrdDspstnInitn")]
+    #[cfg_attr(feature = "serde", serde(rename = "FrdDspstnInitn"))]
+    pub frd_dspstn_initn: Option<Max2MBBinary>,
+    #[yaserde(rename = "FrdDspstnRspn")]
+    #[cfg_attr(feature = "serde", serde(rename = "FrdDspstnRspn"))]
+    pub frd_dspstn_rspn: Option<Max2MBBinary>,
+    #[yaserde(rename = "FrdRptgInitn")]
+    #[cfg_attr(feature = "serde", serde(rename = "FrdRptgInitn"))]
+    pub frd_rptg_initn: Option<Max2MBBinary>,
+    #[yaserde(rename = "FrdRptgRspn")]
+    #[cfg_attr(feature = "serde", serde(rename = "FrdRptgRspn"))]
+    pub frd_rptg_rspn: Option<Max2MBBinary>,
+    #[yaserde(rename = "NqryInitn")]
+    #[cfg_attr(feature = "serde", serde(rename = "NqryInitn"))]
+    pub nqry_initn: Option<Max2MBBinary>,
+    #[yaserde(rename = "NqryRspn")]
+    #[cfg_attr(feature = "serde", serde(rename = "NqryRspn"))]
+    pub nqry_rspn: Option<Max2MBBinary>,
+    #[yaserde(rename = "KeyXchgInitn")]
+    #[cfg_attr(feature = "serde", serde(rename = "KeyXchgInitn"))]
+    pub key_xchg_initn: Option<Max2MBBinary>,
+    #[yaserde(rename = "KeyXchgRspn")]
+    #[cfg_attr(feature = "serde", serde(rename = "KeyXchgRspn"))]
+    pub key_xchg_rspn: Option<Max2MBBinary>,
+    #[yaserde(rename = "NtwkMgmtInitn")]
+    #[cfg_attr(feature = "serde", serde(rename = "NtwkMgmtInitn"))]
+    pub ntwk_mgmt_initn: Option<Max2MBBinary>,
+    #[yaserde(rename = "NtwkMgmtRspn")]
+    #[cfg_attr(feature = "serde", serde(rename = "NtwkMgmtRspn"))]
+    pub ntwk_mgmt_rspn: Option<Max2MBBinary>,
+    #[yaserde(rename = "RcncltnInitn")]
+    #[cfg_attr(feature = "serde", serde(rename = "RcncltnInitn"))]
+    pub rcncltn_initn: Option<Max2MBBinary>,
+    #[yaserde(rename = "RcncltnRspn")]
+    #[cfg_attr(feature = "serde", serde(rename = "RcncltnRspn"))]
+    pub rcncltn_rspn: Option<Max2MBBinary>,
+    #[yaserde(rename = "RtrvlInitn")]
+    #[cfg_attr(feature = "serde", serde(rename = "RtrvlInitn"))]
+    pub rtrvl_initn: Option<Max2MBBinary>,
+    #[yaserde(rename = "RtrvlRspn")]
+    #[cfg_attr(feature = "serde", serde(rename = "RtrvlRspn"))]
+    pub rtrvl_rspn: Option<Max2MBBinary>,
+    #[yaserde(rename = "RtrvlFlfmtInitn")]
+    #[cfg_attr(feature = "serde", serde(rename = "RtrvlFlfmtInitn"))]
+    pub rtrvl_flfmt_initn: Option<Max2MBBinary>,
+    #[yaserde(rename = "RtrvlFlfmtRspn")]
+    #[cfg_attr(feature = "serde", serde(rename = "RtrvlFlfmtRspn"))]
+    pub rtrvl_flfmt_rspn: Option<Max2MBBinary>,
+    #[yaserde(rename = "RvslInitn")]
+    #[cfg_attr(feature = "serde", serde(rename = "RvslInitn"))]
+    pub rvsl_initn: Option<Max2MBBinary>,
+    #[yaserde(rename = "RvslRspn")]
+    #[cfg_attr(feature = "serde", serde(rename = "RvslRspn"))]
+    pub rvsl_rspn: Option<Max2MBBinary>,
+    #[yaserde(rename = "SttlmRptgInitn")]
+    #[cfg_attr(feature = "serde", serde(rename = "SttlmRptgInitn"))]
+    pub sttlm_rptg_initn: Option<Max2MBBinary>,
+    #[yaserde(rename = "SttlmRptgRspn")]
+    #[cfg_attr(feature = "serde", serde(rename = "SttlmRptgRspn"))]
+    pub sttlm_rptg_rspn: Option<Max2MBBinary>,
+    #[yaserde(rename = "VrfctnInitn")]
+    #[cfg_attr(feature = "serde", serde(rename = "VrfctnInitn"))]
+    pub vrfctn_initn: Option<Max2MBBinary>,
+    #[yaserde(rename = "VrfctnRspn")]
+    #[cfg_attr(feature = "serde", serde(rename = "VrfctnRspn"))]
+    pub vrfctn_rspn: Option<Max2MBBinary>,
 }
 
 impl Validate for RecordMessage1Choice {}

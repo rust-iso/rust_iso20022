@@ -42,33 +42,16 @@ impl Default for AddressType2Code {
 }
 
 impl Validate for AddressType2Code {}
-
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:reda.041.001.01")]
-
-pub enum AddressType3ChoiceChoice {
-    Cd(AddressType2Code),
-    Prtry(GenericIdentification30),
-    __Unknown__(String),
-}
-
-impl Default for AddressType3ChoiceChoice {
-    fn default() -> AddressType3ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for AddressType3ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:reda.041.001.01")]
 pub struct AddressType3Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub address_type_3_choice_choice: AddressType3ChoiceChoice,
+    #[yaserde(rename = "Cd")]
+    #[cfg_attr(feature = "serde", serde(rename = "Cd"))]
+    pub cd: Option<AddressType2Code>,
+    #[yaserde(rename = "Prtry")]
+    #[cfg_attr(feature = "serde", serde(rename = "Prtry"))]
+    pub prtry: Option<GenericIdentification30>,
 }
 
 impl Validate for AddressType3Choice {}
@@ -89,29 +72,15 @@ crate::simple_type!(Bicfidec2014Identifier);
 
 impl Validate for Bicfidec2014Identifier {}
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:reda.041.001.01")]
-
-pub enum CodeOrProprietary1ChoiceChoice {
-    Cd(Max4Text),
-    Prtry(GenericIdentification13),
-    __Unknown__(String),
-}
-
-impl Default for CodeOrProprietary1ChoiceChoice {
-    fn default() -> CodeOrProprietary1ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for CodeOrProprietary1ChoiceChoice {}
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:reda.041.001.01")]
 pub struct CodeOrProprietary1Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub code_or_proprietary_1_choice_choice: CodeOrProprietary1ChoiceChoice,
+    #[yaserde(rename = "Cd")]
+    #[cfg_attr(feature = "serde", serde(rename = "Cd"))]
+    pub cd: Option<Max4Text>,
+    #[yaserde(rename = "Prtry")]
+    #[cfg_attr(feature = "serde", serde(rename = "Prtry"))]
+    pub prtry: Option<GenericIdentification13>,
 }
 
 impl Validate for CodeOrProprietary1Choice {}
@@ -620,33 +589,19 @@ pub struct PartyActivityAdviceV01 {
 }
 
 impl Validate for PartyActivityAdviceV01 {}
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:reda.041.001.01")]
-
-pub enum PartyIdentification120ChoiceChoice {
-    AnyBIC(AnyBICDec2014Identifier),
-    PrtryId(GenericIdentification36),
-    NmAndAdr(NameAndAddress5),
-    __Unknown__(String),
-}
-
-impl Default for PartyIdentification120ChoiceChoice {
-    fn default() -> PartyIdentification120ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for PartyIdentification120ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:reda.041.001.01")]
 pub struct PartyIdentification120Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub party_identification_120_choice_choice: PartyIdentification120ChoiceChoice,
+    #[yaserde(rename = "AnyBIC")]
+    #[cfg_attr(feature = "serde", serde(rename = "AnyBIC"))]
+    pub any_b_i_c: Option<AnyBICDec2014Identifier>,
+    #[yaserde(rename = "PrtryId")]
+    #[cfg_attr(feature = "serde", serde(rename = "PrtryId"))]
+    pub prtry_id: Option<GenericIdentification36>,
+    #[yaserde(rename = "NmAndAdr")]
+    #[cfg_attr(feature = "serde", serde(rename = "NmAndAdr"))]
+    pub nm_and_adr: Option<NameAndAddress5>,
 }
 
 impl Validate for PartyIdentification120Choice {}
@@ -984,65 +939,29 @@ pub struct SystemPartyIdentification8 {
 }
 
 impl Validate for SystemPartyIdentification8 {}
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:reda.041.001.01")]
-
-pub enum SystemPartyType1ChoiceChoice {
-    Cd(ExternalSystemPartyType1Code),
-    Prtry(Max35Text),
-    __Unknown__(String),
-}
-
-impl Default for SystemPartyType1ChoiceChoice {
-    fn default() -> SystemPartyType1ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for SystemPartyType1ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:reda.041.001.01")]
 pub struct SystemPartyType1Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub system_party_type_1_choice_choice: SystemPartyType1ChoiceChoice,
+    #[yaserde(rename = "Cd")]
+    #[cfg_attr(feature = "serde", serde(rename = "Cd"))]
+    pub cd: Option<ExternalSystemPartyType1Code>,
+    #[yaserde(rename = "Prtry")]
+    #[cfg_attr(feature = "serde", serde(rename = "Prtry"))]
+    pub prtry: Option<Max35Text>,
 }
 
 impl Validate for SystemPartyType1Choice {}
-
-
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:reda.041.001.01")]
-
-pub enum TechnicalIdentification2ChoiceChoice {
-    #[yaserde(rename = "BICFI")]
-    #[cfg_attr(feature = "serde", serde(rename = "BICFI"))]
-    Bicfi(Bicfidec2014Identifier),
-    TechAdr(Max256Text),
-    __Unknown__(String),
-}
-
-impl Default for TechnicalIdentification2ChoiceChoice {
-    fn default() -> TechnicalIdentification2ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for TechnicalIdentification2ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:reda.041.001.01")]
 pub struct TechnicalIdentification2Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub technical_identification_2_choice_choice: TechnicalIdentification2ChoiceChoice,
+    #[yaserde(rename = "BICFI")]
+    #[cfg_attr(feature = "serde", serde(rename = "BICFI"))]
+    pub bicfi: Option<Bicfidec2014Identifier>,
+    #[yaserde(rename = "TechAdr")]
+    #[cfg_attr(feature = "serde", serde(rename = "TechAdr"))]
+    pub tech_adr: Option<Max256Text>,
 }
 
 impl Validate for TechnicalIdentification2Choice {}
@@ -1144,42 +1063,46 @@ pub struct UpdateLogPartyName1 {
 }
 
 impl Validate for UpdateLogPartyName1 {}
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:reda.041.001.01")]
-
-pub enum UpdateLogPartyRecord1ChoiceChoice {
-    Adr(UpdateLogAddress1),
-    CtctDtls(UpdateLogContact1),
-    OpngDt(UpdateLogDate1),
-    ClsgDt(UpdateLogDate1),
-    Tp(UpdateLogSystemPartyType1),
-    TechAdr(UpdateLogTechnicalAddress1),
-    MktSpcfcAttr(UpdateLogMarketSpecificAttribute1),
-    Nm(UpdateLogPartyName1),
-    ResTp(UpdateLogResidenceType1),
-    LckSts(UpdateLogPartyLockStatus1),
-    Rstrctn(UpdateLogRestriction1),
-    Othr(Vec<UpdateLogProprietary1>),
-    __Unknown__(String),
-}
-
-impl Default for UpdateLogPartyRecord1ChoiceChoice {
-    fn default() -> UpdateLogPartyRecord1ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for UpdateLogPartyRecord1ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:reda.041.001.01")]
 pub struct UpdateLogPartyRecord1Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub update_log_party_record_1_choice_choice: UpdateLogPartyRecord1ChoiceChoice,
+    #[yaserde(rename = "Adr")]
+    #[cfg_attr(feature = "serde", serde(rename = "Adr"))]
+    pub adr: Option<UpdateLogAddress1>,
+    #[yaserde(rename = "CtctDtls")]
+    #[cfg_attr(feature = "serde", serde(rename = "CtctDtls"))]
+    pub ctct_dtls: Option<UpdateLogContact1>,
+    #[yaserde(rename = "OpngDt")]
+    #[cfg_attr(feature = "serde", serde(rename = "OpngDt"))]
+    pub opng_dt: Option<UpdateLogDate1>,
+    #[yaserde(rename = "ClsgDt")]
+    #[cfg_attr(feature = "serde", serde(rename = "ClsgDt"))]
+    pub clsg_dt: Option<UpdateLogDate1>,
+    #[yaserde(rename = "Tp")]
+    #[cfg_attr(feature = "serde", serde(rename = "Tp"))]
+    pub tp: Option<UpdateLogSystemPartyType1>,
+    #[yaserde(rename = "TechAdr")]
+    #[cfg_attr(feature = "serde", serde(rename = "TechAdr"))]
+    pub tech_adr: Option<UpdateLogTechnicalAddress1>,
+    #[yaserde(rename = "MktSpcfcAttr")]
+    #[cfg_attr(feature = "serde", serde(rename = "MktSpcfcAttr"))]
+    pub mkt_spcfc_attr: Option<UpdateLogMarketSpecificAttribute1>,
+    #[yaserde(rename = "Nm")]
+    #[cfg_attr(feature = "serde", serde(rename = "Nm"))]
+    pub nm: Option<UpdateLogPartyName1>,
+    #[yaserde(rename = "ResTp")]
+    #[cfg_attr(feature = "serde", serde(rename = "ResTp"))]
+    pub res_tp: Option<UpdateLogResidenceType1>,
+    #[yaserde(rename = "LckSts")]
+    #[cfg_attr(feature = "serde", serde(rename = "LckSts"))]
+    pub lck_sts: Option<UpdateLogPartyLockStatus1>,
+    #[yaserde(rename = "Rstrctn")]
+    #[cfg_attr(feature = "serde", serde(rename = "Rstrctn"))]
+    pub rstrctn: Option<UpdateLogRestriction1>,
+    #[yaserde(rename = "Othr")]
+    #[cfg_attr(feature = "serde", serde(rename = "Othr"))]
+    pub othr: Vec<UpdateLogProprietary1>,
 }
 
 impl Validate for UpdateLogPartyRecord1Choice {}

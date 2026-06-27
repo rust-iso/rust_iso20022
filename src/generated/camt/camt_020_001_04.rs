@@ -44,42 +44,22 @@ pub struct BusinessInformationQueryDefinition3 {
 }
 
 impl Validate for BusinessInformationQueryDefinition3 {}
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:camt.020.001.04")]
-
-pub enum CharacterSearch1ChoiceChoice {
-    #[yaserde(rename = "EQ")]
-    #[cfg_attr(feature = "serde", serde(rename = "EQ"))]
-    Eq(Max35Text),
-    #[yaserde(rename = "NEQ")]
-    #[cfg_attr(feature = "serde", serde(rename = "NEQ"))]
-    Neq(Max35Text),
-    #[yaserde(rename = "CT")]
-    #[cfg_attr(feature = "serde", serde(rename = "CT"))]
-    Ct(Max35Text),
-    #[yaserde(rename = "NCT")]
-    #[cfg_attr(feature = "serde", serde(rename = "NCT"))]
-    Nct(Max35Text),
-    __Unknown__(String),
-}
-
-impl Default for CharacterSearch1ChoiceChoice {
-    fn default() -> CharacterSearch1ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for CharacterSearch1ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:camt.020.001.04")]
 pub struct CharacterSearch1Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub character_search_1_choice_choice: CharacterSearch1ChoiceChoice,
+    #[yaserde(rename = "EQ")]
+    #[cfg_attr(feature = "serde", serde(rename = "EQ"))]
+    pub eq: Option<Max35Text>,
+    #[yaserde(rename = "NEQ")]
+    #[cfg_attr(feature = "serde", serde(rename = "NEQ"))]
+    pub neq: Option<Max35Text>,
+    #[yaserde(rename = "CT")]
+    #[cfg_attr(feature = "serde", serde(rename = "CT"))]
+    pub ct: Option<Max35Text>,
+    #[yaserde(rename = "NCT")]
+    #[cfg_attr(feature = "serde", serde(rename = "NCT"))]
+    pub nct: Option<Max35Text>,
 }
 
 impl Validate for CharacterSearch1Choice {}
@@ -97,32 +77,16 @@ pub struct Document {
 }
 
 impl Validate for Document {}
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:camt.020.001.04")]
-
-pub enum GeneralBusinessInformationCriteriaDefinition1ChoiceChoice {
-    QryNm(Max35Text),
-    NewCrit(BusinessInformationCriteria1),
-    __Unknown__(String),
-}
-
-impl Default for GeneralBusinessInformationCriteriaDefinition1ChoiceChoice {
-    fn default() -> GeneralBusinessInformationCriteriaDefinition1ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for GeneralBusinessInformationCriteriaDefinition1ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:camt.020.001.04")]
 pub struct GeneralBusinessInformationCriteriaDefinition1Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub general_business_information_criteria_definition_1_choice_choice: GeneralBusinessInformationCriteriaDefinition1ChoiceChoice,
+    #[yaserde(rename = "QryNm")]
+    #[cfg_attr(feature = "serde", serde(rename = "QryNm"))]
+    pub qry_nm: Option<Max35Text>,
+    #[yaserde(rename = "NewCrit")]
+    #[cfg_attr(feature = "serde", serde(rename = "NewCrit"))]
+    pub new_crit: Option<BusinessInformationCriteria1>,
 }
 
 impl Validate for GeneralBusinessInformationCriteriaDefinition1Choice {}

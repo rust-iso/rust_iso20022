@@ -352,64 +352,32 @@ pub struct StressItem1 {
 }
 
 impl Validate for StressItem1 {}
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:auth.057.001.01")]
-
-pub enum StressItem1ChoiceChoice {
-    Pdct(StressedProduct1),
-    Strtgy(Strategy1),
-    RskFctr(RiskFactor1),
-    __Unknown__(String),
-}
-
-impl Default for StressItem1ChoiceChoice {
-    fn default() -> StressItem1ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for StressItem1ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:auth.057.001.01")]
 pub struct StressItem1Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub stress_item_1_choice_choice: StressItem1ChoiceChoice,
+    #[yaserde(rename = "Pdct")]
+    #[cfg_attr(feature = "serde", serde(rename = "Pdct"))]
+    pub pdct: Option<StressedProduct1>,
+    #[yaserde(rename = "Strtgy")]
+    #[cfg_attr(feature = "serde", serde(rename = "Strtgy"))]
+    pub strtgy: Option<Strategy1>,
+    #[yaserde(rename = "RskFctr")]
+    #[cfg_attr(feature = "serde", serde(rename = "RskFctr"))]
+    pub rsk_fctr: Option<RiskFactor1>,
 }
 
 impl Validate for StressItem1Choice {}
-
-
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:auth.057.001.01")]
-
-pub enum StressSize1ChoiceChoice {
-    Rltv(BaseOneRate),
-    Abs(Absolute1),
-    __Unknown__(String),
-}
-
-impl Default for StressSize1ChoiceChoice {
-    fn default() -> StressSize1ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for StressSize1ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:auth.057.001.01")]
 pub struct StressSize1Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub stress_size_1_choice_choice: StressSize1ChoiceChoice,
+    #[yaserde(rename = "Rltv")]
+    #[cfg_attr(feature = "serde", serde(rename = "Rltv"))]
+    pub rltv: Option<BaseOneRate>,
+    #[yaserde(rename = "Abs")]
+    #[cfg_attr(feature = "serde", serde(rename = "Abs"))]
+    pub abs: Option<Absolute1>,
 }
 
 impl Validate for StressSize1Choice {}

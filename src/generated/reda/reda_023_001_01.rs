@@ -206,33 +206,19 @@ pub struct SecuritiesAccountModification2 {
 }
 
 impl Validate for SecuritiesAccountModification2 {}
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:reda.023.001.01")]
-
-pub enum SecuritiesAccountModification2ChoiceChoice {
-    SysSctiesAcct(SystemSecuritiesAccount5),
-    SysRstrctn(SystemRestriction1),
-    MktSpcfcAttr(MarketSpecificAttribute1),
-    __Unknown__(String),
-}
-
-impl Default for SecuritiesAccountModification2ChoiceChoice {
-    fn default() -> SecuritiesAccountModification2ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for SecuritiesAccountModification2ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:reda.023.001.01")]
 pub struct SecuritiesAccountModification2Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub securities_account_modification_2_choice_choice: SecuritiesAccountModification2ChoiceChoice,
+    #[yaserde(rename = "SysSctiesAcct")]
+    #[cfg_attr(feature = "serde", serde(rename = "SysSctiesAcct"))]
+    pub sys_scties_acct: Option<SystemSecuritiesAccount5>,
+    #[yaserde(rename = "SysRstrctn")]
+    #[cfg_attr(feature = "serde", serde(rename = "SysRstrctn"))]
+    pub sys_rstrctn: Option<SystemRestriction1>,
+    #[yaserde(rename = "MktSpcfcAttr")]
+    #[cfg_attr(feature = "serde", serde(rename = "MktSpcfcAttr"))]
+    pub mkt_spcfc_attr: Option<MarketSpecificAttribute1>,
 }
 
 impl Validate for SecuritiesAccountModification2Choice {}

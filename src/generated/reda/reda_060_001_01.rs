@@ -58,29 +58,15 @@ crate::simple_type!(AnyBICIdentifier);
 
 impl Validate for AnyBICIdentifier {}
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:reda.060.001.01")]
-
-pub enum ClearingSystemIdentification2ChoiceChoice {
-    Cd(ExternalClearingSystemIdentification1Code),
-    Prtry(Max35Text),
-    __Unknown__(String),
-}
-
-impl Default for ClearingSystemIdentification2ChoiceChoice {
-    fn default() -> ClearingSystemIdentification2ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for ClearingSystemIdentification2ChoiceChoice {}
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:reda.060.001.01")]
 pub struct ClearingSystemIdentification2Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub clearing_system_identification_2_choice_choice: ClearingSystemIdentification2ChoiceChoice,
+    #[yaserde(rename = "Cd")]
+    #[cfg_attr(feature = "serde", serde(rename = "Cd"))]
+    pub cd: Option<ExternalClearingSystemIdentification1Code>,
+    #[yaserde(rename = "Prtry")]
+    #[cfg_attr(feature = "serde", serde(rename = "Prtry"))]
+    pub prtry: Option<Max35Text>,
 }
 
 impl Validate for ClearingSystemIdentification2Choice {}
@@ -352,32 +338,16 @@ pub struct NettingCutOffReferenceDataUpdateRequestV01 {
 }
 
 impl Validate for NettingCutOffReferenceDataUpdateRequestV01 {}
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:reda.060.001.01")]
-
-pub enum NettingIdentification1ChoiceChoice {
-    TradPty(PartyIdentification73Choice),
-    NetgGrpId(Max35Text),
-    __Unknown__(String),
-}
-
-impl Default for NettingIdentification1ChoiceChoice {
-    fn default() -> NettingIdentification1ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for NettingIdentification1ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:reda.060.001.01")]
 pub struct NettingIdentification1Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub netting_identification_1_choice_choice: NettingIdentification1ChoiceChoice,
+    #[yaserde(rename = "TradPty")]
+    #[cfg_attr(feature = "serde", serde(rename = "TradPty"))]
+    pub trad_pty: Option<PartyIdentification73Choice>,
+    #[yaserde(rename = "NetgGrpId")]
+    #[cfg_attr(feature = "serde", serde(rename = "NetgGrpId"))]
+    pub netg_grp_id: Option<Max35Text>,
 }
 
 impl Validate for NettingIdentification1Choice {}
@@ -431,33 +401,19 @@ pub struct PartyIdentification59 {
 }
 
 impl Validate for PartyIdentification59 {}
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:reda.060.001.01")]
-
-pub enum PartyIdentification73ChoiceChoice {
-    NmAndAdr(NameAndAddress8),
-    AnyBIC(PartyIdentification44),
-    PtyId(PartyIdentification59),
-    __Unknown__(String),
-}
-
-impl Default for PartyIdentification73ChoiceChoice {
-    fn default() -> PartyIdentification73ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for PartyIdentification73ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:reda.060.001.01")]
 pub struct PartyIdentification73Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub party_identification_73_choice_choice: PartyIdentification73ChoiceChoice,
+    #[yaserde(rename = "NmAndAdr")]
+    #[cfg_attr(feature = "serde", serde(rename = "NmAndAdr"))]
+    pub nm_and_adr: Option<NameAndAddress8>,
+    #[yaserde(rename = "AnyBIC")]
+    #[cfg_attr(feature = "serde", serde(rename = "AnyBIC"))]
+    pub any_b_i_c: Option<PartyIdentification44>,
+    #[yaserde(rename = "PtyId")]
+    #[cfg_attr(feature = "serde", serde(rename = "PtyId"))]
+    pub pty_id: Option<PartyIdentification59>,
 }
 
 impl Validate for PartyIdentification73Choice {}

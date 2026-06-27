@@ -94,35 +94,19 @@ pub struct AtmcommandIdentification1 {
 }
 
 impl Validate for AtmcommandIdentification1 {}
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:catp.005.001.02")]
-
-pub enum AtmcommandParameters1ChoiceChoice {
-    #[yaserde(rename = "ATMReqrdGblSts")]
-    #[cfg_attr(feature = "serde", serde(rename = "ATMReqrdGblSts"))]
-    AtmreqrdGblSts(Atmstatus1Code),
-    XpctdMsgFctn(MessageFunction8Code),
-    ReqrdCfgtnParam(AtmconfigurationParameter1),
-    __Unknown__(String),
-}
-
-impl Default for AtmcommandParameters1ChoiceChoice {
-    fn default() -> AtmcommandParameters1ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for AtmcommandParameters1ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:catp.005.001.02")]
 pub struct AtmcommandParameters1Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub atm_command_parameters_1_choice_choice: AtmcommandParameters1ChoiceChoice,
+    #[yaserde(rename = "ATMReqrdGblSts")]
+    #[cfg_attr(feature = "serde", serde(rename = "ATMReqrdGblSts"))]
+    pub atmreqrd_gbl_sts: Option<Atmstatus1Code>,
+    #[yaserde(rename = "XpctdMsgFctn")]
+    #[cfg_attr(feature = "serde", serde(rename = "XpctdMsgFctn"))]
+    pub xpctd_msg_fctn: Option<MessageFunction8Code>,
+    #[yaserde(rename = "ReqrdCfgtnParam")]
+    #[cfg_attr(feature = "serde", serde(rename = "ReqrdCfgtnParam"))]
+    pub reqrd_cfgtn_param: Option<AtmconfigurationParameter1>,
 }
 
 impl Validate for AtmcommandParameters1Choice {}

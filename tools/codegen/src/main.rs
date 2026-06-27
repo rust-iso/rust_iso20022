@@ -108,7 +108,224 @@ fn generate_one(xsd_text: &str) -> Result<String, String> {
     let body = add_simple_content_values(&body, &simple_content_types(xsd_text));
     let body = disambiguate_inline_choices(&body);
     let body = add_json_support(&body);
-    Ok(replace_tuple_io(&body))
+    let body = replace_tuple_io(&body);
+    Ok(choices_to_fields(&body))
+}
+
+/// Rewrite `<xsd:choice>` enums into a struct of `Option<…>` fields (the
+/// JAXB/prowide shape). `xsd-parser` models a choice as a `*ChoiceChoice` enum
+/// held by a flattened field on a `*Choice` wrapper struct; yaserde then drops a
+/// variant's struct attributes on write (so amount `Ccy` is lost) and emits an
+/// `<__Unknown__>` placeholder when no variant is set. Representing each variant
+/// as an optional element field fixes both: the amount struct serializes as a
+/// normal element (attributes included) and an unset choice is simply `None`.
+fn choices_to_fields(body: &str) -> String {
+    let lines: Vec<&str> = body.lines().collect();
+    // 1. Collect each choice enum: name -> Vec<(element_name, field_name, ty, is_vec)>.
+    // Only the top-level `*ChoiceChoice` enums whose variants are simple
+    // `Variant(Type)` (optionally preceded by yaserde/serde rename attrs) and a
+    // trailing `__Unknown__(String)` are handled; anything unexpected is skipped.
+    let mut enums: std::collections::HashMap<String, Vec<ChoiceVariant>> = Default::default();
+    let mut i = 0;
+    while i < lines.len() {
+        // Only top-level (column-0) choice enums; inline `<choice>`s live in
+        // indented submodules and are left as enums (the rarer, harder case).
+        if let Some(rest) = lines[i].strip_prefix("pub enum ") {
+            let name = rest.trim_end_matches('{').trim().to_string();
+            if name.ends_with("Choice") {
+                if let Some((variants, end)) = parse_choice_enum(&lines, i) {
+                    enums.insert(name, variants);
+                    i = end;
+                    continue;
+                }
+            }
+        }
+        i += 1;
+    }
+    if enums.is_empty() {
+        return body.to_string();
+    }
+
+    // 2. Emit, dropping enum blocks + their impls, and rewriting wrapper fields.
+    let mut out: Vec<String> = Vec::with_capacity(lines.len());
+    let mut i = 0;
+    while i < lines.len() {
+        let line = lines[i];
+        let t = line.trim_start();
+
+        // Drop the enum block and its `impl Default` / `impl Validate` blocks.
+        if let Some(rest) = line.strip_prefix("pub enum ") {
+            let name = rest.trim_end_matches('{').trim().to_string();
+            if enums.contains_key(&name) {
+                i = skip_block(&lines, i); // the enum
+                i = skip_following_impls(&lines, i, &name);
+                // also drop the preceding derive/attr lines we already emitted
+                while out
+                    .last()
+                    .map(|l| {
+                        let lt = l.trim_start();
+                        lt.starts_with("#[") || lt.is_empty()
+                    })
+                    .unwrap_or(false)
+                {
+                    out.pop();
+                }
+                continue;
+            }
+        }
+
+        // Rewrite a wrapper field `pub <snake>: [mod::]<Enum>,` into variant fields.
+        if t.starts_with("pub ") && t.ends_with(',') && t.contains(": ") {
+            let decl = &t[4..t.len() - 1];
+            if let Some((_fname, ty)) = decl.split_once(": ") {
+                // Top-level enum reference only (inline-choice fields use a path).
+                if let Some(variants) = (!ty.contains("::")).then(|| enums.get(ty)).flatten() {
+                    let indent: String =
+                        line.chars().take_while(|c| c.is_whitespace()).collect();
+                    // Drop the preceding `#[yaserde(flatten)]` / serde flatten lines.
+                    while out
+                        .last()
+                        .map(|l| l.trim_start().starts_with("#[") && l.contains("flatten"))
+                        .unwrap_or(false)
+                    {
+                        out.pop();
+                    }
+                    for v in variants {
+                        out.push(format!("{indent}#[yaserde(rename = {:?})]", v.element));
+                        out.push(format!(
+                            "{indent}#[cfg_attr(feature = \"serde\", serde(rename = {:?}))]",
+                            v.element
+                        ));
+                        let fty = if v.is_vec {
+                            v.ty.clone()
+                        } else {
+                            format!("Option<{}>", v.ty)
+                        };
+                        out.push(format!("{indent}pub {}: {fty},", v.field));
+                    }
+                    i += 1;
+                    continue;
+                }
+            }
+        }
+
+        out.push(line.to_string());
+        i += 1;
+    }
+    out.join("\n") + "\n"
+}
+
+struct ChoiceVariant {
+    element: String,
+    field: String,
+    ty: String,
+    is_vec: bool,
+}
+
+/// Parse a `pub enum …Choice { … }` starting at `start`. Returns the variants
+/// (excluding `__Unknown__`) and the index just past the closing `}`, or `None`
+/// if the enum is not the simple single-payload choice shape.
+fn parse_choice_enum(lines: &[&str], start: usize) -> Option<(Vec<ChoiceVariant>, usize)> {
+    let mut variants = Vec::new();
+    let mut pending_rename: Option<String> = None;
+    let mut i = start + 1;
+    while i < lines.len() {
+        let t = lines[i].trim();
+        if t == "}" {
+            return Some((variants, i + 1));
+        }
+        if t.is_empty() {
+            i += 1;
+            continue;
+        }
+        if let Some(r) = t.strip_prefix("#[yaserde(rename = \"") {
+            pending_rename = r.split('"').next().map(|s| s.to_string());
+            i += 1;
+            continue;
+        }
+        if t.starts_with("#[") {
+            i += 1;
+            continue;
+        }
+        if t.starts_with("__Unknown__") {
+            pending_rename = None;
+            i += 1;
+            continue;
+        }
+        // A variant: `Ident(Type),`
+        let v = t.trim_end_matches(',');
+        let (ident, payload) = v.split_once('(')?;
+        let payload = payload.strip_suffix(')')?;
+        // Only simple payloads (no nested generics other than a single Vec<…>).
+        let is_vec = payload.starts_with("Vec<");
+        let ty = payload.to_string();
+        if ty.contains(',') {
+            return None; // tuple variant — unsupported shape
+        }
+        let element = pending_rename.take().unwrap_or_else(|| ident.to_string());
+        variants.push(ChoiceVariant {
+            field: to_snake(ident),
+            element,
+            ty,
+            is_vec,
+        });
+        i += 1;
+    }
+    None
+}
+
+/// Skip a `{ … }` block starting at `start` (its line opens the block); returns
+/// the index just past the matching `}`.
+fn skip_block(lines: &[&str], start: usize) -> usize {
+    let mut depth = 0i32;
+    let mut i = start;
+    loop {
+        if i >= lines.len() {
+            return i;
+        }
+        depth += lines[i].matches('{').count() as i32 - lines[i].matches('}').count() as i32;
+        i += 1;
+        if depth <= 0 && i > start {
+            return i;
+        }
+    }
+}
+
+/// Skip blank lines and `impl Default for <name>` / `impl Validate for <name>`
+/// blocks immediately following a dropped enum.
+fn skip_following_impls(lines: &[&str], mut i: usize, name: &str) -> usize {
+    loop {
+        while i < lines.len() && lines[i].trim().is_empty() {
+            i += 1;
+        }
+        if i < lines.len() {
+            let t = lines[i].trim_start();
+            if t.starts_with(&format!("impl Default for {name} "))
+                || t.starts_with(&format!("impl Validate for {name} "))
+                || t.starts_with(&format!("impl Default for {name}{{"))
+            {
+                i = skip_block(lines, i);
+                continue;
+            }
+        }
+        return i;
+    }
+}
+
+/// PascalCase identifier to snake_case (`InstdAmt` -> `instd_amt`).
+fn to_snake(s: &str) -> String {
+    let mut out = String::new();
+    for (i, c) in s.char_indices() {
+        if c.is_ascii_uppercase() {
+            if i != 0 {
+                out.push('_');
+            }
+            out.push(c.to_ascii_lowercase());
+        } else {
+            out.push(c);
+        }
+    }
+    out
 }
 
 /// Replace the `UtilsTupleIo` / `UtilsDefaultSerde` derives (from the

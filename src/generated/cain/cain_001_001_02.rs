@@ -4684,32 +4684,16 @@ pub struct EncryptedData1 {
 }
 
 impl Validate for EncryptedData1 {}
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:cain.001.001.02")]
-
-pub enum EncryptedData1ChoiceChoice {
-    BinryData(Max100KBinary),
-    HexBinryVal(Max9999HexBinaryText),
-    __Unknown__(String),
-}
-
-impl Default for EncryptedData1ChoiceChoice {
-    fn default() -> EncryptedData1ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for EncryptedData1ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:cain.001.001.02")]
 pub struct EncryptedData1Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub encrypted_data_1_choice_choice: EncryptedData1ChoiceChoice,
+    #[yaserde(rename = "BinryData")]
+    #[cfg_attr(feature = "serde", serde(rename = "BinryData"))]
+    pub binry_data: Option<Max100KBinary>,
+    #[yaserde(rename = "HexBinryVal")]
+    #[cfg_attr(feature = "serde", serde(rename = "HexBinryVal"))]
+    pub hex_binry_val: Option<Max9999HexBinaryText>,
 }
 
 impl Validate for EncryptedData1Choice {}
@@ -10124,101 +10108,48 @@ impl Default for ReceiptType1Code {
 }
 
 impl Validate for ReceiptType1Code {}
-
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:cain.001.001.02")]
-
-pub enum Recipient5ChoiceChoice {
-    IssrAndSrlNb(IssuerAndSerialNumber1),
-    KeyIdr(Kekidentifier2),
-    __Unknown__(String),
-}
-
-impl Default for Recipient5ChoiceChoice {
-    fn default() -> Recipient5ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for Recipient5ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:cain.001.001.02")]
 pub struct Recipient5Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub recipient_5_choice_choice: Recipient5ChoiceChoice,
+    #[yaserde(rename = "IssrAndSrlNb")]
+    #[cfg_attr(feature = "serde", serde(rename = "IssrAndSrlNb"))]
+    pub issr_and_srl_nb: Option<IssuerAndSerialNumber1>,
+    #[yaserde(rename = "KeyIdr")]
+    #[cfg_attr(feature = "serde", serde(rename = "KeyIdr"))]
+    pub key_idr: Option<Kekidentifier2>,
 }
 
 impl Validate for Recipient5Choice {}
-
-
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:cain.001.001.02")]
-
-pub enum Recipient6ChoiceChoice {
-    KeyTrnsprt(KeyTransport5),
-    #[yaserde(rename = "KEK")]
-    #[cfg_attr(feature = "serde", serde(rename = "KEK"))]
-    Kek(Kek5),
-    KeyIdr(Kekidentifier2),
-    __Unknown__(String),
-}
-
-impl Default for Recipient6ChoiceChoice {
-    fn default() -> Recipient6ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for Recipient6ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:cain.001.001.02")]
 pub struct Recipient6Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub recipient_6_choice_choice: Recipient6ChoiceChoice,
+    #[yaserde(rename = "KeyTrnsprt")]
+    #[cfg_attr(feature = "serde", serde(rename = "KeyTrnsprt"))]
+    pub key_trnsprt: Option<KeyTransport5>,
+    #[yaserde(rename = "KEK")]
+    #[cfg_attr(feature = "serde", serde(rename = "KEK"))]
+    pub kek: Option<Kek5>,
+    #[yaserde(rename = "KeyIdr")]
+    #[cfg_attr(feature = "serde", serde(rename = "KeyIdr"))]
+    pub key_idr: Option<Kekidentifier2>,
 }
 
 impl Validate for Recipient6Choice {}
-
-
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:cain.001.001.02")]
-
-pub enum Recipient7ChoiceChoice {
-    KeyTrnsprt(KeyTransport6),
-    #[yaserde(rename = "KEK")]
-    #[cfg_attr(feature = "serde", serde(rename = "KEK"))]
-    Kek(Kek6),
-    KeyIdr(Kekidentifier6),
-    __Unknown__(String),
-}
-
-impl Default for Recipient7ChoiceChoice {
-    fn default() -> Recipient7ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for Recipient7ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:cain.001.001.02")]
 pub struct Recipient7Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub recipient_7_choice_choice: Recipient7ChoiceChoice,
+    #[yaserde(rename = "KeyTrnsprt")]
+    #[cfg_attr(feature = "serde", serde(rename = "KeyTrnsprt"))]
+    pub key_trnsprt: Option<KeyTransport6>,
+    #[yaserde(rename = "KEK")]
+    #[cfg_attr(feature = "serde", serde(rename = "KEK"))]
+    pub kek: Option<Kek6>,
+    #[yaserde(rename = "KeyIdr")]
+    #[cfg_attr(feature = "serde", serde(rename = "KeyIdr"))]
+    pub key_idr: Option<Kekidentifier6>,
 }
 
 impl Validate for Recipient7Choice {}
@@ -11788,32 +11719,16 @@ pub struct Traceability7 {
 }
 
 impl Validate for Traceability7 {}
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:cain.001.001.02")]
-
-pub enum Track2Data1ChoiceChoice {
-    TxtVal(Max37Text),
-    HexBinryVal(Max19HexBinaryText),
-    __Unknown__(String),
-}
-
-impl Default for Track2Data1ChoiceChoice {
-    fn default() -> Track2Data1ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for Track2Data1ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:cain.001.001.02")]
 pub struct Track2Data1Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub track_2_data_1_choice_choice: Track2Data1ChoiceChoice,
+    #[yaserde(rename = "TxtVal")]
+    #[cfg_attr(feature = "serde", serde(rename = "TxtVal"))]
+    pub txt_val: Option<Max37Text>,
+    #[yaserde(rename = "HexBinryVal")]
+    #[cfg_attr(feature = "serde", serde(rename = "HexBinryVal"))]
+    pub hex_binry_val: Option<Max19HexBinaryText>,
 }
 
 impl Validate for Track2Data1Choice {}
@@ -13522,36 +13437,22 @@ pub struct VerificationResult1 {
 }
 
 impl Validate for VerificationResult1 {}
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:cain.001.001.02")]
-
-pub enum VerificationValue1ChoiceChoice {
-    TxtVal(Max2048Text),
-    BinryVal(Max5000Binary),
-    HexBinryVal(Max9999HexBinaryText),
-    #[yaserde(rename = "PINData")]
-    #[cfg_attr(feature = "serde", serde(rename = "PINData"))]
-    Pindata(Pindata1),
-    __Unknown__(String),
-}
-
-impl Default for VerificationValue1ChoiceChoice {
-    fn default() -> VerificationValue1ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for VerificationValue1ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:cain.001.001.02")]
 pub struct VerificationValue1Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub verification_value_1_choice_choice: VerificationValue1ChoiceChoice,
+    #[yaserde(rename = "TxtVal")]
+    #[cfg_attr(feature = "serde", serde(rename = "TxtVal"))]
+    pub txt_val: Option<Max2048Text>,
+    #[yaserde(rename = "BinryVal")]
+    #[cfg_attr(feature = "serde", serde(rename = "BinryVal"))]
+    pub binry_val: Option<Max5000Binary>,
+    #[yaserde(rename = "HexBinryVal")]
+    #[cfg_attr(feature = "serde", serde(rename = "HexBinryVal"))]
+    pub hex_binry_val: Option<Max9999HexBinaryText>,
+    #[yaserde(rename = "PINData")]
+    #[cfg_attr(feature = "serde", serde(rename = "PINData"))]
+    pub pindata: Option<Pindata1>,
 }
 
 impl Validate for VerificationValue1Choice {}

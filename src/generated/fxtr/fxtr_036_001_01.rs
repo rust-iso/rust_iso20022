@@ -568,33 +568,16 @@ impl Default for OptionParty3Code {
 }
 
 impl Validate for OptionParty3Code {}
-
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:fxtr.036.001.01")]
-
-pub enum PartyIdentification19ChoiceChoice {
-    NmAndAdr(NameAndAddress8),
-    AnyBIC(PartyIdentification44),
-    __Unknown__(String),
-}
-
-impl Default for PartyIdentification19ChoiceChoice {
-    fn default() -> PartyIdentification19ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for PartyIdentification19ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:fxtr.036.001.01")]
 pub struct PartyIdentification19Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub party_identification_19_choice_choice: PartyIdentification19ChoiceChoice,
+    #[yaserde(rename = "NmAndAdr")]
+    #[cfg_attr(feature = "serde", serde(rename = "NmAndAdr"))]
+    pub nm_and_adr: Option<NameAndAddress8>,
+    #[yaserde(rename = "AnyBIC")]
+    #[cfg_attr(feature = "serde", serde(rename = "AnyBIC"))]
+    pub any_b_i_c: Option<PartyIdentification44>,
 }
 
 impl Validate for PartyIdentification19Choice {}

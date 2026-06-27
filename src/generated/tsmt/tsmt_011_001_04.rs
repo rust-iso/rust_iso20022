@@ -628,32 +628,16 @@ pub struct ProductCategory1 {
 }
 
 impl Validate for ProductCategory1 {}
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:tsmt.011.001.04")]
-
-pub enum ProductCategory1ChoiceChoice {
-    StrdPdctCtgy(ProductCategory1),
-    OthrPdctCtgy(GenericIdentification4),
-    __Unknown__(String),
-}
-
-impl Default for ProductCategory1ChoiceChoice {
-    fn default() -> ProductCategory1ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for ProductCategory1ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:tsmt.011.001.04")]
 pub struct ProductCategory1Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub product_category_1_choice_choice: ProductCategory1ChoiceChoice,
+    #[yaserde(rename = "StrdPdctCtgy")]
+    #[cfg_attr(feature = "serde", serde(rename = "StrdPdctCtgy"))]
+    pub strd_pdct_ctgy: Option<ProductCategory1>,
+    #[yaserde(rename = "OthrPdctCtgy")]
+    #[cfg_attr(feature = "serde", serde(rename = "OthrPdctCtgy"))]
+    pub othr_pdct_ctgy: Option<GenericIdentification4>,
 }
 
 impl Validate for ProductCategory1Choice {}
@@ -707,32 +691,16 @@ pub struct ProductCharacteristics1 {
 }
 
 impl Validate for ProductCharacteristics1 {}
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:tsmt.011.001.04")]
-
-pub enum ProductCharacteristics1ChoiceChoice {
-    StrdPdctChrtcs(ProductCharacteristics1),
-    OthrPdctChrtcs(GenericIdentification4),
-    __Unknown__(String),
-}
-
-impl Default for ProductCharacteristics1ChoiceChoice {
-    fn default() -> ProductCharacteristics1ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for ProductCharacteristics1ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:tsmt.011.001.04")]
 pub struct ProductCharacteristics1Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub product_characteristics_1_choice_choice: ProductCharacteristics1ChoiceChoice,
+    #[yaserde(rename = "StrdPdctChrtcs")]
+    #[cfg_attr(feature = "serde", serde(rename = "StrdPdctChrtcs"))]
+    pub strd_pdct_chrtcs: Option<ProductCharacteristics1>,
+    #[yaserde(rename = "OthrPdctChrtcs")]
+    #[cfg_attr(feature = "serde", serde(rename = "OthrPdctChrtcs"))]
+    pub othr_pdct_chrtcs: Option<GenericIdentification4>,
 }
 
 impl Validate for ProductCharacteristics1Choice {}
@@ -813,32 +781,16 @@ pub struct ProductIdentifier2 {
 }
 
 impl Validate for ProductIdentifier2 {}
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:tsmt.011.001.04")]
-
-pub enum ProductIdentifier2ChoiceChoice {
-    StrdPdctIdr(ProductIdentifier2),
-    OthrPdctIdr(GenericIdentification4),
-    __Unknown__(String),
-}
-
-impl Default for ProductIdentifier2ChoiceChoice {
-    fn default() -> ProductIdentifier2ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for ProductIdentifier2ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:tsmt.011.001.04")]
 pub struct ProductIdentifier2Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub product_identifier_2_choice_choice: ProductIdentifier2ChoiceChoice,
+    #[yaserde(rename = "StrdPdctIdr")]
+    #[cfg_attr(feature = "serde", serde(rename = "StrdPdctIdr"))]
+    pub strd_pdct_idr: Option<ProductIdentifier2>,
+    #[yaserde(rename = "OthrPdctIdr")]
+    #[cfg_attr(feature = "serde", serde(rename = "OthrPdctIdr"))]
+    pub othr_pdct_idr: Option<GenericIdentification4>,
 }
 
 impl Validate for ProductIdentifier2Choice {}
@@ -973,32 +925,16 @@ pub struct TransactionStatus4 {
 }
 
 impl Validate for TransactionStatus4 {}
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:tsmt.011.001.04")]
-
-pub enum UnitOfMeasure3ChoiceChoice {
-    UnitOfMeasrCd(UnitOfMeasure4Code),
-    OthrUnitOfMeasr(Max35Text),
-    __Unknown__(String),
-}
-
-impl Default for UnitOfMeasure3ChoiceChoice {
-    fn default() -> UnitOfMeasure3ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for UnitOfMeasure3ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:tsmt.011.001.04")]
 pub struct UnitOfMeasure3Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub unit_of_measure_3_choice_choice: UnitOfMeasure3ChoiceChoice,
+    #[yaserde(rename = "UnitOfMeasrCd")]
+    #[cfg_attr(feature = "serde", serde(rename = "UnitOfMeasrCd"))]
+    pub unit_of_measr_cd: Option<UnitOfMeasure4Code>,
+    #[yaserde(rename = "OthrUnitOfMeasr")]
+    #[cfg_attr(feature = "serde", serde(rename = "OthrUnitOfMeasr"))]
+    pub othr_unit_of_measr: Option<Max35Text>,
 }
 
 impl Validate for UnitOfMeasure3Choice {}

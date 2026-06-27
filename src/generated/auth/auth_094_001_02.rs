@@ -145,29 +145,15 @@ crate::simple_type!(CountryCode);
 
 impl Validate for CountryCode {}
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:auth.094.001.02")]
-
-pub enum DateOrBlankQuery2ChoiceChoice {
-    Rg(DatePeriod1),
-    NotRptd(NotReported1Code),
-    __Unknown__(String),
-}
-
-impl Default for DateOrBlankQuery2ChoiceChoice {
-    fn default() -> DateOrBlankQuery2ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for DateOrBlankQuery2ChoiceChoice {}
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:auth.094.001.02")]
 pub struct DateOrBlankQuery2Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub date_or_blank_query_2_choice_choice: DateOrBlankQuery2ChoiceChoice,
+    #[yaserde(rename = "Rg")]
+    #[cfg_attr(feature = "serde", serde(rename = "Rg"))]
+    pub rg: Option<DatePeriod1>,
+    #[yaserde(rename = "NotRptd")]
+    #[cfg_attr(feature = "serde", serde(rename = "NotRptd"))]
+    pub not_rptd: Option<NotReported1Code>,
 }
 
 impl Validate for DateOrBlankQuery2Choice {}
@@ -552,35 +538,22 @@ impl Default for Operation3Code {
 }
 
 impl Validate for Operation3Code {}
-
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:auth.094.001.02")]
-
-pub enum PartyIdentification121ChoiceChoice {
-    AnyBIC(AnyBICDec2014Identifier),
-    LglNttyIdr(Leiidentifier),
-    NmAndAdr(NameAndAddress5),
-    PrtryId(GenericIdentification1),
-    __Unknown__(String),
-}
-
-impl Default for PartyIdentification121ChoiceChoice {
-    fn default() -> PartyIdentification121ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for PartyIdentification121ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:auth.094.001.02")]
 pub struct PartyIdentification121Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub party_identification_121_choice_choice: PartyIdentification121ChoiceChoice,
+    #[yaserde(rename = "AnyBIC")]
+    #[cfg_attr(feature = "serde", serde(rename = "AnyBIC"))]
+    pub any_b_i_c: Option<AnyBICDec2014Identifier>,
+    #[yaserde(rename = "LglNttyIdr")]
+    #[cfg_attr(feature = "serde", serde(rename = "LglNttyIdr"))]
+    pub lgl_ntty_idr: Option<Leiidentifier>,
+    #[yaserde(rename = "NmAndAdr")]
+    #[cfg_attr(feature = "serde", serde(rename = "NmAndAdr"))]
+    pub nm_and_adr: Option<NameAndAddress5>,
+    #[yaserde(rename = "PrtryId")]
+    #[cfg_attr(feature = "serde", serde(rename = "PrtryId"))]
+    pub prtry_id: Option<GenericIdentification1>,
 }
 
 impl Validate for PartyIdentification121Choice {}
@@ -675,34 +648,16 @@ pub struct SecuritiesFinancingReportingTransactionQueryV02 {
 }
 
 impl Validate for SecuritiesFinancingReportingTransactionQueryV02 {}
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:auth.094.001.02")]
-
-pub enum SecuritiesTradeVenueCriteria1ChoiceChoice {
-    #[yaserde(rename = "MIC")]
-    #[cfg_attr(feature = "serde", serde(rename = "MIC"))]
-    Mic(Vec<Micidentifier>),
-    AnyMIC(AnyMIC1Code),
-    __Unknown__(String),
-}
-
-impl Default for SecuritiesTradeVenueCriteria1ChoiceChoice {
-    fn default() -> SecuritiesTradeVenueCriteria1ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for SecuritiesTradeVenueCriteria1ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:auth.094.001.02")]
 pub struct SecuritiesTradeVenueCriteria1Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub securities_trade_venue_criteria_1_choice_choice: SecuritiesTradeVenueCriteria1ChoiceChoice,
+    #[yaserde(rename = "MIC")]
+    #[cfg_attr(feature = "serde", serde(rename = "MIC"))]
+    pub mic: Vec<Micidentifier>,
+    #[yaserde(rename = "AnyMIC")]
+    #[cfg_attr(feature = "serde", serde(rename = "AnyMIC"))]
+    pub any_m_i_c: Option<AnyMIC1Code>,
 }
 
 impl Validate for SecuritiesTradeVenueCriteria1Choice {}
@@ -956,32 +911,16 @@ pub struct TradeRecurrentQuery5 {
 }
 
 impl Validate for TradeRecurrentQuery5 {}
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:auth.094.001.02")]
-
-pub enum TradeReportQuery13ChoiceChoice {
-    AdHocQry(TradeQueryCriteria10),
-    RcrntQry(TradeRecurrentQuery5),
-    __Unknown__(String),
-}
-
-impl Default for TradeReportQuery13ChoiceChoice {
-    fn default() -> TradeReportQuery13ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for TradeReportQuery13ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:auth.094.001.02")]
 pub struct TradeReportQuery13Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub trade_report_query_13_choice_choice: TradeReportQuery13ChoiceChoice,
+    #[yaserde(rename = "AdHocQry")]
+    #[cfg_attr(feature = "serde", serde(rename = "AdHocQry"))]
+    pub ad_hoc_qry: Option<TradeQueryCriteria10>,
+    #[yaserde(rename = "RcrntQry")]
+    #[cfg_attr(feature = "serde", serde(rename = "RcrntQry"))]
+    pub rcrnt_qry: Option<TradeRecurrentQuery5>,
 }
 
 impl Validate for TradeReportQuery13Choice {}

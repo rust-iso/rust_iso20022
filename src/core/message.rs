@@ -5,13 +5,14 @@
 //! underlying string errors onto [`Error`].
 //!
 //! # Examples
-//! ```ignore
-//! // Requires the `model` feature.
+//! ```no_run
+//! # #[cfg(feature = "model-pacs")] {
 //! use rust_iso20022::generated::pacs::pacs_008_001_08::Document;
 //!
 //! let xml = std::fs::read_to_string("message.xml").unwrap();
 //! let doc: Document = rust_iso20022::from_xml(&xml).unwrap();
 //! let back = rust_iso20022::to_xml(&doc).unwrap();
+//! # }
 //! ```
 
 use crate::core::Error;

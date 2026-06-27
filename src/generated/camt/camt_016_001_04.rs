@@ -17,29 +17,15 @@ crate::simple_type!(ActiveOrHistoricCurrencyCode);
 
 impl Validate for ActiveOrHistoricCurrencyCode {}
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:camt.016.001.04")]
-
-pub enum CurrencyCriteriaDefinition1ChoiceChoice {
-    QryNm(Max35Text),
-    NewCrit(CurrencyExchangeCriteria2),
-    __Unknown__(String),
-}
-
-impl Default for CurrencyCriteriaDefinition1ChoiceChoice {
-    fn default() -> CurrencyCriteriaDefinition1ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for CurrencyCriteriaDefinition1ChoiceChoice {}
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:camt.016.001.04")]
 pub struct CurrencyCriteriaDefinition1Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub currency_criteria_definition_1_choice_choice: CurrencyCriteriaDefinition1ChoiceChoice,
+    #[yaserde(rename = "QryNm")]
+    #[cfg_attr(feature = "serde", serde(rename = "QryNm"))]
+    pub qry_nm: Option<Max35Text>,
+    #[yaserde(rename = "NewCrit")]
+    #[cfg_attr(feature = "serde", serde(rename = "NewCrit"))]
+    pub new_crit: Option<CurrencyExchangeCriteria2>,
 }
 
 impl Validate for CurrencyCriteriaDefinition1Choice {}

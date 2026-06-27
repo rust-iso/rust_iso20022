@@ -169,32 +169,24 @@ crate::simple_type!(Isodate);
 
 impl Validate for Isodate {}
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:auth.061.001.01")]
-
-pub enum Investment1ChoiceChoice {
-    UscrdCshDpst(Deposit1),
-    CntrlBkDpst(Deposit1),
-    RpAgrmt(RepurchaseAgreement2),
-    OthrInvstmts(OtherInvestment1),
-    OutrghtInvstmt(SecurityIdentificationAndAmount1),
-    __Unknown__(String),
-}
-
-impl Default for Investment1ChoiceChoice {
-    fn default() -> Investment1ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for Investment1ChoiceChoice {}
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:auth.061.001.01")]
 pub struct Investment1Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub investment_1_choice_choice: Investment1ChoiceChoice,
+    #[yaserde(rename = "UscrdCshDpst")]
+    #[cfg_attr(feature = "serde", serde(rename = "UscrdCshDpst"))]
+    pub uscrd_csh_dpst: Option<Deposit1>,
+    #[yaserde(rename = "CntrlBkDpst")]
+    #[cfg_attr(feature = "serde", serde(rename = "CntrlBkDpst"))]
+    pub cntrl_bk_dpst: Option<Deposit1>,
+    #[yaserde(rename = "RpAgrmt")]
+    #[cfg_attr(feature = "serde", serde(rename = "RpAgrmt"))]
+    pub rp_agrmt: Option<RepurchaseAgreement2>,
+    #[yaserde(rename = "OthrInvstmts")]
+    #[cfg_attr(feature = "serde", serde(rename = "OthrInvstmts"))]
+    pub othr_invstmts: Option<OtherInvestment1>,
+    #[yaserde(rename = "OutrghtInvstmt")]
+    #[cfg_attr(feature = "serde", serde(rename = "OutrghtInvstmt"))]
+    pub outrght_invstmt: Option<SecurityIdentificationAndAmount1>,
 }
 
 impl Validate for Investment1Choice {}
@@ -316,32 +308,16 @@ pub struct RepurchaseAgreement2 {
 }
 
 impl Validate for RepurchaseAgreement2 {}
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:auth.061.001.01")]
-
-pub enum RepurchaseAgreementType3ChoiceChoice {
-    SpcfcColl(SpecificCollateral2),
-    GnlColl(GeneralCollateral3),
-    __Unknown__(String),
-}
-
-impl Default for RepurchaseAgreementType3ChoiceChoice {
-    fn default() -> RepurchaseAgreementType3ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for RepurchaseAgreementType3ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:auth.061.001.01")]
 pub struct RepurchaseAgreementType3Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub repurchase_agreement_type_3_choice_choice: RepurchaseAgreementType3ChoiceChoice,
+    #[yaserde(rename = "SpcfcColl")]
+    #[cfg_attr(feature = "serde", serde(rename = "SpcfcColl"))]
+    pub spcfc_coll: Option<SpecificCollateral2>,
+    #[yaserde(rename = "GnlColl")]
+    #[cfg_attr(feature = "serde", serde(rename = "GnlColl"))]
+    pub gnl_coll: Option<GeneralCollateral3>,
 }
 
 impl Validate for RepurchaseAgreementType3Choice {}

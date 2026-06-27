@@ -138,17 +138,13 @@ configurable and can target a schema mirror.
   `DateTime`, …) lack `serde` support, so generated leaf values are exposed as
   `String`. This is lossless (exact text, no float rounding — desirable for
   monetary amounts) and keeps XML and JSON in sync.
-- **Currency on choice-amounts:** when a monetary amount sits inside an
-  `<xsd:choice>` (e.g. pain.001 `InstdAmt`/`EqvtAmt`), the amount value parses
-  and serializes correctly, but the `Ccy` attribute is not re-serialized on
-  *write* due to a yaserde flatten+enum limitation. Reading is unaffected; most
-  amounts (direct elements) round-trip fully.
-- **Unset choices:** a choice that is absent/unset serializes as a placeholder
-  `<__Unknown__>` element rather than being omitted. Complete parsed messages
-  are unaffected (their choices have real values); this only shows when building
-  a message and leaving a choice unset, or with template/placeholder input.
-- **JSON shape:** JSON uses the Rust field names (snake_case), not the ISO short
-  XML tags. It is self-consistent (`to_json`/`from_json` round-trip).
+- **Choices** are modelled as a struct of `Option<…>` fields (JAXB/prowide
+  style), so amounts inside a `<xsd:choice>` round-trip with their `Ccy`
+  attribute and unset choices are simply omitted. The exception is *inline*
+  choices nested in a sequence (16 messages), still modelled as enums — for those
+  an unset choice may emit a placeholder, which `to_xml` strips.
+- **JSON shape:** JSON uses the ISO 20022 element names (`MsgId`, `IBAN`, …),
+  mirroring the yaserde renames; `to_json`/`from_json` round-trip.
 - XML round-tripping preserves the data model but not necessarily byte-for-byte
   formatting (namespaces, whitespace).
 - The generator handles multi-`<xsd:choice>` complexTypes by disambiguation, so

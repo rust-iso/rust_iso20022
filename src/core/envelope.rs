@@ -61,12 +61,15 @@ pub struct Envelope<D> {
 
 /// Parse a typed [`Envelope`] from business-message XML.
 ///
-/// ```ignore
+/// ```
+/// # #[cfg(feature = "model-pacs")] {
 /// use rust_iso20022::generated::pacs::pacs_008_001_08::Document;
+/// let xml = r#"<Document xmlns="urn:iso:std:iso:20022:tech:xsd:pacs.008.001.08"></Document>"#;
 /// let env: rust_iso20022::Envelope<Document> =
-///     rust_iso20022::parse_envelope(&xml)?;
-/// let from = env.header.and_then(|h| h.from);
-/// let doc = env.document;
+///     rust_iso20022::parse_envelope(xml).unwrap();
+/// let _from = env.header.and_then(|h| h.from);
+/// let _doc = env.document;
+/// # }
 /// ```
 pub fn parse_envelope<D: yaserde::YaDeserialize>(xml: &str) -> Result<Envelope<D>, Error> {
     let header = parse_business_header(xml);

@@ -10,16 +10,15 @@ use crate::core::{from_xml, to_xml, BusinessArea, Error, MxId};
 /// Identity and (de)serialization contract implemented by every generated
 /// message `Document`. Mirrors prowide's `AbstractMX`.
 ///
-/// ```ignore
-/// // Requires the `model` feature.
+/// ```
+/// # #[cfg(feature = "model-pacs")] {
 /// use rust_iso20022::MxMessage;
 /// use rust_iso20022::generated::pacs::pacs_008_001_08::Document;
 ///
 /// assert_eq!(Document::MESSAGE_NAME, "pacs.008.001.08");
 /// assert_eq!(Document::mx_id().business_area, rust_iso20022::BusinessArea::pacs);
-///
-/// let doc = Document::parse(&xml)?;        // == from_xml
-/// let xml = doc.to_xml_string()?;          // == to_xml
+/// // `Document::parse(xml)` == `from_xml`, `doc.to_xml_string()` == `to_xml`.
+/// # }
 /// ```
 pub trait MxMessage: yaserde::YaSerialize + yaserde::YaDeserialize + Sized {
     /// Business area, e.g. `BusinessArea::pacs`.

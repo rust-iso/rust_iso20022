@@ -335,34 +335,19 @@ impl Validate for Max72Text {
         Ok(())
     }
 }
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:auth.071.001.02")]
-
-pub enum OrganisationIdentification15ChoiceChoice {
-    #[yaserde(rename = "LEI")]
-    #[cfg_attr(feature = "serde", serde(rename = "LEI"))]
-    Lei(Leiidentifier),
-    Othr(OrganisationIdentification38),
-    AnyBIC(AnyBICDec2014Identifier),
-    __Unknown__(String),
-}
-
-impl Default for OrganisationIdentification15ChoiceChoice {
-    fn default() -> OrganisationIdentification15ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for OrganisationIdentification15ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:auth.071.001.02")]
 pub struct OrganisationIdentification15Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub organisation_identification_15_choice_choice: OrganisationIdentification15ChoiceChoice,
+    #[yaserde(rename = "LEI")]
+    #[cfg_attr(feature = "serde", serde(rename = "LEI"))]
+    pub lei: Option<Leiidentifier>,
+    #[yaserde(rename = "Othr")]
+    #[cfg_attr(feature = "serde", serde(rename = "Othr"))]
+    pub othr: Option<OrganisationIdentification38>,
+    #[yaserde(rename = "AnyBIC")]
+    #[cfg_attr(feature = "serde", serde(rename = "AnyBIC"))]
+    pub any_b_i_c: Option<AnyBICDec2014Identifier>,
 }
 
 impl Validate for OrganisationIdentification15Choice {}
@@ -467,35 +452,22 @@ impl Default for ReportPeriodActivity1Code {
 }
 
 impl Validate for ReportPeriodActivity1Code {}
-
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:auth.071.001.02")]
-
-pub enum ReuseDataReport6ChoiceChoice {
-    New(ReuseDataReportNew6),
-    Err(ReuseDataReportError5),
-    Crrctn(ReuseDataReportCorrection14),
-    CollReuseUpd(ReuseDataReportCorrection14),
-    __Unknown__(String),
-}
-
-impl Default for ReuseDataReport6ChoiceChoice {
-    fn default() -> ReuseDataReport6ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for ReuseDataReport6ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:auth.071.001.02")]
 pub struct ReuseDataReport6Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub reuse_data_report_6_choice_choice: ReuseDataReport6ChoiceChoice,
+    #[yaserde(rename = "New")]
+    #[cfg_attr(feature = "serde", serde(rename = "New"))]
+    pub new: Option<ReuseDataReportNew6>,
+    #[yaserde(rename = "Err")]
+    #[cfg_attr(feature = "serde", serde(rename = "Err"))]
+    pub err: Option<ReuseDataReportError5>,
+    #[yaserde(rename = "Crrctn")]
+    #[cfg_attr(feature = "serde", serde(rename = "Crrctn"))]
+    pub crrctn: Option<ReuseDataReportCorrection14>,
+    #[yaserde(rename = "CollReuseUpd")]
+    #[cfg_attr(feature = "serde", serde(rename = "CollReuseUpd"))]
+    pub coll_reuse_upd: Option<ReuseDataReportCorrection14>,
 }
 
 impl Validate for ReuseDataReport6Choice {}
@@ -597,32 +569,16 @@ pub struct ReuseDataReportNew6 {
 }
 
 impl Validate for ReuseDataReportNew6 {}
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:auth.071.001.02")]
-
-pub enum ReuseValue1ChoiceChoice {
-    Actl(ActiveOrHistoricCurrencyAndAmount),
-    Estmtd(ActiveOrHistoricCurrencyAndAmount),
-    __Unknown__(String),
-}
-
-impl Default for ReuseValue1ChoiceChoice {
-    fn default() -> ReuseValue1ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for ReuseValue1ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:auth.071.001.02")]
 pub struct ReuseValue1Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub reuse_value_1_choice_choice: ReuseValue1ChoiceChoice,
+    #[yaserde(rename = "Actl")]
+    #[cfg_attr(feature = "serde", serde(rename = "Actl"))]
+    pub actl: Option<ActiveOrHistoricCurrencyAndAmount>,
+    #[yaserde(rename = "Estmtd")]
+    #[cfg_attr(feature = "serde", serde(rename = "Estmtd"))]
+    pub estmtd: Option<ActiveOrHistoricCurrencyAndAmount>,
 }
 
 impl Validate for ReuseValue1Choice {}
@@ -684,32 +640,16 @@ impl Validate for SupplementaryData1 {}
 pub struct SupplementaryDataEnvelope1 {}
 
 impl Validate for SupplementaryDataEnvelope1 {}
-
-
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(PartialEq, Debug, Clone, YaSerialize, YaDeserialize)]#[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:auth.071.001.02")]
-
-pub enum TradeData36ChoiceChoice {
-    DataSetActn(ReportPeriodActivity1Code),
-    Rpt(Vec<ReuseDataReport6Choice>),
-    __Unknown__(String),
-}
-
-impl Default for TradeData36ChoiceChoice {
-    fn default() -> TradeData36ChoiceChoice {
-        Self::__Unknown__("No valid variants".into())
-    }
-}
-
-impl Validate for TradeData36ChoiceChoice {}
-
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[derive(Default, Clone, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde(prefix = "n", default_namespace = "n", namespace = "n: urn:iso:std:iso:20022:tech:xsd:auth.071.001.02")]
 pub struct TradeData36Choice {
-    #[yaserde(flatten)]
-    #[cfg_attr(feature = "serde", serde(flatten))]
-    pub trade_data_36_choice_choice: TradeData36ChoiceChoice,
+    #[yaserde(rename = "DataSetActn")]
+    #[cfg_attr(feature = "serde", serde(rename = "DataSetActn"))]
+    pub data_set_actn: Option<ReportPeriodActivity1Code>,
+    #[yaserde(rename = "Rpt")]
+    #[cfg_attr(feature = "serde", serde(rename = "Rpt"))]
+    pub rpt: Vec<ReuseDataReport6Choice>,
 }
 
 impl Validate for TradeData36Choice {}

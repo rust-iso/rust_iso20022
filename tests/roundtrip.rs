@@ -22,14 +22,13 @@ where
 }
 
 #[test]
-fn pain_001_001_09_parses() {
-    // pain.001 carries amounts inside a `<choice>` (InstdAmt vs EqvtAmt). The
-    // amount value parses correctly, but the currency `Ccy` attribute is not
-    // re-serialized due to a yaserde flatten+enum limitation, so this message
-    // is asserted to parse rather than to strictly round-trip. See README.
+fn pain_001_001_09_roundtrips() {
+    // pain.001 carries amounts inside a `<choice>` (InstdAmt vs EqvtAmt). With
+    // choices modelled as optional fields, the amount and its `Ccy` attribute
+    // both round-trip.
     use rust_iso20022::generated::pain::pain_001_001_09::Document;
     let xml = include_str!("data/pain.001.001.09.xml");
-    let _doc: Document = from_xml(xml).expect("parse pain.001");
+    assert_roundtrips::<Document>(xml);
 }
 
 #[test]
