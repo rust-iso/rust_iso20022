@@ -34,6 +34,12 @@ Initial release.
   settlement/management and trade-services families (`semt`, `sese`, `setr`,
   `tsin`, `tsmt`, `tsrv`, `trck`), with schemas sourced directly from
   iso20022.org's static schema path. `Fetcher::download_schema` uses that path.
+- **Per-area model features:** the model is split into `model-<area>` features
+  (e.g. `model-pacs`), so a single area compiles in seconds instead of the many
+  minutes the full 722-module model takes. `model` enables all areas. The full
+  model was verified to compile error-free. `AnyMessage` boxes its payloads and
+  `parse_auto` parses via a boxed helper so dispatch over large messages does not
+  overflow constrained (e.g. test-thread) stacks.
 - `cli` feature: an `iso20022` command-line tool for querying the message
   catalogue by message name, business area or namespace (uses `prettytable-rs`).
 - `serde` feature now covers `MxId` (serializes to its canonical

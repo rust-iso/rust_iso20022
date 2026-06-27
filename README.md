@@ -76,7 +76,8 @@ let entry = rust_iso20022::catalogue::from_message_name("pacs.008.001.08").unwra
 assert_eq!(entry.namespace, "urn:iso:std:iso:20022:tech:xsd:pacs.008.001.08");
 ```
 
-Parsing and serializing a message (requires the model; see below):
+Parsing and serializing a message (enable that area's model feature, e.g.
+`cargo add rust_iso20022 -F model-pacs`):
 
 ```rust,ignore
 use rust_iso20022::generated::pacs::pacs_008_001_08::Document;
@@ -90,7 +91,8 @@ let back: String = rust_iso20022::to_xml(&doc)?;
 
 | Feature | Default | Effect |
 |---------|---------|--------|
-| `model` | no | the generated, typed message model (`generated` module). Off by default because compiling ~495 yaserde modules is slow |
+| `model-<area>` | no | the typed model for one business area, e.g. `model-pacs`, `model-camt`. Enable only what you need — compiling a single family takes seconds vs many minutes for all |
+| `model` | no | all `model-<area>` at once (~722 modules; slow to compile) |
 | `serde` | no | `serde` support for `MxId`, `BusinessArea`, `CatalogueEntry` (serialize to canonical strings) |
 | `cli` | no | the `iso20022` command-line catalogue lookup tool |
 | `catalogue` | no | runtime XSD fetcher (`fetch` module): pulls in `tokio`, `reqwest`, `regex` |
@@ -99,7 +101,7 @@ The XSD → Rust generator is a separate workspace crate (`tools/codegen`), not 
 feature of the published crate.
 
 > The core (`MxId`, `BusinessArea`) and `catalogue` are always available; the
-> typed `generated` model requires `--features model`.
+> typed `generated` model requires a `model-<area>` feature (or `model`).
 
 ## Command-line tool
 

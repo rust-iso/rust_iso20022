@@ -70,9 +70,9 @@ pub use crate::core::metadata;
 #[cfg(feature = "catalogue")]
 pub mod fetch;
 
-/// Generated ISO 20022 message types, one module per message version.
-/// Requires the `model` feature.
-#[cfg(feature = "model")]
+/// Generated ISO 20022 message types, one module per message version. Enabled
+/// by any `model-<area>` feature (or `model` for all areas).
+#[cfg(feature = "__model")]
 pub mod generated;
 
 /// Parse an [`MxId`] from a full namespace, partial namespace or bare message

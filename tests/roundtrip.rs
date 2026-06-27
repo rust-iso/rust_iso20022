@@ -5,7 +5,7 @@
 //! cargo test --features model
 //! ```
 
-#![cfg(feature = "model")]
+#![cfg(all(feature = "model-pacs", feature = "model-pain", feature = "model-camt"))]
 
 use rust_iso20022::{from_xml, to_xml};
 

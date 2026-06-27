@@ -54,10 +54,15 @@ Status of `rust_iso20022`. ✅ = done, ⬜ = outstanding.
   iso20022.org's static schema path (`Fetcher::download_schema`)
 - ⬜ Remaining empty areas: `seti`, `trea`, `cbrf`, `supl`, `xsys` have no current
   message definitions on iso20022.org
+- ✅ **Per-area model features + full-build verification** — `model-<area>`
+  features compile a single family in seconds; the full 722-module model was
+  verified to compile error-free; `AnyMessage`/`parse_auto` boxed to avoid stack
+  overflow on large messages
 - ⬜ **Typed scalars** — values are `String` (lossless but untyped `Decimal`/`Date`)
 - ✅ **WASM support** — `src/wasm.rs` exposes identification/catalogue/metadata to
   JS/npm (`--cfg direct_wasm`, `scripts/build-wasm.sh`); verified on wasm32
-- ⬜ **Test gaps** — model-gated doctests are `ignore`d; full `--features model`
-  build/round-trip corpus not exercised (exceeds the dev sandbox compile ceiling)
-- ⬜ **Schema provenance** — sourced from a GitHub mirror, not authoritative
-  iso20022.org; diff against official XSDs
+- ⬜ **Test gaps** — model-gated doctests are `ignore`d; per-area tests run, but a
+  full round-trip corpus across all 722 messages is not exercised
+- ⬜ **Schema provenance** — the original 502 came from a GitHub mirror; the 220
+  new (securities/trade) messages are from authoritative iso20022.org. Re-sourcing
+  the 502 from iso20022.org's static path would unify provenance

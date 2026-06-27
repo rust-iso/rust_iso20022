@@ -22,10 +22,53 @@ members = ["tools/codegen"]
 
 [features]
 default = []
-# The generated, strongly-typed ISO 20022 message model (`generated` module).
-# Off by default because compiling ~495 yaserde-derived message modules is slow;
-# enable it when you need the typed parse/serialize API.
-model = []
+# The generated, strongly-typed ISO 20022 message model. Compiling all ~722
+# yaserde modules at once is very slow, so the model is split per business area:
+# enable only the families you need (e.g. `model-pacs`), or `model` for all.
+# `__model` is internal: any `model-<area>` turns it on to expose `generated`.
+__model = []
+model-acmt = ["__model"]
+model-admi = ["__model"]
+model-auth = ["__model"]
+model-caaa = ["__model"]
+model-caad = ["__model"]
+model-caam = ["__model"]
+model-cafc = ["__model"]
+model-cafm = ["__model"]
+model-cafr = ["__model"]
+model-cain = ["__model"]
+model-camt = ["__model"]
+model-canm = ["__model"]
+model-casp = ["__model"]
+model-casr = ["__model"]
+model-catm = ["__model"]
+model-catp = ["__model"]
+model-colr = ["__model"]
+model-fxtr = ["__model"]
+model-head = ["__model"]
+model-pacs = ["__model"]
+model-pain = ["__model"]
+model-reda = ["__model"]
+model-remt = ["__model"]
+model-secl = ["__model"]
+model-seev = ["__model"]
+model-semt = ["__model"]
+model-sese = ["__model"]
+model-setr = ["__model"]
+model-trck = ["__model"]
+model-tsin = ["__model"]
+model-tsmt = ["__model"]
+model-tsrv = ["__model"]
+# All families at once (slow to compile; ~722 message modules).
+model = [
+    "model-acmt", "model-admi", "model-auth", "model-caaa", "model-caad",
+    "model-caam", "model-cafc", "model-cafm", "model-cafr", "model-cain",
+    "model-camt", "model-canm", "model-casp", "model-casr", "model-catm",
+    "model-catp", "model-colr", "model-fxtr", "model-head", "model-pacs",
+    "model-pain", "model-reda", "model-remt", "model-secl", "model-seev",
+    "model-semt", "model-sese", "model-setr", "model-trck", "model-tsin",
+    "model-tsmt", "model-tsrv",
+]
 # Serde + JSON support. Adds serde to the core/catalogue types (which serialize
 # to canonical strings) and to every generated message type, enabling
 # `to_json` / `from_json`.

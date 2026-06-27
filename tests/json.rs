@@ -1,6 +1,6 @@
 //! JSON conversion of message types (prowide `toJson`/`fromJson` parallel).
 //! Run with `cargo test --features model,serde`.
-#![cfg(all(feature = "model", feature = "serde"))]
+#![cfg(all(feature = "model-camt", feature = "model-pacs", feature = "serde"))]
 
 use rust_iso20022::generated::camt::camt_056_001_09::Document as Camt056;
 use rust_iso20022::generated::pacs::pacs_002_001_10::Document as Pacs002;
