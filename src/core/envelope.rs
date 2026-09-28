@@ -1,11 +1,11 @@
 //! Reading a complete ISO 20022 *business message* (Business Application Header
 //! + message Document) in one call, without the `model` feature.
 
-use crate::core::app_hdr::{parse_business_header, BusinessHeader};
-use crate::core::metadata::{extract, MessageMetadata};
+use crate::core::app_hdr::{BusinessHeader, parse_business_header};
+use crate::core::metadata::{MessageMetadata, extract};
 use crate::core::mx_message::detect;
 use crate::core::xml_scan::outer_element;
-use crate::core::{from_xml, Error, MxId};
+use crate::core::{Error, MxId, from_xml};
 
 /// A parsed business message: its optional header, the detected message type,
 /// and extracted business metadata.
@@ -38,6 +38,9 @@ pub struct BusinessMessage {
 /// assert_eq!(bm.metadata.message_id.as_deref(), Some("M-1"));
 /// ```
 pub fn read_business_message(xml: &str) -> BusinessMessage {
+    if crate::core::validate_xml(xml, crate::core::ParseLimits::default()).is_err() {
+        return BusinessMessage::default();
+    }
     BusinessMessage {
         header: parse_business_header(xml),
         id: detect(xml),
@@ -72,6 +75,8 @@ pub struct Envelope<D> {
 /// # }
 /// ```
 pub fn parse_envelope<D: yaserde::YaDeserialize>(xml: &str) -> Result<Envelope<D>, Error> {
+    crate::core::validate_xml(xml, crate::core::ParseLimits::default())
+        .map_err(|error| Error::Deserialize(error.to_string()))?;
     let header = parse_business_header(xml);
     let doc_xml = outer_element(xml, "Document").unwrap_or_else(|| xml.to_string());
     let document = from_xml::<D>(&doc_xml)?;

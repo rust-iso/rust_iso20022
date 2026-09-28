@@ -5,7 +5,7 @@
 //! The per-message `impl MxMessage for Document { … }` blocks are emitted by
 //! `src/bin/codegen.rs`, so they are only present with the `model` feature.
 
-use crate::core::{from_xml, to_xml, BusinessArea, Error, MxId};
+use crate::core::{BusinessArea, Error, MxId, from_xml, to_xml};
 
 /// Identity and (de)serialization contract implemented by every generated
 /// message `Document`. Mirrors prowide's `AbstractMX`.
@@ -84,6 +84,7 @@ pub trait MxMessage: yaserde::YaSerialize + yaserde::YaDeserialize + Sized {
 /// assert_eq!(id.message_name(), "pacs.008.001.08");
 /// ```
 pub fn detect(xml: &str) -> Option<MxId> {
+    crate::core::validate_xml(xml, crate::core::ParseLimits::default()).ok()?;
     let mut first: Option<MxId> = None;
     for token in xml.split(['"', '\'', '<', '>', ' ', '\t', '\n', '\r']) {
         if !token.starts_with("urn:") {

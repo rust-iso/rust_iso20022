@@ -1,0 +1,16 @@
+[package]
+name = "rust_iso20022_message_traits_compat"
+version = "0.0.0"
+edition = "2021"
+publish = false
+
+[features]
+default = []
+model-pacs = ["rust_iso20022/model-pacs"]
+
+[dependencies]
+rust_iso20022 = { path = "../../.." }
+yaserde = "0.7"
+yaserde_derive = "0.7"
+
+[workspace]

@@ -6,9 +6,10 @@
 //! Run it:
 //! ```bash
 //! cargo run --example inspect_message
+//! cargo run --example inspect_message --features model-pacs
 //! ```
 
-use rust_iso20022::{detect, read_business_message, MxNode};
+use rust_iso20022::{MxNode, detect, read_business_message};
 
 /// A pacs.008 (FI-to-FI customer credit transfer) wrapped in an AppHdr envelope,
 /// the way it would arrive on the wire.
@@ -43,7 +44,11 @@ const MESSAGE: &str = r#"<?xml version="1.0" encoding="UTF-8"?>
 fn main() {
     // 1. What message is this? (from the Document namespace)
     let id = detect(MESSAGE).expect("a recognisable ISO 20022 message");
-    println!("Message type : {} ({})", id.message_name(), id.business_area.description());
+    println!(
+        "Message type : {} ({})",
+        id.message_name(),
+        id.business_area.description()
+    );
 
     // 2. Header + identification + business metadata in one call.
     let bm = read_business_message(MESSAGE);
@@ -53,18 +58,22 @@ fn main() {
     }
     let m = &bm.metadata;
     println!("Group Msg Id : {}", opt(&m.message_id));
-    println!(
-        "Amount       : {} {}",
-        opt(&m.amount),
-        opt(&m.currency)
-    );
+    println!("Amount       : {} {}", opt(&m.amount), opt(&m.currency));
     println!("Value date   : {}", opt(&m.value_date));
 
     // 3. Pull specific fields from the generic tree (no typed model needed).
     let doc = MxNode::parse(MESSAGE).expect("parseable tree");
     let e2e = doc.find("EndToEndId").and_then(|n| n.text()).unwrap_or("-");
-    let dbtr = doc.find("Dbtr").and_then(|n| n.get("Nm")).and_then(|n| n.text()).unwrap_or("-");
-    let cdtr = doc.find("Cdtr").and_then(|n| n.get("Nm")).and_then(|n| n.text()).unwrap_or("-");
+    let dbtr = doc
+        .find("Dbtr")
+        .and_then(|n| n.get("Nm"))
+        .and_then(|n| n.text())
+        .unwrap_or("-");
+    let cdtr = doc
+        .find("Cdtr")
+        .and_then(|n| n.get("Nm"))
+        .and_then(|n| n.text())
+        .unwrap_or("-");
     println!("End-to-end   : {e2e}");
     println!("Debtor       : {dbtr}");
     println!("Creditor     : {cdtr}");
@@ -75,6 +84,23 @@ fn main() {
             "Settlement   : {} {}",
             amt.text().unwrap_or("-"),
             amt.attr("Ccy").unwrap_or("-")
+        );
+    }
+
+    // Enabling only the matching business area adds typed access to the exact
+    // generated root value; the uniform wrapper does not copy payment fields.
+    #[cfg(feature = "model-pacs")]
+    {
+        let parsed = rust_iso20022::parse(MESSAGE).expect("typed pacs parse");
+        let generated = parsed
+            .message()
+            .as_pacs_008_001_08()
+            .expect("pacs.008 generated value");
+        let _: &rust_iso20022::generated::pacs::pacs_008_001_08::Document = generated;
+        println!(
+            "Generated API: {} / {}",
+            parsed.message_id(),
+            parsed.root_element()
         );
     }
 }

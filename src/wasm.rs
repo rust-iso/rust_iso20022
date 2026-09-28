@@ -7,17 +7,16 @@
 //! data/identification layer is what is useful in the browser. Structured values
 //! are returned as JSON strings (`JSON.parse` them on the JS side).
 
-#![cfg(all(direct_wasm, target_arch = "wasm32"))]
+#![cfg(all(direct_wasm, target_arch = "wasm32", feature = "serde"))]
 
 use js_sys::Array;
 use wasm_bindgen::prelude::*;
 
-/// Module entry point: install a panic hook that routes Rust panics to
-/// `console.error`, so wasm failures show a readable message and stack trace
-/// instead of an opaque `unreachable`. Runs automatically on module load.
+/// Module entry point: install a panic hook that suppresses potentially
+/// sensitive panic payloads. Runs automatically on module load.
 #[wasm_bindgen(start)]
 pub fn start() {
-    console_error_panic_hook::set_once();
+    crate::privacy::install_redacted_panic_hook();
 }
 
 // ----------------------------------------------------------------- identity ---
@@ -38,16 +37,7 @@ pub fn from_namespace(namespace: &str) -> Option<String> {
 /// `{messageName, namespace, businessArea, functionality, variant, version}`.
 #[wasm_bindgen]
 pub fn mx_id(namespace_or_name: &str) -> Option<String> {
-    let id = crate::MxId::parse(namespace_or_name).ok()?;
-    Some(format!(
-        "{{\"messageName\":{},\"namespace\":{},\"businessArea\":{},\"functionality\":{},\"variant\":{},\"version\":{}}}",
-        js(&id.message_name()),
-        js(&id.namespace()),
-        js(id.business_area.code()),
-        js(&id.functionality),
-        js(&id.variant),
-        js(&id.version),
-    ))
+    crate::wasm_compat::mx_id(namespace_or_name)
 }
 
 // ----------------------------------------------------------- business areas ---
@@ -99,14 +89,7 @@ pub fn has_model(message_name: &str) -> bool {
 /// A catalogue entry as JSON: `{messageName, namespace, businessArea, hasModel}`.
 #[wasm_bindgen]
 pub fn catalogue_entry(message_name: &str) -> Option<String> {
-    let e = crate::catalogue::from_message_name(message_name)?;
-    Some(format!(
-        "{{\"messageName\":{},\"namespace\":{},\"businessArea\":{},\"hasModel\":{}}}",
-        js(e.message_name),
-        js(e.namespace),
-        js(e.business_area),
-        e.has_model,
-    ))
+    crate::wasm_compat::catalogue_entry(message_name)
 }
 
 /// Every message name in the catalogue, as a JS array of strings.
@@ -123,7 +106,7 @@ pub fn catalogue_all() -> Array {
 /// Business Application Header fields as JSON, or `undefined` if no header.
 #[wasm_bindgen]
 pub fn parse_app_hdr(xml: &str) -> Option<String> {
-    crate::app_hdr::parse_business_header(xml).map(|h| json_header(&h))
+    crate::app_hdr::parse_business_header(xml).map(|header| crate::wasm_compat::header(&header))
 }
 
 /// Build a `head.001` `<AppHdr>` XML from header fields.
@@ -148,22 +131,14 @@ pub fn build_app_hdr(
 /// Extract business metadata from a message, as JSON.
 #[wasm_bindgen]
 pub fn extract_metadata(xml: &str) -> String {
-    json_metadata(&crate::metadata::extract(xml))
+    crate::wasm_compat::metadata(&crate::metadata::extract(xml))
 }
 
 /// Read a full business message (header + detected type + metadata) as JSON:
 /// `{messageName, header, metadata}`.
 #[wasm_bindgen]
 pub fn read_business_message(xml: &str) -> String {
-    let bm = crate::read_business_message(xml);
-    format!(
-        "{{\"messageName\":{},\"header\":{},\"metadata\":{}}}",
-        bm.id.map(|i| js(&i.message_name())).unwrap_or_else(|| "null".into()),
-        bm.header
-            .map(|h| json_header(&h))
-            .unwrap_or_else(|| "null".into()),
-        json_metadata(&bm.metadata),
-    )
+    crate::wasm_compat::business_message(&crate::read_business_message(xml))
 }
 
 // --------------------------------------------------------------- generic tree ---
@@ -190,7 +165,9 @@ pub fn node_find(xml: &str, local: &str) -> Option<String> {
 pub fn node_attr(xml: &str, path: &str, attr: &str) -> Option<String> {
     let root = crate::MxNode::parse(xml)?;
     let segs: Vec<&str> = path.split('/').filter(|s| !s.is_empty()).collect();
-    root.at(&segs).and_then(|n| n.attr(attr)).map(str::to_string)
+    root.at(&segs)
+        .and_then(|n| n.attr(attr))
+        .map(str::to_string)
 }
 
 /// Value of an attribute on the first descendant element with the given local
@@ -198,7 +175,9 @@ pub fn node_attr(xml: &str, path: &str, attr: &str) -> Option<String> {
 #[wasm_bindgen]
 pub fn node_find_attr(xml: &str, local: &str, attr: &str) -> Option<String> {
     let root = crate::MxNode::parse(xml)?;
-    root.find(local).and_then(|n| n.attr(attr)).map(str::to_string)
+    root.find(local)
+        .and_then(|n| n.attr(attr))
+        .map(str::to_string)
 }
 
 /// The whole parsed message tree as JSON, recursively:
@@ -206,7 +185,9 @@ pub fn node_find_attr(xml: &str, local: &str, attr: &str) -> Option<String> {
 /// without the typed model.
 #[wasm_bindgen]
 pub fn node_to_json(xml: &str) -> Option<String> {
-    crate::MxNode::parse(xml).as_ref().map(json_node)
+    crate::MxNode::parse(xml)
+        .as_ref()
+        .map(crate::wasm_compat::node)
 }
 
 /// The texts of every descendant element with the given local name.
@@ -221,81 +202,4 @@ pub fn node_find_all(xml: &str, local: &str) -> Array {
             .collect(),
         None => Array::new(),
     }
-}
-
-// -------------------------------------------------------------------- utils ---
-
-/// JSON-encode a string value (with quotes and minimal escaping).
-fn js(s: &str) -> String {
-    let mut out = String::with_capacity(s.len() + 2);
-    out.push('"');
-    for c in s.chars() {
-        match c {
-            '"' => out.push_str("\\\""),
-            '\\' => out.push_str("\\\\"),
-            '\n' => out.push_str("\\n"),
-            '\r' => out.push_str("\\r"),
-            '\t' => out.push_str("\\t"),
-            c => out.push(c),
-        }
-    }
-    out.push('"');
-    out
-}
-
-/// JSON-encode an optional string field.
-fn jso(v: &Option<String>) -> String {
-    match v {
-        Some(s) => js(s),
-        None => "null".to_string(),
-    }
-}
-
-/// Recursively JSON-encode an `MxNode` tree.
-fn json_node(n: &crate::MxNode) -> String {
-    let mut out = String::from("{\"name\":");
-    out.push_str(&js(&n.name));
-    out.push_str(",\"value\":");
-    out.push_str(&jso(&n.value));
-    out.push_str(",\"attributes\":{");
-    for (i, (k, v)) in n.attributes.iter().enumerate() {
-        if i > 0 {
-            out.push(',');
-        }
-        out.push_str(&js(k));
-        out.push(':');
-        out.push_str(&js(v));
-    }
-    out.push_str("},\"children\":[");
-    for (i, c) in n.children.iter().enumerate() {
-        if i > 0 {
-            out.push(',');
-        }
-        out.push_str(&json_node(c));
-    }
-    out.push_str("]}");
-    out
-}
-
-fn json_header(h: &crate::app_hdr::BusinessHeader) -> String {
-    format!(
-        "{{\"from\":{},\"to\":{},\"bizMsgIdr\":{},\"msgDefIdr\":{},\"creDt\":{}}}",
-        jso(&h.from),
-        jso(&h.to),
-        jso(&h.biz_msg_idr),
-        jso(&h.msg_def_idr),
-        jso(&h.cre_dt),
-    )
-}
-
-fn json_metadata(m: &crate::metadata::MessageMetadata) -> String {
-    format!(
-        "{{\"messageId\":{},\"creationDateTime\":{},\"numberOfTransactions\":{},\"amount\":{},\"currency\":{},\"valueDate\":{}}}",
-        jso(&m.message_id),
-        jso(&m.creation_date_time),
-        jso(&m.number_of_transactions),
-        jso(&m.amount),
-        jso(&m.currency),
-        jso(&m.value_date),
-    )
 }

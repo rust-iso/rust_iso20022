@@ -22,7 +22,10 @@ const PACS008: &str = r#"<?xml version="1.0"?>
 fn extracts_payment_metadata() {
     let m = extract(PACS008);
     assert_eq!(m.message_id.as_deref(), Some("MSG-2026-0001"));
-    assert_eq!(m.creation_date_time.as_deref(), Some("2026-06-25T10:00:00Z"));
+    assert_eq!(
+        m.creation_date_time.as_deref(),
+        Some("2026-06-25T10:00:00Z")
+    );
     assert_eq!(m.number_of_transactions.as_deref(), Some("2"));
     // The total settlement amount is preferred over the per-tx amount.
     assert_eq!(m.amount.as_deref(), Some("5000.00"));

@@ -1,0 +1,18 @@
+<Document xmlns="urn:iso:std:iso:20022:tech:xsd:pacs.008.001.08">
+  <FIToFICstmrCdtTrf>
+    <GrpHdr><MsgId>MIGRATION-103-1</MsgId><NbOfTxs>1</NbOfTxs></GrpHdr>
+    <CdtTrfTxInf>
+      <PmtId><EndToEndId>MIGRATION-103-1</EndToEndId><TxId>MIGRATION-103-1</TxId></PmtId>
+      <IntrBkSttlmAmt Ccy="EUR">1234.56</IntrBkSttlmAmt>
+      <IntrBkSttlmDt>2026-09-28</IntrBkSttlmDt>
+      <Dbtr><Nm>JANE DOE</Nm></Dbtr>
+      <DbtrAcct><Id><IBAN>DE89370400440532013000</IBAN></Id></DbtrAcct>
+      <DbtrAgt><FinInstnId><BICFI>DEUTDEFF</BICFI></FinInstnId></DbtrAgt>
+      <CdtrAgt><FinInstnId><BICFI>BNPAFRPP</BICFI></FinInstnId></CdtrAgt>
+      <Cdtr><Nm>JOHN BENEFICIARY</Nm></Cdtr>
+      <CdtrAcct><Id><IBAN>FR1420041010050500013M02606</IBAN></Id></CdtrAcct>
+      <ChrgBr>SHAR</ChrgBr>
+      <RmtInf><Ustrd>INVOICE-2026-0042</Ustrd></RmtInf>
+    </CdtTrfTxInf>
+  </FIToFICstmrCdtTrf>
+</Document>

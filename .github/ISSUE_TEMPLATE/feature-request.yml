@@ -1,0 +1,38 @@
+name: Feature request
+description: Propose an additive SDK capability with verifiable acceptance
+title: "feature: "
+labels: [enhancement]
+body:
+  - type: markdown
+    attributes:
+      value: "Keep generated structs canonical. Do not include real financial data or restricted standards documents."
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem and user outcome
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Proposed scope and non-goals
+    validations:
+      required: true
+  - type: textarea
+    id: compatibility
+    attributes:
+      label: Canonical-model, compatibility, feature, and MSRV impact
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Standards/source release and licensing evidence
+      description: Required when the feature derives behavior from a standard or profile.
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Testable acceptance criteria and evidence
+    validations:
+      required: true
+

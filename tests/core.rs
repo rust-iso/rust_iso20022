@@ -1,6 +1,6 @@
 //! Tests for the always-available core API and catalogue (no `model` feature).
 
-use rust_iso20022::{catalogue, from_namespace, BusinessArea, MxId};
+use rust_iso20022::{BusinessArea, MxId, catalogue, from_namespace};
 
 #[test]
 fn mxid_parses_full_namespace() {
@@ -65,7 +65,11 @@ fn catalogue_is_populated_and_consistent() {
     // multi-choice gaps are handled by codegen disambiguation).
     let no_model = catalogue::all().iter().filter(|e| !e.has_model).count();
     assert_eq!(no_model, 0);
-    assert!(catalogue::from_message_name("seev.030.001.01").unwrap().has_model);
+    assert!(
+        catalogue::from_message_name("seev.030.001.01")
+            .unwrap()
+            .has_model
+    );
 
     // every catalogued message name parses as an MxId
     for entry in catalogue::all() {

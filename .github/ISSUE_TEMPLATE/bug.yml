@@ -1,0 +1,43 @@
+name: Bug report
+description: Report reproducible SDK behavior using synthetic or redacted data
+title: "bug: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: "Never upload a real financial message or personal/account data. Use a minimal synthetic or fully redacted fixture."
+  - type: input
+    id: version
+    attributes:
+      label: Version or commit
+      placeholder: "0.1.2 or commit SHA"
+    validations:
+      required: true
+  - type: input
+    id: message
+    attributes:
+      label: Message identity and feature flags
+      placeholder: "pacs.008.001.08; model-pacs,serde"
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Minimal reproduction
+      description: Include commands/code and synthetic or fully redacted input.
+    validations:
+      required: true
+  - type: textarea
+    id: observed
+    attributes:
+      label: Observed and expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Test output, typed error, platform, Rust version, and relevant paths.
+    validations:
+      required: true
+

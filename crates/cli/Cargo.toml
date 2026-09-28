@@ -1,0 +1,32 @@
+[package]
+name = "rust_iso20022_cli"
+version = "0.1.2"
+edition = "2024"
+rust-version = "1.85"
+publish = false
+license = "Apache-2.0"
+
+[features]
+default = []
+json = []
+model-pacs = ["rust_iso20022/model-pacs"]
+profiles = ["rust_iso20022/profiles"]
+
+[dependencies]
+rust_iso20022 = { path = "../..", features = ["serde"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+[[bin]]
+name = "iso20022"
+path = "src/main.rs"
+
+[[test]]
+name = "inspect_serialize"
+path = "tests/inspect_serialize.rs"
+required-features = ["json", "model-pacs"]
+
+[[test]]
+name = "validate_catalogue"
+path = "tests/validate_catalogue.rs"
+required-features = ["json", "model-pacs", "profiles"]

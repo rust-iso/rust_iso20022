@@ -165,6 +165,7 @@ impl core::fmt::Display for BusinessArea {
 impl core::str::FromStr for BusinessArea {
     type Err = crate::core::Error;
     fn from_str(s: &str) -> Result<Self, Self::Err> {
-        BusinessArea::from_code(s).ok_or_else(|| crate::core::Error::UnknownBusinessArea(s.to_string()))
+        BusinessArea::from_code(s)
+            .ok_or_else(|| crate::core::Error::UnknownBusinessArea(s.to_string()))
     }
 }

@@ -6,6 +6,11 @@
 //! bot-protection that refuses non-browser TLS clients, so the [`Fetcher`] base
 //! URL is configurable and can also target a schema mirror.
 //!
+//! Downloaded content is never authoritative runtime catalogue data. It must be
+//! reviewed, assigned explicit provenance, hashed into `schema-manifest.json`,
+//! and pass the transactional generator before it can affect generated models
+//! or descriptor indices.
+//!
 //! Enable with the `catalogue` feature; this module pulls in `tokio`,
 //! `reqwest` and `regex`.
 //!
@@ -84,7 +89,13 @@ impl Fetcher {
     /// Recognises both the catalogue's per-message `/message/{id}/download`
     /// endpoints and any direct `.xsd` hyperlinks.
     pub async fn index(&self) -> Result<Vec<RemoteMessage>, reqwest::Error> {
-        let html = self.client.get(&self.index_url).send().await?.text().await?;
+        let html = self
+            .client
+            .get(&self.index_url)
+            .send()
+            .await?
+            .text()
+            .await?;
         Ok(self.parse_index(&html))
     }
 
@@ -93,8 +104,7 @@ impl Fetcher {
         // `aaaa.999.999.99` message-name token, used to label discovered links.
         let name_re = Regex::new(r"[a-z]{4}\.\d{3}\.\d{3}\.\d{2}").unwrap();
         // href to either a direct .xsd or a /message/{id}/download endpoint.
-        let href_re =
-            Regex::new(r#"href="([^"]*(?:\.xsd|/message/\d+/download)[^"]*)""#).unwrap();
+        let href_re = Regex::new(r#"href="([^"]*(?:\.xsd|/message/\d+/download)[^"]*)""#).unwrap();
 
         let mut out = Vec::new();
         let mut seen = std::collections::HashSet::new();
@@ -105,7 +115,10 @@ impl Fetcher {
                 continue;
             }
             let message_name = name_re.find(raw).map(|m| m.as_str().to_string());
-            out.push(RemoteMessage { message_name, xsd_url: url });
+            out.push(RemoteMessage {
+                message_name,
+                xsd_url: url,
+            });
         }
         out
     }

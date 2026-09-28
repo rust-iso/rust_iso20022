@@ -1,0 +1,260 @@
+{
+  "mcp_protocol": "2026-07-28",
+  "schema_version": 1,
+  "tools": [
+    {
+      "description": "Compare two exact same-family message versions using schema metadata",
+      "inputSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "properties": {
+          "from_message_id": { "type": "string" },
+          "to_message_id": { "type": "string" }
+        },
+        "required": ["from_message_id", "to_message_id"],
+        "type": "object"
+      },
+      "name": "compare_versions",
+      "outputSchema": {
+        "$defs": {
+          "SchemaChangeOutput": {
+            "properties": {
+              "after": { "type": ["string", "null"] },
+              "before": { "type": ["string", "null"] },
+              "kind": { "type": "string" },
+              "path": { "type": "string" }
+            },
+            "required": ["path", "kind"],
+            "type": "object"
+          },
+          "VersionEndpointOutput": {
+            "properties": {
+              "identity": { "type": "string" },
+              "schema_sha256": { "type": "string" }
+            },
+            "required": ["identity", "schema_sha256"],
+            "type": "object"
+          }
+        },
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "properties": {
+          "changes": { "items": { "$ref": "#/$defs/SchemaChangeOutput" }, "type": "array" },
+          "from": { "$ref": "#/$defs/VersionEndpointOutput" },
+          "to": { "$ref": "#/$defs/VersionEndpointOutput" }
+        },
+        "required": ["from", "to", "changes"],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Detect an in-memory ISO 20022 XML message using bounded core parsing",
+      "inputSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "properties": {
+          "message": {
+            "description": "Complete in-memory ISO 20022 XML document. File paths and URLs are not accepted.",
+            "type": "string"
+          }
+        },
+        "required": ["message"],
+        "type": "object"
+      },
+      "name": "detect_message",
+      "outputSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "properties": {
+          "business_area": { "type": "string" },
+          "family": { "type": "string" },
+          "message_id": { "type": "string" },
+          "namespace": { "type": "string" },
+          "root_element": { "type": "string" },
+          "version": { "type": "string" }
+        },
+        "required": ["message_id", "business_area", "family", "version", "namespace", "root_element"],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Explain a registered validation rule from its executable core registry",
+      "inputSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "properties": { "rule_id": { "type": "string" } },
+        "required": ["rule_id"],
+        "type": "object"
+      },
+      "name": "explain_validation_error",
+      "outputSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "properties": {
+          "affected_messages": { "items": { "type": "string" }, "type": "array" },
+          "field_paths": { "items": { "type": "string" }, "type": "array" },
+          "id": { "type": "string" },
+          "layer": { "type": "string" },
+          "profile": { "type": ["string", "null"] },
+          "profile_version": { "type": ["string", "null"] },
+          "reason": { "type": "string" },
+          "source": { "type": ["string", "null"] },
+          "title": { "type": "string" }
+        },
+        "required": ["id", "layer", "title", "reason", "affected_messages", "field_paths"],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Inspect schema-derived metadata for an in-memory ISO 20022 XML message",
+      "inputSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "properties": {
+          "message": {
+            "description": "Complete in-memory ISO 20022 XML document. File paths and URLs are not accepted.",
+            "type": "string"
+          }
+        },
+        "required": ["message"],
+        "type": "object"
+      },
+      "name": "inspect_message",
+      "outputSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "properties": {
+          "business_area": { "type": "string" },
+          "description": { "type": ["string", "null"] },
+          "field_count": { "format": "uint", "minimum": 0, "type": "integer" },
+          "generated_module": { "type": "string" },
+          "message_id": { "type": "string" },
+          "namespace": { "type": "string" },
+          "required_feature": { "type": "string" },
+          "root_element": { "type": "string" },
+          "root_type": { "type": "string" },
+          "schema_path": { "type": "string" },
+          "schema_sha256": { "type": "string" }
+        },
+        "required": ["message_id", "business_area", "namespace", "root_element", "root_type", "schema_path", "schema_sha256", "generated_module", "required_feature", "field_count"],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Look up one exact normalized schema field path",
+      "inputSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "properties": {
+          "logical_path": { "type": "string" },
+          "message_id": { "type": "string" }
+        },
+        "required": ["message_id", "logical_path"],
+        "type": "object"
+      },
+      "name": "lookup_field",
+      "outputSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "properties": {
+          "choice_group": { "format": "uint32", "minimum": 0, "type": ["integer", "null"] },
+          "documentation": { "type": ["string", "null"] },
+          "enum_values": { "items": { "type": "string" }, "type": "array" },
+          "kind": { "type": "string" },
+          "logical_path": { "type": "string" },
+          "max_occurs": { "format": "uint32", "minimum": 0, "type": ["integer", "null"] },
+          "message_id": { "type": "string" },
+          "min_occurs": { "format": "uint32", "minimum": 0, "type": "integer" },
+          "namespace": { "type": "string" },
+          "rust_name": { "type": "string" },
+          "type_name": { "type": "string" },
+          "wire_name": { "type": "string" }
+        },
+        "required": ["message_id", "logical_path", "namespace", "wire_name", "rust_name", "type_name", "min_occurs", "enum_values", "kind"],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Look up one exact message version in the generated catalogue",
+      "inputSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "properties": { "message_id": { "type": "string" } },
+        "required": ["message_id"],
+        "type": "object"
+      },
+      "name": "lookup_message",
+      "outputSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "properties": {
+          "business_area": { "type": "string" },
+          "description": { "type": ["string", "null"] },
+          "field_count": { "format": "uint", "minimum": 0, "type": "integer" },
+          "generated_module": { "type": "string" },
+          "message_id": { "type": "string" },
+          "namespace": { "type": "string" },
+          "required_feature": { "type": "string" },
+          "root_element": { "type": "string" },
+          "root_type": { "type": "string" },
+          "schema_path": { "type": "string" },
+          "schema_sha256": { "type": "string" }
+        },
+        "required": ["message_id", "business_area", "namespace", "root_element", "root_type", "schema_path", "schema_sha256", "generated_module", "required_feature", "field_count"],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Validate an in-memory generated ISO 20022 message with an explicit layer. Implemented rules only; no bank/network acceptance, certification, onboarding, or legal-compliance guarantee.",
+      "inputSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "properties": {
+          "layer": {
+            "default": null,
+            "description": "Explicit layer: `l2`; unavailable layers fail rather than degrade.",
+            "type": ["string", "null"]
+          },
+          "message": {
+            "description": "Complete in-memory ISO 20022 XML document.",
+            "type": "string"
+          },
+          "profile_release": {
+            "default": null,
+            "description": "Complete immutable profile release key. No implicit latest release.",
+            "type": ["string", "null"]
+          }
+        },
+        "required": ["message"],
+        "type": "object"
+      },
+      "name": "validate_message",
+      "outputSchema": {
+        "$defs": {
+          "UnavailableLayerOutput": {
+            "properties": {
+              "layer": { "type": "string" },
+              "reason": { "type": "string" }
+            },
+            "required": ["layer", "reason"],
+            "type": "object"
+          },
+          "ValidationIssueOutput": {
+            "properties": {
+              "code": { "type": "string" },
+              "layer": { "type": "string" },
+              "message": { "type": "string" },
+              "path": { "type": "string" },
+              "profile": { "type": ["string", "null"] },
+              "profile_version": { "type": ["string", "null"] },
+              "rule_id": { "type": "string" },
+              "severity": { "type": "string" },
+              "source": { "type": ["string", "null"] }
+            },
+            "required": ["code", "severity", "path", "message", "rule_id", "layer"],
+            "type": "object"
+          }
+        },
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "properties": {
+          "complete": { "type": "boolean" },
+          "errors": { "items": { "$ref": "#/$defs/ValidationIssueOutput" }, "type": "array" },
+          "layer": { "type": "string" },
+          "message_id": { "type": "string" },
+          "unavailable_layers": { "items": { "$ref": "#/$defs/UnavailableLayerOutput" }, "type": "array" },
+          "valid": { "type": "boolean" },
+          "warnings": { "items": { "$ref": "#/$defs/ValidationIssueOutput" }, "type": "array" }
+        },
+        "required": ["message_id", "layer", "valid", "complete", "errors", "warnings", "unavailable_layers"],
+        "type": "object"
+      }
+    }
+  ]
+}

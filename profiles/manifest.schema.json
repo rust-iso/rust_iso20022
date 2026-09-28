@@ -1,0 +1,104 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/rust-iso/rust_iso20022/profiles/manifest.schema.json",
+  "title": "rust_iso20022 profile artifact schemas",
+  "oneOf": [
+    { "$ref": "#/$defs/source_manifest" },
+    { "$ref": "#/$defs/fixture_index" }
+  ],
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "date": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    },
+    "source_document": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "document_id",
+        "publisher",
+        "source_url",
+        "section_reference",
+        "sha256",
+        "access_classification",
+        "implementation_decision",
+        "distribution_decision"
+      ],
+      "properties": {
+        "document_id": { "type": "string", "minLength": 1 },
+        "publisher": { "type": "string", "minLength": 1 },
+        "source_url": { "type": ["string", "null"], "format": "uri" },
+        "relative_path": { "type": "string", "minLength": 1 },
+        "section_reference": { "type": "string", "minLength": 1 },
+        "sha256": { "$ref": "#/$defs/sha256" },
+        "access_classification": { "type": "string", "minLength": 1 },
+        "implementation_decision": { "type": "string", "minLength": 1 },
+        "distribution_decision": { "type": "string", "minLength": 1 }
+      }
+    },
+    "source_manifest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "format_version",
+        "scheme",
+        "scheme_release",
+        "guideline_edition",
+        "effective_from",
+        "effective_until",
+        "sources"
+      ],
+      "properties": {
+        "format_version": { "const": 1 },
+        "test_only": { "type": "boolean" },
+        "scheme": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+        "scheme_release": { "type": "string", "minLength": 1 },
+        "guideline_edition": { "type": "string", "minLength": 1 },
+        "effective_from": { "$ref": "#/$defs/date" },
+        "effective_until": { "$ref": "#/$defs/date" },
+        "sources": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/source_document" }
+        }
+      }
+    },
+    "fixture_record": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["relative_path", "sha256", "expected_rule_ids"],
+      "properties": {
+        "relative_path": { "type": "string", "minLength": 1 },
+        "sha256": { "$ref": "#/$defs/sha256" },
+        "expected_rule_ids": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "expected_paths": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "fixture_index": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["format_version", "profile_release_key", "fixtures"],
+      "properties": {
+        "format_version": { "const": 1 },
+        "test_only": { "type": "boolean" },
+        "profile_release_key": { "type": "string", "minLength": 1 },
+        "evidence_ref": { "type": "string", "minLength": 1 },
+        "fixtures": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/fixture_record" }
+        }
+      }
+    }
+  }
+}

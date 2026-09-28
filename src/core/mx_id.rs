@@ -84,7 +84,9 @@ impl MxId {
             && parts[1].len() == 3
             && parts[2].len() == 3
             && parts[3].len() == 2
-            && parts[1..].iter().all(|p| p.bytes().all(|b| b.is_ascii_digit()));
+            && parts[1..]
+                .iter()
+                .all(|p| p.bytes().all(|b| b.is_ascii_digit()));
         if !valid {
             return Err(Error::InvalidMxId(s.to_string()));
         }

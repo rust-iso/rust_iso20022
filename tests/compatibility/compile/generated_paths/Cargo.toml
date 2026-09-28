@@ -1,0 +1,46 @@
+[package]
+name = "rust_iso20022_generated_paths_compat"
+version = "0.0.0"
+edition = "2021"
+publish = false
+
+[dependencies]
+rust_iso20022 = { path = "../../../.." }
+
+[features]
+default = []
+model-acmt = ["rust_iso20022/model-acmt"]
+model-admi = ["rust_iso20022/model-admi"]
+model-auth = ["rust_iso20022/model-auth"]
+model-caaa = ["rust_iso20022/model-caaa"]
+model-caad = ["rust_iso20022/model-caad"]
+model-caam = ["rust_iso20022/model-caam"]
+model-cafc = ["rust_iso20022/model-cafc"]
+model-cafm = ["rust_iso20022/model-cafm"]
+model-cafr = ["rust_iso20022/model-cafr"]
+model-cain = ["rust_iso20022/model-cain"]
+model-camt = ["rust_iso20022/model-camt"]
+model-canm = ["rust_iso20022/model-canm"]
+model-casp = ["rust_iso20022/model-casp"]
+model-casr = ["rust_iso20022/model-casr"]
+model-catm = ["rust_iso20022/model-catm"]
+model-catp = ["rust_iso20022/model-catp"]
+model-colr = ["rust_iso20022/model-colr"]
+model-fxtr = ["rust_iso20022/model-fxtr"]
+model-head = ["rust_iso20022/model-head"]
+model-pacs = ["rust_iso20022/model-pacs"]
+model-pain = ["rust_iso20022/model-pain"]
+model-reda = ["rust_iso20022/model-reda"]
+model-remt = ["rust_iso20022/model-remt"]
+model-secl = ["rust_iso20022/model-secl"]
+model-seev = ["rust_iso20022/model-seev"]
+model-semt = ["rust_iso20022/model-semt"]
+model-sese = ["rust_iso20022/model-sese"]
+model-setr = ["rust_iso20022/model-setr"]
+model-trck = ["rust_iso20022/model-trck"]
+model-tsin = ["rust_iso20022/model-tsin"]
+model-tsmt = ["rust_iso20022/model-tsmt"]
+model-tsrv = ["rust_iso20022/model-tsrv"]
+
+[workspace]
+

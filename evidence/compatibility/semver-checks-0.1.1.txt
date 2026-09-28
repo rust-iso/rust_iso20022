@@ -1,0 +1,10 @@
+    Building rust_iso20022 v0.1.2 (current)
+       Built [   0.914s] (current)
+     Parsing rust_iso20022 v0.1.2 (current)
+      Parsed [   0.052s] (current)
+     Parsing rust_iso20022 v0.1.1 (baseline, cached)
+      Parsed [   0.004s] (baseline)
+    Checking rust_iso20022 v0.1.1 -> v0.1.2 (minor change)
+     Checked [   0.012s] 196 checks: 196 pass, 58 skip
+     Summary no semver update required
+    Finished [   2.395s] rust_iso20022

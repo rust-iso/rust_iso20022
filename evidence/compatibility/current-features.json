@@ -1,0 +1,165 @@
+{
+  "format_version": 1,
+  "package_version": "0.1.2",
+  "edition": "2024",
+  "rust_version": "1.85",
+  "features": {
+    "__message_model": [
+      "__model"
+    ],
+    "__model": [],
+    "catalogue": [
+      "dep:tokio",
+      "dep:reqwest",
+      "dep:regex"
+    ],
+    "cli": [
+      "dep:prettytable-rs",
+      "serde"
+    ],
+    "convert": [
+      "dep:rust_decimal",
+      "dep:chrono"
+    ],
+    "default": [],
+    "json": [
+      "serde"
+    ],
+    "model": [
+      "model-acmt",
+      "model-admi",
+      "model-auth",
+      "model-caaa",
+      "model-caad",
+      "model-caam",
+      "model-cafc",
+      "model-cafm",
+      "model-cafr",
+      "model-cain",
+      "model-camt",
+      "model-canm",
+      "model-casp",
+      "model-casr",
+      "model-catm",
+      "model-catp",
+      "model-colr",
+      "model-fxtr",
+      "model-head",
+      "model-pacs",
+      "model-pain",
+      "model-reda",
+      "model-remt",
+      "model-secl",
+      "model-seev",
+      "model-semt",
+      "model-sese",
+      "model-setr",
+      "model-trck",
+      "model-tsin",
+      "model-tsmt",
+      "model-tsrv"
+    ],
+    "model-acmt": [
+      "__message_model"
+    ],
+    "model-admi": [
+      "__message_model"
+    ],
+    "model-auth": [
+      "__message_model"
+    ],
+    "model-caaa": [
+      "__message_model"
+    ],
+    "model-caad": [
+      "__message_model"
+    ],
+    "model-caam": [
+      "__message_model"
+    ],
+    "model-cafc": [
+      "__message_model"
+    ],
+    "model-cafm": [
+      "__message_model"
+    ],
+    "model-cafr": [
+      "__message_model"
+    ],
+    "model-cain": [
+      "__message_model"
+    ],
+    "model-camt": [
+      "__message_model"
+    ],
+    "model-canm": [
+      "__message_model"
+    ],
+    "model-casp": [
+      "__message_model"
+    ],
+    "model-casr": [
+      "__message_model"
+    ],
+    "model-catm": [
+      "__message_model"
+    ],
+    "model-catp": [
+      "__message_model"
+    ],
+    "model-colr": [
+      "__message_model"
+    ],
+    "model-fxtr": [
+      "__message_model"
+    ],
+    "model-head": [
+      "__message_model"
+    ],
+    "model-pacs": [
+      "__message_model"
+    ],
+    "model-pain": [
+      "__message_model"
+    ],
+    "model-reda": [
+      "__message_model"
+    ],
+    "model-remt": [
+      "__message_model"
+    ],
+    "model-secl": [
+      "__message_model"
+    ],
+    "model-seev": [
+      "__message_model"
+    ],
+    "model-semt": [
+      "__message_model"
+    ],
+    "model-sese": [
+      "__message_model"
+    ],
+    "model-setr": [
+      "__message_model"
+    ],
+    "model-trck": [
+      "__message_model"
+    ],
+    "model-tsin": [
+      "__message_model"
+    ],
+    "model-tsmt": [
+      "__message_model"
+    ],
+    "model-tsrv": [
+      "__message_model"
+    ],
+    "profiles": [],
+    "serde": [
+      "dep:serde",
+      "dep:serde_json"
+    ],
+    "unsafe-full-logging": []
+  }
+}

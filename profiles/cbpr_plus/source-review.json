@@ -1,0 +1,36 @@
+{
+  "format_version": 1,
+  "reviewed_on": "2026-09-28",
+  "scheme": "cbpr-plus",
+  "scheme_release": "SR2026",
+  "status": "final-guidelines-identified-content-unavailable",
+  "official_timeline": {
+    "advance_release": "2025-12-19",
+    "final_release": "2026-02-20",
+    "message_schemas_and_mdr": "2026-03-20",
+    "pilot": "2026-07-18",
+    "live": "2027-06-12",
+    "source_url": "https://www.swift.com/standards/standards-releases"
+  },
+  "source_sha256": null,
+  "implementation_decision": "Only rules independently verified against accessible official material may be implemented.",
+  "distribution_decision": "Do not reproduce MyStandards or SWIFT usage-guideline text/tables. GitHub implementations are architecture and differential-test references only.",
+  "supported_messages": [],
+  "reference_implementations": [
+    {
+      "repository": "https://github.com/phoughton/iso20022-cbpr-ur",
+      "license": "MIT",
+      "use": "rule-registry, combinator, enforced/advisory, and fixture design reference; not authoritative"
+    },
+    {
+      "repository": "https://github.com/socrates8300/mx20022",
+      "license": "Apache-2.0",
+      "use": "workspace and feature-boundary reference; not authoritative"
+    },
+    {
+      "repository": "https://github.com/GoPlasmatic/MXMessage",
+      "license": "Apache-2.0",
+      "use": "differential comparison only; not authoritative"
+    }
+  ]
+}

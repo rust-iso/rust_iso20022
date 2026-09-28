@@ -1,0 +1,55 @@
+name: Scheduled fuzzing
+
+on:
+  schedule:
+    - cron: "23 3 * * 1"
+  workflow_dispatch:
+    inputs:
+      minimize:
+        description: "Minimize the checked-out seed corpora before fuzzing"
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: fuzz-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  fuzz:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@master
+        with:
+          toolchain: nightly-2026-09-26
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: fuzz
+          key: cargo-fuzz-0.13.2
+      - name: Install pinned cargo-fuzz
+        run: cargo install cargo-fuzz --version 0.13.2 --locked
+      - name: Replay persistent regression corpus
+        run: scripts/run-fuzz-regressions.sh
+      - name: Minimize corpus on manual request
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.minimize }}
+        run: scripts/run-fuzz-baseline.sh --minimize
+      - name: Run bounded fuzz baseline
+        env:
+          FUZZ_SECONDS: "60"
+          FUZZ_TIMEOUT_SECONDS: "5"
+          FUZZ_RSS_LIMIT_MB: "2048"
+          FUZZ_MAX_INPUT_BYTES: "65536"
+        run: scripts/run-fuzz-baseline.sh
+      - name: Upload logs and crash artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: fuzz-artifacts-${{ github.run_id }}
+          path: fuzz/artifacts/
+          if-no-files-found: ignore
+          retention-days: 14

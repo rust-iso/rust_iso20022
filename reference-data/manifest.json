@@ -1,0 +1,36 @@
+{
+  "datasets": [
+    {
+      "id": "iban-lengths",
+      "license_decision": "Factual registry fields reviewed against the free SWIFT registry; transcription cross-checked against sepa 0.8.0 (MIT OR Apache-2.0).",
+      "path": "reference-data/iban-lengths.csv",
+      "release": "SWIFT IBAN Registry release 102 (June 2026)",
+      "retrieved_at": "2026-09-28",
+      "reviewed": true,
+      "sha256": "c8b9d980a2751a4e8f2dfb810b057e55dcf6ce4092cccbfd06bb9b82da4ae684",
+      "source": "https://www.swift.com/standards/data-standards/iban-international-bank-account-number"
+    },
+    {
+      "id": "iso-3166-alpha2",
+      "license_decision": "Snapshot generated from rust_iso3166 0.2.0, licensed Apache-2.0.",
+      "path": "reference-data/iso3166-alpha2.csv",
+      "release": "rust_iso3166 0.2.0 dataset",
+      "retrieved_at": "2026-09-28",
+      "reviewed": true,
+      "sha256": "ce8fb3de3d1e2c395b09b1dbdfbae024d0c4add4df4a3e1adb00eaf487cc881e",
+      "source": "https://github.com/rust-iso/rust_iso3166"
+    },
+    {
+      "id": "iso-4217-active",
+      "license_decision": "ISO permits free use of ISO 4217 codes; factual code/minor-unit fields reviewed from the official SIX List One.",
+      "path": "reference-data/iso4217-active.csv",
+      "release": "SIX ISO 4217 List One, published 2026-09-17",
+      "retrieved_at": "2026-09-28",
+      "reviewed": true,
+      "sha256": "3ee0c1bc86ff49665a9e23b67790d90a67066085ac5391e896e1581d846f9113",
+      "source": "https://www.six-group.com/dam/download/financial-information/data-center/iso-currrency/lists/list-one.xml"
+    }
+  ],
+  "format_version": 1,
+  "generated_by": "iso20022-reference-gen 0.0.0"
+}

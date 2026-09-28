@@ -1,0 +1,18 @@
+[package]
+name = "rust_iso20022_public_api_compat"
+version = "0.0.0"
+edition = "2021"
+publish = false
+
+[dependencies]
+rust_iso20022 = { path = "../../../.." }
+yaserde = "0.7"
+yaserde_derive = "0.7"
+
+[features]
+default = []
+serde = ["rust_iso20022/serde"]
+model-pacs = ["rust_iso20022/model-pacs"]
+
+[workspace]
+

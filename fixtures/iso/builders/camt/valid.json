@@ -1,0 +1,17 @@
+{
+  "camt052": {
+    "message_id": "FIXTURE-052",
+    "report_id": "FIXTURE-REPORT-052",
+    "output_type": "camt.052.001.09"
+  },
+  "camt053": {
+    "message_id": "FIXTURE-053",
+    "statement_id": "FIXTURE-STATEMENT-053",
+    "output_type": "camt.053.001.09"
+  },
+  "camt054": {
+    "message_id": "FIXTURE-054",
+    "notification_id": "FIXTURE-NOTICE-054",
+    "output_type": "camt.054.001.09"
+  }
+}

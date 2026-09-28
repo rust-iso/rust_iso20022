@@ -19,4 +19,4 @@ if ! command -v wasm-pack >/dev/null 2>&1; then
     exit 1
 fi
 
-RUSTFLAGS="--cfg direct_wasm" wasm-pack build --target web --release "$@"
+RUSTFLAGS="--cfg direct_wasm" wasm-pack build --target web --release --features=serde "$@"

@@ -52,10 +52,18 @@ const AMOUNT_TAGS: &[&str] = &[
 ];
 
 /// Date element names to look for, in priority order.
-const DATE_TAGS: &[&str] = &["IntrBkSttlmDt", "ReqdExctnDt", "ReqdColltnDt", "IntrBkSttlmDtTm"];
+const DATE_TAGS: &[&str] = &[
+    "IntrBkSttlmDt",
+    "ReqdExctnDt",
+    "ReqdColltnDt",
+    "IntrBkSttlmDtTm",
+];
 
 /// Extract [`MessageMetadata`] from message XML.
 pub fn extract(xml: &str) -> MessageMetadata {
+    if crate::core::validate_xml(xml, crate::core::ParseLimits::default()).is_err() {
+        return MessageMetadata::default();
+    }
     let (amount, currency) = AMOUNT_TAGS
         .iter()
         .find_map(|&tag| {
@@ -71,6 +79,8 @@ pub fn extract(xml: &str) -> MessageMetadata {
         number_of_transactions: element_text(xml, "NbOfTxs").filter(|v| !v.is_empty()),
         amount,
         currency,
-        value_date: first_of(xml, DATE_TAGS).map(|(_, v)| v).filter(|v| !v.is_empty()),
+        value_date: first_of(xml, DATE_TAGS)
+            .map(|(_, v)| v)
+            .filter(|v| !v.is_empty()),
     }
 }

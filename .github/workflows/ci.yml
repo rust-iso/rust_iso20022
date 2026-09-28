@@ -1,0 +1,150 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  format:
+    name: Format
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: rustfmt
+      - run: cargo fmt --check
+
+  clippy:
+    name: Clippy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: clippy
+      - uses: Swatinem/rust-cache@v2
+      - run: cargo clippy --workspace --all-targets -- -D warnings
+
+  core:
+    name: Core and representative features
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        features:
+          - ""
+          - "model-head,serde"
+          - "model-pacs,serde,convert"
+          - "model-pain,serde"
+          - "model-camt,serde"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: Swatinem/rust-cache@v2
+      - name: Test selected feature contract
+        shell: bash
+        run: |
+          if [[ -n "${{ matrix.features }}" ]]; then
+            cargo test --workspace --features "${{ matrix.features }}"
+          else
+            cargo test --workspace --no-default-features
+          fi
+
+  generated-area:
+    name: Generated model / ${{ matrix.area }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        area:
+          - acmt
+          - admi
+          - auth
+          - caaa
+          - caad
+          - caam
+          - cafc
+          - cafm
+          - cafr
+          - cain
+          - camt
+          - canm
+          - casp
+          - casr
+          - catm
+          - catp
+          - colr
+          - fxtr
+          - head
+          - pacs
+          - pain
+          - reda
+          - remt
+          - secl
+          - seev
+          - semt
+          - sese
+          - setr
+          - trck
+          - tsin
+          - tsmt
+          - tsrv
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: Swatinem/rust-cache@v2
+        with:
+          key: model-${{ matrix.area }}
+      - run: cargo test --workspace --features "model-${{ matrix.area }}"
+
+  msrv:
+    name: MSRV 1.85
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@master
+        with:
+          toolchain: "1.85"
+      - uses: Swatinem/rust-cache@v2
+        with:
+          key: msrv
+      - run: cargo check --workspace --exclude rust_iso20022_mcp --no-default-features
+
+  wasm:
+    name: WASM core compile contract
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: wasm32-unknown-unknown
+      - uses: Swatinem/rust-cache@v2
+        with:
+          key: wasm
+      - name: Check legacy and structured WASM targets
+        run: |
+          cargo check --lib --target wasm32-unknown-unknown
+          cargo check -p rust_iso20022_wasm --target wasm32-unknown-unknown
+          cargo check -p rust_iso20022_wasm --target wasm32-unknown-unknown --features model-pacs
+
+  matrix-contract:
+    name: Matrix contract
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Require every generated feature and mandatory baseline row
+        shell: bash
+        run: |
+          for area in acmt admi auth caaa caad caam cafc cafm cafr cain camt canm casp casr catm catp colr fxtr head pacs pain reda remt secl seev semt sese setr trck tsin tsmt tsrv; do
+            grep -q "^model-${area} =" Cargo.toml
+          done
+          test "$(grep -c '^\[\[baseline\]\]' tests/matrix/matrix.toml)" -eq 6
+          test "$(grep -c '^mandatory = true' tests/matrix/matrix.toml)" -eq 6

@@ -1,0 +1,43 @@
+# Release candidate process
+
+The repository currently prepares release candidates but does not publish them.
+`.github/workflows/release.yml` is manual-only, has read-only repository
+permissions, and contains no crates.io publish, tag, GitHub Release, signing, or
+npm publish step.
+
+## Local baseline
+
+```bash
+scripts/test-release-check.sh
+scripts/release-check.sh --plan
+scripts/release-check.sh
+```
+
+The full check runs with one Cargo job and debug information disabled to bound
+memory. Generated model families are compiled as separate matrix rows because
+building all 1,130 modules in one rustc invocation is unnecessarily expensive.
+
+The required evidence includes the supported message/profile/migration matrix,
+MSRV and feature matrix, schema and generator manifests, known limitations,
+package file list, checksums, and results of every mandatory gate. A failed or
+unavailable mandatory gate leaves the candidate not ready.
+
+`scripts/check-package-size.sh` enforces the crates.io 10 MiB upload ceiling.
+The metadata descriptor corpus is Brotli-compressed by codegen so the complete
+generated API remains in one crate without exceeding that limit.
+
+## SBOM
+
+`scripts/generate-sbom.sh` uses `cargo-cyclonedx 0.5.9` and emits CycloneDX
+1.5 JSON. It sets `SOURCE_DATE_EPOCH` from the environment or the checked-out
+commit so the generator omits random serial data and uses a reproducible
+timestamp. The SBOM describes the Cargo-resolved core package and is shipped
+beside its SHA-256 checksum. Adapter binaries have separate build artifacts and
+are not crates.io packages.
+
+## Future authorized publication
+
+Publication requires an explicit maintainer decision after all WPs are closed.
+At that point, review the package archive, sign artifacts using the project's
+chosen key policy, publish the crate, create the GitHub Release, and verify the
+docs.rs result. None of those state-changing steps is automated here.

@@ -1,0 +1,17 @@
+{
+  "pain001": {
+    "message_id": "FIXTURE-001",
+    "payment_info_id": "FIXTURE-PMT-001",
+    "end_to_end_id": "FIXTURE-E2E-001",
+    "currency": "EUR",
+    "amount": "10.25",
+    "output_type": "pain.001.001.09"
+  },
+  "pain002": {
+    "message_id": "FIXTURE-002",
+    "original_message_id": "FIXTURE-001",
+    "original_message_name": "pain.001.001.09",
+    "group_status": "ACCP",
+    "output_type": "pain.002.001.10"
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "format_version": 1,
+  "reviewed_on": "2026-09-28",
+  "implementation_basis": "Independent implementation from publicly accessible official metadata and documents; GitHub implementations may be used only as architecture and differential-test references.",
+  "distribution_decision": "Do not reproduce EPC document text or tables. Publish only independently written Rust logic, narrow source references, and synthetic fixtures. Production release registration remains disabled until exact downloaded source bytes are SHA-256 pinned.",
+  "digest_status": "pending_exact_source_bytes",
+  "effective_releases": [
+    {
+      "scheme": "sepa-sct",
+      "rulebook": {
+        "document_id": "EPC125-05",
+        "edition": "2025-v1.1",
+        "status": "effective",
+        "effective_from": "2025-10-05",
+        "effective_until": "2027-11-21",
+        "source_url": "https://www.europeanpaymentscouncil.eu/document-library/rulebooks/2025-sepa-credit-transfer-rulebook-version-11",
+        "sha256": null
+      },
+      "guidelines": [
+        {
+          "document_id": "EPC132-08",
+          "edition": "2025-v1.0",
+          "role": "customer-to-psp",
+          "source_url": "https://www.europeanpaymentscouncil.eu/document-library/implementation-guidelines/sepa-credit-transfer-customer-psp-implementation-1",
+          "sha256": null
+        },
+        {
+          "document_id": "EPC115-06",
+          "edition": "2025-v1.0",
+          "role": "inter-psp",
+          "source_url": "https://www.europeanpaymentscouncil.eu/document-library/implementation-guidelines/sepa-credit-transfer-inter-psp-implementation-1",
+          "sha256": null
+        }
+      ]
+    },
+    {
+      "scheme": "sepa-sct-inst",
+      "rulebook": {
+        "document_id": "EPC004-16",
+        "edition": "2025-v1.1",
+        "status": "effective",
+        "effective_from": "2025-10-05",
+        "effective_until": "2027-11-21",
+        "source_url": "https://www.europeanpaymentscouncil.eu/document-library/rulebooks/2025-sepa-instant-credit-transfer-rulebook-version-11",
+        "sha256": null
+      },
+      "guidelines": [
+        {
+          "document_id": "EPC121-16",
+          "edition": "2025-v1.0",
+          "role": "customer-to-psp",
+          "source_url": "https://www.europeanpaymentscouncil.eu/document-library/implementation-guidelines/sepa-instant-credit-transfer-customer-psp-2",
+          "sha256": null
+        },
+        {
+          "document_id": "EPC122-16",
+          "edition": "2025-v1.0",
+          "role": "inter-psp",
+          "source_url": "https://www.europeanpaymentscouncil.eu/document-library/implementation-guidelines/sepa-instant-credit-transfer-inter-psp-implementation-2",
+          "sha256": null
+        }
+      ]
+    }
+  ],
+  "rejected_as_release": [
+    {
+      "document_id": "EPC008-26",
+      "scheme": "sepa-sct",
+      "edition": "2026-consultation-v1.0",
+      "reason": "public consultation material, not an effective rulebook"
+    },
+    {
+      "document_id": "EPC009-26",
+      "scheme": "sepa-sct-inst",
+      "edition": "2026-consultation-v1.0",
+      "reason": "public consultation material, not an effective rulebook"
+    }
+  ]
+}

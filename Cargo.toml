@@ -1,75 +1,95 @@
 [package]
 name = "rust_iso20022"
-version = "0.1.1"
-edition = "2021"
+version = "0.1.2"
+edition = "2024"
 rust-version = "1.85"
-description = "ISO 20022 message definitions and external code sets for Rust, generated from the official XSD schemas."
+description = "ISO 20022 financial message parser and generated Rust types for SWIFT MX XML/JSON."
 repository = "https://github.com/rust-iso/rust_iso20022"
+readme = "README.md"
 license = "Apache-2.0"
-keywords = ["ISO20022", "SWIFT", "payments", "finance", "iso"]
+keywords = ["ISO20022", "SWIFT", "payments", "finance", "XML"]
 categories = ["data-structures", "encoding", "finance"]
 documentation = "https://docs.rs/rust_iso20022/"
-# The XSD sources and code-generation tooling are not needed by downstream
-# crates; keep them out of the published package.
-exclude = ["xsds/", "tools/", "thrdpty/", "a.rs"]
+# Publish only downstream-facing source and documentation. Schema inputs,
+# codegen tools, Spec Kit artifacts, test corpora, and release evidence stay in
+# the repository and are attached separately to release-candidate artifacts.
+include = [
+    "src/**",
+    "examples/**",
+    "fixtures/iso/valid/pacs.008.001.08-cross-field.xml",
+    "docs/**",
+    "/Cargo.toml",
+    "/Cargo.lock",
+    "/README.md",
+    "/CHANGELOG.md",
+    "/CONTRIBUTING.md",
+    "/ROADMAP.md",
+    "/SECURITY.md",
+    "/SPONSORS.md",
+    "/LICENSE",
+]
 
-# docs.rs builds with only `default` features, but the generated message model
-# (the `generated` module) is gated behind `__model`/`model-*` and is off by
-# default — without this, docs.rs would render an empty crate with no message
-# modules. Enable the full model plus the optional helpers so the published
-# docs cover everything. (NOTE: ~502 yaserde modules; if docs.rs hits its
-# build time/memory limit, drop to a representative subset of `model-*`.)
+# Building all 1,130 generated message modules at once exceeds docs.rs's memory
+# limit. Document the application header and the two primary payment families,
+# plus the optional serialization/conversion APIs. Every other model family has
+# the same generated API shape and remains available through its `model-*`
+# feature to downstream users.
 [package.metadata.docs.rs]
-features = ["model", "serde", "convert", "cli"]
+features = ["model-head", "model-pacs", "model-pain", "serde", "convert"]
 rustdoc-args = ["--cfg", "docsrs"]
 
 # The codegen tooling (which has a git dependency) lives in a separate,
 # unpublished crate so the published `rust_iso20022` has no git dependencies.
 [workspace]
-members = ["tools/codegen"]
+members = ["crates/benchmarks", "crates/cli", "crates/mcp", "crates/migration", "crates/wasm", "tools/codegen", "tools/reference-gen"]
+exclude = ["tools/xsd-spike", "fuzz"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [features]
 default = []
-# The generated, strongly-typed ISO 20022 message model. Compiling all ~722
+# The generated, strongly-typed ISO 20022 message model. Compiling all 1,130
 # yaserde modules at once is very slow, so the model is split per business area:
 # enable only the families you need (e.g. `model-pacs`), or `model` for all.
 # `__model` is internal: any `model-<area>` turns it on to expose `generated`.
 __model = []
-model-acmt = ["__model"]
-model-admi = ["__model"]
-model-auth = ["__model"]
-model-caaa = ["__model"]
-model-caad = ["__model"]
-model-caam = ["__model"]
-model-cafc = ["__model"]
-model-cafm = ["__model"]
-model-cafr = ["__model"]
-model-cain = ["__model"]
-model-camt = ["__model"]
-model-canm = ["__model"]
-model-casp = ["__model"]
-model-casr = ["__model"]
-model-catm = ["__model"]
-model-catp = ["__model"]
-model-colr = ["__model"]
-model-fxtr = ["__model"]
-model-head = ["__model"]
-model-pacs = ["__model"]
-model-pain = ["__model"]
-model-reda = ["__model"]
-model-remt = ["__model"]
-model-secl = ["__model"]
-model-seev = ["__model"]
-model-semt = ["__model"]
-model-sese = ["__model"]
-model-setr = ["__model"]
-model-trck = ["__model"]
-model-tsin = ["__model"]
-model-tsmt = ["__model"]
-model-tsrv = ["__model"]
-# All families at once (slow to compile; ~722 message modules).
+__message_model = ["__model"]
+model-acmt = ["__message_model"]
+model-admi = ["__message_model"]
+model-auth = ["__message_model"]
+model-caaa = ["__message_model"]
+model-caad = ["__message_model"]
+model-caam = ["__message_model"]
+model-cafc = ["__message_model"]
+model-cafm = ["__message_model"]
+model-cafr = ["__message_model"]
+model-cain = ["__message_model"]
+model-camt = ["__message_model"]
+# Focused generated model for resource-constrained builds. `model-camt`
+# remains the compatible full-family feature.
+model-camt-053-001-09 = ["__message_model"]
+model-canm = ["__message_model"]
+model-casp = ["__message_model"]
+model-casr = ["__message_model"]
+model-catm = ["__message_model"]
+model-catp = ["__message_model"]
+model-colr = ["__message_model"]
+model-fxtr = ["__message_model"]
+model-head = ["__message_model"]
+model-pacs = ["__message_model"]
+model-pain = ["__message_model"]
+model-reda = ["__message_model"]
+model-remt = ["__message_model"]
+model-secl = ["__message_model"]
+model-seev = ["__message_model"]
+model-semt = ["__message_model"]
+model-sese = ["__message_model"]
+model-setr = ["__message_model"]
+model-trck = ["__message_model"]
+model-tsin = ["__message_model"]
+model-tsmt = ["__message_model"]
+model-tsrv = ["__message_model"]
+# All families at once (slow to compile; 1,130 message modules).
 model = [
     "model-acmt", "model-admi", "model-auth", "model-caaa", "model-caad",
     "model-caam", "model-cafc", "model-cafm", "model-cafr", "model-cain",
@@ -83,12 +103,20 @@ model = [
 # to canonical strings) and to every generated message type, enabling
 # `to_json` / `from_json`.
 serde = ["dep:serde", "dep:serde_json"]
+# Capability-oriented alias used by adapters; retained `serde` stays compatible.
+json = ["serde"]
 # The runtime ISO 20022 catalogue scraper (pulls tokio/reqwest/regex).
 catalogue = ["dep:tokio", "dep:reqwest", "dep:regex"]
 # Command-line tool (`iso20022` binary) for querying the message catalogue.
-cli = ["dep:prettytable-rs"]
+cli = ["dep:prettytable-rs", "serde"]
 # Typed conversions for scalar values (amounts -> Decimal, dates -> chrono).
 convert = ["dep:rust_decimal", "dep:chrono"]
+# Compile-time half of the explicit two-step opt-in for unsafe full-value
+# diagnostics. Core and adapter defaults never enable it.
+unsafe-full-logging = []
+# Versioned profile registry and release resolution. Concrete network rule
+# packs add their own features later and are never enabled by default.
+profiles = []
 
 [lib]
 crate-type = ["cdylib", "rlib"]
@@ -103,6 +131,7 @@ yaserde = "0.7"
 yaserde_derive = "0.7"
 # Referenced as `xml::...` by the generated `simple_type!` yaserde impls.
 xml-rs = "0.8"
+brotli-decompressor = "5.0.3"
 
 # Optional: serde + JSON support.
 serde = { version = "1", features = ["derive"], optional = true }
@@ -130,8 +159,132 @@ required-features = ["cli"]
 name = "typed_payment"
 required-features = ["model-pacs", "serde", "convert"]
 
+[[example]]
+name = "build_pacs"
+required-features = ["model-pacs"]
+
+[[example]]
+name = "build_pain"
+required-features = ["model-pain"]
+
+[[example]]
+name = "build_camt"
+required-features = ["model-camt"]
+
+[[example]]
+name = "validation"
+required-features = ["model-pacs"]
+
+[[example]]
+name = "profile"
+required-features = ["profiles"]
+
 [dev-dependencies]
+proptest = "1"
 serde_json = "1"
+sha2 = "0.10"
+
+[[test]]
+name = "metadata_coverage"
+path = "tests/contracts/metadata_coverage.rs"
+
+[[test]]
+name = "message_api"
+path = "tests/contracts/message_api.rs"
+required-features = ["model-head", "model-pacs", "serde"]
+
+[[test]]
+name = "catalogue_contract"
+path = "tests/contracts/catalogue.rs"
+
+[[test]]
+name = "validation_contract"
+path = "tests/contracts/validation.rs"
+required-features = ["serde"]
+
+[[test]]
+name = "version_diff"
+path = "tests/compare/version_diff.rs"
+
+[[test]]
+name = "bounded_xml"
+path = "tests/security/bounded_xml.rs"
+
+[[test]]
+name = "limits_matrix"
+path = "tests/security/limits_matrix.rs"
+
+[[test]]
+name = "redaction"
+path = "tests/security/redaction.rs"
+
+[[test]]
+name = "privacy_matrix"
+path = "tests/security/privacy_matrix.rs"
+
+[[test]]
+name = "fuzz_corpus"
+path = "tests/security/fuzz_corpus.rs"
+
+[[test]]
+name = "financial_fields"
+path = "tests/validation/financial_fields.rs"
+
+[[test]]
+name = "financial_properties"
+path = "tests/validation/financial_properties.rs"
+
+[[test]]
+name = "reference_data"
+path = "tests/validation/reference_data.rs"
+
+[[test]]
+name = "financial_rules"
+path = "tests/validation/financial_rules.rs"
+
+[[test]]
+name = "cross_field"
+path = "tests/validation/cross_field.rs"
+
+[[test]]
+name = "generated_cross_field"
+path = "tests/validation/generated_cross_field.rs"
+required-features = ["model-pacs", "serde"]
+
+[[test]]
+name = "pacs_builders"
+path = "tests/builders/pacs.rs"
+required-features = ["model-pacs"]
+
+[[test]]
+name = "pain_builders"
+path = "tests/builders/pain.rs"
+required-features = ["model-pain"]
+
+[[test]]
+name = "camt_builders"
+path = "tests/builders/camt.rs"
+required-features = ["model-camt"]
+
+[[test]]
+name = "profile_framework"
+path = "tests/profiles/framework.rs"
+required-features = ["profiles"]
+
+[[test]]
+name = "profile_provenance"
+path = "tests/profiles/provenance.rs"
+required-features = ["profiles"]
+
+[[test]]
+name = "sepa_framework"
+path = "tests/profiles/sepa_framework.rs"
+required-features = ["profiles"]
+
+[[test]]
+name = "wasm_native_contract"
+path = "tests/compatibility/wasm/native.rs"
+required-features = ["serde"]
 
 # WASM/JS bindings (compiled only for wasm32 with `--cfg direct_wasm`; see
 # scripts/build-wasm.sh). Both crates are on crates.io, so they don't affect
@@ -139,8 +292,6 @@ serde_json = "1"
 [target.'cfg(target_arch = "wasm32")'.dependencies]
 wasm-bindgen = "0.2"
 js-sys = "0.3"
-# Routes Rust panics to console.error for readable wasm stack traces.
-console_error_panic_hook = "0.1"
 
 [lints.rust]
 unexpected_cfgs = { level = "warn", check-cfg = ['cfg(direct_wasm)'] }

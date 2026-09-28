@@ -1,0 +1,42 @@
+name: Profile issue
+description: Report an exact CBPR+, SEPA, or network-profile release issue
+title: "profile: "
+labels: [profile]
+body:
+  - type: markdown
+    attributes:
+      value: "Do not upload licensed standards or real payment messages. A year-only selector is insufficient; identify the exact release."
+  - type: input
+    id: release
+    attributes:
+      label: Scheme and exact profile release
+      placeholder: "CBPR+ SR2026 or SEPA SCT 2025 v1.1"
+    validations:
+      required: true
+  - type: input
+    id: dates
+    attributes:
+      label: Publication and effective dates
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Source documents, URLs, versions, and digests
+      description: State redistribution rights; never invent a missing digest.
+    validations:
+      required: true
+  - type: input
+    id: coverage
+    attributes:
+      label: Affected messages and versions
+    validations:
+      required: true
+  - type: textarea
+    id: rule
+    attributes:
+      label: Rule ID, path, expected behavior, and fixtures
+      description: Use synthetic or fully redacted fixtures only.
+    validations:
+      required: true
+

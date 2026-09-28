@@ -1,7 +1,18 @@
 /target
-Cargo.lock
+/fuzz/target
+/fuzz/artifacts
+/fuzz/coverage
 **/*.rs.bk
+debug/
+release/
+*.rlib
+*.prof*
+*.log
+.env*
+*.tmp
+*.swp
 .DS_Store
+Thumbs.db
 
 # Third-party reference material (the prowide-iso20022 Java sources), kept
 # locally for reference but not part of this codebase.

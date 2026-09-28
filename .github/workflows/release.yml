@@ -1,0 +1,100 @@
+name: Unpublished release candidate
+
+on:
+  workflow_dispatch:
+    inputs:
+      revision:
+        description: Commit or branch to verify without publishing
+        required: true
+        default: main
+
+permissions:
+  contents: read
+
+env:
+  CARGO_TERM_COLOR: always
+  CARGO_BUILD_JOBS: "1"
+  CARGO_PROFILE_DEV_DEBUG: "0"
+  CARGO_PROFILE_TEST_DEBUG: "0"
+
+jobs:
+  package:
+    name: Crate, docs, manifests, and SBOM
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ inputs.revision }}
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: clippy,rustfmt
+          targets: wasm32-unknown-unknown
+      - uses: Swatinem/rust-cache@v2
+      - name: Full release contract
+        run: scripts/release-check.sh --ci-core
+      - name: Package without publishing
+        run: |
+          mkdir -p release-artifacts/crate
+          cargo package --locked --allow-dirty
+          cp target/package/rust_iso20022-*.crate release-artifacts/crate/
+          cargo package --list --allow-dirty > release-artifacts/crate/package-files.txt
+          scripts/check-package-size.sh release-artifacts/crate/rust_iso20022-*.crate
+      - name: Install pinned SBOM generator
+        run: cargo install cargo-cyclonedx --version 0.5.9 --locked
+      - name: Generate release evidence and SBOM
+        run: |
+          scripts/generate-release-baseline.sh release-artifacts/manifests
+          scripts/generate-sbom.sh release-artifacts/sbom
+          find release-artifacts -type f -print0 | sort -z | xargs -0 sha256sum > release-artifacts/SHA256SUMS
+      - uses: actions/upload-artifact@v7
+        with:
+          name: release-candidate-metadata
+          path: release-artifacts
+          if-no-files-found: error
+
+  cli:
+    name: CLI / ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ inputs.revision }}
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: Swatinem/rust-cache@v2
+        with:
+          key: release-cli-${{ matrix.os }}
+      - run: cargo build --locked --release -p rust_iso20022_cli --jobs 1
+      - name: Smoke test
+        shell: bash
+        run: cargo run --locked --release -p rust_iso20022_cli -- detect fixtures/iso/valid/pacs.008.001.08-cross-field.xml
+      - uses: actions/upload-artifact@v7
+        with:
+          name: iso20022-cli-${{ matrix.os }}
+          path: |
+            target/release/iso20022
+            target/release/iso20022.exe
+          if-no-files-found: error
+
+  wasm:
+    name: WASM package candidate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ inputs.revision }}
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: wasm32-unknown-unknown
+      - uses: Swatinem/rust-cache@v2
+        with:
+          key: release-wasm
+      - run: cargo build --locked --release -p rust_iso20022_wasm --target wasm32-unknown-unknown --features model-pacs --jobs 1
+      - uses: actions/upload-artifact@v7
+        with:
+          name: rust-iso20022-wasm
+          path: target/wasm32-unknown-unknown/release/rust_iso20022_wasm.wasm
+          if-no-files-found: error

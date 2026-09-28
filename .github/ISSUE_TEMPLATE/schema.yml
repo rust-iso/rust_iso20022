@@ -1,0 +1,44 @@
+name: Schema issue
+description: Report schema provenance, generation, or generated-model behavior
+title: "schema: "
+labels: [schema]
+body:
+  - type: markdown
+    attributes:
+      value: "Do not attach restricted schema files without redistribution rights, and never attach a real financial message."
+  - type: input
+    id: identity
+    attributes:
+      label: Message and schema release
+      placeholder: "pacs.008.001.10; ISO release/source date"
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Authoritative source URL or reference
+    validations:
+      required: true
+  - type: input
+    id: digest
+    attributes:
+      label: Source SHA-256
+      description: Leave unknown rather than inventing a digest.
+  - type: dropdown
+    id: rights
+    attributes:
+      label: Redistribution status
+      options:
+        - Publicly redistributable
+        - Reference only / restricted
+        - Unknown
+    validations:
+      required: true
+  - type: textarea
+    id: discrepancy
+    attributes:
+      label: Generated discrepancy and evidence
+      description: Include the generated path, expected XSD shape, and a minimal test.
+    validations:
+      required: true
+

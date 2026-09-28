@@ -1,0 +1,22 @@
+{
+  "cases": [
+    {
+      "builder": "pain001",
+      "omitted": "message_id",
+      "expected_code": "BUILDER-MISSING-FIELD",
+      "expected_field": "message_id"
+    },
+    {
+      "builder": "pain001",
+      "input": "message_id length 36",
+      "expected_code": "BUILDER-FIELD-LENGTH",
+      "expected_field": "message_id"
+    },
+    {
+      "builder": "pain002",
+      "input": "group_status length greater than 4",
+      "expected_code": "BUILDER-FIELD-LENGTH",
+      "expected_field": "group_status"
+    }
+  ]
+}

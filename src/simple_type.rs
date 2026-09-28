@@ -77,7 +77,7 @@ macro_rules! simple_type {
                 } else {
                     return Err("Start element not found".to_string());
                 }
-                if let Ok(::xml::reader::XmlEvent::Characters(ref text)) = reader.peek() {
+                if let Ok(::xml::reader::XmlEvent::Characters(text)) = reader.peek() {
                     <$name as ::core::str::FromStr>::from_str(text)
                 } else {
                     <$name as ::core::str::FromStr>::from_str("")

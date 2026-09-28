@@ -1,0 +1,29 @@
+{
+  "format_version": 1,
+  "schema_set_id": "rust-iso20022-legacy-baseline-1130",
+  "schema_count": 1130,
+  "provenance_status": "unverified",
+  "source": {
+    "kind": "repository-legacy-snapshot",
+    "url": null,
+    "release": null,
+    "note": "The repository did not retain authoritative download/release evidence; provenance is intentionally not inferred from schema comments."
+  },
+  "exceptions": [
+    {
+      "identity": "acmt.017.001.03",
+      "kind": "normalized-filename",
+      "detail": "Input basename acmt.017.001.03_0.xsd normalizes to the canonical message identity."
+    },
+    {
+      "identity": "semt.001.001.04",
+      "kind": "namespace",
+      "detail": "The schema declares urn:swift:xsd:semt.001.001.04 and that namespace is preserved verbatim."
+    },
+    {
+      "identity": "root-elements",
+      "kind": "root-distribution",
+      "detail": "The baseline contains 1127 Document roots, two AppHdr roots, and one Xchg root."
+    }
+  ]
+}

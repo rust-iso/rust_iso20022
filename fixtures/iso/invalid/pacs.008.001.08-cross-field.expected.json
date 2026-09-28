@@ -1,0 +1,28 @@
+{
+  "issues": [
+    {
+      "rule_id": "ISO20022-L2-PACS008-ACCOUNT-ID-XOR",
+      "path": "Document/FIToFICstmrCdtTrf/CdtTrfTxInf/DbtrAcct/Id/IBAN"
+    },
+    {
+      "rule_id": "ISO20022-L2-PACS008-ACCOUNT-ID-XOR",
+      "path": "Document/FIToFICstmrCdtTrf/CdtTrfTxInf/DbtrAcct/Id/Othr"
+    },
+    {
+      "rule_id": "ISO20022-L2-PACS008-CURRENCY-AMOUNT",
+      "path": "Document/FIToFICstmrCdtTrf/CdtTrfTxInf/IntrBkSttlmAmt"
+    },
+    {
+      "rule_id": "ISO20022-L2-PACS008-DEBTOR-AGENT-ACCOUNT",
+      "path": "Document/FIToFICstmrCdtTrf/CdtTrfTxInf/DbtrAgt"
+    },
+    {
+      "rule_id": "ISO20022-L2-PACS008-INSTDAMT-XCHGRATE",
+      "path": "Document/FIToFICstmrCdtTrf/CdtTrfTxInf/XchgRate"
+    },
+    {
+      "rule_id": "ISO20022-L2-PACS008-TX-COUNT",
+      "path": "Document/FIToFICstmrCdtTrf/GrpHdr/NbOfTxs"
+    }
+  ]
+}

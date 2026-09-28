@@ -49,6 +49,7 @@ impl MxNode {
     /// Parse XML into a tree, returning the root element (e.g. `Document` or
     /// `AppHdr`). Returns `None` if the XML has no element or is malformed.
     pub fn parse(xml: &str) -> Option<MxNode> {
+        crate::core::validate_xml(xml, crate::core::ParseLimits::default()).ok()?;
         let parser = EventReader::from_str(xml);
         let mut stack: Vec<MxNode> = Vec::new();
         let mut root: Option<MxNode> = None;

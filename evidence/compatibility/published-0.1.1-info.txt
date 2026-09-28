@@ -1,0 +1,64 @@
+rust_iso20022 #ISO20022 #SWIFT #payments #finance #iso
+ISO 20022 message definitions and external code sets for Rust, generated from the official XSD schemas.
+version: 0.1.1
+license: Apache-2.0
+rust-version: 1.85
+documentation: https://docs.rs/rust_iso20022/
+repository: https://github.com/rust-iso/rust_iso20022
+crates.io: https://crates.io/crates/rust_iso20022/0.1.1
+features:
+ +default    = []
+  __model    = []
+  catalogue  = [dep:tokio, dep:reqwest, dep:regex]
+  cli        = [dep:prettytable-rs]
+  convert    = [dep:rust_decimal, dep:chrono]
+  model      = [model-acmt, model-admi, model-auth, model-caaa, model-caad, model-caam, model-cafc, model-cafm, model-cafr, model-cain, model-camt, model-canm, model-casp, model-casr, model-catm, model-catp, model-colr, model-fxtr, model-head, model-pacs, model-pain, model-reda, model-remt, model-secl, model-seev, model-semt, model-sese, model-setr, model-trck, model-tsin, model-tsmt, model-tsrv]
+  model-acmt = [__model]
+  model-admi = [__model]
+  model-auth = [__model]
+  model-caaa = [__model]
+  model-caad = [__model]
+  model-caam = [__model]
+  model-cafc = [__model]
+  model-cafm = [__model]
+  model-cafr = [__model]
+  model-cain = [__model]
+  model-camt = [__model]
+  model-canm = [__model]
+  model-casp = [__model]
+  model-casr = [__model]
+  model-catm = [__model]
+  model-catp = [__model]
+  model-colr = [__model]
+  model-fxtr = [__model]
+  model-head = [__model]
+  model-pacs = [__model]
+  model-pain = [__model]
+  model-reda = [__model]
+  model-remt = [__model]
+  model-secl = [__model]
+  model-seev = [__model]
+  model-semt = [__model]
+  model-sese = [__model]
+  model-setr = [__model]
+  model-trck = [__model]
+  model-tsin = [__model]
+  model-tsmt = [__model]
+  model-tsrv = [__model]
+  serde      = [dep:serde, dep:serde_json]
+dependencies:
+ +console_error_panic_hook@0.1
+ +js-sys@0.3
+ +phf@0.14
+ +wasm-bindgen@0.2
+ +xml-rs@0.8
+ +yaserde@0.7
+ +yaserde_derive@0.7
+  chrono@0.4
+  prettytable-rs@0.10
+  regex@1
+  reqwest@0.13
+  rust_decimal@1
+  serde@1
+  serde_json@1
+  tokio@1

@@ -18,7 +18,10 @@ where
     let parsed: T = from_xml(xml).expect("parse sample");
     let serialized = to_xml(&parsed).expect("serialize");
     let reparsed: T = from_xml(&serialized).expect("re-parse serialized");
-    assert_eq!(parsed, reparsed, "value changed across a serialize/parse cycle");
+    assert_eq!(
+        parsed, reparsed,
+        "value changed across a serialize/parse cycle"
+    );
 }
 
 #[test]

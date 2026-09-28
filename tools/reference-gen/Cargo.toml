@@ -1,0 +1,11 @@
+[package]
+name = "iso20022-reference-gen"
+version = "0.0.0"
+edition = "2024"
+rust-version = "1.85"
+publish = false
+
+[dependencies]
+rust_iso3166 = "=0.2.0"
+serde_json = "1"
+sha2 = "0.10"

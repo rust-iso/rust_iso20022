@@ -1,0 +1,19 @@
+{
+  "target_message": "pacs.009.001.08",
+  "source_field_count": 10,
+  "classifications": {
+    "20": "derived",
+    "21": "ambiguous",
+    "23E": "unsupported",
+    "32A": "ambiguous",
+    "52A": "exact",
+    "53A": "ambiguous",
+    "56A": "derived",
+    "57A": "exact",
+    "58A": "exact",
+    "72": "ambiguous"
+  },
+  "unmapped_tags": ["21", "23E", "32A", "53A", "72"],
+  "warning_codes": ["MT202-21-AMBIGUOUS", "MT202-FIELD-UNSUPPORTED", "MT202-32A-CENTURY", "MT202-53A-AMBIGUOUS", "MT202-72-AMBIGUOUS"],
+  "lossless": false
+}

@@ -1,0 +1,43 @@
+name: Validation rule issue
+description: Propose or correct an explainable semantic validation rule
+title: "validation: "
+labels: [validation]
+body:
+  - type: markdown
+    attributes:
+      value: "Use synthetic values only. Validation success is not a claim of bank acceptance or legal compliance."
+  - type: input
+    id: rule
+    attributes:
+      label: Rule ID and validation layer
+      placeholder: "ISO20022-L2-...; L2"
+    validations:
+      required: true
+  - type: input
+    id: message_path
+    attributes:
+      label: Message version and field path
+      placeholder: "pacs.008.001.08; Document/.../IBAN"
+    validations:
+      required: true
+  - type: textarea
+    id: source
+    attributes:
+      label: Normative source/release/reference
+      description: Explain provenance and quote only what redistribution rights allow.
+    validations:
+      required: true
+  - type: textarea
+    id: cases
+    attributes:
+      label: Valid, invalid, and boundary cases
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Expected report and explanation evidence
+      description: Include severity, path, rule ID, and privacy-safe message.
+    validations:
+      required: true
+

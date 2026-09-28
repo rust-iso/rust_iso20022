@@ -1,0 +1,30 @@
+format_version = 1
+schema_manifest_format = 1
+schema_descriptor_format = 1
+
+[paths]
+input = "xsds"
+output = "src/generated"
+catalogue = "src/catalogue/data.rs"
+schema_set = "xsds/schema-set.json"
+schema_manifest = "xsds/schema-manifest.json"
+generator_manifest = "tools/codegen/generator-manifest.json"
+
+[generator]
+parser_repository = "https://github.com/lumeohq/xsd-parser-rs"
+parser_revision = "d476e854b28b197442096c268d79263c50300c9e"
+sort_inputs = true
+strict_complete_generation = true
+fail_on_unknown_arguments = true
+transactional_install = true
+
+[format]
+rust_edition = "2024"
+line_ending = "lf"
+rustfmt_toolchain = "1.85.1"
+
+[metadata]
+schema_set_id = "rust-iso20022-legacy-baseline-1130"
+generated_header_version = 1
+catalogue_format_version = 1
+output_digest_format_version = 1

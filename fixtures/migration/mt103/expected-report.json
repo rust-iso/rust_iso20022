@@ -1,0 +1,19 @@
+{
+  "target_message": "pacs.008.001.08",
+  "source_field_count": 10,
+  "classifications": {
+    "20": "derived",
+    "23B": "unsupported",
+    "32A": "ambiguous",
+    "50K": "lossy",
+    "52A": "exact",
+    "57A": "exact",
+    "59": "lossy",
+    "70": "exact",
+    "71A": "derived",
+    "72": "ambiguous"
+  },
+  "unmapped_tags": ["23B", "32A", "72"],
+  "warning_codes": ["MT103-FIELD-UNSUPPORTED", "MT103-32A-CENTURY", "MT103-50K-LOSSY", "MT103-59-LOSSY", "MT103-72-AMBIGUOUS"],
+  "lossless": false
+}

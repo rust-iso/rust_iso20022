@@ -1,0 +1,22 @@
+{
+  "cases": [
+    {
+      "builder": "camt052",
+      "omitted": "message_id",
+      "expected_code": "BUILDER-MISSING-FIELD",
+      "expected_field": "message_id"
+    },
+    {
+      "helper": "CamtReportId",
+      "input": "identifier length 36",
+      "expected_code": "BUILDER-FIELD-LENGTH",
+      "expected_field": "report_id"
+    },
+    {
+      "builder": "camt054",
+      "input": "message_id contains control character",
+      "expected_code": "BUILDER-FIELD-CHARSET",
+      "expected_field": "message_id"
+    }
+  ]
+}

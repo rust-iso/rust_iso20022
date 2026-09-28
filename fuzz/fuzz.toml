@@ -1,0 +1,22 @@
+[tooling]
+cargo_fuzz = "0.13.2"
+nightly = "nightly-2026-09-26"
+engine = "libFuzzer"
+
+[limits]
+seconds_per_target = 60
+timeout_seconds = 5
+rss_limit_mb = 2048
+max_input_bytes = 65536
+
+[baseline]
+targets = [
+  "xml",
+  "detect",
+  "namespace",
+  "financial",
+  "mt_parser",
+  "mt103",
+  "mt202",
+  "mt940",
+]

@@ -1,0 +1,24 @@
+[package]
+name = "rust_iso20022_benchmarks"
+version = "0.0.0"
+edition = "2024"
+rust-version = "1.85"
+publish = false
+license = "Apache-2.0"
+description = "Reproducible benchmark harnesses for rust_iso20022"
+
+[dependencies]
+libc = "0.2"
+rust_iso20022 = { path = "../..", default-features = false, features = ["model-pacs", "model-camt-053-001-09"] }
+
+[[bench]]
+name = "sdk"
+harness = false
+
+[[bin]]
+name = "memory"
+path = "src/bin/memory.rs"
+
+[[bin]]
+name = "allocations"
+path = "src/bin/allocations.rs"

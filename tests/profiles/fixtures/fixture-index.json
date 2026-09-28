@@ -1,0 +1,17 @@
+{
+  "format_version": 1,
+  "test_only": true,
+  "profile_release_key": "test-network|2025.1|ig-2025.1|2025-01-01|2025-12-31|545cae9cb86146018e8058d7eccd63c4e2457fdd26a5999a7a964192b5e9b419",
+  "fixtures": [
+    {
+      "relative_path": "tests/profiles/fixtures/history-v1.json",
+      "sha256": "68636ffc594b98de365f0de64b99a6c77708897c37d0e33f644387c5a29962f6",
+      "expected_rule_ids": ["TESTNETWORK-2025-R0001"]
+    },
+    {
+      "relative_path": "tests/profiles/fixtures/history-v2.json",
+      "sha256": "830353e288531b67ac796b93eb1381c4097edec7c7c0fd3cc81239f01f5fca52",
+      "expected_rule_ids": ["TESTNETWORK-2025-R0001", "TESTNETWORK-2026-R0001"]
+    }
+  ]
+}

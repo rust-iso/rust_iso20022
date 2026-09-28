@@ -1,5 +1,9 @@
 # rust_iso20022 — WebAssembly / JavaScript API
 
+> This page documents the original 22-export compatibility surface. For the
+> bounded structured SDK bindings, supported feature matrix, limits, and
+> measured package size, see [wasm.md](wasm.md).
+
 The crate ships a WebAssembly build that exposes the **identification,
 catalogue, Business Application Header, metadata and generic-tree** layers to
 JavaScript. The typed message model (1130 large `Document` types) is *not*

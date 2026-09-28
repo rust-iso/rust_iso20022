@@ -6,7 +6,7 @@
 //! ```
 
 use rust_iso20022::generated::pacs::pacs_008_001_08::Document;
-use rust_iso20022::{from_xml, to_json, to_xml, MxMessage};
+use rust_iso20022::{MxMessage, from_xml, to_json, to_xml};
 
 const XML: &str = r#"<?xml version="1.0" encoding="UTF-8"?>
 <Document xmlns="urn:iso:std:iso:20022:tech:xsd:pacs.008.001.08">

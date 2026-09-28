@@ -4,7 +4,7 @@
 
 use rust_iso20022::generated::pacs::pacs_002_001_10::Document as Pacs002;
 use rust_iso20022::generated::pain::pain_001_001_09::Document as Pain001;
-use rust_iso20022::{detect, parse_as, BusinessArea, MxMessage};
+use rust_iso20022::{BusinessArea, MxMessage, detect, parse_as};
 
 #[test]
 fn message_carries_its_identity() {
@@ -38,7 +38,7 @@ fn parse_as_guards_the_type() {
 
 #[test]
 fn parse_auto_dispatches_to_the_right_variant() {
-    use rust_iso20022::generated::any::{parse_auto, AnyMessage};
+    use rust_iso20022::generated::any::{AnyMessage, parse_auto};
 
     let xml = include_str!("data/pacs.002.001.10.xml");
     let msg = parse_auto(xml).expect("parse_auto");

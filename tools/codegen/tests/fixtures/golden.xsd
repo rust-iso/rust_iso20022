@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="urn:example:golden.001.001.01"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="urn:example:golden.001.001.01"
+    elementFormDefault="qualified">
+  <xs:annotation><xs:documentation>Golden message documentation.</xs:documentation></xs:annotation>
+  <xs:element name="Document" type="Document"/>
+  <xs:simpleType name="StatusCode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="OPEN"/>
+      <xs:enumeration value="CLSD"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AmountValue">
+    <xs:restriction base="xs:decimal"/>
+  </xs:simpleType>
+  <xs:complexType name="Amount">
+    <xs:simpleContent>
+      <xs:extension base="AmountValue">
+        <xs:attribute name="Ccy" type="xs:string" use="required"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="Choice">
+    <xs:choice>
+      <xs:element name="Code" type="StatusCode"/>
+      <xs:element name="Proprietary" type="xs:string"/>
+    </xs:choice>
+  </xs:complexType>
+  <xs:complexType name="Document">
+    <xs:sequence>
+      <xs:element name="Optional" type="xs:string" minOccurs="0"/>
+      <xs:element name="Repeated" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="Choice" type="Choice"/>
+      <xs:element name="Amount" type="Amount"/>
+      <xs:element name="type" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

@@ -1,0 +1,41 @@
+{
+  "format_version": 1,
+  "release_state": "unpublished-candidate",
+  "canonical_model": "generated struct",
+  "schema": {
+    "set_id": "rust-iso20022-legacy-baseline-1130",
+    "message_versions": 1130
+  },
+  "generator": {
+    "version": "0.1.0",
+    "source_sha256": "d9737b9ff4292ef5b033270b42dab5639613b08de0c720cd36c03d6959b7c55f"
+  },
+  "msrv": {
+    "core": "1.85",
+    "mcp": "1.88"
+  },
+  "generated_validation_bindings": [
+    "pacs.008.001.08"
+  ],
+  "builders": [
+    "pacs.002.001.10",
+    "pacs.008.001.08",
+    "pacs.009.001.08",
+    "pain.001.001.09",
+    "pain.002.001.10",
+    "camt.052.001.08",
+    "camt.053.001.09",
+    "camt.054.001.08"
+  ],
+  "migrations": [
+    "MT103 -> pacs.008.001.08",
+    "MT202 -> pacs.009.001.08",
+    "MT940 -> camt.053.001.09"
+  ],
+  "executable_profile_rule_packs": [],
+  "profile_source_identities": [
+    "CBPR+ SR2026",
+    "SEPA SCT 2025 v1.1",
+    "SEPA SCT Inst 2025 v1.1"
+  ]
+}

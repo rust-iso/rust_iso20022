@@ -1,0 +1,46 @@
+[package]
+name = "rust_iso20022_migration"
+version = "0.1.2"
+edition = "2024"
+rust-version = "1.85"
+publish = false
+license = "Apache-2.0"
+description = "Bounded SWIFT MT migration framework for rust_iso20022"
+repository = "https://github.com/rust-iso/rust_iso20022"
+
+[features]
+default = []
+mt103 = ["dep:rust_iso20022", "rust_iso20022/model-pacs"]
+mt202 = ["dep:rust_iso20022", "rust_iso20022/model-pacs"]
+mt940 = ["dep:rust_iso20022", "rust_iso20022/model-camt-053-001-09"]
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }
+rust_iso20022 = { path = "../..", default-features = false, optional = true }
+
+[dev-dependencies]
+serde_json = "1"
+
+[[test]]
+name = "mt103"
+path = "tests/mt103.rs"
+required-features = ["mt103"]
+
+[[test]]
+name = "mt202"
+path = "tests/mt202.rs"
+required-features = ["mt202"]
+
+[[test]]
+name = "mt940"
+path = "tests/mt940.rs"
+required-features = ["mt940"]
+
+[[test]]
+name = "fuzz_corpus"
+path = "tests/fuzz_corpus.rs"
+required-features = ["mt103", "mt202", "mt940"]
+
+[[example]]
+name = "mt103"
+required-features = ["mt103"]

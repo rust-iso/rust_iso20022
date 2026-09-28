@@ -1,0 +1,17 @@
+<Document xmlns="urn:iso:std:iso:20022:tech:xsd:pacs.008.001.08">
+  <FIToFICstmrCdtTrf>
+    <GrpHdr><MsgId>WP008-INVALID</MsgId><NbOfTxs>2</NbOfTxs></GrpHdr>
+    <CdtTrfTxInf>
+      <PmtId><EndToEndId>E2E-INVALID</EndToEndId></PmtId>
+      <IntrBkSttlmAmt Ccy="JPY">100.01</IntrBkSttlmAmt>
+      <InstdAmt Ccy="EUR">10.00</InstdAmt>
+      <DbtrAcct>
+        <Id>
+          <IBAN>DE89370400440532013000</IBAN>
+          <Othr><Id>SECRET-OTHER-ACCOUNT</Id></Othr>
+        </Id>
+      </DbtrAcct>
+      <CdtrAcct><Id><IBAN>GB82WEST12345698765432</IBAN></Id></CdtrAcct>
+    </CdtTrfTxInf>
+  </FIToFICstmrCdtTrf>
+</Document>

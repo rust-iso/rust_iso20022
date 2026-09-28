@@ -1,0 +1,5 @@
+<!DOCTYPE Document [
+  <!ENTITY a "1234567890">
+  <!ENTITY b "&a;&a;&a;&a;">
+]>
+<Document>&b;</Document>

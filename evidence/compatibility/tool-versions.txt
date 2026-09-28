@@ -1,0 +1,5 @@
+cargo-public-api 0.52.0
+cargo-semver-checks 0.50.0
+rustc 1.101.0-nightly (75a75c3e0 2026-09-26)
+rustc 1.85.1 (4eb161250 2025-03-15)
+cargo 1.85.1 (d73d2caf9 2024-12-31)

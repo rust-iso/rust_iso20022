@@ -105,6 +105,7 @@ fn xml_escape(s: &str) -> String {
 /// Read a [`BusinessHeader`] from XML containing an `<AppHdr>` element. Returns
 /// `None` if no header fields are found.
 pub fn parse_business_header(xml: &str) -> Option<BusinessHeader> {
+    crate::core::validate_xml(xml, crate::core::ParseLimits::default()).ok()?;
     // Narrow to the AppHdr element if present, so a trailing Document does not
     // leak its own fields (e.g. a Document-level CreDt) into the header.
     let scope = element_inner(xml, "AppHdr").unwrap_or_else(|| xml.to_string());

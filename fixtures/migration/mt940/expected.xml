@@ -1,0 +1,15 @@
+<Document xmlns="urn:iso:std:iso:20022:tech:xsd:camt.053.001.09">
+  <BkToCstmrStmt>
+    <GrpHdr><MsgId>MIGRATION-940-1</MsgId></GrpHdr>
+    <Stmt>
+      <Id>42/1</Id><ElctrncSeqNb>42</ElctrncSeqNb>
+      <Acct><Id><IBAN>DE89370400440532013000</IBAN></Id><Ccy>EUR</Ccy></Acct>
+      <Bal><Tp><CdOrPrtry><Cd>OPBD</Cd></CdOrPrtry></Tp><Amt Ccy="EUR">1000.00</Amt><CdtDbtInd>CRDT</CdtDbtInd><Dt><Dt>2026-09-27</Dt></Dt></Bal>
+      <Bal><Tp><CdOrPrtry><Cd>CLBD</Cd></CdOrPrtry></Tp><Amt Ccy="EUR">1124.50</Amt><CdtDbtInd>CRDT</CdtDbtInd><Dt><Dt>2026-09-28</Dt></Dt></Bal>
+      <Bal><Tp><CdOrPrtry><Cd>CLAV</Cd></CdOrPrtry></Tp><Amt Ccy="EUR">1100.00</Amt><CdtDbtInd>CRDT</CdtDbtInd><Dt><Dt>2026-09-28</Dt></Dt></Bal>
+      <Bal><Tp><CdOrPrtry><Cd>FWAV</Cd></CdOrPrtry></Tp><Amt Ccy="EUR">1200.00</Amt><CdtDbtInd>CRDT</CdtDbtInd><Dt><Dt>2026-09-29</Dt></Dt></Bal>
+      <Ntry><NtryRef>MT940-5</NtryRef><Amt Ccy="EUR">125.50</Amt><CdtDbtInd>DBIT</CdtDbtInd><BookgDt><Dt>2026-09-28</Dt></BookgDt><AcctSvcrRef>BANKREF1</AcctSvcrRef><BkTxCd><Prtry><Cd>NTRF</Cd></Prtry></BkTxCd><AddtlNtryInf>Invoice 2026-09-A</AddtlNtryInf></Ntry>
+      <Ntry><NtryRef>MT940-7</NtryRef><Amt Ccy="EUR">250.00</Amt><CdtDbtInd>CRDT</CdtDbtInd><BookgDt><Dt>2026-09-28</Dt></BookgDt><AcctSvcrRef>BANKREF2</AcctSvcrRef><BkTxCd><Prtry><Cd>NMSC</Cd></Prtry></BkTxCd><AddtlNtryInf>Incoming settlement B</AddtlNtryInf></Ntry>
+    </Stmt>
+  </BkToCstmrStmt>
+</Document>

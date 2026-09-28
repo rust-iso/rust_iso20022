@@ -15,10 +15,12 @@
 //! # }
 //! ```
 
-use crate::core::Error;
+use crate::core::{Error, ParseLimits, validate_xml};
 
 /// Parse an MX message of type `T` from its XML representation.
 pub fn from_xml<T: yaserde::YaDeserialize>(xml: &str) -> Result<T, Error> {
+    validate_xml(xml, ParseLimits::default())
+        .map_err(|error| Error::Deserialize(error.to_string()))?;
     yaserde::de::from_str(xml).map_err(Error::Deserialize)
 }
 

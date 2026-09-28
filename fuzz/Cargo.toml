@@ -1,0 +1,75 @@
+[package]
+name = "rust_iso20022-fuzz"
+version = "0.0.0"
+publish = false
+edition = "2024"
+
+[package.metadata]
+cargo-fuzz = true
+
+[dependencies]
+libfuzzer-sys = "=0.4.13"
+rust_iso20022 = { path = "..", default-features = false }
+rust_iso20022_migration = { path = "../crates/migration", default-features = false, features = ["mt103", "mt202", "mt940"] }
+
+[workspace]
+members = ["."]
+
+[profile.release]
+debug = 1
+
+[[bin]]
+name = "xml"
+path = "fuzz_targets/xml.rs"
+test = false
+doc = false
+bench = false
+
+[[bin]]
+name = "detect"
+path = "fuzz_targets/detect.rs"
+test = false
+doc = false
+bench = false
+
+[[bin]]
+name = "namespace"
+path = "fuzz_targets/namespace.rs"
+test = false
+doc = false
+bench = false
+
+[[bin]]
+name = "financial"
+path = "fuzz_targets/financial.rs"
+test = false
+doc = false
+bench = false
+
+[[bin]]
+name = "mt_parser"
+path = "fuzz_targets/mt_parser.rs"
+test = false
+doc = false
+bench = false
+
+[[bin]]
+name = "mt103"
+path = "fuzz_targets/mt103.rs"
+test = false
+doc = false
+bench = false
+
+[[bin]]
+name = "mt202"
+path = "fuzz_targets/mt202.rs"
+test = false
+doc = false
+bench = false
+
+[[bin]]
+name = "mt940"
+path = "fuzz_targets/mt940.rs"
+test = false
+doc = false
+bench = false

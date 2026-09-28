@@ -1,0 +1,14 @@
+{
+  "target_message": "camt.053.001.09",
+  "source_field_count": 12,
+  "classifications_by_index": [
+    "exact", "exact", "derived", "ambiguous", "lossy", "ambiguous",
+    "lossy", "ambiguous", "ambiguous", "ambiguous", "ambiguous", "unsupported"
+  ],
+  "unmapped_tags": ["60F", "86", "86", "62F", "64", "65", "90D"],
+  "warning_codes": [
+    "MT940-BALANCE-CENTURY", "MT940-61-LOSSY", "MT940-ENTRY-CENTURY",
+    "MT940-86-AMBIGUOUS", "MT940-FIELD-UNSUPPORTED"
+  ],
+  "lossless": false
+}

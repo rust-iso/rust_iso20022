@@ -1,0 +1,14 @@
+<Document xmlns="urn:iso:std:iso:20022:tech:xsd:pacs.008.001.08">
+  <FIToFICstmrCdtTrf>
+    <GrpHdr><MsgId>WP008-VALID</MsgId><NbOfTxs>1</NbOfTxs></GrpHdr>
+    <CdtTrfTxInf>
+      <PmtId><EndToEndId>E2E-VALID</EndToEndId></PmtId>
+      <IntrBkSttlmAmt Ccy="JPY">100</IntrBkSttlmAmt>
+      <InstdAmt Ccy="EUR">10.00</InstdAmt>
+      <XchgRate>1.0</XchgRate>
+      <DbtrAcct><Id><IBAN>DE89370400440532013000</IBAN></Id></DbtrAcct>
+      <DbtrAgt><FinInstnId><BICFI>DEUTDEFF</BICFI></FinInstnId></DbtrAgt>
+      <CdtrAcct><Id><IBAN>GB82WEST12345698765432</IBAN></Id></CdtrAcct>
+    </CdtTrfTxInf>
+  </FIToFICstmrCdtTrf>
+</Document>

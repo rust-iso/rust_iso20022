@@ -1,0 +1,35 @@
+[package]
+name = "rust_iso20022_wasm"
+version = "0.1.2"
+edition = "2024"
+rust-version = "1.85"
+publish = false
+license = "Apache-2.0"
+description = "Bounded WebAssembly adapter for rust_iso20022"
+repository = "https://github.com/rust-iso/rust_iso20022"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[features]
+default = []
+model-pacs = ["rust_iso20022/model-pacs"]
+
+[dependencies]
+rust_iso20022 = { path = "../..", default-features = false, features = ["serde"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+[target.'cfg(target_arch = "wasm32")'.dependencies]
+serde-wasm-bindgen = "0.6"
+wasm-bindgen = "0.2"
+
+[[test]]
+name = "contracts"
+path = "tests/contracts.rs"
+required-features = ["model-pacs"]
+
+[[test]]
+name = "security"
+path = "tests/security.rs"
+required-features = ["model-pacs"]

@@ -1,0 +1,684 @@
+pub mod rust_iso20022
+pub mod rust_iso20022::app_hdr
+pub struct rust_iso20022::app_hdr::BusinessHeader
+pub rust_iso20022::app_hdr::BusinessHeader::biz_msg_idr: core::option::Option<alloc::string::String>
+pub rust_iso20022::app_hdr::BusinessHeader::cre_dt: core::option::Option<alloc::string::String>
+pub rust_iso20022::app_hdr::BusinessHeader::from: core::option::Option<alloc::string::String>
+pub rust_iso20022::app_hdr::BusinessHeader::msg_def_idr: core::option::Option<alloc::string::String>
+pub rust_iso20022::app_hdr::BusinessHeader::to: core::option::Option<alloc::string::String>
+impl rust_iso20022::app_hdr::BusinessHeader
+pub fn rust_iso20022::app_hdr::BusinessHeader::to_app_hdr_xml(&self) -> alloc::string::String
+pub fn rust_iso20022::app_hdr::BusinessHeader::to_app_hdr_xml_ns(&self, &str) -> alloc::string::String
+pub fn rust_iso20022::app_hdr::parse_business_header(&str) -> core::option::Option<rust_iso20022::app_hdr::BusinessHeader>
+pub mod rust_iso20022::builders
+pub enum rust_iso20022::builders::BuilderErrorKind
+pub rust_iso20022::builders::BuilderErrorKind::Constraint
+pub rust_iso20022::builders::BuilderErrorKind::Internal
+pub rust_iso20022::builders::BuilderErrorKind::Missing
+pub rust_iso20022::builders::BuilderErrorKind::Validation
+pub struct rust_iso20022::builders::BuilderError
+impl rust_iso20022::builders::BuilderError
+pub const fn rust_iso20022::builders::BuilderError::code(&self) -> &'static str
+pub const fn rust_iso20022::builders::BuilderError::field(&self) -> &'static str
+pub const fn rust_iso20022::builders::BuilderError::kind(&self) -> rust_iso20022::builders::BuilderErrorKind
+impl core::error::Error for rust_iso20022::builders::BuilderError
+impl core::fmt::Display for rust_iso20022::builders::BuilderError
+pub fn rust_iso20022::builders::BuilderError::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub mod rust_iso20022::catalogue
+pub mod rust_iso20022::catalogue::data
+pub static rust_iso20022::catalogue::data::BY_NAME: phf::map::Map<&'static str, rust_iso20022::catalogue::CatalogueEntry>
+pub static rust_iso20022::catalogue::data::ENTRIES: &[rust_iso20022::catalogue::CatalogueEntry]
+pub enum rust_iso20022::catalogue::CoverageState
+pub rust_iso20022::catalogue::CoverageState::Available
+pub rust_iso20022::catalogue::CoverageState::Available::required_feature: &'static str
+pub rust_iso20022::catalogue::CoverageState::KnownUnavailable
+pub rust_iso20022::catalogue::CoverageState::Unknown
+pub struct rust_iso20022::catalogue::CatalogueEntry
+pub rust_iso20022::catalogue::CatalogueEntry::business_area: &'static str
+pub rust_iso20022::catalogue::CatalogueEntry::has_model: bool
+pub rust_iso20022::catalogue::CatalogueEntry::message_name: &'static str
+pub rust_iso20022::catalogue::CatalogueEntry::namespace: &'static str
+pub struct rust_iso20022::catalogue::SchemaCatalogue
+impl rust_iso20022::catalogue::Catalogue for rust_iso20022::catalogue::SchemaCatalogue
+pub fn rust_iso20022::catalogue::SchemaCatalogue::by_namespace(&self, &str) -> core::option::Option<&'static rust_iso20022::metadata::MessageDescriptor>
+pub fn rust_iso20022::catalogue::SchemaCatalogue::by_root(&self, &str, &str) -> core::option::Option<&'static rust_iso20022::metadata::MessageDescriptor>
+pub fn rust_iso20022::catalogue::SchemaCatalogue::latest(&self, &rust_iso20022::MessageFamily) -> core::option::Option<&'static rust_iso20022::metadata::MessageDescriptor>
+pub fn rust_iso20022::catalogue::SchemaCatalogue::list_family(&self, &rust_iso20022::MessageFamily) -> &'static [rust_iso20022::metadata::MessageDescriptor]
+pub fn rust_iso20022::catalogue::SchemaCatalogue::lookup(&self, &rust_iso20022::MessageIdentifier) -> core::option::Option<&'static rust_iso20022::metadata::MessageDescriptor>
+pub fn rust_iso20022::catalogue::SchemaCatalogue::versions(&self, &rust_iso20022::MessageFamily) -> &'static [rust_iso20022::metadata::MessageDescriptor]
+pub static rust_iso20022::catalogue::SCHEMA_CATALOGUE: rust_iso20022::catalogue::SchemaCatalogue
+pub trait rust_iso20022::catalogue::Catalogue
+pub fn rust_iso20022::catalogue::Catalogue::by_namespace(&self, &str) -> core::option::Option<&'static rust_iso20022::metadata::MessageDescriptor>
+pub fn rust_iso20022::catalogue::Catalogue::by_root(&self, &str, &str) -> core::option::Option<&'static rust_iso20022::metadata::MessageDescriptor>
+pub fn rust_iso20022::catalogue::Catalogue::latest(&self, &rust_iso20022::MessageFamily) -> core::option::Option<&'static rust_iso20022::metadata::MessageDescriptor>
+pub fn rust_iso20022::catalogue::Catalogue::list_family(&self, &rust_iso20022::MessageFamily) -> &'static [rust_iso20022::metadata::MessageDescriptor]
+pub fn rust_iso20022::catalogue::Catalogue::lookup(&self, &rust_iso20022::MessageIdentifier) -> core::option::Option<&'static rust_iso20022::metadata::MessageDescriptor>
+pub fn rust_iso20022::catalogue::Catalogue::versions(&self, &rust_iso20022::MessageFamily) -> &'static [rust_iso20022::metadata::MessageDescriptor]
+impl rust_iso20022::catalogue::Catalogue for rust_iso20022::catalogue::SchemaCatalogue
+pub fn rust_iso20022::catalogue::SchemaCatalogue::by_namespace(&self, &str) -> core::option::Option<&'static rust_iso20022::metadata::MessageDescriptor>
+pub fn rust_iso20022::catalogue::SchemaCatalogue::by_root(&self, &str, &str) -> core::option::Option<&'static rust_iso20022::metadata::MessageDescriptor>
+pub fn rust_iso20022::catalogue::SchemaCatalogue::latest(&self, &rust_iso20022::MessageFamily) -> core::option::Option<&'static rust_iso20022::metadata::MessageDescriptor>
+pub fn rust_iso20022::catalogue::SchemaCatalogue::list_family(&self, &rust_iso20022::MessageFamily) -> &'static [rust_iso20022::metadata::MessageDescriptor]
+pub fn rust_iso20022::catalogue::SchemaCatalogue::lookup(&self, &rust_iso20022::MessageIdentifier) -> core::option::Option<&'static rust_iso20022::metadata::MessageDescriptor>
+pub fn rust_iso20022::catalogue::SchemaCatalogue::versions(&self, &rust_iso20022::MessageFamily) -> &'static [rust_iso20022::metadata::MessageDescriptor]
+pub fn rust_iso20022::catalogue::all() -> &'static [rust_iso20022::catalogue::CatalogueEntry]
+pub fn rust_iso20022::catalogue::by_namespace(&str) -> core::option::Option<&'static rust_iso20022::metadata::MessageDescriptor>
+pub fn rust_iso20022::catalogue::by_root(&str, &str) -> core::option::Option<&'static rust_iso20022::metadata::MessageDescriptor>
+pub fn rust_iso20022::catalogue::contains(&str) -> bool
+pub fn rust_iso20022::catalogue::coverage(&str) -> rust_iso20022::catalogue::CoverageState
+pub fn rust_iso20022::catalogue::from_message_name(&str) -> core::option::Option<&'static rust_iso20022::catalogue::CatalogueEntry>
+pub fn rust_iso20022::catalogue::from_namespace(&str) -> core::option::Option<&'static rust_iso20022::catalogue::CatalogueEntry>
+pub fn rust_iso20022::catalogue::latest(&str) -> core::option::Option<&'static rust_iso20022::metadata::MessageDescriptor>
+pub fn rust_iso20022::catalogue::list_family(&str) -> &'static [rust_iso20022::metadata::MessageDescriptor]
+pub fn rust_iso20022::catalogue::lookup_descriptor(&str) -> core::option::Option<&'static rust_iso20022::metadata::MessageDescriptor>
+pub fn rust_iso20022::catalogue::lookup_field(&str, &str) -> core::option::Option<&'static rust_iso20022::metadata::FieldDescriptor>
+pub fn rust_iso20022::catalogue::versions(&str) -> &'static [rust_iso20022::metadata::MessageDescriptor]
+pub mod rust_iso20022::compare
+pub enum rust_iso20022::compare::CompareError
+pub rust_iso20022::compare::CompareError::UnknownMessage
+pub rust_iso20022::compare::CompareError::UnknownMessage::message_id: alloc::string::String
+pub rust_iso20022::compare::CompareError::UnrelatedFamilies
+pub rust_iso20022::compare::CompareError::UnrelatedFamilies::from: alloc::string::String
+pub rust_iso20022::compare::CompareError::UnrelatedFamilies::to: alloc::string::String
+impl core::error::Error for rust_iso20022::compare::CompareError
+impl core::fmt::Display for rust_iso20022::compare::CompareError
+pub fn rust_iso20022::compare::CompareError::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub enum rust_iso20022::compare::SchemaChangeKind
+pub rust_iso20022::compare::SchemaChangeKind::CardinalityChanged
+pub rust_iso20022::compare::SchemaChangeKind::EnumValueAdded
+pub rust_iso20022::compare::SchemaChangeKind::EnumValueRemoved
+pub rust_iso20022::compare::SchemaChangeKind::FieldAdded
+pub rust_iso20022::compare::SchemaChangeKind::FieldRemoved
+pub rust_iso20022::compare::SchemaChangeKind::TypeChanged
+pub struct rust_iso20022::compare::SchemaChange
+pub rust_iso20022::compare::SchemaChange::after: core::option::Option<alloc::string::String>
+pub rust_iso20022::compare::SchemaChange::before: core::option::Option<alloc::string::String>
+pub rust_iso20022::compare::SchemaChange::kind: rust_iso20022::compare::SchemaChangeKind
+pub rust_iso20022::compare::SchemaChange::path: alloc::string::String
+pub struct rust_iso20022::compare::VersionDiff
+pub rust_iso20022::compare::VersionDiff::changes: alloc::vec::Vec<rust_iso20022::compare::SchemaChange>
+pub rust_iso20022::compare::VersionDiff::from: rust_iso20022::compare::VersionEndpoint
+pub rust_iso20022::compare::VersionDiff::to: rust_iso20022::compare::VersionEndpoint
+pub struct rust_iso20022::compare::VersionEndpoint
+pub rust_iso20022::compare::VersionEndpoint::identity: &'static str
+pub rust_iso20022::compare::VersionEndpoint::schema_sha256: &'static str
+pub fn rust_iso20022::compare::compare_descriptors(&rust_iso20022::metadata::MessageDescriptor, &rust_iso20022::metadata::MessageDescriptor) -> core::result::Result<rust_iso20022::compare::VersionDiff, rust_iso20022::compare::CompareError>
+pub fn rust_iso20022::compare::compare_versions(&str, &str) -> core::result::Result<rust_iso20022::compare::VersionDiff, rust_iso20022::compare::CompareError>
+pub mod rust_iso20022::helpers
+pub enum rust_iso20022::helpers::ValueConstraint
+pub rust_iso20022::helpers::ValueConstraint::CharacterSet
+pub rust_iso20022::helpers::ValueConstraint::Checksum
+pub rust_iso20022::helpers::ValueConstraint::Format
+pub rust_iso20022::helpers::ValueConstraint::Length
+pub rust_iso20022::helpers::ValueConstraint::Precision
+pub rust_iso20022::helpers::ValueConstraint::Range
+pub rust_iso20022::helpers::ValueConstraint::UnsupportedCode
+pub struct rust_iso20022::helpers::AccountIdentifier(_)
+impl rust_iso20022::helpers::AccountIdentifier
+pub fn rust_iso20022::helpers::AccountIdentifier::as_str(&self) -> &str
+pub fn rust_iso20022::helpers::AccountIdentifier::parse(&str) -> core::result::Result<Self, rust_iso20022::helpers::ValueError>
+pub struct rust_iso20022::helpers::Bic(_)
+impl rust_iso20022::helpers::Bic
+pub fn rust_iso20022::helpers::Bic::as_str(&self) -> &str
+pub const fn rust_iso20022::helpers::Bic::directory_existence_verified(&self) -> bool
+pub fn rust_iso20022::helpers::Bic::parse(&str) -> core::result::Result<Self, rust_iso20022::helpers::ValueError>
+impl core::convert::From<rust_iso20022::helpers::Bic> for alloc::string::String
+pub fn alloc::string::String::from(rust_iso20022::helpers::Bic) -> Self
+pub struct rust_iso20022::helpers::BicFi(_)
+impl rust_iso20022::helpers::BicFi
+pub fn rust_iso20022::helpers::BicFi::as_str(&self) -> &str
+pub const fn rust_iso20022::helpers::BicFi::directory_existence_verified(&self) -> bool
+pub fn rust_iso20022::helpers::BicFi::parse(&str) -> core::result::Result<Self, rust_iso20022::helpers::ValueError>
+impl core::convert::From<rust_iso20022::helpers::BicFi> for alloc::string::String
+pub fn alloc::string::String::from(rust_iso20022::helpers::BicFi) -> Self
+pub struct rust_iso20022::helpers::ClearingIdentifier
+impl rust_iso20022::helpers::ClearingIdentifier
+pub fn rust_iso20022::helpers::ClearingIdentifier::member_id(&self) -> &str
+pub fn rust_iso20022::helpers::ClearingIdentifier::parse(&str, &str) -> core::result::Result<Self, rust_iso20022::helpers::ValueError>
+pub fn rust_iso20022::helpers::ClearingIdentifier::scheme(&self) -> &str
+pub struct rust_iso20022::helpers::CountryCode(_)
+impl rust_iso20022::helpers::CountryCode
+pub const fn rust_iso20022::helpers::CountryCode::as_str(self) -> &'static str
+pub fn rust_iso20022::helpers::CountryCode::parse(&str) -> core::result::Result<Self, rust_iso20022::helpers::ValueError>
+impl core::convert::From<rust_iso20022::helpers::CountryCode> for alloc::string::String
+pub fn alloc::string::String::from(rust_iso20022::helpers::CountryCode) -> Self
+pub struct rust_iso20022::helpers::Currency
+impl rust_iso20022::helpers::Currency
+pub const fn rust_iso20022::helpers::Currency::as_str(self) -> &'static str
+pub const fn rust_iso20022::helpers::Currency::minor_units(self) -> core::option::Option<u8>
+pub fn rust_iso20022::helpers::Currency::parse(&str) -> core::result::Result<Self, rust_iso20022::helpers::ValueError>
+impl core::convert::From<rust_iso20022::helpers::Currency> for alloc::string::String
+pub fn alloc::string::String::from(rust_iso20022::helpers::Currency) -> Self
+pub struct rust_iso20022::helpers::Iban(_)
+impl rust_iso20022::helpers::Iban
+pub const fn rust_iso20022::helpers::Iban::account_existence_verified(&self) -> bool
+pub fn rust_iso20022::helpers::Iban::as_str(&self) -> &str
+pub fn rust_iso20022::helpers::Iban::parse(&str) -> core::result::Result<Self, rust_iso20022::helpers::ValueError>
+impl core::convert::From<rust_iso20022::helpers::Iban> for alloc::string::String
+pub fn alloc::string::String::from(rust_iso20022::helpers::Iban) -> Self
+pub struct rust_iso20022::helpers::IsoDate(_)
+impl rust_iso20022::helpers::IsoDate
+pub fn rust_iso20022::helpers::IsoDate::as_str(&self) -> &str
+pub fn rust_iso20022::helpers::IsoDate::parse(&str) -> core::result::Result<Self, rust_iso20022::helpers::ValueError>
+impl core::convert::From<rust_iso20022::helpers::IsoDate> for alloc::string::String
+pub fn alloc::string::String::from(rust_iso20022::helpers::IsoDate) -> Self
+pub struct rust_iso20022::helpers::IsoDateTime(_)
+impl rust_iso20022::helpers::IsoDateTime
+pub fn rust_iso20022::helpers::IsoDateTime::as_str(&self) -> &str
+pub fn rust_iso20022::helpers::IsoDateTime::parse(&str) -> core::result::Result<Self, rust_iso20022::helpers::ValueError>
+impl core::convert::From<rust_iso20022::helpers::IsoDateTime> for alloc::string::String
+pub fn alloc::string::String::from(rust_iso20022::helpers::IsoDateTime) -> Self
+pub struct rust_iso20022::helpers::Lei(_)
+impl rust_iso20022::helpers::Lei
+pub fn rust_iso20022::helpers::Lei::as_str(&self) -> &str
+pub const fn rust_iso20022::helpers::Lei::directory_existence_verified(&self) -> bool
+pub fn rust_iso20022::helpers::Lei::parse(&str) -> core::result::Result<Self, rust_iso20022::helpers::ValueError>
+impl core::convert::From<rust_iso20022::helpers::Lei> for alloc::string::String
+pub fn alloc::string::String::from(rust_iso20022::helpers::Lei) -> Self
+pub struct rust_iso20022::helpers::Money
+impl rust_iso20022::helpers::Money
+pub fn rust_iso20022::helpers::Money::amount(&self) -> &str
+pub const fn rust_iso20022::helpers::Money::currency(&self) -> rust_iso20022::helpers::Currency
+pub fn rust_iso20022::helpers::Money::into_parts(self) -> (rust_iso20022::helpers::Currency, alloc::string::String)
+pub fn rust_iso20022::helpers::Money::parse(&str, &str) -> core::result::Result<Self, rust_iso20022::helpers::ValueError>
+pub struct rust_iso20022::helpers::ValueError
+impl rust_iso20022::helpers::ValueError
+pub const fn rust_iso20022::helpers::ValueError::constraint(self) -> rust_iso20022::helpers::ValueConstraint
+pub const fn rust_iso20022::helpers::ValueError::rule_id(self) -> rust_iso20022::validation::RuleId
+impl core::error::Error for rust_iso20022::helpers::ValueError
+impl core::fmt::Display for rust_iso20022::helpers::ValueError
+pub fn rust_iso20022::helpers::ValueError::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub const rust_iso20022::helpers::REFERENCE_DATA_MANIFEST_SHA256: &str
+pub mod rust_iso20022::metadata
+pub enum rust_iso20022::metadata::FieldKind
+pub rust_iso20022::metadata::FieldKind::Attribute
+pub rust_iso20022::metadata::FieldKind::Element
+pub rust_iso20022::metadata::FieldKind::SimpleContent
+pub struct rust_iso20022::metadata::FieldDescriptor
+pub rust_iso20022::metadata::FieldDescriptor::choice_group: core::option::Option<u32>
+pub rust_iso20022::metadata::FieldDescriptor::documentation: core::option::Option<&'static str>
+pub rust_iso20022::metadata::FieldDescriptor::enum_values: &'static [&'static str]
+pub rust_iso20022::metadata::FieldDescriptor::kind: rust_iso20022::metadata::FieldKind
+pub rust_iso20022::metadata::FieldDescriptor::logical_path: &'static str
+pub rust_iso20022::metadata::FieldDescriptor::max_occurs: core::option::Option<u32>
+pub rust_iso20022::metadata::FieldDescriptor::min_occurs: u32
+pub rust_iso20022::metadata::FieldDescriptor::namespace: &'static str
+pub rust_iso20022::metadata::FieldDescriptor::rust_name: &'static str
+pub rust_iso20022::metadata::FieldDescriptor::type_name: &'static str
+pub rust_iso20022::metadata::FieldDescriptor::wire_name: &'static str
+pub struct rust_iso20022::metadata::MessageDescriptor
+pub rust_iso20022::metadata::MessageDescriptor::business_area: &'static str
+pub rust_iso20022::metadata::MessageDescriptor::description: core::option::Option<&'static str>
+pub rust_iso20022::metadata::MessageDescriptor::fields: &'static [rust_iso20022::metadata::FieldDescriptor]
+pub rust_iso20022::metadata::MessageDescriptor::generated_module: &'static str
+pub rust_iso20022::metadata::MessageDescriptor::identity: &'static str
+pub rust_iso20022::metadata::MessageDescriptor::namespace: &'static str
+pub rust_iso20022::metadata::MessageDescriptor::required_feature: &'static str
+pub rust_iso20022::metadata::MessageDescriptor::root_element: &'static str
+pub rust_iso20022::metadata::MessageDescriptor::root_type: &'static str
+pub rust_iso20022::metadata::MessageDescriptor::schema_path: &'static str
+pub rust_iso20022::metadata::MessageDescriptor::schema_sha256: &'static str
+pub struct rust_iso20022::metadata::MessageMetadata
+pub rust_iso20022::metadata::MessageMetadata::amount: core::option::Option<alloc::string::String>
+pub rust_iso20022::metadata::MessageMetadata::creation_date_time: core::option::Option<alloc::string::String>
+pub rust_iso20022::metadata::MessageMetadata::currency: core::option::Option<alloc::string::String>
+pub rust_iso20022::metadata::MessageMetadata::message_id: core::option::Option<alloc::string::String>
+pub rust_iso20022::metadata::MessageMetadata::number_of_transactions: core::option::Option<alloc::string::String>
+pub rust_iso20022::metadata::MessageMetadata::value_date: core::option::Option<alloc::string::String>
+pub fn rust_iso20022::metadata::all() -> &'static [rust_iso20022::metadata::MessageDescriptor]
+pub fn rust_iso20022::metadata::extract(&str) -> rust_iso20022::metadata::MessageMetadata
+pub mod rust_iso20022::privacy
+pub enum rust_iso20022::privacy::SensitiveKind
+pub rust_iso20022::privacy::SensitiveKind::Account
+pub rust_iso20022::privacy::SensitiveKind::Address
+pub rust_iso20022::privacy::SensitiveKind::Bic
+pub rust_iso20022::privacy::SensitiveKind::Iban
+pub rust_iso20022::privacy::SensitiveKind::MessageXml
+pub rust_iso20022::privacy::SensitiveKind::Name
+pub rust_iso20022::privacy::SensitiveKind::Remittance
+pub rust_iso20022::privacy::SensitiveKind::TransactionReference
+pub struct rust_iso20022::privacy::RedactionPolicy
+impl rust_iso20022::privacy::RedactionPolicy
+pub const fn rust_iso20022::privacy::RedactionPolicy::allows_full_values(self) -> bool
+pub fn rust_iso20022::privacy::RedactionPolicy::redact(self, rust_iso20022::privacy::SensitiveKind, &str) -> alloc::string::String
+pub mod rust_iso20022::validate
+pub trait rust_iso20022::validate::Validate
+pub fn rust_iso20022::validate::Validate::validate(&self) -> core::result::Result<(), alloc::string::String>
+pub mod rust_iso20022::validation
+pub mod rust_iso20022::validation::cross_field
+pub enum rust_iso20022::validation::cross_field::FieldPredicate
+pub rust_iso20022::validation::cross_field::FieldPredicate::Equals
+pub rust_iso20022::validation::cross_field::FieldPredicate::Equals::expected: &'static str
+pub rust_iso20022::validation::cross_field::FieldPredicate::Equals::path: &'static str
+pub rust_iso20022::validation::cross_field::FieldPredicate::Present(&'static str)
+impl rust_iso20022::validation::cross_field::FieldPredicate
+pub const fn rust_iso20022::validation::cross_field::FieldPredicate::equals(&'static str, &'static str) -> Self
+pub const fn rust_iso20022::validation::cross_field::FieldPredicate::present(&'static str) -> Self
+pub struct rust_iso20022::validation::cross_field::AgentAccountRule
+impl rust_iso20022::validation::cross_field::AgentAccountRule
+pub const fn rust_iso20022::validation::cross_field::AgentAccountRule::new(&'static rust_iso20022::validation::RuleDescriptor, &'static str, &'static str) -> Self
+impl rust_iso20022::validation::Rule for rust_iso20022::validation::cross_field::AgentAccountRule
+pub fn rust_iso20022::validation::cross_field::AgentAccountRule::descriptor(&self) -> &'static rust_iso20022::validation::RuleDescriptor
+pub fn rust_iso20022::validation::cross_field::AgentAccountRule::evaluate(&self, &rust_iso20022::validation::ValidationTarget<'_>, &rust_iso20022::validation::ValidationContext<'_>) -> alloc::vec::Vec<rust_iso20022::validation::ValidationIssue>
+pub fn rust_iso20022::validation::cross_field::AgentAccountRule::field_paths(&self) -> alloc::vec::Vec<&'static str>
+pub struct rust_iso20022::validation::cross_field::AtLeastOneRule
+impl rust_iso20022::validation::cross_field::AtLeastOneRule
+pub fn rust_iso20022::validation::cross_field::AtLeastOneRule::new(&'static rust_iso20022::validation::RuleDescriptor, &[&'static str]) -> Self
+impl rust_iso20022::validation::Rule for rust_iso20022::validation::cross_field::AtLeastOneRule
+pub fn rust_iso20022::validation::cross_field::AtLeastOneRule::descriptor(&self) -> &'static rust_iso20022::validation::RuleDescriptor
+pub fn rust_iso20022::validation::cross_field::AtLeastOneRule::evaluate(&self, &rust_iso20022::validation::ValidationTarget<'_>, &rust_iso20022::validation::ValidationContext<'_>) -> alloc::vec::Vec<rust_iso20022::validation::ValidationIssue>
+pub fn rust_iso20022::validation::cross_field::AtLeastOneRule::field_paths(&self) -> alloc::vec::Vec<&'static str>
+pub struct rust_iso20022::validation::cross_field::CardinalityDependencyRule
+impl rust_iso20022::validation::cross_field::CardinalityDependencyRule
+pub const fn rust_iso20022::validation::cross_field::CardinalityDependencyRule::matches_declared(&'static rust_iso20022::validation::RuleDescriptor, &'static str, &'static str) -> Self
+pub const fn rust_iso20022::validation::cross_field::CardinalityDependencyRule::new(&'static rust_iso20022::validation::RuleDescriptor, &'static str, &'static str, core::ops::range::RangeInclusive<usize>) -> Self
+impl rust_iso20022::validation::Rule for rust_iso20022::validation::cross_field::CardinalityDependencyRule
+pub fn rust_iso20022::validation::cross_field::CardinalityDependencyRule::descriptor(&self) -> &'static rust_iso20022::validation::RuleDescriptor
+pub fn rust_iso20022::validation::cross_field::CardinalityDependencyRule::evaluate(&self, &rust_iso20022::validation::ValidationTarget<'_>, &rust_iso20022::validation::ValidationContext<'_>) -> alloc::vec::Vec<rust_iso20022::validation::ValidationIssue>
+pub fn rust_iso20022::validation::cross_field::CardinalityDependencyRule::field_paths(&self) -> alloc::vec::Vec<&'static str>
+pub struct rust_iso20022::validation::cross_field::CurrencyAmountRule
+impl rust_iso20022::validation::cross_field::CurrencyAmountRule
+pub const fn rust_iso20022::validation::cross_field::CurrencyAmountRule::new(&'static rust_iso20022::validation::RuleDescriptor, &'static str, &'static str) -> Self
+impl rust_iso20022::validation::Rule for rust_iso20022::validation::cross_field::CurrencyAmountRule
+pub fn rust_iso20022::validation::cross_field::CurrencyAmountRule::descriptor(&self) -> &'static rust_iso20022::validation::RuleDescriptor
+pub fn rust_iso20022::validation::cross_field::CurrencyAmountRule::evaluate(&self, &rust_iso20022::validation::ValidationTarget<'_>, &rust_iso20022::validation::ValidationContext<'_>) -> alloc::vec::Vec<rust_iso20022::validation::ValidationIssue>
+pub fn rust_iso20022::validation::cross_field::CurrencyAmountRule::field_paths(&self) -> alloc::vec::Vec<&'static str>
+pub struct rust_iso20022::validation::cross_field::FieldRelationshipRule
+impl rust_iso20022::validation::cross_field::FieldRelationshipRule
+pub const fn rust_iso20022::validation::cross_field::FieldRelationshipRule::new(&'static rust_iso20022::validation::RuleDescriptor, &'static str, &'static str, fn(&str, &str) -> bool) -> Self
+impl rust_iso20022::validation::Rule for rust_iso20022::validation::cross_field::FieldRelationshipRule
+pub fn rust_iso20022::validation::cross_field::FieldRelationshipRule::descriptor(&self) -> &'static rust_iso20022::validation::RuleDescriptor
+pub fn rust_iso20022::validation::cross_field::FieldRelationshipRule::evaluate(&self, &rust_iso20022::validation::ValidationTarget<'_>, &rust_iso20022::validation::ValidationContext<'_>) -> alloc::vec::Vec<rust_iso20022::validation::ValidationIssue>
+pub fn rust_iso20022::validation::cross_field::FieldRelationshipRule::field_paths(&self) -> alloc::vec::Vec<&'static str>
+pub struct rust_iso20022::validation::cross_field::MutualExclusionRule
+impl rust_iso20022::validation::cross_field::MutualExclusionRule
+pub fn rust_iso20022::validation::cross_field::MutualExclusionRule::new(&'static rust_iso20022::validation::RuleDescriptor, &[&'static str]) -> Self
+impl rust_iso20022::validation::Rule for rust_iso20022::validation::cross_field::MutualExclusionRule
+pub fn rust_iso20022::validation::cross_field::MutualExclusionRule::descriptor(&self) -> &'static rust_iso20022::validation::RuleDescriptor
+pub fn rust_iso20022::validation::cross_field::MutualExclusionRule::evaluate(&self, &rust_iso20022::validation::ValidationTarget<'_>, &rust_iso20022::validation::ValidationContext<'_>) -> alloc::vec::Vec<rust_iso20022::validation::ValidationIssue>
+pub fn rust_iso20022::validation::cross_field::MutualExclusionRule::field_paths(&self) -> alloc::vec::Vec<&'static str>
+pub struct rust_iso20022::validation::cross_field::RequiredIfRule
+impl rust_iso20022::validation::cross_field::RequiredIfRule
+pub const fn rust_iso20022::validation::cross_field::RequiredIfRule::new(&'static rust_iso20022::validation::RuleDescriptor, rust_iso20022::validation::cross_field::FieldPredicate, &'static str) -> Self
+impl rust_iso20022::validation::Rule for rust_iso20022::validation::cross_field::RequiredIfRule
+pub fn rust_iso20022::validation::cross_field::RequiredIfRule::descriptor(&self) -> &'static rust_iso20022::validation::RuleDescriptor
+pub fn rust_iso20022::validation::cross_field::RequiredIfRule::evaluate(&self, &rust_iso20022::validation::ValidationTarget<'_>, &rust_iso20022::validation::ValidationContext<'_>) -> alloc::vec::Vec<rust_iso20022::validation::ValidationIssue>
+pub fn rust_iso20022::validation::cross_field::RequiredIfRule::field_paths(&self) -> alloc::vec::Vec<&'static str>
+pub enum rust_iso20022::validation::LayerAvailability
+pub rust_iso20022::validation::LayerAvailability::Available
+pub rust_iso20022::validation::LayerAvailability::Unavailable(&'static str)
+pub enum rust_iso20022::validation::RuleSetError
+pub rust_iso20022::validation::RuleSetError::MissingProfileVersion
+pub rust_iso20022::validation::RuleSetError::WrongLayer
+pub rust_iso20022::validation::RuleSetError::WrongLayer::rule_id: rust_iso20022::validation::RuleId
+pub rust_iso20022::validation::RuleSetError::WrongProfile
+pub rust_iso20022::validation::RuleSetError::WrongProfile::rule_id: rust_iso20022::validation::RuleId
+pub rust_iso20022::validation::RuleSetError::WrongProfileVersion
+pub rust_iso20022::validation::RuleSetError::WrongProfileVersion::rule_id: rust_iso20022::validation::RuleId
+impl core::error::Error for rust_iso20022::validation::RuleSetError
+impl core::fmt::Display for rust_iso20022::validation::RuleSetError
+pub fn rust_iso20022::validation::RuleSetError::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub enum rust_iso20022::validation::Severity
+pub rust_iso20022::validation::Severity::Error
+pub rust_iso20022::validation::Severity::Warning
+pub enum rust_iso20022::validation::ValidationLayer
+pub rust_iso20022::validation::ValidationLayer::IsoSemantic
+pub rust_iso20022::validation::ValidationLayer::Profile
+pub rust_iso20022::validation::ValidationLayer::SyntaxSchema
+pub struct rust_iso20022::validation::DuplicateRuleId
+pub rust_iso20022::validation::DuplicateRuleId::rule_id: rust_iso20022::validation::RuleId
+impl core::error::Error for rust_iso20022::validation::DuplicateRuleId
+impl core::fmt::Display for rust_iso20022::validation::DuplicateRuleId
+pub fn rust_iso20022::validation::DuplicateRuleId::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub struct rust_iso20022::validation::FieldPath(_)
+impl rust_iso20022::validation::FieldPath
+pub fn rust_iso20022::validation::FieldPath::as_str(&self) -> &str
+pub fn rust_iso20022::validation::FieldPath::new(impl core::convert::Into<alloc::string::String>) -> Self
+pub struct rust_iso20022::validation::LayerUnavailable
+pub rust_iso20022::validation::LayerUnavailable::layer: rust_iso20022::validation::ValidationLayer
+pub rust_iso20022::validation::LayerUnavailable::reason: alloc::string::String
+pub struct rust_iso20022::validation::RuleDescriptor
+pub rust_iso20022::validation::RuleDescriptor::affected_messages: &'static [&'static str]
+pub rust_iso20022::validation::RuleDescriptor::id: rust_iso20022::validation::RuleId
+pub rust_iso20022::validation::RuleDescriptor::layer: rust_iso20022::validation::ValidationLayer
+pub rust_iso20022::validation::RuleDescriptor::profile: core::option::Option<&'static str>
+pub rust_iso20022::validation::RuleDescriptor::profile_version: core::option::Option<&'static str>
+pub rust_iso20022::validation::RuleDescriptor::reason: &'static str
+pub rust_iso20022::validation::RuleDescriptor::source: core::option::Option<&'static str>
+pub rust_iso20022::validation::RuleDescriptor::title: &'static str
+pub struct rust_iso20022::validation::RuleExplanation
+pub rust_iso20022::validation::RuleExplanation::descriptor: &'static rust_iso20022::validation::RuleDescriptor
+pub rust_iso20022::validation::RuleExplanation::field_paths: alloc::vec::Vec<&'static str>
+pub struct rust_iso20022::validation::RuleId(_)
+impl rust_iso20022::validation::RuleId
+pub const fn rust_iso20022::validation::RuleId::as_str(self) -> &'static str
+pub const fn rust_iso20022::validation::RuleId::new(&'static str) -> Self
+impl core::fmt::Display for rust_iso20022::validation::RuleId
+pub fn rust_iso20022::validation::RuleId::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub struct rust_iso20022::validation::RuleRegistry<'a>
+impl<'a> rust_iso20022::validation::RuleRegistry<'a>
+pub fn rust_iso20022::validation::RuleRegistry<'a>::explain(&self, rust_iso20022::validation::RuleId) -> core::option::Option<&'static rust_iso20022::validation::RuleDescriptor>
+pub fn rust_iso20022::validation::RuleRegistry<'a>::explain_details_str(&self, &str) -> core::option::Option<rust_iso20022::validation::RuleExplanation>
+pub fn rust_iso20022::validation::RuleRegistry<'a>::explain_str(&self, &str) -> core::option::Option<&'static rust_iso20022::validation::RuleDescriptor>
+pub fn rust_iso20022::validation::RuleRegistry<'a>::from_rule_sets(&[rust_iso20022::validation::RuleSet<'a>]) -> core::result::Result<Self, rust_iso20022::validation::DuplicateRuleId>
+pub fn rust_iso20022::validation::RuleRegistry<'a>::new(&[&'a dyn rust_iso20022::validation::Rule]) -> core::result::Result<Self, rust_iso20022::validation::DuplicateRuleId>
+pub fn rust_iso20022::validation::RuleRegistry<'a>::validate(&self, &rust_iso20022::validation::ValidationTarget<'_>, &rust_iso20022::validation::ValidationContext<'_>) -> rust_iso20022::validation::ValidationReport
+impl core::fmt::Debug for rust_iso20022::validation::RuleRegistry<'_>
+pub fn rust_iso20022::validation::RuleRegistry<'_>::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub struct rust_iso20022::validation::RuleSet<'a>
+pub rust_iso20022::validation::RuleSet::layer: rust_iso20022::validation::ValidationLayer
+pub rust_iso20022::validation::RuleSet::name: &'static str
+pub rust_iso20022::validation::RuleSet::version: core::option::Option<&'static str>
+impl<'a> rust_iso20022::validation::RuleSet<'a>
+pub fn rust_iso20022::validation::RuleSet<'a>::new(&'static str, core::option::Option<&'static str>, rust_iso20022::validation::ValidationLayer, &[&'a dyn rust_iso20022::validation::Rule]) -> core::result::Result<Self, rust_iso20022::validation::RuleSetError>
+impl core::fmt::Debug for rust_iso20022::validation::RuleSet<'_>
+pub fn rust_iso20022::validation::RuleSet<'_>::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub struct rust_iso20022::validation::ValidationContext<'a>
+pub rust_iso20022::validation::ValidationContext::message_id: core::option::Option<&'a str>
+pub rust_iso20022::validation::ValidationContext::profile: core::option::Option<&'a str>
+pub rust_iso20022::validation::ValidationContext::profile_version: core::option::Option<&'a str>
+pub struct rust_iso20022::validation::ValidationIssue
+pub rust_iso20022::validation::ValidationIssue::code: rust_iso20022::validation::RuleId
+pub rust_iso20022::validation::ValidationIssue::layer: rust_iso20022::validation::ValidationLayer
+pub rust_iso20022::validation::ValidationIssue::message: alloc::string::String
+pub rust_iso20022::validation::ValidationIssue::path: rust_iso20022::validation::FieldPath
+pub rust_iso20022::validation::ValidationIssue::profile: core::option::Option<&'static str>
+pub rust_iso20022::validation::ValidationIssue::profile_version: core::option::Option<&'static str>
+pub rust_iso20022::validation::ValidationIssue::rule_id: rust_iso20022::validation::RuleId
+pub rust_iso20022::validation::ValidationIssue::severity: rust_iso20022::validation::Severity
+pub rust_iso20022::validation::ValidationIssue::source: core::option::Option<&'static str>
+impl rust_iso20022::validation::ValidationIssue
+pub fn rust_iso20022::validation::ValidationIssue::new(&rust_iso20022::validation::RuleDescriptor, rust_iso20022::validation::Severity, rust_iso20022::validation::FieldPath, impl core::convert::Into<alloc::string::String>) -> Self
+pub fn rust_iso20022::validation::ValidationIssue::standalone(&'static str, rust_iso20022::validation::ValidationLayer, rust_iso20022::validation::Severity, impl core::convert::Into<alloc::string::String>, impl core::convert::Into<alloc::string::String>) -> Self
+pub struct rust_iso20022::validation::ValidationPipeline<'a>
+impl<'a> rust_iso20022::validation::ValidationPipeline<'a>
+pub fn rust_iso20022::validation::ValidationPipeline<'a>::new(rust_iso20022::validation::RuleRegistry<'a>) -> Self
+pub fn rust_iso20022::validation::ValidationPipeline<'a>::validate(&self, &rust_iso20022::validation::ValidationTarget<'_>, &rust_iso20022::validation::ValidationContext<'_>) -> rust_iso20022::validation::ValidationReport
+pub fn rust_iso20022::validation::ValidationPipeline<'a>::with_layer(self, rust_iso20022::validation::ValidationLayer, rust_iso20022::validation::LayerAvailability) -> Self
+pub struct rust_iso20022::validation::ValidationReport
+impl rust_iso20022::validation::ValidationReport
+pub fn rust_iso20022::validation::ValidationReport::complete(&self) -> bool
+pub fn rust_iso20022::validation::ValidationReport::errors(&self) -> alloc::vec::Vec<&rust_iso20022::validation::ValidationIssue>
+pub fn rust_iso20022::validation::ValidationReport::extend(&mut self, impl core::iter::traits::collect::IntoIterator<Item = rust_iso20022::validation::ValidationIssue>)
+pub fn rust_iso20022::validation::ValidationReport::issues(&self) -> &[rust_iso20022::validation::ValidationIssue]
+pub fn rust_iso20022::validation::ValidationReport::mark_unavailable(&mut self, rust_iso20022::validation::ValidationLayer, impl core::convert::Into<alloc::string::String>)
+pub const fn rust_iso20022::validation::ValidationReport::new() -> Self
+pub fn rust_iso20022::validation::ValidationReport::push(&mut self, rust_iso20022::validation::ValidationIssue)
+pub fn rust_iso20022::validation::ValidationReport::sort(&mut self)
+pub fn rust_iso20022::validation::ValidationReport::unavailable_layers(&self) -> &[rust_iso20022::validation::LayerUnavailable]
+pub fn rust_iso20022::validation::ValidationReport::valid(&self) -> bool
+pub fn rust_iso20022::validation::ValidationReport::warnings(&self) -> alloc::vec::Vec<&rust_iso20022::validation::ValidationIssue>
+pub struct rust_iso20022::validation::ValidationTarget<'a>
+impl<'a> rust_iso20022::validation::ValidationTarget<'a>
+pub fn rust_iso20022::validation::ValidationTarget<'a>::count(&self, &str) -> usize
+pub fn rust_iso20022::validation::ValidationTarget<'a>::from_pairs(&[(&'a str, &'a str)]) -> Self
+pub fn rust_iso20022::validation::ValidationTarget<'a>::present(&self, &str) -> bool
+pub fn rust_iso20022::validation::ValidationTarget<'a>::text(&self, &str) -> core::option::Option<&'a str>
+pub fn rust_iso20022::validation::ValidationTarget<'a>::values<'b>(&'b self, &'b str) -> impl core::iter::traits::iterator::Iterator<Item = &'a str> + 'b
+pub trait rust_iso20022::validation::Rule: core::marker::Send + core::marker::Sync
+pub fn rust_iso20022::validation::Rule::descriptor(&self) -> &'static rust_iso20022::validation::RuleDescriptor
+pub fn rust_iso20022::validation::Rule::evaluate(&self, &rust_iso20022::validation::ValidationTarget<'_>, &rust_iso20022::validation::ValidationContext<'_>) -> alloc::vec::Vec<rust_iso20022::validation::ValidationIssue>
+pub fn rust_iso20022::validation::Rule::field_paths(&self) -> alloc::vec::Vec<&'static str>
+impl rust_iso20022::validation::Rule for rust_iso20022::validation::cross_field::AgentAccountRule
+pub fn rust_iso20022::validation::cross_field::AgentAccountRule::descriptor(&self) -> &'static rust_iso20022::validation::RuleDescriptor
+pub fn rust_iso20022::validation::cross_field::AgentAccountRule::evaluate(&self, &rust_iso20022::validation::ValidationTarget<'_>, &rust_iso20022::validation::ValidationContext<'_>) -> alloc::vec::Vec<rust_iso20022::validation::ValidationIssue>
+pub fn rust_iso20022::validation::cross_field::AgentAccountRule::field_paths(&self) -> alloc::vec::Vec<&'static str>
+impl rust_iso20022::validation::Rule for rust_iso20022::validation::cross_field::AtLeastOneRule
+pub fn rust_iso20022::validation::cross_field::AtLeastOneRule::descriptor(&self) -> &'static rust_iso20022::validation::RuleDescriptor
+pub fn rust_iso20022::validation::cross_field::AtLeastOneRule::evaluate(&self, &rust_iso20022::validation::ValidationTarget<'_>, &rust_iso20022::validation::ValidationContext<'_>) -> alloc::vec::Vec<rust_iso20022::validation::ValidationIssue>
+pub fn rust_iso20022::validation::cross_field::AtLeastOneRule::field_paths(&self) -> alloc::vec::Vec<&'static str>
+impl rust_iso20022::validation::Rule for rust_iso20022::validation::cross_field::CardinalityDependencyRule
+pub fn rust_iso20022::validation::cross_field::CardinalityDependencyRule::descriptor(&self) -> &'static rust_iso20022::validation::RuleDescriptor
+pub fn rust_iso20022::validation::cross_field::CardinalityDependencyRule::evaluate(&self, &rust_iso20022::validation::ValidationTarget<'_>, &rust_iso20022::validation::ValidationContext<'_>) -> alloc::vec::Vec<rust_iso20022::validation::ValidationIssue>
+pub fn rust_iso20022::validation::cross_field::CardinalityDependencyRule::field_paths(&self) -> alloc::vec::Vec<&'static str>
+impl rust_iso20022::validation::Rule for rust_iso20022::validation::cross_field::CurrencyAmountRule
+pub fn rust_iso20022::validation::cross_field::CurrencyAmountRule::descriptor(&self) -> &'static rust_iso20022::validation::RuleDescriptor
+pub fn rust_iso20022::validation::cross_field::CurrencyAmountRule::evaluate(&self, &rust_iso20022::validation::ValidationTarget<'_>, &rust_iso20022::validation::ValidationContext<'_>) -> alloc::vec::Vec<rust_iso20022::validation::ValidationIssue>
+pub fn rust_iso20022::validation::cross_field::CurrencyAmountRule::field_paths(&self) -> alloc::vec::Vec<&'static str>
+impl rust_iso20022::validation::Rule for rust_iso20022::validation::cross_field::FieldRelationshipRule
+pub fn rust_iso20022::validation::cross_field::FieldRelationshipRule::descriptor(&self) -> &'static rust_iso20022::validation::RuleDescriptor
+pub fn rust_iso20022::validation::cross_field::FieldRelationshipRule::evaluate(&self, &rust_iso20022::validation::ValidationTarget<'_>, &rust_iso20022::validation::ValidationContext<'_>) -> alloc::vec::Vec<rust_iso20022::validation::ValidationIssue>
+pub fn rust_iso20022::validation::cross_field::FieldRelationshipRule::field_paths(&self) -> alloc::vec::Vec<&'static str>
+impl rust_iso20022::validation::Rule for rust_iso20022::validation::cross_field::MutualExclusionRule
+pub fn rust_iso20022::validation::cross_field::MutualExclusionRule::descriptor(&self) -> &'static rust_iso20022::validation::RuleDescriptor
+pub fn rust_iso20022::validation::cross_field::MutualExclusionRule::evaluate(&self, &rust_iso20022::validation::ValidationTarget<'_>, &rust_iso20022::validation::ValidationContext<'_>) -> alloc::vec::Vec<rust_iso20022::validation::ValidationIssue>
+pub fn rust_iso20022::validation::cross_field::MutualExclusionRule::field_paths(&self) -> alloc::vec::Vec<&'static str>
+impl rust_iso20022::validation::Rule for rust_iso20022::validation::cross_field::RequiredIfRule
+pub fn rust_iso20022::validation::cross_field::RequiredIfRule::descriptor(&self) -> &'static rust_iso20022::validation::RuleDescriptor
+pub fn rust_iso20022::validation::cross_field::RequiredIfRule::evaluate(&self, &rust_iso20022::validation::ValidationTarget<'_>, &rust_iso20022::validation::ValidationContext<'_>) -> alloc::vec::Vec<rust_iso20022::validation::ValidationIssue>
+pub fn rust_iso20022::validation::cross_field::RequiredIfRule::field_paths(&self) -> alloc::vec::Vec<&'static str>
+pub fn rust_iso20022::validation::financial_rules() -> &'static [&'static dyn rust_iso20022::validation::Rule]
+pub macro rust_iso20022::simple_type!
+pub enum rust_iso20022::BusinessArea
+pub rust_iso20022::BusinessArea::acmt
+pub rust_iso20022::BusinessArea::admi
+pub rust_iso20022::BusinessArea::auth
+pub rust_iso20022::BusinessArea::caaa
+pub rust_iso20022::BusinessArea::caad
+pub rust_iso20022::BusinessArea::caam
+pub rust_iso20022::BusinessArea::cafc
+pub rust_iso20022::BusinessArea::cafm
+pub rust_iso20022::BusinessArea::cafr
+pub rust_iso20022::BusinessArea::cain
+pub rust_iso20022::BusinessArea::camt
+pub rust_iso20022::BusinessArea::canm
+pub rust_iso20022::BusinessArea::casp
+pub rust_iso20022::BusinessArea::casr
+pub rust_iso20022::BusinessArea::catm
+pub rust_iso20022::BusinessArea::catp
+pub rust_iso20022::BusinessArea::cbrf
+pub rust_iso20022::BusinessArea::colr
+pub rust_iso20022::BusinessArea::fxtr
+pub rust_iso20022::BusinessArea::head
+pub rust_iso20022::BusinessArea::pacs
+pub rust_iso20022::BusinessArea::pain
+pub rust_iso20022::BusinessArea::reda
+pub rust_iso20022::BusinessArea::remt
+pub rust_iso20022::BusinessArea::secl
+pub rust_iso20022::BusinessArea::seev
+pub rust_iso20022::BusinessArea::semt
+pub rust_iso20022::BusinessArea::sese
+pub rust_iso20022::BusinessArea::seti
+pub rust_iso20022::BusinessArea::setr
+pub rust_iso20022::BusinessArea::supl
+pub rust_iso20022::BusinessArea::trck
+pub rust_iso20022::BusinessArea::trea
+pub rust_iso20022::BusinessArea::tsin
+pub rust_iso20022::BusinessArea::tsmt
+pub rust_iso20022::BusinessArea::tsrv
+pub rust_iso20022::BusinessArea::xsys
+impl rust_iso20022::BusinessArea
+pub const rust_iso20022::BusinessArea::ALL: [rust_iso20022::BusinessArea; 37]
+pub const fn rust_iso20022::BusinessArea::code(self) -> &'static str
+pub const fn rust_iso20022::BusinessArea::description(self) -> &'static str
+pub fn rust_iso20022::BusinessArea::from_code(&str) -> core::option::Option<rust_iso20022::BusinessArea>
+impl core::fmt::Display for rust_iso20022::BusinessArea
+pub fn rust_iso20022::BusinessArea::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+impl core::str::traits::FromStr for rust_iso20022::BusinessArea
+pub type rust_iso20022::BusinessArea::Err = rust_iso20022::Error
+pub fn rust_iso20022::BusinessArea::from_str(&str) -> core::result::Result<Self, Self::Err>
+pub enum rust_iso20022::DetectionError
+pub rust_iso20022::DetectionError::RootMismatch
+pub rust_iso20022::DetectionError::RootMismatch::expected: &'static str
+pub rust_iso20022::DetectionError::RootMismatch::message_id: alloc::string::String
+pub rust_iso20022::DetectionError::UnknownMessage
+pub rust_iso20022::DetectionError::Xml(rust_iso20022::XmlReadError)
+impl core::error::Error for rust_iso20022::DetectionError
+impl core::fmt::Display for rust_iso20022::DetectionError
+pub fn rust_iso20022::DetectionError::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub enum rust_iso20022::Error
+pub rust_iso20022::Error::Deserialize(alloc::string::String)
+pub rust_iso20022::Error::InvalidMxId(alloc::string::String)
+pub rust_iso20022::Error::Serialize(alloc::string::String)
+pub rust_iso20022::Error::UnknownBusinessArea(alloc::string::String)
+impl core::error::Error for rust_iso20022::Error
+impl core::fmt::Debug for rust_iso20022::Error
+pub fn rust_iso20022::Error::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+impl core::fmt::Display for rust_iso20022::Error
+pub fn rust_iso20022::Error::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub enum rust_iso20022::ParseError
+pub rust_iso20022::ParseError::Deserialize
+pub rust_iso20022::ParseError::Deserialize::message_id: alloc::string::String
+pub rust_iso20022::ParseError::Deserialize::reason: alloc::string::String
+pub rust_iso20022::ParseError::RootMismatch
+pub rust_iso20022::ParseError::RootMismatch::expected: &'static str
+pub rust_iso20022::ParseError::RootMismatch::found: alloc::string::String
+pub rust_iso20022::ParseError::RootMismatch::message_id: alloc::string::String
+pub rust_iso20022::ParseError::UnknownMessage
+pub rust_iso20022::ParseError::UnsupportedFeature
+pub rust_iso20022::ParseError::UnsupportedFeature::message_id: alloc::string::String
+pub rust_iso20022::ParseError::UnsupportedFeature::required_feature: &'static str
+impl core::error::Error for rust_iso20022::ParseError
+impl core::fmt::Debug for rust_iso20022::ParseError
+pub fn rust_iso20022::ParseError::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+impl core::fmt::Display for rust_iso20022::ParseError
+pub fn rust_iso20022::ParseError::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub enum rust_iso20022::XmlLimit
+pub rust_iso20022::XmlLimit::Attributes
+pub rust_iso20022::XmlLimit::CollectionItems
+pub rust_iso20022::XmlLimit::DecodedBytes
+pub rust_iso20022::XmlLimit::Depth
+pub rust_iso20022::XmlLimit::Elements
+pub rust_iso20022::XmlLimit::Events
+pub rust_iso20022::XmlLimit::InputBytes
+pub rust_iso20022::XmlLimit::TextBytes
+impl core::fmt::Display for rust_iso20022::XmlLimit
+pub fn rust_iso20022::XmlLimit::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub enum rust_iso20022::XmlReadError
+pub rust_iso20022::XmlReadError::Forbidden
+pub rust_iso20022::XmlReadError::Forbidden::construct: &'static str
+pub rust_iso20022::XmlReadError::LimitExceeded
+pub rust_iso20022::XmlReadError::LimitExceeded::limit: rust_iso20022::XmlLimit
+pub rust_iso20022::XmlReadError::LimitExceeded::maximum: usize
+pub rust_iso20022::XmlReadError::Malformed
+pub rust_iso20022::XmlReadError::Malformed::kind: &'static str
+impl core::error::Error for rust_iso20022::XmlReadError
+impl core::fmt::Display for rust_iso20022::XmlReadError
+pub fn rust_iso20022::XmlReadError::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub struct rust_iso20022::BoundedXmlReader
+impl rust_iso20022::BoundedXmlReader
+pub const fn rust_iso20022::BoundedXmlReader::new(rust_iso20022::ParseLimits) -> Self
+pub fn rust_iso20022::BoundedXmlReader::validate(self, &str) -> core::result::Result<rust_iso20022::XmlStats, rust_iso20022::XmlReadError>
+pub struct rust_iso20022::BusinessMessage
+pub rust_iso20022::BusinessMessage::header: core::option::Option<rust_iso20022::app_hdr::BusinessHeader>
+pub rust_iso20022::BusinessMessage::id: core::option::Option<rust_iso20022::MxId>
+pub rust_iso20022::BusinessMessage::metadata: rust_iso20022::metadata::MessageMetadata
+pub struct rust_iso20022::DetectedMessage
+impl rust_iso20022::DetectedMessage
+pub fn rust_iso20022::DetectedMessage::descriptor(&self) -> &'static rust_iso20022::metadata::MessageDescriptor
+pub fn rust_iso20022::DetectedMessage::message_id(&self) -> &rust_iso20022::MessageIdentifier
+pub fn rust_iso20022::DetectedMessage::namespace(&self) -> &'static str
+pub fn rust_iso20022::DetectedMessage::root_element(&self) -> &'static str
+pub struct rust_iso20022::Envelope<D>
+pub rust_iso20022::Envelope::document: D
+pub rust_iso20022::Envelope::header: core::option::Option<rust_iso20022::app_hdr::BusinessHeader>
+pub struct rust_iso20022::MessageFamily(_)
+impl rust_iso20022::MessageFamily
+pub fn rust_iso20022::MessageFamily::as_str(&self) -> &str
+pub fn rust_iso20022::MessageFamily::parse(&str) -> core::option::Option<Self>
+impl core::fmt::Display for rust_iso20022::MessageFamily
+pub fn rust_iso20022::MessageFamily::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub struct rust_iso20022::MessageIdentifier
+impl rust_iso20022::MessageIdentifier
+pub fn rust_iso20022::MessageIdentifier::as_str(&self) -> &str
+pub fn rust_iso20022::MessageIdentifier::business_area(&self) -> &str
+pub fn rust_iso20022::MessageIdentifier::family(&self) -> &str
+pub fn rust_iso20022::MessageIdentifier::from_descriptor(&rust_iso20022::metadata::MessageDescriptor) -> Self
+pub fn rust_iso20022::MessageIdentifier::functionality(&self) -> &str
+pub fn rust_iso20022::MessageIdentifier::message_family(&self) -> rust_iso20022::MessageFamily
+pub fn rust_iso20022::MessageIdentifier::variant(&self) -> &str
+pub fn rust_iso20022::MessageIdentifier::version(&self) -> &rust_iso20022::MessageVersion
+impl core::fmt::Display for rust_iso20022::MessageIdentifier
+pub fn rust_iso20022::MessageIdentifier::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub struct rust_iso20022::MessageVersion
+impl rust_iso20022::MessageVersion
+pub fn rust_iso20022::MessageVersion::as_str(&self) -> &str
+pub fn rust_iso20022::MessageVersion::numeric(&self) -> u32
+impl core::fmt::Display for rust_iso20022::MessageVersion
+pub fn rust_iso20022::MessageVersion::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub struct rust_iso20022::MxId
+pub rust_iso20022::MxId::business_area: rust_iso20022::BusinessArea
+pub rust_iso20022::MxId::functionality: alloc::string::String
+pub rust_iso20022::MxId::variant: alloc::string::String
+pub rust_iso20022::MxId::version: alloc::string::String
+impl rust_iso20022::MxId
+pub fn rust_iso20022::MxId::message_name(&self) -> alloc::string::String
+pub fn rust_iso20022::MxId::namespace(&self) -> alloc::string::String
+pub fn rust_iso20022::MxId::new(rust_iso20022::BusinessArea, impl core::convert::Into<alloc::string::String>, impl core::convert::Into<alloc::string::String>, impl core::convert::Into<alloc::string::String>) -> rust_iso20022::MxId
+pub fn rust_iso20022::MxId::parse(&str) -> core::result::Result<rust_iso20022::MxId, rust_iso20022::Error>
+impl core::fmt::Display for rust_iso20022::MxId
+pub fn rust_iso20022::MxId::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+impl core::str::traits::FromStr for rust_iso20022::MxId
+pub type rust_iso20022::MxId::Err = rust_iso20022::Error
+pub fn rust_iso20022::MxId::from_str(&str) -> core::result::Result<Self, Self::Err>
+pub struct rust_iso20022::MxNode
+pub rust_iso20022::MxNode::attributes: alloc::vec::Vec<(alloc::string::String, alloc::string::String)>
+pub rust_iso20022::MxNode::children: alloc::vec::Vec<rust_iso20022::MxNode>
+pub rust_iso20022::MxNode::name: alloc::string::String
+pub rust_iso20022::MxNode::value: core::option::Option<alloc::string::String>
+impl rust_iso20022::MxNode
+pub fn rust_iso20022::MxNode::at(&self, &[&str]) -> core::option::Option<&rust_iso20022::MxNode>
+pub fn rust_iso20022::MxNode::attr(&self, &str) -> core::option::Option<&str>
+pub fn rust_iso20022::MxNode::find(&self, &str) -> core::option::Option<&rust_iso20022::MxNode>
+pub fn rust_iso20022::MxNode::find_all<'a>(&'a self, &str) -> alloc::vec::Vec<&'a rust_iso20022::MxNode>
+pub fn rust_iso20022::MxNode::get(&self, &str) -> core::option::Option<&rust_iso20022::MxNode>
+pub fn rust_iso20022::MxNode::parse(&str) -> core::option::Option<rust_iso20022::MxNode>
+pub fn rust_iso20022::MxNode::text(&self) -> core::option::Option<&str>
+pub struct rust_iso20022::ParseLimits
+pub rust_iso20022::ParseLimits::max_attributes: usize
+pub rust_iso20022::ParseLimits::max_collection_items: usize
+pub rust_iso20022::ParseLimits::max_decoded_bytes: usize
+pub rust_iso20022::ParseLimits::max_depth: usize
+pub rust_iso20022::ParseLimits::max_elements: usize
+pub rust_iso20022::ParseLimits::max_events: usize
+pub rust_iso20022::ParseLimits::max_input_bytes: usize
+pub rust_iso20022::ParseLimits::max_text_bytes: usize
+impl rust_iso20022::ParseLimits
+pub const rust_iso20022::ParseLimits::DEFAULT: Self
+pub const fn rust_iso20022::ParseLimits::with_max_attributes(self, usize) -> Self
+pub const fn rust_iso20022::ParseLimits::with_max_collection_items(self, usize) -> Self
+pub const fn rust_iso20022::ParseLimits::with_max_decoded_bytes(self, usize) -> Self
+pub const fn rust_iso20022::ParseLimits::with_max_depth(self, usize) -> Self
+pub const fn rust_iso20022::ParseLimits::with_max_elements(self, usize) -> Self
+pub const fn rust_iso20022::ParseLimits::with_max_events(self, usize) -> Self
+pub const fn rust_iso20022::ParseLimits::with_max_input_bytes(self, usize) -> Self
+pub const fn rust_iso20022::ParseLimits::with_max_text_bytes(self, usize) -> Self
+impl core::default::Default for rust_iso20022::ParseLimits
+pub fn rust_iso20022::ParseLimits::default() -> Self
+pub struct rust_iso20022::SerializeError
+pub rust_iso20022::SerializeError::message_id: alloc::string::String
+pub rust_iso20022::SerializeError::reason: alloc::string::String
+impl core::error::Error for rust_iso20022::SerializeError
+impl core::fmt::Debug for rust_iso20022::SerializeError
+pub fn rust_iso20022::SerializeError::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+impl core::fmt::Display for rust_iso20022::SerializeError
+pub fn rust_iso20022::SerializeError::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub struct rust_iso20022::XmlStats
+pub rust_iso20022::XmlStats::attributes: usize
+pub rust_iso20022::XmlStats::decoded_bytes: usize
+pub rust_iso20022::XmlStats::elements: usize
+pub rust_iso20022::XmlStats::events: usize
+pub rust_iso20022::XmlStats::input_bytes: usize
+pub rust_iso20022::XmlStats::max_depth: usize
+pub trait rust_iso20022::MxMessage: yaserde::YaSerialize + yaserde::YaDeserialize + core::marker::Sized
+pub const rust_iso20022::MxMessage::BUSINESS_AREA: rust_iso20022::BusinessArea
+pub const rust_iso20022::MxMessage::FUNCTIONALITY: &'static str
+pub const rust_iso20022::MxMessage::MESSAGE_NAME: &'static str
+pub const rust_iso20022::MxMessage::NAMESPACE: &'static str
+pub const rust_iso20022::MxMessage::VARIANT: &'static str
+pub const rust_iso20022::MxMessage::VERSION: &'static str
+pub fn rust_iso20022::MxMessage::mx_id() -> rust_iso20022::MxId
+pub fn rust_iso20022::MxMessage::parse(&str) -> core::result::Result<Self, rust_iso20022::Error>
+pub fn rust_iso20022::MxMessage::parse_checked(&str) -> core::result::Result<Self, rust_iso20022::Error>
+pub fn rust_iso20022::MxMessage::to_xml_string(&self) -> core::result::Result<alloc::string::String, rust_iso20022::Error>
+pub fn rust_iso20022::detect(&str) -> core::option::Option<rust_iso20022::MxId>
+pub fn rust_iso20022::detect_message(&str, rust_iso20022::ParseLimits) -> core::result::Result<rust_iso20022::DetectedMessage, rust_iso20022::DetectionError>
+pub fn rust_iso20022::from_namespace(&str) -> core::option::Option<rust_iso20022::MxId>
+pub fn rust_iso20022::from_xml<T: yaserde::YaDeserialize>(&str) -> core::result::Result<T, rust_iso20022::Error>
+pub fn rust_iso20022::parse_as<T: rust_iso20022::MxMessage>(&str) -> rust_iso20022::Result<T>
+pub fn rust_iso20022::parse_envelope<D: yaserde::YaDeserialize>(&str) -> core::result::Result<rust_iso20022::Envelope<D>, rust_iso20022::Error>
+pub fn rust_iso20022::read_business_message(&str) -> rust_iso20022::BusinessMessage
+pub fn rust_iso20022::to_xml<T: yaserde::YaSerialize>(&T) -> core::result::Result<alloc::string::String, rust_iso20022::Error>
+pub fn rust_iso20022::to_xml_fragment<T: yaserde::YaSerialize>(&T) -> core::result::Result<alloc::string::String, rust_iso20022::Error>
+pub fn rust_iso20022::validate_xml(&str, rust_iso20022::ParseLimits) -> core::result::Result<rust_iso20022::XmlStats, rust_iso20022::XmlReadError>
+pub type rust_iso20022::Result<T> = core::result::Result<T, rust_iso20022::Error>

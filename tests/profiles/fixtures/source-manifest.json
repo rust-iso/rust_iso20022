@@ -1,0 +1,22 @@
+{
+  "format_version": 1,
+  "test_only": true,
+  "scheme": "test-network",
+  "scheme_release": "2025.1",
+  "guideline_edition": "ig-2025.1",
+  "effective_from": "2025-01-01",
+  "effective_until": "2025-12-31",
+  "sources": [
+    {
+      "document_id": "SYNTHETIC-FRAMEWORK-SOURCE",
+      "publisher": "rust_iso20022 test suite",
+      "source_url": null,
+      "relative_path": "tests/profiles/fixtures/framework-source.txt",
+      "section_reference": "TEST-SECTION",
+      "sha256": "545cae9cb86146018e8058d7eccd63c4e2457fdd26a5999a7a964192b5e9b419",
+      "access_classification": "public_test_fixture",
+      "implementation_decision": "test_framework_only",
+      "distribution_decision": "repository_test_fixture"
+    }
+  ]
+}

@@ -1,0 +1,204 @@
+{
+  "schema": "rust_iso20022.performance-baseline.v1",
+  "measured_at": "2026-09-28T09:24:24Z",
+  "runner": {
+    "commit": "23ac22aa0796199fac824f4efd470ad6faeed069",
+    "tree_state": "dirty",
+    "rustc": "rustc 1.96.0 (ac68faa20 2026-05-25)",
+    "cargo": "cargo 1.96.0 (30a34c682 2026-05-25)",
+    "target": "aarch64-apple-darwin",
+    "os": "Darwin 25.6.0 Darwin Kernel Version 25.6.0: Fri Jul 31 19:18:49 PDT 2026; root:xnu-12377.161.14~5/RELEASE_ARM64_T6000 arm64",
+    "cpu": "Apple M1 Pro",
+    "logical_cpus": "10",
+    "jobs": 1,
+    "debug_info": 0
+  },
+  "fixtures": {
+    "pacs008_sha256": "f241089c57f6d12d0d121964069c5c04d2036d9aadbeef496a780ee9a64324f2",
+    "camt053_sha256": "4dddb1e7241ce2055c92e387240f0561b0a52bd267132b31e43aff60d1193aff"
+  },
+  "runtime": {
+    "iterations": 100,
+    "observations": [
+      {
+        "workload": "pacs008_parse",
+        "iterations": 100,
+        "elapsed_ns": 12110416,
+        "ns_per_iteration": 121104.160,
+        "memory_metric": "peak_rss_bytes",
+        "memory_bytes": 111919104,
+        "memory_source": "getrusage(RUSAGE_SELF).ru_maxrss"
+      },
+      {
+        "workload": "pacs008_serialize",
+        "iterations": 100,
+        "elapsed_ns": 17596375,
+        "ns_per_iteration": 175963.750,
+        "memory_metric": "peak_rss_bytes",
+        "memory_bytes": 112836608,
+        "memory_source": "getrusage(RUSAGE_SELF).ru_maxrss"
+      },
+      {
+        "workload": "pacs008_detect",
+        "iterations": 100,
+        "elapsed_ns": 4711583,
+        "ns_per_iteration": 47115.830,
+        "memory_metric": "peak_rss_bytes",
+        "memory_bytes": 112836608,
+        "memory_source": "getrusage(RUSAGE_SELF).ru_maxrss"
+      },
+      {
+        "workload": "pacs008_validate",
+        "iterations": 100,
+        "elapsed_ns": 73042,
+        "ns_per_iteration": 730.420,
+        "memory_metric": "peak_rss_bytes",
+        "memory_bytes": 112869376,
+        "memory_source": "getrusage(RUSAGE_SELF).ru_maxrss"
+      },
+      {
+        "workload": "camt053_parse",
+        "iterations": 100,
+        "elapsed_ns": 30265875,
+        "ns_per_iteration": 302658.750,
+        "memory_metric": "peak_rss_bytes",
+        "memory_bytes": 113475584,
+        "memory_source": "getrusage(RUSAGE_SELF).ru_maxrss"
+      },
+      {
+        "workload": "catalogue_lookup",
+        "iterations": 100,
+        "elapsed_ns": 2750,
+        "ns_per_iteration": 27.500,
+        "memory_metric": "peak_rss_bytes",
+        "memory_bytes": 113491968,
+        "memory_source": "getrusage(RUSAGE_SELF).ru_maxrss"
+      }
+    ]
+  },
+  "memory": {
+    "observations": [
+      {
+        "workload": "pacs008_parse",
+        "platform": "macos",
+        "metric": "peak_rss_bytes",
+        "bytes": 111853568,
+        "source": "getrusage(RUSAGE_SELF).ru_maxrss"
+      },
+      {
+        "workload": "pacs008_serialize",
+        "platform": "macos",
+        "metric": "peak_rss_bytes",
+        "bytes": 112558080,
+        "source": "getrusage(RUSAGE_SELF).ru_maxrss"
+      },
+      {
+        "workload": "pacs008_detect",
+        "platform": "macos",
+        "metric": "peak_rss_bytes",
+        "bytes": 111312896,
+        "source": "getrusage(RUSAGE_SELF).ru_maxrss"
+      },
+      {
+        "workload": "pacs008_validate",
+        "platform": "macos",
+        "metric": "peak_rss_bytes",
+        "bytes": 111575040,
+        "source": "getrusage(RUSAGE_SELF).ru_maxrss"
+      },
+      {
+        "workload": "camt053_parse",
+        "platform": "macos",
+        "metric": "peak_rss_bytes",
+        "bytes": 111951872,
+        "source": "getrusage(RUSAGE_SELF).ru_maxrss"
+      },
+      {
+        "workload": "catalogue_lookup",
+        "platform": "macos",
+        "metric": "peak_rss_bytes",
+        "bytes": 110690304,
+        "source": "getrusage(RUSAGE_SELF).ru_maxrss"
+      }
+    ]
+  },
+  "allocations": {
+    "observations": [
+      {
+        "workload": "pacs008_parse",
+        "iterations": 10,
+        "metric": "requested_allocator_bytes",
+        "allocation_calls": 23628,
+        "allocated_bytes": 1729453,
+        "deallocated_bytes": 1729453,
+        "live_requested_bytes": 0,
+        "includes_one_internal_warmup": true
+      },
+      {
+        "workload": "pacs008_serialize",
+        "iterations": 10,
+        "metric": "requested_allocator_bytes",
+        "allocation_calls": 48732,
+        "allocated_bytes": 3530051,
+        "deallocated_bytes": 3530051,
+        "live_requested_bytes": 0,
+        "includes_one_internal_warmup": true
+      },
+      {
+        "workload": "pacs008_detect",
+        "iterations": 10,
+        "metric": "requested_allocator_bytes",
+        "allocation_calls": 9540,
+        "allocated_bytes": 513804,
+        "deallocated_bytes": 513804,
+        "live_requested_bytes": 0,
+        "includes_one_internal_warmup": true
+      },
+      {
+        "workload": "pacs008_validate",
+        "iterations": 10,
+        "metric": "requested_allocator_bytes",
+        "allocation_calls": 2304,
+        "allocated_bytes": 173963,
+        "deallocated_bytes": 173963,
+        "live_requested_bytes": 0,
+        "includes_one_internal_warmup": true
+      },
+      {
+        "workload": "camt053_parse",
+        "iterations": 10,
+        "metric": "requested_allocator_bytes",
+        "allocation_calls": 71929,
+        "allocated_bytes": 4300329,
+        "deallocated_bytes": 4300329,
+        "live_requested_bytes": 0,
+        "includes_one_internal_warmup": true
+      },
+      {
+        "workload": "catalogue_lookup",
+        "iterations": 10,
+        "metric": "requested_allocator_bytes",
+        "allocation_calls": 0,
+        "allocated_bytes": 0,
+        "deallocated_bytes": 0,
+        "live_requested_bytes": 0,
+        "includes_one_internal_warmup": true
+      }
+    ]
+  },
+  "build": {
+    "cold_default_seconds": 11.07,
+    "cold_selected_seconds": 118.31,
+    "selected_features": "model-pacs",
+    "normal_dependency_nodes_default": 23,
+    "normal_dependency_nodes_selected": 23,
+    "cli_release_bytes": 4868432,
+    "wasm_release_bytes": 4561852,
+    "wasm_features": "default (detection/catalogue only)"
+  },
+  "limitations": [
+    "single-run baseline; repeat three times before regression conclusions",
+    "peak RSS is process-wide high-water memory, not per-operation allocation",
+    "working tree state is recorded and must match for comparisons"
+  ]
+}

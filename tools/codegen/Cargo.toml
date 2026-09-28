@@ -13,4 +13,14 @@ path = "src/main.rs"
 # The XSD parser/generator. A git dependency, which is why this tooling lives in
 # a separate, unpublished crate — keeping the published `rust_iso20022` crate
 # free of git dependencies.
-xsd-parser = { git = "https://github.com/lumeohq/xsd-parser-rs" }
+xsd-parser = { git = "https://github.com/lumeohq/xsd-parser-rs", rev = "d476e854b28b197442096c268d79263c50300c9e" }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+sha2 = "0.10"
+roxmltree = "0.19"
+Inflector = "0.11"
+brotli = "8.0.4"
+
+[dev-dependencies]
+tempfile = "3"
+rust_iso20022 = { path = "../.." }

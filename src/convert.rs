@@ -55,10 +55,16 @@ mod tests {
 
     #[test]
     fn conversions() {
-        assert_eq!(to_decimal("  7866240.23491 ").unwrap().to_string(), "7866240.23491");
+        assert_eq!(
+            to_decimal("  7866240.23491 ").unwrap().to_string(),
+            "7866240.23491"
+        );
         assert!(to_decimal("not-a-number").is_none());
         assert_eq!(to_date("2026-06-27").unwrap().to_string(), "2026-06-27");
-        assert_eq!(to_date("2026-06-27+02:00").unwrap().to_string(), "2026-06-27");
+        assert_eq!(
+            to_date("2026-06-27+02:00").unwrap().to_string(),
+            "2026-06-27"
+        );
         assert!(to_datetime("2026-06-27T10:30:00Z").is_some());
         assert!(to_datetime("2026-06-27T10:30:00").is_some());
         assert!(to_datetime("2026-06-27T10:30:00.123+01:00").is_some());

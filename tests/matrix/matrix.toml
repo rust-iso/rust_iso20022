@@ -1,0 +1,52 @@
+format_version = 1
+
+[dimensions]
+message = ["pacs.008", "pacs.009", "pacs.002", "pain.001", "pain.002", "camt.052", "camt.053", "camt.054"]
+version = ["declared-by-schema-descriptor"]
+serialization = ["xml", "json"]
+validation_layer = ["syntax_schema", "iso_semantic", "profile"]
+profile = ["none", "cbpr_plus", "sepa_sct", "sepa_sct_inst"]
+expectation = ["valid", "invalid", "boundary"]
+
+[[baseline]]
+id = "default-core"
+features = []
+target = "native"
+mandatory = true
+
+[[baseline]]
+id = "head-xml-json"
+features = ["model-head", "serde"]
+target = "native"
+mandatory = true
+
+[[baseline]]
+id = "pacs-xml-json-convert"
+features = ["model-pacs", "serde", "convert"]
+target = "native"
+mandatory = true
+
+[[baseline]]
+id = "pain-xml-json"
+features = ["model-pain", "serde"]
+target = "native"
+mandatory = true
+
+[[baseline]]
+id = "camt-xml-json"
+features = ["model-camt", "serde"]
+target = "native"
+mandatory = true
+
+[[baseline]]
+id = "wasm-core"
+features = []
+target = "wasm32-unknown-unknown"
+mandatory = true
+
+[policy]
+invalid_fixtures_require_rule_id = true
+invalid_fixtures_require_field_path = true
+profile_fixtures_require_exact_release = true
+migration_fixtures_require_complete_source_accounting = true
+skipped_mandatory_rows_fail_release = true

@@ -1,0 +1,13 @@
+{
+  "catalogue_len": 1130,
+  "pacs_008_namespace": "urn:iso:std:iso:20022:tech:xsd:pacs.008.001.08",
+  "pacs_008_business_area": "pacs",
+  "pacs_008_has_model": true,
+  "detected_message": "pacs.008.001.08",
+  "detected_area": "pacs",
+  "message_id": "BASELINE-MSG-001",
+  "amount": "125.00",
+  "currency": "EUR",
+  "value_date": "2026-09-27"
+}
+

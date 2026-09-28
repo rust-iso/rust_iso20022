@@ -1,182 +1,274 @@
 # rust_iso20022
 
-A Rust library for ISO 20022 (MX / SWIFT) financial messages, generated from the
-official iso20022.org XSD schemas. It provides a strongly-typed model for MX
-messages with XML and JSON parsing/serialization, message identification, a
-generic message tree for reading any message without the model, and business
-metadata extraction.
+[![Crates.io](https://img.shields.io/crates/v/rust_iso20022.svg)](https://crates.io/crates/rust_iso20022)
+[![Documentation](https://docs.rs/rust_iso20022/badge.svg)](https://docs.rs/rust_iso20022)
+[![Downloads](https://img.shields.io/crates/d/rust_iso20022.svg)](https://crates.io/crates/rust_iso20022)
+[![MSRV](https://img.shields.io/badge/MSRV-1.85-dea584.svg)](https://www.rust-lang.org)
+[![License](https://img.shields.io/crates/l/rust_iso20022.svg)](LICENSE)
 
-## Installation
+**Production-grade ISO 20022 SDK for Rust.** Detect, inspect, parse, build,
+validate, compare, migrate, and serialize financial MX messages with generated,
+strongly typed models.
 
-Add it with cargo (enable only the features you need — see [Features](#features)):
+Generated models remain fully accessible. High-level APIs are additive: every
+builder and migration returns the existing generated struct, and validation
+operates directly on generated values or short-lived field views over them.
+
+The crate covers **1,130 message versions across 32 business areas**. Its small
+core can inspect any ISO 20022 message without compiling the generated model;
+applications that need compile-time field access can enable only the message
+families they use.
+
+- Identify a message from its XML namespace (`pacs.008.001.08`,
+  `camt.053.001.08`, and so on).
+- Read headers, payment metadata, and arbitrary XML fields without generated
+  types.
+- Parse and build strongly typed messages generated from the official
+  iso20022.org XSD schemas.
+- Round-trip XML and, optionally, JSON with ISO 20022 element names.
+- Query a schema-derived catalogue and compare message versions semantically.
+- Produce structured L2 validation reports with stable rule IDs and paths.
+- Use typed builders for the phase-one pacs, pain, and camt messages.
+- Run detect, inspect, serialize, validate, explain, catalogue, and comparison
+  commands through a thin CLI.
+- Convert MT103, MT202, and MT940 through the separate migration crate with a
+  complete field mapping report.
+- Work with exact string scalars or convert amounts and dates to
+  `rust_decimal` and `chrono` values.
+
+The versioned CBPR+ and SEPA profile framework is implemented, but no complete
+production L3 rule pack is currently claimed. See [profile status](docs/profiles.md).
+
+## Quick start
+
+Add the feature-free core:
 
 ```bash
-cargo add rust_iso20022                                  # core: identify, MxNode, catalogue
-cargo add rust_iso20022 --features model-pacs            # + the typed pacs model
-cargo add rust_iso20022 --features model-pacs,serde,convert
+cargo add rust_iso20022
 ```
 
-or in `Cargo.toml`:
-
-```toml
-[dependencies]
-# Core only (identification, generic tree, catalogue) — no model compiled.
-rust_iso20022 = "0.1"
-
-# Or pull in one or more typed message families plus JSON and typed scalars:
-rust_iso20022 = { version = "0.1", features = ["model-pacs", "serde", "convert"] }
-```
-
-> Enabling the umbrella `model` feature compiles all ~1130 message modules and is
-> slow; prefer the per-area `model-<area>` features for the families you actually
-> use.
-
-Minimal first program — no features required:
+Identify and inspect an incoming message:
 
 ```rust
 use rust_iso20022::{detect, MxNode};
 
-fn main() {
-    let xml = r#"<Document xmlns="urn:iso:std:iso:20022:tech:xsd:pacs.008.001.08">
-      <FIToFICstmrCdtTrf><GrpHdr><MsgId>ABC-1</MsgId></GrpHdr></FIToFICstmrCdtTrf>
-    </Document>"#;
+let xml = r#"<Document xmlns="urn:iso:std:iso:20022:tech:xsd:pacs.008.001.08">
+  <FIToFICstmrCdtTrf>
+    <GrpHdr><MsgId>ABC-1</MsgId></GrpHdr>
+    <CdtTrfTxInf>
+      <IntrBkSttlmAmt Ccy="EUR">1234.56</IntrBkSttlmAmt>
+    </CdtTrfTxInf>
+  </FIToFICstmrCdtTrf>
+</Document>"#;
 
-    let id = detect(xml).expect("recognised");
-    println!("type = {}", id.message_name());            // pacs.008.001.08
+let id = detect(xml).expect("ISO 20022 message");
+assert_eq!(id.message_name(), "pacs.008.001.08");
+assert_eq!(id.business_area.description(), "Payments Clearing and Settlement");
 
-    let doc = MxNode::parse(xml).unwrap();
-    println!("MsgId = {:?}", doc.find("MsgId").and_then(|n| n.text())); // Some("ABC-1")
-}
+let tree = MxNode::parse(xml).expect("valid XML");
+assert_eq!(tree.find("MsgId").and_then(|node| node.text()), Some("ABC-1"));
+
+let amount = tree.find("IntrBkSttlmAmt").unwrap();
+assert_eq!(amount.text(), Some("1234.56"));
+assert_eq!(amount.attr("Ccy"), Some("EUR"));
+# Ok::<(), rust_iso20022::Error>(())
 ```
 
-## What's in the crate
+This path needs no generated model and is a good fit for routing, observability,
+validation, metadata extraction, and systems that accept many message versions.
 
-| Layer | Module | Always available? |
-|-------|--------|-------------------|
-| Core | (root) | yes — `MxId`, `BusinessArea`, `from_xml`/`to_xml`, `detect`, `MxNode`, `Error` |
-| Catalogue | `catalogue` | yes — every message id + namespace as static [`phf`](https://crates.io/crates/phf) tables |
-| Model | `generated` | per area — `generated::<area>::<msg>::Document`, enable with `model-<area>` |
+## Typed messages
 
-**Coverage:** a typed model is generated for **1130** message versions across
-**32** business areas (`acmt`, `admi`, `auth`, `caaa`, `caad`, `caam`, `cafc`,
-`cafm`, `cafr`, `cain`, `camt`, `canm`, `casp`, `casr`, `catm`, `catp`, `colr`,
-`fxtr`, `head`, `pacs`, `pain`, `reda`, `remt`, `secl`, `seev`, `semt`, `sese`,
-`setr`, `tsin`, `tsmt`, `tsrv`, `trck`). This is the current iso20022.org
-catalogue (latest versions) plus the earlier versions, so older in-circulation
-messages still parse.
+The first four letters of a message name select its Cargo feature. For
+`pacs.008.001.08`, enable `model-pacs`:
 
-The generated types derive [`yaserde`](https://crates.io/crates/yaserde) for XML
-and (with the `serde` feature) `serde::{Serialize, Deserialize}` for JSON.
-
-## Capabilities
-
-| Capability | API |
-|---|---|
-| Typed model, all message versions | `generated::<area>::<msg>::Document` |
-| XML parse / serialize | `from_xml` / `to_xml` |
-| JSON parse / serialize (ISO element names) | `from_json` / `to_json` (feature `serde`) |
-| Per-message identity (namespace, MxId, area, functionality, variant, version) | the `MxMessage` trait on every `Document` |
-| Auto-detect & parse | `detect`, `parse_as::<T>()`, `generated::any::parse_auto` → `AnyMessage` |
-| Business Application Header — read & build | `app_hdr::parse_business_header` / `BusinessHeader::to_app_hdr_xml` |
-| Business metadata extraction | `metadata::extract` |
-| Business message (header + typed document) | `Envelope<D>` / `parse_envelope`, `read_business_message` |
-| Generic tree — read any message without the model | `MxNode::parse` |
-| Typed scalars (amount → `Decimal`, dates → `chrono`) | `convert::{to_decimal, to_date, to_datetime}` (feature `convert`) |
-| Message catalogue | `catalogue` |
-| WebAssembly / JS bindings | `src/wasm.rs` (build via `scripts/build-wasm.sh`; see [docs/wasm-api.md](docs/wasm-api.md)) |
-
-## Quick start
-
-Identify a message and read its metadata — no `model` feature needed:
+```bash
+cargo add rust_iso20022 --features model-pacs,serde,convert
+```
 
 ```rust
-use rust_iso20022::{detect, BusinessArea, MxNode};
-
-let xml = r#"<Document xmlns="urn:iso:std:iso:20022:tech:xsd:pacs.008.001.08">
-  <FIToFICstmrCdtTrf><GrpHdr><MsgId>ABC-1</MsgId></GrpHdr>
-    <CdtTrfTxInf><IntrBkSttlmAmt Ccy="EUR">1234.56</IntrBkSttlmAmt></CdtTrfTxInf>
-  </FIToFICstmrCdtTrf></Document>"#;
-
-let id = detect(xml).unwrap();
-assert_eq!(id.message_name(), "pacs.008.001.08");
-assert_eq!(id.business_area, BusinessArea::pacs);
-
-// Read fields from the generic tree without the typed model:
-let doc = MxNode::parse(xml).unwrap();
-assert_eq!(doc.find("MsgId").and_then(|n| n.text()), Some("ABC-1"));
-let amt = doc.find("IntrBkSttlmAmt").unwrap();
-assert_eq!((amt.text(), amt.attr("Ccy")), (Some("1234.56"), Some("EUR")));
-```
-
-Typed parse / serialize (enable the area's model, e.g.
-`cargo add rust_iso20022 -F model-pacs`):
-
-```rust,ignore
 use rust_iso20022::generated::pacs::pacs_008_001_08::Document;
+use rust_iso20022::{from_xml, to_json, to_xml, MxMessage};
 
-let doc: Document = rust_iso20022::from_xml(&xml)?;
-let back: String = rust_iso20022::to_xml(&doc)?;
+# let xml = r#"<Document xmlns="urn:iso:std:iso:20022:tech:xsd:pacs.008.001.08">
+#   <FIToFICstmrCdtTrf><GrpHdr><MsgId>ABC-1</MsgId><NbOfTxs>1</NbOfTxs></GrpHdr></FIToFICstmrCdtTrf>
+# </Document>"#;
+let document: Document = from_xml(xml)?;
+assert_eq!(Document::MESSAGE_NAME, "pacs.008.001.08");
+assert_eq!(document.fi_to_fi_cstmr_cdt_trf.grp_hdr.msg_id.0, "ABC-1");
+
+let xml_again = to_xml(&document)?;
+let json = to_json(&document)?;
+# let _ = (xml_again, json);
+# Ok::<(), rust_iso20022::Error>(())
 ```
 
-See the runnable examples:
+The mapping is predictable:
 
-```bash
-cargo run --example inspect_message                                   # no features
-cargo run --example typed_payment --features model-pacs,serde,convert # typed
+```text
+pacs.008.001.08
+  ├── Cargo feature: model-pacs
+  └── Rust type:     generated::pacs::pacs_008_001_08::Document
 ```
 
-## Features
+See [the model feature guide](docs/model-features.md) for all 32 business areas
+and their meanings.
+
+## Choose the right API
+
+| Need | API | Feature |
+|---|---|---|
+| Detect the message type | `detect`, `MxId`, `BusinessArea` | none |
+| Read any field without generated types | `MxNode::parse` | none |
+| Read AppHdr, amount, currency, dates, and parties | `read_business_message`, `metadata::extract` | none |
+| Parse or build a typed message | `from_xml`, `to_xml`, `generated::<area>` | `model-<area>` |
+| Auto-dispatch to a typed message | `generated::any::parse_auto` | one or more `model-<area>` |
+| Serialize typed messages as JSON | `from_json`, `to_json` | `serde` |
+| Convert exact scalar strings | `convert::{to_decimal, to_date, to_datetime}` | `convert` |
+| Validate installed generated bindings | `validation`, `ValidationReport` | matching `model-<area>` |
+| Address exact profile releases | `profiles` | `profiles` |
+| Compare schema versions | `compare::compare_versions` | none |
+| Download schemas at runtime | `fetch::Fetcher` | `catalogue` |
+| Use the standalone CLI | `rust_iso20022_cli` workspace crate | separate package |
+
+The static message catalogue is always available and does not access the
+network.
+
+## Installation and features
+
+For a typical payments service:
+
+```toml
+[dependencies]
+rust_iso20022 = { version = "0.1", features = [
+    "model-head", # Business Application Header
+    "model-pacs", # interbank clearing and settlement
+    "model-pain", # customer payment initiation
+    "serde",      # JSON support
+    "convert",    # Decimal and chrono conversions
+] }
+```
 
 | Feature | Default | Effect |
-|---------|---------|--------|
-| `model-<area>` | no | the typed model for one business area, e.g. `model-pacs`. Enable only what you need — a single area compiles in seconds vs many minutes for all |
-| `model` | no | all `model-<area>` at once (~1130 modules; slow to compile) |
-| `serde` | no | `serde` + JSON (`to_json`/`from_json`) for the core, catalogue and message types |
-| `convert` | no | typed scalar conversions (`to_decimal`/`to_date`/`to_datetime`) via `rust_decimal`/`chrono` |
-| `cli` | no | the `iso20022` command-line catalogue lookup tool |
-| `catalogue` | no | runtime XSD fetcher (`fetch` module): pulls in `tokio`, `reqwest`, `regex` |
+|---|:---:|---|
+| `model-<area>` | no | Generated types for one business area, such as `model-pacs` |
+| `model` | no | All 1,130 generated message modules; expensive to compile |
+| `serde` | no | Serde derives plus `to_json` and `from_json` |
+| `convert` | no | `rust_decimal` and `chrono` scalar conversions |
+| `catalogue` | no | Async runtime XSD fetcher using Tokio and Reqwest |
+| `profiles` | no | Exact-release identity and dispatch framework; no rule pack implied |
+| `cli` | no | Legacy root catalogue binary compatibility feature |
 
-The core (`MxId`, `BusinessArea`, `MxNode`, `detect`) and the `catalogue` are
-always available. The XSD → Rust generator is a separate, unpublished workspace
-crate (`tools/codegen`), so the published crate has **no git dependencies**.
+Prefer per-area features. The umbrella `model` feature is intended for
+gateways that genuinely need all message families.
 
-## Command-line tool
+Minimum supported Rust version: **1.85**.
+
+## Coverage
+
+Generated types are available for these ISO 20022 business areas:
+
+`acmt`, `admi`, `auth`, `caaa`, `caad`, `caam`, `cafc`, `cafm`, `cafr`, `cain`,
+`camt`, `canm`, `casp`, `casr`, `catm`, `catp`, `colr`, `fxtr`, `head`, `pacs`,
+`pain`, `reda`, `remt`, `secl`, `seev`, `semt`, `sese`, `setr`, `trck`, `tsin`,
+`tsmt`, and `tsrv`.
+
+Current and earlier message versions are included so that older messages still
+in circulation remain parseable. See [model features](docs/model-features.md)
+for the per-area counts and [implementation status](docs/status.md) for known
+schema-source gaps.
+
+## Runnable examples
 
 ```bash
-cargo run --features cli --bin iso20022 -- pacs.008   # all pacs.008 versions
-# or after `cargo install rust_iso20022 --features cli`:
-iso20022 camt          # every message in the camt business area
-iso20022               # the whole catalogue
+# Identify a message, read AppHdr and payment metadata, and inspect arbitrary fields.
+cargo run --example inspect_message
+
+# Parse pacs.008 into generated types, then serialize it as XML and JSON.
+cargo run --example typed_payment --features model-pacs,serde,convert
+
+# Catalogue, explanation, and semantic version-diff examples need no model.
+cargo run --example catalogue
+cargo run --example explain
+cargo run --example version_diff
+
+# Validate the canonical generated pacs.008 value.
+cargo run --example validation --features model-pacs
+
+# Exercise exact profile identity without claiming an installed rule pack.
+cargo run --example profile --features profiles
+
+# Convert MT103 and retain its mapping report.
+cargo run -p rust_iso20022_migration --example mt103 --features mt103
 ```
 
-## Regenerating the model
+## Command-line SDK
 
-The model and catalogue are produced from the XSD schemas in `xsds/` by the
-codegen tool:
+```bash
+cargo build -p rust_iso20022_cli --features json,model-pacs,profiles
+
+iso20022 detect payment.xml
+iso20022 inspect --json payment.xml
+iso20022 validate --layer l2 payment.xml
+iso20022 explain ISO20022-L2-IBAN-CHECKSUM
+iso20022 versions --json pacs.008.001
+iso20022 compare pacs.008.001.08 pacs.008.001.10
+```
+
+See the [CLI reference](docs/cli.md) for stable JSON envelopes and exit codes.
+
+## Design notes
+
+- Generated scalar fields use `String` to preserve their exact XML value and
+  avoid floating-point rounding. Convert only when arithmetic is needed.
+- XSD choices use structs of `Option<...>` fields, which preserve nested values
+  and attributes while omitting unset choices during serialization.
+- Unknown coded-enumeration values use an `__Unknown__(String)` fallback rather
+  than discarding the original input.
+- XML round-tripping preserves the data model, not byte-for-byte formatting.
+- The generated code targets `yaserde` 0.7 semantics. Upgrading YaSerde requires
+  regenerating and revalidating the complete model.
+
+## WebAssembly and code generation
+
+The identification, catalogue, header, metadata, and generic-tree APIs can be
+built for JavaScript with `scripts/build-wasm.sh`; see the
+[WASM API reference](docs/wasm-api.md).
+
+Maintainers can regenerate the checked-in model from the XSD sources:
 
 ```bash
 cargo run -p rust_iso20022_codegen -- --input xsds --output src/generated
 ```
 
-To (re)download schemas, the `catalogue` feature provides a `Fetcher`. The
-authoritative source is iso20022.org; its static schema path
-(`/sites/default/files/documents/messages/<area>/schemas/<name>.xsd`) is the
-reliable programmatic download path (`Fetcher::download_schema`).
+The generator and XSD sources are excluded from the published crate, which has
+no Git dependencies.
 
-## Design notes
+## Contributing and support
 
-- **Scalars are `String`** — lossless (exact text, no float rounding, ideal for
-  money) and keeps XML and JSON in sync. Convert on demand with the `convert`
-  feature.
-- **Choices** are modelled as a struct of `Option<…>` fields (the same shape
-  JAXB uses), so an amount inside a `<xsd:choice>` round-trips with its `Ccy`
-  attribute and unset choices are simply omitted.
-- **JSON** uses the ISO 20022 element names (`MsgId`, `IBAN`, …); `to_json` /
-  `from_json` round-trip.
-- A value that is not a known member of a coded enumeration parses to an
-  `__Unknown__(String)` fallback (surfaces only for invalid input).
-- XML round-tripping preserves the data model, not byte-for-byte formatting.
+Bug reports, message compatibility cases, and pull requests are welcome in the
+[GitHub repository](https://github.com/rust-iso/rust_iso20022). When reporting a
+parsing issue, include the message identifier and a minimal redacted XML sample
+if possible.
+
+Report suspected vulnerabilities privately as described in
+[SECURITY.md](SECURITY.md); never attach a real financial message.
+
+## Using rust_iso20022 in production?
+
+Sponsor ongoing ISO schema updates, annual CBPR+/SEPA research, migration
+tooling, security, fuzzing, documentation, and long-term maintenance through
+[Ko-fi](https://ko-fi.com/jnz). Sponsorship supports the open-source core; it
+does not unlock a private or closed implementation.
+
+## Compliance boundary
+
+This project provides schema-derived models, parsing, implemented semantic and
+profile validation rules, and developer tooling. A successful result means only
+“valid according to the implemented rules and identified release.” It does not
+guarantee acceptance by a particular bank or network, regulatory certification,
+network onboarding approval, or legal compliance.
 
 ## License
 
-Apache-2.0.
+Licensed under the [Apache License 2.0](LICENSE).

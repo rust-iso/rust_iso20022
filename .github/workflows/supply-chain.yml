@@ -1,0 +1,39 @@
+name: Supply chain
+
+on:
+  pull_request:
+    paths:
+      - "**/Cargo.toml"
+      - Cargo.lock
+      - deny.toml
+      - .github/workflows/supply-chain.yml
+  push:
+    branches: [main]
+    paths:
+      - "**/Cargo.toml"
+      - Cargo.lock
+      - deny.toml
+      - .github/workflows/supply-chain.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  policy:
+    name: Audit, licenses, and sources
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: dtolnay/rust-toolchain@stable
+      - name: Require the tracked lockfile
+        run: cargo metadata --locked --format-version 1 --no-deps >/dev/null
+      - name: Install pinned supply-chain tools
+        run: |
+          cargo install cargo-audit --version 0.22.2 --locked
+          cargo install cargo-deny --version 0.20.2 --locked
+      - name: RustSec audit
+        run: cargo audit --locked
+      - name: Licenses, bans, advisories, and sources
+        run: cargo deny --locked --all-features check
+

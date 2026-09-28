@@ -1,0 +1,23 @@
+{
+  "pacs008": {
+    "message_id": "FIXTURE-008",
+    "transaction_id": "FIXTURE-TX-008",
+    "currency": "EUR",
+    "amount": "10.25",
+    "output_type": "pacs.008.001.08"
+  },
+  "pacs009": {
+    "message_id": "FIXTURE-009",
+    "transaction_id": "FIXTURE-TX-009",
+    "currency": "USD",
+    "amount": "20.50",
+    "output_type": "pacs.009.001.08"
+  },
+  "pacs002": {
+    "message_id": "FIXTURE-002",
+    "original_message_id": "FIXTURE-008",
+    "original_message_name": "pacs.008.001.08",
+    "group_status": "ACCP",
+    "output_type": "pacs.002.001.10"
+  }
+}
