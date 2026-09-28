@@ -1,9 +1,8 @@
 # Release candidate process
 
-The repository currently prepares release candidates but does not publish them.
-`.github/workflows/release.yml` is manual-only, has read-only repository
-permissions, and contains no crates.io publish, tag, GitHub Release, signing, or
-npm publish step.
+The repository publishes only after the local evidence gate. Version 0.1.2 was
+published to crates.io and tagged `v0.1.2`; the workflow remains manual-only,
+has read-only repository permissions, and does not publish on every push.
 
 ## Local baseline
 
@@ -12,6 +11,15 @@ scripts/test-release-check.sh
 scripts/release-check.sh --plan
 scripts/release-check.sh
 ```
+
+To reproduce the docs.rs feature set locally without committing generated HTML:
+
+```bash
+scripts/build-docs-local.sh
+```
+
+The script uses `model-head,model-pacs,model-pain,serde,convert`, one job by
+default, and writes disposable output under `target/docs-local/`.
 
 The full check runs with one Cargo job and debug information disabled to bound
 memory. Generated model families are compiled as separate matrix rows because

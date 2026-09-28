@@ -7,7 +7,7 @@ description = "ISO 20022 financial message parser and generated Rust types for S
 repository = "https://github.com/rust-iso/rust_iso20022"
 readme = "README.md"
 license = "Apache-2.0"
-keywords = ["ISO20022", "SWIFT", "payments", "finance", "XML"]
+keywords = ["iso20022", "swift", "payments", "sepa", "financial-messaging"]
 categories = ["data-structures", "encoding", "finance"]
 documentation = "https://docs.rs/rust_iso20022/"
 # Publish only downstream-facing source and documentation. Schema inputs,
