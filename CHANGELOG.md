@@ -3,10 +3,11 @@
 All notable changes to this project are documented here. This project adheres to
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [0.1.2] - unreleased
+## [0.1.2] - 2026-09-28
 
-This version remains an unpublished release candidate. No tag, GitHub Release,
-crates.io publish, or npm publish has been performed.
+Published to crates.io as `rust_iso20022` 0.1.2. CBPR+ and SEPA candidate
+profile checks remain explicitly provisional until exact authoritative release
+artifacts and digests are available.
 
 ### Added
 
@@ -20,6 +21,9 @@ crates.io publish, or npm publish has been performed.
 - Added exact-release profile/provenance frameworks. CBPR+ SR2026 and SEPA 2025
   source identities are recorded, but no complete executable L3 profile rule
   pack is claimed in this release candidate.
+- Added opt-in provisional CBPR+ and SEPA/SCT/SCT Inst candidate rules for
+  scalar, cross-field, remittance, currency, and amount-limit checks. These
+  rules are not presented as network acceptance or certification.
 - Added MT103, MT202, and MT940 migration adapters with explicit exact/derived/
   lossy/ambiguous/unsupported mapping reports.
 - Added separate CLI, local stdio MCP, structured WASM, and benchmark workspace
