@@ -20,7 +20,7 @@ jobs:
       - uses: dtolnay/rust-toolchain@stable
         with:
           components: rustfmt
-      - run: cargo fmt --check
+      - run: cargo +stable fmt --check
 
   clippy:
     name: Clippy
@@ -31,7 +31,7 @@ jobs:
         with:
           components: clippy
       - uses: Swatinem/rust-cache@v2
-      - run: cargo clippy --workspace --all-targets -- -D warnings
+      - run: cargo +stable clippy --workspace --all-targets -- -D warnings
 
   core:
     name: Core and representative features
@@ -53,9 +53,9 @@ jobs:
         shell: bash
         run: |
           if [[ -n "${{ matrix.features }}" ]]; then
-            cargo test --workspace --features "${{ matrix.features }}"
+            cargo +stable test --workspace --features "${{ matrix.features }}"
           else
-            cargo test --workspace --no-default-features
+            cargo +stable test --workspace --no-default-features
           fi
 
   generated-area:
@@ -103,7 +103,7 @@ jobs:
       - uses: Swatinem/rust-cache@v2
         with:
           key: model-${{ matrix.area }}
-      - run: cargo test --workspace --features "model-${{ matrix.area }}"
+      - run: cargo +stable test --workspace --features "model-${{ matrix.area }}"
 
   msrv:
     name: MSRV 1.85
@@ -116,7 +116,7 @@ jobs:
       - uses: Swatinem/rust-cache@v2
         with:
           key: msrv
-      - run: cargo check --workspace --exclude rust_iso20022_mcp --no-default-features
+      - run: cargo +1.85 check --workspace --exclude rust_iso20022_mcp --no-default-features
 
   wasm:
     name: WASM core compile contract
@@ -131,9 +131,9 @@ jobs:
           key: wasm
       - name: Check legacy and structured WASM targets
         run: |
-          cargo check --lib --target wasm32-unknown-unknown
-          cargo check -p rust_iso20022_wasm --target wasm32-unknown-unknown
-          cargo check -p rust_iso20022_wasm --target wasm32-unknown-unknown --features model-pacs
+          cargo +stable check --lib --target wasm32-unknown-unknown
+          cargo +stable check -p rust_iso20022_wasm --target wasm32-unknown-unknown
+          cargo +stable check -p rust_iso20022_wasm --target wasm32-unknown-unknown --features model-pacs
 
   matrix-contract:
     name: Matrix contract
