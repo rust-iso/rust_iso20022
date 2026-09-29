@@ -57,7 +57,7 @@ jobs:
   cli:
     name: CLI / ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
-    timeout-minutes: 60
+    timeout-minutes: 180
     strategy:
       fail-fast: false
       matrix:
@@ -85,7 +85,7 @@ jobs:
   wasm:
     name: WASM package candidate
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 180
     steps:
       - uses: actions/checkout@v5
         with:

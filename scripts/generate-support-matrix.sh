@@ -6,5 +6,5 @@ cd "$repo_root"
 
 output="${1:-docs/support-matrix.md}"
 mkdir -p "$(dirname "$output")"
-cargo +stable run --offline --quiet --example support_matrix > "$output"
+cargo +stable run --quiet --example support_matrix > "$output"
 echo "wrote schema-derived support matrix to $output"

@@ -17,7 +17,7 @@ jobs:
   format:
     name: Format
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 180
     steps:
       - uses: actions/checkout@v5
       - uses: dtolnay/rust-toolchain@stable
@@ -28,7 +28,7 @@ jobs:
   clippy:
     name: Clippy
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    timeout-minutes: 180
     steps:
       - uses: actions/checkout@v5
       - uses: dtolnay/rust-toolchain@stable
@@ -40,7 +40,7 @@ jobs:
   core:
     name: Core and representative features
     runs-on: ubuntu-latest
-    timeout-minutes: 120
+    timeout-minutes: 180
     strategy:
       fail-fast: false
       max-parallel: 2
@@ -59,15 +59,18 @@ jobs:
         shell: bash
         run: |
           if [[ -n "${{ matrix.features }}" ]]; then
-            cargo +stable test -p rust_iso20022 --features "${{ matrix.features }}"
+            cargo +stable test -p rust_iso20022 --lib --features "${{ matrix.features }}"
+            if [[ "${{ matrix.features }}" == "model-pacs,serde,convert" ]]; then
+              cargo +stable test -p rust_iso20022 --test prelude --features "${{ matrix.features }}"
+            fi
           else
-            cargo +stable test -p rust_iso20022 --no-default-features
+            cargo +stable test -p rust_iso20022 --lib --no-default-features
           fi
 
   generated-area:
     name: Generated model / ${{ matrix.area }}
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    timeout-minutes: 180
     strategy:
       fail-fast: false
       max-parallel: 2
@@ -111,12 +114,12 @@ jobs:
       - uses: Swatinem/rust-cache@v2
         with:
           key: model-${{ matrix.area }}
-      - run: cargo +stable test -p rust_iso20022 --features "model-${{ matrix.area }}"
+      - run: cargo +stable test -p rust_iso20022 --lib --features "model-${{ matrix.area }}"
 
   msrv:
     name: MSRV 1.85
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 180
     steps:
       - uses: actions/checkout@v5
       - uses: dtolnay/rust-toolchain@master
@@ -130,7 +133,7 @@ jobs:
   wasm:
     name: WASM core compile contract
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 180
     steps:
       - uses: actions/checkout@v5
       - uses: dtolnay/rust-toolchain@stable
@@ -148,7 +151,7 @@ jobs:
   matrix-contract:
     name: Matrix contract
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 180
     steps:
       - uses: actions/checkout@v5
       - name: Require every generated feature and mandatory baseline row

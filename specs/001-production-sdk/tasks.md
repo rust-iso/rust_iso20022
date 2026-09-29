@@ -1147,6 +1147,46 @@ closed core functionality; all required project files/forms exist.
 
 ---
 
+### WP-034 — Ecosystem-Informed Integration Ergonomics
+
+**Goal**: Apply the useful public ergonomics observed in other Rust ISO 20022
+projects without copying their canonical models or weakening this project's
+schema-derived architecture.
+
+**Scope**: Additive business-domain feature aliases, generated-type prelude,
+schema-derived support reporting, namespace-aware feature preflight, focused
+documentation navigation, generated-path guidance, and an executable payment
+integration example.
+
+**Non-goals**: Copying third-party source, introducing a second message model,
+enabling broad model domains by default, or claiming unsupported profile rules.
+
+**Dependencies**: WP-003–005, WP-006, and WP-031.
+
+**Implementation**:
+
+- [X] T201 Add exact additive `payments`, `securities`, `trade`, `cards`, and `fx` Cargo feature aliases over existing `model-*` families and verify their composition
+- [ ] T202 Add common payment aliases in `rust_iso20022::prelude` that resolve directly to versioned generated types
+- [X] T203 Generate and drift-check the 32-area/1,130-version support matrix from the schema-derived catalogue
+- [X] T204 Make message-name and namespace lookup share the same catalogue and required-feature preflight contract, with root generated dispatch reexports
+- [X] T205 Add domain-feature and integration navigation that explains narrow-versus-broad compile-cost choices
+- [X] T206 Document concise aliases alongside fully versioned generated paths so generated structs remain visibly canonical
+- [X] T207 Add and run a non-trivial payment pipeline example covering detection, catalogue lookup, feature preflight, generated parsing, validation, XML, and JSON serialization; record evidence in `evidence/WP-034.md`
+
+**Tests**: Feature-alias composition, support-matrix regeneration diff,
+catalogue name/namespace parity, prelude type compilation, generated dispatch,
+payment example execution, formatting, and whitespace checks.
+
+**Evidence**: `evidence/WP-034.md`.
+
+**Acceptance Criteria**: Every alias expands only to existing generated-family
+features; no default feature broadening or duplicate model is introduced; the
+support matrix is reproducible; namespace routing reports the correct feature;
+all documented prelude aliases compile as generated types; and the executable
+payment pipeline validates and round-trips a representative pacs.008 fixture.
+
+---
+
 ## Dependencies and Execution Order
 
 ### Critical path
@@ -1166,7 +1206,7 @@ WP-001 compatibility
   ├→ WP-021 version diff → WP-026 MCP
   └→ WP-022 → WP-023/WP-024/WP-025 migration
 
-All applicable capabilities → WP-027/028 → WP-029/030 → WP-031 → WP-032 → WP-033
+All applicable capabilities → WP-027/028 → WP-029/030 → WP-031 → WP-032 → WP-033/WP-034
 ```
 
 ### External research gates

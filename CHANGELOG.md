@@ -3,6 +3,29 @@
 All notable changes to this project are documented here. This project adheres to
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.4] - 2026-09-29
+
+### Added
+
+- Added additive business-domain feature aliases, common generated-type
+  prelude aliases, schema-derived support-matrix navigation, and a runnable
+  payment integration example.
+- Added namespace-aware generated-model feature preflight and root reexports
+  for generated auto-dispatch.
+
+### Fixed
+
+- Gated provisional profile integration tests behind the `profiles` feature.
+- Reduced repeated CI generated-test compilation and removed offline dependency
+  resolution from support-matrix generation.
+- Increased GitHub Actions job timeouts to three hours for long generated builds.
+
+### Compatibility
+
+- Existing generated paths, serialization, feature flags, MSRV, and canonical
+  generated message types remain compatible. The broad `payments` alias is
+  opt-in and may require substantial compile memory.
+
 ## [0.1.3] - 2026-09-29
 
 ### Added

@@ -40,6 +40,9 @@ families they use.
 The versioned CBPR+ and SEPA profile framework is implemented, but no complete
 production L3 rule pack is currently claimed. See [profile status](docs/profiles.md).
 
+See the [payment integration flow](docs/integration.md) for the recommended
+detect → catalogue → generated parse → validate → serialize path.
+
 ## Quick start
 
 Add the feature-free core:
@@ -124,8 +127,10 @@ pacs.008.001.08
 ```
 
 See [the model feature guide](docs/model-features.md) for all 32 business areas
-and their meanings, or the [generated support matrix](docs/support-matrix.md)
-for the schema-derived message counts.
+and their meanings, the [domain feature aliases](docs/domain-features.md) for
+broader deployment-oriented selections, or the
+[generated support matrix](docs/support-matrix.md) for the schema-derived
+message counts.
 
 ## Choose the right API
 

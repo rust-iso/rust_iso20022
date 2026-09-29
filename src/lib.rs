@@ -101,6 +101,9 @@ pub use crate::core::{
 pub use crate::core::{MessageRef, ParsedMessage, parse};
 #[cfg(feature = "serde")]
 pub use crate::core::{from_json, to_json};
+/// Generated-model auto-dispatch over the enabled model families.
+#[cfg(feature = "__model")]
+pub use crate::generated::any::{AnyMessage, parse_auto};
 
 /// Parse XML into the typed message `T` only if the XML's detected message type
 /// matches `T` (prowide-style guarded parse). Requires the `model` feature on
@@ -131,7 +134,7 @@ pub mod prelude {
     #[cfg(feature = "model-camt")]
     pub use crate::generated::camt::camt_053_001_09::Document as Camt053Document;
     #[cfg(feature = "model-head")]
-    pub use crate::generated::head::head_001_001_02::Document as HeadDocument;
+    pub use crate::generated::head::head_001_001_02::BusinessApplicationHeaderV02;
     #[cfg(feature = "model-pacs")]
     pub use crate::generated::pacs::pacs_002_001_10::Document as Pacs002Document;
     #[cfg(feature = "model-pacs")]

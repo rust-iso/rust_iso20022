@@ -37,7 +37,7 @@ Each alias is the exact generated `Document` type:
 
 ```rust,ignore
 use rust_iso20022::prelude::{
-    HeadDocument, Camt053Document, Pacs008Document, Pain001Document,
+    BusinessApplicationHeaderV02, Camt053Document, Pacs008Document, Pain001Document,
 };
 ```
 

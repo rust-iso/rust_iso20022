@@ -109,12 +109,15 @@ pub fn lookup_message(identifier: &str) -> Option<&'static CatalogueEntry> {
     from_message_name(identifier).or_else(|| from_namespace(identifier))
 }
 
-/// Return the smallest generated-model feature required for a message.
+/// Return the smallest generated-model feature required for a message name or
+/// full XSD namespace.
 ///
 /// The value is derived from schema metadata and is suitable for diagnostics
 /// and feature preflight. It does not dynamically load a model at runtime.
-pub fn required_feature(message_name: &str) -> Option<&'static str> {
-    lookup_descriptor(message_name).map(|descriptor| descriptor.required_feature)
+pub fn required_feature(identifier: &str) -> Option<&'static str> {
+    lookup_message(identifier)
+        .and_then(|entry| lookup_descriptor(entry.message_name))
+        .map(|descriptor| descriptor.required_feature)
 }
 
 /// Whether the catalogue contains the given message name.
