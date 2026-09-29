@@ -174,7 +174,7 @@ run scripts/run-fuzz-regressions.sh
 run scripts/run-fuzz-baseline.sh
 run scripts/measure-build-baseline.sh evidence/performance/release-candidate.json
 
-require_supply_chain cargo audit --locked
+require_supply_chain cargo audit
 require_supply_chain cargo deny --locked --all-features check
 
 run cargo +stable package --list --allow-dirty

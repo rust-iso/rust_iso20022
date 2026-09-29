@@ -33,6 +33,6 @@ jobs:
           cargo +stable install cargo-audit --version 0.22.1 --locked
           cargo +stable install cargo-deny --version 0.20.2 --locked
       - name: RustSec audit
-        run: cargo +stable audit --locked
+        run: cargo +stable audit
       - name: Licenses, bans, advisories, and sources
         run: cargo +stable deny --locked --all-features check

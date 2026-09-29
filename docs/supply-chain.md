@@ -23,7 +23,7 @@ visible for maintenance rather than being hidden by broad skip rules.
 Run locally with:
 
 ```bash
-cargo audit --locked
+cargo audit
 cargo deny --locked --all-features check
 ```
 
