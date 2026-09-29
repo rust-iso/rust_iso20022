@@ -99,6 +99,17 @@ model = [
     "model-semt", "model-sese", "model-setr", "model-trck", "model-tsin",
     "model-tsmt", "model-tsrv",
 ]
+# Business-domain aliases mirror the way ISO 20022 users think about a
+# deployment while retaining the individually selectable model-* features.
+# They are additive aliases over generated modules, not a second model.
+payments = [
+    "model-head", "model-acmt", "model-admi", "model-auth", "model-camt",
+    "model-pacs", "model-pain", "model-reda", "model-remt",
+]
+securities = ["model-secl", "model-seev", "model-semt", "model-sese", "model-setr"]
+trade = ["model-colr", "model-tsin", "model-tsmt", "model-tsrv"]
+cards = ["model-caaa", "model-caad", "model-caam", "model-cafc", "model-cafm", "model-cafr", "model-casp", "model-casr", "model-catm", "model-catp"]
+fx = ["model-fxtr"]
 # Serde + JSON support. Adds serde to the core/catalogue types (which serialize
 # to canonical strings) and to every generated message type, enabling
 # `to_json` / `from_json`.
@@ -178,6 +189,10 @@ required-features = ["model-pacs"]
 [[example]]
 name = "profile"
 required-features = ["profiles"]
+
+[[example]]
+name = "payment_pipeline"
+required-features = ["model-pacs", "serde"]
 
 [dev-dependencies]
 proptest = "1"

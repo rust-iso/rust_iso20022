@@ -1,5 +1,9 @@
 # Choosing an ISO 20022 model feature
 
+The generated support table is also available as a standalone
+[schema-derived support matrix](support-matrix.md). Regenerate it with
+`scripts/generate-support-matrix.sh` after a schema/codegen update.
+
 Every ISO 20022 message name starts with a four-letter business-area code. To
 use generated Rust types, enable the matching `model-<area>` feature:
 

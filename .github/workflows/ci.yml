@@ -10,6 +10,8 @@ permissions:
 
 env:
   CARGO_TERM_COLOR: always
+  CARGO_BUILD_JOBS: "1"
+  CARGO_INCREMENTAL: "0"
 
 jobs:
   format:
@@ -17,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: dtolnay/rust-toolchain@stable
         with:
           components: rustfmt
@@ -28,7 +30,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 90
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: dtolnay/rust-toolchain@stable
         with:
           components: clippy
@@ -41,6 +43,7 @@ jobs:
     timeout-minutes: 120
     strategy:
       fail-fast: false
+      max-parallel: 2
       matrix:
         features:
           - ""
@@ -49,16 +52,16 @@ jobs:
           - "model-pain,serde"
           - "model-camt,serde"
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: dtolnay/rust-toolchain@stable
       - uses: Swatinem/rust-cache@v2
       - name: Test selected feature contract
         shell: bash
         run: |
           if [[ -n "${{ matrix.features }}" ]]; then
-            cargo +stable test --workspace --features "${{ matrix.features }}"
+            cargo +stable test -p rust_iso20022 --features "${{ matrix.features }}"
           else
-            cargo +stable test --workspace --no-default-features
+            cargo +stable test -p rust_iso20022 --no-default-features
           fi
 
   generated-area:
@@ -67,6 +70,7 @@ jobs:
     timeout-minutes: 90
     strategy:
       fail-fast: false
+      max-parallel: 2
       matrix:
         area:
           - acmt
@@ -102,19 +106,19 @@ jobs:
           - tsmt
           - tsrv
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: dtolnay/rust-toolchain@stable
       - uses: Swatinem/rust-cache@v2
         with:
           key: model-${{ matrix.area }}
-      - run: cargo +stable test --workspace --features "model-${{ matrix.area }}"
+      - run: cargo +stable test -p rust_iso20022 --features "model-${{ matrix.area }}"
 
   msrv:
     name: MSRV 1.85
     runs-on: ubuntu-latest
     timeout-minutes: 60
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: dtolnay/rust-toolchain@master
         with:
           toolchain: "1.85"
@@ -128,7 +132,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 60
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: dtolnay/rust-toolchain@stable
         with:
           targets: wasm32-unknown-unknown
@@ -146,7 +150,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Require every generated feature and mandatory baseline row
         shell: bash
         run: |

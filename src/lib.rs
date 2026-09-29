@@ -127,11 +127,21 @@ pub use catalogue::{Catalogue, CatalogueEntry, SchemaCatalogue, lookup_message, 
 /// These are aliases to the generated structs, not a second message model.
 /// The module is available only when the corresponding model feature is
 /// enabled; all generated paths remain available under [`crate::generated`].
-#[cfg(feature = "model-pacs")]
 pub mod prelude {
+    #[cfg(feature = "model-camt")]
+    pub use crate::generated::camt::camt_053_001_09::Document as Camt053Document;
+    #[cfg(feature = "model-head")]
+    pub use crate::generated::head::head_001_001_02::Document as HeadDocument;
+    #[cfg(feature = "model-pacs")]
     pub use crate::generated::pacs::pacs_002_001_10::Document as Pacs002Document;
+    #[cfg(feature = "model-pacs")]
     pub use crate::generated::pacs::pacs_008_001_08::Document as Pacs008Document;
+    #[cfg(feature = "model-pacs")]
     pub use crate::generated::pacs::pacs_009_001_08::Document as Pacs009Document;
+    #[cfg(feature = "model-pain")]
+    pub use crate::generated::pain::pain_001_001_09::Document as Pain001Document;
+    #[cfg(feature = "model-pain")]
+    pub use crate::generated::pain::pain_002_001_10::Document as Pain002Document;
 }
 
 /// Business Application Header (BAH / `head.001`) reading.

@@ -24,7 +24,7 @@ jobs:
     name: Audit, licenses, and sources
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@v5
       - uses: dtolnay/rust-toolchain@stable
       - name: Require the tracked lockfile
         run: cargo metadata --locked --format-version 1 --no-deps >/dev/null

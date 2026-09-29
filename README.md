@@ -124,7 +124,8 @@ pacs.008.001.08
 ```
 
 See [the model feature guide](docs/model-features.md) for all 32 business areas
-and their meanings.
+and their meanings, or the [generated support matrix](docs/support-matrix.md)
+for the schema-derived message counts.
 
 ## Choose the right API
 
@@ -164,6 +165,11 @@ rust_iso20022 = { version = "0.1", features = [
 | Feature | Default | Effect |
 |---|:---:|---|
 | `model-<area>` | no | Generated types for one business area, such as `model-pacs` |
+| `payments` | no | Common payment-domain families (`head`, `camt`, `pacs`, `pain`, and related areas) |
+| `securities` | no | Securities settlement/trade message families |
+| `trade` | no | Collateral, trading, and treasury message families |
+| `cards` | no | Card payment and card-related message families |
+| `fx` | no | Foreign-exchange message family |
 | `model` | no | All 1,130 generated message modules; expensive to compile |
 | `serde` | no | Serde derives plus `to_json` and `from_json` |
 | `convert` | no | `rust_decimal` and `chrono` scalar conversions |
@@ -173,6 +179,10 @@ rust_iso20022 = { version = "0.1", features = [
 
 Prefer per-area features. The umbrella `model` feature is intended for
 gateways that genuinely need all message families.
+
+Domain aliases are convenient for applications that want a complete business
+surface; use individual `model-*` features when compile time and memory are
+more important than breadth.
 
 Minimum supported Rust version: **1.85**.
 
@@ -203,6 +213,10 @@ cargo run --example typed_payment --features model-pacs,serde,convert
 cargo run --example catalogue
 cargo run --example explain
 cargo run --example version_diff
+cargo run --example support_matrix
+
+# Detect, catalogue, parse, validate, and serialize one payment end to end.
+cargo run --example payment_pipeline --features model-pacs,serde
 
 # Validate the canonical generated pacs.008 value.
 cargo run --example validation --features model-pacs
