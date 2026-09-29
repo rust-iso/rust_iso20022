@@ -1,7 +1,7 @@
 # Release candidate process
 
-The repository publishes only after the local evidence gate. Version 0.1.2 was
-published to crates.io and tagged `v0.1.2`; the workflow remains manual-only,
+The repository publishes only after the local evidence gate. Version 0.1.3 is
+the current release candidate; the workflow remains manual-only,
 has read-only repository permissions, and does not publish on every push.
 
 ## Local baseline

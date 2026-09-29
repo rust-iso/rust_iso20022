@@ -3,6 +3,42 @@
 All notable changes to this project are documented here. This project adheres to
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.3] - 2026-09-29
+
+### Added
+
+- Added opt-in public-reference profile bundles for CBPR+ SR2026, SEPA SCT
+  2025-v1.1, and SEPA SCT Inst 2025-v1.1. Each bundle exposes explicit source,
+  release, provenance status, explainable rule IDs, and shared validation-engine
+  integration without creating another canonical message model.
+- Added focused public-reference profile guides, synthetic fixture boundaries,
+  and evidence covering all 13 provisional rule IDs and field paths.
+- Added reproducible local rustdoc generation and GitHub Pages deployment as a
+  stable documentation fallback when docs.rs infrastructure fails before cargo
+  starts.
+
+### Fixed
+
+- Made CI invoke stable or explicit MSRV toolchains so the Rust 1.85 core/MSRV
+  job does not accidentally build the separately gated Rust 1.88 MCP crate.
+- Pinned the MSRV-compatible `cargo-audit` release in supply-chain CI.
+
+### Documentation
+
+- Reduced docs.rs memory pressure by retaining the representative `head`,
+  `pacs`, and `pain` feature set. Full generated models remain available in the
+  crate and can be documented locally by selecting their model features.
+- Pointed package documentation metadata at the GitHub Pages fallback while
+  retaining docs.rs as a mirror.
+
+### Compatibility
+
+- This release is additive. Existing generated model paths, serialization,
+  feature aliases, and the Rust 1.85 core MSRV are unchanged.
+- Public-reference profiles remain explicitly `provisional`; this release does
+  not claim complete SWIFT/EPC rulebook conformance, certification, or bank
+  acceptance.
+
 ## [0.1.2] - 2026-09-28
 
 Published to crates.io as `rust_iso20022` 0.1.2. CBPR+ and SEPA candidate
