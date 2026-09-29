@@ -101,6 +101,22 @@ pub fn from_namespace(namespace: &str) -> Option<&'static CatalogueEntry> {
     by_namespace(namespace).and_then(|descriptor| data::BY_NAME.get(descriptor.identity))
 }
 
+/// Resolve either a canonical message name or its full XSD namespace.
+///
+/// This is a convenience wrapper for routers that receive mixed identifiers;
+/// it returns the same schema-derived entry as the exact lookup functions.
+pub fn lookup_message(identifier: &str) -> Option<&'static CatalogueEntry> {
+    from_message_name(identifier).or_else(|| from_namespace(identifier))
+}
+
+/// Return the smallest generated-model feature required for a message.
+///
+/// The value is derived from schema metadata and is suitable for diagnostics
+/// and feature preflight. It does not dynamically load a model at runtime.
+pub fn required_feature(message_name: &str) -> Option<&'static str> {
+    lookup_descriptor(message_name).map(|descriptor| descriptor.required_feature)
+}
+
 /// Whether the catalogue contains the given message name.
 pub fn contains(message_name: &str) -> bool {
     data::BY_NAME.contains_key(message_name)

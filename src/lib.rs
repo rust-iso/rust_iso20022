@@ -120,7 +120,7 @@ pub fn parse_as<T: MxMessage>(xml: &str) -> Result<T> {
 
 /// Static schema-derived message and field discovery.
 pub mod catalogue;
-pub use catalogue::{Catalogue, CatalogueEntry, SchemaCatalogue};
+pub use catalogue::{Catalogue, CatalogueEntry, SchemaCatalogue, lookup_message, required_feature};
 
 /// Small, stable convenience surface for common generated payment messages.
 ///

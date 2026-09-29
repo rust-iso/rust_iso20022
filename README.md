@@ -88,7 +88,7 @@ cargo add rust_iso20022 --features model-pacs,serde,convert
 ```
 
 ```rust
-use rust_iso20022::generated::pacs::pacs_008_001_08::Document;
+use rust_iso20022::prelude::Pacs008Document as Document;
 use rust_iso20022::{from_xml, to_json, to_xml, MxMessage};
 
 # let xml = r#"<Document xmlns="urn:iso:std:iso:20022:tech:xsd:pacs.008.001.08">
@@ -102,6 +102,17 @@ let xml_again = to_xml(&document)?;
 let json = to_json(&document)?;
 # let _ = (xml_again, json);
 # Ok::<(), rust_iso20022::Error>(())
+```
+
+The `prelude` aliases are the generated document types themselves. Use the
+full `generated::...` path when you prefer an explicit versioned path.
+
+For routing and feature diagnostics, the catalogue accepts either a message
+name or a full namespace:
+
+```rust
+let entry = rust_iso20022::lookup_message("pacs.008.001.08").unwrap();
+assert_eq!(rust_iso20022::required_feature(entry.message_name), Some("model-pacs"));
 ```
 
 The mapping is predictable:
