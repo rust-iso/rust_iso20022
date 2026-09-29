@@ -1,7 +1,8 @@
 # rust_iso20022
 
 [![Crates.io](https://img.shields.io/crates/v/rust_iso20022.svg)](https://crates.io/crates/rust_iso20022)
-[![Documentation](https://docs.rs/rust_iso20022/badge.svg)](https://docs.rs/rust_iso20022)
+[![Documentation](https://img.shields.io/badge/docs-GitHub%20Pages-blue)](https://rust-iso.github.io/rust_iso20022/)
+[![docs.rs](https://docs.rs/rust_iso20022/badge.svg)](https://docs.rs/rust_iso20022)
 [![Downloads](https://img.shields.io/crates/d/rust_iso20022.svg)](https://crates.io/crates/rust_iso20022)
 [![MSRV](https://img.shields.io/badge/MSRV-1.85-dea584.svg)](https://www.rust-lang.org)
 [![License](https://img.shields.io/crates/l/rust_iso20022.svg)](LICENSE)

@@ -21,6 +21,12 @@ scripts/build-docs-local.sh
 The script uses `model-head,model-pacs,model-pain,serde,convert`, one job by
 default, and writes disposable output under `target/docs-local/`.
 
+`.github/workflows/docs-pages.yml` runs the same script with one Cargo job and
+deploys the disposable HTML artifact to
+`https://rust-iso.github.io/rust_iso20022/`. GitHub Pages is the stable primary
+documentation URL; docs.rs remains a useful registry mirror but is not the
+only documentation delivery path.
+
 The full check runs with one Cargo job and debug information disabled to bound
 memory. Generated model families are compiled as separate matrix rows because
 building all 1,130 modules in one rustc invocation is unnecessarily expensive.
