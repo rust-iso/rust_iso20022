@@ -6,7 +6,9 @@ reviewed like a source change.
 
 The project uses two complementary checks:
 
-- `cargo-audit 0.22.2` checks the RustSec advisory database.
+- `cargo-audit 0.22.1` checks the RustSec advisory database and remains
+  compatible with the core MSRV toolchain; the workflow invokes it through the
+  explicitly installed stable toolchain.
 - `cargo-deny 0.20.2` enforces source and license policy and also checks
   advisories. Unknown registries and Git repositories are denied. The one
   code-generator Git dependency is pinned to an exact revision and explicitly
@@ -35,4 +37,3 @@ cargo deny --offline --locked --no-default-features \
 
 The full online result is the release gate. A network-restricted local result
 must be recorded as blocked, never silently treated as a pass.
-

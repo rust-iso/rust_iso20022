@@ -30,10 +30,9 @@ jobs:
         run: cargo metadata --locked --format-version 1 --no-deps >/dev/null
       - name: Install pinned supply-chain tools
         run: |
-          cargo install cargo-audit --version 0.22.2 --locked
-          cargo install cargo-deny --version 0.20.2 --locked
+          cargo +stable install cargo-audit --version 0.22.1 --locked
+          cargo +stable install cargo-deny --version 0.20.2 --locked
       - name: RustSec audit
-        run: cargo audit --locked
+        run: cargo +stable audit --locked
       - name: Licenses, bans, advisories, and sources
-        run: cargo deny --locked --all-features check
-
+        run: cargo +stable deny --locked --all-features check
