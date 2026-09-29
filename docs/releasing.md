@@ -1,7 +1,7 @@
 # Release candidate process
 
-The repository publishes only after the local evidence gate. Version 0.1.4 is
-the next release candidate after `v0.1.3`; the workflow remains manual-only,
+The repository publishes only after the local evidence gate. Version 0.1.5 is
+the next release candidate after `v0.1.4`; the workflow remains manual-only,
 has read-only repository permissions, and does not publish on every push.
 
 ## Local baseline

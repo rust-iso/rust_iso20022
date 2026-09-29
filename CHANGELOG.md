@@ -3,6 +3,14 @@
 All notable changes to this project are documented here. This project adheres to
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.5] - 2026-09-29
+
+### Fixed
+
+- Fixed supply-chain CI and release checks to invoke `cargo audit` without the
+  unsupported `--locked` argument; lockfile integrity remains checked by
+  `cargo metadata --locked` and `cargo deny --locked`.
+
 ## [0.1.4] - 2026-09-29
 
 ### Added
