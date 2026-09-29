@@ -6,6 +6,9 @@
 
 /// Opt-in deterministic checks pending exact profile source artifacts.
 pub mod provisional;
+/// Usable public-reference bundles that remain separate from authoritative
+/// release registration.
+pub mod public_reference;
 mod registry;
 mod release;
 /// SEPA rulebook/implementation-guideline source identities and release gates.

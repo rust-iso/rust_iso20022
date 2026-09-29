@@ -30,3 +30,9 @@ with a reason; framework availability alone is never presented as a rule pack.
 Synthetic files under `tests/profiles/fixtures/` test the format and history
 invariants only. They are marked `test_only` and are not CBPR+, SEPA, or other
 market-profile content.
+
+For usable developer checks before authoritative source artifacts are
+available, use the opt-in public-reference bundles documented in
+[`docs/profiles/public-reference.md`](../docs/profiles/public-reference.md).
+They are explicitly labelled `provisional` and never enter the production
+release registry.

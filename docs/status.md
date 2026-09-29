@@ -25,17 +25,20 @@ network onboarding, regulatory approval, or legal compliance.
   validation slice.
 - Security attack corpus, deterministic fuzz-regression corpus, and runtime,
   memory, compile-time, dependency, binary, and WASM-size baselines.
+- Opt-in public-reference bundles for CBPR+ SR2026, SEPA SCT 2025-v1.1, and
+  SEPA SCT Inst 2025-v1.1. These are provisional developer checks, not
+  authoritative scheme rule packs.
 
 ## Profile status
 
 The exact-release profile framework is implemented. It rejects year-only
 selectors and preserves historical release identity.
 
-| Profile | Source identity | Executable L3 rules | Status |
-|---|---|---:|---|
-| CBPR+ SR2026 | Public Swift timeline recorded | 0 | Complete Usage Guideline bytes/digests unavailable |
-| SEPA SCT 2025 v1.1 + IG 2025 v1.0 | Official EPC pages recorded | 0 | Exact source-file digests pending |
-| SEPA SCT Inst 2025 v1.1 + IG 2025 v1.0 | Official EPC pages recorded | 0 | Exact source-file digests pending |
+| Profile | Source identity | Authoritative L3 rules | Public-reference rules | Status |
+|---|---|---:|---:|---|
+| CBPR+ SR2026 | Public Swift timeline recorded | 0 | 7 | Complete Usage Guideline bytes/digests unavailable |
+| SEPA SCT 2025 v1.1 + IG 2025 v1.0 | Official EPC pages recorded | 0 | 3 | Exact source-file digests pending |
+| SEPA SCT Inst 2025 v1.1 + IG 2025 v1.0 | Official EPC pages recorded | 0 | 3 | Exact source-file digests pending |
 
 See [profiles](profiles.md), [CBPR+ status](profiles/cbpr-plus.md), and
 [SEPA status](profiles/sepa.md). Consultation documents EPC008-26 and EPC009-26

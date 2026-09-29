@@ -282,6 +282,11 @@ path = "tests/profiles/sepa_framework.rs"
 required-features = ["profiles"]
 
 [[test]]
+name = "public_reference"
+path = "tests/profiles/public_reference.rs"
+required-features = ["profiles"]
+
+[[test]]
 name = "wasm_native_contract"
 path = "tests/compatibility/wasm/native.rs"
 required-features = ["serde"]
