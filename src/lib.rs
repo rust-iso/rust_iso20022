@@ -120,6 +120,19 @@ pub fn parse_as<T: MxMessage>(xml: &str) -> Result<T> {
 
 /// Static schema-derived message and field discovery.
 pub mod catalogue;
+pub use catalogue::{Catalogue, CatalogueEntry, SchemaCatalogue};
+
+/// Small, stable convenience surface for common generated payment messages.
+///
+/// These are aliases to the generated structs, not a second message model.
+/// The module is available only when the corresponding model feature is
+/// enabled; all generated paths remain available under [`crate::generated`].
+#[cfg(feature = "model-pacs")]
+pub mod prelude {
+    pub use crate::generated::pacs::pacs_002_001_10::Document as Pacs002Document;
+    pub use crate::generated::pacs::pacs_008_001_08::Document as Pacs008Document;
+    pub use crate::generated::pacs::pacs_009_001_08::Document as Pacs009Document;
+}
 
 /// Business Application Header (BAH / `head.001`) reading.
 pub use crate::core::app_hdr;

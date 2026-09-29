@@ -272,6 +272,11 @@ path = "tests/profiles/framework.rs"
 required-features = ["profiles"]
 
 [[test]]
+name = "prelude"
+path = "tests/contracts/prelude.rs"
+required-features = ["model-pacs"]
+
+[[test]]
 name = "profile_provenance"
 path = "tests/profiles/provenance.rs"
 required-features = ["profiles"]
