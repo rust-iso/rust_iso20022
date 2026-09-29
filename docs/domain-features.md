@@ -28,6 +28,10 @@ Use a domain alias when an application intentionally handles a broad surface:
 rust_iso20022 = { version = "0.1", features = ["payments", "serde"] }
 ```
 
+CI verifies that these aliases continue to match the documented family
+composition and that the schema-derived support matrix has no uncommitted
+drift after regeneration.
+
 Common payment documents also have short aliases in `rust_iso20022::prelude`.
 Each alias is the exact generated `Document` type:
 

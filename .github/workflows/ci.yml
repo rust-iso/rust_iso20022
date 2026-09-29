@@ -159,3 +159,9 @@ jobs:
           done
           test "$(grep -c '^\[\[baseline\]\]' tests/matrix/matrix.toml)" -eq 6
           test "$(grep -c '^mandatory = true' tests/matrix/matrix.toml)" -eq 6
+      - name: Verify generated support matrix and feature aliases
+        shell: bash
+        run: |
+          scripts/check-feature-aliases.sh
+          scripts/generate-support-matrix.sh /tmp/support-matrix.md
+          diff -u docs/support-matrix.md /tmp/support-matrix.md
