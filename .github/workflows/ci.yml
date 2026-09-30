@@ -16,7 +16,7 @@ env:
 jobs:
   format:
     name: Format
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     timeout-minutes: 180
     steps:
       - uses: actions/checkout@v5
@@ -27,7 +27,7 @@ jobs:
 
   clippy:
     name: Clippy
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     timeout-minutes: 180
     steps:
       - uses: actions/checkout@v5
@@ -39,7 +39,7 @@ jobs:
 
   core:
     name: Core and representative features
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     timeout-minutes: 180
     strategy:
       fail-fast: false
@@ -69,7 +69,7 @@ jobs:
 
   generated-area:
     name: Generated model / ${{ matrix.area }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     timeout-minutes: 180
     strategy:
       fail-fast: false
@@ -118,7 +118,7 @@ jobs:
 
   msrv:
     name: MSRV 1.85
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     timeout-minutes: 180
     steps:
       - uses: actions/checkout@v5
@@ -132,7 +132,7 @@ jobs:
 
   wasm:
     name: WASM core compile contract
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     timeout-minutes: 180
     steps:
       - uses: actions/checkout@v5
@@ -150,7 +150,7 @@ jobs:
 
   matrix-contract:
     name: Matrix contract
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     timeout-minutes: 180
     steps:
       - uses: actions/checkout@v5
