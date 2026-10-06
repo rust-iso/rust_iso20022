@@ -21,17 +21,17 @@ run() {
     "$@"
 }
 
-run cargo +stable fmt --check
-run cargo +stable clippy --workspace --all-targets --jobs 1 -- -D warnings
+run cargo +stable fmt --all --check
+run cargo +stable clippy --locked --workspace --all-targets --jobs 1 -- -D warnings
 
 # Run the adapter/workspace contract once. Feature-specific tests belong to the
 # active WP; the expensive cross-family generated-model matrix is a release
 # gate in `scripts/check-model-matrix.sh`, not a tax on every work package.
-run cargo +stable test --workspace --no-default-features --jobs 1
+run cargo +stable test --locked --workspace --no-default-features --jobs 1
 
 # The core/CLI/codegen/WASM packages retain Rust 1.85. The separate MCP
 # adapter follows the official rmcp SDK's Rust 1.88 requirement.
-run cargo +1.85 check --workspace --exclude rust_iso20022_mcp --no-default-features --jobs 1
+run cargo +1.85 check --locked --workspace --exclude rust_iso20022_mcp --no-default-features --jobs 1
 
 run git diff --check
 

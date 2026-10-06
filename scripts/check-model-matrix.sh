@@ -17,9 +17,9 @@ run() {
 
 run_family() {
     local features="$1"
-    run cargo +stable test -p rust_iso20022 --no-default-features \
+    run cargo +stable test --locked -p rust_iso20022 --no-default-features \
         --features "$features" --jobs 1
-    run cargo +stable test -p rust_iso20022 --doc --no-default-features \
+    run cargo +stable test --locked -p rust_iso20022 --doc --no-default-features \
         --features "$features" --jobs 1
 }
 

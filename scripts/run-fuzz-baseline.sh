@@ -14,10 +14,15 @@ targets=(xml detect namespace financial mt_parser mt103 mt202 mt940)
 artifact_dir="$repo_root/fuzz/artifacts"
 mkdir -p "$artifact_dir"
 
-if ! cargo "+$toolchain" fuzz --version >/dev/null 2>&1; then
-  echo "cargo-fuzz 0.13.2 is required; install it with: cargo install cargo-fuzz --version 0.13.2 --locked" >&2
+if ! fuzz_version="$(cargo "+$toolchain" fuzz --version 2>/dev/null)" || [[ "$fuzz_version" != "cargo-fuzz 0.13.2" ]]; then
+  echo "cargo-fuzz 0.13.2 is required; install it with: cargo +$toolchain install cargo-fuzz --version 0.13.2 --locked" >&2
   exit 2
 fi
+
+export CARGO_NET_OFFLINE="${CARGO_NET_OFFLINE:-false}"
+cargo "+$toolchain" metadata --locked --manifest-path fuzz/Cargo.toml --format-version 1 >/dev/null
+# cargo-fuzz has no --locked option; use the prefetched, validated lockfile offline.
+export CARGO_NET_OFFLINE=true
 
 if [[ "$mode" == "--minimize" ]]; then
   for target in "${targets[@]}"; do

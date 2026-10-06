@@ -9,9 +9,12 @@ permissions:
   contents: read
 
 env:
+  RUSTUP_TOOLCHAIN: stable
   CARGO_TERM_COLOR: always
   CARGO_BUILD_JOBS: "1"
   CARGO_INCREMENTAL: "0"
+  CARGO_PROFILE_DEV_DEBUG: "0"
+  CARGO_PROFILE_TEST_DEBUG: "0"
 
 jobs:
   format:
@@ -23,7 +26,7 @@ jobs:
       - uses: dtolnay/rust-toolchain@stable
         with:
           components: rustfmt
-      - run: cargo +stable fmt --check
+      - run: cargo +stable fmt --all --check
 
   clippy:
     name: Clippy
@@ -35,7 +38,7 @@ jobs:
         with:
           components: clippy
       - uses: Swatinem/rust-cache@v2
-      - run: cargo +stable clippy --workspace --all-targets -- -D warnings
+      - run: cargo +stable clippy --locked --workspace --all-targets -- -D warnings
 
   core:
     name: Core and representative features
@@ -59,12 +62,12 @@ jobs:
         shell: bash
         run: |
           if [[ -n "${{ matrix.features }}" ]]; then
-            cargo +stable test -p rust_iso20022 --lib --features "${{ matrix.features }}"
+            cargo +stable test --locked -p rust_iso20022 --lib --features "${{ matrix.features }}"
             if [[ "${{ matrix.features }}" == "model-pacs,serde,convert" ]]; then
-              cargo +stable test -p rust_iso20022 --test prelude --features "${{ matrix.features }}"
+              cargo +stable test --locked -p rust_iso20022 --test prelude --features "${{ matrix.features }}"
             fi
           else
-            cargo +stable test -p rust_iso20022 --lib --no-default-features
+            cargo +stable test --locked -p rust_iso20022 --no-default-features
           fi
 
   generated-area:
@@ -114,12 +117,14 @@ jobs:
       - uses: Swatinem/rust-cache@v2
         with:
           key: model-${{ matrix.area }}
-      - run: cargo +stable test -p rust_iso20022 --lib --features "model-${{ matrix.area }}"
+      - run: cargo +stable test --locked -p rust_iso20022 --lib --features "model-${{ matrix.area }}"
 
   msrv:
     name: MSRV 1.85
     runs-on: ubuntu-22.04
     timeout-minutes: 180
+    env:
+      RUSTUP_TOOLCHAIN: "1.85"
     steps:
       - uses: actions/checkout@v5
       - uses: dtolnay/rust-toolchain@master
@@ -128,7 +133,25 @@ jobs:
       - uses: Swatinem/rust-cache@v2
         with:
           key: msrv
-      - run: cargo +1.85 check --workspace --exclude rust_iso20022_mcp --no-default-features
+      - run: cargo +1.85 check --locked --workspace --exclude rust_iso20022_mcp --no-default-features
+      - name: Check optional core dependencies on MSRV
+        run: cargo +1.85 check --locked -p rust_iso20022 --no-default-features --features catalogue,convert,serde
+
+  mcp-msrv:
+    name: MCP MSRV 1.88
+    runs-on: ubuntu-22.04
+    timeout-minutes: 180
+    env:
+      RUSTUP_TOOLCHAIN: "1.88"
+    steps:
+      - uses: actions/checkout@v5
+      - uses: dtolnay/rust-toolchain@master
+        with:
+          toolchain: "1.88"
+      - uses: Swatinem/rust-cache@v2
+        with:
+          key: mcp-msrv
+      - run: cargo +1.88 check --locked -p rust_iso20022_mcp
 
   wasm:
     name: WASM core compile contract
@@ -144,9 +167,9 @@ jobs:
           key: wasm
       - name: Check legacy and structured WASM targets
         run: |
-          cargo +stable check --lib --target wasm32-unknown-unknown
-          cargo +stable check -p rust_iso20022_wasm --target wasm32-unknown-unknown
-          cargo +stable check -p rust_iso20022_wasm --target wasm32-unknown-unknown --features model-pacs
+          cargo +stable check --locked --lib --target wasm32-unknown-unknown
+          cargo +stable check --locked -p rust_iso20022_wasm --target wasm32-unknown-unknown
+          cargo +stable check --locked -p rust_iso20022_wasm --target wasm32-unknown-unknown --features model-pacs
 
   matrix-contract:
     name: Matrix contract
@@ -154,6 +177,7 @@ jobs:
     timeout-minutes: 180
     steps:
       - uses: actions/checkout@v5
+      - uses: dtolnay/rust-toolchain@stable
       - name: Require every generated feature and mandatory baseline row
         shell: bash
         run: |
@@ -168,3 +192,5 @@ jobs:
           scripts/check-feature-aliases.sh
           scripts/generate-support-matrix.sh /tmp/support-matrix.md
           diff -u docs/support-matrix.md /tmp/support-matrix.md
+      - name: Verify CI tooling failure handling
+        run: python3 scripts/test-ci-tooling.py

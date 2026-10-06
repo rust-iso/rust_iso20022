@@ -22,7 +22,7 @@ manifest="tests/compatibility/compile/generated_paths/Cargo.toml"
 
 for area in "${generated_areas[@]}"; do
     echo ">> checking public generated path for model-$area"
-    cargo check \
+    cargo +stable check --locked \
         --manifest-path "$manifest" \
         --no-default-features \
         --features "model-$area"

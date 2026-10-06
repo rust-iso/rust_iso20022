@@ -45,9 +45,11 @@ generated API remains in one crate without exceeding that limit.
 `scripts/generate-sbom.sh` uses `cargo-cyclonedx 0.5.9` and emits CycloneDX
 1.5 JSON. It sets `SOURCE_DATE_EPOCH` from the environment or the checked-out
 commit so the generator omits random serial data and uses a reproducible
-timestamp. The SBOM describes the Cargo-resolved core package and is shipped
-beside its SHA-256 checksum. Adapter binaries have separate build artifacts and
-are not crates.io packages.
+timestamp. The script resolves all features and target platforms against the
+tracked lockfile and collects one SBOM per workspace package, including the
+adapters, beside each package's SHA-256 checksum. It rejects an unexpected tool
+version, an invalid SBOM, or a lockfile changed by the generator. Adapter
+binaries have separate build artifacts and are not crates.io packages.
 
 ## Future authorized publication
 

@@ -16,21 +16,23 @@ cleanup() {
 }
 trap cleanup EXIT
 
-wasm-pack build crates/wasm \
+rustup run stable wasm-pack build crates/wasm \
     --target nodejs \
     --release \
     --out-dir "$wasm_tmp_dir/pkg" \
     --out-name rust_iso20022_wasm \
-    --features model-pacs
+    --features model-pacs \
+    -- --locked
 
 node crates/wasm/tests/security.mjs "$wasm_tmp_dir/pkg/rust_iso20022_wasm.js"
 
-wasm-pack build crates/wasm \
+rustup run stable wasm-pack build crates/wasm \
     --target web \
     --release \
     --out-dir "$wasm_tmp_dir/web" \
     --out-name rust_iso20022_wasm \
-    --features model-pacs
+    --features model-pacs \
+    -- --locked
 
 test -s "$wasm_tmp_dir/web/rust_iso20022_wasm.js"
 test -s "$wasm_tmp_dir/web/rust_iso20022_wasm_bg.wasm"

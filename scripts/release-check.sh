@@ -130,10 +130,10 @@ self_test() {
 core_checks() {
   run cargo +stable fmt --all --check
   run git diff --check
-  run cargo +stable build --workspace --no-default-features --jobs 1
-  run cargo +stable test --workspace --no-default-features --jobs 1
-  run cargo +stable clippy --workspace --all-targets --no-default-features --jobs 1 -- -D warnings
-  run cargo +1.85 check --workspace --exclude rust_iso20022_mcp --no-default-features --jobs 1
+  run cargo +stable build --locked --workspace --no-default-features --jobs 1
+  run cargo +stable test --locked --workspace --no-default-features --jobs 1
+  run cargo +stable clippy --locked --workspace --all-targets --no-default-features --jobs 1 -- -D warnings
+  run cargo +1.85 check --locked --workspace --exclude rust_iso20022_mcp --no-default-features --jobs 1
 }
 
 case "${1:-}" in
@@ -148,9 +148,9 @@ case "${1:-}" in
   --ci-core)
     core_checks
     run env RUSTDOCFLAGS="--cfg docsrs -D rustdoc::broken_intra_doc_links" \
-      cargo +stable doc --no-deps --features model-head,model-pacs,model-pain,serde,convert --jobs 1
-    run cargo +stable test -p rust_iso20022_cli --jobs 1
-    run cargo +stable test -p rust_iso20022_mcp --jobs 1
+      cargo +stable doc --locked --no-deps --features model-head,model-pacs,model-pain,serde,convert --jobs 1
+    run cargo +stable test --locked -p rust_iso20022_cli --jobs 1
+    run cargo +stable test --locked -p rust_iso20022_mcp --jobs 1
     exit 0
     ;;
   "") ;;
@@ -159,23 +159,23 @@ esac
 
 core_checks
 run scripts/check-model-matrix.sh
-require_clean_generation cargo +stable run -p rust_iso20022_codegen -- --check
+require_clean_generation cargo +stable run --locked -p rust_iso20022_codegen -- --check
 run env RUSTDOCFLAGS="--cfg docsrs -D rustdoc::broken_intra_doc_links" \
-  cargo +stable doc --no-deps --features model-head,model-pacs,model-pain,serde,convert --jobs 1
+  cargo +stable doc --locked --no-deps --features model-head,model-pacs,model-pain,serde,convert --jobs 1
 
-require_adapter_smoke cargo +stable test -p rust_iso20022_cli --jobs 1
-require_adapter_smoke cargo +stable test -p rust_iso20022_mcp --jobs 1
+require_adapter_smoke cargo +stable test --locked -p rust_iso20022_cli --jobs 1
+require_adapter_smoke cargo +stable test --locked -p rust_iso20022_mcp --jobs 1
 require_adapter_smoke scripts/check-wasm-sdk.sh
-run cargo +stable test -p rust_iso20022 --features profiles \
+run cargo +stable test --locked -p rust_iso20022 --features profiles \
   --test profile_framework --test profile_provenance --test sepa_framework --jobs 1
-run cargo +stable test -p rust_iso20022_migration \
+run cargo +stable test --locked -p rust_iso20022_migration \
   --features "mt103 mt202 mt940" --jobs 1
 run scripts/run-fuzz-regressions.sh
 run scripts/run-fuzz-baseline.sh
 run scripts/measure-build-baseline.sh evidence/performance/release-candidate.json
 
-require_supply_chain cargo audit
-require_supply_chain cargo deny --locked --all-features check
+require_supply_chain cargo +stable audit
+require_supply_chain cargo +stable deny --locked --all-features check
 
 run cargo +stable package --list --allow-dirty
 run cargo +stable package --locked --allow-dirty

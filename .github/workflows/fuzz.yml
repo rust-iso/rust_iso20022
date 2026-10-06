@@ -22,8 +22,11 @@ jobs:
   fuzz:
     runs-on: ubuntu-latest
     timeout-minutes: 180
+    env:
+      RUSTUP_TOOLCHAIN: nightly-2026-09-26
     steps:
       - uses: actions/checkout@v5
+      - uses: dtolnay/rust-toolchain@stable
       - uses: dtolnay/rust-toolchain@master
         with:
           toolchain: nightly-2026-09-26
@@ -32,7 +35,7 @@ jobs:
           workspaces: fuzz
           key: cargo-fuzz-0.13.2
       - name: Install pinned cargo-fuzz
-        run: cargo install cargo-fuzz --version 0.13.2 --locked
+        run: cargo +nightly-2026-09-26 install cargo-fuzz --version 0.13.2 --locked
       - name: Replay persistent regression corpus
         run: scripts/run-fuzz-regressions.sh
       - name: Minimize corpus on manual request

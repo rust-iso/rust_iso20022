@@ -11,8 +11,8 @@ schema_count="$(jq -r '.schema_count' xsds/schema-set.json)"
 schema_set_id="$(jq -r '.schema_set_id' xsds/schema-set.json)"
 generator_version="$(jq -r '.generator.version' tools/codegen/generator-manifest.json)"
 generator_digest="$(jq -r '.generator.source_sha256' tools/codegen/generator-manifest.json)"
-core_msrv="$(cargo metadata --no-deps --format-version 1 | jq -r '.packages[] | select(.name == "rust_iso20022") | .rust_version')"
-mcp_msrv="$(cargo metadata --no-deps --format-version 1 | jq -r '.packages[] | select(.name == "rust_iso20022_mcp") | .rust_version')"
+core_msrv="$(cargo +stable metadata --locked --no-deps --format-version 1 | jq -r '.packages[] | select(.name == "rust_iso20022") | .rust_version')"
+mcp_msrv="$(cargo +stable metadata --locked --no-deps --format-version 1 | jq -r '.packages[] | select(.name == "rust_iso20022_mcp") | .rust_version')"
 
 jq -n \
   --argjson schema_count "$schema_count" \

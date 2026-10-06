@@ -26,11 +26,11 @@ measure_build() {
   local timing_file="$3"
   if [[ -n "$feature_args" ]]; then
     CARGO_TARGET_DIR="$target_dir" CARGO_PROFILE_DEV_DEBUG=0 \
-      /usr/bin/time -p -o "$timing_file" cargo +stable build -p rust_iso20022 \
+      /usr/bin/time -p -o "$timing_file" cargo +stable build --locked -p rust_iso20022 \
       --lib --no-default-features --features "$feature_args" --jobs "$jobs" >/dev/null
   else
     CARGO_TARGET_DIR="$target_dir" CARGO_PROFILE_DEV_DEBUG=0 \
-      /usr/bin/time -p -o "$timing_file" cargo +stable build -p rust_iso20022 \
+      /usr/bin/time -p -o "$timing_file" cargo +stable build --locked -p rust_iso20022 \
       --lib --no-default-features --jobs "$jobs" >/dev/null
   fi
   awk '$1 == "real" { print $2 }' "$timing_file"
@@ -39,18 +39,18 @@ measure_build() {
 default_seconds="$(measure_build "$default_target" "" "$scratch/default.time")"
 selected_seconds="$(measure_build "$selected_target" "$selected_features" "$scratch/selected.time")"
 
-default_dependencies="$(cargo +stable tree -p rust_iso20022 --no-default-features --edges normal --prefix none | sort -u | wc -l | tr -d ' ')"
-selected_dependencies="$(cargo +stable tree -p rust_iso20022 --no-default-features --features "$selected_features" --edges normal --prefix none | sort -u | wc -l | tr -d ' ')"
+default_dependencies="$(cargo +stable tree --locked -p rust_iso20022 --no-default-features --edges normal --prefix none | sort -u | wc -l | tr -d ' ')"
+selected_dependencies="$(cargo +stable tree --locked -p rust_iso20022 --no-default-features --features "$selected_features" --edges normal --prefix none | sort -u | wc -l | tr -d ' ')"
 
 CARGO_TARGET_DIR="$artifact_target" CARGO_PROFILE_RELEASE_DEBUG=0 \
-  cargo +stable build -p rust_iso20022_cli --release --jobs "$jobs" >/dev/null
+  cargo +stable build --locked -p rust_iso20022_cli --release --jobs "$jobs" >/dev/null
 cli_path="$artifact_target/release/iso20022"
 cli_bytes="$(stat -f '%z' "$cli_path" 2>/dev/null || stat -c '%s' "$cli_path")"
 
 wasm_bytes=null
-if rustup target list --installed | grep -qx 'wasm32-unknown-unknown'; then
+if rustup target list --installed --toolchain stable | grep -qx 'wasm32-unknown-unknown'; then
   CARGO_TARGET_DIR="$artifact_target" CARGO_PROFILE_RELEASE_DEBUG=0 \
-    cargo +stable build -p rust_iso20022_wasm --release \
+    cargo +stable build --locked -p rust_iso20022_wasm --release \
     --target wasm32-unknown-unknown --no-default-features --jobs "$jobs" >/dev/null
   wasm_path="$artifact_target/wasm32-unknown-unknown/release/rust_iso20022_wasm.wasm"
   wasm_bytes="$(stat -f '%z' "$wasm_path" 2>/dev/null || stat -c '%s' "$wasm_path")"
@@ -59,10 +59,10 @@ fi
 benchmark_target="${ISO20022_BENCH_TARGET_DIR:-/tmp/rust_iso20022-performance}"
 CARGO_TARGET_DIR="$benchmark_target" CARGO_PROFILE_BENCH_DEBUG=0 \
   ISO20022_BENCH_ITERATIONS="$iterations" \
-  cargo +stable bench -p rust_iso20022_benchmarks --bench sdk --jobs "$jobs" \
+  cargo +stable bench --locked -p rust_iso20022_benchmarks --bench sdk --jobs "$jobs" \
   >"$scratch/runtime.jsonl"
 CARGO_TARGET_DIR="$benchmark_target" CARGO_PROFILE_RELEASE_DEBUG=0 \
-  cargo +stable build -p rust_iso20022_benchmarks --release \
+  cargo +stable build --locked -p rust_iso20022_benchmarks --release \
   --bin memory --bin allocations --jobs "$jobs" \
   >/dev/null
 : >"$scratch/memory.jsonl"

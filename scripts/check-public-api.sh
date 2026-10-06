@@ -19,14 +19,14 @@ for tool in cargo-public-api cargo-semver-checks node; do
 done
 
 {
-    cargo public-api --version
+    cargo +nightly public-api --version
     cargo +stable semver-checks --version
     rustup run nightly rustc --version
-    rustc --version
-    cargo --version
+    rustc +stable --version
+    cargo +stable --version
 } >"$api_output_dir/tool-versions.txt"
 
-cargo metadata --format-version 1 --no-deps |
+cargo +stable metadata --locked --format-version 1 --no-deps |
     node -e '
         let input = "";
         process.stdin.setEncoding("utf8");
@@ -47,23 +47,23 @@ cargo metadata --format-version 1 --no-deps |
         });
     ' >"$api_output_dir/current-features.json"
 
-cargo info rust_iso20022@0.1.1 --verbose \
+cargo +stable info rust_iso20022@0.1.1 --verbose \
     >"$api_output_dir/published-0.1.1-info.txt"
 
-cargo public-api \
+cargo +nightly public-api \
     --no-default-features \
     -sss \
     --color never \
     >"$api_output_dir/current-core.txt"
 
-cargo public-api \
+cargo +nightly public-api \
     --no-default-features \
     --features model-pacs,serde,convert \
     -sss \
     --color never \
     >"$api_output_dir/current-pacs-serde-convert.txt"
 
-cargo public-api \
+cargo +nightly public-api \
     --no-default-features \
     -sss \
     --color never \

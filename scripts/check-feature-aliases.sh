@@ -4,7 +4,7 @@ set -euo pipefail
 repo_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$repo_root"
 
-metadata="$(cargo +stable metadata --no-deps --format-version 1)"
+metadata="$(cargo +stable metadata --locked --no-deps --format-version 1)"
 expected='{
   "payments": ["model-head", "model-acmt", "model-admi", "model-auth", "model-camt", "model-pacs", "model-pain", "model-reda", "model-remt"],
   "securities": ["model-secl", "model-seev", "model-semt", "model-sese", "model-setr"],

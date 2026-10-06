@@ -15,8 +15,8 @@ set -euo pipefail
 cd "$(dirname "$0")/.."
 
 if ! command -v wasm-pack >/dev/null 2>&1; then
-    echo "error: wasm-pack not found. Install it with: cargo install wasm-pack" >&2
+    echo "error: wasm-pack not found. Install it with: cargo +stable install wasm-pack --locked" >&2
     exit 1
 fi
 
-RUSTFLAGS="--cfg direct_wasm" wasm-pack build --target web --release --features=serde "$@"
+RUSTFLAGS="--cfg direct_wasm" rustup run stable wasm-pack build --target web --release --features=serde "$@" -- --locked

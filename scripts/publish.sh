@@ -38,12 +38,12 @@ fi
 # 2. regenerate the model + catalogue (requires xsds/)
 if [ -d xsds ]; then
     echo ">> Regenerating model + catalogue from xsds/"
-    cargo run -p rust_iso20022_codegen -- --input xsds --output src/generated
+    cargo +stable run --locked -p rust_iso20022_codegen -- --input xsds --output src/generated
 fi
 
 # 3. tests: always-available core + the typed model
 echo ">> Testing core + catalogue"
-cargo test
+cargo +stable test --locked
 
 # The model is tested one business area at a time. Compiling all ~1130 modules
 # into a single test binary needs far more memory than most machines have (the
@@ -54,14 +54,14 @@ trck tsin tsmt tsrv"
 echo ">> Testing the generated model per area (slow: 32 areas, ~1130 modules total)"
 for area in $MODEL_AREAS; do
     echo ">> model-$area"
-    cargo test --features "model-$area"
+    cargo +stable test --locked --features "model-$area"
 done
 
 # 4. crates.io
 if [ "$DRY_RUN" = 1 ]; then
-    cargo publish --dry-run
+    cargo +stable publish --locked --dry-run
 else
-    cargo publish
+    cargo +stable publish --locked
 fi
 
 echo ">> Done: rust_iso20022 v${VERSION}"
