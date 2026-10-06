@@ -29,6 +29,11 @@ allow = [
 [licenses.private]
 ignore = true
 
+# Mozilla's bundled trust-store data uses this license independently of Rust code.
+[[licenses.exceptions]]
+crate = "webpki-root-certs"
+allow = ["CDLA-Permissive-2.0"]
+
 [bans]
 multiple-versions = "warn"
 wildcards = "deny"

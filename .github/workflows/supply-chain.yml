@@ -38,6 +38,7 @@ jobs:
       - name: Require the tracked lockfile
         run: cargo +stable metadata --locked --format-version 1 --no-deps >/dev/null
       - name: Install pinned supply-chain tools
+        id: tools
         run: |
           cargo +stable install cargo-audit --version 0.22.1 --locked
           cargo +stable install cargo-deny --version 0.20.2 --locked
@@ -48,4 +49,5 @@ jobs:
             cargo +stable audit --file "$lockfile"
           done < <(git ls-files '*Cargo.lock')
       - name: Licenses, bans, advisories, and sources
+        if: ${{ !cancelled() && steps.tools.outcome == 'success' }}
         run: cargo +stable deny --locked --all-features check
