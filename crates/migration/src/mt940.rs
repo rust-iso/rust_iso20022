@@ -233,7 +233,12 @@ impl ParsedBalance {
 
 fn parse_balance(tag: &str, value: &str) -> Result<ParsedBalance, Mt940Error> {
     let bytes = value.as_bytes();
-    if bytes.len() < 11 {
+    // MT's fixed-width date and currency are ASCII. Check them before slicing
+    // the UTF-8 string so malformed multi-byte input returns a typed error.
+    if bytes.len() < 11
+        || !bytes[1..7].iter().all(u8::is_ascii_digit)
+        || !bytes[7..10].iter().all(u8::is_ascii_uppercase)
+    {
         return Err(Mt940Error::InvalidField {
             tag: balance_tag(tag),
         });

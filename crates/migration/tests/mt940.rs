@@ -122,3 +122,34 @@ fn generated_message_validates_and_round_trips_without_lossless_claim() {
     assert!(detected.as_camt_053_001_09().is_some());
     assert!(!conversion.mapping_report.unmapped_fields().is_empty());
 }
+
+#[test]
+fn unicode_in_every_fixed_width_balance_position_returns_a_typed_error() {
+    for tag in ["60F", "60M", "62F", "62M", "64", "65"] {
+        for offset in 0..10 {
+            for character in ['é', '\u{33a}', '💶'] {
+                let mut balance = "C260927EUR1,00".to_owned();
+                balance.replace_range(offset..offset + 1, &character.to_string());
+                let input = format!(
+                    "{{4:\n:20:UNICODE-CASE\n:25:DE89370400440532013000\n:28C:1\n:60F:C260927EUR1,00\n:{tag}:{balance}\n-}}"
+                );
+                assert!(
+                    matches!(mt940::convert(&input), Err(mt940::Mt940Error::InvalidField { tag: found }) if found == tag),
+                    "tag={tag}, offset={offset}, character={character:?}"
+                );
+            }
+        }
+    }
+}
+
+#[test]
+fn unicode_information_text_is_preserved() {
+    let input = INPUT.replace("Invoice 2026-09-A", "发票-é");
+    let conversion = mt940::convert(&input).unwrap();
+    assert_eq!(
+        conversion.message.bk_to_cstmr_stmt.stmt[0].ntry[0]
+            .addtl_ntry_inf
+            .0,
+        "发票-é"
+    );
+}

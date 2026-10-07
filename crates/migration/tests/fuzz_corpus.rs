@@ -21,6 +21,15 @@ fn mt_parser_seed_corpus_replays_without_panics() {
 }
 
 #[test]
+fn unicode_balance_crash_seed_returns_a_typed_error() {
+    let input = include_str!("../../../fuzz/corpus/mt940/unicode-balance.mt");
+    assert!(matches!(
+        mt940::convert(input),
+        Err(mt940::Mt940Error::InvalidField { tag: "60F" })
+    ));
+}
+
+#[test]
 fn successful_conversion_seeds_account_for_every_source_field() {
     let mt103_input = include_str!("../../../fuzz/corpus/mt103/valid.mt");
     let mt103_document = MtDocument::parse(mt103_input).unwrap();
