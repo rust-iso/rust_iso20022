@@ -238,7 +238,7 @@ checksum = "69cdb34c158ceb288df11e18b4bd39de994f6657d83847bdffdbd7f346754b0f"
 
 [[package]]
 name = "rust_iso20022"
-version = "0.1.5"
+version = "0.1.6"
 dependencies = [
  "brotli-decompressor",
  "js-sys",
@@ -260,7 +260,7 @@ dependencies = [
 
 [[package]]
 name = "rust_iso20022_migration"
-version = "0.1.5"
+version = "0.1.6"
 dependencies = [
  "rust_iso20022",
  "serde",

@@ -3,6 +3,29 @@
 All notable changes to this project are documented here. This project adheres to
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.6] - 2026-10-07
+
+### Fixed
+
+- Require `rust_decimal` 1.43 or newer for the optional `convert` feature,
+  avoiding the unsupported rkyv 0.7 dependency chain from older releases.
+- Fix CI and release tooling to use compatible, explicit Rust toolchains and
+  pinned tools, preserve lockfiles, and enforce supply-chain policy.
+- Cover every CAAA and CAMT message through bounded compilation shards without
+  changing the published generated models or feature flags.
+- Bound sanitizer compilation for all eight fuzz targets and upgrade artifact
+  and Pages actions to Node.js 24.
+- Fix malformed Unicode MT940 balance headers to return a typed error instead
+  of panicking, with persistent fuzz and boundary regression tests. This fix is
+  in the repository's unpublished migration adapter, not the crates.io SDK.
+
+### Compatibility
+
+- Published SDK source, public APIs, generated models, wire formats, feature
+  flags, and the Rust 1.85 MSRV are unchanged from 0.1.5.
+- Workspace adapters remain unpublished crates; their versions are aligned
+  with this release for repository builds.
+
 ## [0.1.5] - 2026-09-29
 
 ### Fixed
