@@ -4,6 +4,11 @@ The repository publishes only after the local evidence gate. Version 0.1.6 is
 the next release candidate after `v0.1.5`; the workflow remains manual-only,
 has read-only repository permissions, and does not publish on every push.
 
+Release verification accepts branches, tags, and abbreviated commit IDs,
+resolves them to one full commit SHA, and checks that same revision in every
+job. Package size verification remains compatible with older release tags;
+published tags and crates are never rewritten to update verification tooling.
+
 ## Local baseline
 
 ```bash

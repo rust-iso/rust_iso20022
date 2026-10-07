@@ -64,7 +64,7 @@ class ToolingContracts(unittest.TestCase):
         (self.root / "scripts").mkdir()
         (self.root / "bin").mkdir()
         (self.root / "adapter with spaces").mkdir()
-        for name in ("generate-sbom.sh", "run-fuzz-baseline.sh"):
+        for name in ("generate-sbom.sh", "run-fuzz-baseline.sh", "check-package-size.sh"):
             shutil.copyfile(ROOT / "scripts" / name, self.root / "scripts" / name)
         (self.root / "Cargo.toml").write_text("")
         (self.root / "adapter with spaces/Cargo.toml").write_text("")
@@ -116,6 +116,43 @@ class ToolingContracts(unittest.TestCase):
         runs = [json.loads(line) for line in (self.root / "calls.jsonl").read_text().splitlines()]
         self.assertEqual([call[3] for call in runs if call[1:3] == ["fuzz", "cmin"]],
                          ["xml", "detect", "namespace", "financial", "mt_parser", "mt103", "mt202", "mt940"])
+
+    def test_package_size_boundaries_with_gnu_stat_fallback_output(self):
+        # GNU stat -f can print filesystem information before failing; combining
+        # that stdout with stat -c used to produce an invalid arithmetic value.
+        stat = self.root / "bin/stat"
+        stat.write_text('''#!/usr/bin/env python3
+import os, sys
+if sys.argv[1] == "-f":
+    print('  File: "archive.crate"')
+    sys.exit(1)
+print(os.stat(sys.argv[-1]).st_size)
+''')
+        stat.chmod(0o755)
+        archive = self.root / "archive with spaces.crate"
+        limit = 10 * 1024 * 1024
+        for size, expected in [(limit - 1, 0), (limit, 1), (limit + 1, 1)]:
+            with self.subTest(size=size):
+                with archive.open("wb") as output:
+                    output.truncate(size)
+                result = self.run_script("check-package-size.sh", args=(str(archive),))
+                self.assertEqual(result.returncode, expected, result.stderr)
+                self.assertIn(str(size), result.stdout + result.stderr)
+
+    def test_package_size_accepts_padded_byte_counts_and_rejects_missing_archives(self):
+        wc = self.root / "bin/wc"
+        wc.write_text('''#!/usr/bin/env python3
+import os
+print("     " + str(os.fstat(0).st_size))
+''')
+        wc.chmod(0o755)
+        archive = self.root / "tiny.crate"
+        archive.write_bytes(b"archive")
+        result = self.run_script("check-package-size.sh", args=(str(archive),))
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIn("package size: 7 bytes", result.stdout)
+        result = self.run_script("check-package-size.sh", args=(str(self.root / "missing.crate"),))
+        self.assertEqual(result.returncode, 2, result.stderr)
 
 
 if __name__ == "__main__":

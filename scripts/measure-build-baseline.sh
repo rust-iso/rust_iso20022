@@ -45,7 +45,7 @@ selected_dependencies="$(cargo +stable tree --locked -p rust_iso20022 --no-defau
 CARGO_TARGET_DIR="$artifact_target" CARGO_PROFILE_RELEASE_DEBUG=0 \
   cargo +stable build --locked -p rust_iso20022_cli --release --jobs "$jobs" >/dev/null
 cli_path="$artifact_target/release/iso20022"
-cli_bytes="$(stat -f '%z' "$cli_path" 2>/dev/null || stat -c '%s' "$cli_path")"
+cli_bytes="$(wc -c < "$cli_path" | tr -d '[:space:]')"
 
 wasm_bytes=null
 if rustup target list --installed --toolchain stable | grep -qx 'wasm32-unknown-unknown'; then
@@ -53,7 +53,7 @@ if rustup target list --installed --toolchain stable | grep -qx 'wasm32-unknown-
     cargo +stable build --locked -p rust_iso20022_wasm --release \
     --target wasm32-unknown-unknown --no-default-features --jobs "$jobs" >/dev/null
   wasm_path="$artifact_target/wasm32-unknown-unknown/release/rust_iso20022_wasm.wasm"
-  wasm_bytes="$(stat -f '%z' "$wasm_path" 2>/dev/null || stat -c '%s' "$wasm_path")"
+  wasm_bytes="$(wc -c < "$wasm_path" | tr -d '[:space:]')"
 fi
 
 benchmark_target="${ISO20022_BENCH_TARGET_DIR:-/tmp/rust_iso20022-performance}"

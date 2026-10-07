@@ -17,11 +17,10 @@ test -n "$archive" && test -f "$archive" || {
   exit 2
 }
 
-bytes="$(stat -f '%z' "$archive" 2>/dev/null || stat -c '%s' "$archive")"
+bytes="$(wc -c < "$archive" | tr -d '[:space:]')"
 if (( bytes >= limit_bytes )); then
   echo "error: package is $bytes bytes; crates.io limit is $limit_bytes bytes" >&2
   exit 1
 fi
 
 echo "package size: $bytes bytes (limit: $limit_bytes)"
-

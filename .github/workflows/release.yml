@@ -20,14 +20,41 @@ env:
   CARGO_PROFILE_TEST_DEBUG: "0"
 
 jobs:
+  resolve-revision:
+    name: Resolve release revision
+    runs-on: ubuntu-22.04
+    timeout-minutes: 10
+    outputs:
+      sha: ${{ steps.resolve.outputs.result }}
+    steps:
+      - name: Resolve branch, tag, or abbreviated commit to a full SHA
+        id: resolve
+        uses: actions/github-script@v8
+        env:
+          RELEASE_REVISION: ${{ inputs.revision }}
+        with:
+          result-encoding: string
+          retries: 3
+          script: |
+            const { data } = await github.rest.repos.getCommit({
+              ...context.repo,
+              ref: process.env.RELEASE_REVISION,
+            });
+            if (!/^[0-9a-f]{40}$/.test(data.sha)) {
+              throw new Error('Release revision did not resolve to a full commit SHA');
+            }
+            core.info(`Release commit: ${data.sha}`);
+            return data.sha;
+
   package:
     name: Crate, docs, manifests, and SBOM
+    needs: resolve-revision
     runs-on: ubuntu-latest
     timeout-minutes: 180
     steps:
       - uses: actions/checkout@v5
         with:
-          ref: ${{ inputs.revision }}
+          ref: ${{ needs.resolve-revision.outputs.sha }}
       - uses: dtolnay/rust-toolchain@stable
         with:
           components: clippy,rustfmt
@@ -41,10 +68,20 @@ jobs:
       - name: Package without publishing
         run: |
           mkdir -p release-artifacts/crate
-          cargo +stable package --locked --allow-dirty
-          cp target/package/rust_iso20022-*.crate release-artifacts/crate/
-          cargo +stable package --list --allow-dirty > release-artifacts/crate/package-files.txt
-          scripts/check-package-size.sh release-artifacts/crate/rust_iso20022-*.crate
+          cargo +stable package --locked --allow-dirty -p rust_iso20022
+          metadata="$(cargo +stable metadata --locked --no-deps --format-version 1)"
+          version="$(jq -r '.packages[] | select(.name == "rust_iso20022") | .version' <<< "$metadata")"
+          target_dir="$(jq -r '.target_directory' <<< "$metadata")"
+          archive="$target_dir/package/rust_iso20022-$version.crate"
+          # Validate immutable release tags independently of their older scripts.
+          bytes="$(wc -c < "$archive" | tr -d '[:space:]')"
+          if (( bytes >= 10 * 1024 * 1024 )); then
+            echo "error: package is $bytes bytes; crates.io limit is 10485760 bytes" >&2
+            exit 1
+          fi
+          echo "package size: $bytes bytes (limit: 10485760)"
+          cp -- "$archive" release-artifacts/crate/
+          cargo +stable package --list --allow-dirty -p rust_iso20022 > release-artifacts/crate/package-files.txt
       - name: Install pinned SBOM generator
         run: cargo +stable install cargo-cyclonedx --version 0.5.9 --locked
       - name: Generate release evidence and SBOM
@@ -64,6 +101,7 @@ jobs:
 
   cli:
     name: CLI / ${{ matrix.os }}
+    needs: resolve-revision
     runs-on: ${{ matrix.os }}
     timeout-minutes: 180
     strategy:
@@ -73,7 +111,7 @@ jobs:
     steps:
       - uses: actions/checkout@v5
         with:
-          ref: ${{ inputs.revision }}
+          ref: ${{ needs.resolve-revision.outputs.sha }}
       - uses: dtolnay/rust-toolchain@stable
       - uses: Swatinem/rust-cache@v2
         with:
@@ -92,12 +130,13 @@ jobs:
 
   wasm:
     name: WASM package candidate
+    needs: resolve-revision
     runs-on: ubuntu-latest
     timeout-minutes: 180
     steps:
       - uses: actions/checkout@v5
         with:
-          ref: ${{ inputs.revision }}
+          ref: ${{ needs.resolve-revision.outputs.sha }}
       - uses: dtolnay/rust-toolchain@stable
         with:
           targets: wasm32-unknown-unknown
