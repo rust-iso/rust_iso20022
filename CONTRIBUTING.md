@@ -69,6 +69,11 @@ focused CAMT feature. Full-family builds remain available through the ordinary
 Cargo features; release checks continue to use full-family builds on capable
 machines. CI uploads memory/process/disk measurements for each large-model job.
 
+The fuzz baseline uses 16 LLVM codegen units and one Cargo build job. This
+avoids cargo-fuzz's default of optimizing the whole model crate in a single
+unit. All eight targets, sanitizers, assertions and time limits are retained;
+`FUZZ_CODEGEN_UNITS` can override the unit count for local runs.
+
 ## Standards and profile changes
 
 Public landing pages and community implementations are useful research, but do

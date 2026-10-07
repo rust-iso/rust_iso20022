@@ -46,7 +46,10 @@ elif command == "fuzz":
     if args == ["--version"]:
         print("cargo-fuzz " + ("0.13.3" if mode == "wrong-version" else "0.13.2"))
     else:
-        assert args[0] == "run"
+        assert args[0] in ("run", "cmin")
+        assert args[args.index("--codegen-units") + 1] == "16"
+        assert args.index("--codegen-units") < args.index("--")
+        assert os.environ["CARGO_BUILD_JOBS"] == "1"
         assert os.environ["CARGO_NET_OFFLINE"] == "true"
 else:
     raise AssertionError(args)
@@ -71,10 +74,11 @@ class ToolingContracts(unittest.TestCase):
         cargo.chmod(0o755)
         (self.root / "bin/cargo-cyclonedx").symlink_to(cargo)
 
-    def run_script(self, name, mode=""):
+    def run_script(self, name, mode="", args=()):
         env = dict(os.environ, PATH=str(self.root / "bin") + os.pathsep + os.environ["PATH"],
-                   STUB_MODE=mode, SOURCE_DATE_EPOCH="0", FUZZ_TOOLCHAIN="nightly-2026-09-26")
-        return subprocess.run(["bash", str(self.root / "scripts" / name)],
+                   STUB_MODE=mode, SOURCE_DATE_EPOCH="0", FUZZ_TOOLCHAIN="nightly-2026-09-26",
+                   CARGO_BUILD_JOBS="1", FUZZ_CODEGEN_UNITS="16")
+        return subprocess.run(["bash", str(self.root / "scripts" / name), *args],
                               cwd=self.root, env=env, capture_output=True, text=True)
 
     def test_collects_workspace_sboms_and_portable_checksums(self):
@@ -104,6 +108,13 @@ class ToolingContracts(unittest.TestCase):
         self.assertEqual(result.returncode, 0, result.stderr)
         runs = [json.loads(line) for line in calls.read_text().splitlines()]
         self.assertEqual([call[3] for call in runs if call[1:3] == ["fuzz", "run"]],
+                         ["xml", "detect", "namespace", "financial", "mt_parser", "mt103", "mt202", "mt940"])
+
+    def test_minimization_keeps_the_same_bounded_compiler_settings(self):
+        result = self.run_script("run-fuzz-baseline.sh", args=("--minimize",))
+        self.assertEqual(result.returncode, 0, result.stderr)
+        runs = [json.loads(line) for line in (self.root / "calls.jsonl").read_text().splitlines()]
+        self.assertEqual([call[3] for call in runs if call[1:3] == ["fuzz", "cmin"]],
                          ["xml", "detect", "namespace", "financial", "mt_parser", "mt103", "mt202", "mt940"])
 
 
