@@ -51,6 +51,24 @@ Run the focused tests for the work package as well. Release candidates use
 `scripts/release-check.sh`; this command is intentionally much slower and also
 requires external tools and network access.
 
+GitHub Actions tests the large CAMT and CAAA families in source-bounded shards.
+Run `python3 scripts/test-model-shards.py --matrix` to see the current plan and
+`python3 scripts/test-model-shards.py --area camt --shard 0` to reproduce one
+job. Each shard runs the existing generated smoke tests both without and with
+Serde. CAMT shard 0 also tests the real builders, prelude alias, XML dispatch,
+and JSON dispatch. All messages are covered, with a maximum of 2 MiB of model
+source per compilation; the CAMT builder dependencies are retained in every
+CAMT shard. The plan grows automatically as models are added, and inventory or
+dispatch mismatches fail the job instead of silently dropping coverage.
+
+Sharding operates in a disposable copy and masks only declarations and dispatch
+guards for messages assigned to other shards. Model implementations, public
+features, core, builders, and Cargo.lock remain unchanged. The ordinary family
+jobs still compile complete families, and a separate job tests the production
+focused CAMT feature. Full-family builds remain available through the ordinary
+Cargo features; release checks continue to use full-family builds on capable
+machines. CI uploads memory/process/disk measurements for each large-model job.
+
 ## Standards and profile changes
 
 Public landing pages and community implementations are useful research, but do
@@ -68,4 +86,3 @@ maintainer action and require every mandatory gate to pass.
 
 Security vulnerabilities must follow [SECURITY.md](SECURITY.md), not a public
 issue. Sponsorship policy is documented in [SPONSORS.md](SPONSORS.md).
-

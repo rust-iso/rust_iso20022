@@ -282,6 +282,11 @@ path = "tests/builders/camt.rs"
 required-features = ["model-camt"]
 
 [[test]]
+name = "model_shard_dispatch"
+path = "tests/contracts/model_shard_dispatch.rs"
+required-features = ["model-camt", "serde"]
+
+[[test]]
 name = "profile_framework"
 path = "tests/profiles/framework.rs"
 required-features = ["profiles"]
