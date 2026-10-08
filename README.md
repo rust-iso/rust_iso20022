@@ -7,8 +7,8 @@
 [![MSRV](https://img.shields.io/badge/MSRV-1.85-dea584.svg)](https://www.rust-lang.org)
 [![License](https://img.shields.io/crates/l/rust_iso20022.svg)](LICENSE)
 
-**Production-grade ISO 20022 SDK for Rust.** Detect, inspect, parse, build,
-validate, compare, migrate, and serialize financial MX messages with generated,
+**Open-source ISO 20022 message toolkit for Rust.** Detect, inspect, parse, build,
+validate, compare, and serialize financial MX messages with generated,
 strongly typed models.
 
 Generated models remain fully accessible. High-level APIs are additive: every
@@ -39,6 +39,13 @@ families they use.
 
 The versioned CBPR+ and SEPA profile framework is implemented, but no complete
 production L3 rule pack is currently claimed. See [profile status](docs/profiles.md).
+
+The published SDK is **0.1.6** and supports Rust **1.85** or newer. CLI, MT
+migration, WASM, and MCP adapters are separate unpublished workspace crates;
+the MCP adapter requires Rust 1.88. Complete offline XSD validation is not
+implemented, and generated-message L2 binding currently covers
+`pacs.008.001.08`. See [implementation status](docs/status.md) for release,
+fuzzing, and validation coverage.
 
 See the [payment integration flow](docs/integration.md) for the recommended
 detect → catalogue → generated parse → validate → serialize path.

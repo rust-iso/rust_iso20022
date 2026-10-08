@@ -1,9 +1,17 @@
 # Compatibility Policy and Baseline
 
-This document defines the compatibility baseline for the additive production SDK
-work. It distinguishes the published `0.1.1` crate from the current unreleased
-working tree (`0.1.2`). It is not a promise that every pre-1.0 release can never
-change; it is the evidence and approval process required before a change is made.
+This document defines the compatibility policy for the SDK and distinguishes
+historical comparison evidence from the current release. As of 2026-10-08,
+the published core SDK is **0.1.6**. Its public SDK API, generated models, wire
+formats, feature flags, and Rust 1.85 MSRV are unchanged from 0.1.5; the optional
+`convert` dependency floor and CI/release tooling were corrected. See the
+[changelog](../CHANGELOG.md) and [implementation status](status.md).
+
+The initial automated comparisons used published **0.1.1** as the baseline
+during the **0.1.2** implementation work. Those artifacts are historical
+evidence, not a statement that the current tree is unreleased. This policy is
+not a promise that every pre-1.0 release can never change; it defines the
+evidence and approval process required before a change is made.
 
 ## Protected Surface
 
@@ -22,9 +30,9 @@ Generated structs remain the sole canonical ISO 20022 model. Additive wrappers,
 builders, validators, profiles, migrations, and adapters must preserve direct
 access to the generated value.
 
-## Published and Working Baselines
+## Historical Published and Working Baselines
 
-The automated baseline under `evidence/compatibility/` contains:
+The historical automated baseline under `evidence/compatibility/` contains:
 
 - a simplified default public API snapshot and a
   `model-pacs,serde,convert` snapshot;
@@ -114,13 +122,17 @@ review discipline.
 
 ## Known Baseline Limitations
 
-- The pre-existing generated tree is not rustfmt-clean under Rust 1.96.
+- At the original comparison baseline, the generated tree was not rustfmt-clean
+  under Rust 1.96.
   Formatting must be corrected through deterministic code generation and
   regeneration, not manual generated-file edits.
 - `yaserde`/`yaserde_derive` remain pinned to the 0.7 behavior used by the
   generated model. An upgrade needs full regeneration and wire revalidation.
-- The current XML detector/scanner has not yet passed the planned bounded-parser
-  security work; baseline compatibility does not certify it as safe for
-  untrusted input.
+- The original comparison baseline preceded the bounded-parser security work.
+  Current public XML entry points use shared bounded preflight, with attack
+  corpora, boundary tests, persistent fuzz regression replay, and a completed
+  initial coverage-guided baseline. See [security](security.md) and
+  [implementation status](status.md). Compatibility checks and bounded fuzzing
+  do not certify the parser as defect-free for all untrusted input.
 - Passing implemented validation rules never guarantees bank acceptance,
   regulatory certification, network onboarding, or legal compliance.

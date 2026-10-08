@@ -71,9 +71,11 @@ limits; this is not a zero-allocation or constant-memory design.
 The attack corpus covers oversized input, deep nesting, DTD/entity expansion,
 XInclude, malformed/unbound namespaces, non-UTF-8 declarations, invalid
 Unicode, excessive collections, and malformed structure. Exact minus/at/plus
-tests freeze each limit. Coverage-guided fuzzing is tracked separately in
-WP-029, so the current evidence must not be described as proof that no parser
-defect exists.
+tests freeze each limit. The initial eight-target coverage-guided fuzz baseline
+completed in GitHub Actions; see [implementation status](status.md) for the
+recorded run and bounded coverage. WP-029 retains the earlier local
+implementation-stage evidence. These checks must not be described as proof
+that no parser defect exists.
 
 ## Privacy and logging
 
